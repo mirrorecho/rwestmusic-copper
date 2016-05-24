@@ -3,6 +3,8 @@
 from abjad import *
 
 # 3 pitch rows
+# 1st row is initial line
+# 2nd row is always a 5th apart
 # create a routine to get the 3rd note
 # create a routine to arrange pitches
 
