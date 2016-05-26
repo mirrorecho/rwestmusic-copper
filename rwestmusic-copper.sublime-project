@@ -3,6 +3,15 @@
 	[
 		{
 			"path": "."
+		},
+		{
+			"path": "/Users/rwest/Code/mirrorecho/calliope"
+		},
+		{
+			"path": "/Users/rwest/Code/mirrorecho/rwestmusic-drops-of-neon"
+		},
+		{
+			"path": "/Users/rwest/Code/mirrorecho/rwestmusic-tokei"
 		}
 	],
 	"virtualenv": "/Users/rwest/Code/venvs/abjad_2.17"
