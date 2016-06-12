@@ -46,20 +46,25 @@ class GenMultiLineB(GenMultiLineA):
 GEN_MULTI_LINE_A = GenMultiLineA()
 GEN_MULTI_LINE_B = GenMultiLineB()
 
-class Generation1(CopperMusic):
+    # super().after_music(music, **kwargs)
+
+class Arrangement(CopperMusic):
     # TO DO... these lines need dynamics, bowing, etc. ... maybe some additional orchestration interest/color.
-    violinI1 = Line("R1*4") + GEN_MULTI_LINE_A.l1 + GEN_MULTI_LINE_B.l1
+    violinI1 = Line("R1*4") + GEN_MULTI_LINE_A.l1.latch(dynamic="pp") + GEN_MULTI_LINE_B.l1
+    # violinI1.after_music = test_after_music
     violinI2 = violinI1
-    violinII1 = Line("R1*4") + GEN_MULTI_LINE_A.l2 + GEN_MULTI_LINE_B.l2
+    violinII1 = Line("R1*4") + GEN_MULTI_LINE_A.l2.latch(dynamic="pp") + GEN_MULTI_LINE_B.l2
     violinII2 = violinII1
     horn1 = BrassSwap()*2 + Line("R1*10") 
     horn2 = Line("R1*2") + BrassSwap()*4
     trombone1 = Line("R1*8") + BrassSwap()*2 + Line("R1*2")
     bubble_default = Line("R1*18")
 
-music = Generation1()
-score = CopperScore( music )
-brass = CopperBrass( music )
-print("YOYOYOYOYOYO!!!")
-# brass.show()
-score.show()
+    
+
+# music = Arrangement()
+# score = CopperScore( music )
+# brass = CopperBrass( music )
+# print("YOYOYOYOYOYO!!!")
+# # brass.show()
+# score.show()
