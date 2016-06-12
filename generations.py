@@ -61,7 +61,7 @@ class GenBubble(Bubble):
     # this checks for pitch swapping... move to Bubble for use in other works?
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        if hasattr(self, "swap_pitches"):
+        if getattr(self, "swap_pitches", None):
             p0 = getattr(self, self.swap_pitches[0]).gen_pitch
             p1 = getattr(self, self.swap_pitches[1]).gen_pitch
             for i in self.swap_pitches[2]:

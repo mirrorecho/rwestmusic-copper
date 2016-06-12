@@ -16,28 +16,42 @@ class BrassSwap(Ly):
         )
     ly_material = "drone_swap.inFourA"
 
-class GenLine1(GenLine):
+class GenLine2(GenLine):
     pitch_sequence = (0,1,2,3)
     rhythm_sequence = (0,)*4
     rhythm_multiplies = (2,)
     octaves = (0,0,0, 1,1,0, 1,1,1, 0,0,0)
-
-
-class GenLine2(GenLine1):
+class GenLine1(GenLine2):
     pitch_sequence = (1,1,2,0)
     transpose = 7
     octaves = (0,0,0, 1,0,0, 0,0,1, 0,0,0)
+class GenLine1B(GenLine2):
+    octaves = (1,1,2, 2,1,2, 0,1,1, 1,0,0)
+class GenLine2B(GenLine1):
+    pitch_sequence = (1,1,0,0)
+    transpose = 5
+    pitch_directions=(-1,1)
+    octaves = (0,0,1, 1,2,0, 0,0,0, -1,1,2)
 
-class TestGen(GenBubble):
+class GenMultiLineA(GenBubble):
     l1 = GenLine1()
     l2 = GenLine2()
-    sequence =("l2", "l1")
     swap_pitches = ("l1","l2", (4,6,7) )
+class GenMultiLineB(GenMultiLineA):
+    l1 = GenLine1B()
+    l2 = GenLine2B()
+    # swap_pitches = None
+    swap_pitches = ("l1","l2", (4,6,10,11) )
 
-TestGen().show()
+GEN_MULTI_LINE_A = GenMultiLineA()
+GEN_MULTI_LINE_B = GenMultiLineB()
 
 class Generation1(CopperMusic):
-    violinI1 = GenLine1()
+    # TO DO... these lines need dynamics, bowing, etc. ... maybe some additional orchestration interest/color.
+    violinI1 = Line("R1*4") + GEN_MULTI_LINE_A.l1 + GEN_MULTI_LINE_B.l1
+    violinI2 = violinI1
+    violinII1 = Line("R1*4") + GEN_MULTI_LINE_A.l2 + GEN_MULTI_LINE_B.l2
+    violinII2 = violinII1
     horn1 = BrassSwap()*2 + Line("R1*10") 
     horn2 = Line("R1*2") + BrassSwap()*4
     trombone1 = Line("R1*8") + BrassSwap()*2 + Line("R1*2")
@@ -48,4 +62,4 @@ score = CopperScore( music )
 brass = CopperBrass( music )
 print("YOYOYOYOYOYO!!!")
 # brass.show()
-# score.show()
+score.show()
