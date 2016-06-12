@@ -17,9 +17,27 @@ class BrassSwap(Ly):
     ly_material = "drone_swap.inFourA"
 
 class GenLine1(GenLine):
-    rhythm_m
+    pitch_sequence = (0,1,2,3)
+    rhythm_sequence = (0,)*4
+    rhythm_multiplies = (2,)
+    octaves = (0,0,0, 1,1,0, 1,1,1, 0,0,0)
+
+
+class GenLine2(GenLine1):
+    pitch_sequence = (1,1,2,0)
+    transpose = 7
+    octaves = (0,0,0, 1,0,0, 0,0,1, 0,0,0)
+
+class TestGen(GenBubble):
+    l1 = GenLine1()
+    l2 = GenLine2()
+    sequence =("l2", "l1")
+    swap_pitches = ("l1","l2", (4,6,7) )
+
+TestGen().show()
 
 class Generation1(CopperMusic):
+    violinI1 = GenLine1()
     horn1 = BrassSwap()*2 + Line("R1*10") 
     horn2 = Line("R1*2") + BrassSwap()*4
     trombone1 = Line("R1*8") + BrassSwap()*2 + Line("R1*2")
@@ -30,4 +48,4 @@ score = CopperScore( music )
 brass = CopperBrass( music )
 print("YOYOYOYOYOYO!!!")
 # brass.show()
-score.show()
+# score.show()

@@ -5,17 +5,16 @@
 			"path": "."
 		},
 		{
-			"path": "/home/randall/Code/mirrorecho/calliope"
+			"path": "../calliope"
 		},
 		{
-			"path": "/home/randall/Code/mirrorecho/rwestmusic-drops-of-neon"
+			"path": "../rwestmusic-drops-of-neon"
 		},
 		{
-			"path": "/home/randall/Code/mirrorecho/rwestmusic-narcissapark"
+			"path": "../rwestmusic-narcissapark"
 		},
 		{
-			"path": "/home/randall/Code/mirrorecho/rwestmusic-tokei"
+			"path": "../rwestmusic-tokei"
 		}
-	],
-	"virtualenv": "/home/randall/Code/venvs/abjad_2.17"
+	]
 }

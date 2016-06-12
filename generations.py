@@ -23,32 +23,49 @@ class GenLine(Line):
     pitch_directions=(1,)
     rhythm_directions=(1,)
     rhythm_multiplies=(1,)
+    octaves = (0,)
     transpose=0
 
+    gen_pitch = ()
+    gen_rhythm = ()
 
-    # def __init__(self, *args, **kwargs):
-    #     super().__init__(*args, **kwargs)
-    def music(self, **kwargs):
 
-        my_pitch = []
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+    
+        self.gen_pitch = []
         for i,s in enumerate(self.pitch_sequence):
-            my_pitch += self.gen_pitches[s % len(self.gen_pitches)][ ::self.pitch_directions[i % len(self.pitch_directions)] ]
+            self.gen_pitch += self.gen_pitches[s % len(self.gen_pitches)][ ::self.pitch_directions[i % len(self.pitch_directions)] ]
 
-        my_rhythm = []
+        self.gen_pitch = [ p + self.transpose + self.octaves[i % len(self.octaves)]*12 for i,p in enumerate(self.gen_pitch) ]
+
+
+        self.gen_rhythm = []
         for i,s in enumerate(self.rhythm_sequence):
-            my_rhythm_append = self.gen_rhythms[s % len(self.gen_rhythms)][ ::self.rhythm_directions[i % len(self.rhythm_directions)] ]
-            my_rhythm_append_multiply = self.rhythm_multiplies[i % len(self.rhythm_multiplies)]
-            if my_rhythm_append_multiply != 1:
-                my_rhythm_append = [r * my_rhythm_append_multiply for r in my_rhythm_append]
-            my_rhythm += my_rhythm_append
+            self.gen_rhythm_append = self.gen_rhythms[s % len(self.gen_rhythms)][ ::self.rhythm_directions[i % len(self.rhythm_directions)] ]
+            self.gen_rhythm_append_multiply = self.rhythm_multiplies[i % len(self.rhythm_multiplies)]
+            if self.gen_rhythm_append_multiply != 1:
+                self.gen_rhythm_append = [r * self.gen_rhythm_append_multiply for r in self.gen_rhythm_append]
+            self.gen_rhythm += self.gen_rhythm_append
 
+    def music(self, **kwargs):
         my_music = self.container_type()
-        for i, r in enumerate(my_rhythm):
+        for i, r in enumerate(self.gen_rhythm):
             # MAYBE TO DO... combine this with the above loop?
-            my_music.append( Note(my_pitch[i % len(my_pitch) ] + self.transpose, (1, r) ) )
+            my_music.append( Note(self.gen_pitch[i % len(self.gen_pitch) ], (1, r) ) )
 
         return my_music
 
+class GenBubble(Bubble):
+
+    # this checks for pitch swapping... move to Bubble for use in other works?
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        if hasattr(self, "swap_pitches"):
+            p0 = getattr(self, self.swap_pitches[0]).gen_pitch
+            p1 = getattr(self, self.swap_pitches[1]).gen_pitch
+            for i in self.swap_pitches[2]:
+                (p0[i], p1[i]) = (p1[i], p0[i])
 
 
 # def get_gen_rhythms_line(*args, **kwargs):
