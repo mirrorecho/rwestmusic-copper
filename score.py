@@ -1,10 +1,11 @@
-import settings
+import _settings
 from abjad import *
 from calliope.bubbles import *
 
 class CopperFlutes(InstrumentStaffGroup):
     flute1 = BubbleStaff(instrument=instrumenttools.Flute(instrument_name="Flute 1", short_instrument_name="fl.1"))
     flute2 = BubbleStaff(instrument=instrumenttools.Flute(instrument_name="Flute 2", short_instrument_name="fl.2"))
+    flute3 = BubbleStaff(instrument=instrumenttools.Flute(instrument_name="Flute 3", short_instrument_name="fl.3"))
 
 class CopperOboes(InstrumentStaffGroup):
     oboe1 = BubbleStaff(instrument=instrumenttools.Oboe(instrument_name="Oboe 1", short_instrument_name="ob.1"))
@@ -13,6 +14,7 @@ class CopperOboes(InstrumentStaffGroup):
 class CopperClarinets(InstrumentStaffGroup):
     clarinet1 = BubbleStaff(instrument=instrumenttools.ClarinetInBFlat(instrument_name="Clarinet 1", short_instrument_name="cl.1"))
     clarinet2 = BubbleStaff(instrument=instrumenttools.ClarinetInBFlat(instrument_name="Clarinet 2", short_instrument_name="cl.2"))
+    # clarinet3 = BubbleStaff(instrument=instrumenttools.ClarinetInBFlat(instrument_name="Clarinet 3", short_instrument_name="cl.3"))
 
 class CopperBassoons(InstrumentStaffGroup):
     bassoon1 = BubbleStaff(instrument=instrumenttools.Bassoon(instrument_name="Bassoon 1", short_instrument_name="bsn.1"), clef="bass")
@@ -32,21 +34,11 @@ class CopperTrombones(InstrumentStaffGroup):
 
 class CopperPerc(BubbleStaffGroup):
     # TO DO EVENTUALLY... shouldn't always add crotales.... 
-    crotales = BubbleStaff(instrument=instrumenttools.Instrument(instrument_name="Crotales", short_instrument_name="cro."))
+    # crotales = BubbleStaff(instrument=instrumenttools.Instrument(instrument_name="Crotales", short_instrument_name="cro."))
     perc1 = BubbleRhythmicStaff(instrument=instrumenttools.Percussion(instrument_name="Percussion 1", short_instrument_name="perc.1"))
     perc2 = BubbleRhythmicStaff(instrument=instrumenttools.Percussion(instrument_name="Percussion 2", short_instrument_name="perc.2"))
-    timpani = BubbleStaff(instrument=instrumenttools.Instrument(instrument_name="Timpani", short_instrument_name="timp"), clef="bass")
-
-    sequence = ("crotales", "perc1", "perc2", "timpani")
-
-class CopperTaiko(BubbleStaffGroup):
-    # TO CONSIDER... add gane??
-    shime = BubbleRhythmicStaff(instrument=instrumenttools.Percussion(instrument_name="Shime", short_instrument_name="sh."))
-    #self.add_perc_part(name='gane', instrument=instrumenttools.UntunedPercussion(instrument_name="Gane", short_instrument_name="gn."))
-    odaiko = BubbleRhythmicStaff(instrument=instrumenttools.Percussion(instrument_name="Odaiko", short_instrument_name="o.d."))
-    taiko1 = BubbleRhythmicStaff(instrument=instrumenttools.Percussion(instrument_name="Taiko 1", short_instrument_name="t.1"))
-    taiko2 = BubbleRhythmicStaff(instrument=instrumenttools.Percussion(instrument_name="Taiko 2 ", short_instrument_name="t.2."))
-    sequence = ("shime","odaiko","taiko1","taiko2")
+    # timpani = BubbleStaff(instrument=instrumenttools.Instrument(instrument_name="Timpani", short_instrument_name="timp"), clef="bass")
+    sequence = ("perc1", "perc2",)
 
 class CopperViolinIDiv(InstrumentStaffGroup):
     violinI1 = BubbleStaff(instrument=instrumenttools.Violin(instrument_name="Violin I Div 1", short_instrument_name="vln.I.1"))
@@ -69,7 +61,6 @@ class CopperWinds(BubbleStaffGroup):
     oboes = CopperOboes()
     clarinets = CopperClarinets()
     bassoons = CopperBassoons()
-
     sequence = ("flutes","oboes", "clarinets", "bassoons")
 
 class CopperBrass(BubbleStaffGroup):
@@ -96,16 +87,17 @@ class CopperStringsDiv(BubbleStaffGroup):
     sequence = ("violinIs","violinIIs","violas","cellos","bass")
 
 class CopperScore(BubbleFormatLargeScore):
+    hide_empty = True
     winds = CopperWinds()
     brass = CopperBrass()
     perc = CopperPerc()
-    taiko = CopperTaiko()
-    strings = CopperStrings()
+    strings = CopperStringsDiv()
     sequence = ("winds", "brass", "perc", "taiko", "strings")
 
-class CaesiumMusic(Bubble):
+class CopperMusic(Bubble):
     flute1 = Placeholder()
     flute2 = Placeholder()
+    flute3 = Placeholder()
     oboe1 = Placeholder()
     oboe2 = Placeholder()
     clarinet1 = Placeholder()
@@ -114,8 +106,8 @@ class CaesiumMusic(Bubble):
     bassoon2 = Placeholder()
     horn1 = Placeholder()
     horn2 = Placeholder()
-    horn3 = Placeholder()
-    horn4 = Placeholder()
+    # horn3 = Placeholder()
+    # horn4 = Placeholder()
     trumpet1 = Placeholder()
     trumpet2 = Placeholder()
     trombone1 = Placeholder()
@@ -126,8 +118,6 @@ class CaesiumMusic(Bubble):
     timpani = Placeholder()
     odaiko = Placeholder()
     shime = Placeholder()
-    taiko1 = Placeholder()
-    taiko2 = Placeholder()
     violinI1 = Placeholder()
     violinI2 = Placeholder()
     violinII1 = Placeholder()
@@ -137,3 +127,6 @@ class CaesiumMusic(Bubble):
     cello1 = Placeholder()
     cello2 = Placeholder()
     bass = Placeholder()
+
+# music = CopperMusic()
+# music.show()
