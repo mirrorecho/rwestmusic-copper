@@ -48,7 +48,15 @@ GEN_MULTI_LINE_B = GenMultiLineB()
 
     # super().after_music(music, **kwargs)
 
-class Arrangement(CopperMusic):
+class Gen1ArrangementMixin(object):
+    bubble_default = Line("R1*18")
+
+class Gen1Winds(Gen1ArrangementMixin, GenBubble): # necessary to inherit from GenBubble??
+    flute1 = Line("R1*18") # TO DO... add some doubling, orchestrational color with the flutes
+    flute2 = Line("R1*18")
+    flute3 = Line("R1*18")
+
+class Arrangement(Gen1Winds, CopperMusic):
     # TO DO... these lines need dynamics, bowing, etc. ... maybe some additional orchestration interest/color.
     violinI1 = Line("R1*4") + GEN_MULTI_LINE_A.l1 + GEN_MULTI_LINE_B.l1
     violinI2 = violinI1
@@ -57,7 +65,7 @@ class Arrangement(CopperMusic):
     horn1 = BrassSwap()*2 + Line("R1*10") 
     horn2 = Line("R1*2") + BrassSwap()*4
     trombone1 = Line("R1*8") + BrassSwap()*2 + Line("R1*2")
-    bubble_default = Line("R1*18")
+    
 
     # name for this????
     class ViolinAttachments(LineAttachments):
