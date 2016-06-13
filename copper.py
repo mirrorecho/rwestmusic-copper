@@ -16,6 +16,6 @@ score = CopperScore( CopperFullMusic() )
 # score.save()
 # score.make_pdf()
 # print(score)
-# score.show()
+score.show()
 
-generation_1.Arrangement().trombone1.show()
+# generation_1.Arrangement().trombone1.show()

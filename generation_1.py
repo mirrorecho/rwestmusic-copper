@@ -50,16 +50,35 @@ GEN_MULTI_LINE_B = GenMultiLineB()
 
 class Arrangement(CopperMusic):
     # TO DO... these lines need dynamics, bowing, etc. ... maybe some additional orchestration interest/color.
-    violinI1 = Line("R1*4") + GEN_MULTI_LINE_A.l1.latch(dynamic="pp") + GEN_MULTI_LINE_B.l1
-    # violinI1.after_music = test_after_music
+    violinI1 = Line("R1*4") + GEN_MULTI_LINE_A.l1 + GEN_MULTI_LINE_B.l1
     violinI2 = violinI1
-    violinII1 = Line("R1*4") + GEN_MULTI_LINE_A.l2.latch(dynamic="pp") + GEN_MULTI_LINE_B.l2
+    violinII1 = Line("R1*4") + GEN_MULTI_LINE_A.l2 + GEN_MULTI_LINE_B.l2
     violinII2 = violinII1
     horn1 = BrassSwap()*2 + Line("R1*10") 
     horn2 = Line("R1*2") + BrassSwap()*4
     trombone1 = Line("R1*8") + BrassSwap()*2 + Line("R1*2")
     bubble_default = Line("R1*18")
 
+    # name for this????
+    class ViolinAttachments(LineAttachments):
+        show_indices = True
+        dynamics=( (1,"pp"), )
+        slurs=( 
+            (1,2),
+            (10,11),
+            (13,14), )
+
+    def arrange(self):
+        self.violinI1.Attachments = self.ViolinAttachments
+        self.violinII1.Attachments = self.ViolinAttachments
+
+        # self.violinI1.instructions=( (1,"Go to town!"), )
+
+    # def arrange(self):
+
+
+    #     super().arrange()
+    #     self.violinI1.after_music = boo
     
 
 # music = Arrangement()
