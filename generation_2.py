@@ -5,6 +5,12 @@ from calliope.material import *
 from generations import *
 from score import *
 
+class GenLineBow(GenLine2):
+    rhythm_sequence = ()
+    pitch_sequence = (1,1,2,0)
+    transpose = 7
+    octaves = (0,0,0, 1,0,0, 0,0,1, 0,0,0)
+
 class Arrangement(GridStart, CopperMusic):
     time_signature = (3,4)
     trombone1 = Line("c2.") * 24
