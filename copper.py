@@ -2,7 +2,7 @@ import _settings
 from abjad import *
 from calliope.bubbles import *
 from score import *
-import generation_1, generation_2
+import generations, generation_1, generation_2
 
 
 class CopperFullMusic(GridSequence, CopperMusic):
@@ -17,5 +17,7 @@ score = CopperScore( CopperFullMusic() )
 # score.make_pdf()
 # print(score)
 score.show()
+
+# generations.GenerationLine().show()
 
 # generation_1.Arrangement().trombone1.show()

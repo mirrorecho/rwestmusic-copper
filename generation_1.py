@@ -58,9 +58,9 @@ class Gen1Winds(Gen1ArrangementMixin, GenBubble): # necessary to inherit from Ge
 
 class Arrangement(Gen1Winds, CopperMusic):
     # TO DO... these lines need dynamics, bowing, etc. ... maybe some additional orchestration interest/color.
-    violinI1 = Line("R1*4") + GEN_MULTI_LINE_A.l1 + GEN_MULTI_LINE_B.l1
+    violinI1 = Line("R1*4") + GEN_MULTI_LINE_A.l1 + GEN_MULTI_LINE_B.l1 + Line("R1*6")
     violinI2 = violinI1
-    violinII1 = Line("R1*4") + GEN_MULTI_LINE_A.l2 + GEN_MULTI_LINE_B.l2
+    violinII1 = Line("R1*4") + GEN_MULTI_LINE_A.l2 + GEN_MULTI_LINE_B.l2 + Line("R1*6")
     violinII2 = violinII1
     horn1 = BrassSwap()*2 + Line("R1*10") 
     horn2 = Line("R1*2") + BrassSwap()*4
@@ -69,7 +69,7 @@ class Arrangement(Gen1Winds, CopperMusic):
 
     # name for this????
     class ViolinAttachments(LineAttachments):
-        show_indices = True
+        # show_indices = True
         dynamics=( (1,"pp"), )
         slurs=( 
             (1,2),

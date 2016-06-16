@@ -82,8 +82,8 @@ class PhraseA(GenLine):
     rhythm_multiplies=(4,2)
 
 class PhraseB(PhraseA):
-    pitch_sequence=(0,2) 
-    transpose=7
+    pitch_sequence=(0,2)
+    # transpose=7
 
 class PhraseC(PhraseA):
     pitch_sequence=(3,0)
