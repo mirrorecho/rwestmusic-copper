@@ -5,7 +5,7 @@ from calliope.material import *
 from generations import *
 from score import *
 
-class GenLineBow(GenLine2):
+class GenLineBow(GenLine):
     rhythm_sequence = ()
     pitch_sequence = (1,1,2,0)
     transpose = 7
