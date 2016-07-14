@@ -17,6 +17,7 @@ class Arrangement(GridStart, CopperMusic):
     bubble_default = Line("R2.*24")
     rehearsal_mark_number=1 # rehearsal letter A
     horn1 = Line("r4 r") + GenerationLine()
+    horn2 = Line("r4 r") + GenLineBow()
 
 # music = Arrangement()
 # score = CopperScore( music )
