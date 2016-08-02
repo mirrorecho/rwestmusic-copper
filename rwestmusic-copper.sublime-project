@@ -18,6 +18,9 @@
 		},
 		{
 			"path": "/Users/rwest/Code/mirrorecho/sandbox"
+		},
+		{
+			"path": "/Users/rwest/Code/mirrorecho/abjad-intensive"
 		}
 	],
 	"virtualenv": "/Users/rwest/Code/venvs/abjad_2.18"

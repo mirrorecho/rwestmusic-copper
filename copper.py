@@ -11,6 +11,9 @@ class CopperFullMusic(GridSequence, CopperMusic):
         generation_2.Arrangement(),
         )
 
+
+
+
 score = CopperScore( CopperFullMusic() )
 # score.play()
 # score.save()

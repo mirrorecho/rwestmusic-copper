@@ -10,6 +10,7 @@ class GenLine(Line):
         (-5, 0,-3),
         ( 0,-3,-1),
     )
+    division_masks = None
     gen_rhythms = (
         (2,2,1), # forward or backword, and the 1 can be extended if at the end/beginning of a longer phrase
         (4,4,1), # forward or backword, and the 1 can be extended if at the end/beginning of a longer phrase
@@ -49,11 +50,23 @@ class GenLine(Line):
             self.gen_rhythm += self.gen_rhythm_append
 
     def music(self, **kwargs):
-        my_music = self.container_type()
-        for i, r in enumerate(self.gen_rhythm):
-            # MAYBE TO DO... combine this with the above loop?
-            my_music.append( Note(self.gen_pitch[i % len(self.gen_pitch) ], (1, r) ) )
-
+        # my_music = self.container_type()
+        # print(self.gen_rhythm)
+        # tie_specifier = rhythmmakertools.TieSpecifier(tie_across_divisions=[True, False, False, True])
+        if self.gen_rhythm:
+            durations = [Duration( (1,d) ) for d in self.gen_rhythm] 
+            print(durations)
+            rhythm_maker = rhythmmakertools.NoteRhythmMaker(
+                # tie_specifier=tie_specifier
+                )
+            rhythm = rhythm_maker(durations)
+            logical_ties = select(rhythm).by_logical_tie(pitched=True)
+            for i, logical_tie in enumerate(logical_ties):
+                for note in logical_tie:
+                    note.written_pitch = self.gen_pitch[i % len(self.gen_pitch) ]
+            my_music = self.container_type(rhythm)
+        else:
+            my_music = self.container_type()
         return my_music
 
 class GenBubble(Bubble):
