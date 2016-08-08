@@ -29,6 +29,7 @@ class GenLine(Line):
 
     gen_pitch = ()
     gen_rhythm = ()
+    duration_meter = ((1,2),)*9
 
 
     def __init__(self, *args, **kwargs):
@@ -53,6 +54,9 @@ class GenLine(Line):
         # my_music = self.container_type()
         # print(self.gen_rhythm)
         # tie_specifier = rhythmmakertools.TieSpecifier(tie_across_divisions=[True, False, False, True])
+
+        # TO DO... better rhythm generation here...
+
         if self.gen_rhythm:
             durations = [Duration( (1,d) ) for d in self.gen_rhythm] 
             print(durations)

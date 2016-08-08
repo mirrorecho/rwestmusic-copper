@@ -7,7 +7,7 @@ import generations, generation_1, generation_2
 
 class CopperFullMusic(GridSequence, CopperMusic):
     grid_sequence = (
-        # generation_1.Arrangement(),
+        generation_1.Arrangement(),
         generation_2.Arrangement(),
         )
 
