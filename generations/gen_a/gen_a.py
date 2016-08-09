@@ -19,7 +19,7 @@ class Pitches1(Pitches1, machines.FifthsPitches):
     add_fifth_indices = (3,)
 
 class Rhythms1(Rhythms1):
-    pass
+    sequence = (0,1) * len(Pitches1.sequence_seed)
 
 class Line1(Line1):
     pitch_segments = Pitches1()
@@ -29,10 +29,9 @@ class Line1(Line1):
 
 class Pitches2(Pitches2):
     octaves = (1,)
-    pass
 
 class Rhythms2(Rhythms2):
-    pass
+    pass 
 
 class Line2(Line2):
     pitch_segments = Pitches2()
@@ -41,14 +40,14 @@ class Line2(Line2):
 # -------------------------------------------------------------------------------------------------
 
 class Pitches3(machines.FifthsPitches):
-    sequence = (1,)*12
+    sequence = (1,1,1,2)*3
     start_fifth = -1
     octaves = (1,)
-    add_fifth_indices = (5,)
+    add_fifth_indices = (5,15)
 
 class Rhythms3(copper_material.Rhythms):
-    sequence = (2,2,0) * 3
-    metrical_durations = ( (1,2), ) * 10
+    sequence = (2,2,0) * 4
+    metrical_durations = ( (1,1), ) * 10
 
 class Line3(Line2):
     pitch_segments = Pitches3()
@@ -57,9 +56,9 @@ class Line3(Line2):
 # -------------------------------------------------------------------------------------------------
 
 class GenA(Gen0):
-    line1 = bubbles.Line("R1*2") + Line1() + bubbles.Line("R1*5")
-    line2 = bubbles.Line("R1*3") + Line2() + bubbles.Line("R1*4")
-    line3 = bubbles.Line("R1*2") + Line3() + bubbles.Line("R1*4")
+    line1 = bubbles.Line("R1*3") + Line1() + bubbles.Line("R1*4")
+    line2 = bubbles.Line("R1*2") + Line2() + bubbles.Line("R1*5")
+    line3 = bubbles.Line("R1*3 r2") + Line3() + bubbles.Line("r2 R1*3")
 
 # -------------------------------------------------------------------------------------------------
 

@@ -11,40 +11,51 @@ import abjad
 import copper_material
 import machines
 from calliope import bubbles
+from gen_a import *
 
 # -------------------------------------------------------------------------------------------------
 
-class Pitches1(copper_material.Pitches):
-    sequence_seed = (0,1,2) * 3  
-    
-    def startup(self, **kwargs):
-        self.sequence = self.sequence_seed + tuple(reversed(self.sequence_seed))
+class Pitches1(Pitches1):
+    pass
 
-class Rhythms1(copper_material.Rhythms):
-    sequence = (1,0) * len(Pitches1.sequence_seed)
-    metrical_durations = ( (1,1), ) * 10
+class Rhythms1(Rhythms1):
+    pass
 
-class Line1(machines.ChooseLine):
+class Line1(Line1):
     pitch_segments = Pitches1()
     rhythm_segments = Rhythms1()
 
 # -------------------------------------------------------------------------------------------------
 
-class Pitches2(Pitches1):
-    sequence_seed = (2,2,0,1)  
+class Pitches2(Pitches2):
+    pass
 
-class Rhythms2(Rhythms1):
-    pass # assume we'll keep the same rhythm, but being consitent here
+class Rhythms2(Rhythms2):
+    pass 
 
-class Line2(machines.ChooseLine):
+class Line2(Line2):
     pitch_segments = Pitches2()
     rhythm_segments = Rhythms2()
 
 # -------------------------------------------------------------------------------------------------
 
-class Gen0(bubbles.GridStart):
-    line1 = bubbles.Line("R1*2") + Line1() + bubbles.Line("R1*5")
-    # line2 = bubbles.Line("R1*3") + Line2() + bubbles.Line("R1*4")
+class Pitches3(machines.FifthsPitches):
+    pass 
+
+class Rhythms3(copper_material.Rhythms):
+    pass 
+
+class Line3(Line2):
+    pitch_segments = Pitches3()
+    rhythm_segments = Rhythms3()
+
+# -------------------------------------------------------------------------------------------------
+
+class GenB(GenA): #  TO DO...? should all jen bubbles inherit from GridStart?
+    time_signature = (3,4)
+    line1 = bubbles.Line("R1*3") + Line1() + bubbles.Line("R1*4")
+    line2 = bubbles.Line("R1*2") + Line2() + bubbles.Line("R1*5")
+    line3 = bubbles.Line("R1*3 r2") + Line3() + bubbles.Line("r2 R1*3")
 
 # -------------------------------------------------------------------------------------------------
 
@@ -55,5 +66,5 @@ if __name__ == '__main__':
         os.path.dirname(__file__),
         filename,
         )
-    abjad.persist( Gen0().score() ).as_pdf(illustration_path)
+    abjad.persist( GenB().score() ).as_pdf(illustration_path)
     abjad.systemtools.IOManager.open_file(illustration_path)

@@ -16,7 +16,7 @@ class Rhythms:
     )
     sequence = (0,1,2)
     multipliers = (1,)
-    denominator = 8
+    denominator = 4
 
     def startup(self, **kwargs):
         pass

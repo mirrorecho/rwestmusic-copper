@@ -1,4 +1,4 @@
-% 2016-08-08 00:39
+% 2016-08-08 21:35
 
 \version "2.18.2"
 \language "english"
@@ -17,35 +17,39 @@
             {
                 {
                     {
+                        \numericTimeSignature
+                        \time 4/4
+                        \bar "||"
+                        \accidentalStyle modern-cautionary
                         R1 * 2
                     }
                     {
-                        d'2
-                        c'8 [
-                        b8 ]
-                        g4
-                        a8 [
-                        b8 ]
-                        a4 ~
+                        d'1
+                        c'4
+                        b4
+                        g2
                         a4
-                        c'8 [
-                        b8 ]
-                        d'4
-                        c'8 [
-                        b8 ]
+                        b4
+                        a2 ~
+                        a2
+                        c'4
+                        b4
                         d'2
-                        c'8 [
-                        b8 ]
+                        c'4
+                        b4
+                        d'1
+                        c'4
+                        b4
+                        a2
+                        c'4
+                        b4
+                        g2 ~
+                        g2
                         a4
-                        c'8 [
-                        b8 ]
-                        g4 ~
-                        g4
-                        a8 [
-                        b8 ]
-                        d'4
-                        c'8 [
-                        b8 ]
+                        b4
+                        d'2
+                        c'4
+                        b4
                     }
                 }
                 {
@@ -59,35 +63,39 @@
             {
                 {
                     {
+                        \numericTimeSignature
+                        \time 4/4
+                        \bar "||"
+                        \accidentalStyle modern-cautionary
                         R1 * 3
                     }
                     {
+                        a1
+                        c'4
+                        b4
                         a2
-                        c'8 [
-                        b8 ]
-                        a4
-                        c'8 [
-                        b8 ]
-                        d'4 ~
-                        d'4
-                        c'8 [
-                        b8 ]
-                        g4
-                        a8 [
-                        b8 ]
+                        c'4
+                        b4
+                        d'2 ~
+                        d'2
+                        c'4
+                        b4
                         g2
-                        a8 [
-                        b8 ]
-                        d'4
-                        c'8 [
-                        b8 ]
-                        a4 ~
                         a4
-                        c'8 [
-                        b8 ]
+                        b4
+                        g1
                         a4
-                        c'8 [
-                        b8 ]
+                        b4
+                        d'2
+                        c'4
+                        b4
+                        a2 ~
+                        a2
+                        c'4
+                        b4
+                        a2
+                        c'4
+                        b4
                     }
                 }
                 {
