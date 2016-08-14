@@ -15,14 +15,11 @@ from calliope import bubbles
 # -------------------------------------------------------------------------------------------------
 
 class Pitches1(copper_material.Pitches):
-    sequence_seed = (0,1,2) * 3  
-    
-    def startup(self, **kwargs):
-        self.sequence = self.sequence_seed + tuple(reversed(self.sequence_seed))
+    sequence = (0,1,0,2,2,0,0,1,)
 
 class Rhythms1(copper_material.Rhythms):
-    sequence = (1,0) * len(Pitches1.sequence_seed)
     metrical_durations = ( (1,1), ) * 10
+    sequence = (0,0,0,0,1,2,0,0,) 
 
 class Line1(machines.ChooseLine):
     pitch_segments = Pitches1()
@@ -30,21 +27,8 @@ class Line1(machines.ChooseLine):
 
 # -------------------------------------------------------------------------------------------------
 
-class Pitches2(Pitches1):
-    sequence_seed = (2,2,0,1)  
-
-class Rhythms2(Rhythms1):
-    pass # assume we'll keep the same rhythm, but being consitent here
-
-class Line2(machines.ChooseLine):
-    pitch_segments = Pitches2()
-    rhythm_segments = Rhythms2()
-
-# -------------------------------------------------------------------------------------------------
-
 class Gen0(bubbles.GridStart):
     line1 = bubbles.Line("R1*2") + Line1() + bubbles.Line("R1*5")
-    # line2 = bubbles.Line("R1*3") + Line2() + bubbles.Line("R1*4")
 
 # -------------------------------------------------------------------------------------------------
 

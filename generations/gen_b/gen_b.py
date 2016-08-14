@@ -13,13 +13,23 @@ import machines
 from calliope import bubbles
 from gen_a import *
 
+Rhythms1Inherit = Rhythms1
+Pitches1Inherit = Pitches1
+
 # -------------------------------------------------------------------------------------------------
 
 class Pitches1(Pitches1):
-    pass
+    new_pitches_1 = list(Pitches1.add_fifth_indices  + (-1,-13) )
+    new_pitches_1.remove(7)
+    new_pitches_1.remove(21)
+    new_pitches_1.remove(-23)
+    add_fifth_indices = new_pitches_1
+    # octaves = (1,)
 
 class Rhythms1(Rhythms1):
-    pass
+    metrical_durations = ( (3,4), ) * 13
+    initial_offset = 2
+    multipliers = (1,1,0.5,1,1,1,0.5,3)
 
 class Line1(Line1):
     pitch_segments = Pitches1()
@@ -28,10 +38,12 @@ class Line1(Line1):
 # -------------------------------------------------------------------------------------------------
 
 class Pitches2(Pitches2):
-    pass
+    add_fifth_indices = (-2,3,-10,-13)
 
-class Rhythms2(Rhythms2):
-    pass 
+class Rhythms2(Rhythms1Inherit):
+    metrical_durations = ( (3,4), ) * 14
+    initial_offset = 0
+    multipliers = (1,0.5,)*3 + (3,3)
 
 class Line2(Line2):
     pitch_segments = Pitches2()
@@ -39,11 +51,12 @@ class Line2(Line2):
 
 # -------------------------------------------------------------------------------------------------
 
-class Pitches3(machines.FifthsPitches):
-    pass 
+class Pitches3(Pitches1Inherit):
+    add_fifth_indices = (-1,)
 
-class Rhythms3(copper_material.Rhythms):
-    pass 
+class Rhythms3(Rhythms1Inherit):
+    metrical_durations = ( (3,4), ) * 14
+    multipliers = (0.5,0.25)
 
 class Line3(Line2):
     pitch_segments = Pitches3()
@@ -53,9 +66,9 @@ class Line3(Line2):
 
 class GenB(GenA): #  TO DO...? should all jen bubbles inherit from GridStart?
     time_signature = (3,4)
-    line1 = bubbles.Line("R1*3") + Line1() + bubbles.Line("R1*4")
-    line2 = bubbles.Line("R1*2") + Line2() + bubbles.Line("R1*5")
-    line3 = bubbles.Line("R1*3 r2") + Line3() + bubbles.Line("r2 R1*3")
+    line1 = bubbles.Line("\\clef bass R2.*2") + Line1() + bubbles.Line("R1*4")
+    line2 = bubbles.Line("\\clef bass R2.") + Line2() + bubbles.Line("R1*5")
+    line3 = bubbles.Line("\\clef bass R1*3") + Line3() + bubbles.Line("r2 R1*3")
 
 # -------------------------------------------------------------------------------------------------
 

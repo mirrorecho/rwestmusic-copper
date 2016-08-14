@@ -10,13 +10,16 @@ class Rhythms:
     counts = (
         # NOTE... anything >1 can be extended IFF at the beginning/end of a phrase
         (2,1,1), 
-        (4,1,1), 
         (1,1,1),
+        (4,1,1), 
         # (2,), # necessary?
     )
     sequence = (0,1,2)
     multipliers = (1,)
-    denominator = 4
+    denominator = 32
+    default_multiplier = 8
+    initial_offset = 0
+    final_offset = 0
 
     def startup(self, **kwargs):
         pass
@@ -31,7 +34,11 @@ class Rhythms:
     def get_talea(self):
         talea_counts = []
         for i,s in enumerate(self.sequence):
-            talea_counts += [ r * self.multipliers[i % len(self.multipliers)] for r in self.counts[s] ]
+            talea_counts += [ int(r * self.default_multiplier * self.multipliers[i % len(self.multipliers)]) for r in self.counts[s] ]
+        if self.initial_offset:
+            talea_counts = [self.initial_offset * self.default_multiplier * -1] + talea_counts
+        if self.final_offset:
+            talea_counts = talea_counts + [self.final_offset * self.default_multiplier * -1]
         if self.once_only:
             print("YAY")
             # pads the end of the talea with a rest to fill out the rest of the metrical duration
