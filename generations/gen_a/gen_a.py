@@ -18,7 +18,6 @@ from gen_0 import *
 class Pitches1(Pitches1, machines.FifthsPitches):
     add_fifth_indices = (3,-5,7,21,-23)
 
-
 class Line1(Line1):
     pitch_segments = Pitches1()
     rhythm_segments = Rhythms1()
@@ -32,22 +31,6 @@ class Pitches2(Pitches1):
 class Line2(Line1):
     pitch_segments = Pitches2()
     rhythm_segments = Rhythms1()
-
-# -------------------------------------------------------------------------------------------------
-
-# class Pitches3(machines.FifthsPitches):
-#     sequence = (1,1,1,2)*3
-#     start_fifth = -1
-#     octaves = (1,)
-#     add_fifth_indices = (5,15)
-
-# class Rhythms3(copper_material.Rhythms):
-#     sequence = (2,2,0) * 4
-#     metrical_durations = ( (1,1), ) * 10
-
-# class Line3(Line2):
-#     pitch_segments = Pitches3()
-#     rhythm_segments = Rhythms3()
 
 # -------------------------------------------------------------------------------------------------
 
