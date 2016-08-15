@@ -23,9 +23,10 @@ Pitches2Inherit = Pitches1
 class Pitches1(Pitches1):
     pass
 
-class Rhythms1(Rhythms1):
+class Rhythms1(machines.BrokenRhythms, Rhythms1):
     metrical_durations = ( (1,1), ) * 10
     initial_offset = 0
+    breaks = ( (1,-4), (3,3) )
 
 class Line1(Line1):
     pitch_segments = Pitches1()
@@ -36,7 +37,7 @@ class Line1(Line1):
 class Pitches2(Pitches2):
     pass
 
-class Rhythms2(Rhythms2):
+class Rhythms2(machines.BrokenRhythms, Rhythms2):
     pass
 
 class Line2(Line2):

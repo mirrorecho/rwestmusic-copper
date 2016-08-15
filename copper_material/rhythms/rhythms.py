@@ -15,11 +15,13 @@ class Rhythms:
         # (2,), # necessary?
     )
     sequence = (0,1,2)
-    multipliers = (1,)
     denominator = 32
     default_multiplier = 8
     initial_offset = 0
     final_offset = 0
+
+    # QUESTION: would it make more sense for these to be added to an inherited class? (since aug/dimin not possible to start)
+    multipliers = (1,)
 
     def startup(self, **kwargs):
         pass
@@ -31,22 +33,28 @@ class Rhythms:
         self.startup(**kwargs)
         super().__init__()
 
+    def get_counts(self, index):
+        """
+        returns a tuple of counts for the given index... can be overriden for special manipulations (like adding breaks at indices)
+        """
+        counts_index = self.sequence[index]
+        return self.counts[counts_index]
+
     def get_talea(self):
         talea_counts = []
         for i,s in enumerate(self.sequence):
-            talea_counts += [ int(r * self.default_multiplier * self.multipliers[i % len(self.multipliers)]) for r in self.counts[s] ]
+            talea_counts += [ int(r * self.default_multiplier * self.multipliers[i % len(self.multipliers)]) for r in self.get_counts(i) ]
         if self.initial_offset:
             talea_counts = [self.initial_offset * self.default_multiplier * -1] + talea_counts
         if self.final_offset:
             talea_counts = talea_counts + [self.final_offset * self.default_multiplier * -1]
         if self.once_only:
-            print("YAY")
             # pads the end of the talea with a rest to fill out the rest of the metrical duration
             sum_metrical_duration_counts = int(sum([ d[0]/d[1] for d in self.metrical_durations ]) * self.denominator)
             sum_talea_counts = sum(talea_counts)
             if sum_metrical_duration_counts > sum_talea_counts:
                 talea_counts += [sum_talea_counts - sum_metrical_duration_counts]
-        print(talea_counts)
+        # print(talea_counts)
         return abjad.rhythmmakertools.Talea(talea_counts, self.denominator)
 
     def get_rhythm_maker(self):

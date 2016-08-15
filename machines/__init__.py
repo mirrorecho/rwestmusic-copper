@@ -14,3 +14,4 @@
 
 from machines.choose_line import *
 from machines.fifths_pitches import *
+from machines.broken_rhythms import *
