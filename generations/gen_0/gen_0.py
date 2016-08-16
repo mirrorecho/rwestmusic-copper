@@ -15,11 +15,11 @@ from calliope import bubbles
 # -------------------------------------------------------------------------------------------------
 
 class Pitches1(copper_material.Pitches):
-    sequence = (0,1,0,2,2,0,0,1,)
+    sequence = (0,1,0,2,2,0,0,1,2)
 
 class Rhythms1(copper_material.Rhythms):
-    metrical_durations = ( (1,1), ) * 10
-    sequence = (0,0,0,0,1,2,0,0,) 
+    metrical_durations = ( (1,1), ) * 9
+    sequence = (0,0,0,0,1,2,0,0,1) 
 
 class Line1(machines.ChooseLine):
     pitch_segments = Pitches1()

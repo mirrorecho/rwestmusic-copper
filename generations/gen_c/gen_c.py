@@ -21,12 +21,12 @@ Pitches2Inherit = Pitches1
 # -------------------------------------------------------------------------------------------------
 
 class Pitches1(Pitches1):
-    pass
+    add_fifth_indices = (1,2,-3,-4,-5,6,7,8,9,-10)
 
 class Rhythms1(machines.BrokenRhythms, Rhythms1):
-    metrical_durations = ( (1,1), ) * 10
+    metrical_durations = ( (1,1), ) * 14
     initial_offset = 0
-    breaks = ( (1,-4), (3,3) )
+    breaks = ( (1,-4), (2,-4), (3, 1), (5,-2) )
 
 class Line1(Line1):
     pitch_segments = Pitches1()
@@ -35,10 +35,13 @@ class Line1(Line1):
 # -------------------------------------------------------------------------------------------------
 
 class Pitches2(Pitches2):
-    pass
+    add_fifth_indices = (1,-4,6)
+    
 
 class Rhythms2(machines.BrokenRhythms, Rhythms2):
-    pass
+    breaks = ( (2,-4),)
+    initial_offset = 2
+    metrical_durations = ( (1,2), ) * 28
 
 class Line2(Line2):
     pitch_segments = Pitches2()
@@ -73,8 +76,8 @@ class Line4(Line3):
 
 class GenC(GenB): #  TO DO...? should all jen bubbles inherit from GridStart?
     time_signature = (4,4)
-    line1 = bubbles.Line("\\clef bass R1*2") + Line1() + bubbles.Line("R1*4")
-    line2 = bubbles.Line("\\clef bass R2.") + Line2() + bubbles.Line("R1*5")
+    line1 = bubbles.Line("R1*2") + Line1() + bubbles.Line("R1*4")
+    line2 = bubbles.Line("R1") + Line2() + bubbles.Line("R1*5")
     line3 = bubbles.Line("\\clef bass R1*3") + Line3() + bubbles.Line("r2 R1*3")
     line4 = bubbles.Line("R1*3") + Line4() + bubbles.Line("r2 R1*3")
 

@@ -1,4 +1,4 @@
-% 2016-08-15 15:49
+% 2016-08-16 01:57
 
 \version "2.18.2"
 \language "english"
@@ -21,36 +21,43 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        \clef "bass"
                         R1 * 2
                     }
                     {
                         d'2
-                        f4
-                        e4
+                        g'4
+                        cs''4
                         r1
-                        g2
+                        d'2
                         a4
                         e4
-                        g4
-                        f8 [
-                        e8 ]
-                        d2 ~
-                        d2.
-                        f4
-                        e4
-                        d4
-                        bf,4
-                        a,4
-                        c1
-                        bf,4
-                        a,4
-                        c4
-                        bf,8 [
-                        a,8 ]
-                        f,1 ~
-                        f,2
-                        g,2
+                        r2
+                        d'4
+                        g'8 [
+                        cs''8 ]
+                        fs''2.
+                        d''4
+                        cs''4
+                        b'4
+                        d''4
+                        cs''4
+                        r2
+                        e''2 ~
+                        e''2
+                        d''4
+                        cs''4
+                        e''4
+                        d''8 [
+                        cs''8 ]
+                        a'2 ~
+                        a'1
+                        b'2.
+                        cs''4 ~
+                        cs''2
+                        b'2
+                        d''2
+                        cs''2
+                        r1
                     }
                 }
                 {
@@ -68,36 +75,51 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        \clef "bass"
-                        R2.
+                        R1
                     }
                     {
+                        r2
                         d'2
-                        c'4
-                        e4
-                        g4
+                        g'4
+                        fs'4
+                        d'4
                         a8 [
                         b8 ]
+                        r2
+                        r2
+                        a'2
+                        g'4
+                        fs'4
+                        e'4
+                        g'8 [
+                        fs'8 ]
+                        e'4
+                        g'4
+                        fs'4
+                        a'4 ~
+                        a'4
+                        g'8 [
+                        fs'8 ]
+                        a'2 ~
+                        a'2 ~
+                        a'2
+                        g'2 ~
+                        g'4
+                        fs'4 ~
+                        fs'2
+                        d'2 ~
+                        d'2 ~
                         d'2
-                        c'4
-                        b4
-                        a4
-                        f8 [
-                        e8 ]
-                        d4
-                        bf,4
-                        a,4
-                        c2
-                        bf,8 [
-                        a,8 ]
-                        c2. ~
-                        c2.
-                        bf,2.
-                        a,2.
-                        f,2. ~
-                        f,2.
-                        g,2.
-                        a,2.
+                        e'2 ~
+                        e'4
+                        fs'4 ~
+                        fs'2
+                        e'4
+                        g'4
+                        fs'4
+                        r4
+                        r2
+                        r2
                     }
                 }
                 {
@@ -143,10 +165,14 @@
                         c4
                         bf,8 [
                         a,8 ]
-                        f,2. ~
-                        f,2.
-                        g,2.
-                        a,2.
+                        c2. ~
+                        c2.
+                        d2.
+                        e2.
+                        d2
+                        f4 ~
+                        f4
+                        e2
                     }
                 }
                 {
@@ -192,10 +218,14 @@
                         c4
                         bf,8 [
                         a,8 ]
-                        f,2. ~
-                        f,2.
-                        g,2.
-                        a,2.
+                        c2. ~
+                        c2.
+                        d2.
+                        e2.
+                        d2
+                        f4 ~
+                        f4
+                        e2
                     }
                 }
                 {

@@ -20,6 +20,7 @@ class ChooseLine(bubbles.Line):
                 my_pitches = self.pitch_segments.get_pitches()
                 logical_ties = abjad.select(my_rhythms).by_logical_tie(pitched=True)
                 for i, logical_tie in enumerate(logical_ties):
+                    print(logical_tie)
                     for note in logical_tie:
                         note.written_pitch = my_pitches[i % len(my_pitches) ]
             my_music = self.container_type(my_rhythms)

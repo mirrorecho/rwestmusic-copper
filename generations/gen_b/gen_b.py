@@ -21,15 +21,15 @@ Pitches1Inherit = Pitches1
 class Pitches1(Pitches1):
     new_pitches_1 = list(Pitches1.add_fifth_indices  + (-1,-13) )
     new_pitches_1.remove(7)
-    new_pitches_1.remove(21)
+    # new_pitches_1.remove(21)
     new_pitches_1.remove(-23)
-    add_fifth_indices = new_pitches_1
+    add_fifth_indices = tuple(new_pitches_1)
     # octaves = (1,)
 
 class Rhythms1(Rhythms1):
-    metrical_durations = ( (3,4), ) * 13
+    metrical_durations = ( (3,4), ) * 15
     initial_offset = 2
-    multipliers = (1,1,0.5,1,1,1,0.5,3)
+    multipliers = (1,1,0.5,1,1,1,0.5,3,2)
 
 class Line1(Line1):
     pitch_segments = Pitches1()
@@ -41,7 +41,7 @@ class Pitches2(Pitches2):
     add_fifth_indices = (-2,3,-10,-13)
 
 class Rhythms2(Rhythms1Inherit):
-    metrical_durations = ( (3,4), ) * 14
+    metrical_durations = ( (3,4), ) * 15
     initial_offset = 0
     multipliers = (1,0.5,)*3 + (3,3)
 
