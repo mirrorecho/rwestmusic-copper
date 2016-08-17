@@ -1,4 +1,4 @@
-% 2016-08-16 22:48
+% 2016-08-16 23:46
 
 \version "2.18.2"
 \language "english"
@@ -186,6 +186,62 @@
         \context Staff = "line4" {
             \set Staff.instrumentName = \markup { Line4 }
             \set Staff.shortInstrumentName = \markup { Line4 }
+            {
+                {
+                    {
+                        \numericTimeSignature
+                        \time 4/4
+                        \bar "||"
+                        \accidentalStyle modern-cautionary
+                        R1 * 3
+                    }
+                    {
+                        r4
+                        r4
+                        d'4
+                        g'8 [
+                        fs'8 ]
+                        d'8 [
+                        e'16
+                        fs'16 ]
+                        d'4
+                        g'8 [
+                        cs''8 ]
+                        b'8 [
+                        d''16
+                        cs''16 ]
+                        b'8 [
+                        d''8 ]
+                        cs''8 [
+                        e''8 ~ ]
+                        e''8 [
+                        d''16
+                        cs''16 ]
+                        e''4
+                        d''8 [
+                        cs''8 ]
+                        a'8 [
+                        b'16
+                        cs''16 ]
+                        b'8 [
+                        d''8 ]
+                        cs''8
+                        r8
+                        r4
+                        r4
+                        r4
+                        r4
+                    }
+                }
+                {
+                    r2
+                    R1 * 3
+                }
+            }
+        }
+        \context Staff = "line5" {
+            \set Staff.instrumentName = \markup { Line5 }
+            \set Staff.shortInstrumentName = \markup { Line5 }
             {
                 {
                     {

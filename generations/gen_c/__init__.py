@@ -1,1 +1,1 @@
-from gen_b.gen_c import *
+from gen_c.gen_c import *

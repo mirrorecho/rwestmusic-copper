@@ -37,8 +37,3 @@ if __name__ == '__main__':
     abjad.persist(FifthsPitches(start_fifth=1, add_fifth_indices=(3,)).get_pitches()).as_pdf(illustration_path)
     abjad.systemtools.IOManager.open_file(illustration_path)
 
-# pitches1 = ChoosePitchSegment( (0,1,2,3) )
-# rhythms1 = copper_material.Rhythms()
-# rhythms1.metrical_durations=((1,2),)*16
-# rhythms1.once_only=True
-# ChooseLine(pitch_segment=pitches1, rhythms=rhythms1).show()

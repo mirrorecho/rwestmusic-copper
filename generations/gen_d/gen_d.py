@@ -11,7 +11,7 @@ import abjad
 import copper_material
 import machines
 from calliope import bubbles
-from gen_b import *
+from gen_c import *
 
 # Rhythms1Inherit = Rhythms1
 # Pitches1Inherit = Pitches1
@@ -21,12 +21,10 @@ from gen_b import *
 # -------------------------------------------------------------------------------------------------
 
 class Pitches1(Pitches1):
-    add_fifth_indices = (1,2,-3,-4,-5,6,7,8,9,-10)
+    pass
 
-class Rhythms1(machines.BrokenRhythms, Rhythms1):
-    metrical_durations = ( (1,1), ) * 14
-    initial_offset = 0
-    breaks = ( (1,-4), (2,-4), (3, 1), (5,-2) )
+class Rhythms1(Rhythms1):
+    pass
 
 class Line1(Line1):
     pitch_segments = Pitches1()
@@ -35,13 +33,10 @@ class Line1(Line1):
 # -------------------------------------------------------------------------------------------------
 
 class Pitches2(Pitches2):
-    add_fifth_indices = (1,-4,6,7,-8)
-    
+    pass
 
-class Rhythms2(machines.BrokenRhythms, Rhythms2):
-    breaks = ( (2,-4),)
-    initial_offset = 2
-    metrical_durations = ( (1,2), ) * 28
+class Rhythms2(Rhythms2):
+    pass
 
 class Line2(Line2):
     pitch_segments = Pitches2()
@@ -50,12 +45,10 @@ class Line2(Line2):
 # -------------------------------------------------------------------------------------------------
 
 class Pitches3(Pitches3):
-    # my_fifths = list(Pitches1.add_fifth_indices)
-    # my_fifths.remove(-3)
-    add_fifth_indices = (1,2,-4,7,8,9,-10)
+    pass
 
 class Rhythms3(Rhythms3):
-    metrical_durations = ( (1,4), ) * 20
+    pass
 
 class Line3(Line3):
     pitch_segments = Pitches3()
@@ -63,25 +56,38 @@ class Line3(Line3):
 
 # -------------------------------------------------------------------------------------------------
 
-class Pitches4(Pitches2):
-    add_fifth_indices = (1,-6,7,8)
+class Pitches4(Pitches4):
+    pass
 
-class Rhythms4(Rhythms3):
-    initial_offset = 2
+class Rhythms4(Rhythms4):
+    pass
 
-class Line4(Line3):
+class Line4(Line4):
     pitch_segments = Pitches4()
     rhythm_segments = Rhythms4()
 
 # -------------------------------------------------------------------------------------------------
 
+class Pitches5(Pitches4):
+    pass
 
-class GenC(GenB): #  TO DO...? should all jen bubbles inherit from GridStart?
+class Rhythms5(Rhythms4):
+    pass
+
+class Line5(Line4):
+    pitch_segments = Pitches5()
+    rhythm_segments = Rhythms5()
+
+# -------------------------------------------------------------------------------------------------
+
+
+class GenD(GenC): #  TO DO...? should all jen bubbles inherit from GridStart?
     time_signature = (4,4)
     line1 = bubbles.Line("R1*2") + Line1() + bubbles.Line("R1*4")
     line2 = bubbles.Line("R1") + Line2() + bubbles.Line("R1*5")
     line3 = bubbles.Line("R1*3") + Line3() + bubbles.Line("r2 R1*3")
     line4 = bubbles.Line("R1*3") + Line4() + bubbles.Line("r2 R1*3")
+    line5 = bubbles.Line("R1*3") + Line5() + bubbles.Line("r2 R1*3")
 
 # -------------------------------------------------------------------------------------------------
 
@@ -92,5 +98,5 @@ if __name__ == '__main__':
         os.path.dirname(__file__),
         filename,
         )
-    abjad.persist( GenC().score() ).as_pdf(illustration_path)
+    abjad.persist( GenD().score() ).as_pdf(illustration_path)
     abjad.systemtools.IOManager.open_file(illustration_path)
