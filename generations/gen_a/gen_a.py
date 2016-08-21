@@ -35,8 +35,8 @@ class Line2(Line1):
 # -------------------------------------------------------------------------------------------------
 
 class GenA(Gen0):
-    line1 = bubbles.Line("R1*2") + Line1() + bubbles.Line("R1*6")
-    line2 = bubbles.Line("R1*3 r2") + Line2() + bubbles.Line("r2 R1*4")
+    line1 = bubbles.Line("R1*6") + Line1() + bubbles.Line("R1*3")
+    line2 = bubbles.Line("R1*7 r2") + Line2() + bubbles.Line("r2 R1")
     # line3 = bubbles.Line("R1*3 r2") + Line3() + bubbles.Line("r2 R1*3")
 
 # -------------------------------------------------------------------------------------------------

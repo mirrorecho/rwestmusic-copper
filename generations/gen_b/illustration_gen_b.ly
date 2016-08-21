@@ -1,4 +1,4 @@
-% 2016-08-15 23:15
+% 2016-08-21 01:10
 
 \version "2.18.2"
 \language "english"
@@ -16,51 +16,46 @@
             \set Staff.shortInstrumentName = \markup { Line1 }
             {
                 {
-                    {
-                        \numericTimeSignature
-                        \time 3/4
-                        \bar "||"
-                        \accidentalStyle modern-cautionary
-                        \clef "bass"
-                        R2. * 2
-                    }
-                    {
-                        r2
-                        d'4 ~
-                        d'4
-                        f4
-                        e4
-                        g2
-                        a4
-                        e4
-                        g4
-                        f8 [
-                        e8 ]
-                        d2
-                        f4
-                        e4
-                        d4
-                        bf,4
-                        a,4
-                        c2 ~
-                        c2
-                        bf,4
-                        a,4
-                        c4
-                        bf,8 [
-                        a,8 ]
-                        c2. ~
-                        c2.
-                        d2.
-                        e2.
-                        d2
-                        f4 ~
-                        f4
-                        e2
-                    }
+                    \numericTimeSignature
+                    \time 3/4
+                    \bar "||"
+                    \accidentalStyle modern-cautionary
+                    \clef "bass"
+                    R2. * 9
                 }
                 {
-                    R1 * 4
+                    r2
+                    d'4 ~
+                    d'4
+                    f4
+                    e4
+                    g2
+                    a4
+                    e4
+                    g4
+                    f8 [
+                    e8 ]
+                    d2
+                    f4
+                    e4
+                    d4
+                    bf,4
+                    a,4
+                    c2 ~
+                    c2
+                    bf,4
+                    a,4
+                    c4
+                    bf,8 [
+                    a,8 ]
+                    c2. ~
+                    c2.
+                    d2.
+                    e2.
+                    d2
+                    f4 ~
+                    f4
+                    e2
                 }
             }
         }
@@ -75,7 +70,7 @@
                         \bar "||"
                         \accidentalStyle modern-cautionary
                         \clef "bass"
-                        R2.
+                        R2. * 8
                     }
                     {
                         d'2
@@ -110,7 +105,7 @@
                     }
                 }
                 {
-                    R1 * 5
+                    R2.
                 }
             }
         }
@@ -125,51 +120,43 @@
                         \bar "||"
                         \accidentalStyle modern-cautionary
                         \clef "bass"
-                        R1 * 3
+                        R2. * 12
                     }
                     {
                         d'4
                         f8 [
-                        e8
-                        c8
+                        e8 ]
+                        c8 [
                         d16
                         e16 ]
                         g4
                         f8 [
-                        e8
-                        d8
+                        e8 ]
+                        d8 [
                         f16
                         e16 ]
                         d8 [
-                        f8
-                        e8 ]
-                        g4
-                        f16 [
+                        f8 ]
+                        e8 [
+                        g8 ~ ]
+                        g8 [
+                        f16
                         e16 ]
                         g4
                         f8 [
-                        e8
-                        c8
+                        e8 ]
+                        c8 [
                         d16
                         e16 ]
                         d8 [
-                        f8
-                        e8 ]
-                        r4.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
+                        f8 ]
+                        e8
+                        r8
+                        r4
                     }
                 }
                 {
-                    r2
-                    R1 * 3
+                    R2. * 7
                 }
             }
         }

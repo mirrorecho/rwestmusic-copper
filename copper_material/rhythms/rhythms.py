@@ -19,6 +19,7 @@ class Rhythms:
     default_multiplier = 8
     initial_offset = 0
     final_offset = 0
+    times = 1
 
     # QUESTION: would it make more sense for these to be added to an inherited class? (since aug/dimin not possible to start)
     multipliers = (1,)
@@ -37,12 +38,12 @@ class Rhythms:
         """
         returns a tuple of counts for the given index... can be overriden for special manipulations (like adding breaks at indices)
         """
-        counts_index = self.sequence[index]
+        counts_index = self.sequence[index % len(self.sequence)]
         return self.counts[counts_index]
 
     def get_talea(self):
         talea_counts = []
-        for i,s in enumerate(self.sequence):
+        for i,s in enumerate(self.sequence * self.times):
             talea_counts += [ int(r * self.default_multiplier * self.multipliers[i % len(self.multipliers)]) for r in self.get_counts(i) ]
         if self.initial_offset:
             talea_counts = [self.initial_offset * self.default_multiplier * -1] + talea_counts

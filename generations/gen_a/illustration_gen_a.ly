@@ -1,4 +1,4 @@
-% 2016-08-15 23:10
+% 2016-08-21 00:58
 
 \version "2.18.2"
 \language "english"
@@ -21,7 +21,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 2
+                        R1 * 6
                     }
                     {
                         d'2
@@ -55,7 +55,7 @@
                     }
                 }
                 {
-                    R1 * 6
+                    R1 * 3
                 }
             }
         }
@@ -69,7 +69,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 3
+                        R1 * 7
                         r2
                     }
                     {
@@ -105,7 +105,7 @@
                 }
                 {
                     r2
-                    R1 * 4
+                    R1
                 }
             }
         }

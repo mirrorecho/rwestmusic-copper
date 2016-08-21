@@ -11,6 +11,8 @@ class Pitches:
         )
     sequence = (0,1,2) # the sequence of segments (as per above)
     octaves = (0,) # NOTE.. octaves are per pitch (not per segment)
+    respell = None
+    times = 1 # times to repeat... if more than one then transpositions and other manipulations stay in effect 
 
     def startup(self, **kwargs):
         pass
@@ -27,7 +29,7 @@ class Pitches:
         for s in self.sequence:
             pitch_numbers += self.segments[s]
         # octave transpositions:
-        return pitch_numbers
+        return pitch_numbers * self.times
 
     # TO DO... consider passing respell as an optional argument here
     def get_pitches(self, **kwargs):

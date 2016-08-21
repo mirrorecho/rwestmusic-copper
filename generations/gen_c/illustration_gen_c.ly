@@ -1,4 +1,4 @@
-% 2016-08-16 22:48
+% 2016-08-21 02:32
 
 \version "2.18.2"
 \language "english"
@@ -21,7 +21,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 2
+                        R1 * 6
                     }
                     {
                         d'2
@@ -46,6 +46,7 @@
                         e''2
                         d''4
                         cs''4
+                        r1
                         e''4
                         d''8 [
                         cs''8 ]
@@ -57,11 +58,17 @@
                         b'2
                         d''2
                         cs''2
+                        a'2
+                        d''4
+                        af''4
                         r1
+                        a'2
+                        b'4
+                        af''4
                     }
                 }
                 {
-                    R1 * 4
+                    R1
                 }
             }
         }
@@ -75,7 +82,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1
+                        R1 * 5
                     }
                     {
                         r2
@@ -137,7 +144,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 3
+                        R1 * 7
                     }
                     {
                         d'4
@@ -148,38 +155,51 @@
                         fs'16 ]
                         a'4
                         d''8 [
-                        af''8 ]
+                        gs''8 ]
                         cs'''8 [
                         a''16
-                        af''16 ]
+                        gs''16 ]
                         fs''8 [
                         a''8 ]
-                        af''8 [
+                        gs''8 [
                         b''8 ~ ]
                         b''8 [
                         a''16
-                        af''16 ]
+                        gs''16 ]
+                        b''4 ~
+                        b''4 ~
                         b''4
                         a''8 [
-                        af''8 ]
+                        gs''8 ]
                         e''8 [
                         fs''16
-                        af''16 ]
+                        gs''16 ]
                         fs''8 [
                         a''8 ]
-                        af''8
+                        gs''8
                         r8
-                        r4
-                        r4
-                        r4
-                        r4
-                        r4
-                        r4
+                        b''8 [
+                        a''16
+                        gs''16 ]
+                        e''4 ~
+                        e''4 ~
+                        e''4
+                        fs''8 [
+                        gs''8 ]
+                        b''8 [
+                        a''16
+                        gs''16 ]
+                        fs''4 ~
+                        fs''4
+                        a''8 [
+                        gs''8 ]
                     }
                 }
                 {
-                    r2
-                    R1 * 3
+                    r4
+                    r4
+                    r4
+                    R1 * 10
                 }
             }
         }
@@ -193,7 +213,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 3
+                        R1 * 7
                     }
                     {
                         r4
@@ -217,6 +237,8 @@
                         e''8 [
                         d''16
                         cs''16 ]
+                        e''4 ~
+                        e''4 ~
                         e''4
                         d''8 [
                         cs''8 ]
@@ -227,15 +249,26 @@
                         d''8 ]
                         cs''8
                         r8
-                        r4
-                        r4
-                        r4
-                        r4
+                        d'8 [
+                        g'16
+                        fs'16 ]
+                        d'4 ~
+                        d'4 ~
+                        d'4
+                        e'8 [
+                        fs'8 ]
+                        d'8 [
+                        g'16
+                        cs''16 ]
+                        b'4 ~
+                        b'4
+                        d''8 [
+                        cs''8 ]
                     }
                 }
                 {
-                    r2
-                    R1 * 3
+                    r4
+                    R1 * 10
                 }
             }
         }

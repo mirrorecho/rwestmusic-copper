@@ -18,7 +18,7 @@ class BrokenRhythms(copper_material.Rhythms):
     break_extensions_allowed = (2,)  # the indices of the segments in Rhythms.counts for which the initial durations can be lengthened
 
     def get_counts(self, index):
-        counts_index = self.sequence[index]
+        counts_index = self.sequence[index % len(self.sequence)]
         my_counts = super().get_counts(index)
         if counts_index in self.break_rests_allowed or index in self.break_extensions_allowed:
             for possible_break in self.breaks:

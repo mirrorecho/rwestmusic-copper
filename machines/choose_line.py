@@ -20,10 +20,15 @@ class ChooseLine(bubbles.Line):
                 my_pitches = self.pitch_segments.get_pitches()
                 logical_ties = abjad.select(my_rhythms).by_logical_tie(pitched=True)
                 for i, logical_tie in enumerate(logical_ties):
-                    print(logical_tie)
                     for note in logical_tie:
                         note.written_pitch = my_pitches[i % len(my_pitches) ]
             my_music = self.container_type(my_rhythms)
+            # TO DO... this would make more sense on the Pitches class... but won't work with PitchSegment, so keeping here for now
+            if self.pitch_segments:
+                if self.pitch_segments.respell == "sharps":
+                    abjad.mutate(my_music).respell_with_sharps()
+                elif self.pitch_segments.respell == "flats":
+                    abjad.mutate(my_music).respell_with_flats()
         else:
             my_music = self.container_type()
         return my_music

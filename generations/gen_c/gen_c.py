@@ -21,12 +21,15 @@ from gen_b import *
 # -------------------------------------------------------------------------------------------------
 
 class Pitches1(Pitches1):
-    add_fifth_indices = (1,2,-3,-4,-5,6,7,8,9,-10)
+    add_fifth_indices = (1,2,-3,-4,-5,6,7,8,9,-10,-27,28,29,-30,32)
+    times = 2
 
 class Rhythms1(machines.BrokenRhythms, Rhythms1):
-    metrical_durations = ( (1,1), ) * 14
+    metrical_durations = ( (1,1), ) * 17
     initial_offset = 0
-    breaks = ( (1,-4), (2,-4), (3, 1), (5,-2) )
+    breaks = ( (1,-4), (2,-4), (3, 1), (5,-2), (6,-8) )
+    once_only = False
+
 
 class Line1(Line1):
     pitch_segments = Pitches1()
@@ -53,9 +56,15 @@ class Pitches3(Pitches3):
     # my_fifths = list(Pitches1.add_fifth_indices)
     # my_fifths.remove(-3)
     add_fifth_indices = (1,2,-4,7,8,9,-10)
+    respell = "sharps"
+    times = 2
 
-class Rhythms3(Rhythms3):
-    metrical_durations = ( (1,4), ) * 20
+class Rhythms3(machines.BrokenRhythms, Rhythms3):
+    metrical_durations = ( (1,4), ) * 25
+    once_only = False
+    breaks = ( (6,4), (9,-2), (10,4), (12,2))
+    times = 2
+
 
 class Line3(Line3):
     pitch_segments = Pitches3()
@@ -68,6 +77,7 @@ class Pitches4(Pitches2):
 
 class Rhythms4(Rhythms3):
     initial_offset = 2
+    metrical_durations = ( (1,4), ) * 27
 
 class Line4(Line3):
     pitch_segments = Pitches4()
@@ -78,10 +88,10 @@ class Line4(Line3):
 
 class GenC(GenB): #  TO DO...? should all jen bubbles inherit from GridStart?
     time_signature = (4,4)
-    line1 = bubbles.Line("R1*2") + Line1() + bubbles.Line("R1*4")
-    line2 = bubbles.Line("R1") + Line2() + bubbles.Line("R1*5")
-    line3 = bubbles.Line("R1*3") + Line3() + bubbles.Line("r2 R1*3")
-    line4 = bubbles.Line("R1*3") + Line4() + bubbles.Line("r2 R1*3")
+    line1 = bubbles.Line("R1*6") + Line1() + bubbles.Line("R1")
+    line2 = bubbles.Line("R1*5") + Line2() + bubbles.Line("R1*5")
+    line3 = bubbles.Line("R1*7") + Line3() + bubbles.Line("r4 r r R1*10")
+    line4 = bubbles.Line("R1*7") + Line4() + bubbles.Line("r4 R1*10")
 
 # -------------------------------------------------------------------------------------------------
 

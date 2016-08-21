@@ -21,24 +21,28 @@ from gen_c import *
 # -------------------------------------------------------------------------------------------------
 
 class Pitches1(Pitches1):
-    pass
+    add_fifth_indices = Pitches1.add_fifth_indices + (-12,13,15,-17,19,26)
+    respell = "sharps"
 
 class Rhythms1(Rhythms1):
-    pass
+    multipliers = (2,)
+    metrical_durations = ( (1,1), ) * 10
 
-class Line1(Line1):
+class Line1(machines.Harmony):
     pitch_segments = Pitches1()
     rhythm_segments = Rhythms1()
 
 # -------------------------------------------------------------------------------------------------
 
-class Pitches2(Pitches2):
-    pass
+class Pitches2(Pitches3):
+    add_fifth_indices = Pitches3.add_fifth_indices + (-22,-23,-26)
 
 class Rhythms2(Rhythms2):
-    pass
+    multipliers = (2,)
+    initial_offset = 0
+    metrical_durations = ( (1,1), ) * 8
 
-class Line2(Line2):
+class Line2(machines.Harmony):
     pitch_segments = Pitches2()
     rhythm_segments = Rhythms2()
 
@@ -68,11 +72,16 @@ class Line4(Line4):
 
 # -------------------------------------------------------------------------------------------------
 
-class Pitches5(Pitches4):
-    pass
+class Pitches5(Pitches1):
+    add_fifth_indices = (1,2,3,4,5,7)
+    octaves = (-2,) * 44
+    respell = "flats"
+    times = 2
 
 class Rhythms5(Rhythms4):
-    pass
+    multipliers = (0.5,)*2 + (0.25,)*2 + (0.5,) + (0.25,)*3 + (1,) + (0.25,)*4 + (0.5,) + (0.25,)*3 + (1,)
+    once_only = False
+    initial_offset = 0
 
 class Line5(Line4):
     pitch_segments = Pitches5()
@@ -81,13 +90,13 @@ class Line5(Line4):
 # -------------------------------------------------------------------------------------------------
 
 
-class GenD(GenC): #  TO DO...? should all jen bubbles inherit from GridStart?
+class GenD(bubbles.GridStart): #  TO DO...? should all jen bubbles inherit from GridStart?
     time_signature = (4,4)
     line1 = bubbles.Line("R1*2") + Line1() + bubbles.Line("R1*4")
     line2 = bubbles.Line("R1") + Line2() + bubbles.Line("R1*5")
-    line3 = bubbles.Line("R1*3") + Line3() + bubbles.Line("r2 R1*3")
-    line4 = bubbles.Line("R1*3") + Line4() + bubbles.Line("r2 R1*3")
-    line5 = bubbles.Line("R1*3") + Line5() + bubbles.Line("r2 R1*3")
+    # line3 = bubbles.Line("R1*3") + Line3() + bubbles.Line("r2 R1*3")
+    # line4 = bubbles.Line("R1*3") + Line4() + bubbles.Line("r2 R1*3")
+    line5 = bubbles.Line("R1*10") + Line5() + bubbles.Line("r2 R1*3")
 
 # -------------------------------------------------------------------------------------------------
 
