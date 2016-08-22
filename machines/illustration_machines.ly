@@ -1,4 +1,4 @@
-% 2016-08-20 20:06
+% 2016-08-21 17:37
 
 \version "2.18.2"
 \language "english"
@@ -13,11 +13,17 @@
     \new Score <<
         \new Staff {
             {
-                <b c' d'>1 ~
-                <b c' d'>2
-                <g a b>2 ~
-                <g a b>1
-                <a b c'>1
+                b4
+                c'4
+                d'2
+                b4
+                a4
+                g4
+                b4
+                c'4
+                a2. ~
+                a4
+                r2.
                 r1
                 r1
                 r1

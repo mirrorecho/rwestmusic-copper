@@ -21,6 +21,9 @@
 		},
 		{
 			"path": "/home/randall/Code/mirrorecho/abjad-intensive"
+		},
+		{
+			"path": "/home/randall/Code/venvs/abjad_2.18/lib/python3.5/site-packages/abjad"
 		}
 	],
 	"virtualenv": "/home/randall/Code/venvs/abjad_2.18"

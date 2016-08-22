@@ -23,6 +23,7 @@ class BrokenRhythms(copper_material.Rhythms):
         if counts_index in self.break_rests_allowed or index in self.break_extensions_allowed:
             for possible_break in self.breaks:
                 if possible_break[0] == index:
+                    # TO DO... should adjust to be able to extend both note and rest at the same time
                     if possible_break[1] < 0:
                         my_counts = (possible_break[1],) + my_counts
                     else:

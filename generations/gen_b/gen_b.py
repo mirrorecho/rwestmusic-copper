@@ -19,12 +19,12 @@ Pitches1Inherit = Pitches1
 # -------------------------------------------------------------------------------------------------
 
 class Pitches1(Pitches1):
-    new_pitches_1 = list(Pitches1.add_fifth_indices  + (-1,-13) )
-    new_pitches_1.remove(7)
-    # new_pitches_1.remove(21)
-    new_pitches_1.remove(-23)
-    add_fifth_indices = tuple(new_pitches_1)
-    # octaves = (1,)
+
+    def get_displacement(self, **kwargs):
+        displacement = super().get_displacement(**kwargs)
+        displacement.update_row( (1,13), (-7,) )
+        displacement.remove_sets( (7,23) )
+        return displacement
 
 class Rhythms1(Rhythms1):
     metrical_durations = ( (3,4), ) * 15
@@ -38,7 +38,9 @@ class Line1(Line1):
 # -------------------------------------------------------------------------------------------------
 
 class Pitches2(Pitches2):
-    add_fifth_indices = (-2,3,-10,-13)
+    # add_fifth_indices = (-2,3,-10,-13)
+    up_fifths = (3,)
+    down_fifths = (2,10,13)
 
 class Rhythms2(Rhythms1Inherit):
     metrical_durations = ( (3,4), ) * 15
@@ -52,7 +54,8 @@ class Line2(Line2):
 # -------------------------------------------------------------------------------------------------
 
 class Pitches3(Pitches1Inherit):
-    add_fifth_indices = (-1,)
+    down_fifths = (1,)
+    up_fifths = ()
 
 class Rhythms3(Rhythms1Inherit):
     metrical_durations = ( (1,4), ) * 15

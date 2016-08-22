@@ -11,7 +11,7 @@ import abjad
 import copper_material
 import machines
 from calliope import bubbles
-from gen_c import *
+from gen_d import *
 
 # Rhythms1Inherit = Rhythms1
 # Pitches1Inherit = Pitches1
@@ -21,18 +21,24 @@ from gen_c import *
 # -------------------------------------------------------------------------------------------------
 
 class Pitches1(Pitches1):
-    # add_fifth_indices = Pitches1.add_fifth_indices + (-12,13,15,-17,19,26)
-    up_fifths = Pitches1.up_fifths + (13,15,19,26)
-    down_fifths = Pitches1.down_fifths + (12,17)
-    respell = "sharps"
-    times = 2
+    # add_fifth_indices = (1,-4,-5,6,7,9,-10,-27,-30,32)
+    add_fifth_indices_list = list(Pitches1.add_fifth_indices)
+    print(add_fifth_indices_list)
+    add_fifth_indices_list.remove(2)
+    add_fifth_indices_list.remove(-3)
+    add_fifth_indices_list.remove(6)
+    add_fifth_indices_list.remove(19)
+    add_fifth_indices_list.remove(26)
+    add_fifth_indices_list.remove(29)
+    add_fifth_indices_list.remove(32)
+    add_fifth_indices = tuple(add_fifth_indices_list + [-35,36,-37,-38,39,40,-47,49,51,-52,-53,-54,55,56,57,-58,-59,-60,61,62,63,-64,-65,-66,67,68,69,-70,-71,-72,73,74,75,-76,-77,-80])
+    add_fifth_indices.sort()
+    print(add_fifth_indices_list)
+    times = 3
 
 class Rhythms1(Rhythms1):
-    multipliers = (1.5,)
-    metrical_durations = ( (9,8), ) * 7
-    # once_only = True
-    # times = 1
-    # metrical_durations = ( (1,1), ) * 10
+    metrical_durations = ( (3,4), ) * 28
+    times = 3
 
 class Line1(machines.Harmony):
     pitch_segments = Pitches1()
@@ -40,15 +46,11 @@ class Line1(machines.Harmony):
 
 # -------------------------------------------------------------------------------------------------
 
-class Pitches2(Pitches3):
-    # add_fifth_indices = Pitches3.add_fifth_indices + (-22,-23,-26)
-    down_fifths = Pitches3.down_fifths + (22,23,26)
+class Pitches2(Pitches2):
+    pass
 
 class Rhythms2(Rhythms2):
-    metrical_durations = ( (9,8), ) * 6
-    multipliers = (1.5,)
-    initial_offset = 0
-    # metrical_durations = ( (1,1), ) * 8
+    pass
 
 class Line2(machines.Harmony):
     pitch_segments = Pitches2()
@@ -56,22 +58,32 @@ class Line2(machines.Harmony):
 
 # -------------------------------------------------------------------------------------------------
 
-class Pitches3(Pitches3):
-    pass
+class Pitches3(machines.ReversablePitches, Pitches3):
+    add_fifth_indices = (0,24,-25,-26,28,-29,30,-32,-33,34,37,38,-39,-41,-42,43,44,45,-46,-47,-48,49,51,52)
+    reverse = (3,5,12,14)
+    times = 2
 
-class Rhythms3(Rhythms3):
-    pass
+class Rhythms3(machines.ReversableRhythms, Rhythms3):
+    initial_offset = 2
+    metrical_durations = ( (3,4), ) * 28
+    reverse = (0,1,2,3,5,6,7,9,10,11,12,14,15,16)
+    multipliers = (0.5,1,0.5,1,1,0.5,0.5,1,1) + (1,1,1,1,1,0.5,1,1,3)
+    breaks = ( (1,-3), (3,-3), (5,6), (7,1), (9,6), (10,1), (14,2), (16,1) )
+    once_only = True
+    times = 2
 
 class Line3(Line3):
     pitch_segments = Pitches3()
     rhythm_segments = Rhythms3()
+    # class Attachments(bubbles.LineAttachments):
+    #     show_indices = True
 
 # -------------------------------------------------------------------------------------------------
 
-class Pitches4(Pitches4):
-    pass
+class Pitches4(Pitches3):
+    add_fifth_indices = (24,-25)
 
-class Rhythms4(Rhythms4):
+class Rhythms4(Rhythms3):
     pass
 
 class Line4(Line4):
@@ -80,21 +92,11 @@ class Line4(Line4):
 
 # -------------------------------------------------------------------------------------------------
 
-class Pitches5(Pitches1):
-    up_fifths = (1,2,3,4,5,7)
-    down_fifths = ()
-    octaves = (-2,) * 44
-    respell = "flats"
-    times = 5
+class Pitches5(Pitches4):
+    add_fifth_indices = (-27,28,-32,-33,34,-36,37,-39,40,41,-43,-45,46,-47,-49,51,52)
 
 class Rhythms5(Rhythms4):
-    metrical_durations = ( (3,8), ) * 37
-    multiplier_phrase = (0.5,)*2 + (0.25,)*2 + (0.5,) + (0.25,)*4 + (0.5,) + (0.25,)*3 + (0.5,) + (0.25,)*4
-    multipliers = (0.5,)*2 + (0.25,)*2 +  multiplier_phrase*2
-    breaks = ()
-    once_only = False
-    initial_offset = 0
-    times = 5
+    pass
 
 class Line5(Line4):
     pitch_segments = Pitches5()
@@ -103,15 +105,19 @@ class Line5(Line4):
 # -------------------------------------------------------------------------------------------------
 
 
-class GenD(bubbles.GridStart): #  TO DO...? should all jen bubbles inherit from GridStart?
-    time_signature = (9,8)
-    line1 = bubbles.Line("R1*9/8 * 5") + Line1() # + bubbles.Line("R1*4")
-    line2 = bubbles.Line("R1*9/8 * 6") + Line2() # + bubbles.Line("R1*5")
+class GenE(bubbles.GridStart): #  TO DO...? should all jen bubbles inherit from GridStart?
+    time_signature = (3,4)
+    line1 = bubbles.Line("R2.*8") + Line1() 
+    line3 = bubbles.Line("R2.*7") + Line3() # + bubbles.Line("R1*4")
+    line4 = bubbles.Line("\clef bass R2.*7") + Line4() # + bubbles.Line("R1*5")
+    line5 = bubbles.Line("\clef bass R2.*7") + Line5() # + bubbles.Line("R1*5")
     # line3 = bubbles.Line("R1*3") + Line3() + bubbles.Line("r2 R1*3")
     # line4 = bubbles.Line("R1*3") + Line4() + bubbles.Line("r2 R1*3")
-    line5 = bubbles.Line("R1*9/8*11 r4. r4.") + Line5() # + bubbles.Line("r2 R1*3")
+
 
 # -------------------------------------------------------------------------------------------------
+
+# GenE().play()
 
 # TO DO... clean this up... 
 if __name__ == '__main__':
@@ -120,5 +126,5 @@ if __name__ == '__main__':
         os.path.dirname(__file__),
         filename,
         )
-    abjad.persist( GenD().score() ).as_pdf(illustration_path)
+    abjad.persist( GenE().score() ).as_pdf(illustration_path)
     abjad.systemtools.IOManager.open_file(illustration_path)

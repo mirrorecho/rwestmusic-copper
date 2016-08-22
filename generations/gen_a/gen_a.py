@@ -16,7 +16,8 @@ from gen_0 import *
 # -------------------------------------------------------------------------------------------------
 
 class Pitches1(Pitches1, machines.FifthsPitches):
-    add_fifth_indices = (3,-5,7,21,-23)
+    up_fifths = (3,7,21)
+    down_fifths = (5,23)
 
 class Line1(Line1):
     pitch_segments = Pitches1()
@@ -25,8 +26,8 @@ class Line1(Line1):
 # -------------------------------------------------------------------------------------------------
 
 class Pitches2(Pitches1):
-    add_fifth_indices = (1,-2,14,-15,16,-20,21,24)
-    pass
+    up_fifths = (1,14,16,21,24)
+    down_fifths = (2,15,20)
 
 class Line2(Line1):
     pitch_segments = Pitches2()

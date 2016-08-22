@@ -21,8 +21,13 @@ from gen_b import *
 # -------------------------------------------------------------------------------------------------
 
 class Pitches1(Pitches1):
-    add_fifth_indices = (1,2,-3,-4,-5,6,7,8,9,-10,-27,28,29,-30,32)
+    # (1,2,-3,-4,-5,6,7,8,9,-10,-27,28,29,-30,32)
+    up_fifths = (1,2,6,7,8,9,28,29,32)
+    down_fifths = (3,4,5,10,27,30)
+    respell = "sharps"
     times = 2
+    def get_displacement(self, **kwargs):
+        return machines.FifthsPitches.get_displacement(self, **kwargs)
 
 class Rhythms1(machines.BrokenRhythms, Rhythms1):
     metrical_durations = ( (1,1), ) * 17
@@ -38,7 +43,9 @@ class Line1(Line1):
 # -------------------------------------------------------------------------------------------------
 
 class Pitches2(Pitches2):
-    add_fifth_indices = (1,-4,6,7,-8)
+    # add_fifth_indices = (1,-4,6,7,-8)
+    up_fifths = (1,6,7)
+    down_fifths = (4,8)
     
 
 class Rhythms2(machines.BrokenRhythms, Rhythms2):
@@ -55,7 +62,9 @@ class Line2(Line2):
 class Pitches3(Pitches3):
     # my_fifths = list(Pitches1.add_fifth_indices)
     # my_fifths.remove(-3)
-    add_fifth_indices = (1,2,-4,7,8,9,-10)
+    # add_fifth_indices = (1,2,-4,7,8,9,-10)
+    up_fifths = (1,2,7,8,9,)
+    down_fifths = (4,10)
     respell = "sharps"
     times = 2
 
@@ -73,7 +82,9 @@ class Line3(Line3):
 # -------------------------------------------------------------------------------------------------
 
 class Pitches4(Pitches2):
-    add_fifth_indices = (1,-6,7,8)
+    # add_fifth_indices = (1,-6,7,8)
+    up_fifths = (1,7,8)
+    down_fifths = (6,)
 
 class Rhythms4(Rhythms3):
     initial_offset = 2

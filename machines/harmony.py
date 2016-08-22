@@ -31,7 +31,7 @@ class Harmony(choose_line.ChooseLine):
                 # below is a rather tedious way to re-loop through the pitches to group them back into chords
                 # could come up with something more elegant here, but at least it works...
                 chord_grouped_pitches = []
-                for s in self.pitch_segments.sequence:
+                for s in self.pitch_segments.sequence * self.pitch_segments.times:
                     chord_count = len(self.pitch_segments.segments[s])
                     chord_grouped_pitches += (my_pitches[:chord_count],)
                     my_pitches = my_pitches[chord_count:]
@@ -41,7 +41,7 @@ class Harmony(choose_line.ChooseLine):
                     for note in logical_tie:
                         chord = abjad.Chord()
                         chord_pitches = chord_grouped_pitches[i % len(chord_grouped_pitches)]
-                        print(chord_pitches)
+                        # print(chord_pitches)
                         chord.note_heads = chord_pitches
                         chord.written_duration = copy.deepcopy(note.written_duration)
                         m = abjad.mutate([note])

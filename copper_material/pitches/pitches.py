@@ -3,6 +3,83 @@ import os
 import abjad
 
 # TO DO... consider combining this into the pitches material... could simplify
+class PitchDisplacement(object):
+    displacements = None
+
+    def __init__(self, **kwargs):
+        self.displacements = {}
+
+    def __iadd__(self, other):
+        for index, interval_set in other.displacements.items():
+            self.update(index, interval_set)
+        return self
+
+    def __add__(self, other):
+        d = PitchDisplacement()
+        d += self 
+        for index, interval_set in other.displacements.items():
+            d.update(index, interval_set)
+        return d
+
+    def update(self, index, intervals):
+        if index in self.displacements:
+            self.displacements[index] |= set(intervals)
+        else:
+            self.displacements[index] = set(intervals)        
+
+    def update_row(self, indices, intervals):
+        for i, index in enumerate(indices):
+            self.update(index, (intervals[i % len(intervals) ],) )
+
+    def update_once(self, index, interval):
+        self.update(index, (interval,))
+        self.update(index+1, (0-interval,))
+
+    def remove(self, index, intervals):
+        if index in self.displacements:
+            self.displacements[index] -= set(intervals)
+
+    def remove_sets(self, indices):
+        for i in indices:
+            self.displacements.pop(i)
+
+    def cycle_intervals(self, interval=0, num_forward=0, num_back=None, start_index=0, cycles=4, index_multiplier=1):
+        num_back = num_back or num_forward
+        cycle_length = num_forward + num_back
+        for i in range(cycle_length * cycles):
+            my_index = start_index + i*index_multiplier
+            if i % cycle_length < num_forward:
+                self.update(my_index, (interval,))
+            else:
+                self.update(my_index, (0-interval,))
+
+    def __str__(self):
+        return self.displacements.__str__()
+
+    def get_cumulative(self, index=None, only_intervals=None):
+        my_sum = 0
+        for i in sorted(self.displacements):
+            if index and i > index:
+                break
+            my_sum += self.get_sum(i, only_intervals)
+        return my_sum
+
+    def get_sum(self, index=None, only_intervals=None):
+        if index not in self.displacements:
+            return 0
+        elif only_intervals:
+            return sum( self.displacements[index] & set(only_intervals) )
+        else:
+            return sum( self.displacements[index] )
+
+    def displace_pitches(self, pitch_numbers, **kwargs):
+        transposed_pitch_numbers = []
+        current_transpose = 0
+        for i, p in enumerate(pitch_numbers):
+            current_transpose += self.get_sum(i, **kwargs)
+            transposed_pitch_numbers += [p + current_transpose]
+        return transposed_pitch_numbers
+
 class Pitches:
     segments = (
             ( 2, 0,-1),
@@ -10,9 +87,12 @@ class Pitches:
             (-3, 0,-1),
         )
     sequence = (0,1,2) # the sequence of segments (as per above)
-    octaves = (0,) # NOTE.. octaves are per pitch (not per segment)
+    # octaves = (0,) # NOTE.. octaves are per pitch (not per segment)
     respell = None
     times = 1 # times to repeat... if more than one then transpositions and other manipulations stay in effect 
+
+    def get_displacement(self, **kwargs):
+        return PitchDisplacement(**kwargs)
 
     def startup(self, **kwargs):
         pass
@@ -24,18 +104,24 @@ class Pitches:
         self.startup(**kwargs)
         super().__init__()
 
+    def get_segment(self, index):
+        segment_index = self.sequence[index % len(self.sequence)]
+        return self.segments[segment_index]
+
     def get_pitch_numbers(self, **kwargs):
         pitch_numbers = []
-        for s in self.sequence:
-            pitch_numbers += self.segments[s]
-        # octave transpositions:
-        return pitch_numbers * self.times
+        for i, s in enumerate(self.sequence * self.times):
+            pitch_numbers += self.get_segment(i)
+        
+        displacement = self.get_displacement()
+        transposed_pitch_numbers = displacement.displace_pitches(pitch_numbers)
+
+        return transposed_pitch_numbers
 
     # TO DO... consider passing respell as an optional argument here
     def get_pitches(self, **kwargs):
         pitch_numbers = self.get_pitch_numbers(**kwargs)
-        pitch_numbers_transposed = [p + 12*self.octaves[i % len(self.octaves)] for i, p in enumerate(pitch_numbers)]
-        return abjad.pitchtools.PitchSegment( pitch_numbers_transposed )
+        return abjad.pitchtools.PitchSegment( pitch_numbers )
 
 # TO DO... clean this up... 
 if __name__ == '__main__':
