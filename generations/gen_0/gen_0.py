@@ -8,9 +8,13 @@ sys.path.insert(0,grandparentdir)
 
 import _settings
 import abjad
+from calliope import bubbles
+
+# call this before local project imports
+bubbles.ancestors_path_insert()
 import copper_material
 import machines
-from calliope import bubbles
+
 
 # -------------------------------------------------------------------------------------------------
 
@@ -31,13 +35,6 @@ class Gen0(bubbles.GridStart):
     line1 = bubbles.Line("R1*3") + Line1()
 
 # -------------------------------------------------------------------------------------------------
-
-# TO DO... clean this up... 
-if __name__ == '__main__':
-    filename = 'illustration_%s.pdf' % os.path.basename(os.path.abspath(os.path.curdir))
-    illustration_path = os.path.join(
-        os.path.dirname(__file__),
-        filename,
-        )
-    abjad.persist( Gen0().score() ).as_pdf(illustration_path)
-    abjad.systemtools.IOManager.open_file(illustration_path)
+bubbles.illustrate_me(__file__, 
+    Gen0().score()
+    )

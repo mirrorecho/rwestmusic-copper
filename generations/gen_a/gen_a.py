@@ -15,9 +15,14 @@ from gen_0 import *
 
 # -------------------------------------------------------------------------------------------------
 
+# class PitchDisplacement1(copper_material.PitchDisplacement):
+#     up
+
 class Pitches1(Pitches1, machines.FifthsPitches):
     up_fifths = (3,7,21)
     down_fifths = (5,23)
+    # def get_displacement(self):
+
 
 class Line1(Line1):
     pitch_segments = Pitches1()
