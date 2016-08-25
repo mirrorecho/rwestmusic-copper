@@ -8,4 +8,4 @@ git pull --rebase
 git push
 
 cd ../calliope
-bash _sync.sh
+bash sync.sh
