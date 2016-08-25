@@ -1,1 +1,0 @@
-from gen_b.gen_b import *

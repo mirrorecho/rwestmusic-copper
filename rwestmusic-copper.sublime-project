@@ -1,0 +1,40 @@
+{
+	"folders":
+	[
+		{
+			"folder_exclude_patterns":
+			[
+				"__pycache__",
+				"copper.egg-info"
+			],
+			"path": "."
+		},
+		{
+			"folder_exclude_patterns":
+			[
+				"tools/__pycache__",
+				"calliope.egg-info"
+			],
+			"path": "/home/randall/Code/mirrorecho/calliope"
+		},
+		{
+			"path": "/home/randall/Code/mirrorecho/rwestmusic-drops-of-neon"
+		},
+		{
+			"path": "/home/randall/Code/mirrorecho/rwestmusic-narcissapark"
+		},
+		{
+			"path": "/home/randall/Code/mirrorecho/rwestmusic-tokei"
+		},
+		{
+			"path": "/home/randall/Code/mirrorecho/sandbox"
+		},
+		{
+			"path": "/home/randall/Code/mirrorecho/abjad-intensive"
+		},
+		{
+			"path": "/home/randall/Code/venvs/abjad_2.18/lib/python3.5/site-packages/abjad"
+		}
+	],
+	"virtualenv": "/home/randall/Code/venvs/abjad_2.18"
+}
