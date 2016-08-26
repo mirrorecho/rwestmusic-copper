@@ -16,9 +16,13 @@ class PitchDisplacement(object):
             self.update(index, interval_set)
         return self
 
+    def copy(self):
+        d = type(self)()
+        d += self
+        return d
+
     def __add__(self, other):
-        d = PitchDisplacement()
-        d += self 
+        d = self.copy() 
         for index, interval_set in other.displacements.items():
             d.update(index, interval_set)
         return d
@@ -45,15 +49,15 @@ class PitchDisplacement(object):
         for i in indices:
             self.displacements.pop(i)
 
-    def cycle_intervals(self, interval=0, num_forward=0, num_back=None, start_index=0, cycles=4, index_multiplier=1):
+    def cycle_intervals(self, start_index=0, interval=0, num_forward=0, num_back=None, cycles=4, index_multiplier=1, interval_multiplier=1):
         num_back = num_back or num_forward
         cycle_length = num_forward + num_back
         for i in range(cycle_length * cycles):
             my_index = start_index + i*index_multiplier
             if i % cycle_length < num_forward:
-                self.update(my_index, (interval,))
+                self.update(my_index, (interval*interval_multiplier,))
             else:
-                self.update(my_index, (0-interval,))
+                self.update(my_index, ((0-interval)*interval_multiplier,))
 
     def __str__(self):
         return self.displacements.__str__()
@@ -94,6 +98,8 @@ class Pitches:
     times = 1 # times to repeat... if more than one then transpositions and other manipulations stay in effect 
 
     def get_displacement(self, **kwargs):
+        if self.displacement:
+            return self.displacement
         return PitchDisplacement(**kwargs)
 
     def startup(self, **kwargs):

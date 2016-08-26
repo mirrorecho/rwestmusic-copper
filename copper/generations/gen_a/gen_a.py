@@ -7,13 +7,11 @@ from copper.generations.gen_0.gen_0 import *
 
 # -------------------------------------------------------------------------------------------------
 
-# class PitchDisplacement1(machines.PitchDisplacement):
-#     up
-
-class Pitches1(Pitches1, machines.FifthsPitches):
-    up_fifths = (3,7,21)
-    down_fifths = (5,23)
-    # def get_displacement(self):
+class Pitches1(Pitches1):
+    displacement = machines.FifthDisplacement(
+            up =    (3,7,21),
+            down =  ( 5,   23) 
+            )
 
 class Line1(Line1):
     pitch_segments = Pitches1()
@@ -22,8 +20,10 @@ class Line1(Line1):
 # -------------------------------------------------------------------------------------------------
 
 class Pitches2(Pitches1):
-    up_fifths = (1,14,16,21,24)
-    down_fifths = (2,15,20)
+    displacement = machines.FifthDisplacement(
+            up =    (1,14,16,21,24),
+            down =  ( 2, 15,20) 
+            )
 
 class Line2(Line1):
     pitch_segments = Pitches2()

@@ -8,11 +8,6 @@ from copper.generations.gen_d.gen_d import *
 
 # -------------------------------------------------------------------------------------------------
 
-class Pitches1(Pitches1):
-    # add_fifth_indices = (1,-4,-5,6,7,9,-10,-27,-30,32)
-    
-    # add_fifth_indices_list = list(Pitches1.add_fifth_indices)
-    # print(add_fifth_indices_list)
     # add_fifth_indices_list.remove(2)
     # add_fifth_indices_list.remove(-3)
     # add_fifth_indices_list.remove(6)
@@ -20,9 +15,15 @@ class Pitches1(Pitches1):
     # add_fifth_indices_list.remove(26)
     # add_fifth_indices_list.remove(29)
     # add_fifth_indices_list.remove(32)
+
+class Pitches1(Pitches1):
+    displacement = Pitches1.displacement.copy()
+    displacement.flat(2,-3,6,19,26,28,29,32)
+    # displacement.cycle_intervals(35, num_forward=1, cycles=3, interval_multiplier=-1)
+    displacement.cycle_intervals(36, num_forward=2, cycles=12)
+    # displacement.down(44)
+    displacement.printme()
     # add_fifth_indices = tuple(add_fifth_indices_list + [-35,36,-37,-38,39,40,-47,49,51,-52,-53,-54,55,56,57,-58,-59,-60,61,62,63,-64,-65,-66,67,68,69,-70,-71,-72,73,74,75,-76,-77,-80])
-    # add_fifth_indices.sort()
-    # print(add_fifth_indices_list)
     times = 3
 
 class Rhythms1(Rhythms1):
@@ -47,8 +48,14 @@ class Line2(machines.Harmony):
 
 # -------------------------------------------------------------------------------------------------
 
-class Pitches3(machines.ReversablePitches, Pitches3):
-    add_fifth_indices = (0,24,-25,-26,28,-29,30,-32,-33,34,37,38,-39,-41,-42,43,44,45,-46,-47,-48,49,51,52)
+class Pitches3(Pitches3, machines.ReversablePitches):
+    # displacement = machines.FifthDisplacement(
+    #             up      = (0,24,    28, 30,     34,37,38,        43,44,45,        49,51,52),
+    #             down    = (    25,26, 29,  32,33,        39,40,41,        46,47,48)
+    #             )
+    displacement = machines.FifthDisplacement(up=(0,))
+    displacement.cycle_intervals(24, num_forward=2, cycles=3)
+    displacement.cycle_intervals(33, num_forward=3, cycles=3)
     reverse = (3,5,12,14)
     times = 2
 
@@ -64,13 +71,14 @@ class Rhythms3(machines.ReversableRhythms, Rhythms3):
 class Line3(Line3):
     pitch_segments = Pitches3()
     rhythm_segments = Rhythms3()
-    # class Attachments(bubbles.LineAttachments):
-    #     show_indices = True
 
 # -------------------------------------------------------------------------------------------------
 
 class Pitches4(Pitches3):
-    add_fifth_indices = (24,-25)
+    displacement = machines.FifthDisplacement(
+                up      = (24,),
+                down    = (25,)
+                )
 
 class Rhythms4(Rhythms3):
     pass
@@ -82,7 +90,10 @@ class Line4(Line4):
 # -------------------------------------------------------------------------------------------------
 
 class Pitches5(Pitches4):
-    add_fifth_indices = (-27,28,-32,-33,34,-36,37,-39,40,41,-43,-45,46,-47,-49,51,52)
+    displacement = machines.FifthDisplacement(
+                up      = (   28,     34,   37,  40,41,    46,     51,52),
+                down    = ( 27,  32,33,  36,  39,     43,45,  47,49)
+                )
 
 class Rhythms5(Rhythms4):
     pass
@@ -97,9 +108,9 @@ class Line5(Line4):
 class GenE(bubbles.GridStart): #  TO DO...? should all jen bubbles inherit from GridStart?
     time_signature = (3,4)
     line1 = bubbles.Line("R2.*8") + Line1() 
-    line3 = bubbles.Line("R2.*7") + Line3() # + bubbles.Line("R1*4")
-    line4 = bubbles.Line("\clef bass R2.*7") + Line4() # + bubbles.Line("R1*5")
-    line5 = bubbles.Line("\clef bass R2.*7") + Line5() # + bubbles.Line("R1*5")
+    # line3 = bubbles.Line("R2.*7") + Line3() # + bubbles.Line("R1*4")
+    # line4 = bubbles.Line("\clef bass R2.*7") + Line4() # + bubbles.Line("R1*5")
+    # line5 = bubbles.Line("\clef bass R2.*7") + Line5() # + bubbles.Line("R1*5")
     # line3 = bubbles.Line("R1*3") + Line3() + bubbles.Line("r2 R1*3")
     # line4 = bubbles.Line("R1*3") + Line4() + bubbles.Line("r2 R1*3")
 

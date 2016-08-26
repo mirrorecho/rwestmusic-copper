@@ -11,12 +11,7 @@ Pitches1Inherit = Pitches1
 # -------------------------------------------------------------------------------------------------
 
 class Pitches1(Pitches1):
-
-    def get_displacement(self, **kwargs):
-        displacement = super().get_displacement(**kwargs)
-        displacement.update_row( (1,13), (-7,) )
-        displacement.remove_sets( (7,23) )
-        return displacement
+    displacement = (Pitches1.displacement + machines.FifthDisplacement(down=(1,13))).flat(7,23)
 
 class Rhythms1(Rhythms1):
     metrical_durations = ( (3,4), ) * 15
@@ -30,9 +25,9 @@ class Line1(Line1):
 # -------------------------------------------------------------------------------------------------
 
 class Pitches2(Pitches2):
-    # add_fifth_indices = (-2,3,-10,-13)
-    up_fifths = (3,)
-    down_fifths = (2,10,13)
+    displacement = machines.FifthDisplacement(
+        up =    ( 3,),
+        down =  (2,10,13) )
 
 class Rhythms2(Rhythms1Inherit):
     metrical_durations = ( (3,4), ) * 15
@@ -46,8 +41,8 @@ class Line2(Line2):
 # -------------------------------------------------------------------------------------------------
 
 class Pitches3(Pitches1Inherit):
-    down_fifths = (1,)
-    up_fifths = ()
+    displacement = machines.FifthDisplacement(
+        down = ( 1,) )
 
 class Rhythms3(Rhythms1Inherit):
     metrical_durations = ( (1,4), ) * 15
