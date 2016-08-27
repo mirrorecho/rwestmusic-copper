@@ -1,4 +1,16 @@
+import abjad
 from calliope import bubbles
+
+p = abjad.pitchtools.PitchRange.from_pitches(0,12)
+abjad.show(p)
+
+ir = range(0,26)
+
+for i in ir:
+	print(i)
+
+
+
 # ----------------------------
 # NEXT UP:
 # ----------------------------
