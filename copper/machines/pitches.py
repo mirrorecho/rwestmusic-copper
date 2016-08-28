@@ -49,15 +49,11 @@ class PitchDisplacement(object):
         for i in indices:
             self.displacements.pop(i)
 
-    def cycle_intervals(self, start_index=0, interval=0, num_forward=0, num_back=None, cycles=4, index_multiplier=1, interval_multiplier=1):
-        num_back = num_back or num_forward
-        cycle_length = num_forward + num_back
-        for i in range(cycle_length * cycles):
-            my_index = start_index + i*index_multiplier
-            if i % cycle_length < num_forward:
-                self.update(my_index, (interval*interval_multiplier,))
-            else:
-                self.update(my_index, ((0-interval)*interval_multiplier,))
+    def cycle_interval(self, start_index=0, interval=0, cycle=(), times=0):
+        for i in range(len(cycle) * times):
+            interval_multiplier = cycle[i % len(cycle)]
+            if interval_multiplier != 0:
+                self.update(start_index+i, (interval*interval_multiplier,))
 
     def __str__(self):
         return self.displacements.__str__()

@@ -8,23 +8,12 @@ from copper.generations.gen_d.gen_d import *
 
 # -------------------------------------------------------------------------------------------------
 
-    # add_fifth_indices_list.remove(2)
-    # add_fifth_indices_list.remove(-3)
-    # add_fifth_indices_list.remove(6)
-    # add_fifth_indices_list.remove(19)
-    # add_fifth_indices_list.remove(26)
-    # add_fifth_indices_list.remove(29)
-    # add_fifth_indices_list.remove(32)
 
 class Pitches1(Pitches1):
-    displacement = Pitches1.displacement.copy()
-    displacement.flat(2,-3,6,19,26,28,29,32)
-    # displacement.cycle_intervals(35, num_forward=1, cycles=3, interval_multiplier=-1)
-    displacement.cycle_intervals(36, num_forward=2, cycles=12)
-    # displacement.down(44)
-    displacement.printme()
-    # add_fifth_indices = tuple(add_fifth_indices_list + [-35,36,-37,-38,39,40,-47,49,51,-52,-53,-54,55,56,57,-58,-59,-60,61,62,63,-64,-65,-66,67,68,69,-70,-71,-72,73,74,75,-76,-77,-80])
-    times = 3
+    displacement = machines.FifthDisplacement()
+    displacement.cycle_fifth(1, cycle=(1,0,0,-1,-1,1), times=5)
+    displacement.cycle_fifth(30, cycle=(0,-1,-1,0,1,1), times=12)
+    times = 4
 
 class Rhythms1(Rhythms1):
     metrical_durations = ( (3,4), ) * 28
@@ -37,10 +26,15 @@ class Line1(machines.Harmony):
 # -------------------------------------------------------------------------------------------------
 
 class Pitches2(Pitches2):
-    pass
+    displacement = Pitches2.displacement.copy()
+    displacement.flat(2,8)
+    # displacement.up(22)
+    displacement.cycle_fifth(23, cycle=(1,1,0,-1,-1,0), times=12)
+    times = 5
 
 class Rhythms2(Rhythms2):
-    pass
+    metrical_durations = ( (3,4), ) * 24
+    times = 3
 
 class Line2(machines.Harmony):
     pitch_segments = Pitches2()
@@ -49,13 +43,9 @@ class Line2(machines.Harmony):
 # -------------------------------------------------------------------------------------------------
 
 class Pitches3(Pitches3, machines.ReversablePitches):
-    # displacement = machines.FifthDisplacement(
-    #             up      = (0,24,    28, 30,     34,37,38,        43,44,45,        49,51,52),
-    #             down    = (    25,26, 29,  32,33,        39,40,41,        46,47,48)
-    #             )
     displacement = machines.FifthDisplacement(up=(0,))
-    displacement.cycle_intervals(24, num_forward=2, cycles=3)
-    displacement.cycle_intervals(33, num_forward=3, cycles=3)
+    displacement.cycle_fifth(25, cycle=(-1,-1,1,1), times=2)
+    displacement.cycle_fifth(32, cycle=(-1,-1,0,1,0,1), times=4)
     reverse = (3,5,12,14)
     times = 2
 
@@ -108,9 +98,10 @@ class Line5(Line4):
 class GenE(bubbles.GridStart): #  TO DO...? should all jen bubbles inherit from GridStart?
     time_signature = (3,4)
     line1 = bubbles.Line("R2.*8") + Line1() 
-    # line3 = bubbles.Line("R2.*7") + Line3() # + bubbles.Line("R1*4")
-    # line4 = bubbles.Line("\clef bass R2.*7") + Line4() # + bubbles.Line("R1*5")
-    # line5 = bubbles.Line("\clef bass R2.*7") + Line5() # + bubbles.Line("R1*5")
+    line2 = bubbles.Line("R2.*9") + Line2() 
+    line3 = bubbles.Line("R2.*7") + Line3() # + bubbles.Line("R1*4")
+    line4 = bubbles.Line("\clef bass R2.*7") + Line4() # + bubbles.Line("R1*5")
+    line5 = bubbles.Line("\clef bass R2.*7") + Line5() # + bubbles.Line("R1*5")
     # line3 = bubbles.Line("R1*3") + Line3() + bubbles.Line("r2 R1*3")
     # line4 = bubbles.Line("R1*3") + Line4() + bubbles.Line("r2 R1*3")
 

@@ -7,10 +7,9 @@ from copper.generations.gen_b.gen_b import *
 # -------------------------------------------------------------------------------------------------
 
 class Pitches1(Pitches1):
-    displacement = machines.FifthDisplacement(
-            up =    (1,2,    6,7,8,9,    28,29,32),
-            down =  (   3,4,5,      10,27,    30)
-            )
+    displacement = machines.FifthDisplacement()
+    displacement.cycle_fifth(1, cycle=(1,1,-1,-1,-1,1), times=6)
+    displacement.flat(10)
     respell = "sharps"
     times = 2
 

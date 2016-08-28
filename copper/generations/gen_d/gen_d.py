@@ -11,7 +11,7 @@ class Pitches1(Pitches1):
     displacement = Pitches1.displacement +\
             machines.FifthDisplacement(
                         up  =(  13,15,19,26), 
-                        down=(12,    17) 
+                        down=(12,    17),
                         )
     respell = "sharps"
     times = 2
