@@ -30,28 +30,41 @@ bubbles.illustrate_me(__file__,
 # ----------------------------
 # NEXT UP:
 # ----------------------------
-# FRIDAY:
 # - (DONE... uses more flexible cycles) smarter 5ths (with a fancier machine... how???)
 # - (DONE) finish generation e short score
+# MONDAY:
+# - review current short scores at piano and adjust
 # - work start/stop into algorythm
 # - drones (basic algorythm and orchestrated into gen a at least)
 # - orchestrate gen b
-# - start orchestrating gen c
-# - generation f short score
+# - start gen f short score
+# - geood draft of gen e short score
+# TUESDAY:
 # - use of holds
-# - good draft orchestration of gen c
+# - start orchestrating gen c
+# - good draft f short score
 # - rhythm/pulse machine
-# - generation g draft short score
+# - start gen g draft short score
 # - reorder machine
-# - generation h draft short score
-# SUNDAY:
+# WEDNESDAY:
+# - start gen h draft short score
+# - good gen g draft short score
 # - start orchestrating gen d
+# - good gen h draft short score
 # - start orchestrating gen e
+# - good draft orchestration of gen c
+# THURSDAY:
 # - draft score template
 # - draft parts template
 # - start orchestrating gen f
 # - start orchestrating gen g
 # - start orchestrating gen h
-# LATER
+# - good orchestration of gen d
+# LATER:
 # - show indices/colors
 # - linux midi playback
+# - good orchestration of gen e
+# - good orchestration of gen f
+# - good orchestration of gen g
+# - good orchestration of gen h
+# - review fonts

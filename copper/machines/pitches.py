@@ -92,6 +92,7 @@ class Pitches:
     # octaves = (0,) # NOTE.. octaves are per pitch (not per segment)
     respell = None
     times = 1 # times to repeat... if more than one then transpositions and other manipulations stay in effect 
+    displacement = None
 
     def get_displacement(self, **kwargs):
         if self.displacement:
