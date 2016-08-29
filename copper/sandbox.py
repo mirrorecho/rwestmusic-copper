@@ -54,3 +54,4 @@ bubbles.illustrate_me(__file__,
 # - start orchestrating gen h
 # LATER
 # - show indices/colors
+# - linux midi playback
