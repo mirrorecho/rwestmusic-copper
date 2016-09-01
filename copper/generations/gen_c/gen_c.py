@@ -19,9 +19,11 @@ class Rhythms1(machines.BrokenRhythms, Rhythms1):
     breaks = ( (1,-4), (2,-4), (3, 1), (5,-2), (6,-8) )
     once_only = False
 
-class Line1(Line1):
+class Line1(machines.ChooseLine):
     pitch_segments = Pitches1()
     rhythm_segments = Rhythms1()
+    silence_counts = 24
+    silence_post_counts = 4
 
 # -------------------------------------------------------------------------------------------------
 
@@ -34,11 +36,14 @@ class Pitches2(Pitches2):
 class Rhythms2(machines.BrokenRhythms, Rhythms2):
     breaks = ( (2,-4),)
     initial_offset = 2
-    metrical_durations = ( (1,2), ) * 28
+    metrical_durations = ( (1,2), ) * 26
 
-class Line2(Line2):
+class Line2(machines.ChooseLine):
     pitch_segments = Pitches2()
     rhythm_segments = Rhythms2()
+    silence_counts = 20
+    silence_ly = "R1*5"
+    silence_post_counts = 24
 
 # -------------------------------------------------------------------------------------------------
 
@@ -56,9 +61,12 @@ class Rhythms3(machines.BrokenRhythms, Rhythms3):
     breaks = ( (6,4), (9,-2), (10,4), (12,2))
     times = 2
 
-class Line3(Line3):
+class Line3(machines.ChooseLine):
     pitch_segments = Pitches3()
     rhythm_segments = Rhythms3()
+    silence_counts = 28
+    silence_post_counts = 43
+    silence_post_ly = "r4 r2 R1*10"
 
 # -------------------------------------------------------------------------------------------------
 
@@ -72,19 +80,22 @@ class Rhythms4(Rhythms3):
     initial_offset = 2
     metrical_durations = ( (1,4), ) * 27
 
-class Line4(Line3):
+class Line4(machines.ChooseLine):
     pitch_segments = Pitches4()
     rhythm_segments = Rhythms4()
+    silence_counts = 28
+    silence_post_counts = 41
+    silence_post_ly = "r4 R1*10"
 
 # -------------------------------------------------------------------------------------------------
 
 
 class GenC(GenB): #  TO DO...? should all jen bubbles inherit from GridStart?
     time_signature = (4,4)
-    line1 = bubbles.Line("R1*6") + Line1() + bubbles.Line("R1")
-    line2 = bubbles.Line("R1*5") + Line2() + bubbles.Line("R1*5")
-    line3 = bubbles.Line("R1*7") + Line3() + bubbles.Line("r4 r r R1*10")
-    line4 = bubbles.Line("R1*7") + Line4() + bubbles.Line("r4 R1*10")
+    line1 = Line1()
+    line2 = Line2()
+    line3 = Line3()
+    line4 = Line4()
 
 # -------------------------------------------------------------------------------------------------
 

@@ -16,6 +16,8 @@ class Pitches1(Pitches1):
 class Line1(Line1):
     pitch_segments = Pitches1()
     rhythm_segments = Rhythms1()
+    silence_counts=24
+    silence_post_counts=12
 
 # -------------------------------------------------------------------------------------------------
 
@@ -28,12 +30,16 @@ class Pitches2(Pitches1):
 class Line2(Line1):
     pitch_segments = Pitches2()
     rhythm_segments = Rhythms1()
+    silence_counts=30
+    silence_ly="R1*7 r2"
+    silence_post_counts=6
+    silence_post_ly="r2 R1"
 
 # -------------------------------------------------------------------------------------------------
 
 class GenA(Gen0):
-    line1 = bubbles.Line("R1*6") + Line1() + bubbles.Line("R1*3")
-    line2 = bubbles.Line("R1*7 r2") + Line2() + bubbles.Line("r2 R1")
+    line1 = Line1()
+    line2 = Line2()
 
 # -------------------------------------------------------------------------------------------------
 

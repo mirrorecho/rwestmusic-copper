@@ -23,6 +23,8 @@ class Rhythms1(Rhythms1):
 class Line1(machines.Harmony):
     pitch_segments = Pitches1()
     rhythm_segments = Rhythms1()
+    silence_counts = 15 * 3/2
+    silence_ly = "R1*9/8 * 5"
 
 # -------------------------------------------------------------------------------------------------
 
@@ -40,6 +42,8 @@ class Rhythms2(Rhythms2):
 class Line2(machines.Harmony):
     pitch_segments = Pitches2()
     rhythm_segments = Rhythms2()
+    silence_counts = 18 * 3/2
+    silence_ly = "R1*9/8 * 6"
 
 # -------------------------------------------------------------------------------------------------
 
@@ -49,7 +53,7 @@ class Pitches3(Pitches3):
 class Rhythms3(Rhythms3):
     pass
 
-class Line3(Line3):
+class Line3(machines.ChooseLine):
     pitch_segments = Pitches3()
     rhythm_segments = Rhythms3()
 
@@ -61,7 +65,7 @@ class Pitches4(Pitches4):
 class Rhythms4(Rhythms4):
     pass
 
-class Line4(Line4):
+class Line4(machines.ChooseLine):
     pitch_segments = Pitches4()
     rhythm_segments = Rhythms4()
 
@@ -84,20 +88,22 @@ class Rhythms5(Rhythms4):
     initial_offset = 0
     times = 5
 
-class Line5(Line4):
+class Line5(machines.ChooseLine):
     pitch_segments = Pitches5()
     rhythm_segments = Rhythms5()
+    silence_counts = (11*3 + 2) * 3/2
+    silence_ly = "R1*9/8*11 r4. r4."
 
 # -------------------------------------------------------------------------------------------------
 
 
 class GenD(bubbles.GridStart): #  TO DO...? should all jen bubbles inherit from GridStart?
     time_signature = (9,8)
-    line1 = bubbles.Line("R1*9/8 * 5") + Line1() # + bubbles.Line("R1*4")
-    line2 = bubbles.Line("R1*9/8 * 6") + Line2() # + bubbles.Line("R1*5")
+    line1 = Line1()
+    line2 = Line2()
     # line3 = bubbles.Line("R1*3") + Line3() + bubbles.Line("r2 R1*3")
     # line4 = bubbles.Line("R1*3") + Line4() + bubbles.Line("r2 R1*3")
-    line5 = bubbles.Line("R1*9/8*11 r4. r4.") + Line5() # + bubbles.Line("r2 R1*3")
+    line5 = Line5() 
 
 # -------------------------------------------------------------------------------------------------
 

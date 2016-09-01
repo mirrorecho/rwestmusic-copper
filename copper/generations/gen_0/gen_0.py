@@ -16,11 +16,12 @@ class Rhythms1(machines.Rhythms):
 class Line1(machines.ChooseLine):
     pitch_segments = Pitches1()
     rhythm_segments = Rhythms1()
+    silence_counts = 12
 
 # -------------------------------------------------------------------------------------------------
 
 class Gen0(bubbles.GridStart):
-    line1 = bubbles.Line("R1*3") + Line1()
+    line1 = Line1()
 
 # -------------------------------------------------------------------------------------------------
 bubbles.illustrate_me(__file__, 

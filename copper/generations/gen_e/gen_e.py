@@ -22,6 +22,7 @@ class Rhythms1(Rhythms1):
 class Line1(machines.Harmony):
     pitch_segments = Pitches1()
     rhythm_segments = Rhythms1()
+    silence_counts = 24
 
 # -------------------------------------------------------------------------------------------------
 
@@ -39,6 +40,8 @@ class Rhythms2(Rhythms2):
 class Line2(machines.Harmony):
     pitch_segments = Pitches2()
     rhythm_segments = Rhythms2()
+    silence_counts = 27
+    silence_ly = "R2.*9"
 
 # -------------------------------------------------------------------------------------------------
 
@@ -48,6 +51,7 @@ class Pitches3(Pitches3, machines.ReversablePitches):
     displacement.cycle_fifth(32, cycle=(-1,-1,0,1,0,1), times=4)
     reverse = (3,5,12,14)
     times = 2
+
 
 class Rhythms3(machines.ReversableRhythms, Rhythms3):
     initial_offset = 2
@@ -61,6 +65,8 @@ class Rhythms3(machines.ReversableRhythms, Rhythms3):
 class Line3(Line3):
     pitch_segments = Pitches3()
     rhythm_segments = Rhythms3()
+    silence_counts = 21
+    silence_ly = "R2.*7"
 
 # -------------------------------------------------------------------------------------------------
 
@@ -76,6 +82,8 @@ class Rhythms4(Rhythms3):
 class Line4(Line4):
     pitch_segments = Pitches4()
     rhythm_segments = Rhythms4()
+    silence_counts = 21
+    silence_ly = "R2.*7"
 
 # -------------------------------------------------------------------------------------------------
 
@@ -91,17 +99,19 @@ class Rhythms5(Rhythms4):
 class Line5(Line4):
     pitch_segments = Pitches5()
     rhythm_segments = Rhythms5()
+    silence_counts = 21
+    silence_ly = "R2.*7"
 
 # -------------------------------------------------------------------------------------------------
 
 
 class GenE(bubbles.GridStart): #  TO DO...? should all jen bubbles inherit from GridStart?
     time_signature = (3,4)
-    line1 = bubbles.Line("R2.*8") + Line1() 
-    line2 = bubbles.Line("R2.*9") + Line2() 
-    line3 = bubbles.Line("R2.*7") + Line3() # + bubbles.Line("R1*4")
-    line4 = bubbles.Line("\clef bass R2.*7") + Line4() # + bubbles.Line("R1*5")
-    line5 = bubbles.Line("\clef bass R2.*7") + Line5() # + bubbles.Line("R1*5")
+    line1 = Line1() 
+    line2 = Line2() 
+    line3 = Line3() # + bubbles.Line("R1*4")
+    line4 = Line4() # + bubbles.Line("R1*5")
+    line5 = Line5() # + bubbles.Line("R1*5")
     # line3 = bubbles.Line("R1*3") + Line3() + bubbles.Line("r2 R1*3")
     # line4 = bubbles.Line("R1*3") + Line4() + bubbles.Line("r2 R1*3")
 

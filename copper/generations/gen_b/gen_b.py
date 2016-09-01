@@ -18,9 +18,12 @@ class Rhythms1(Rhythms1):
     initial_offset = 2
     multipliers = (1,1,0.5,1,1,1,0.5,3,2)
 
-class Line1(Line1):
+class Line1(machines.ChooseLine):
     pitch_segments = Pitches1()
     rhythm_segments = Rhythms1()
+    silence_counts=27
+    silence_ly="R2.*9"
+    clef="bass"
 
 # -------------------------------------------------------------------------------------------------
 
@@ -34,9 +37,12 @@ class Rhythms2(Rhythms1Inherit):
     initial_offset = 0
     multipliers = (1,0.5,)*3 + (3,3)
 
-class Line2(Line2):
+class Line2(machines.ChooseLine):
     pitch_segments = Pitches2()
     rhythm_segments = Rhythms2()
+    silence_counts=24
+    silence_post_counts=3
+    clef="bass"
 
 # -------------------------------------------------------------------------------------------------
 
@@ -48,17 +54,21 @@ class Rhythms3(Rhythms1Inherit):
     metrical_durations = ( (1,4), ) * 15
     multipliers = (0.5,0.25)
 
-class Line3(Line2):
+class Line3(machines.ChooseLine):
     pitch_segments = Pitches3()
     rhythm_segments = Rhythms3()
+    silence_counts = 36
+    silence_ly = "R2.*12"
+    silence_post_counts = 21
+    silence_post_ly = "R2.*7"
 
 # -------------------------------------------------------------------------------------------------
 
 class GenB(GenA): #  TO DO...? should all jen bubbles inherit from GridStart?
     time_signature = (3,4)
-    line1 = bubbles.Line("\\clef bass R2.*9") + Line1()
-    line2 = bubbles.Line("\\clef bass R2.*8") + Line2() + bubbles.Line("R2.")
-    line3 = bubbles.Line("\\clef bass R2.*12") + Line3() + bubbles.Line("R2.*7")
+    line1 = bubbles.Line("\\clef bass ") + Line1()
+    line2 = Line2()
+    line3 = Line3()
 
 # -------------------------------------------------------------------------------------------------
 

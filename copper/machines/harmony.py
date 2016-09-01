@@ -8,9 +8,13 @@ from copper import machines
 class Harmony(machines.ChooseLine):
 
     def music(self, **kwargs):
+
+        my_music = self.container_type()
+        self.add_silence(my_music, self.silence_counts, self.silence_ly)
+
         if self.rhythm_segments:
             my_rhythms = self.rhythm_segments.get_rhythm_selection()
-            my_music = self.container_type(my_rhythms) # note... need to add rhythm to container first here, because replace needs everything to have a parent
+            my_music.extend(my_rhythms)
             
             if self.pitch_segments:
                 my_pitches = self.pitch_segments.get_pitches()
@@ -37,8 +41,9 @@ class Harmony(machines.ChooseLine):
                     abjad.mutate(my_music).respell_with_sharps()
                 elif self.pitch_segments.respell == "flats":
                     abjad.mutate(my_music).respell_with_flats()
-        else:
-            my_music = self.container_type()
+
+        self.add_silence(my_music, self.silence_post_counts, self.silence_post_ly)
+
         return my_music
 
 # -------------------------------------------------------------------------------------------------
