@@ -8,11 +8,13 @@ from copper import staves
 
 class Orchestration0(staves.CopperMusic, Gen0):
     bubble_default = bubbles.Line("R1*12")
-    violinI1 = bubbles.Line("R1*3") + Line1() # TO DO... div string staves or not??? If not, then how to 
-    violinII1 = bubbles.Line("R1*3") + Line1() 
-    viola1 = bubbles.Line("R1*3") + Line1() 
-    cello1 = bubbles.Line("R1*3") + Line1() 
-    bass = bubbles.Line("R1*3") + Line1() 
+    violinI1 = Line1() # TO DO... div string staves or not??? If not, then how to 
+    violinII1 = Line1() 
+    viola1 = Line1() 
+    cello1 = Line1() 
+    bass = Line1()  # TO DO... move up octave
+    horn1 = Drone1() * 4
+    horn2 = bubbles.Line("R1") + Drone2() * 3 + bubbles.Line("R1*2") # TO DO... figure out how the drone can cross sections!
 
     class OrchestrationAttachments0(bubbles.LineAttachments):
         # show_indices = True

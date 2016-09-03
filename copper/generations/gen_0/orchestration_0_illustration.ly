@@ -1,4 +1,4 @@
-% 2016-08-29 14:43
+% 2016-09-02 21:36
 
 \version "2.18.2"
 \language "english"
@@ -170,22 +170,76 @@
                     \set Staff.instrumentName = \markup { "Horn in F 1" }
                     \set Staff.shortInstrumentName = \markup { Hn.1 }
                     {
-                        \numericTimeSignature
-                        \time 4/4
-                        \bar "||"
-                        \accidentalStyle modern-cautionary
-                        R1 * 12
+                        {
+                            \numericTimeSignature
+                            \time 4/4
+                            \bar "||"
+                            \accidentalStyle modern-cautionary
+                            r2
+                            d2 \pp ~ \<
+                            d1 \mp ~ \>
+                            d2 \pp
+                            r2
+                        }
+                        {
+                            r2
+                            d2 \pp ~ \<
+                            d1 \mp ~ \>
+                            d2 \pp
+                            r2
+                        }
+                        {
+                            r2
+                            d2 \pp ~ \<
+                            d1 \mp ~ \>
+                            d2 \pp
+                            r2
+                        }
+                        {
+                            r2
+                            d2 \pp ~ \<
+                            d1 \mp ~ \>
+                            d2 \pp
+                            r2
+                        }
                     }
                 }
                 \new Staff {
                     \set Staff.instrumentName = \markup { "Horn in F 2" }
                     \set Staff.shortInstrumentName = \markup { Hn.2 }
                     {
-                        \numericTimeSignature
-                        \time 4/4
-                        \bar "||"
-                        \accidentalStyle modern-cautionary
-                        R1 * 12
+                        {
+                            {
+                                \numericTimeSignature
+                                \time 4/4
+                                \bar "||"
+                                \accidentalStyle modern-cautionary
+                                R1
+                            }
+                            {
+                                {
+                                    r1
+                                    d1 \pp ~ \<
+                                    d2. \mp ~ \>
+                                    d4 \pp
+                                }
+                                {
+                                    r1
+                                    d1 \pp ~ \<
+                                    d2. \mp ~ \>
+                                    d4 \pp
+                                }
+                                {
+                                    r1
+                                    d1 \pp ~ \<
+                                    d2. \mp ~ \>
+                                    d4 \pp
+                                }
+                            }
+                        }
+                        {
+                            R1 * 2
+                        }
                     }
                 }
             >>
@@ -290,248 +344,11 @@
                     \set Staff.instrumentName = \markup { "Violin I Div 1" }
                     \set Staff.shortInstrumentName = \markup { Vln.I.1 }
                     {
-                        {
-                            \numericTimeSignature
-                            \time 4/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            R1 * 3 ^ \markup { "mute on" }
-                        }
-                        {
-                            d'2 \ppp ( ^ \markup { "sul pont., non vib." }
-                            c'4
-                            b4 )
-                            g2 (
-                            a4
-                            b4 )
-                            d'2 (
-                            c'4
-                            b4 )
-                            a2 (
-                            c'4
-                            b4 )
-                            a4 (
-                            c'4
-                            b4 )
-                            d'4 ~ (
-                            d'2.
-                            c'4
-                            b4 )
-                            d'2 (
-                            c'4
-                            b4 )
-                            g2 (
-                            a4
-                            b4 )
-                            a4 (
-                            c'4
-                            b4 )
-                        }
-                    }
-                }
-                \new Staff {
-                    \set Staff.instrumentName = \markup { "Violin I Div 2" }
-                    \set Staff.shortInstrumentName = \markup { Vln.I.2 }
-                    {
                         \numericTimeSignature
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 12
-                    }
-                }
-            >>
-            \new StaffGroup \with {
-                systemStartDelimiter = #'SystemStartSquare
-            } <<
-                \new Staff {
-                    \set Staff.instrumentName = \markup { "Violin II Div 1" }
-                    \set Staff.shortInstrumentName = \markup { Vln.II.1 }
-                    {
-                        {
-                            \numericTimeSignature
-                            \time 4/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            R1 * 3 ^ \markup { "mute on" }
-                        }
-                        {
-                            d'2 \ppp ( ^ \markup { "sul pont., non vib." }
-                            c'4
-                            b4 )
-                            g2 (
-                            a4
-                            b4 )
-                            d'2 (
-                            c'4
-                            b4 )
-                            a2 (
-                            c'4
-                            b4 )
-                            a4 (
-                            c'4
-                            b4 )
-                            d'4 ~ (
-                            d'2.
-                            c'4
-                            b4 )
-                            d'2 (
-                            c'4
-                            b4 )
-                            g2 (
-                            a4
-                            b4 )
-                            a4 (
-                            c'4
-                            b4 )
-                        }
-                    }
-                }
-                \new Staff {
-                    \set Staff.instrumentName = \markup { "Violin II Div 2" }
-                    \set Staff.shortInstrumentName = \markup { Vln.II.2 }
-                    {
-                        \numericTimeSignature
-                        \time 4/4
-                        \bar "||"
-                        \accidentalStyle modern-cautionary
-                        R1 * 12
-                    }
-                }
-            >>
-            \new StaffGroup \with {
-                systemStartDelimiter = #'SystemStartSquare
-            } <<
-                \new Staff {
-                    \clef "alto"
-                    \set Staff.instrumentName = \markup { "Viola Div 1" }
-                    \set Staff.shortInstrumentName = \markup { Vla.1 }
-                    {
-                        {
-                            \numericTimeSignature
-                            \time 4/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            R1 * 3 ^ \markup { "mute on" }
-                        }
-                        {
-                            d'2 \ppp ( ^ \markup { "sul pont., non vib." }
-                            c'4
-                            b4 )
-                            g2 (
-                            a4
-                            b4 )
-                            d'2 (
-                            c'4
-                            b4 )
-                            a2 (
-                            c'4
-                            b4 )
-                            a4 (
-                            c'4
-                            b4 )
-                            d'4 ~ (
-                            d'2.
-                            c'4
-                            b4 )
-                            d'2 (
-                            c'4
-                            b4 )
-                            g2 (
-                            a4
-                            b4 )
-                            a4 (
-                            c'4
-                            b4 )
-                        }
-                    }
-                }
-                \new Staff {
-                    \clef "alto"
-                    \set Staff.instrumentName = \markup { "Viola Div 2" }
-                    \set Staff.shortInstrumentName = \markup { Vla.2 }
-                    {
-                        \numericTimeSignature
-                        \time 4/4
-                        \bar "||"
-                        \accidentalStyle modern-cautionary
-                        R1 * 12
-                    }
-                }
-            >>
-            \new StaffGroup \with {
-                systemStartDelimiter = #'SystemStartSquare
-            } <<
-                \new Staff {
-                    \clef "bass"
-                    \set Staff.instrumentName = \markup { "Cello Div 1" }
-                    \set Staff.shortInstrumentName = \markup { Vc.1 }
-                    {
-                        {
-                            \numericTimeSignature
-                            \time 4/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            R1 * 3 ^ \markup { "mute on" }
-                        }
-                        {
-                            d'2 \ppp ( ^ \markup { "sul pont., non vib." }
-                            c'4
-                            b4 )
-                            g2 (
-                            a4
-                            b4 )
-                            d'2 (
-                            c'4
-                            b4 )
-                            a2 (
-                            c'4
-                            b4 )
-                            a4 (
-                            c'4
-                            b4 )
-                            d'4 ~ (
-                            d'2.
-                            c'4
-                            b4 )
-                            d'2 (
-                            c'4
-                            b4 )
-                            g2 (
-                            a4
-                            b4 )
-                            a4 (
-                            c'4
-                            b4 )
-                        }
-                    }
-                }
-                \new Staff {
-                    \clef "bass"
-                    \set Staff.instrumentName = \markup { "Cello Div 2" }
-                    \set Staff.shortInstrumentName = \markup { Vc.2 }
-                    {
-                        \numericTimeSignature
-                        \time 4/4
-                        \bar "||"
-                        \accidentalStyle modern-cautionary
-                        R1 * 12
-                    }
-                }
-            >>
-            \new Staff {
-                \clef "bass"
-                \set Staff.instrumentName = \markup { Bass }
-                \set Staff.shortInstrumentName = \markup { Cb }
-                {
-                    {
-                        \numericTimeSignature
-                        \time 4/4
-                        \bar "||"
-                        \accidentalStyle modern-cautionary
-                        R1 * 3 ^ \markup { "mute on" }
-                    }
-                    {
+                        R\breve. ^ \markup { "mute on" }
                         d'2 \ppp ( ^ \markup { "sul pont., non vib." }
                         c'4
                         b4 )
@@ -560,8 +377,225 @@
                         a4 (
                         c'4
                         b4 )
-                        \bar "|."
                     }
+                }
+                \new Staff {
+                    \set Staff.instrumentName = \markup { "Violin I Div 2" }
+                    \set Staff.shortInstrumentName = \markup { Vln.I.2 }
+                    {
+                        \numericTimeSignature
+                        \time 4/4
+                        \bar "||"
+                        \accidentalStyle modern-cautionary
+                        R1 * 12
+                    }
+                }
+            >>
+            \new StaffGroup \with {
+                systemStartDelimiter = #'SystemStartSquare
+            } <<
+                \new Staff {
+                    \set Staff.instrumentName = \markup { "Violin II Div 1" }
+                    \set Staff.shortInstrumentName = \markup { Vln.II.1 }
+                    {
+                        \numericTimeSignature
+                        \time 4/4
+                        \bar "||"
+                        \accidentalStyle modern-cautionary
+                        R\breve. ^ \markup { "mute on" }
+                        d'2 \ppp ( ^ \markup { "sul pont., non vib." }
+                        c'4
+                        b4 )
+                        g2 (
+                        a4
+                        b4 )
+                        d'2 (
+                        c'4
+                        b4 )
+                        a2 (
+                        c'4
+                        b4 )
+                        a4 (
+                        c'4
+                        b4 )
+                        d'4 ~ (
+                        d'2.
+                        c'4
+                        b4 )
+                        d'2 (
+                        c'4
+                        b4 )
+                        g2 (
+                        a4
+                        b4 )
+                        a4 (
+                        c'4
+                        b4 )
+                    }
+                }
+                \new Staff {
+                    \set Staff.instrumentName = \markup { "Violin II Div 2" }
+                    \set Staff.shortInstrumentName = \markup { Vln.II.2 }
+                    {
+                        \numericTimeSignature
+                        \time 4/4
+                        \bar "||"
+                        \accidentalStyle modern-cautionary
+                        R1 * 12
+                    }
+                }
+            >>
+            \new StaffGroup \with {
+                systemStartDelimiter = #'SystemStartSquare
+            } <<
+                \new Staff {
+                    \clef "alto"
+                    \set Staff.instrumentName = \markup { "Viola Div 1" }
+                    \set Staff.shortInstrumentName = \markup { Vla.1 }
+                    {
+                        \numericTimeSignature
+                        \time 4/4
+                        \bar "||"
+                        \accidentalStyle modern-cautionary
+                        R\breve. ^ \markup { "mute on" }
+                        d'2 \ppp ( ^ \markup { "sul pont., non vib." }
+                        c'4
+                        b4 )
+                        g2 (
+                        a4
+                        b4 )
+                        d'2 (
+                        c'4
+                        b4 )
+                        a2 (
+                        c'4
+                        b4 )
+                        a4 (
+                        c'4
+                        b4 )
+                        d'4 ~ (
+                        d'2.
+                        c'4
+                        b4 )
+                        d'2 (
+                        c'4
+                        b4 )
+                        g2 (
+                        a4
+                        b4 )
+                        a4 (
+                        c'4
+                        b4 )
+                    }
+                }
+                \new Staff {
+                    \clef "alto"
+                    \set Staff.instrumentName = \markup { "Viola Div 2" }
+                    \set Staff.shortInstrumentName = \markup { Vla.2 }
+                    {
+                        \numericTimeSignature
+                        \time 4/4
+                        \bar "||"
+                        \accidentalStyle modern-cautionary
+                        R1 * 12
+                    }
+                }
+            >>
+            \new StaffGroup \with {
+                systemStartDelimiter = #'SystemStartSquare
+            } <<
+                \new Staff {
+                    \clef "bass"
+                    \set Staff.instrumentName = \markup { "Cello Div 1" }
+                    \set Staff.shortInstrumentName = \markup { Vc.1 }
+                    {
+                        \numericTimeSignature
+                        \time 4/4
+                        \bar "||"
+                        \accidentalStyle modern-cautionary
+                        R\breve. ^ \markup { "mute on" }
+                        d'2 \ppp ( ^ \markup { "sul pont., non vib." }
+                        c'4
+                        b4 )
+                        g2 (
+                        a4
+                        b4 )
+                        d'2 (
+                        c'4
+                        b4 )
+                        a2 (
+                        c'4
+                        b4 )
+                        a4 (
+                        c'4
+                        b4 )
+                        d'4 ~ (
+                        d'2.
+                        c'4
+                        b4 )
+                        d'2 (
+                        c'4
+                        b4 )
+                        g2 (
+                        a4
+                        b4 )
+                        a4 (
+                        c'4
+                        b4 )
+                    }
+                }
+                \new Staff {
+                    \clef "bass"
+                    \set Staff.instrumentName = \markup { "Cello Div 2" }
+                    \set Staff.shortInstrumentName = \markup { Vc.2 }
+                    {
+                        \numericTimeSignature
+                        \time 4/4
+                        \bar "||"
+                        \accidentalStyle modern-cautionary
+                        R1 * 12
+                    }
+                }
+            >>
+            \new Staff {
+                \clef "bass"
+                \set Staff.instrumentName = \markup { Bass }
+                \set Staff.shortInstrumentName = \markup { Cb }
+                {
+                    \numericTimeSignature
+                    \time 4/4
+                    \bar "||"
+                    \accidentalStyle modern-cautionary
+                    R\breve. ^ \markup { "mute on" }
+                    d'2 \ppp ( ^ \markup { "sul pont., non vib." }
+                    c'4
+                    b4 )
+                    g2 (
+                    a4
+                    b4 )
+                    d'2 (
+                    c'4
+                    b4 )
+                    a2 (
+                    c'4
+                    b4 )
+                    a4 (
+                    c'4
+                    b4 )
+                    d'4 ~ (
+                    d'2.
+                    c'4
+                    b4 )
+                    d'2 (
+                    c'4
+                    b4 )
+                    g2 (
+                    a4
+                    b4 )
+                    a4 (
+                    c'4
+                    b4 )
+                    \bar "|."
                 }
             }
         >>

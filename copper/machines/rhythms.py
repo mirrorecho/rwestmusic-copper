@@ -24,6 +24,15 @@ class Rhythms:
     # QUESTION: would it make more sense for these to be added to an inherited class? (since aug/dimin not possible to start)
     multipliers = (1,)
 
+
+    def counts_before(self, index):
+        sum_counts = 0
+        talea_counts = self.get_talea_counts() # TO DO... this will get messed up if rests added... should ignore negative counts
+        for i in range(index):
+            sum_counts += abs(talea_counts[i % len(talea_counts)])
+        return(sum_counts)
+
+
     def startup(self, **kwargs):
         pass
 
@@ -41,7 +50,10 @@ class Rhythms:
         counts_index = self.sequence[index % len(self.sequence)]
         return self.counts[counts_index]
 
-    def get_talea(self):
+    def get_talea_counts(self):
+        """
+        returns an interable with the actual durations for the talea
+        """
         talea_counts = []
         for i,s in enumerate(self.sequence * self.times):
             talea_counts += [ int(r * self.default_multiplier * self.multipliers[i % len(self.multipliers)]) for r in self.get_counts(i) ]
@@ -49,6 +61,10 @@ class Rhythms:
             talea_counts = [self.initial_offset * self.default_multiplier * -1] + talea_counts
         if self.final_offset:
             talea_counts = talea_counts + [self.final_offset * self.default_multiplier * -1]
+        return talea_counts
+
+    def get_talea(self):
+        talea_counts = self.get_talea_counts()
         if self.once_only:
             # pads the end of the talea with a rest to fill out the rest of the metrical duration
             sum_metrical_duration_counts = int(sum([ d[0]/d[1] for d in self.metrical_durations ]) * self.denominator)
