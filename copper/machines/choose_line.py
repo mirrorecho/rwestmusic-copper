@@ -5,46 +5,46 @@ from calliope import bubbles
 from copper import machines
 
 class ChooseLine(bubbles.Line):
-    pitch_segments = None
-    rhythm_segments = None
-    silence_counts = 0
-    silence_ly = None # for fancy multimeasure rests (e.g. in 9/8)
 
-    silence_post_counts = 0
-    silence_post_ly = None # for fancy multimeasure rests (e.g. in 9/8)
+    def get_rhythms(self, **kwargs):
+        """
+        hook for returning iterable (abjad selection) of rhythms
+        """
+        return("c1") # just for testing purposes
 
-    def add_silence(self, music, silence_counts=0, silence_ly=None):
-        if silence_ly:
-            music.extend(silence_ly)
-        elif self.rhythm_segments and silence_counts:
-            music.append(abjad.scoretools.MultimeasureRest((silence_counts, self.rhythm_segments.denominator/self.rhythm_segments.default_multiplier)))
+    def after_rhythms(self, music, **kwargs):
+        """
+        hook that's run after rhythms have been added to a container (as the music argument)
+        """
+        pass
+
+    def get_pitches(self, **kwargs):
+        """
+        hook for returning iterable of pitches
+        """
+        return (0,)
+
+    def apply_pitches(self, music, pitches, **kwargs):
+        logical_ties = abjad.select(music).by_logical_tie(pitched=True)
+        for i, logical_tie in enumerate(logical_ties):
+            for note in logical_tie:
+                note.written_pitch = pitches[i % len(pitches) ]
+
+    def after_pitches(self, music, **kwargs):
+        """
+        hook that's run after pitches have been applied to rhythms
+        """
+        pass
 
     def music(self, **kwargs):
-        my_music = self.container_type()
-        self.add_silence(my_music, self.silence_counts, self.silence_ly)
-
-        if self.rhythm_segments:
-            my_rhythms = self.rhythm_segments.get_rhythm_selection()
-            if self.pitch_segments:
-                my_pitches = self.pitch_segments.get_pitches()
-                logical_ties = abjad.select(my_rhythms).by_logical_tie(pitched=True)
-                for i, logical_tie in enumerate(logical_ties):
-                    for note in logical_tie:
-                        note.written_pitch = my_pitches[i % len(my_pitches) ]
-            my_music.extend(my_rhythms)
-            # TO DO... this would make more sense on the Pitches class... but won't work with PitchSegment, so keeping here for now
-            if self.pitch_segments:
-                if self.pitch_segments.respell == "sharps":
-                    abjad.mutate(my_music).respell_with_sharps()
-                elif self.pitch_segments.respell == "flats":
-                    abjad.mutate(my_music).respell_with_flats()
-
-        self.add_silence(my_music, self.silence_post_counts, self.silence_post_ly)
-            
+        my_music = self.container_type( self.get_rhythms(**kwargs) )
+        self.after_rhythms(my_music, **kwargs)
+        self.apply_pitches(my_music, self.get_pitches(**kwargs), **kwargs)
+        self.after_pitches(my_music, **kwargs)
         return my_music
 
 # -------------------------------------------------------------------------------------------------
 bubbles.illustrate_me(__file__, 
-    lambda: ChooseLine(pitch_segments=machines.Pitches(), rhythm_segments=machines.Rhythms()).score(),
+    lambda: ChooseLine().score(),
     subfolder="machine_illustrations"
     )

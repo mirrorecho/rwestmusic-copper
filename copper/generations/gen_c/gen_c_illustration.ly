@@ -1,4 +1,4 @@
-% 2016-09-01 00:12
+% 2016-09-03 00:14
 
 \version "2.18.2"
 \language "english"
@@ -19,7 +19,12 @@
                 \time 4/4
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                R\longa.
+                r1
+                r1
+                r1
+                r1
+                r1
+                r1
                 d'2
                 g'4
                 cs''4
@@ -54,14 +59,10 @@
                 e'2
                 d''2
                 gs''2
-                e''2
-                g'4
-                b4
                 r1
-                d'2
-                b'4
-                gs''4
-                R1
+                r1
+                r1
+                r1
             }
         }
         \context Staff = "line2" {
@@ -72,7 +73,16 @@
                 \time 4/4
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                R1 * 5
+                r2
+                r2
+                r2
+                r2
+                r2
+                r2
+                r2
+                r2
+                r2
+                r2
                 r2
                 d'2
                 g'4
@@ -113,7 +123,18 @@
                 g'4
                 fs'4
                 r4
-                R\longa.
+                r2
+                r2
+                r2
+                r2
+                r2
+                r2
+                r2
+                r2
+                r2
+                r2
+                r2
+                r2
             }
         }
         \context Staff = "line3" {
@@ -124,56 +145,31 @@
                 \time 4/4
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                R\longa..
-                d'4
-                g'8 [
-                cs''8 ]
-                a'8 [
-                e'16
-                fs'16 ]
-                a'4
-                d''8 [
-                gs''8 ]
-                cs'''8 [
-                a''16
-                gs''16 ]
-                fs''8 [
-                a''8 ]
-                gs''8 [
-                b''8 ~ ]
-                b''8 [
-                a''16
-                gs''16 ]
-                b''4 ~
-                b''4 ~
-                b''4
-                a''8 [
-                gs''8 ]
-                e''8 [
-                fs''16
-                gs''16 ]
-                fs''8 [
-                a''8 ]
-                gs''8
-                r8
-                b''8 [
-                a''16
-                gs''16 ]
-                e''4 ~
-                e''4 ~
-                e''4
-                fs''8 [
-                gs''8 ]
-                b''8 [
-                a''16
-                gs''16 ]
-                fs''4 ~
-                fs''4
-                a''8 [
-                gs''8 ]
                 r4
-                r2
-                R1 * 10
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
             }
         }
         \context Staff = "line4" {
@@ -184,57 +180,66 @@
                 \time 4/4
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                R\longa..
                 r4
                 r4
-                d'4
-                g'8 [
-                fs'8 ]
-                d'8 [
-                e'16
-                fs'16 ]
-                d'4
-                g'8 [
-                cs''8 ]
-                b'8 [
-                d''16
-                cs''16 ]
-                b'8 [
-                d''8 ]
-                cs''8 [
-                e''8 ~ ]
-                e''8 [
-                d''16
-                cs''16 ]
-                e''4 ~
-                e''4 ~
-                e''4
-                d''8 [
-                cs''8 ]
-                a'8 [
-                b'16
-                cs''16 ]
-                b'8 [
-                d''8 ]
-                cs''8
-                r8
-                d'8 [
-                g'16
-                fs'16 ]
-                d'4 ~
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
+                r4
                 d'4 ~
                 d'4
-                e'8 [
-                fs'8 ]
-                d'8 [
-                g'16
-                cs''16 ]
-                b'4 ~
-                b'4
-                d''8 [
-                cs''8 ]
+                g'4
+                fs'4
+                d'4
+                a8 [
+                b8 ]
                 r4
-                R1 * 10
+                r4
+                r4
+                r4
+                a'4 ~
+                a'4
+                d''4
+                fs'4
+                e'4
+                g'8 [
+                fs'8 ]
+                e'4
+                g'4
+                fs'4
+                a'4 ~
+                a'4
+                g'8 [
+                fs'8 ]
+                a'4 ~
+                a'4 ~
+                a'4 ~
+                a'4 ~
+                a'4
             }
         }
     >>

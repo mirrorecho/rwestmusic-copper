@@ -1,4 +1,4 @@
-% 2016-09-02 20:00
+% 2016-09-02 23:18
 
 \version "2.18.2"
 \language "english"
@@ -19,7 +19,9 @@
                 \time 4/4
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                R\breve.
+                r1
+                r1
+                r1
                 d'2
                 c'4
                 b4
@@ -48,28 +50,6 @@
                 a4
                 c'4
                 b4
-            }
-        }
-        \context Staff = "lineb" {
-            \set Staff.instrumentName = \markup { Lineb }
-            \set Staff.shortInstrumentName = \markup { Lineb }
-            {
-                \numericTimeSignature
-                \time 4/4
-                \bar "||"
-                \accidentalStyle modern-cautionary
-                R\breve.
-                r1
-                b2.
-                b4 ~
-                b1 ~
-                b1 ~
-                b4
-                r2.
-                r1
-                r1
-                r1
-                r1
             }
         }
     >>

@@ -3,41 +3,30 @@
 import abjad
 from calliope import bubbles
 from copper import machines
-from copper.generations.gen_0.gen_0 import *
+from copper.generations.gen_0 import gen_0
 
 # -------------------------------------------------------------------------------------------------
 
-class Pitches1(Pitches1):
-    displacement = machines.FifthDisplacement(
+class Line1(gen_0.Line1):
+    metrical_durations = ( (1,1), ) * 18
+    pitch_displacement = machines.FifthDisplacement(
             up =    (3,7,21),
             down =  ( 5,   23) 
             )
-
-class Line1(Line1):
-    pitch_segments = Pitches1()
-    rhythm_segments = Rhythms1()
-    silence_counts=24
-    silence_post_counts=12
+    initial_offset=24
 
 # -------------------------------------------------------------------------------------------------
 
-class Pitches2(Pitches1):
-    displacement = machines.FifthDisplacement(
+class Line2(Line1):
+    pitch_displacement = machines.FifthDisplacement(
             up =    (1,14,16,21,24),
             down =  ( 2, 15,20) 
             )
-
-class Line2(Line1):
-    pitch_segments = Pitches2()
-    rhythm_segments = Rhythms1()
-    silence_counts=30
-    silence_ly="R1*7 r2"
-    silence_post_counts=6
-    silence_post_ly="r2 R1"
+    initial_offset=30
 
 # -------------------------------------------------------------------------------------------------
 
-class GenA(Gen0):
+class GenA(gen_0.Gen0):
     line1 = Line1()
     line2 = Line2()
 

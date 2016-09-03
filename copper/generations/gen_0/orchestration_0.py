@@ -22,17 +22,18 @@ class Orchestration0(staves.CopperMusic, Gen0):
         instructions = (
                     (0, "mute on"), 
                     (1, "sul pont., non vib."))
-        slurs=( 
-            (1,3),
-            (4,6),
-            (7,9), 
-            (10,12),
-            (13,15),
-            (16,19),
-            (20,22),
-            (23,25),
-            (26,28)
-            )
+        # TO DO... machine to slur rhythmic groups
+        # slurs=( 
+        #     (1,3),
+        #     (4,6),
+        #     (7,9), 
+        #     (10,12),
+        #     (13,15),
+        #     (16,19),
+        #     (20,22),
+        #     (23,25),
+        #     (26,28)
+        #     )
 
     def arrange(self):
         self.violinI1.Attachments = self.OrchestrationAttachments0

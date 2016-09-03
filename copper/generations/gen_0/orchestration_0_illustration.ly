@@ -1,4 +1,4 @@
-% 2016-09-02 21:36
+% 2016-09-02 23:19
 
 \version "2.18.2"
 \language "english"
@@ -348,35 +348,37 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R\breve. ^ \markup { "mute on" }
-                        d'2 \ppp ( ^ \markup { "sul pont., non vib." }
-                        c'4
-                        b4 )
-                        g2 (
-                        a4
-                        b4 )
-                        d'2 (
-                        c'4
-                        b4 )
-                        a2 (
-                        c'4
-                        b4 )
+                        r1 ^ \markup { "mute on" }
+                        r1 \ppp ( ^ \markup { "sul pont., non vib." }
+                        r1
+                        d'2 )
+                        c'4 (
+                        b4
+                        g2 )
                         a4 (
-                        c'4
-                        b4 )
-                        d'4 ~ (
-                        d'2.
-                        c'4
-                        b4 )
-                        d'2 (
-                        c'4
-                        b4 )
-                        g2 (
-                        a4
-                        b4 )
+                        b4
+                        d'2 )
+                        c'4 (
+                        b4
+                        a2 )
+                        c'4 (
+                        b4
+                        a4 )
+                        c'4 (
+                        b4
+                        d'4 ~
+                        d'2. )
+                        c'4 (
+                        b4
+                        d'2 )
+                        c'4 (
+                        b4
+                        g2 )
                         a4 (
+                        b4
+                        a4 )
                         c'4
-                        b4 )
+                        b4
                     }
                 }
                 \new Staff {
@@ -402,35 +404,37 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R\breve. ^ \markup { "mute on" }
-                        d'2 \ppp ( ^ \markup { "sul pont., non vib." }
-                        c'4
-                        b4 )
-                        g2 (
-                        a4
-                        b4 )
-                        d'2 (
-                        c'4
-                        b4 )
-                        a2 (
-                        c'4
-                        b4 )
+                        r1 ^ \markup { "mute on" }
+                        r1 \ppp ( ^ \markup { "sul pont., non vib." }
+                        r1
+                        d'2 )
+                        c'4 (
+                        b4
+                        g2 )
                         a4 (
-                        c'4
-                        b4 )
-                        d'4 ~ (
-                        d'2.
-                        c'4
-                        b4 )
-                        d'2 (
-                        c'4
-                        b4 )
-                        g2 (
-                        a4
-                        b4 )
+                        b4
+                        d'2 )
+                        c'4 (
+                        b4
+                        a2 )
+                        c'4 (
+                        b4
+                        a4 )
+                        c'4 (
+                        b4
+                        d'4 ~
+                        d'2. )
+                        c'4 (
+                        b4
+                        d'2 )
+                        c'4 (
+                        b4
+                        g2 )
                         a4 (
+                        b4
+                        a4 )
                         c'4
-                        b4 )
+                        b4
                     }
                 }
                 \new Staff {
@@ -457,35 +461,37 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R\breve. ^ \markup { "mute on" }
-                        d'2 \ppp ( ^ \markup { "sul pont., non vib." }
-                        c'4
-                        b4 )
-                        g2 (
-                        a4
-                        b4 )
-                        d'2 (
-                        c'4
-                        b4 )
-                        a2 (
-                        c'4
-                        b4 )
+                        r1 ^ \markup { "mute on" }
+                        r1 \ppp ( ^ \markup { "sul pont., non vib." }
+                        r1
+                        d'2 )
+                        c'4 (
+                        b4
+                        g2 )
                         a4 (
-                        c'4
-                        b4 )
-                        d'4 ~ (
-                        d'2.
-                        c'4
-                        b4 )
-                        d'2 (
-                        c'4
-                        b4 )
-                        g2 (
-                        a4
-                        b4 )
+                        b4
+                        d'2 )
+                        c'4 (
+                        b4
+                        a2 )
+                        c'4 (
+                        b4
+                        a4 )
+                        c'4 (
+                        b4
+                        d'4 ~
+                        d'2. )
+                        c'4 (
+                        b4
+                        d'2 )
+                        c'4 (
+                        b4
+                        g2 )
                         a4 (
+                        b4
+                        a4 )
                         c'4
-                        b4 )
+                        b4
                     }
                 }
                 \new Staff {
@@ -513,35 +519,37 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R\breve. ^ \markup { "mute on" }
-                        d'2 \ppp ( ^ \markup { "sul pont., non vib." }
-                        c'4
-                        b4 )
-                        g2 (
-                        a4
-                        b4 )
-                        d'2 (
-                        c'4
-                        b4 )
-                        a2 (
-                        c'4
-                        b4 )
+                        r1 ^ \markup { "mute on" }
+                        r1 \ppp ( ^ \markup { "sul pont., non vib." }
+                        r1
+                        d'2 )
+                        c'4 (
+                        b4
+                        g2 )
                         a4 (
-                        c'4
-                        b4 )
-                        d'4 ~ (
-                        d'2.
-                        c'4
-                        b4 )
-                        d'2 (
-                        c'4
-                        b4 )
-                        g2 (
-                        a4
-                        b4 )
+                        b4
+                        d'2 )
+                        c'4 (
+                        b4
+                        a2 )
+                        c'4 (
+                        b4
+                        a4 )
+                        c'4 (
+                        b4
+                        d'4 ~
+                        d'2. )
+                        c'4 (
+                        b4
+                        d'2 )
+                        c'4 (
+                        b4
+                        g2 )
                         a4 (
+                        b4
+                        a4 )
                         c'4
-                        b4 )
+                        b4
                     }
                 }
                 \new Staff {
@@ -566,35 +574,37 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    R\breve. ^ \markup { "mute on" }
-                    d'2 \ppp ( ^ \markup { "sul pont., non vib." }
-                    c'4
-                    b4 )
-                    g2 (
-                    a4
-                    b4 )
-                    d'2 (
-                    c'4
-                    b4 )
-                    a2 (
-                    c'4
-                    b4 )
+                    r1 ^ \markup { "mute on" }
+                    r1 \ppp ( ^ \markup { "sul pont., non vib." }
+                    r1
+                    d'2 )
+                    c'4 (
+                    b4
+                    g2 )
                     a4 (
-                    c'4
-                    b4 )
-                    d'4 ~ (
-                    d'2.
-                    c'4
-                    b4 )
-                    d'2 (
-                    c'4
-                    b4 )
-                    g2 (
-                    a4
-                    b4 )
+                    b4
+                    d'2 )
+                    c'4 (
+                    b4
+                    a2 )
+                    c'4 (
+                    b4
+                    a4 )
+                    c'4 (
+                    b4
+                    d'4 ~
+                    d'2. )
+                    c'4 (
+                    b4
+                    d'2 )
+                    c'4 (
+                    b4
+                    g2 )
                     a4 (
+                    b4
+                    a4 )
                     c'4
-                    b4 )
+                    b4
                     \bar "|."
                 }
             }

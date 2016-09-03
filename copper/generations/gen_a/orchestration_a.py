@@ -8,26 +8,26 @@ from copper import staves
 
 class OrchestrationA(staves.CopperMusic, GenA):
     bubble_default = bubbles.Line("R1*12")
-    violinI1 = bubbles.Line("R1*3") + Line1() # TO DO... div string staves or not??? If not, then how to 
-    violinII1 = bubbles.Line("R1*3") + Line1() 
-    viola1 = bubbles.Line("R1*3") + Line1() 
-    cello1 = bubbles.Line("R1*3") + Line1() 
-    bass = bubbles.Line("R1*3") + Line1() 
+    violinI1 = Line1() # TO DO... div string staves or not??? If not, then how to 
+    violinII1 = Line1() 
+    viola1 = Line2() 
+    cello1 = Line2() 
+    bass = Line2() 
 
     class OrchestrationAttachmentsA(bubbles.LineAttachments):
         # show_indices = True
-        dynamics=(  (1,"ppp"), )
-        slurs=( 
-            (1,3),
-            (4,6),
-            (7,9), 
-            (10,12),
-            (13,15),
-            (16,19),
-            (20,22),
-            (23,25),
-            (26,28)
-            )
+        dynamics=(  (6,"ppp"), )
+        # slurs=( 
+        #     (1,3),
+        #     (4,6),
+        #     (7,9), 
+        #     (10,12),
+        #     (13,15),
+        #     (16,19),
+        #     (20,22),
+        #     (23,25),
+        #     (26,28)
+        #     )
 
     def arrange(self):
         self.violinI1.Attachments = self.OrchestrationAttachmentsA

@@ -1,4 +1,4 @@
-% 2016-09-02 21:22
+% 2016-09-02 23:32
 
 \version "2.18.2"
 \language "english"
@@ -290,45 +290,47 @@
                     \set Staff.instrumentName = \markup { "Violin I Div 1" }
                     \set Staff.shortInstrumentName = \markup { Vln.I.1 }
                     {
-                        {
-                            \numericTimeSignature
-                            \time 4/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            R1 * 3
-                        }
-                        {
-                            R\longa. \ppp (
-                            d'2
-                            c'4 )
-                            b4 (
-                            d'2
-                            e'4 )
-                            b4 (
-                            d'2
-                            g'4 )
-                            fs'4 (
-                            e'2
-                            g'4 )
-                            fs'4 (
-                            e'4
-                            g'4 )
-                            fs'4 (
-                            a'4 ~
-                            a'2.
-                            g'4 )
-                            fs'4 (
-                            a'2
-                            g'4 )
-                            fs'4 (
-                            a'2
-                            b'4 )
-                            fs'4 (
-                            e'4
-                            g'4 )
-                            fs'4
-                            R\breve.
-                        }
+                        \numericTimeSignature
+                        \time 4/4
+                        \bar "||"
+                        \accidentalStyle modern-cautionary
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        d'2 \ppp
+                        c'4
+                        b4
+                        d'2
+                        e'4
+                        b4
+                        d'2
+                        g'4
+                        fs'4
+                        e'2
+                        g'4
+                        fs'4
+                        e'4
+                        g'4
+                        fs'4
+                        a'4 ~
+                        a'2.
+                        g'4
+                        fs'4
+                        a'2
+                        g'4
+                        fs'4
+                        a'2
+                        b'4
+                        fs'4
+                        e'4
+                        g'4
+                        fs'4
+                        r1
+                        r1
+                        r1
                     }
                 }
                 \new Staff {
@@ -350,45 +352,47 @@
                     \set Staff.instrumentName = \markup { "Violin II Div 1" }
                     \set Staff.shortInstrumentName = \markup { Vln.II.1 }
                     {
-                        {
-                            \numericTimeSignature
-                            \time 4/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            R1 * 3
-                        }
-                        {
-                            R\longa. \ppp (
-                            d'2
-                            c'4 )
-                            b4 (
-                            d'2
-                            e'4 )
-                            b4 (
-                            d'2
-                            g'4 )
-                            fs'4 (
-                            e'2
-                            g'4 )
-                            fs'4 (
-                            e'4
-                            g'4 )
-                            fs'4 (
-                            a'4 ~
-                            a'2.
-                            g'4 )
-                            fs'4 (
-                            a'2
-                            g'4 )
-                            fs'4 (
-                            a'2
-                            b'4 )
-                            fs'4 (
-                            e'4
-                            g'4 )
-                            fs'4
-                            R\breve.
-                        }
+                        \numericTimeSignature
+                        \time 4/4
+                        \bar "||"
+                        \accidentalStyle modern-cautionary
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        d'2 \ppp
+                        c'4
+                        b4
+                        d'2
+                        e'4
+                        b4
+                        d'2
+                        g'4
+                        fs'4
+                        e'2
+                        g'4
+                        fs'4
+                        e'4
+                        g'4
+                        fs'4
+                        a'4 ~
+                        a'2.
+                        g'4
+                        fs'4
+                        a'2
+                        g'4
+                        fs'4
+                        a'2
+                        b'4
+                        fs'4
+                        e'4
+                        g'4
+                        fs'4
+                        r1
+                        r1
+                        r1
                     }
                 }
                 \new Staff {
@@ -411,45 +415,50 @@
                     \set Staff.instrumentName = \markup { "Viola Div 1" }
                     \set Staff.shortInstrumentName = \markup { Vla.1 }
                     {
-                        {
-                            \numericTimeSignature
-                            \time 4/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            R1 * 3
-                        }
-                        {
-                            R\longa. \ppp (
-                            d'2
-                            c'4 )
-                            b4 (
-                            d'2
-                            e'4 )
-                            b4 (
-                            d'2
-                            g'4 )
-                            fs'4 (
-                            e'2
-                            g'4 )
-                            fs'4 (
-                            e'4
-                            g'4 )
-                            fs'4 (
-                            a'4 ~
-                            a'2.
-                            g'4 )
-                            fs'4 (
-                            a'2
-                            g'4 )
-                            fs'4 (
-                            a'2
-                            b'4 )
-                            fs'4 (
-                            e'4
-                            g'4 )
-                            fs'4
-                            R\breve.
-                        }
+                        \numericTimeSignature
+                        \time 4/4
+                        \bar "||"
+                        \accidentalStyle modern-cautionary
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1 \ppp
+                        r2
+                        d'2
+                        g'4
+                        b4
+                        g2
+                        a4
+                        b4
+                        d'2
+                        c'4
+                        b4
+                        a2
+                        c'4
+                        b4
+                        a4
+                        c'4
+                        fs'4
+                        d'2. ~
+                        d'4
+                        g'4
+                        fs'4
+                        a'4 ~
+                        a'4
+                        g'4
+                        b4
+                        d'4 ~
+                        d'4
+                        e'4
+                        fs'4
+                        b'4
+                        d''4
+                        cs''4
+                        r2
+                        r1
                     }
                 }
                 \new Staff {
@@ -473,45 +482,50 @@
                     \set Staff.instrumentName = \markup { "Cello Div 1" }
                     \set Staff.shortInstrumentName = \markup { Vc.1 }
                     {
-                        {
-                            \numericTimeSignature
-                            \time 4/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            R1 * 3
-                        }
-                        {
-                            R\longa. \ppp (
-                            d'2
-                            c'4 )
-                            b4 (
-                            d'2
-                            e'4 )
-                            b4 (
-                            d'2
-                            g'4 )
-                            fs'4 (
-                            e'2
-                            g'4 )
-                            fs'4 (
-                            e'4
-                            g'4 )
-                            fs'4 (
-                            a'4 ~
-                            a'2.
-                            g'4 )
-                            fs'4 (
-                            a'2
-                            g'4 )
-                            fs'4 (
-                            a'2
-                            b'4 )
-                            fs'4 (
-                            e'4
-                            g'4 )
-                            fs'4
-                            R\breve.
-                        }
+                        \numericTimeSignature
+                        \time 4/4
+                        \bar "||"
+                        \accidentalStyle modern-cautionary
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1 \ppp
+                        r2
+                        d'2
+                        g'4
+                        b4
+                        g2
+                        a4
+                        b4
+                        d'2
+                        c'4
+                        b4
+                        a2
+                        c'4
+                        b4
+                        a4
+                        c'4
+                        fs'4
+                        d'2. ~
+                        d'4
+                        g'4
+                        fs'4
+                        a'4 ~
+                        a'4
+                        g'4
+                        b4
+                        d'4 ~
+                        d'4
+                        e'4
+                        fs'4
+                        b'4
+                        d''4
+                        cs''4
+                        r2
+                        r1
                     }
                 }
                 \new Staff {
@@ -532,46 +546,51 @@
                 \set Staff.instrumentName = \markup { Bass }
                 \set Staff.shortInstrumentName = \markup { Cb }
                 {
-                    {
-                        \numericTimeSignature
-                        \time 4/4
-                        \bar "||"
-                        \accidentalStyle modern-cautionary
-                        R1 * 3
-                    }
-                    {
-                        R\longa. \ppp (
-                        d'2
-                        c'4 )
-                        b4 (
-                        d'2
-                        e'4 )
-                        b4 (
-                        d'2
-                        g'4 )
-                        fs'4 (
-                        e'2
-                        g'4 )
-                        fs'4 (
-                        e'4
-                        g'4 )
-                        fs'4 (
-                        a'4 ~
-                        a'2.
-                        g'4 )
-                        fs'4 (
-                        a'2
-                        g'4 )
-                        fs'4 (
-                        a'2
-                        b'4 )
-                        fs'4 (
-                        e'4
-                        g'4 )
-                        fs'4
-                        R\breve.
-                        \bar "|."
-                    }
+                    \numericTimeSignature
+                    \time 4/4
+                    \bar "||"
+                    \accidentalStyle modern-cautionary
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1 \ppp
+                    r2
+                    d'2
+                    g'4
+                    b4
+                    g2
+                    a4
+                    b4
+                    d'2
+                    c'4
+                    b4
+                    a2
+                    c'4
+                    b4
+                    a4
+                    c'4
+                    fs'4
+                    d'2. ~
+                    d'4
+                    g'4
+                    fs'4
+                    a'4 ~
+                    a'4
+                    g'4
+                    b4
+                    d'4 ~
+                    d'4
+                    e'4
+                    fs'4
+                    b'4
+                    d''4
+                    cs''4
+                    r2
+                    r1
+                    \bar "|."
                 }
             }
         >>

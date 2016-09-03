@@ -1,4 +1,4 @@
-% 2016-08-31 23:10
+% 2016-09-03 00:09
 
 \version "2.18.2"
 \language "english"
@@ -19,7 +19,12 @@
                 \time 4/4
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                R\longa.
+                r1
+                r1
+                r1
+                r1
+                r1
+                r1
                 d'2
                 c'4
                 b4
@@ -48,7 +53,9 @@
                 e'4
                 g'4
                 fs'4
-                R\breve.
+                r1
+                r1
+                r1
             }
         }
         \context Staff = "line2" {
@@ -59,7 +66,13 @@
                 \time 4/4
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                R1 * 7
+                r1
+                r1
+                r1
+                r1
+                r1
+                r1
+                r1
                 r2
                 d'2
                 g'4
@@ -76,21 +89,23 @@
                 a4
                 c'4
                 fs'4
-                d'4 ~
-                d'2.
+                d'2. ~
+                d'4
                 g'4
                 fs'4
-                a'2
+                a'4 ~
+                a'4
                 g'4
                 b4
-                d'2
+                d'4 ~
+                d'4
                 e'4
                 fs'4
                 b'4
                 d''4
                 cs''4
                 r2
-                R1
+                r1
             }
         }
     >>

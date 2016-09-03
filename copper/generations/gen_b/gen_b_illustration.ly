@@ -1,4 +1,4 @@
-% 2016-08-31 23:53
+% 2016-09-03 00:13
 
 \version "2.18.2"
 \language "english"
@@ -22,7 +22,15 @@
                     \time 3/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    R2. * 9
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
                     r2
                     d'4 ~
                     d'4
@@ -66,7 +74,14 @@
                 \time 3/4
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                R\longa.
+                r2.
+                r2.
+                r2.
+                r2.
+                r2.
+                r2.
+                r2.
+                r2.
                 d'2
                 c'4
                 e4
@@ -96,7 +111,7 @@
                 g,4
                 bf,4
                 a,4
-                R2.
+                r2.
             }
         }
         \context Staff = "line3" {
@@ -107,38 +122,53 @@
                 \time 3/4
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                R2. * 12
+                r2.
+                r2.
+                r2.
+                r2.
+                r2.
+                r2.
+                r2.
+                r2.
+                r2.
+                r2.
+                r2.
+                r2.
                 d'4
                 f8 [
-                e8 ]
-                c8 [
-                d16
-                e16 ]
-                g4
-                f8 [
-                e8 ]
-                d8 [
-                f16
-                e16 ]
-                d8 [
-                f8 ]
-                e8 [
-                g8 ~ ]
-                g8 [
-                f16
-                e16 ]
-                g4
-                f8 [
-                e8 ]
-                c8 [
-                d16
-                e16 ]
-                d8 [
-                f8 ]
                 e8
-                r8
-                r4
-                R2. * 7
+                c8
+                d16
+                e16 ]
+                g4
+                f8 [
+                e8
+                d8
+                f16
+                e16 ]
+                d8 [
+                f8
+                e8 ]
+                g4
+                f16 [
+                e16 ]
+                g4
+                f8 [
+                e8
+                c8
+                d16
+                e16 ]
+                d8 [
+                f8
+                e8 ]
+                r4.
+                r2.
+                r2.
+                r2.
+                r2.
+                r2.
+                r2.
+                r2.
             }
         }
     >>

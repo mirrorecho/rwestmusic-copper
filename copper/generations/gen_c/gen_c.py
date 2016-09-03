@@ -2,95 +2,60 @@
 import abjad
 from calliope import bubbles
 from copper import machines
-from copper.generations.gen_b.gen_b import *
+from copper.generations.gen_b import gen_b
 
 # -------------------------------------------------------------------------------------------------
 
-class Pitches1(Pitches1):
-    displacement = machines.FifthDisplacement()
-    displacement.cycle_fifth(1, cycle=(1,1,-1,-1,-1,1), times=6)
-    displacement.flat(10)
+class Line1(machines.BrokenRhythms, gen_b.Line1):
+    pitch_displacement = machines.FifthDisplacement()
+    pitch_displacement.cycle_fifth(1, cycle=(1,1,-1,-1,-1,1), times=6)
+    pitch_displacement.flat(10)
     respell = "sharps"
-    times = 2
-
-class Rhythms1(machines.BrokenRhythms, Rhythms1):
-    metrical_durations = ( (1,1), ) * 17
-    initial_offset = 0
+    pitch_times = 2
+    initial_offset = 24
+    metrical_durations = ( (1,1), ) * 24
     breaks = ( (1,-4), (2,-4), (3, 1), (5,-2), (6,-8) )
     once_only = False
 
-class Line1(machines.ChooseLine):
-    pitch_segments = Pitches1()
-    rhythm_segments = Rhythms1()
-    silence_counts = 24
-    silence_post_counts = 4
-
 # -------------------------------------------------------------------------------------------------
 
-class Pitches2(Pitches2):
-    displacement = machines.FifthDisplacement(
+class Line2(machines.BrokenRhythms,gen_b.Line2):
+    pitch_displacement = machines.FifthDisplacement(
             up      = (1,6,7),
             down    = ( 4,  8)
             )
-
-class Rhythms2(machines.BrokenRhythms, Rhythms2):
+    initial_offset = 22
     breaks = ( (2,-4),)
-    initial_offset = 2
-    metrical_durations = ( (1,2), ) * 26
-
-class Line2(machines.ChooseLine):
-    pitch_segments = Pitches2()
-    rhythm_segments = Rhythms2()
-    silence_counts = 20
-    silence_ly = "R1*5"
-    silence_post_counts = 24
+    metrical_durations = ( (1,2), ) * 48
 
 # -------------------------------------------------------------------------------------------------
 
-class Pitches3(Pitches3):
-    displacement = machines.FifthDisplacement(
+class Line3(machines.BrokenRhythms, gen_b.Line3):
+    pitch_displacement = machines.FifthDisplacement(
             up      = (1,2,7,8,9,),
             down    = (   4,     10)
             )
-    respell = "sharps"
-    times = 2
-
-class Rhythms3(machines.BrokenRhythms, Rhythms3):
     metrical_durations = ( (1,4), ) * 25
     once_only = False
     breaks = ( (6,4), (9,-2), (10,4), (12,2))
-    times = 2
-
-class Line3(machines.ChooseLine):
-    pitch_segments = Pitches3()
-    rhythm_segments = Rhythms3()
-    silence_counts = 28
-    silence_post_counts = 43
-    silence_post_ly = "r4 r2 R1*10"
+    respell = "sharps"
+    pitch_times = 2
+    rhythm_times = 2
+    initial_offset = 28
 
 # -------------------------------------------------------------------------------------------------
 
-class Pitches4(Pitches2):
-    displacement = machines.FifthDisplacement(
+class Line4(Line2):
+    pitch_displacement = machines.FifthDisplacement(
             up      = (1,7,8),
             down    = ( 6,)
             )
-
-class Rhythms4(Rhythms3):
-    initial_offset = 2
-    metrical_durations = ( (1,4), ) * 27
-
-class Line4(machines.ChooseLine):
-    pitch_segments = Pitches4()
-    rhythm_segments = Rhythms4()
-    silence_counts = 28
-    silence_post_counts = 41
-    silence_post_ly = "r4 R1*10"
+    initial_offset = 30
+    metrical_durations = ( (1,4), ) * 57
 
 # -------------------------------------------------------------------------------------------------
 
-
-class GenC(GenB): #  TO DO...? should all jen bubbles inherit from GridStart?
+class GenC(gen_b.GenB): #  TO DO...? should all jen bubbles inherit from GridStart?
     time_signature = (4,4)
     line1 = Line1()
     line2 = Line2()

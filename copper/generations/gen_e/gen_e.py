@@ -3,45 +3,32 @@
 import abjad
 from calliope import bubbles
 from copper import machines
-from copper.generations.gen_d.gen_d import *
+from copper.generations.gen_d import gen_d
 
-
-# -------------------------------------------------------------------------------------------------
-
-
-class Pitches1(Pitches1):
-    displacement = machines.FifthDisplacement()
-    displacement.cycle_fifth(1, cycle=(1,0,0,-1,-1,1), times=5)
-    displacement.cycle_fifth(30, cycle=(0,-1,-1,0,1,1), times=12)
-    times = 4
-
-class Rhythms1(Rhythms1):
+class LineGenE(object):
     metrical_durations = ( (3,4), ) * 28
-    times = 3
-
-class Line1(machines.Harmony):
-    pitch_segments = Pitches1()
-    rhythm_segments = Rhythms1()
-    silence_counts = 24
+    # clef="bass" # TO DO... this doesn't work
 
 # -------------------------------------------------------------------------------------------------
 
-class Pitches2(Pitches2):
-    displacement = Pitches2.displacement.copy()
-    displacement.flat(2,8)
-    # displacement.up(22)
-    displacement.cycle_fifth(23, cycle=(1,1,0,-1,-1,0), times=12)
-    times = 5
+class Line1(LineGenE, gen_d.Line1):
+    pitch_displacement = machines.FifthDisplacement()
+    pitch_displacement.cycle_fifth(1, cycle=(1,0,0,-1,-1,1), times=5)
+    pitch_displacement.cycle_fifth(30, cycle=(0,-1,-1,0,1,1), times=12)
+    pitch_times = 4
+    initial_offset = 24
+    rhythm_times = 3
 
-class Rhythms2(Rhythms2):
-    metrical_durations = ( (3,4), ) * 24
-    times = 3
+# -------------------------------------------------------------------------------------------------
 
-class Line2(machines.Harmony):
-    pitch_segments = Pitches2()
-    rhythm_segments = Rhythms2()
-    silence_counts = 27
-    silence_ly = "R2.*9"
+class Line2(LineGenE, gen_d.Line2):
+    pitch_displacement = Pitches2.displacement.copy()
+    pitch_displacement.flat(2,8)
+    # pitch_displacement.up(22)
+    pitch_displacement.cycle_fifth(23, cycle=(1,1,0,-1,-1,0), times=12)
+    pitch_times = 5
+    rhythm_times = 3
+    initial_offset = 27
 
 # -------------------------------------------------------------------------------------------------
 
