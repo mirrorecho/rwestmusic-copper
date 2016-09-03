@@ -1,4 +1,4 @@
-% 2016-08-31 23:53
+% 2016-09-03 12:28
 
 \version "2.18.2"
 \language "english"
@@ -139,6 +139,28 @@
                 r8
                 r4
                 R2. * 7
+            }
+        }
+        \context Staff = "lineb" {
+            \set Staff.instrumentName = \markup { Lineb }
+            \set Staff.shortInstrumentName = \markup { Lineb }
+            {
+                \numericTimeSignature
+                \time 3/4
+                \bar "||"
+                \accidentalStyle modern-cautionary
+                R\breve.
+                r1
+                b2.
+                b4 ~
+                b1 ~
+                b1 ~
+                b4
+                r2.
+                r1
+                r1
+                r1
+                r1
             }
         }
     >>
