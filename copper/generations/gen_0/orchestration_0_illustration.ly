@@ -1,4 +1,4 @@
-% 2016-09-02 23:19
+% 2016-09-03 12:16
 
 \version "2.18.2"
 \language "english"
@@ -349,34 +349,34 @@
                         \bar "||"
                         \accidentalStyle modern-cautionary
                         r1 ^ \markup { "mute on" }
-                        r1 \ppp ( ^ \markup { "sul pont., non vib." }
+                        r1 \ppp ^ \markup { "sul pont., non vib." }
                         r1
-                        d'2 )
-                        c'4 (
+                        d'2
+                        c'4
                         b4
-                        g2 )
-                        a4 (
+                        g2
+                        a4
                         b4
-                        d'2 )
-                        c'4 (
+                        d'2
+                        c'4
                         b4
-                        a2 )
-                        c'4 (
+                        a2
+                        c'4
                         b4
-                        a4 )
-                        c'4 (
+                        a4
+                        c'4
                         b4
                         d'4 ~
-                        d'2. )
-                        c'4 (
+                        d'2.
+                        c'4
                         b4
-                        d'2 )
-                        c'4 (
+                        d'2
+                        c'4
                         b4
-                        g2 )
-                        a4 (
+                        g2
+                        a4
                         b4
-                        a4 )
+                        a4
                         c'4
                         b4
                     }
@@ -405,34 +405,34 @@
                         \bar "||"
                         \accidentalStyle modern-cautionary
                         r1 ^ \markup { "mute on" }
-                        r1 \ppp ( ^ \markup { "sul pont., non vib." }
+                        r1 \ppp ^ \markup { "sul pont., non vib." }
                         r1
-                        d'2 )
-                        c'4 (
+                        d'2
+                        c'4
                         b4
-                        g2 )
-                        a4 (
+                        g2
+                        a4
                         b4
-                        d'2 )
-                        c'4 (
+                        d'2
+                        c'4
                         b4
-                        a2 )
-                        c'4 (
+                        a2
+                        c'4
                         b4
-                        a4 )
-                        c'4 (
+                        a4
+                        c'4
                         b4
                         d'4 ~
-                        d'2. )
-                        c'4 (
+                        d'2.
+                        c'4
                         b4
-                        d'2 )
-                        c'4 (
+                        d'2
+                        c'4
                         b4
-                        g2 )
-                        a4 (
+                        g2
+                        a4
                         b4
-                        a4 )
+                        a4
                         c'4
                         b4
                     }
@@ -462,34 +462,34 @@
                         \bar "||"
                         \accidentalStyle modern-cautionary
                         r1 ^ \markup { "mute on" }
-                        r1 \ppp ( ^ \markup { "sul pont., non vib." }
+                        r1 \ppp ^ \markup { "sul pont., non vib." }
                         r1
-                        d'2 )
-                        c'4 (
+                        d'2
+                        c'4
                         b4
-                        g2 )
-                        a4 (
+                        g2
+                        a4
                         b4
-                        d'2 )
-                        c'4 (
+                        d'2
+                        c'4
                         b4
-                        a2 )
-                        c'4 (
+                        a2
+                        c'4
                         b4
-                        a4 )
-                        c'4 (
+                        a4
+                        c'4
                         b4
                         d'4 ~
-                        d'2. )
-                        c'4 (
+                        d'2.
+                        c'4
                         b4
-                        d'2 )
-                        c'4 (
+                        d'2
+                        c'4
                         b4
-                        g2 )
-                        a4 (
+                        g2
+                        a4
                         b4
-                        a4 )
+                        a4
                         c'4
                         b4
                     }
@@ -520,34 +520,34 @@
                         \bar "||"
                         \accidentalStyle modern-cautionary
                         r1 ^ \markup { "mute on" }
-                        r1 \ppp ( ^ \markup { "sul pont., non vib." }
+                        r1 \ppp ^ \markup { "sul pont., non vib." }
                         r1
-                        d'2 )
-                        c'4 (
+                        d'2
+                        c'4
                         b4
-                        g2 )
-                        a4 (
+                        g2
+                        a4
                         b4
-                        d'2 )
-                        c'4 (
+                        d'2
+                        c'4
                         b4
-                        a2 )
-                        c'4 (
+                        a2
+                        c'4
                         b4
-                        a4 )
-                        c'4 (
+                        a4
+                        c'4
                         b4
                         d'4 ~
-                        d'2. )
-                        c'4 (
+                        d'2.
+                        c'4
                         b4
-                        d'2 )
-                        c'4 (
+                        d'2
+                        c'4
                         b4
-                        g2 )
-                        a4 (
+                        g2
+                        a4
                         b4
-                        a4 )
+                        a4
                         c'4
                         b4
                     }
@@ -575,34 +575,34 @@
                     \bar "||"
                     \accidentalStyle modern-cautionary
                     r1 ^ \markup { "mute on" }
-                    r1 \ppp ( ^ \markup { "sul pont., non vib." }
+                    r1 \ppp ^ \markup { "sul pont., non vib." }
                     r1
-                    d'2 )
-                    c'4 (
+                    d'2
+                    c'4
                     b4
-                    g2 )
-                    a4 (
+                    g2
+                    a4
                     b4
-                    d'2 )
-                    c'4 (
+                    d'2
+                    c'4
                     b4
-                    a2 )
-                    c'4 (
+                    a2
+                    c'4
                     b4
-                    a4 )
-                    c'4 (
+                    a4
+                    c'4
                     b4
                     d'4 ~
-                    d'2. )
-                    c'4 (
+                    d'2.
+                    c'4
                     b4
-                    d'2 )
-                    c'4 (
+                    d'2
+                    c'4
                     b4
-                    g2 )
-                    a4 (
+                    g2
+                    a4
                     b4
-                    a4 )
+                    a4
                     c'4
                     b4
                     \bar "|."

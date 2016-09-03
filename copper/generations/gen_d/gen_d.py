@@ -13,11 +13,11 @@ class Line1(machines.Harmony, gen_c.Line1):
                         up  =(  13,15,19,26), 
                         down=(12,    17),
                         )
-    respell = "sharps"
+    pitch_respell = "sharps"
     pitch_times = 2
-    multipliers = (1.5,)
+    rhythm_multipliers = (1.5,)
     metrical_durations = ( (9,8), ) * 7
-    initial_offset = 15 * 3/2
+    rhythm_initial_silence = 15 * 3/2
 
 # -------------------------------------------------------------------------------------------------
 
@@ -26,9 +26,9 @@ class Line2(machines.Harmony, gen_c.Line2):
             machines.FifthDisplacement(
                         down=(22,23,26)
                         )
-    initial_offset = 18 * 3/2
+    rhythm_initial_silence = 18 * 3/2
     metrical_durations = ( (9,8), ) * 6
-    multipliers = (1.5,)
+    rhythm_multipliers = (1.5,)
 
 # -------------------------------------------------------------------------------------------------
 
@@ -47,13 +47,13 @@ class Line5(gen_c.Line4):
             up =    (1,2,3,4,5,7)
             )
     pitch_displacement.update(0,(-24,)) # TEMP USE ... see 2 octaves down for ease-of-viewing only
-    respell = "flats"
+    pitch_respell = "flats"
     pitch_times = 5
-    initial_offset = (11*3 + 2) * 3/2
+    rhythm_initial_silence = (11*3 + 2) * 3/2
     silence_ly = "R1*9/8*11 r4. r4."
     metrical_durations = ( (3,8), ) * 37
     multiplier_phrase = (0.5,)*2 + (0.25,)*2 + (0.5,) + (0.25,)*4 + (0.5,) + (0.25,)*3 + (0.5,) + (0.25,)*4
-    multipliers = (0.5,)*2 + (0.25,)*2 +  multiplier_phrase*2
+    rhythm_multipliers = (0.5,)*2 + (0.25,)*2 +  multiplier_phrase*2
     breaks = ()
     once_only = False
     rhythm_times = 5

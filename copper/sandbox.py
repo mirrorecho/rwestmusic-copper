@@ -28,7 +28,7 @@
 # - reorder machine
 # - start gen h draft short score
 # - good gen g draft short score
-# - think of gen d in 8th note denominator
+# - think of gen d in 8th note rhythm_denominator
 # - start orchestrating gen d
 # - good gen h draft short score
 # ----------------------------
@@ -63,7 +63,7 @@ from copper import machines
 class Line1(machines.Rhythms, machines.ChooseLine):
     metrical_durations = ( (1,1), ) * 12
     rhythm_sequence = (0,0,0,0,1,2,0,0,1) 
-    initial_offset = 12
+    rhythm_initial_silence = 12
 
 abjad.show( Line1().score() )
 
@@ -130,7 +130,7 @@ abjad.show( Line1().score() )
 # class Pitches1(Pitches1):
 #     displacement = machines.FifthDisplacement()
 #     displacement.cycle_intervals(num_forward=3)
-#     respell = "sharps"
+#     pitch_respell = "sharps"
 
 # class Line1(Line1):
 #     pitch_segments = Pitches1()

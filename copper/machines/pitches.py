@@ -14,7 +14,7 @@ class Pitches:
     # octaves = (0,) # NOTE.. octaves are per pitch (not per segment)
     pitch_times = 1 # pitch_times to repeat... if more than one then transpositions and other manipulations stay in effect 
     pitch_displacement = None
-    respell = None
+    pitch_respell = None
 
     def get_pitch_displacement(self, **kwargs):
         if self.pitch_displacement:
@@ -34,16 +34,16 @@ class Pitches:
 
         return transposed_pitch_numbers
 
-    # TO DO... consider passing respell as an optional argument here
+    # TO DO... consider passing pitch_respell as an optional argument here
     def get_pitches(self, **kwargs):
         pitch_numbers = self.get_pitch_numbers(**kwargs)
         return abjad.pitchtools.PitchSegment( pitch_numbers )
 
     def after_pitches(self, music, **kwargs):
-        if self.respell == "sharps":
-            abjad.mutate(music).respell_with_sharps()
-        elif self.respell == "flats":
-            abjad.mutate(music).respell_with_flats()
+        if self.pitch_respell == "sharps":
+            abjad.mutate(music).pitch_respell_with_sharps()
+        elif self.pitch_respell == "flats":
+            abjad.mutate(music).pitch_respell_with_flats()
 
 # -------------------------------------------------------------------------------------------------
 bubbles.illustrate_me(__file__, 

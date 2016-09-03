@@ -14,27 +14,26 @@ class LineGenB(object):
 # -------------------------------------------------------------------------------------------------
 
 class Line1(LineGenB, gen_a.Line1):
-    multipliers = (1,1,0.5,1,1,1,0.5,3,2)
+    rhythm_initial_silence=29
+    rhythm_multipliers = (1,1,0.5,1,1,1,0.5,3,2)
     pitch_displacement = (gen_a.Line1.pitch_displacement + machines.FifthDisplacement(down=(1,13))).flat(7,23) # TO DO... why doesn't this look right??/
-    initial_offset=29
 
 # -------------------------------------------------------------------------------------------------
 
 class Line2(LineGenB, gen_a.Line1):
+    rhythm_initial_silence=24
+    rhythm_multipliers = (1,0.5,)*3 + (3,3)
     pitch_displacement = machines.FifthDisplacement(
         up =    ( 3,),
         down =  (2,10,13) )
-    initial_offset=24
-    multipliers = (1,0.5,)*3 + (3,3)
 
 # -------------------------------------------------------------------------------------------------
 
 class Line3(LineGenB, gen_a.Line1):
+    rhythm_initial_silence = 36
+    rhythm_multipliers = (0.5,0.25)
     pitch_displacement = machines.FifthDisplacement(
         down = ( 1,) )
-    multipliers = (0.5,0.25)
-    initial_offset = 36
-
 # -------------------------------------------------------------------------------------------------
 
 class GenB(gen_a.GenA): #  TO DO...? should all jen bubbles inherit from GridStart?

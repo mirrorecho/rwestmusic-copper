@@ -8,9 +8,9 @@ from copper import machines
 
 class Line1(machines.Rhythms, machines.Pitches, machines.ChooseLine):
     metrical_durations = ( (1,1), ) * 12
+    rhythm_initial_silence = 12
     rhythm_sequence = (0,0,0,0,1,2,0,0,1) 
     pitch_sequence = (0,1,0,2,2,0,0,1,2)
-    initial_offset = 12
 
 class Drone1(machines.Drone):
     counts = (2,2,4,2,2)

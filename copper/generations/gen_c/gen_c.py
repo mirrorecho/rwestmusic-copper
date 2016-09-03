@@ -10,9 +10,9 @@ class Line1(machines.BrokenRhythms, gen_b.Line1):
     pitch_displacement = machines.FifthDisplacement()
     pitch_displacement.cycle_fifth(1, cycle=(1,1,-1,-1,-1,1), times=6)
     pitch_displacement.flat(10)
-    respell = "sharps"
+    pitch_respell = "sharps"
     pitch_times = 2
-    initial_offset = 24
+    rhythm_initial_silence = 24
     metrical_durations = ( (1,1), ) * 24
     breaks = ( (1,-4), (2,-4), (3, 1), (5,-2), (6,-8) )
     once_only = False
@@ -24,7 +24,7 @@ class Line2(machines.BrokenRhythms,gen_b.Line2):
             up      = (1,6,7),
             down    = ( 4,  8)
             )
-    initial_offset = 22
+    rhythm_initial_silence = 22
     breaks = ( (2,-4),)
     metrical_durations = ( (1,2), ) * 48
 
@@ -38,10 +38,10 @@ class Line3(machines.BrokenRhythms, gen_b.Line3):
     metrical_durations = ( (1,4), ) * 25
     once_only = False
     breaks = ( (6,4), (9,-2), (10,4), (12,2))
-    respell = "sharps"
+    pitch_respell = "sharps"
     pitch_times = 2
     rhythm_times = 2
-    initial_offset = 28
+    rhythm_initial_silence = 28
 
 # -------------------------------------------------------------------------------------------------
 
@@ -50,7 +50,7 @@ class Line4(Line2):
             up      = (1,7,8),
             down    = ( 6,)
             )
-    initial_offset = 30
+    rhythm_initial_silence = 30
     metrical_durations = ( (1,4), ) * 57
 
 # -------------------------------------------------------------------------------------------------

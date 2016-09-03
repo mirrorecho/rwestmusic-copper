@@ -17,31 +17,31 @@ class FragmentLine(object):
         if silence_ly:
             music.extend(silence_ly)
         elif self.line.rhythm_segments and silence_counts:
-            music.append(abjad.scoretools.MultimeasureRest((silence_counts, self.line.rhythm_segments.denominator/self.line.rhythm_segments.default_multiplier)))
+            music.append(abjad.scoretools.MultimeasureRest((silence_counts, self.line.rhythm_segments.rhythm_denominator/self.line.rhythm_segments.rhythm_default_multiplier)))
 
     def get_talea(self):
         counts_before = self.line.rhythm_segments.counts_before(self.indices[0])
-        counts_holdin = self.counts[0][0]*self.line.rhythm_segments.default_multiplier
+        counts_holdin = self.counts[0][0]*self.line.rhythm_segments.rhythm_default_multiplier
         print(counts_before)
-        counts_houldout = self.counts[0][1]*self.line.rhythm_segments.default_multiplier
+        counts_houldout = self.counts[0][1]*self.line.rhythm_segments.rhythm_default_multiplier
         talea_counts = [
             0 - (counts_before - counts_holdin),
             counts_holdin, 
             counts_houldout
             ]
         metrical_durations = self.metrical_durations or self.line.rhythm_segments.metrical_durations
-        if self.line.rhythm_segments.initial_offset:
-            talea_counts = [self.line.rhythm_segments.initial_offset * self.line.rhythm_segments.default_multiplier * -1] + talea_counts
+        if self.line.rhythm_segments.rhythm_initial_silence:
+            talea_counts = [self.line.rhythm_segments.rhythm_initial_silence * self.line.rhythm_segments.rhythm_default_multiplier * -1] + talea_counts
         if self.line.rhythm_segments.final_offset:
-            talea_counts = talea_counts + [self.line.rhythm_segments.final_offset * self.line.rhythm_segments.default_multiplier * -1]
+            talea_counts = talea_counts + [self.line.rhythm_segments.final_offset * self.line.rhythm_segments.rhythm_default_multiplier * -1]
 
         # pads the end of the talea with a rest to fill out the rest of the metrical duration
-        sum_metrical_duration_counts = int(sum([ d[0]/d[1] for d in metrical_durations ]) * self.line.rhythm_segments.denominator)
+        sum_metrical_duration_counts = int(sum([ d[0]/d[1] for d in metrical_durations ]) * self.line.rhythm_segments.rhythm_denominator)
         sum_talea_counts = sum(talea_counts)
         if sum_metrical_duration_counts > sum_talea_counts:
             talea_counts += [sum_talea_counts - sum_metrical_duration_counts]
         # print(talea_counts)
-        return abjad.rhythmmakertools.Talea(talea_counts, self.line.rhythm_segments.denominator)
+        return abjad.rhythmmakertools.Talea(talea_counts, self.line.rhythm_segments.rhythm_denominator)
 
     def get_rhythm_maker(self):
         return abjad.rhythmmakertools.TaleaRhythmMaker(
@@ -74,10 +74,10 @@ class FragmentLine(object):
                     note.written_pitch = pitch
             my_music.extend(my_rhythms)
             # TO DO... this would make more sense on the Pitches class... but won't work with PitchSegment, so keeping here for now
-            if self.respell == "sharps":
-                abjad.mutate(my_music).respell_with_sharps()
-            elif self.respell == "flats":
-                abjad.mutate(my_music).respell_with_flats()
+            if self.pitch_respell == "sharps":
+                abjad.mutate(my_music).pitch_respell_with_sharps()
+            elif self.pitch_respell == "flats":
+                abjad.mutate(my_music).pitch_respell_with_flats()
 
             # TO DO... ditto as above
             self.add_silence(my_music, self.line.silence_post_counts, self.line.silence_post_ly)

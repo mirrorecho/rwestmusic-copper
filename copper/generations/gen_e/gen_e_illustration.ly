@@ -1,4 +1,4 @@
-% 2016-09-01 00:56
+% 2016-09-03 12:03
 
 \version "2.18.2"
 \language "english"
@@ -19,7 +19,14 @@
                 \time 3/4
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                R\longa.
+                r2.
+                r2.
+                r2.
+                r2.
+                r2.
+                r2.
+                r2.
+                r2.
                 <d' fs' g'>2.
                 <e a d'>4.
                 <d' fs' g'>4.
@@ -57,8 +64,6 @@
                 <c f b>4.
                 <a, f d'>4.
                 <f, d b>4.
-                <a, f a>4.
-                <c f b>4.
             }
         }
         \context Staff = "line2" {
@@ -69,7 +74,15 @@
                 \time 3/4
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                R2. * 9
+                r2.
+                r2.
+                r2.
+                r2.
+                r2.
+                r2.
+                r2.
+                r2.
+                r2.
                 <d' fs' g'>2.
                 <a b d'>4.
                 <d' fs' g'>4.
@@ -109,6 +122,9 @@
                 <b e' g'>2.
                 <d e f>4.
                 <e f g>4.
+                <e f g>2.
+                <c d e>4.
+                <d e f>4.
             }
         }
         \context Staff = "line3" {
@@ -119,7 +135,13 @@
                 \time 3/4
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                R2. * 7
+                r2.
+                r2.
+                r2.
+                r2.
+                r2.
+                r2.
+                r2.
                 r2
                 a'8 [
                 g'8 ]
@@ -194,7 +216,13 @@
                 \time 3/4
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                R2. * 7
+                r2.
+                r2.
+                r2.
+                r2.
+                r2.
+                r2.
+                r2.
                 r2
                 d'8 [
                 c'8 ]
@@ -269,7 +297,13 @@
                 \time 3/4
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                R2. * 7
+                r2.
+                r2.
+                r2.
+                r2.
+                r2.
+                r2.
+                r2.
                 r2
                 d'8 [
                 c'8 ]

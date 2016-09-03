@@ -11,8 +11,8 @@ class Drone(bubbles.Line):
         (2,"mp"),
         (3,"ppp"),
         )
-    default_multiplier = 8
-    denominator = 32
+    rhythm_default_multiplier = 8
+    rhythm_denominator = 32
     counts = (2,2,4,2,2)
     left_counts = 1
     right_counts = 1
@@ -33,7 +33,7 @@ class Drone(bubbles.Line):
                 tie_across_divisions=True,
                 ),
             )
-        divisions = [(c * self.default_multiplier, self.denominator) for c in self.counts]
+        divisions = [(c * self.rhythm_default_multiplier, self.rhythm_denominator) for c in self.counts]
         selections = rhythm_maker(divisions)
         my_music.extend(selections)
         abjad.mutate(my_music).transpose(self.pitch)
