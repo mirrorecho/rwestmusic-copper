@@ -1,4 +1,4 @@
-% 2016-09-03 13:31
+% 2016-09-03 17:27
 
 \version "2.18.2"
 \language "english"
@@ -116,6 +116,44 @@
                 g'4
                 fs'4
                 r4
+                r1
+                r1
+                r1
+                r1
+                r1
+                r1
+            }
+        }
+        \context Staff = "line2A" {
+            \set Staff.instrumentName = \markup { Line2A }
+            \set Staff.shortInstrumentName = \markup { Line2A }
+            {
+                \numericTimeSignature
+                \time 4/4
+                \bar "||"
+                \accidentalStyle modern-cautionary
+                r1
+                r1
+                r1
+                r1
+                r1
+                r4
+                d'2. ~
+                d'4
+                fs'4
+                r2
+                r1
+                d''1 ~
+                d''1
+                fs'4
+                r2.
+                r1
+                r1
+                r1
+                r1
+                r1
+                r1
+                r1
                 r1
                 r1
                 r1

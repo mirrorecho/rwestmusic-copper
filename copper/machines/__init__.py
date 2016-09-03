@@ -17,4 +17,4 @@ from copper.machines.fifths_pitches import *
 from copper.machines.broken_rhythms import *
 from copper.machines.harmony import *
 from copper.machines.reverse import *
-# from copper.machines.holds import *
+from copper.machines.fragment_line import *

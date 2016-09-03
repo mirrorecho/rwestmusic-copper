@@ -31,9 +31,6 @@ class Hold(bubbles.Line):
         metrical_durations = self.metrical_durations or self.line.rhythm_segments.metrical_durations
         if self.line.rhythm_segments.rhythm_initial_silence:
             talea_counts = [self.line.rhythm_segments.rhythm_initial_silence * self.line.rhythm_segments.rhythm_default_multiplier * -1] + talea_counts
-        if self.line.rhythm_segments.final_offset:
-            talea_counts = talea_counts + [self.line.rhythm_segments.final_offset * self.line.rhythm_segments.rhythm_default_multiplier * -1]
-
         # pads the end of the talea with a rest to fill out the rest of the metrical duration
         sum_metrical_duration_counts = int(sum([ d[0]/d[1] for d in metrical_durations ]) * self.line.rhythm_segments.rhythm_denominator)
         sum_talea_counts = sum(talea_counts)

@@ -51,6 +51,7 @@
 # - show indices/colors
 # - linux midi playback
 # - review fonts
+# - clarity between counts vs durations
 # ----------------------------
 
 import abjad
@@ -59,14 +60,20 @@ from calliope import bubbles
 import abjad
 from calliope import bubbles
 from copper import machines
-# from copper.generations.gen_0.gen_0 import *
+from copper.generations.gen_c import gen_c
 
-class Line1(machines.Rhythms, machines.ChooseLine):
-    metrical_durations = ( (1,1), ) * 12
-    rhythm_sequence = (0,0,0,0,1,2,0,0,1) 
-    rhythm_initial_silence = 12
+# class FragmentLine1(machines.FragmentLine, gen_c.Line1):
+# 	indices=(1,3)
+# 	durations=(7,4,)
 
-abjad.show( Line1().score() )
+# # counts_info = l.counts_info(10)
+# # print( (counts_info[0]/32, counts_info[1]/32) )
+
+# class S(bubbles.GridStart):
+# 	line1 = gen_c.Line1()
+# 	line2 = FragmentLine1()
+
+# abjad.show( S().score() )
 
 # rest = abjad.scoretools.MultimeasureRest( abjad.durationtools.Duration(9,8) )
 # staff = abjad.Staff("\\time 9/8")

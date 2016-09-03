@@ -40,12 +40,21 @@ class Rhythms(object):
     #         music.append(abjad.scoretools.MultimeasureRest((silence_counts, self.rhythm_segments.rhythm_denominator/self.rhythm_segments.rhythm_default_multiplier)))
 
 
-    def counts_before(self, index):
+    def counts_info(self, index):
+        # TO DO... if this could support multiple indices at once, it would improve performance
         sum_counts = 0
-        talea_counts = self.get_talea_counts() # TO DO... this will get messed up if rests added... should ignore negative counts
-        for i in range(index):
-            sum_counts += abs(talea_counts[i % len(talea_counts)])
-        return(sum_counts)
+        talea_counts = self.get_talea_counts_full_duration()
+        counts_index = 0 # the index of the counts to compaire against
+        full_index = 0 # the full index (including rests)
+        while True:
+            my_counts =talea_counts[full_index]
+            if my_counts > 0:
+                counts_index+= 1
+            if counts_index > index:
+                break
+            sum_counts += abs(my_counts)
+            full_index += 1
+        return(sum_counts, my_counts)
 
     def get_counts(self, index):
         """
@@ -61,22 +70,31 @@ class Rhythms(object):
         talea_counts = []
         for i,s in enumerate(self.rhythm_sequence * self.rhythm_times):
             talea_counts += [ int(r * self.rhythm_default_multiplier * self.rhythm_multipliers[i % len(self.rhythm_multipliers)]) for r in self.get_counts(i) ]
-        if self.rhythm_initial_silence:
-            talea_counts = [int(self.rhythm_initial_silence * self.rhythm_default_multiplier * -1)] + talea_counts
-        # if self.final_offset:
-        #     talea_counts = talea_counts + [int(self.final_offset * self.rhythm_default_multiplier * -1)]
         return talea_counts
 
     def get_sum_metrical_duration_counts(self):
         return int(sum([ d[0]/d[1] for d in self.metrical_durations ]) * self.rhythm_denominator)
 
-    def get_talea(self):
-        talea_counts = self.get_talea_counts()
-        # if self.once_only:
+    def fill_talea_counts(self, talea_counts):
         sum_metrical_duration_counts = self.get_sum_metrical_duration_counts()
-        sum_talea_counts = sum(talea_counts)
+        sum_talea_counts = sum([abs(c) for c in talea_counts])
         if sum_metrical_duration_counts > sum_talea_counts:
-            talea_counts += [sum_talea_counts - sum_metrical_duration_counts]
+            return talea_counts + [sum_talea_counts - sum_metrical_duration_counts]
+        return talea_counts
+
+    def get_talea_counts_full_duration(self):
+        talea_counts = self.get_talea_counts()
+        if self.rhythm_initial_silence:
+            talea_counts = [int(self.rhythm_initial_silence * self.rhythm_default_multiplier * -1)] + talea_counts
+        return self.fill_talea_counts(talea_counts)
+
+    def process_talea_counts(self, talea_counts):
+        return talea_counts
+
+    def get_talea(self):
+        talea_counts = self.process_talea_counts( 
+                    self.get_talea_counts_full_duration()
+                    )
         # print(talea_counts)
         return abjad.rhythmmakertools.Talea(talea_counts, self.rhythm_denominator)
 
