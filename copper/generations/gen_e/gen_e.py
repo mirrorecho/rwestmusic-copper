@@ -41,7 +41,6 @@ class Line3(LineGenE, machines.ReversableRhythms, machines.ReversablePitches, ge
     rhythm_reverse = (0,1,2,3,5,6,7,9,10,11,12,14,15,16)
     rhythm_multipliers = (0.5,1,0.5,1,1,0.5,0.5,1,1) + (1,1,1,1,1,0.5,1,1,3)
     breaks = ( (1,-3), (3,-3), (5,6), (7,1), (9,6), (10,1), (14,2), (16,1) )
-    once_only = True
     rhythm_times = 2
     rhythm_initial_silence = 23
 

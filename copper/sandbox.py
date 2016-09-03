@@ -8,8 +8,9 @@
 # - (DONE) use of holds
 # - (DONE) drones (basic algorythm and orchestrated into gen a at least)
 # - (DONE) LINE COMBO!!!
+# - (DONE) finish cleaning up line combo (reversable machine, make sure gens OK, and consistent attribute naming)
+# - (DONE)  - remove once_only (everything is once only)
 # ----------------------------
-# - finish cleaning up line combo (reversable machine, make sure gens OK, and consistent attribute naming)
 # - fragment lines
 # - - - including better holds (sequences, dynamics, and ties)
 # - - - including pinpoint lines

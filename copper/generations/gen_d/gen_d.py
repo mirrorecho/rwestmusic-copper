@@ -8,6 +8,9 @@ from copper.generations.gen_c import gen_c
 # -------------------------------------------------------------------------------------------------
 
 class Line1(machines.Harmony, gen_c.Line1):
+    metrical_durations = ( (9,8), ) * 12
+    rhythm_initial_silence = 5 * (3 * 3/2)
+    rhythm_multipliers = (1.5,)
     pitch_displacement = gen_c.Line1.pitch_displacement +\
             machines.FifthDisplacement(
                         up  =(  13,15,19,26), 
@@ -15,20 +18,17 @@ class Line1(machines.Harmony, gen_c.Line1):
                         )
     pitch_respell = "sharps"
     pitch_times = 2
-    rhythm_multipliers = (1.5,)
-    metrical_durations = ( (9,8), ) * 7
-    rhythm_initial_silence = 15 * 3/2
-
 # -------------------------------------------------------------------------------------------------
 
 class Line2(machines.Harmony, gen_c.Line2):
+    metrical_durations = ( (9,8), ) * 12
+    rhythm_initial_silence = 6 * (3 * 3/2)
+    rhythm_multipliers = (1.5,)
     pitch_displacement = gen_c.Line3.pitch_displacement +\
             machines.FifthDisplacement(
                         down=(22,23,26)
                         )
-    rhythm_initial_silence = 18 * 3/2
-    metrical_durations = ( (9,8), ) * 6
-    rhythm_multipliers = (1.5,)
+    pitch_respell = "sharps"
 
 # -------------------------------------------------------------------------------------------------
 
@@ -43,20 +43,18 @@ class Line4(gen_c.Line4):
 # -------------------------------------------------------------------------------------------------
 
 class Line5(gen_c.Line4):
+    metrical_durations = ( (9,8), )*11 + ( (3,8), ) * 39
+    rhythm_initial_silence = (11*3 + 2) * 3/2
+    multiplier_phrase = (0.5,)*2 + (0.25,)*2 + (0.5,) + (0.25,)*4 + (0.5,) + (0.25,)*3 + (0.5,) + (0.25,)*4
+    rhythm_multipliers = (0.5,)*2 + (0.25,)*2 +  multiplier_phrase*2
+    breaks = ()
+    rhythm_times = 5
     pitch_displacement = machines.FifthDisplacement(
             up =    (1,2,3,4,5,7)
             )
     pitch_displacement.update(0,(-24,)) # TEMP USE ... see 2 octaves down for ease-of-viewing only
     pitch_respell = "flats"
     pitch_times = 5
-    rhythm_initial_silence = (11*3 + 2) * 3/2
-    silence_ly = "R1*9/8*11 r4. r4."
-    metrical_durations = ( (3,8), ) * 37
-    multiplier_phrase = (0.5,)*2 + (0.25,)*2 + (0.5,) + (0.25,)*4 + (0.5,) + (0.25,)*3 + (0.5,) + (0.25,)*4
-    rhythm_multipliers = (0.5,)*2 + (0.25,)*2 +  multiplier_phrase*2
-    breaks = ()
-    once_only = False
-    rhythm_times = 5
 
 # -------------------------------------------------------------------------------------------------
 

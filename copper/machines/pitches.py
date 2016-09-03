@@ -41,9 +41,9 @@ class Pitches:
 
     def after_pitches(self, music, **kwargs):
         if self.pitch_respell == "sharps":
-            abjad.mutate(music).pitch_respell_with_sharps()
+            abjad.mutate(music).respell_with_sharps()
         elif self.pitch_respell == "flats":
-            abjad.mutate(music).pitch_respell_with_flats()
+            abjad.mutate(music).respell_with_flats()
 
 # -------------------------------------------------------------------------------------------------
 bubbles.illustrate_me(__file__, 

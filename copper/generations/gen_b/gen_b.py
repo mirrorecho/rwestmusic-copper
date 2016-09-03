@@ -30,6 +30,7 @@ class Line2(LineGenB, gen_a.Line1):
 # -------------------------------------------------------------------------------------------------
 
 class Line3(LineGenB, gen_a.Line1):
+    metrical_durations = ( (3,4), )*12 + ( (1,4),(1,4),(1,4), )*5 + ( (3,4), )*7
     rhythm_initial_silence = 36
     rhythm_multipliers = (0.5,0.25)
     pitch_displacement = machines.FifthDisplacement(

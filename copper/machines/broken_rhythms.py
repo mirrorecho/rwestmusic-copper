@@ -12,6 +12,12 @@ class BrokenRhythms(machines.Rhythms):
     break_rests_allowed = (0,2) # the indices of the segments in Rhythms.counts for which rests can be added beforehand
     break_extensions_allowed = (2,)  # the indices of the segments in Rhythms.counts for which the initial durations can be lengthened
 
+    @classmethod
+    def repeat_breaks(cls, breaks=None, at_index=0):
+        at_index = at_index or sum([len(c) for c in cls.counts])
+        breaks = breaks or cls.breaks
+        return breaks + tuple([(b[0] + at_index, b[1]) for b in breaks])
+
     def get_counts(self, index):
         counts_index = self.rhythm_sequence[index % len(self.rhythm_sequence)]
         my_counts = super().get_counts(index)

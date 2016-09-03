@@ -9,7 +9,7 @@ class Rhythms(object):
     mixin that creates rhythms based off of a defined rhythm_sequence, with various trinkets
     """
     metrical_durations = ( (1,1), ) * 8
-    once_only = True
+    # once_only = True
     counts = (
         # NOTE... anything >1 can be extended IFF at the beginning/end of a phrase
         (2,1,1), 
@@ -72,18 +72,19 @@ class Rhythms(object):
 
     def get_talea(self):
         talea_counts = self.get_talea_counts()
-        if self.once_only:
-            sum_metrical_duration_counts = self.get_sum_metrical_duration_counts()
-            sum_talea_counts = sum(talea_counts)
-            if sum_metrical_duration_counts > sum_talea_counts:
-                talea_counts += [sum_talea_counts - sum_metrical_duration_counts]
-        print(talea_counts)
+        # if self.once_only:
+        sum_metrical_duration_counts = self.get_sum_metrical_duration_counts()
+        sum_talea_counts = sum(talea_counts)
+        if sum_metrical_duration_counts > sum_talea_counts:
+            talea_counts += [sum_talea_counts - sum_metrical_duration_counts]
+        # print(talea_counts)
         return abjad.rhythmmakertools.Talea(talea_counts, self.rhythm_denominator)
 
     def get_rhythm_maker(self):
         return abjad.rhythmmakertools.TaleaRhythmMaker(
                 talea=self.get_talea(), 
-                read_talea_once_only = self.once_only
+                read_talea_once_only = True
+                # read_talea_once_only = self.once_only
                 # division_masks=division_masks,
                 # extra_counts_per_division=extra_counts_per_division,
                 )
