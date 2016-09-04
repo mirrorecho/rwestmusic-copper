@@ -15,10 +15,11 @@ class Rhythms(object):
         (2,1,1), 
         (1,1,1),
         (4,1,1), 
-        # (2,), # necessary?
     )
     
-    rhythm_sequence = (0,1,2) # for demo purposes only
+    rhythm_sequence = (
+            0,1,2  # these values for testing purposes only
+            )
     rhythm_denominator = 32
     rhythm_default_multiplier = 8
     rhythm_times = 1
@@ -28,16 +29,7 @@ class Rhythms(object):
 
     rhythm_initial_silence = 0 
 
-    # final_offset = 0 # ditto
-    # silence_counts = 0
-    # silence_ly = None # for fancy multimeasure rests (e.g. in 9/8)
-    # silence_post_counts = 0
-    # silence_post_ly = None # for fancy multimeasure rests (e.g. in 9/8)
-    # def add_silence(self, music, silence_counts=0, silence_ly=None):
-    #     if silence_ly:
-    #         music.extend(silence_ly)
-    #     elif self.rhythm_segments and silence_counts:
-    #         music.append(abjad.scoretools.MultimeasureRest((silence_counts, self.rhythm_segments.rhythm_denominator/self.rhythm_segments.rhythm_default_multiplier)))
+    _talea_counts = None
 
 
     def counts_info(self, index):
