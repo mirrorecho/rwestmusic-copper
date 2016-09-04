@@ -9,17 +9,16 @@
 # - (DONE) drones (basic algorythm and orchestrated into gen a at least)
 # - (DONE) LINE COMBO!!!
 # - (DONE) finish cleaning up line combo (reversable machine, make sure gens OK, and consistent attribute naming)
-# - (DONE)  - remove once_only (everything is once only)
+# - (DONE) - - remove once_only (everything is once only)
+# - (DONE) fragment lines
+# - (DONE) - - including better holds (sequences and ties)
+# - (DONE) - - including pinpoint lines
+# - (DONE) orchestrate gen a
 # ----------------------------
-# - fragment lines
-# - - - including better holds (sequences, dynamics, and ties)
-# - - - including pinpoint lines
-# - orchestrate gen a
-# - start gen f short score
 # - cross lines
-# - - - including using any duration(and maybe that will be enough)
+# - - - including using any duration (and maybe that will be enough)
+# - start gen f short score
 # - good draft of gen e short score
-# - review current short scores at piano and adjust
 # - start orchestrating gen b
 # - start orchestrating gen c
 # - good draft f short score
@@ -32,7 +31,7 @@
 # - think of gen d in 8th note rhythm_denominator
 # - start orchestrating gen d
 # - good gen h draft short score
-# ----------------------------
+# - review current short scores at piano and adjust
 # - start orchestrating gen e
 # - good draft orchestration of gen b
 # - good draft orchestration of gen c
@@ -48,10 +47,15 @@
 # - good orchestration of gen h
 # - multimeasure rest generator
 # - good parts template
+# - dynamics machines, especially with holds
 # - show indices/colors
 # - linux midi playback
 # - review fonts
 # - clarity between counts vs durations
+# - rhythms with metric modulations
+# - tempo markings
+# - rehearsal markings
+# - clean up gen a orchestration
 # ----------------------------
 
 import abjad

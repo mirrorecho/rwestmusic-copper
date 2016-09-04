@@ -85,13 +85,27 @@ class CopperStringsDiv(BubbleStaffGroup):
     bass = BubbleStaff(instrument=instrumenttools.Contrabass(instrument_name="Bass", short_instrument_name="cb"), clef="bass")
     sequence = ("violinIs","violinIIs","violas","cellos","bass")
 
+class CopperShortScore(BubbleStaffGroup):
+    line1 = BubbleStaff(instrument=instrumenttools.Violin(instrument_name="Line 1", short_instrument_name="1:"))
+    line2 = BubbleStaff(instrument=instrumenttools.Violin(instrument_name="Line 2", short_instrument_name="2:"))
+    line3 = BubbleStaff(instrument=instrumenttools.Violin(instrument_name="Line 3", short_instrument_name="3:"))
+    line4 = BubbleStaff(instrument=instrumenttools.Violin(instrument_name="Line 4", short_instrument_name="4:"))
+    line5 = BubbleStaff(instrument=instrumenttools.Violin(instrument_name="Line 5", short_instrument_name="5:"))
+    line6 = BubbleStaff(instrument=instrumenttools.Violin(instrument_name="Line 6", short_instrument_name="6:"))
+    line7 = BubbleStaff(instrument=instrumenttools.Violin(instrument_name="Line 7", short_instrument_name="7:"))
+    line8 = BubbleStaff(instrument=instrumenttools.Violin(instrument_name="Line 8", short_instrument_name="8:"))
+    line9 = BubbleStaff(instrument=instrumenttools.Violin(instrument_name="Line 9", short_instrument_name="9:"))
+    sequence = ("line1","line2","line3","line4","line5","line6","line7","line8","line9",)
+
 class CopperScore(BubbleFormatLargeScore):
     hide_empty = True
     winds = CopperWinds()
     brass = CopperBrass()
     perc = CopperPerc()
     strings = CopperStringsDiv()
-    sequence = ("winds", "brass", "perc", "taiko", "strings")
+    short_score = CopperShortScore()
+    # sequence = ("winds", "brass", "perc", "taiko", "strings")
+    sequence = ("winds", "brass", "perc", "taiko", "strings", "short_score")
 
 class CopperMusic(Bubble):
     flute1 = Placeholder()
@@ -122,6 +136,16 @@ class CopperMusic(Bubble):
     cello1 = Placeholder()
     cello2 = Placeholder()
     bass = Placeholder()
+
+    line1 = Placeholder()
+    line2 = Placeholder()
+    line3 = Placeholder()
+    line4 = Placeholder()
+    line5 = Placeholder()
+    line6 = Placeholder()
+    line7 = Placeholder()
+    line8 = Placeholder()
+    line9 = Placeholder()
 
 # music = CopperMusic()
 # music.show()

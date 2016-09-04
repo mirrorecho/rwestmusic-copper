@@ -8,7 +8,7 @@ class FragmentLine(object):
     """
     mixin to be used with ChooseLine
     """
-    fragment_indices = (1,)
+    fragment_indices = ()
     fragment_override_counts = (None,) # None keeps original duration
     fragment_precede_counts= (0,)
     fragment_precede_ties = (True,)
@@ -25,7 +25,7 @@ class FragmentLine(object):
             if duration_difference < 0: # add rest for all counts preceding
                 print("WARNING!!!! overlapping durations with fragment line at index %s! Durations will be screwed up." % index)
             elif duration_difference > 0:
-                processed_talea_counts += [duration_difference * -1]
+                processed_talea_counts += [int(duration_difference * -1)]
                 sum_duraton = counts_info[0] - preceding_duration
             override_counts = self.fragment_override_counts[i % len(self.fragment_override_counts)]
             if override_counts:
@@ -34,10 +34,10 @@ class FragmentLine(object):
                 duration = counts_info[1]
             if preceding_tie:
                 # if tied, then the preceding duration and duration count as 1 note
-                processed_talea_counts += [preceding_duration + duration]
+                processed_talea_counts += [int(preceding_duration + duration)]
             else:
                 # otherwise, they count as 2 notes
-                processed_talea_counts += [preceding_duration, duration]
+                processed_talea_counts += [int(preceding_duration), int(duration)]
             sum_duraton += preceding_duration + duration
         return self.fill_talea_counts(processed_talea_counts)
 
