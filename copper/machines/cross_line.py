@@ -8,7 +8,6 @@ class CrossLine(machines.Rhythms, machines.ChooseLine):
     """
     mixes and matches pitches from other lines, using its own rhythm
     """
-    pitches
     def get_line(self, index):
     	"""
 		hook, that should be overriden to return a ChooseLine object for a given rhythmic index.

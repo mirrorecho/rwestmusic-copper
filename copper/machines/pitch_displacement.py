@@ -4,7 +4,6 @@ import abjad
 from calliope import bubbles
 from copper import machines
 
-# TO DO... consider combining this into the pitches material... could simplify
 class PitchDisplacement(object):
     displacements = None
 

@@ -4,7 +4,47 @@ import abjad
 from calliope import bubbles
 from copper import machines
 
+class IndexInfo(object):
+    logical_tie_indices = None
+    instructions = None
+    dynamics = None
+    articulations = None
+    start_endos = None # ">" or "<" if crescendo or decrescendo 
+    stop_endos = None
+    start_slurs = None
+    stop_slurs = None
+    counts = None
+    counts_before = None
+    counts_rest = None
+    pitch_segment_index = None
+    pitch_segment_sub_index = None
+    pitch_segment_is_reversed = None
+    rhythm_segment_index = None
+    rhythm_segment_sub_index = None
+    rhythm_segment_is_reversed = None
+    cumulative_pitch_displacement = None
+    pitch_original = None
+    pitch_displaced = None
+    rhythmic_offset = None
+
+    def __call__(self, name):
+        return getattr(self, name, None)
+
 class ChooseLine(bubbles.Line):
+
+    info = () # to be replaced with in iterable with info about rhythms, duration, dynamics, etc. at each index
+
+    def initialize_info(self, size):
+        my_info = []
+        for i in range(size):
+            my_info[i] = IndexInfo()
+        self.info = tuple(my_info)
+
+    def set_info(self, index, name, value):
+        pass
+
+    def get_info(self, index, name):
+        return getattr(self._hashed_info[index], name)
 
     def get_rhythms(self, **kwargs):
         """

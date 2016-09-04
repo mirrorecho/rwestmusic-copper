@@ -14,7 +14,9 @@
 # - (DONE) - - including better holds (sequences and ties)
 # - (DONE) - - including pinpoint lines
 # - (DONE) orchestrate gen a
+# - (DONE) clarity between counts vs durations
 # ----------------------------
+# - keep hashed info for each index
 # - cross lines
 # - - - including using any duration (and maybe that will be enough)
 # - start gen f short score
@@ -51,11 +53,11 @@
 # - show indices/colors
 # - linux midi playback
 # - review fonts
-# - clarity between counts vs durations
 # - rhythms with metric modulations
 # - tempo markings
 # - rehearsal markings
 # - clean up gen a orchestration
+# - use asserts for error handling
 # ----------------------------
 
 import abjad
@@ -65,6 +67,23 @@ import abjad
 from calliope import bubbles
 from copper import machines
 from copper.generations.gen_c import gen_c
+
+class A(object):
+	a = 1
+
+class AA(A):
+	a = 1
+
+class B(object):
+	b = 1
+
+class AB(AA, B):
+	pass
+
+ab = AB()
+print(isinstance(ab, A))
+print(isinstance(ab, B))
+
 
 # class FragmentLine1(machines.FragmentLine, gen_c.Line1):
 # 	indices=(1,3)

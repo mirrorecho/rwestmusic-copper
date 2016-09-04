@@ -7,19 +7,19 @@ class ReversablePitches(object):
     pitch_reverse=()
     
     def get_pitch_segment(self, index):
-        segment = super().get_pitch_segment(index)
+        pitch_segment = super().get_pitch_segment(index)
         if index in self.pitch_reverse:
-            return segment[::-1]
-        return segment
+            return pitch_segment[::-1]
+        return pitch_segment
 
 class ReversableRhythms(object):
     rhythm_reverse=()
 
-    def get_counts(self, index):
-        counts = super().get_counts(index)
+    def get_rhythm_segment(self, index):
+        my_rhythm = super().get_rhythm_segment(index)
         if index in self.rhythm_reverse:
-            return counts[::-1]
-        return counts
+            return my_rhythm[::-1]
+        return my_rhythm
 
 # -------------------------------------------------------------------------------------------------
 

@@ -39,6 +39,12 @@ class Pitches:
         pitch_numbers = self.get_pitch_numbers(**kwargs)
         return abjad.pitchtools.PitchSegment( pitch_numbers )
 
+    def get_pitch_at_count(self):
+        if isinstance(self, machines.Rhythms):
+            
+        else:
+            print("ERROR: line must inherit from machines.Rhythms in order to call get_pitch_at_count")
+
     def after_pitches(self, music, **kwargs):
         if self.pitch_respell == "sharps":
             abjad.mutate(music).respell_with_sharps()
