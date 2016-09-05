@@ -3,10 +3,12 @@
 import abjad
 from calliope import bubbles
 from copper import machines
+from copper.machines.tools import IndexedData as ID # just to avoid a lot of typing
 from copper.generations.gen_d import gen_d
 
 class LineGenE(object):
-    metrical_durations = ( (3,4), ) * 35
+    metrical_durations = ID(default=((3,4),), limit=35)
+    # metrical_durations = ( (3,4), ) * 35
     # clef="bass" # TO DO... this doesn't work
 
 # -------------------------------------------------------------------------------------------------
@@ -39,8 +41,18 @@ class Line3(LineGenE, machines.ReversableRhythms, machines.ReversablePitches, ge
     pitch_reverse = (3,5,12,14)
     pitch_times = 2
     rhythm_reverse = (0,1,2,3,5,6,7,9,10,11,12,14,15,16)
-    rhythm_multipliers = (0.5,1,0.5,1,1,0.5,0.5,1,1) + (1,1,1,1,1,0.5,1,1,3)
-    breaks = ( (1,-3), (3,-3), (5,6), (7,1), (9,6), (10,1), (14,2), (16,1) )
+    rhythm_multipliers = machines.rhythms.make_multipliers()
+    rhythm_multipliers.extend( (0.5,1,0.5,1,1,0.5,0.5,1,1) + (1,1,1,1,1,0.5,1,1,3) )
+    breaks = ID({ 
+                1:  -3,
+                3:  -3,
+                5:   6,
+                7:   1,
+                9:   6,
+                10:  1,
+                14:  2,
+                16:  1 
+                })
     rhythm_times = 2
     rhythm_initial_silence = 23
 

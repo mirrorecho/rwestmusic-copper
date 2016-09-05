@@ -9,37 +9,62 @@ class FragmentLine(object):
     mixin to be used with ChooseLine
     """
     fragment_indices = ()
-    fragment_override_counts = (None,) # None keeps original duration
+    fragment_override_counts = (None,) # None keeps original duration, 0 extends to next note, negative extents to next note subtracting relative duration
     fragment_precede_counts= (0,)
     fragment_precede_ties = (True,)
+    fragment_rhythm_extensions = (
+        (0,-1) # first value is # before/after to 
+    )
+
     # TO DO... tie preceding?
 
-    def process_talea_counts(self, talea_counts, **kwargs):
-        processed_talea_counts = []
-        sum_duraton = 0
+    def process_rhythm_info(self, **kwargs):
+        super().process_rhythm_info(**kwargs)
+        new_info = []
         for i, index in enumerate(sorted(set(self.fragment_indices))): # sorted set makes sure that dupes are removed and the indices are in order
-            counts_info = self.counts_info(index)
+            my_info = self.info[index]
+            if i == 0:
+                self.rhythm_initial_silence = my_info.counts_before / self.rhythm_default_multiplier
+            
             preceding_duration = (self.fragment_precede_counts[i % len(self.fragment_precede_counts)] or 0) * self.rhythm_default_multiplier
             preceding_tie = self.fragment_precede_ties[i % len(self.fragment_precede_ties)]
-            duration_difference = counts_info[0] - sum_duraton - preceding_duration
-            if duration_difference < 0: # add rest for all counts preceding
-                print("WARNING!!!! overlapping durations with fragment line at index %s! Durations will be screwed up." % index)
-            elif duration_difference > 0:
-                processed_talea_counts += [int(duration_difference * -1)]
-                sum_duraton = counts_info[0] - preceding_duration
             override_counts = self.fragment_override_counts[i % len(self.fragment_override_counts)]
-            if override_counts:
-                duration = override_counts * self.rhythm_default_multiplier
-            else:
-                duration = counts_info[1]
-            if preceding_tie:
-                # if tied, then the preceding duration and duration count as 1 note
-                processed_talea_counts += [int(preceding_duration + duration)]
-            else:
-                # otherwise, they count as 2 notes
-                processed_talea_counts += [int(preceding_duration), int(duration)]
-            sum_duraton += preceding_duration + duration
-        return self.fill_talea_counts(processed_talea_counts)
+            if i > 0:
+                pass
+                # new_info[i-1].
+
+            # duration_difference = counts_info[0] - sum_duraton - preceding_duration
+
+            new_info.append(my_info)
+        self.info = tuple(new_info)
+
+    # # def process_talea_counts_OLD(self, talea_counts, **kwargs):
+    # #     processed_talea_counts = []
+    # #     sum_duraton = 0
+    # #     for i, index in enumerate(sorted(set(self.fragment_indices))): # sorted set makes sure that dupes are removed and the indices are in order
+    # #         counts_info = self.counts_info(index)
+    # #         preceding_duration = (self.fragment_precede_counts[i % len(self.fragment_precede_counts)] or 0) * self.rhythm_default_multiplier
+    # #         preceding_tie = self.fragment_precede_ties[i % len(self.fragment_precede_ties)]
+
+
+
+    #         duration_difference = counts_info[0] - sum_duraton - preceding_duration
+    #         if duration_difference < 0: # add rest for all counts preceding
+    #             print("WARNING!!!! overlapping durations with fragment line at index %s! Durations will be screwed up." % index)
+    #         elif duration_difference > 0:
+    #             processed_talea_counts += [int(duration_difference * -1)]
+    #             sum_duraton = counts_info[0] - preceding_duration
+    #         # override_counts = self.fragment_override_counts[i % len(self.fragment_override_counts)]
+    #         if override_counts:
+    #             duration = override_counts * self.rhythm_default_multiplier
+    #         else:
+    #             duration = counts_info[1]
+    #         if preceding_tie:
+    #             processed_talea_counts += [int(preceding_duration + duration)]
+    #         else:
+    #             processed_talea_counts += [int(preceding_duration), int(duration)]
+    #         sum_duraton += preceding_duration + duration
+    #     return self.fill_talea_counts(processed_talea_counts)
 
     def get_pitch_numbers(self, **kwargs):
         original_pitch_numbers = super().get_pitch_numbers(**kwargs)

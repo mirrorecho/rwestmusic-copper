@@ -5,6 +5,7 @@ from calliope import bubbles
 from copper import machines
 
 class PitchDisplacement(object):
+    # TO DO... inherit this from IndexedData
     displacements = None
 
     def __init__(self, **kwargs):

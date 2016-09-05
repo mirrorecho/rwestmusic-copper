@@ -3,12 +3,13 @@
 import abjad
 from calliope import bubbles
 from copper import machines
+from copper.machines.tools import IndexedData as ID # just to avoid a lot of typing
 from copper.generations.gen_0 import gen_0
 
 # -------------------------------------------------------------------------------------------------
 
 class Line1(gen_0.Line1):
-    metrical_durations = ( (1,1), ) * 18
+    metrical_durations = ID(default=((1,1),), limit=18)
     rhythm_initial_silence=24
     pitch_displacement = machines.FifthDisplacement(
             up =    (3,7,21),
@@ -24,6 +25,12 @@ class Line2(Line1):
             up =    (1,14,16,21,24),
             down =  ( 2, 15,20) 
             )
+    # class NewData:
+    #     pitch_displacement = machines.FifthDisplacement(
+    #             up =    (1,14,16,21,24),
+    #             down =  ( 2, 15,20) 
+    #             )
+
 
 # -------------------------------------------------------------------------------------------------
 

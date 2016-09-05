@@ -15,26 +15,34 @@
 # - (DONE) - - including pinpoint lines
 # - (DONE) orchestrate gen a
 # - (DONE) clarity between counts vs durations
+# - (DONE) keep hashed info for each index
+# - (DONE) pitched data in info
 # ----------------------------
-# - keep hashed info for each index
+# - info using IndexedData
+# - use info to implement line fragments
+# - refactor gen a orchestration
 # - cross lines
 # - - - including using any duration (and maybe that will be enough)
 # - start gen f short score
 # - good draft of gen e short score
 # - start orchestrating gen b
 # - start orchestrating gen c
-# - good draft f short score
 # - rhythm/pulse machine
 # - machine to slur rhythmic sections
-# - start gen g draft short score
 # - reorder machine
+# - start gen g draft short score
+# ----------------------------
+# - review current short scores at piano and adjust
+# - better gen c short score
+# - good draft f short score
 # - start gen h draft short score
 # - good gen g draft short score
 # - think of gen d in 8th note rhythm_denominator
 # - start orchestrating gen d
+# ----------------------------
 # - good gen h draft short score
-# - review current short scores at piano and adjust
 # - start orchestrating gen e
+# ----------------------------
 # - good draft orchestration of gen b
 # - good draft orchestration of gen c
 # - draft score template
@@ -42,6 +50,7 @@
 # - start orchestrating gen f
 # - start orchestrating gen g
 # - start orchestrating gen h
+# ----------------------------
 # - good orchestration of gen d
 # - good orchestration of gen e
 # - good orchestration of gen f
@@ -58,6 +67,7 @@
 # - rehearsal markings
 # - clean up gen a orchestration
 # - use asserts for error handling
+# - conisistency / plan for what's a class attribute and what's not
 # ----------------------------
 
 import abjad
@@ -66,35 +76,60 @@ from calliope import bubbles
 import abjad
 from calliope import bubbles
 from copper import machines
-from copper.generations.gen_c import gen_c
 
-class A(object):
-	a = 1
+d = {}
 
-class AA(A):
-	a = 1
 
-class B(object):
-	b = 1
 
-class AB(AA, B):
-	pass
 
-ab = AB()
-print(isinstance(ab, A))
-print(isinstance(ab, B))
+# d.update(
+# 	(0,1,2,3,4):"yo"
+# 	)
+
+# from copper.generations.gen_c import gen_c
+
+# class A():
+#     a = 1
+
+# my_a = A()
+
+
+# my_dict = {
+#     0: (line=a, rhythm_offset=4, tie_to_original_attack=False, duration_before_next=0),
+# }
+
+# l = [[1, 2, 3], [4, 5, 6], [7], [8, 9]]
+
+
+# print(l2)
+
+# class Line1(machines.Rhythms, machines.Pitches, machines.ChooseLine):
+#     rhythm_sequence = (0,0,0,0,1,2,0,0,1) 
+#     pitch_sequence = (0,1,0,2,2,0,0,1,2)
+#     rhythm_times = 1
+#     rhythm_initial_silence=4
+
+# class Line2(machines.BrokenRhythms, Line1):
+#     breaks = ( (1,2), )
+#     pass
+
+# l = Line2()
+# l.set_rhythm_info()
+# abjad.show( l.score() )
+
+# l.set_rhythm_hash_values()
 
 
 # class FragmentLine1(machines.FragmentLine, gen_c.Line1):
-# 	indices=(1,3)
-# 	durations=(7,4,)
+#   indices=(1,3)
+#   durations=(7,4,)
 
 # # counts_info = l.counts_info(10)
 # # print( (counts_info[0]/32, counts_info[1]/32) )
 
 # class S(bubbles.GridStart):
-# 	line1 = gen_c.Line1()
-# 	line2 = FragmentLine1()
+#   line1 = gen_c.Line1()
+#   line2 = FragmentLine1()
 
 # abjad.show( S().score() )
 

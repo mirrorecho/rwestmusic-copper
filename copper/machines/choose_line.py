@@ -5,30 +5,38 @@ from calliope import bubbles
 from copper import machines
 
 class IndexInfo(object):
-    logical_tie_indices = None
-    instructions = None
-    dynamics = None
-    articulations = None
-    start_endos = None # ">" or "<" if crescendo or decrescendo 
-    stop_endos = None
-    start_slurs = None
-    stop_slurs = None
-    counts = None
+    logical_tie_indices = ()
+    instructions = ()
+    dynamics = ()
+    articulations = ()
+    start_endos = () # ">" or "<" if crescendo or decrescendo 
+    stop_endos = ()
+    start_slurs = ()
+    stop_slurs = ()
+    relative_duration = None
+    counts = ()
     counts_before = None
-    counts_rest = None
+    pitch_sequence_index = None
     pitch_segment_index = None
     pitch_segment_sub_index = None
     pitch_segment_is_reversed = None
     rhythm_segment_index = None
     rhythm_segment_sub_index = None
+    rhythm_segment_multiplier = None  # the relative rhythm multiplier
     rhythm_segment_is_reversed = None
-    cumulative_pitch_displacement = None
+    pitch_displacement = None
+    pitch_displacement_cumulative = None
     pitch_original = None
     pitch_displaced = None
-    rhythmic_offset = None
+    # rhythmic_offset = None
+
+    def counts_sum(self):
+        return sum([abs(c) for c in self.counts])
 
     def __call__(self, name):
         return getattr(self, name, None)
+
+    # TO DO... easy string representation of IndexInfo
 
 class ChooseLine(bubbles.Line):
 
@@ -37,14 +45,22 @@ class ChooseLine(bubbles.Line):
     def initialize_info(self, size):
         my_info = []
         for i in range(size):
-            my_info[i] = IndexInfo()
+            my_info.append( IndexInfo() )
         self.info = tuple(my_info)
 
-    def set_info(self, index, name, value):
+    def set_rhythm_info(self, **kwargs):
         pass
 
-    def get_info(self, index, name):
-        return getattr(self._hashed_info[index], name)
+    def set_pitch_info(self, **kwargs):
+        pass
+
+    def process_rhythm_info(self, **kwargs):
+        # TO DO... is this every used? removed?
+        pass
+
+    def process_pitch_info(self, **kwargs):
+        # TO DO... is this every used? removed?
+        pass
 
     def get_rhythms(self, **kwargs):
         """
@@ -58,17 +74,14 @@ class ChooseLine(bubbles.Line):
         """
         pass
 
-    def get_pitches(self, **kwargs):
-        """
-        hook for returning iterable of pitches
-        """
-        return (0,)
+    # def get_pitches(self, **kwargs):
+    #     """
+    #     hook for returning iterable of pitches
+    #     """
+    #     return (0,)
 
     def apply_pitches(self, music, pitches, **kwargs):
-        logical_ties = abjad.select(music).by_logical_tie(pitched=True)
-        for i, logical_tie in enumerate(logical_ties):
-            for note in logical_tie:
-                note.written_pitch = pitches[i % len(pitches) ]
+        pass
 
     def after_pitches(self, music, **kwargs):
         """
@@ -77,9 +90,13 @@ class ChooseLine(bubbles.Line):
         pass
 
     def music(self, **kwargs):
+        self.set_rhythm_info(**kwargs)
+        self.set_pitch_info(**kwargs)
+        self.process_rhythm_info(**kwargs)
+        self.process_pitch_info(**kwargs)
         my_music = self.container_type( self.get_rhythms(**kwargs) )
         self.after_rhythms(my_music, **kwargs)
-        self.apply_pitches(my_music, self.get_pitches(**kwargs), **kwargs)
+        self.apply_pitches(my_music, **kwargs)
         self.after_pitches(my_music, **kwargs)
         return my_music
 

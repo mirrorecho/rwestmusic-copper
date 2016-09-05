@@ -2,15 +2,25 @@
 import abjad
 from calliope import bubbles
 from copper import machines
+from copper.machines.tools import IndexedData as ID # just to avoid a lot of typing
 from copper.generations.gen_b import gen_b
 
+
 class LineGenC(object):
-    metrical_durations = ( (1,1), ) * 24
+    metrical_durations = ID(default=((1,1),), limit=24)
 # -------------------------------------------------------------------------------------------------
 
 class Line1(LineGenC, machines.BrokenRhythms, gen_b.Line1):
     rhythm_initial_silence = 24
-    breaks = ( (1,-4), (2,-4), (3, 1), (5,-2), (6,-8), (10,-4), (11,-8) )
+    breaks = ID({
+            1:  -4,
+            2:  -4,
+            3:   1,
+            5:   2,
+            6:  -8,
+            10: -4,
+            11: -8
+            })
     pitch_displacement = machines.FifthDisplacement()
     pitch_displacement.cycle_fifth(1, cycle=(1,1,-1,-1,-1,1), times=6)
     pitch_displacement.flat(10)
@@ -22,7 +32,9 @@ class Line1(LineGenC, machines.BrokenRhythms, gen_b.Line1):
 
 class Line2(LineGenC, machines.BrokenRhythms,gen_b.Line2):
     rhythm_initial_silence = 22
-    breaks = ( (2,-4),)
+    breaks = ID({
+            2:  -4,
+            })
     pitch_displacement = machines.FifthDisplacement(
             up      = (1,6,7),
             down    = ( 4,  8)
@@ -38,12 +50,23 @@ class Line2(LineGenC, machines.BrokenRhythms,gen_b.Line2):
 # -------------------------------------------------------------------------------------------------
 
 class Line3(machines.BrokenRhythms, gen_b.Line3):
-    metrical_durations = ((1,1),)*7 + ((1,4),)*8 + ((1,2),(1,2),) + ((1,4),)*4 + ((1,1),)*13
+    metrical_durations = ID({
+            7:((1,4),)*4,
+            8:((1,4),)*4,
+            9:((1,2),)*2,
+            10:((1,4),)*4,
+            },
+            default=((1,1),), limit=24)
     rhythm_initial_silence = 28
-    breaks = ( (6,4), (9,-2), (10,4), (12,2))
+    breaks = ID({
+            6:   4,
+            9:  -2,
+            10:  4,
+            12:  2,
+            })
+    # rhythm_times = 1
     pitch_respell = "sharps"
     pitch_times = 2
-    # rhythm_times = 1
     pitch_displacement = machines.FifthDisplacement(
             up      = (1,2,7,8,9,),
             down    = (   4,     10)
@@ -51,7 +74,18 @@ class Line3(machines.BrokenRhythms, gen_b.Line3):
 # -------------------------------------------------------------------------------------------------
 
 class Line4(Line3):
-    metrical_durations = ((1,1),)*8 + ((1,4),)*8 + ((1,2),(1,4),(1,4),) + ((1,4),)*4 + ((1,1),)*13
+    metrical_durations = ID({
+            8:((1,4),)*4,
+            9:((1,4),)*4,
+            10:((1,2),(1,4),(1,4),),
+            11:((1,4),)*4,
+            12:((1,2),(1,4),(1,4),),
+            13:((1,2),(1,4),(1,4),),
+            14:((1,4),)*4,
+            15:((1,4),)*4,
+            },
+            default=((1,1),), limit=24)
+    # metrical_durations = ((1,1),)*8 + ((1,4),)*8 + ((1,2),(1,4),(1,4),) + ((1,4),)*4 + ((1,1),)*13
     rhythm_initial_silence = 30
     rhythm_times=2
     pitch_displacement = machines.FifthDisplacement(

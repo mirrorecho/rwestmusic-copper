@@ -3,14 +3,17 @@
 import abjad
 from calliope import bubbles
 from copper import machines
+from copper.machines.tools import IndexedData as ID # just to avoid a lot of typing
 from copper.generations.gen_c import gen_c
+
+class LineGenD(object):
+    metrical_durations = ID(default=((9,8),), limit=24)
+    rhythm_multipliers = machines.rhythms.make_multipliers(default=1.5)
 
 # -------------------------------------------------------------------------------------------------
 
-class Line1(machines.Harmony, gen_c.Line1):
-    metrical_durations = ( (9,8), ) * 12
+class Line1(LineGenD, machines.Harmony, gen_c.Line1):
     rhythm_initial_silence = 5 * (3 * 3/2)
-    rhythm_multipliers = (1.5,)
     pitch_displacement = gen_c.Line1.pitch_displacement +\
             machines.FifthDisplacement(
                         up  =(  13,15,19,26), 
@@ -20,10 +23,8 @@ class Line1(machines.Harmony, gen_c.Line1):
     pitch_times = 2
 # -------------------------------------------------------------------------------------------------
 
-class Line2(machines.Harmony, gen_c.Line2):
-    metrical_durations = ( (9,8), ) * 12
+class Line2(LineGenD, machines.Harmony, gen_c.Line2):
     rhythm_initial_silence = 6 * (3 * 3/2)
-    rhythm_multipliers = (1.5,)
     pitch_displacement = gen_c.Line3.pitch_displacement +\
             machines.FifthDisplacement(
                         down=(22,23,26)
@@ -43,11 +44,16 @@ class Line4(gen_c.Line4):
 # -------------------------------------------------------------------------------------------------
 
 class Line5(gen_c.Line4):
-    metrical_durations = ( (9,8), )*11 + ( (3,8), ) * 39
+    metrical_durations = ID(default=((9,8),), limit=24)
+    metrical_durations.fill(range(11,24), ((3,8),)*3)
     rhythm_initial_silence = (11*3 + 2) * 3/2
+    
+    # TO DO... this could be made more readable...
     multiplier_phrase = (0.5,)*2 + (0.25,)*2 + (0.5,) + (0.25,)*4 + (0.5,) + (0.25,)*3 + (0.5,) + (0.25,)*4
-    rhythm_multipliers = (0.5,)*2 + (0.25,)*2 +  multiplier_phrase*2
-    breaks = ()
+    rhythm_multipliers = machines.rhythms.make_multipliers()
+    rhythm_multipliers.extend( (0.5,)*2 + (0.25,)*2 + multiplier_phrase*2 + (0.5,)*2 )
+    
+    breaks = ID()
     rhythm_times = 5
     pitch_displacement = machines.FifthDisplacement(
             up =    (1,2,3,4,5,7)

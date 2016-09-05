@@ -8,6 +8,8 @@
 #     globals(),
 #     )
 
+
+from copper.machines.tools import *
 from copper.machines.pitch_displacement import *
 from copper.machines.pitches import *
 from copper.machines.rhythms import *

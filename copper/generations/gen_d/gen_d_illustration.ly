@@ -1,4 +1,4 @@
-% 2016-09-03 14:37
+% 2016-09-05 17:00
 
 \version "2.18.2"
 \language "english"
@@ -44,7 +44,35 @@
                 <a' d'' gs''>2.
                 <b e' a'>4.
                 <e' d'' gs''>4.
+                <b g' e''>4. ~
+                <b g' e''>2.
+                <d' b' gs''>4.
                 <b g' e''>4.
+                <e' fs' g'>4.
+                <e' fs' g'>4.
+                <fs' g' a'>4.
+                <fs' g' a'>2. ~
+                <fs' g' a'>1 ~
+                <fs' g' a'>8 ~
+                <fs' g' a'>4.
+                <d' e' fs'>4.
+                <e' fs' g'>4.
+                r1
+                r8
+                r1
+                r8
+                r2.
+                <d' g' cs''>4. ~
+                <d' g' cs''>4.
+                <e a d'>4.
+                <d' g' cs''>4.
+                <b e' g'>2.
+                <a g' cs''>4.
+                <b g' e''>4.
+                <a' d'' gs''>4.
+                <b e' a'>4.
+                <e' d'' gs''>4.
+                <b g' e''>2.
             }
         }
         \context Staff = "line2" {
@@ -80,6 +108,35 @@
                 <fs' b' e''>4.
                 <b e' g'>4.
                 <d' g' cs''>2.
+                <e' fs' a'>4.
+                <a' d'' gs''>4.
+                <gs'' a'' cs'''>4.
+                <fs'' gs'' a''>4.
+                <gs'' a'' b''>4.
+                r4.
+                r1
+                r8
+                <gs'' a'' b''>1 ~
+                <gs'' a'' b''>8 ~
+                <gs'' a'' b''>4.
+                <fs' b' e''>4.
+                <b e' g'>4.
+                <d' g' cs''>2.
+                <e' fs' a'>4.
+                <a' d'' gs''>4.
+                <gs'' a'' cs'''>2.
+                <fs'' gs'' a''>4.
+                <gs'' a'' b''>4.
+                <gs'' a'' b''>4.
+                <fs' b' e''>4.
+                <b e' g'>4.
+                r4.
+                r1
+                r8
+                r1
+                r8
+                r1
+                r8
             }
         }
         \context Staff = "line5" {

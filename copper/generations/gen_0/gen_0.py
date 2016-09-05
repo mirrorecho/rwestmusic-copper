@@ -3,11 +3,12 @@
 import abjad
 from calliope import bubbles
 from copper import machines
+from copper.machines.tools import IndexedData as ID # just to avoid a lot of typing
 
 # -------------------------------------------------------------------------------------------------
 
 class Line1(machines.Rhythms, machines.Pitches, machines.ChooseLine):
-    metrical_durations = ( (1,1), ) * 12
+    metrical_durations = ID({}, default=((1,1),), limit=12)
     rhythm_initial_silence = 12
     rhythm_sequence = (0,0,0,0,1,2,0,0,1) 
     pitch_sequence = (0,1,0,2,2,0,0,1,2)
