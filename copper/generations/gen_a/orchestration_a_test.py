@@ -33,24 +33,21 @@ class ViolinI1(machines.FragmentLine, Line1):
 # violin1.add_fragment(25, rhythm_offset=4, tie_to_original_attack=False, duration_before_next=0,)
 
 KWARGS = {"tie_to_original_attack":False, "duration_before_next":0,}
-DURATIONS = ID.make(18, ((1,1),), )
+DURATIONS = ID(None, ((1,1),), 18)
+# Fragments = ClassedID(machines.FragmentInfo)
 
 class ViolinI1(machines.FragmentLine, Line1):
-    metrical_durations = DURATIONS({
+    metrical_durations = DURATIONS + {
         11: ((1,2),)*2,
-        })
-    # metrical_durations = ID({
-    #         11: ((1,2),)*2,
-    #         }, 
-    #         18, ((1,1),), )
-    fragments = ID({
-        0: ID.d(offset=-1, **KWARGS),
-        3: ID.d(offset=4, **KWARGS),
-        7: ID.d(offset=4, **KWARGS),
-        13: ID.d(offset=4, **KWARGS),
-        16: ID.d(offset=4, **KWARGS),
-        21: ID.d(offset=4, **KWARGS),
-        25: ID.d(offset=4, **KWARGS),
+        }
+    fragments = machines.FragmentsInfo({
+        0: ID.item(offset=-1, **KWARGS),
+        3: ID.item(offset=4, **KWARGS),
+        7: ID.item(offset=4, **KWARGS),
+        13: ID.item(offset=4, **KWARGS),
+        16: ID.item(offset=4, **KWARGS),
+        21: ID.item(offset=4, **KWARGS),
+        25: ID.item(offset=4, **KWARGS),
         })
 class ViolinII1(machines.FragmentLine, Line1):
     metrical_durations = ID({
@@ -58,13 +55,13 @@ class ViolinII1(machines.FragmentLine, Line1):
             }, 
             18, ((1,1),), )
     fragments = ID({
-        1: ID.d(offset=-1, **KWARGS),
-        4: ID.d(offset=4, **KWARGS),
-        8: ID.d(offset=4, **KWARGS),
-        11: ID.d(offset=4, **KWARGS),
-        14: ID.d(offset=4, **KWARGS),
-        20: ID.d(offset=4, **KWARGS),
-        26: ID.d(offset=4, **KWARGS),
+        1: ID.item(offset=-1, **KWARGS),
+        4: ID.item(offset=4, **KWARGS),
+        8: ID.item(offset=4, **KWARGS),
+        11: ID.item(offset=4, **KWARGS),
+        14: ID.item(offset=4, **KWARGS),
+        20: ID.item(offset=4, **KWARGS),
+        26: ID.item(offset=4, **KWARGS),
         })
 
 class ViolinI1(machines.FragmentLine, Line1):

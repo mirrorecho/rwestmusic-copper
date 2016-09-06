@@ -6,7 +6,23 @@ from calliope import bubbles
 # b = None
 # print( set(dir(d)) - set(dir(b)) )
 
-class IndexedData(collections.UserDict):
+class SetAttributeMixin(object):
+    def __init__(self, **kwargs):
+        super().__init__()
+        for name, value in kwargs.items():
+            setattr(self, name, value)
+
+    def __str__(self):
+        my_string = ""
+        # TO DO... this is silly...
+        class DummyClass(object):
+            pass
+        for a in sorted(set(dir(self)) - set(dir(DummyClass()))):
+            my_string += a + "=" + str(getattr(self, a)) + " | "
+        return my_string
+
+
+class IndexedData(SetAttributeMixin, collections.UserDict):
     """
     behaves sort of like a cross between a list and a dictionary.
     """
@@ -15,22 +31,32 @@ class IndexedData(collections.UserDict):
     limit=1
     cyclic = True
     over_limit_defaults=True # if False, then attempting to get by indices >= limit will throw an exception. (only applies if cyclic=False)
+    items_type = None # WARNING, this must be defined at the class level
 
     # TO DO: implement this?
     # def keys(self):
     #     return collections.abc.KeysView(range(self.limit))
 
     def __init__(self, initialize_from=None, default=None, limit=None, **kwargs):
-        super().__init__()
+        super().__init__(**kwargs)
         self.default = default or self.default
         self.limit = limit or self.limit
-        for name, value in kwargs.items():
-            setattr(self, name, value)
         if initialize_from:
             self.update(initialize_from)
 
+    def get_default(self):
+        if hasattr(self.default, "__call__"):
+            return self.default()
+        else:
+            return self.default
+
+    @classmethod
+    def item(cls, **kwargs):
+        return cls.items_type(**kwargs)
+
     # TO DO... coerce items into a particular type?
     # TO DO... implement append, __add__, __mul__, insert, enumerate, items, make immutable?
+    # TO DO... implement better slicing (e.g. slicing outside of limits)
     # TO DO... calling max... odd behavior (returns first item's value)... why?
 
     # def __lt__(self, value, other):
@@ -49,6 +75,26 @@ class IndexedData(collections.UserDict):
             self.limit = max(from_dict) + 1
         super().update(from_dict)
 
+    def __iadd__(self, other):
+        if isinstance(other,collections.UserDict) or isinstance(other,dict):
+            self.update(other)
+        elif isintance(other, tuple) or isintance(other, list):
+            self.exend(other)
+        else:
+            raise TypeError("Cannot add object of type %s to IndexedData object" % type(other))
+        return self
+
+    def copy(self):
+        d = type(self)()
+        d += self
+        return d
+
+    def __add__(self, other):
+        d = self.copy() 
+        for index, interval_set in other.displacements.items():
+            d.update(index, interval_set)
+        return d
+
     def flattened(self):
         """
         if each item contains an iterable, this can create a combined, flattened list
@@ -57,14 +103,21 @@ class IndexedData(collections.UserDict):
         return [item for sublist in self for item in sublist] 
 
     def non_default_items(self):
-        # TO DO... better/safer way to implement this? Or is this good?
-        return self.data
+        return sorted(self.data.items())
 
     def fill(self, indices, value):
         if self.limit <= max(indices):
             self.limit = max(indices) + 1
         for i in indices:
-            self[i] = value
+            if hasattr(value, "__call__"):
+                # TO DO... better to call this over and over or set value once outside of loop?
+                self[i] = value()
+            else:
+                self[i] = value
+
+    def as_list(self):
+        # TO DO: this is a little screwy and doesn't work for indices outside the limits or for min_limit !=0
+        return [self[i] for i in range(self.limit) ]
 
     def extend(self, values):
         extend_from = 0
@@ -75,7 +128,10 @@ class IndexedData(collections.UserDict):
 
     def __setitem__(self, key, value):
         assert isinstance(key, int), "key is not an integer: %s" % key
-        self.data[key] = value
+        if hasattr(value, "__call__"):
+            self.data[key] = value()
+        else:
+            self.data[key] = value
         if self.limit <=key:
             self.limit = key + 1
 
@@ -83,12 +139,15 @@ class IndexedData(collections.UserDict):
         return self.limit
 
     def __getitem__(self, key):
+        if isinstance(key, slice):
+            # TO DO: this is a little screwy and doesn't work for indices outside the limits or for min_limit !=0
+            return self.as_list()[key]
         if self.cyclic:
             key = key % self.limit
         if key in self:
             return self.data[key]
         elif key < self.limit or self.over_limit_defaults:
-            return self.default
+            return self.get_default()
         else:
             raise KeyError(key)
 
@@ -102,18 +161,48 @@ class IndexedData(collections.UserDict):
             spacing = " " * (8-key_len) if key_len<8 else ""
             return " |%s%s: %s\n" % (spacing, key, value)
         my_string = "<IndexedData object>\n"
-        my_string += str_line("default", self.default)
+        my_string += str_line("default", self.get_default())
         for key, value in self.data.items():
             if key < self.limit:
                 my_string += str_line(key, value)
         my_string += str_line(self.limit, "MAX")
         return my_string
 
-d = IndexedData({44:13})
-if d[3]:
-    print("what?")
-else:
-    print("OK")
+class SomeIndexData(SetAttributeMixin):
+    info1 = None
+    info2 = None
+
+class SomeData(IndexedData):
+    items_type = SomeIndexData
+
+d = SomeData({
+    1:SomeData.item(info1="yoyo"),
+    2:SomeData.item(info1="ma"),
+    })
+d2 = IndexedData({
+    9:SomeData.item(info1="yoyo2"),
+    11:SomeData.item(info1="ma2"),
+    })
+
+d += d2
+
+print( d )
+
+# print(type( slice(0,4,None) ))
+# print(d[1:4])
+# print( dir( slice(0,1,None) ) )
+ 
+# class FunnyList(list):
+#     def __getitem__(self, index):
+#         print(index.stop)
+#         # return list.__getitem__(self, index)
+
+# l = FunnyList()
+# l.extend( ("a","b","c","d","e") )
+
+# print(l[1:3])
+
+
 # # d.limit=24
 # d[3]="HAHA"
 # d.extend(("a","b","C"))

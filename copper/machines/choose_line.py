@@ -3,8 +3,9 @@
 import abjad
 from calliope import bubbles
 from copper import machines
+# from copper.machines.tools import IndexedData as ID # just to avoid a lot of typing
 
-class IndexInfo(object):
+class IndexInfo(machines.SetAttributeMixin):
     logical_tie_indices = ()
     instructions = ()
     dynamics = ()
@@ -33,20 +34,18 @@ class IndexInfo(object):
     def counts_sum(self):
         return sum([abs(c) for c in self.counts])
 
-    def __call__(self, name):
-        return getattr(self, name, None)
+    # def __call__(self, name):
+    #     return getattr(self, name, None)
 
     # TO DO... easy string representation of IndexInfo
 
+class LineData(machines.IndexedData):
+    items_type = IndexInfo
+    default= lambda self=None : IndexInfo()
+
 class ChooseLine(bubbles.Line):
 
-    info = () # to be replaced with in iterable with info about rhythms, duration, dynamics, etc. at each index
-
-    def initialize_info(self, size):
-        my_info = []
-        for i in range(size):
-            my_info.append( IndexInfo() )
-        self.info = tuple(my_info)
+    info = LineData() 
 
     def set_rhythm_info(self, **kwargs):
         pass
@@ -74,13 +73,7 @@ class ChooseLine(bubbles.Line):
         """
         pass
 
-    # def get_pitches(self, **kwargs):
-    #     """
-    #     hook for returning iterable of pitches
-    #     """
-    #     return (0,)
-
-    def apply_pitches(self, music, pitches, **kwargs):
+    def apply_pitches(self, music, **kwargs):
         pass
 
     def after_pitches(self, music, **kwargs):

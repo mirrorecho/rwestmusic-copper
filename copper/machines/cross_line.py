@@ -16,12 +16,6 @@ class CrossLine(machines.Rhythms, machines.ChooseLine):
     	"""
     	return self.lines[index]
 
-    def get_pitches(self, **kwargs):
-        """
-        hook for returning iterable of pitches
-        """
-        return (0,)
-
 
     # TO DO... tie preceding?
 

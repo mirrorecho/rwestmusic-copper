@@ -17,19 +17,19 @@
 # - (DONE) clarity between counts vs durations
 # - (DONE) keep hashed info for each index
 # - (DONE) pitched data in info
+# - (DONE) info using IndexedData
 # ----------------------------
-# - info using IndexedData
 # - use info to implement line fragments
+# - machine to slur rhythmic sections
 # - refactor gen a orchestration
+# - rhythm/pulse machine
+# - reorder machine
 # - cross lines
 # - - - including using any duration (and maybe that will be enough)
 # - start gen f short score
 # - good draft of gen e short score
 # - start orchestrating gen b
 # - start orchestrating gen c
-# - rhythm/pulse machine
-# - machine to slur rhythmic sections
-# - reorder machine
 # - start gen g draft short score
 # ----------------------------
 # - review current short scores at piano and adjust
@@ -76,10 +76,15 @@ from calliope import bubbles
 import abjad
 from calliope import bubbles
 from copper import machines
+from copper.machines import Fragments
 
-d = {}
+fragments = Fragments({
+	33:Fragments.item(attack_offset=4),
+	22:Fragments.item(attack_offset=4),
+	})
 
-
+for i, f in fragments.non_default_items():
+	print((i,f))
 
 
 # d.update(

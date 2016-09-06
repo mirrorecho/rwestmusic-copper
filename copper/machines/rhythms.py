@@ -74,15 +74,9 @@ class Rhythms(object):
 
     def set_rhythm_info(self, **kwargs):
         rhythm_length = sum([len(self.rhythm_segments[r]) for r in self.rhythm_sequence]) * self.rhythm_times
-        if not self.info:
-            self.initialize_info(rhythm_length)
-
+        self.info.limit = rhythm_length
 
         info_index = 0
-
-        # NOTE... this assumes that set_rhythm_info is always called first... OK to assume that?
-        # if not, then need to think initialize self.info first
-        info_list = []
 
         counts_before = self.rhythm_initial_silence * self.rhythm_default_multiplier
 
@@ -98,9 +92,9 @@ class Rhythms(object):
                 my_info.relative_duration = rhythm_segment[j]
                 my_info.counts = (int(my_info.relative_duration * my_info.rhythm_segment_multiplier * self.rhythm_default_multiplier),)
                 self.process_rhythm_info_item(my_info)
-                info_list.append(my_info)
+                self.info[info_index] = my_info
                 counts_before += my_info.counts_sum()
-        self.info = tuple(info_list)
+                info_index += 1
 
     def get_sum_metrical_duration_counts(self):
         """
