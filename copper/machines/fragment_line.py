@@ -7,9 +7,9 @@ from copper import machines
 class FragmentInfo(machines.SetAttributeMixin):
     attack_offset=0
     release_offset=0
-    tie_to_original_attack = True
-    duration_before_next = None
-    duration = None # set to fix to a specific duration, cancels out release_offset, duration_before_next, and tie_to_original_attack
+    keep_original_attack = False # note, True only makes sense if attack_offset <0
+    duration_before_next = None #set to extend note up to the next fragment note (with a rest of this length), overrides release_offset
+    duration = None # set to fix to a specific duration, overrides both release_offset and duration_before_next
 
 class Fragments(machines.IndexedData):
     items_type=FragmentInfo
@@ -20,63 +20,81 @@ class FragmentLine(object):
     """
     fragments = Fragments()
 
-    def process_rhythm_info(self, **kwargs):
-        super().process_rhythm_info(**kwargs)
-        new_info = machines.LineData()
+    def process_info(self, **kwargs):
+        super().process_info(**kwargs)
+        new_info_data = machines.LineData()
+        
+        previous_info = None # rest and/or duration extension of fragment calculated once we know the FOLLOWING fragment's position, so need to track this
+        previous_fragment = None
+
+        # TO DO... maybe use this to help with warning below?
+        # def get_first_nonrest_counts(counts):
+        #     for c in counts:
+        #         if c > 0:
+        #             return c
+
+        counter = 0
+        
         for i, fragment in self.fragments.non_default_items(): 
-            old_info = self.info[i]
-            if i == 0:
-                self.rhythm_initial_silence = my_info.counts_before / self.rhythm_default_multiplier
-            new_info = machines.IndexInfo()
+
+            my_info = self.info[i].copy()
+            my_info.original_index = i
             
-            # remember to multiply  by self.rhythm_default_multiplier
+            my_info.counts_before = int(self.info[i].counts_before + (fragment.attack_offset * self.rhythm_default_multiplier))
+            
+            if fragment.attack_offset<0 and fragment.keep_original_attack:
+                # if attack precedes original and not tied to original attack, then two notes (lead-in note, then another on the original attack)
+                pre_attack_counts = int(abs(fragment.attack_offset)*self.rhythm_default_multiplier)
+                if fragment.duration:
+                    my_info.counts = [pre_attack_counts, int(fragment.duration * self.rhythm_default_multiplier)]
+                else:
+                    # TO DO... WARNING!!! assumes counts has only 1 item (will not work with added rests or repeated notes)
+                    # .... this needs to be fixed
+                    my_info.counts = [pre_attack_counts, int(self.info[i].counts[0] + fragment.release_offset*self.rhythm_default_multiplier)]
+            else:
+                # if not keeping original attack in addition to a preceding one, then there is just one note...
+                if fragment.duration:
+                    my_info.counts = [int(fragment.duration * self.rhythm_default_multiplier)]
+                else:
+                    # TO DO... SAME WARNING AS ABOVE
+                    my_info.counts = [int(self.info[i].counts[0] - (fragment.attack_offset + fragment.release_offset)*self.rhythm_default_multiplier),]
 
-            if i > 0:
-                pass
-                # new_info[i-1].
+            if previous_info is None:
+                self.rhythm_initial_silence = my_info.counts_before / self.rhythm_default_multiplier
+            else:
+                # this is the difference in counts between the end of the last index and the start of this one:
+                counts_difference = my_info.counts_before - previous_info.counts_before - previous_info.counts_sum()
 
-            # duration_difference = counts_info[0] - sum_duraton - preceding_duration
+                if counts_difference < 0:
+                     # if diference is negative, then we can see whether we can deduct from the last count...
+                    previous_last_overlap = abs(previous_info.counts[-1]) + counts_difference
+                    if previous_last_overlap < 0:
+                        print("WARNING: overlapping fragments at index %s: output will be screwed up." % i)
+                    elif previous_last_overlap > 0:
+                        previous_info.counts[-1] = previous_last_overlap
+                elif counts_difference > 0:
+                    # if there's a positive difference need to add rests to, or extend, previous:
+                    if previous_fragment.duration_before_next is not None and not previous_fragment.duration:
+                        if previous_fragment.duration_before_next==0:
+                            # extend last note right up to this one
+                            previous_info.counts[-1] += counts_difference
+                        else:
+                            # extend last note up to this one with a rest between
+                            previous_info.counts[-1] += int(counts_difference - (previous_fragment.duration_before_next * self.rhythm_default_multiplier))
+                            previous_info.counts += [ int(previous_fragment.duration_before_next * self.rhythm_default_multiplier * -1) ]
+                    else:
+                        # just add a rest
+                        previous_info.counts += [counts_difference*-1]
 
-            new_info.append(my_info)
-        self.info = tuple(new_info)
+            
+            previous_info = my_info
+            previous_fragment = fragment
+            new_info_data[counter] = my_info
+            counter += 1
 
-    # # def process_talea_counts_OLD(self, talea_counts, **kwargs):
-    # #     processed_talea_counts = []
-    # #     sum_duraton = 0
-    # #     for i, index in enumerate(sorted(set(self.fragment_indices))): # sorted set makes sure that dupes are removed and the indices are in order
-    # #         counts_info = self.counts_info(index)
-    # #         preceding_duration = (self.fragment_precede_counts[i % len(self.fragment_precede_counts)] or 0) * self.rhythm_default_multiplier
-    # #         preceding_tie = self.fragment_precede_ties[i % len(self.fragment_precede_ties)]
-
-
-
-    #         duration_difference = counts_info[0] - sum_duraton - preceding_duration
-    #         if duration_difference < 0: # add rest for all counts preceding
-    #             print("WARNING!!!! overlapping durations with fragment line at index %s! Durations will be screwed up." % index)
-    #         elif duration_difference > 0:
-    #             processed_talea_counts += [int(duration_difference * -1)]
-    #             sum_duraton = counts_info[0] - preceding_duration
-    #         # override_counts = self.fragment_override_counts[i % len(self.fragment_override_counts)]
-    #         if override_counts:
-    #             duration = override_counts * self.rhythm_default_multiplier
-    #         else:
-    #             duration = counts_info[1]
-    #         if preceding_tie:
-    #             processed_talea_counts += [int(preceding_duration + duration)]
-    #         else:
-    #             processed_talea_counts += [int(preceding_duration), int(duration)]
-    #         sum_duraton += preceding_duration + duration
-    #     return self.fill_talea_counts(processed_talea_counts)
-
-    # def get_pitch_numbers(self, **kwargs):
-    #     original_pitch_numbers = super().get_pitch_numbers(**kwargs)
-    #     pitch_numbers = []
-    #     for i, index in enumerate(self.fragment_indices):
-    #         pitch_numbers.append(original_pitch_numbers[index])
-    #         if not self.fragment_precede_ties[i % len(self.fragment_precede_ties)]:
-    #             # if not tied, then we need to add the pitch again
-    #             pitch_numbers.append(original_pitch_numbers[index])
-    #     return pitch_numbers
+        self._original_info = self.info
+        self.info = new_info_data
+        # print(self.info)
 
 
 # -------------------------------------------------------------------------------------------------

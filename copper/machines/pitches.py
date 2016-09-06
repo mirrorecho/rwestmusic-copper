@@ -58,14 +58,10 @@ class Pitches:
                 self.process_pitch_info_item(my_info)
             
 
-    def process_pitch_info(self, **kwargs):
-        # TO DO... is this every used? removed?
-        pass
-
     # TO DO... consider passing pitch_respell as an optional argument here
-    def get_pitches(self, **kwargs):
-        pitch_numbers = self.get_pitch_numbers(**kwargs)
-        return abjad.pitchtools.PitchSegment( pitch_numbers )
+    # def get_pitches(self, **kwargs):
+    #     pitch_numbers = self.get_pitch_numbers(**kwargs)
+    #     return abjad.pitchtools.PitchSegment( pitch_numbers )
 
     # def get_pitch_at_count(self):
     #     if isinstance(self, machines.Rhythms):
@@ -74,13 +70,21 @@ class Pitches:
     #         print("ERROR: line must inherit from machines.Rhythms in order to call get_pitch_at_count")
 
     def apply_pitches(self, music, **kwargs):
-        # TO DO shouldn't assume that there is just 1 logical tie per index
         logical_ties = abjad.select(music).by_logical_tie(pitched=True)
+        # TO DO better way of dealing with logical ties 
+        info_counter = 0
+        count_counter = 0
         for i, logical_tie in enumerate(logical_ties):
+            my_info = self.info[info_counter]
             for note in logical_tie:
                 # print(self.info[i].pitch_original)
                 # print(self.info[i].pitch_displaced)
-                note.written_pitch = self.info[i].pitch_displaced
+                note.written_pitch = my_info.pitch_displaced
+            if len(my_info.logical_tie_counts()) > count_counter + 1:
+                count_counter += 1
+            else:
+                count_counter = 0
+                info_counter += 1
 
     def after_pitches(self, music, **kwargs):
         if self.pitch_respell == "sharps":

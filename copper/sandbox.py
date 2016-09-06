@@ -18,20 +18,22 @@
 # - (DONE) keep hashed info for each index
 # - (DONE) pitched data in info
 # - (DONE) info using IndexedData
+# - (DONE use info to implement line fragments
 # ----------------------------
-# - use info to implement line fragments
+# - work in logical tie logic to info (esp. for pitches, but also for slurs, dynamics, articulations, etc.)
 # - machine to slur rhythmic sections
 # - refactor gen a orchestration
 # - rhythm/pulse machine
 # - reorder machine
 # - cross lines
 # - - - including using any duration (and maybe that will be enough)
+# ----------------------------
 # - start gen f short score
 # - good draft of gen e short score
 # - start orchestrating gen b
+# - update fragmentline to work with rests
 # - start orchestrating gen c
 # - start gen g draft short score
-# ----------------------------
 # - review current short scores at piano and adjust
 # - better gen c short score
 # - good draft f short score
@@ -42,7 +44,6 @@
 # ----------------------------
 # - good gen h draft short score
 # - start orchestrating gen e
-# ----------------------------
 # - good draft orchestration of gen b
 # - good draft orchestration of gen c
 # - draft score template
@@ -68,6 +69,7 @@
 # - clean up gen a orchestration
 # - use asserts for error handling
 # - conisistency / plan for what's a class attribute and what's not
+# - naming of variables/classes for info items vs entire data set is confusing!
 # ----------------------------
 
 import abjad

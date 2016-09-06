@@ -29,10 +29,14 @@ class IndexInfo(machines.SetAttributeMixin):
     pitch_displacement_cumulative = None
     pitch_original = None
     pitch_displaced = None
+    original_index = None
     # rhythmic_offset = None
 
     def counts_sum(self):
         return sum([abs(c) for c in self.counts])
+
+    def logical_tie_counts(self):
+        return [c for c in self.counts if c>0]
 
     # def __call__(self, name):
     #     return getattr(self, name, None)
@@ -53,12 +57,8 @@ class ChooseLine(bubbles.Line):
     def set_pitch_info(self, **kwargs):
         pass
 
-    def process_rhythm_info(self, **kwargs):
-        # TO DO... is this every used? removed?
-        pass
-
-    def process_pitch_info(self, **kwargs):
-        # TO DO... is this every used? removed?
+    def process_info(self, **kwargs):
+        # hook that can do fancy things once pitch/rhythm info has been set (like breaking up lines, etc.)
         pass
 
     def get_rhythms(self, **kwargs):
@@ -85,8 +85,7 @@ class ChooseLine(bubbles.Line):
     def music(self, **kwargs):
         self.set_rhythm_info(**kwargs)
         self.set_pitch_info(**kwargs)
-        self.process_rhythm_info(**kwargs)
-        self.process_pitch_info(**kwargs)
+        self.process_info(**kwargs)
         my_music = self.container_type( self.get_rhythms(**kwargs) )
         self.after_rhythms(my_music, **kwargs)
         self.apply_pitches(my_music, **kwargs)

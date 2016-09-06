@@ -34,20 +34,21 @@ class ViolinI1(machines.FragmentLine, Line1):
 
 KWARGS = {"tie_to_original_attack":False, "duration_before_next":0,}
 DURATIONS = ID(None, ((1,1),), 18)
+F = machines.Fragments
 # Fragments = ClassedID(machines.FragmentInfo)
 
 class ViolinI1(machines.FragmentLine, Line1):
     metrical_durations = DURATIONS + {
         11: ((1,2),)*2,
         }
-    fragments = machines.FragmentsInfo({
-        0: ID.item(offset=-1, **KWARGS),
-        3: ID.item(offset=4, **KWARGS),
-        7: ID.item(offset=4, **KWARGS),
-        13: ID.item(offset=4, **KWARGS),
-        16: ID.item(offset=4, **KWARGS),
-        21: ID.item(offset=4, **KWARGS),
-        25: ID.item(offset=4, **KWARGS),
+    fragments = F({
+        0: F.item(offset=-1, **KWARGS),
+        3: F.item(offset=4, **KWARGS),
+        7: F.item(offset=4, **KWARGS),
+        13: F.item(offset=4, **KWARGS),
+        16: F.item(offset=4, **KWARGS),
+        21: F.item(offset=4, **KWARGS),
+        25: F.item(offset=4, **KWARGS),
         })
 class ViolinII1(machines.FragmentLine, Line1):
     metrical_durations = ID({

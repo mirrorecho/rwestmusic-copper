@@ -134,8 +134,8 @@ class Rhythms(object):
     def get_rhythm_maker(self):
         return abjad.rhythmmakertools.TaleaRhythmMaker(
                 talea=self.get_talea(), 
-                read_talea_once_only = True
-                # read_talea_once_only = self.once_only
+                # read_talea_once_only = True, 
+                read_talea_once_only = False, # for testing only... 
                 # division_masks=division_masks,
                 # extra_counts_per_division=extra_counts_per_division,
                 )

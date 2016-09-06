@@ -58,13 +58,6 @@ class BrokenRhythms(object):
     #                         info_item.counts = (break_counts + info_item.counts[0],) + info_item.counts[1:]
 
 
-    # def process_rhythm_info(self):
-    #     super().process_rhythm_info()
-    #     for possible_break in self.breaks:
-    #         for my_info in self.info:
-    #             pass
-
-
     # def get_rhythm_info_item(self, segment_index=0, segment_sub_index=0, **kwargs):
     #     my_info = super().get_rhythm_info_item()
     #     rhythm_index = segment_index % len(self.rhythm_segments)

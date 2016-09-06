@@ -1,6 +1,7 @@
 import collections
 import abjad
 from calliope import bubbles
+from copy import deepcopy
 
 # d = {}
 # b = None
@@ -21,6 +22,8 @@ class SetAttributeMixin(object):
             my_string += a + "=" + str(getattr(self, a)) + " | "
         return my_string
 
+    def copy(self):
+        return deepcopy(self) # deep copy probably not needed... but just to be safe...
 
 class IndexedData(SetAttributeMixin, collections.UserDict):
     """
@@ -54,10 +57,12 @@ class IndexedData(SetAttributeMixin, collections.UserDict):
     def item(cls, **kwargs):
         return cls.items_type(**kwargs)
 
+    # TO DO... + doesn't work right with multiple IndexedData objects (due to max methed in update)
     # TO DO... coerce items into a particular type?
-    # TO DO... implement append, __add__, __mul__, insert, enumerate, items, make immutable?
+    # TO DO... implement append, __mul__, insert, enumerate, items, make immutable?
     # TO DO... implement better slicing (e.g. slicing outside of limits)
     # TO DO... calling max... odd behavior (returns first item's value)... why?
+    # TO DO?... force items type if defined? (i.e. throw exeption if type doesn't match?)
 
     # def __lt__(self, value, other):
     #     print(value)
@@ -69,8 +74,11 @@ class IndexedData(SetAttributeMixin, collections.UserDict):
         return max(self.data)
 
     def update(self, from_dict):
+        if isinstance(from_dict, IndexedData):
+            from_dict = from_dict.data
         for key in from_dict:
             assert isinstance(key, int), "key is not an integer: %s" % key
+        print(from_dict)
         if self.limit <= max(from_dict):
             self.limit = max(from_dict) + 1
         super().update(from_dict)
@@ -78,8 +86,8 @@ class IndexedData(SetAttributeMixin, collections.UserDict):
     def __iadd__(self, other):
         if isinstance(other,collections.UserDict) or isinstance(other,dict):
             self.update(other)
-        elif isintance(other, tuple) or isintance(other, list):
-            self.exend(other)
+        elif isinstance(other, tuple) or isintance(other, list):
+            self.extend(other)
         else:
             raise TypeError("Cannot add object of type %s to IndexedData object" % type(other))
         return self
@@ -91,8 +99,7 @@ class IndexedData(SetAttributeMixin, collections.UserDict):
 
     def __add__(self, other):
         d = self.copy() 
-        for index, interval_set in other.displacements.items():
-            d.update(index, interval_set)
+        d += other
         return d
 
     def flattened(self):
@@ -162,7 +169,7 @@ class IndexedData(SetAttributeMixin, collections.UserDict):
             return " |%s%s: %s\n" % (spacing, key, value)
         my_string = "<IndexedData object>\n"
         my_string += str_line("default", self.get_default())
-        for key, value in self.data.items():
+        for key, value in self.non_default_items():
             if key < self.limit:
                 my_string += str_line(key, value)
         my_string += str_line(self.limit, "MAX")
@@ -175,18 +182,23 @@ class SomeIndexData(SetAttributeMixin):
 class SomeData(IndexedData):
     items_type = SomeIndexData
 
-d = SomeData({
+d1 = SomeData({
     1:SomeData.item(info1="yoyo"),
     2:SomeData.item(info1="ma"),
     })
-d2 = IndexedData({
-    9:SomeData.item(info1="yoyo2"),
-    11:SomeData.item(info1="ma2"),
+d2 = SomeData({
+    12:SomeData.item(info1="yoyo2"),
+    23:SomeData.item(info1="ma2"),
     })
+# d2 = IndexedData({
+#     9:SomeData.item(info1="yoyo2"),
+#     11:SomeData.item(info1="ma2"),
+#     })
 
-d += d2
+# print (d.keys())
+# d += d2
 
-print( d )
+
 
 # print(type( slice(0,4,None) ))
 # print(d[1:4])

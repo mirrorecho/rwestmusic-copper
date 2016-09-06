@@ -6,78 +6,103 @@ from copper import machines
 from copper.generations.gen_a.gen_a import *
 from copper import staves
 
-class Clarinet1(machines.FragmentLine, Line1):
-    fragment_indices=(15,18, 21,24,25,26)
+# class Clarinet1(machines.FragmentLine, Line1):
+#     fragment_indices=(15,18, 21,24,25,26)
 
-class Clarinet2(machines.FragmentLine, Line2):
-    fragment_indices=(15, 17, 21, 22, 23 )
+# class Clarinet2(machines.FragmentLine, Line2):
+#     fragment_indices=(15, 17, 21, 22, 23 )
+
+# class ViolinI1(machines.FragmentLine, Line1):
+    # metrical_durations = ((1,1),)*11 + ((1,2),)*2 + ((1,1),)*6
+    # fragment_indices=(
+    #     0,      3,      7,      13,     16,     21,     25  )
+    # fragment_precede_counts=(
+    #     4,      1.5,    2,      2.5,    1.5,    2.5,    3.5        ) 
+    # fragment_override_counts=(
+    #     2.5,    4,      4.5,    4.5,    3.5,    1.5,    8,      ) 
+    # fragment_precede_ties = (
+    #     False,  False,  False,  False,  False,  True,   False               ) 
+
+KWARGS = {"keep_original_attack":True, "duration_before_next":0,}
+# DURATIONS = ID(None, ((1,1),), 18)
+Frag = machines.Fragments
 
 class ViolinI1(machines.FragmentLine, Line1):
-    metrical_durations = ((1,1),)*11 + ((1,2),)*2 + ((1,1),)*6
-    fragment_indices=(
-        0,      3,      7,      13,     16,     21,     25  )
-    fragment_precede_counts=(
-        4,      1.5,    2,      2.5,    1.5,    2.5,    3.5        ) 
-    fragment_override_counts=(
-        2.5,    4,      4.5,    4.5,    3.5,    1.5,    8,      ) 
-    fragment_precede_ties = (
-        False,  False,  False,  False,  False,  True,   False               ) 
-class ViolinI2(Line2, ViolinI1):
-    metrical_durations = ((1,1),)*11 + ((1,2),)*10 + ((1,1),)*2
-    fragment_precede_ties = (False,)*7
+    # TO DO: plus isn't working right here
+    # metrical_durations = DURATIONS + {
+    #     11: ((1,2),)*2, 
+    #     }
+    metrical_durations = ID({
+            11: ((1,2),)*2, 
+            }, 
+            default=((1,1),), limit=18)
+    fragments = Frag({
+            0 : Frag.item(attack_offset= -4, **KWARGS),
+            3 : Frag.item(attack_offset= -1.5, **KWARGS),
+            7 : Frag.item(attack_offset= -2, **KWARGS),
+            13: Frag.item(attack_offset= -2.5, **KWARGS),
+            16: Frag.item(attack_offset= -1.5, **KWARGS),
+            21: Frag.item(attack_offset= -2.5, **KWARGS),
+            25: Frag.item(attack_offset= -3.5, keep_original_attack=True, duration=4), 
+            })
 
-class ViolinII1(machines.FragmentLine, Line1):
-    metrical_durations = ((1,1),)*9 + ((1,2),)*2 + ((1,1),)*8
-    fragment_indices=(
-        1,      4,      8,      11,     14,     20,     26 )
-    fragment_precede_counts=(
-        3,      1,      2,      1.5,    0,      5,      3,) 
-    fragment_override_counts=(
-        3,      3,      2.5,    3,      5,      4,      5,) 
-    fragment_precede_ties = (
-        False,  False,  False,  False,  True,   False,  False,                 ) 
-class ViolinII2(Line2, ViolinII1):
-    metrical_durations = ((1,1),)*10 + ((1,2),)*4 + ((1,1),)*6
 
-class Viola1(machines.FragmentLine, Line1):
-    fragment_indices=(
-        2,      6,      10,     19,     24          )
-    fragment_precede_counts=(
-        2,      2,      2,      7,      3,) 
-    fragment_override_counts=(
-        3,      4,      6,      3,      5,)  
-    fragment_precede_ties = (
-        False,  False,  False,  False,  False,) 
-class Viola2(Line2, Viola1):
-    pass
-class Cello1(machines.FragmentLine, Line1):
-    fragment_indices=(
-        5,      9,      12,     17,     21,     22,     23  )
-    fragment_precede_counts=(
-        3,      1.5,    2,      3,      3,                  ) + (None,)*40
-    fragment_override_counts=(
-        3.5,    2,      5,      2,      None,   None,   5,                    ) + (None,)*40
-    fragment_precede_ties = (
-        False,  False,  False,  False,  False,                      ) + (True,)*40
-class Cello2(Line2, Cello1):
-    metrical_durations = ((1,1),)*8 + ((1,2),)*12 + ((1,1),)*4
-    fragment_indices = Cello1.fragment_indices[0:3]
+# class ViolinI2(Line2, ViolinI1):
+#     metrical_durations = ((1,1),)*11 + ((1,2),)*10 + ((1,1),)*2
+#     fragment_precede_ties = (False,)*7
+
+# class ViolinII1(machines.FragmentLine, Line1):
+#     metrical_durations = ((1,1),)*9 + ((1,2),)*2 + ((1,1),)*8
+#     fragment_indices=(
+#         1,      4,      8,      11,     14,     20,     26 )
+#     fragment_precede_counts=(
+#         3,      1,      2,      1.5,    0,      5,      3,) 
+#     fragment_override_counts=(
+#         3,      3,      2.5,    3,      5,      4,      5,) 
+#     fragment_precede_ties = (
+#         False,  False,  False,  False,  True,   False,  False,                 ) 
+# class ViolinII2(Line2, ViolinII1):
+#     metrical_durations = ((1,1),)*10 + ((1,2),)*4 + ((1,1),)*6
+
+# class Viola1(machines.FragmentLine, Line1):
+#     fragment_indices=(
+#         2,      6,      10,     19,     24          )
+#     fragment_precede_counts=(
+#         2,      2,      2,      7,      3,) 
+#     fragment_override_counts=(
+#         3,      4,      6,      3,      5,)  
+#     fragment_precede_ties = (
+#         False,  False,  False,  False,  False,) 
+# class Viola2(Line2, Viola1):
+#     pass
+# class Cello1(machines.FragmentLine, Line1):
+#     fragment_indices=(
+#         5,      9,      12,     17,     21,     22,     23  )
+#     fragment_precede_counts=(
+#         3,      1.5,    2,      3,      3,                  ) + (None,)*40
+#     fragment_override_counts=(
+#         3.5,    2,      5,      2,      None,   None,   5,                    ) + (None,)*40
+#     fragment_precede_ties = (
+#         False,  False,  False,  False,  False,                      ) + (True,)*40
+# class Cello2(Line2, Cello1):
+#     metrical_durations = ((1,1),)*8 + ((1,2),)*12 + ((1,1),)*4
+#     fragment_indices = Cello1.fragment_indices[0:3]
 
 class OrchestrationA(staves.CopperMusic, GenA):
     bubble_default = bubbles.Line("R1*18")
-    clarinet1 = Clarinet1()
-    clarinet2 = Clarinet2()
+    # clarinet1 = Clarinet1()
+    # clarinet2 = Clarinet2()
     violinI1 = ViolinI1() 
-    violinI2 = ViolinI2() 
-    violinII1 = ViolinII1() 
-    violinII2 = ViolinII2()
-    viola1 = Viola1() 
-    viola2 = Viola2()
-    cello1 = Cello1() 
-    cello2 = Cello2()
+    # violinI2 = ViolinI2() 
+    # violinII1 = ViolinII1() 
+    # violinII2 = ViolinII2()
+    # viola1 = Viola1() 
+    # viola2 = Viola2()
+    # cello1 = Cello1() 
+    # cello2 = Cello2()
     # ---------------------
-    # line1 = Line1()
-    # line2 = Line2()
+    line1 = Line1()
+    line2 = Line2()
 
     class ViolinI1Attachments(bubbles.LineAttachments):
         # show_indices=True
@@ -329,18 +354,18 @@ class OrchestrationA(staves.CopperMusic, GenA):
             # ((22,23), ">"),
         )
 
-    def arrange(self):
-        self.violinI1.Attachments = self.ViolinI1Attachments
-        self.violinI2.Attachments = self.ViolinI2Attachments
-        self.violinII1.Attachments = self.ViolinII1Attachments
-        self.violinII2.Attachments = self.ViolinII2Attachments
-        self.viola1.Attachments = self.Viola1Attachments
-        self.viola2.Attachments = self.Viola2Attachments
-        # self.violinII1.Attachments = self.OrchestrationAttachmentsA
-        # self.viola1.Attachments = self.OrchestrationAttachmentsA
-        self.cello1.Attachments = self.Cello1Attachments
-        self.cello2.Attachments = self.Cello2Attachments
-        # self.bass.Attachments = self.OrchestrationAttachmentsA
+    # def arrange(self):
+    #     self.violinI1.Attachments = self.ViolinI1Attachments
+    #     self.violinI2.Attachments = self.ViolinI2Attachments
+    #     self.violinII1.Attachments = self.ViolinII1Attachments
+    #     self.violinII2.Attachments = self.ViolinII2Attachments
+    #     self.viola1.Attachments = self.Viola1Attachments
+    #     self.viola2.Attachments = self.Viola2Attachments
+    #     # self.violinII1.Attachments = self.OrchestrationAttachmentsA
+    #     # self.viola1.Attachments = self.OrchestrationAttachmentsA
+    #     self.cello1.Attachments = self.Cello1Attachments
+    #     self.cello2.Attachments = self.Cello2Attachments
+    #     # self.bass.Attachments = self.OrchestrationAttachmentsA
 
 
 # -------------------------------------------------------------------------
