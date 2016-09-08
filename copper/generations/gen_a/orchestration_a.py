@@ -27,7 +27,13 @@ KWARGS = {"keep_original_attack":True, "duration_before_next":0,}
 # DURATIONS = ID(None, ((1,1),), 18)
 Frag = machines.Fragments
 
-class ViolinI1(machines.FragmentLine, Line1):
+# class ArrangeBaseLine1(machines.ArrangeAttachments, machines.FragmentLine, Line1):
+#     pass
+
+# class ArrangeBaseLine2(machines.ArrangeAttachments, machines.FragmentLine, Line2):
+#     pass
+
+class ViolinI1(machines.ArrangeAttachments, machines.FragmentLine, Line1):
     # TO DO: plus isn't working right here
     # metrical_durations = DURATIONS + {
     #     11: ((1,2),)*2, 
@@ -46,6 +52,11 @@ class ViolinI1(machines.FragmentLine, Line1):
             25: Frag.item(attack_offset= -3.5, keep_original_attack=True, duration=4), 
             })
 
+    # dynamics = ID().fill( fragments.keylist(), ("pp","mp") )
+    # endos = ID().fill( fragments.keys(), ("<",">") )
+v = ViolinI1()
+v.music()
+print(v.info)
 
 # class ViolinI2(Line2, ViolinI1):
 #     metrical_durations = ((1,1),)*11 + ((1,2),)*10 + ((1,1),)*2

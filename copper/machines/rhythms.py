@@ -55,6 +55,13 @@ class Rhythms(object):
     def get_index_of_count(self):
         pass
 
+    # NOTE... doesn't work for what I need?
+    # def info_by_logical_tie(self):
+    #     for i, my_info in enumerate(self.info):
+    #         for j, count in enumerate(my_info.counts):
+    #             if count > 0:
+    #                 yield (i, j, myinfo)
+
     def end_count(self):
         final_info = self.info[len(self.info)-1]
         return final_info.counts_before + final_info.counts_sum()

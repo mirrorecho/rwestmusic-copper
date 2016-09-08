@@ -71,15 +71,20 @@ class ChooseLine(bubbles.Line):
         """
         hook that's run after rhythms have been added to a container (as the music argument)
         """
+        # TO DO... ever userd? remove?
         pass
 
     def apply_pitches(self, music, **kwargs):
+        pass
+
+    def process_logical_ties(self, music, **kwargs):
         pass
 
     def after_pitches(self, music, **kwargs):
         """
         hook that's run after pitches have been applied to rhythms
         """
+        # TO DO... ever userd? remove?
         pass
 
     def music(self, **kwargs):
@@ -88,8 +93,9 @@ class ChooseLine(bubbles.Line):
         self.process_info(**kwargs)
         my_music = self.container_type( self.get_rhythms(**kwargs) )
         self.after_rhythms(my_music, **kwargs)
-        self.apply_pitches(my_music, **kwargs)
+        self.apply_pitches(my_music, **kwargs) # TO CONSIDER... combine with process_logical_ties?
         self.after_pitches(my_music, **kwargs)
+        self.process_logical_ties(my_music, **kwargs)
         return my_music
 
 # -------------------------------------------------------------------------------------------------

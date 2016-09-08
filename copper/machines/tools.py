@@ -40,6 +40,7 @@ class IndexedData(SetAttributeMixin, collections.UserDict):
     # def keys(self):
     #     return collections.abc.KeysView(range(self.limit))
 
+
     def __init__(self, initialize_from=None, default=None, limit=None, **kwargs):
         super().__init__(**kwargs)
         self.default = default or self.default
@@ -78,7 +79,7 @@ class IndexedData(SetAttributeMixin, collections.UserDict):
             from_dict = from_dict.data
         for key in from_dict:
             assert isinstance(key, int), "key is not an integer: %s" % key
-        print(from_dict)
+        # print(from_dict)
         if self.limit <= max(from_dict):
             self.limit = max(from_dict) + 1
         super().update(from_dict)
@@ -111,6 +112,9 @@ class IndexedData(SetAttributeMixin, collections.UserDict):
 
     def non_default_items(self):
         return sorted(self.data.items())
+
+    def keylist(self):
+        return sorted(list(self.data.keys()))
 
     def fill(self, indices, value):
         if self.limit <= max(indices):
@@ -182,7 +186,7 @@ class SomeIndexData(SetAttributeMixin):
 class SomeData(IndexedData):
     items_type = SomeIndexData
 
-d1 = SomeData({
+d = SomeData({
     1:SomeData.item(info1="yoyo"),
     2:SomeData.item(info1="ma"),
     })
@@ -197,6 +201,10 @@ d2 = SomeData({
 
 # print (d.keys())
 # d += d2
+
+# for i, a in d.non_default_items():
+#     print(i)
+#     print(a)
 
 
 

@@ -73,21 +73,22 @@ class Pitches:
         logical_ties = abjad.select(music).by_logical_tie(pitched=True)
         # TO DO better way of dealing with logical ties 
         info_counter = 0
-        count_counter = 0
+        note_counter = 0
         for i, logical_tie in enumerate(logical_ties):
             my_info = self.info[info_counter]
             for note in logical_tie:
                 # print(self.info[i].pitch_original)
                 # print(self.info[i].pitch_displaced)
                 note.written_pitch = my_info.pitch_displaced
-            if len(my_info.logical_tie_counts()) > count_counter + 1:
-                count_counter += 1
+            if len(my_info.logical_tie_counts()) > note_counter + 1:
+                note_counter += 1
             else:
-                count_counter = 0
+                note_counter = 0
                 info_counter += 1
 
+    # TO DO... is this even needed or does base Line class handle it OK?
     def after_pitches(self, music, **kwargs):
-        if self.pitch_respell == "sharps":
+        if self.pitch_respell == "sharps": 
             abjad.mutate(music).respell_with_sharps()
         elif self.pitch_respell == "flats":
             abjad.mutate(music).respell_with_flats()
