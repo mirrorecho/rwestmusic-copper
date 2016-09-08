@@ -20,15 +20,23 @@ class ArrangeAttachments(object):
     # def set_info(self, attr_name)
 
     def process_info(self, **kwargs):
+        
+        def set_info_attr(attr_name):
+            my_attr = getattr(self, attr_name)
+            if  isinstance(my_attr, ID):
+                for i, value in my_attr.non_default_items():
+                    setattr(self.info[i], attr_name, value)            
+
         super().process_info(**kwargs)
+        set_info_attr("dynamics")
+
         # TO DO... thought? Avoid looping through all the info again by incorporating into loop to set the rhythm and/or pitch info? (assume not)
 
     # TO DO... redo so as not to create infinite recursion!!!!
     #     for d in dir(self):
     #         my_attr = getattr(self,d)
     #         if isinstance(my_attr, ID):
-    #             for i, value in my_attr.non_default_items():
-    #                 setattr(self.info[i], d, value)
+
 
 
     def process_logical_ties(self, music, **kwargs):

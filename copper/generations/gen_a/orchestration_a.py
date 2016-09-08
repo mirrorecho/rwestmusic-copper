@@ -52,11 +52,11 @@ class ViolinI1(machines.ArrangeAttachments, machines.FragmentLine, Line1):
             25: Frag.item(attack_offset= -3.5, keep_original_attack=True, duration=4), 
             })
 
-    # dynamics = ID().fill( fragments.keylist(), ("pp","mp") )
+    dynamics = ID().fill( fragments.keylist(), ("pp","mp") )
     # endos = ID().fill( fragments.keys(), ("<",">") )
-v = ViolinI1()
-v.music()
-print(v.info)
+# v = ViolinI1()
+# v.music()
+# print(v.info)
 
 # class ViolinI2(Line2, ViolinI1):
 #     metrical_durations = ((1,1),)*11 + ((1,2),)*10 + ((1,1),)*2
