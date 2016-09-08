@@ -20,15 +20,16 @@ class ArrangeAttachments(object):
     # def set_info(self, attr_name)
 
     def process_info(self, **kwargs):
-        
         def set_info_attr(attr_name):
             my_attr = getattr(self, attr_name)
             if  isinstance(my_attr, ID):
                 for i, value in my_attr.non_default_items():
-                    setattr(self.info[i], attr_name, value)            
+                    setattr(self.info[i], attr_name, value) 
 
         super().process_info(**kwargs)
+
         set_info_attr("dynamics")
+        set_info_attr("endos")
 
         # TO DO... thought? Avoid looping through all the info again by incorporating into loop to set the rhythm and/or pitch info? (assume not)
 
