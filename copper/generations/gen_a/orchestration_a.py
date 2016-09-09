@@ -33,7 +33,7 @@ Frag = machines.Fragments
 # class ArrangeBaseLine2(machines.ArrangeAttachments, machines.FragmentLine, Line2):
 #     pass
 
-class ViolinI1(machines.ArrangeAttachments, machines.FragmentLine, Line1):
+class ViolinI1(machines.FragmentLine, machines.ArrangeAttachments,  Line1):
     # TO DO: plus isn't working right here
     # metrical_durations = DURATIONS + {
     #     11: ((1,2),)*2, 
@@ -53,11 +53,23 @@ class ViolinI1(machines.ArrangeAttachments, machines.FragmentLine, Line1):
             })
 
     dynamics = ID()
-    dynamics.fill( fragments.keylist(), ("pp","mp","pp") )
-    endos = ID()
-    endos.fill( fragments.keylist(), ("<",">") )
+    dynamics.fill( fragments.keylist(), ("pp","mp") )
+    
+    articulations = ID()
+    articulations.fill( fragments.keylist(), ("-") )
+    
+    hairpins = ID()
+    hairpins.fill( fragments.keylist(), ("<",">") )
 
-# v.music()
+    # instructions = ID({
+    #     0: ("With great passion",),
+    #     7: ("Faster",)
+    #     })
+    # slurs = ID({
+    #     0: (None, "(",),
+    #     7: (None,")")
+    #     })
+
 # print(v.info)
 
 # class ViolinI2(Line2, ViolinI1):

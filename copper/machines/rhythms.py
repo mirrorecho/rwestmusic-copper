@@ -135,7 +135,7 @@ class Rhythms(object):
 
     def get_talea(self):
         talea_counts = self.process_talea_counts( self.get_talea_counts() )
-        print(talea_counts)
+        # print(talea_counts)
         return abjad.rhythmmakertools.Talea(talea_counts, self.rhythm_denominator)
 
     def get_rhythm_maker(self):

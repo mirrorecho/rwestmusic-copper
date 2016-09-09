@@ -18,16 +18,15 @@
 # - (DONE) keep hashed info for each index
 # - (DONE) pitched data in info
 # - (DONE) info using IndexedData
-# - (DONE use info to implement line fragments
+# - (DONE) use info to implement line fragments
+# - (DONE) work in logical tie logic to info (esp. for pitches, but also for slurs, dynamics, articulations, etc.)
+# - (DONE) machine to slur rhythmic sections
 # ----------------------------
-# - work in logical tie logic to info (esp. for pitches, but also for slurs, dynamics, articulations, etc.)
-# - machine to slur rhythmic sections
 # - refactor gen a orchestration
 # - rhythm/pulse machine
 # - reorder machine
 # - cross lines
 # - - - including using any duration (and maybe that will be enough)
-# ----------------------------
 # - start gen f short score
 # - good draft of gen e short score
 # - start orchestrating gen b
@@ -51,7 +50,6 @@
 # - start orchestrating gen f
 # - start orchestrating gen g
 # - start orchestrating gen h
-# ----------------------------
 # - good orchestration of gen d
 # - good orchestration of gen e
 # - good orchestration of gen f
@@ -80,14 +78,10 @@ from calliope import bubbles
 from copper import machines
 from copper.machines import Fragments
 
-fragments = Fragments({
-	33:Fragments.item(attack_offset=4),
-	22:Fragments.item(attack_offset=4),
-	})
-
-for i, f in fragments.non_default_items():
-	print((i,f))
-
+staff = abjad.Staff("r4 c'8 d'8 e'8 f'8 r4")
+crescendo = abjad.spannertools.Crescendo()
+abjad.attach(crescendo, staff[1], staff[3])
+abjad.show(staff) 
 
 # d.update(
 # 	(0,1,2,3,4):"yo"

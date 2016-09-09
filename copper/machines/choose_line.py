@@ -10,10 +10,8 @@ class IndexInfo(machines.SetAttributeMixin):
     instructions = ()
     dynamics = ()
     articulations = ()
-    start_endos = () # ">" or "<" if crescendo or decrescendo 
-    stop_endos = ()
-    start_slurs = ()
-    stop_slurs = ()
+    hairpins = () # ">" or "<" if crescendo or decrescendo 
+    slurs = ()
     relative_duration = None
     counts = ()
     counts_before = None

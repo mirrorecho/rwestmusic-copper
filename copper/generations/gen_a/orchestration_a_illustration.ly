@@ -1,4 +1,4 @@
-% 2016-09-08 10:05
+% 2016-09-09 02:29
 
 \version "2.18.2"
 \language "english"
@@ -299,28 +299,28 @@
                         r1
                         r1
                         r1
-                        d'1 \pp
-                        d'2 \mp ~
+                        d'1 -\tenuto \pp \<
+                        d'2 \mp ~ \>
                         d'8
-                        d'4.
-                        d'1
-                        g'2 \pp
-                        g'2 \mp ~
+                        d'4. -\tenuto \pp \<
+                        d'1 \mp \>
+                        g'2 -\tenuto \pp \<
+                        g'2 \mp ~ \>
                         g'2 ~
                         g'8
-                        g'4. \pp ~
+                        g'4. -\tenuto \pp ~ \<
                         g'4
-                        g'2. \mp ~
+                        g'2. \mp ~ \>
                         g'4.
-                        g'8 \pp ~
+                        g'8 -\tenuto \pp ~ \<
                         g'4
-                        g'4 \mp ~
+                        g'4 \mp ~ \>
                         g'2 ~
                         g'8
-                        a'4. ~
+                        a'4. -\tenuto \pp ~ \<
                         a'4
-                        a'4.
-                        g'4. \pp ~
+                        a'4. \mp \>
+                        g'4. -\tenuto \pp ~ \<
                         g'2
                         g'2 \mp ~
                         g'2
