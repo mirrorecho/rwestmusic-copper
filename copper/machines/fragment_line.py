@@ -10,6 +10,8 @@ class FragmentInfo(machines.SetAttributeMixin):
     keep_original_attack = False # note, True only makes sense if attack_offset <0
     duration_before_next = None #set to extend note up to the next fragment note (with a rest of this length), overrides release_offset
     duration = None # set to fix to a specific duration, overrides both release_offset and duration_before_next
+    line_index = 0
+    line_info_index = None
 
 class Fragments(machines.IndexedData):
     items_type=FragmentInfo
@@ -19,6 +21,7 @@ class FragmentLine(object):
     mixin to be used with ChooseLine
     """
     fragments = Fragments()
+    lines = None # override with indexdata to create fragments that cross lines
 
     def process_info(self, **kwargs):
         super().process_info(**kwargs)
@@ -36,39 +39,18 @@ class FragmentLine(object):
         
         for i, fragment in self.fragments.non_default_items(): 
 
-            my_info = self.info[i].copy()
-            my_info.original_index = i
+            my_line_info_index = i if not fragment.line_info_index else fragment.line_info_index
+            if self.lines:
+                my_line_index = fragment.line_index
+                my_original_info = self.lines[my_line_index].info[my_line_info_index]
+            else:
+                my_original_info = self.info[i]
             
-           
-            # if fragment.attack_offset<0 and fragment.keep_original_attack:
-            #     # if attack precedes original and not tied to original attack, then two notes (lead-in note, then another on the original attack)
-            #     pre_attack_counts = int(abs(fragment.attack_offset)*self.rhythm_default_multiplier)
-                
-            #         # TO DO... WARNING!!! assumes counts has only 1 item (will not work with added rests or repeated notes)
-            #         # .... this needs to be fixed
-            #     my_info.counts = []
-            #     for c_i, c in enumerate(self.info[i].counts):
-            #         attack_offset_counts = fragment.attack_offset*self.rhythm_default_multiplier
-            #         if c_i > 0 and attack_offset_counts < 0 and my_info.counts[c_i-1] < 0:
-            #             if attack_offset_counts < my_info.counts[c_i-1]:
-            #                 fragment.attack_offset = (attack_offset_counts - my_info.counts[c_i-1]) / self.rhythm_default_multiplier
-            #                 my_info.counts[c_i-1] = 0
-            #             else:
-            #                 my_info.counts[c_i-1] = int(my_info.counts[c_i-1] - attack_offset_counts)
-            #                 fragment.attack_offset = 0
-            #         if c > 0:
-            #             if fragment.duration:
-            #                 my_info.counts += [pre_attack_counts, int(fragment.duration * self.rhythm_default_multiplier)]
-            #             else:
-            #                 my_info.counts += [pre_attack_counts, int(c + fragment.release_offset*self.rhythm_default_multiplier)]
-            #         elif c < 0:
-            #             my_info.counts += [c]
-
-            # else:
-                # if not keeping original attack in addition to a preceding one, then there is just one note...
+            my_info = my_original_info.copy()
+            my_info.original_index = my_line_info_index           
 
             my_info.counts = []
-            for c_i, c in enumerate(self.info[i].counts):
+            for c_i, c in enumerate(my_original_info.counts):
                 pre_attack_counts = int(abs(fragment.attack_offset)*self.rhythm_default_multiplier) # only applies if fragment.attack_offset<0 and fragment.keep_original_attack
                 attack_offset_counts = fragment.attack_offset*self.rhythm_default_multiplier
                 if c > 0:

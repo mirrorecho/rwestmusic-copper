@@ -9,58 +9,99 @@ from copper import staves
 Frag = machines.Fragments
 
 class Trumpet1(machines.FragmentLine, machines.ArrangeAttachments, Line1):
-	# rhythm_reverse = (1,)
-	fragments = Frag({
-		0 : Frag.item(),
-		1:  Frag.item(),
-		2:  Frag.item(),
-		6:  Frag.item(),
-		7:  Frag.item(),
-		8:  Frag.item(),
-		11:  Frag.item(),
-		12:  Frag.item(),
-		13:  Frag.item(),
-		14:  Frag.item(),
-		})
-	slurs = ID({
-		0:("(",),
-		1:(")",),
-	})
-	articulations=ID({
-		2:(".",)
-		})
-	dynamics=ID({
-			0:("mf",),
-			})
-	show_info_indices=True
+    # rhythm_reverse = (1,)
+    lines = ID({
+        0: Line1(),
+        1: Line3()}
+        )
+    fragments = Frag({
+        0 : Frag.item(),
+        1:  Frag.item(),
+        2:  Frag.item(),
+        
+        # 3:  Frag.item(line_index=1, line_info_index=0),
+        # 4:  Frag.item(line_index=1, line_info_index=1),
+        # 5:  Frag.item(line_index=1, line_info_index=2),
+
+        6:  Frag.item(),
+        7:  Frag.item(),
+        8:  Frag.item(),
+        11:  Frag.item(),
+        12:  Frag.item(),
+        13:  Frag.item(),
+        14:  Frag.item(),
+        18:  Frag.item(),
+        19:  Frag.item(),
+        20:  Frag.item(),
+        })
+    slurs = ID({
+        0:("(",),
+        1:(")",),
+        6:("(",),
+        7:(")",),
+        11:("(",),
+        12:(")",),
+        18:("(",),
+        19:(")",),
+    })
+    articulations=ID({
+        2:(".",),
+        8:(".",),
+        13:("-",),
+        14:(".",),
+        20:(".",),
+        })
+    dynamics=ID({
+            0:("mf",),
+            })
+    show_info_indices=True
 
 class Trumpet2(Trumpet1):
-	pass
+    pass
 
 class Trombone1(machines.FragmentLine, machines.ArrangeAttachments, Line1):
-	fragments = Frag({
-		3 : Frag.item(),
-		4:  Frag.item(),
-		5:  Frag.item(),
-		})
-	articulations=ID({
-		3:("-",),
-		4:("-",),
-		5:(".",)
-		})
-	dynamics=ID({
-			3:("mf",),
-			})
+    fragments = Frag({
+        3 : Frag.item(),
+        4:  Frag.item(),
+        5:  Frag.item(),
+        })
+    articulations=ID({
+        3:("-",),
+        4:("-",),
+        5:(".",)
+        })
+    dynamics=ID({
+            3:("mf",),
+            })
 
 class Trombone2(Trombone1):
-	pass
+    pass
+
+class Oboe1(machines.FragmentLine, machines.ArrangeAttachments, Line1):
+    fragments = Frag({
+        15: Frag.item(),
+        16: Frag.item(),
+        17: Frag.item(),
+        })
+
+class Clarinet1(machines.FragmentLine, machines.ArrangeAttachments, Line3):
+    fragments = Frag.fill( range(0,7), lambda: Frag.item() )
+class Clarinet2(machines.FragmentLine, machines.ArrangeAttachments, Line4):
+    fragments = Frag({
+        0: Frag.item(attack_offset=-2, keep_original_attack=True),
+        1: Frag.item(),
+        2: Frag.item(),
+        })
 
 class ViolinI1(machines.FragmentLine, machines.ArrangeAttachments, Line2):
-	fragments = Frag.fill( range(0,27), lambda: Frag.item() )
-	show_info_indices=True
+    fragments = Frag.fill( range(0,27), lambda: Frag.item() )
+    show_info_indices=True
 
 class OrchestrationC(staves.CopperMusic, GenC):
     bubble_default = bubbles.Line("R1*24")
+    oboe1 = Oboe1()
+    clarinet1 = Clarinet1()
+    clarinet2 = Clarinet2()
     trumpet1 = Trumpet1()
     trumpet2 = Trumpet2()
     trombone1 = Trombone1()
@@ -68,8 +109,6 @@ class OrchestrationC(staves.CopperMusic, GenC):
     # bassoon1 = Bassoon1()
     # bassoon2 = Bassoon2()
     # tuba = Tuba()
-    # clarinet1 = Clarinet1()
-    # clarinet2 = Clarinet2()
     violinI1 = ViolinI1() 
     # violinI2 = ViolinI2() 
     # violinII1 = ViolinII1() 

@@ -24,11 +24,12 @@
 # - (DONE) refactor gen a orchestration
 # - (DONE) reorder machine
 # - (DONE) update fragmentline to work with rests
+# - (DONE) start orchestrating gen c
 # ----------------------------
-# - start orchestrating gen c
-# - rhythm/pulse machine
 # - cross lines
 # - - - including using any duration (and maybe that will be enough)
+# - rhythm/pulse machine
+# - add events by segment
 # - better fragments with rests
 # - start gen f short score
 # - start orchestrating gen d
@@ -70,6 +71,7 @@
 # - use asserts for error handling
 # - conisistency / plan for what's a class attribute and what's not
 # - naming of variables/classes for info items vs entire data set is confusing!
+# - think of info as events
 # ----------------------------
 
 import abjad

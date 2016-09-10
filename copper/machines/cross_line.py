@@ -19,6 +19,20 @@ class CrossLine(machines.Rhythms, machines.ChooseLine):
 
     # TO DO... tie preceding?
 
+class CrossFragmentLine(machines.Rhythms, machines.ChooseLine):
+    """
+    mixes and matches pitches from other lines, using its own rhythm
+    """
+    lines = ID()
+    def get_line(self, index):
+        """
+        hook, that should be overriden to return a ChooseLine object for a given rhythmic index.
+        """
+        return self.lines[index]
+
+
+    # TO DO... tie preceding?
+
 def MyCrossLine(CrossLine):
 	lines=ID.fill(range(0,13), line1)
 	lines.fillme(range(14,20), line2)
