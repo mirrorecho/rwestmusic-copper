@@ -45,7 +45,7 @@ class Line4(gen_c.Line4):
 
 class Line5(gen_c.Line4):
     metrical_durations = ID(default=((9,8),), limit=24)
-    metrical_durations.fill(range(11,24), ((3,8),)*3)
+    metrical_durations.fillme(range(11,24), ((3,8),)*3)
     rhythm_initial_silence = (11*3 + 2) * 3/2
     
     # TO DO... this could be made more readable...

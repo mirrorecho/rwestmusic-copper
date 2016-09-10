@@ -1,4 +1,4 @@
-% 2016-09-10 15:00
+% 2016-09-10 15:16
 
 \version "2.18.2"
 \language "english"
@@ -55,7 +55,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 18
+                        R1 * 24
                     }
                 }
                 \new Staff {
@@ -66,7 +66,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 18
+                        R1 * 24
                     }
                 }
                 \new Staff {
@@ -77,7 +77,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 18
+                        R1 * 24
                     }
                 }
             >>
@@ -92,7 +92,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 18
+                        R1 * 24
                     }
                 }
                 \new Staff {
@@ -103,7 +103,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 18
+                        R1 * 24
                     }
                 }
             >>
@@ -118,7 +118,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 18
+                        R1 * 24
                     }
                 }
                 \new Staff {
@@ -129,7 +129,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 18
+                        R1 * 24
                     }
                 }
             >>
@@ -145,7 +145,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 18
+                        R1 * 24
                     }
                 }
                 \new Staff {
@@ -157,7 +157,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 18
+                        R1 * 24
                     }
                 }
             >>
@@ -174,7 +174,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 18
+                        R1 * 24
                     }
                 }
                 \new Staff {
@@ -185,7 +185,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 18
+                        R1 * 24
                     }
                 }
             >>
@@ -200,7 +200,38 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 18
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        d'2 \mf ( ^ \markup { 0:0 }
+                        g'4 ) ^ \markup { 1:0 }
+                        cs''4 -\staccato ^ \markup { 2:0 }
+                        r1
+                        r1
+                        r2
+                        d'4 ^ \markup { 6:0 }
+                        g'8 [ ^ \markup { 7:0 }
+                        cs''8 ] ^ \markup { 8:0 }
+                        r1
+                        b4 ^ \markup { 11:0 }
+                        e'4 ^ \markup { 12:0 }
+                        d''4 ^ \markup { 13:0 }
+                        gs''4 ^ \markup { 14:0 }
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
                     }
                 }
                 \new Staff {
@@ -211,7 +242,38 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 18
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        d'2 \mf ( ^ \markup { 0:0 }
+                        g'4 ) ^ \markup { 1:0 }
+                        cs''4 -\staccato ^ \markup { 2:0 }
+                        r1
+                        r1
+                        r2
+                        d'4 ^ \markup { 6:0 }
+                        g'8 [ ^ \markup { 7:0 }
+                        cs''8 ] ^ \markup { 8:0 }
+                        r1
+                        b4 ^ \markup { 11:0 }
+                        e'4 ^ \markup { 12:0 }
+                        d''4 ^ \markup { 13:0 }
+                        gs''4 ^ \markup { 14:0 }
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
                     }
                 }
             >>
@@ -227,7 +289,32 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 18
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        d'2 -\tenuto \mf
+                        a4 -\tenuto
+                        e4 -\staccato
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
                     }
                 }
                 \new Staff {
@@ -239,7 +326,32 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 18
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        d'2 -\tenuto \mf
+                        a4 -\tenuto
+                        e4 -\staccato
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
                     }
                 }
             >>
@@ -252,7 +364,7 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    R1 * 18
+                    R1 * 24
                 }
             }
         >>
@@ -266,7 +378,7 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    R1 * 18
+                    R1 * 24
                 }
             }
             \new RhythmicStaff {
@@ -278,7 +390,7 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    R1 * 18
+                    R1 * 24
                 }
             }
         >>
@@ -299,32 +411,44 @@
                         r1
                         r1
                         r1
-                        d'1 \pp \<
-                        d'2 \mp ~ \>
-                        d'8
-                        d'4. \pp \<
-                        d'1 \mp \>
-                        g'2 \pp \<
-                        g'2 \mp ~ \>
-                        g'2 ~
-                        g'8
-                        g'4. \pp ~ \<
-                        g'4
-                        g'2. \mp ~ \>
-                        g'4.
-                        g'8 \pp ~ \<
-                        g'4
-                        g'4 \mp ~ \>
-                        g'2 ~
-                        g'8
-                        a'4. \pp ~ \<
-                        a'4
-                        a'4. \mp \>
-                        g'4. \pp ~ \<
-                        g'2
-                        g'2 \mp ~
-                        g'2
                         r2
+                        d'2 ^ \markup { 0:0 }
+                        g'4 ^ \markup { 1:0 }
+                        fs'4 ^ \markup { 2:0 }
+                        d'4 ^ \markup { 3:0 }
+                        a8 [ ^ \markup { 4:0 }
+                        b8 ] ^ \markup { 5:0 }
+                        r1
+                        a'2 ^ \markup { 6:0 }
+                        d''4 ^ \markup { 7:0 }
+                        fs'4 ^ \markup { 8:0 }
+                        e'4 ^ \markup { 9:0 }
+                        g'8 [ ^ \markup { 10:0 }
+                        fs'8 ] ^ \markup { 11:0 }
+                        e'4 ^ \markup { 12:0 }
+                        g'4 ^ \markup { 13:0 }
+                        fs'4 ^ \markup { 14:0 }
+                        r2
+                        a'4 ~ ^ \markup { 15:0 }
+                        a'4
+                        g'8 [ ^ \markup { 16:0 }
+                        fs'8 ] ^ \markup { 17:0 }
+                        a'2 ~ ^ \markup { 18:0 }
+                        a'1
+                        g'2. ^ \markup { 19:0 }
+                        fs'4 ~ ^ \markup { 20:0 }
+                        fs'2
+                        d'2 ~ ^ \markup { 21:0 }
+                        d'1
+                        e'2. ^ \markup { 22:0 }
+                        fs'4 ~ ^ \markup { 23:0 }
+                        fs'2
+                        e'4 ^ \markup { 24:0 }
+                        g'4 ^ \markup { 25:0 }
+                        r1
+                        r1
+                        r1
+                        r1
                         r1
                         r1
                     }
@@ -337,38 +461,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r2
-                        d'2 \pp ~ \<
-                        d'2
-                        d'2 \mp ~ \>
-                        d'8
-                        g4. \pp \<
-                        g2 \mp ~ \>
-                        g2
-                        c'2 \pp \<
-                        c'1 \mp ~ \>
-                        c'8
-                        c'4. \pp ~ \<
-                        c'4
-                        c'4 \mp ~ \>
-                        c'2..
-                        g'8 \pp ~ \<
-                        g'4
-                        g'2. \mp ~ \>
-                        g'8
-                        d'2 \pp ~ \<
-                        d'8
-                        d'4 \mp ~ \>
-                        d'8
-                        d''2.. \pp \<
-                        d''1 \mp
-                        r1
+                        R1 * 24
                     }
                 }
             >>
@@ -383,37 +476,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r2.
-                        c'4 \pp ~ \<
-                        c'2
-                        c'2 \mp ~ \>
-                        c'4
-                        e'4 \pp \<
-                        e'2 \mp ~ \>
-                        e'4
-                        fs'2 \pp \<
-                        fs'4 \mp ~ \>
-                        fs'4.
-                        fs'8 \pp ~ \<
-                        fs'4
-                        fs'4 \mp ~ \>
-                        fs'2
-                        fs'2 \pp ~ \<
-                        fs'2.
-                        fs'4 \pp ~ \<
-                        fs'1
-                        fs'1 \mp \>
-                        fs'2. \pp \<
-                        fs'4 \mp ~
-                        fs'2.
-                        r4
-                        r1
-                        r1
+                        R1 * 24
                     }
                 }
                 \new Staff {
@@ -424,37 +487,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r4
-                        g'2. \pp \<
-                        g'2. \mp \>
-                        a4 \pp \<
-                        a2 \mp ~ \>
-                        a4
-                        b4 \pp ~ \<
-                        b4
-                        b4 \mp ~ \>
-                        b4.
-                        b8 \pp ~ \<
-                        b4
-                        b2. \mp \>
-                        fs'1 \pp ~ \<
-                        fs'4
-                        b2. \pp ~ \<
-                        b2
-                        b2 \mp ~ \>
-                        b2
-                        cs''2 \pp ~ \<
-                        cs''4
-                        cs''2. \mp ~
-                        cs''4
-                        r2.
+                        R1 * 24
                     }
                 }
             >>
@@ -470,32 +503,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r4
-                        b2 \pp \<
-                        b4 \mp ~ \>
-                        b2
-                        d'2 \pp \<
-                        d'1 \mp \>
-                        g'2 \pp \<
-                        g'2 \mp ~ \>
-                        g'1
-                        g'1 \pp ~ \<
-                        g'2.
-                        g'4 \mp ~ \>
-                        g'2
-                        e'2 \pp ~ \<
-                        e'4
-                        e'2. \mp ~
-                        e'2
-                        r2
-                        r1
-                        r1
+                        R1 * 24
                     }
                 }
                 \new Staff {
@@ -507,31 +515,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r2.
-                        b4 \pp ~ \<
-                        b4
-                        b2. \mp \>
-                        d'2 \pp \<
-                        d'2 \mp ~ \>
-                        d'2
-                        c'2 \pp \<
-                        c'1 \mp ~ \>
-                        c'2
-                        g'2 \pp ~ \<
-                        g'1 ~
-                        g'4
-                        g'2. \mp \>
-                        b'2. \pp \<
-                        b'4 \mp ~
-                        b'1
-                        r1
+                        R1 * 24
                     }
                 }
             >>
@@ -547,40 +531,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        b2. \pp \< ^ \markup { "5:0 256|[24, 28]" }
-                        b4 \mp ~ \> ^ \markup { "5:1 256|[24, 28]" }
-                        b2 ~
-                        b8
-                        e'4. \pp \< ^ \markup { "9:0 308|[12, 16]" }
-                        e'2 \mp \> ^ \markup { "9:1 308|[12, 16]" }
-                        e'2 \pp \< ^ \markup { "12:0 336|[16, 32, -8]" }
-                        e'1 \mp \> ^ \markup { "12:1 336|[16, 32, -8]" }
-                        r4
-                        fs'2. \pp \< ^ \markup { "17:0 392|[24, 16]" }
-                        fs'2 \mp \> ^ \markup { "17:1 392|[24, 16]" }
-                        a'2 \p ~ \<
-                            ^ \markup {
-                                \column
-                                    {
-                                        "21:0 432|[24, 16]"
-                                        "solo cello"
-                                    }
-                                }
-                        a'4
-                        a'2 \mf ( ^ \markup { "21:1 432|[24, 16]" }
-                        b'4 ) ^ \markup { "22:0 472|[8]" }
-                        fs'1 \mp ~ ^ \markup { "23:0 480|[40]" }
-                        fs'4
-                        r2.
-                        r1
-                        r1
+                        R1 * 24
                     }
                 }
                 \new Staff {
@@ -592,30 +543,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r2
-                        b2 \pp ~ \< ^ \markup { "5:0 304|[24, 28]" }
-                        b4
-                        b2. \mp ~ \> ^ \markup { "5:1 304|[24, 28]" }
-                        b8
-                        a4. \pp \< ^ \markup { "9:0 356|[12, 16]" }
-                        a2 \mp \> ^ \markup { "9:1 356|[12, 16]" }
-                        a2 \pp \< ^ \markup { "12:0 384|[16, 32]" }
-                        a2 \mp ~ ^ \markup { "12:1 384|[16, 32]" }
-                        a2
-                        r2
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
+                        R1 * 24
                     }
                 }
             >>
@@ -628,7 +556,7 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    R1 * 18
+                    R1 * 24
                 }
             }
         >>
@@ -641,7 +569,53 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    R1 * 18
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    d'2
+                    g'4
+                    cs''4
+                    r1
+                    d'2
+                    a4
+                    e4
+                    r2
+                    d'4
+                    g'8 [
+                    cs''8 ]
+                    e'2.
+                    g'4
+                    b4
+                    e'4
+                    d''4
+                    gs''4
+                    e''1 ~
+                    e''2
+                    g'4
+                    b4
+                    r1
+                    a'4
+                    d''8 [
+                    gs''8 ]
+                    a'2 ~
+                    a'1
+                    e'2.
+                    b4 ~
+                    b2
+                    e'2
+                    d''2
+                    gs''2
+                    e''2
+                    g'4
+                    b4
+                    r1
+                    d'2
+                    b'4
+                    gs''4
+                    r1
                 }
             }
             \new Staff {
@@ -652,7 +626,52 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    R1 * 18
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r2
+                    d'2
+                    g'4
+                    fs'4
+                    d'4
+                    a8 [
+                    b8 ]
+                    r1
+                    a'2
+                    d''4
+                    fs'4
+                    e'4
+                    g'8 [
+                    fs'8 ]
+                    e'4
+                    g'4
+                    fs'4
+                    r2
+                    a'4 ~
+                    a'4
+                    g'8 [
+                    fs'8 ]
+                    a'2 ~
+                    a'1
+                    g'2.
+                    fs'4 ~
+                    fs'2
+                    d'2 ~
+                    d'1
+                    e'2.
+                    fs'4 ~
+                    fs'2
+                    e'4
+                    g'4
+                    fs'4
+                    r2.
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
                 }
             }
             \new Staff {
@@ -663,7 +682,56 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    R1 * 18
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    d'4
+                    g'8 [
+                    cs''8 ]
+                    a'8 [
+                    e'16
+                    fs'16 ]
+                    a'4
+                    d''8 [
+                    gs''8 ]
+                    cs'''8 [
+                    a''16
+                    gs''16 ]
+                    fs''8 [
+                    a''8 ]
+                    gs''8 [
+                    b''8 ~ ]
+                    b''8 [
+                    a''16
+                    gs''16 ]
+                    b''4 ~
+                    b''2
+                    a''8 [
+                    gs''8 ]
+                    e''8 [
+                    fs''16
+                    gs''16 ]
+                    fs''8 [
+                    a''8 ]
+                    gs''8
+                    r8
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
                 }
             }
             \new Staff {
@@ -674,7 +742,88 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    R1 * 18
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r2
+                    d'4
+                    g'8 [
+                    fs'8 ]
+                    d'8 [
+                    e'16
+                    fs'16 ]
+                    d'4
+                    g'8 [
+                    cs''8 ]
+                    b'8 [
+                    d''16
+                    cs''16 ]
+                    b'8 [
+                    d''8 ]
+                    cs''8 [
+                    e''8 ~ ]
+                    e''8 [
+                    d''16
+                    cs''16 ]
+                    e''4 ~
+                    e''2
+                    d''8 [
+                    cs''8 ]
+                    a'8 [
+                    b'16
+                    cs''16 ]
+                    b'8 [
+                    d''8 ]
+                    cs''8
+                    r8
+                    e''8 [
+                    d''16
+                    cs''16 ]
+                    a'4 ~
+                    a'2
+                    b'8 [
+                    cs''8 ]
+                    e''8 [
+                    d''16
+                    cs''16 ]
+                    b'2
+                    d''8 [
+                    cs''8 ]
+                    b'16 [
+                    d''16
+                    cs''16
+                    e''16 ~ ]
+                    e''4 ~
+                    e''8. [
+                    d''16 ~ ]
+                    d''16 [
+                    cs''8
+                    e''16 ~ ]
+                    e''16 [
+                    d''16
+                    cs''16
+                    a'16 ~ ]
+                    a'8. [
+                    b'16 ~ ]
+                    b'16 [
+                    cs''8
+                    b'16 ]
+                    d''16 [
+                    cs''16 ]
+                    r8
+                    r4
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
                 }
             }
             \new Staff {
@@ -685,7 +834,7 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    R1 * 18
+                    R1 * 24
                 }
             }
             \new Staff {
@@ -696,7 +845,7 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    R1 * 18
+                    R1 * 24
                 }
             }
             \new Staff {
@@ -707,7 +856,7 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    R1 * 18
+                    R1 * 24
                 }
             }
             \new Staff {
@@ -718,7 +867,7 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    R1 * 18
+                    R1 * 24
                 }
             }
             \new Staff {
@@ -729,7 +878,7 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    R1 * 18
+                    R1 * 24
                     \bar "|."
                 }
             }

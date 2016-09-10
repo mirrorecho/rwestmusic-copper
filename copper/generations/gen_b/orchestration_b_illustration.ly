@@ -1,4 +1,4 @@
-% 2016-09-10 15:00
+% 2016-09-10 00:46
 
 \version "2.18.2"
 \language "english"
@@ -52,10 +52,10 @@
                     \set Staff.shortInstrumentName = \markup { Fl.1 }
                     {
                         \numericTimeSignature
-                        \time 4/4
+                        \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 18
+                        R2. * 24
                     }
                 }
                 \new Staff {
@@ -63,10 +63,10 @@
                     \set Staff.shortInstrumentName = \markup { Fl.2 }
                     {
                         \numericTimeSignature
-                        \time 4/4
+                        \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 18
+                        R2. * 24
                     }
                 }
                 \new Staff {
@@ -74,10 +74,10 @@
                     \set Staff.shortInstrumentName = \markup { Fl.3 }
                     {
                         \numericTimeSignature
-                        \time 4/4
+                        \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 18
+                        R2. * 24
                     }
                 }
             >>
@@ -89,10 +89,10 @@
                     \set Staff.shortInstrumentName = \markup { Ob.1 }
                     {
                         \numericTimeSignature
-                        \time 4/4
+                        \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 18
+                        R2. * 24
                     }
                 }
                 \new Staff {
@@ -100,10 +100,40 @@
                     \set Staff.shortInstrumentName = \markup { Ob.2 }
                     {
                         \numericTimeSignature
-                        \time 4/4
+                        \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 18
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2
+                        d'4 ~
+                        d'4
+                        c'4
+                        b4
+                        g2
+                        a4
+                        b4
+                        d'4
+                        c'8 [
+                        b8 ~ ]
+                        b2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
                     }
                 }
             >>
@@ -115,10 +145,10 @@
                     \set Staff.shortInstrumentName = \markup { Cl.1 }
                     {
                         \numericTimeSignature
-                        \time 4/4
+                        \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 18
+                        R2. * 24
                     }
                 }
                 \new Staff {
@@ -126,10 +156,10 @@
                     \set Staff.shortInstrumentName = \markup { Cl.2 }
                     {
                         \numericTimeSignature
-                        \time 4/4
+                        \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 18
+                        R2. * 24
                     }
                 }
             >>
@@ -142,10 +172,37 @@
                     \set Staff.shortInstrumentName = \markup { Bsn.1 }
                     {
                         \numericTimeSignature
-                        \time 4/4
+                        \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 18
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        d'2 \mp (
+                        c'4 )
+                        e4 (
+                        g4 )
+                        a8 [ (
+                        b8 ~ ]
+                        b2. )
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
                     }
                 }
                 \new Staff {
@@ -154,10 +211,37 @@
                     \set Staff.shortInstrumentName = \markup { Bsn.2 }
                     {
                         \numericTimeSignature
-                        \time 4/4
+                        \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 18
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        d'2 (
+                        c'4 )
+                        b4 (
+                        a4 )
+                        f8 [ (
+                        e8 ~ ]
+                        e2. )
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
                     }
                 }
             >>
@@ -171,10 +255,10 @@
                     \set Staff.shortInstrumentName = \markup { Hn.1 }
                     {
                         \numericTimeSignature
-                        \time 4/4
+                        \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 18
+                        R2. * 24
                     }
                 }
                 \new Staff {
@@ -182,10 +266,10 @@
                     \set Staff.shortInstrumentName = \markup { Hn.2 }
                     {
                         \numericTimeSignature
-                        \time 4/4
+                        \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 18
+                        R2. * 24
                     }
                 }
             >>
@@ -197,10 +281,10 @@
                     \set Staff.shortInstrumentName = \markup { Tpt.1 }
                     {
                         \numericTimeSignature
-                        \time 4/4
+                        \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 18
+                        R2. * 24
                     }
                 }
                 \new Staff {
@@ -208,10 +292,10 @@
                     \set Staff.shortInstrumentName = \markup { Tpt.2 }
                     {
                         \numericTimeSignature
-                        \time 4/4
+                        \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 18
+                        R2. * 24
                     }
                 }
             >>
@@ -224,10 +308,10 @@
                     \set Staff.shortInstrumentName = \markup { Tbn.1 }
                     {
                         \numericTimeSignature
-                        \time 4/4
+                        \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 18
+                        R2. * 24
                     }
                 }
                 \new Staff {
@@ -236,10 +320,10 @@
                     \set Staff.shortInstrumentName = \markup { Tbn.2 }
                     {
                         \numericTimeSignature
-                        \time 4/4
+                        \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 18
+                        R2. * 24
                     }
                 }
             >>
@@ -249,10 +333,46 @@
                 \set Staff.shortInstrumentName = \markup { Tba }
                 {
                     \numericTimeSignature
-                    \time 4/4
+                    \time 3/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    R1 * 18
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    d'4
+                    f8 [
+                    e8 ]
+                    c8 [
+                    d16
+                    e16 ~ ]
+                    e4 ~
+                    e4 ~
+                    e4
+                    r4
+                    r4
+                    r4
+                    r4
+                    r4
+                    r4
+                    r4
+                    r4
+                    r4
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
                 }
             }
         >>
@@ -263,10 +383,10 @@
                 \set Staff.shortInstrumentName = \markup { Perc.1 }
                 {
                     \numericTimeSignature
-                    \time 4/4
+                    \time 3/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    R1 * 18
+                    R2. * 24
                 }
             }
             \new RhythmicStaff {
@@ -275,10 +395,10 @@
                 \set Staff.shortInstrumentName = \markup { Perc.2 }
                 {
                     \numericTimeSignature
-                    \time 4/4
+                    \time 3/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    R1 * 18
+                    R2. * 24
                 }
             }
         >>
@@ -291,42 +411,10 @@
                     \set Staff.shortInstrumentName = \markup { Vln.I.1 }
                     {
                         \numericTimeSignature
-                        \time 4/4
+                        \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        d'1 \pp \<
-                        d'2 \mp ~ \>
-                        d'8
-                        d'4. \pp \<
-                        d'1 \mp \>
-                        g'2 \pp \<
-                        g'2 \mp ~ \>
-                        g'2 ~
-                        g'8
-                        g'4. \pp ~ \<
-                        g'4
-                        g'2. \mp ~ \>
-                        g'4.
-                        g'8 \pp ~ \<
-                        g'4
-                        g'4 \mp ~ \>
-                        g'2 ~
-                        g'8
-                        a'4. \pp ~ \<
-                        a'4
-                        a'4. \mp \>
-                        g'4. \pp ~ \<
-                        g'2
-                        g'2 \mp ~
-                        g'2
-                        r2
-                        r1
-                        r1
+                        R2. * 24
                     }
                 }
                 \new Staff {
@@ -334,41 +422,10 @@
                     \set Staff.shortInstrumentName = \markup { Vln.I.2 }
                     {
                         \numericTimeSignature
-                        \time 4/4
+                        \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r2
-                        d'2 \pp ~ \<
-                        d'2
-                        d'2 \mp ~ \>
-                        d'8
-                        g4. \pp \<
-                        g2 \mp ~ \>
-                        g2
-                        c'2 \pp \<
-                        c'1 \mp ~ \>
-                        c'8
-                        c'4. \pp ~ \<
-                        c'4
-                        c'4 \mp ~ \>
-                        c'2..
-                        g'8 \pp ~ \<
-                        g'4
-                        g'2. \mp ~ \>
-                        g'8
-                        d'2 \pp ~ \<
-                        d'8
-                        d'4 \mp ~ \>
-                        d'8
-                        d''2.. \pp \<
-                        d''1 \mp
-                        r1
+                        R2. * 24
                     }
                 }
             >>
@@ -380,40 +437,10 @@
                     \set Staff.shortInstrumentName = \markup { Vln.II.1 }
                     {
                         \numericTimeSignature
-                        \time 4/4
+                        \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r2.
-                        c'4 \pp ~ \<
-                        c'2
-                        c'2 \mp ~ \>
-                        c'4
-                        e'4 \pp \<
-                        e'2 \mp ~ \>
-                        e'4
-                        fs'2 \pp \<
-                        fs'4 \mp ~ \>
-                        fs'4.
-                        fs'8 \pp ~ \<
-                        fs'4
-                        fs'4 \mp ~ \>
-                        fs'2
-                        fs'2 \pp ~ \<
-                        fs'2.
-                        fs'4 \pp ~ \<
-                        fs'1
-                        fs'1 \mp \>
-                        fs'2. \pp \<
-                        fs'4 \mp ~
-                        fs'2.
-                        r4
-                        r1
-                        r1
+                        R2. * 24
                     }
                 }
                 \new Staff {
@@ -421,40 +448,10 @@
                     \set Staff.shortInstrumentName = \markup { Vln.II.2 }
                     {
                         \numericTimeSignature
-                        \time 4/4
+                        \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r4
-                        g'2. \pp \<
-                        g'2. \mp \>
-                        a4 \pp \<
-                        a2 \mp ~ \>
-                        a4
-                        b4 \pp ~ \<
-                        b4
-                        b4 \mp ~ \>
-                        b4.
-                        b8 \pp ~ \<
-                        b4
-                        b2. \mp \>
-                        fs'1 \pp ~ \<
-                        fs'4
-                        b2. \pp ~ \<
-                        b2
-                        b2 \mp ~ \>
-                        b2
-                        cs''2 \pp ~ \<
-                        cs''4
-                        cs''2. \mp ~
-                        cs''4
-                        r2.
+                        R2. * 24
                     }
                 }
             >>
@@ -467,35 +464,10 @@
                     \set Staff.shortInstrumentName = \markup { Vla.1 }
                     {
                         \numericTimeSignature
-                        \time 4/4
+                        \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r4
-                        b2 \pp \<
-                        b4 \mp ~ \>
-                        b2
-                        d'2 \pp \<
-                        d'1 \mp \>
-                        g'2 \pp \<
-                        g'2 \mp ~ \>
-                        g'1
-                        g'1 \pp ~ \<
-                        g'2.
-                        g'4 \mp ~ \>
-                        g'2
-                        e'2 \pp ~ \<
-                        e'4
-                        e'2. \mp ~
-                        e'2
-                        r2
-                        r1
-                        r1
+                        R2. * 24
                     }
                 }
                 \new Staff {
@@ -504,34 +476,10 @@
                     \set Staff.shortInstrumentName = \markup { Vla.2 }
                     {
                         \numericTimeSignature
-                        \time 4/4
+                        \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r2.
-                        b4 \pp ~ \<
-                        b4
-                        b2. \mp \>
-                        d'2 \pp \<
-                        d'2 \mp ~ \>
-                        d'2
-                        c'2 \pp \<
-                        c'1 \mp ~ \>
-                        c'2
-                        g'2 \pp ~ \<
-                        g'1 ~
-                        g'4
-                        g'2. \mp \>
-                        b'2. \pp \<
-                        b'4 \mp ~
-                        b'1
-                        r1
+                        R2. * 24
                     }
                 }
             >>
@@ -544,43 +492,10 @@
                     \set Staff.shortInstrumentName = \markup { Vc.1 }
                     {
                         \numericTimeSignature
-                        \time 4/4
+                        \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        b2. \pp \< ^ \markup { "5:0 256|[24, 28]" }
-                        b4 \mp ~ \> ^ \markup { "5:1 256|[24, 28]" }
-                        b2 ~
-                        b8
-                        e'4. \pp \< ^ \markup { "9:0 308|[12, 16]" }
-                        e'2 \mp \> ^ \markup { "9:1 308|[12, 16]" }
-                        e'2 \pp \< ^ \markup { "12:0 336|[16, 32, -8]" }
-                        e'1 \mp \> ^ \markup { "12:1 336|[16, 32, -8]" }
-                        r4
-                        fs'2. \pp \< ^ \markup { "17:0 392|[24, 16]" }
-                        fs'2 \mp \> ^ \markup { "17:1 392|[24, 16]" }
-                        a'2 \p ~ \<
-                            ^ \markup {
-                                \column
-                                    {
-                                        "21:0 432|[24, 16]"
-                                        "solo cello"
-                                    }
-                                }
-                        a'4
-                        a'2 \mf ( ^ \markup { "21:1 432|[24, 16]" }
-                        b'4 ) ^ \markup { "22:0 472|[8]" }
-                        fs'1 \mp ~ ^ \markup { "23:0 480|[40]" }
-                        fs'4
-                        r2.
-                        r1
-                        r1
+                        R2. * 24
                     }
                 }
                 \new Staff {
@@ -589,33 +504,10 @@
                     \set Staff.shortInstrumentName = \markup { Vc.2 }
                     {
                         \numericTimeSignature
-                        \time 4/4
+                        \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r2
-                        b2 \pp ~ \< ^ \markup { "5:0 304|[24, 28]" }
-                        b4
-                        b2. \mp ~ \> ^ \markup { "5:1 304|[24, 28]" }
-                        b8
-                        a4. \pp \< ^ \markup { "9:0 356|[12, 16]" }
-                        a2 \mp \> ^ \markup { "9:1 356|[12, 16]" }
-                        a2 \pp \< ^ \markup { "12:0 384|[16, 32]" }
-                        a2 \mp ~ ^ \markup { "12:1 384|[16, 32]" }
-                        a2
-                        r2
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
+                        R2. * 24
                     }
                 }
             >>
@@ -625,10 +517,10 @@
                 \set Staff.shortInstrumentName = \markup { Cb }
                 {
                     \numericTimeSignature
-                    \time 4/4
+                    \time 3/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    R1 * 18
+                    R2. * 24
                 }
             }
         >>
@@ -638,10 +530,50 @@
                 \set Staff.shortInstrumentName = \markup { 1: }
                 {
                     \numericTimeSignature
-                    \time 4/4
+                    \time 3/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    R1 * 18
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2
+                    d'4 ~
+                    d'4
+                    c'4
+                    b4
+                    g2
+                    a4
+                    b4
+                    d'4
+                    c'8 [
+                    b8 ]
+                    a2
+                    c'4
+                    b4
+                    a4
+                    c'4
+                    b4
+                    d'2 ~
+                    d'2
+                    c'4
+                    b4
+                    d'4
+                    c'8 [
+                    b8 ]
+                    g2. ~
+                    g2.
+                    a2.
+                    b2.
+                    a2
+                    c'4 ~
+                    c'4
+                    b2
                 }
             }
             \new Staff {
@@ -649,10 +581,47 @@
                 \set Staff.shortInstrumentName = \markup { 2: }
                 {
                     \numericTimeSignature
-                    \time 4/4
+                    \time 3/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    R1 * 18
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    d'2
+                    c'4
+                    e4
+                    g4
+                    a8 [
+                    b8 ]
+                    d'2
+                    c'4
+                    b4
+                    a4
+                    f8 [
+                    e8 ]
+                    d4
+                    bf,4
+                    a,4
+                    c2
+                    bf,8 [
+                    a,8 ]
+                    c2. ~
+                    c2.
+                    bf,2.
+                    a,2.
+                    f,2. ~
+                    f,2.
+                    g,2.
+                    a,2.
+                    g,4
+                    bf,4
+                    a,4
+                    r2.
                 }
             }
             \new Staff {
@@ -660,10 +629,58 @@
                 \set Staff.shortInstrumentName = \markup { 3: }
                 {
                     \numericTimeSignature
-                    \time 4/4
+                    \time 3/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    R1 * 18
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    d'4
+                    f8 [
+                    e8 ]
+                    c8 [
+                    d16
+                    e16 ]
+                    g4
+                    f8 [
+                    e8 ]
+                    d8 [
+                    f16
+                    e16 ]
+                    d8 [
+                    f8 ]
+                    e8 [
+                    g8 ~ ]
+                    g8 [
+                    f16
+                    e16 ]
+                    g4
+                    f8 [
+                    e8 ]
+                    c8 [
+                    d16
+                    e16 ]
+                    d8 [
+                    f8 ]
+                    e8
+                    r8
+                    r4
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
                 }
             }
             \new Staff {
@@ -671,10 +688,10 @@
                 \set Staff.shortInstrumentName = \markup { 4: }
                 {
                     \numericTimeSignature
-                    \time 4/4
+                    \time 3/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    R1 * 18
+                    R2. * 24
                 }
             }
             \new Staff {
@@ -682,10 +699,10 @@
                 \set Staff.shortInstrumentName = \markup { 5: }
                 {
                     \numericTimeSignature
-                    \time 4/4
+                    \time 3/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    R1 * 18
+                    R2. * 24
                 }
             }
             \new Staff {
@@ -693,10 +710,10 @@
                 \set Staff.shortInstrumentName = \markup { 6: }
                 {
                     \numericTimeSignature
-                    \time 4/4
+                    \time 3/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    R1 * 18
+                    R2. * 24
                 }
             }
             \new Staff {
@@ -704,10 +721,10 @@
                 \set Staff.shortInstrumentName = \markup { 7: }
                 {
                     \numericTimeSignature
-                    \time 4/4
+                    \time 3/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    R1 * 18
+                    R2. * 24
                 }
             }
             \new Staff {
@@ -715,10 +732,10 @@
                 \set Staff.shortInstrumentName = \markup { 8: }
                 {
                     \numericTimeSignature
-                    \time 4/4
+                    \time 3/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    R1 * 18
+                    R2. * 24
                 }
             }
             \new Staff {
@@ -726,10 +743,10 @@
                 \set Staff.shortInstrumentName = \markup { 9: }
                 {
                     \numericTimeSignature
-                    \time 4/4
+                    \time 3/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    R1 * 18
+                    R2. * 24
                     \bar "|."
                 }
             }

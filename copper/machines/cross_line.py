@@ -20,9 +20,8 @@ class CrossLine(machines.Rhythms, machines.ChooseLine):
     # TO DO... tie preceding?
 
 def MyCrossLine(CrossLine):
-	lines=ID()
-	lines.fill(range(0,13), line1)
-	lines.fill(range(14,20), line2)
+	lines=ID.fill(range(0,13), line1)
+	lines.fillme(range(14,20), line2)
 
 # -------------------------------------------------------------------------------------------------
 # bubbles.illustrate_me(__file__, 

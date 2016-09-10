@@ -21,35 +21,37 @@
 # - (DONE) use info to implement line fragments
 # - (DONE) work in logical tie logic to info (esp. for pitches, but also for slurs, dynamics, articulations, etc.)
 # - (DONE) machine to slur rhythmic sections
+# - (DONE) refactor gen a orchestration
+# - (DONE) reorder machine
+# - (DONE) update fragmentline to work with rests
 # ----------------------------
-# - refactor gen a orchestration
+# - start orchestrating gen c
 # - rhythm/pulse machine
-# - reorder machine
 # - cross lines
 # - - - including using any duration (and maybe that will be enough)
+# - better fragments with rests
 # - start gen f short score
-# - good draft of gen e short score
-# - start orchestrating gen b
-# - update fragmentline to work with rests
-# - start orchestrating gen c
+# - start orchestrating gen d
+# - start orchestrating gen e
+# - start gen f draft short score
+# - start orchestrating gen f
 # - start gen g draft short score
+# - start orchestrating gen g
+# - start gen h draft short score
+# - start orchestrating gen h
+# - draft score template
+# - draft parts template
+# ----------------------------
+# - good draft of gen e short score
+# - more orchestrating gen b
 # - review current short scores at piano and adjust
 # - better gen c short score
 # - good draft f short score
-# - start gen h draft short score
 # - good gen g draft short score
 # - think of gen d in 8th note rhythm_denominator
-# - start orchestrating gen d
-# ----------------------------
 # - good gen h draft short score
-# - start orchestrating gen e
 # - good draft orchestration of gen b
 # - good draft orchestration of gen c
-# - draft score template
-# - draft parts template
-# - start orchestrating gen f
-# - start orchestrating gen g
-# - start orchestrating gen h
 # - good orchestration of gen d
 # - good orchestration of gen e
 # - good orchestration of gen f
@@ -78,10 +80,11 @@ from calliope import bubbles
 from copper import machines
 from copper.machines import Fragments
 
-staff = abjad.Staff("r4 c'8 d'8 e'8 f'8 r4")
-crescendo = abjad.spannertools.Crescendo()
-abjad.attach(crescendo, staff[1], staff[3])
-abjad.show(staff) 
+
+# staff = abjad.Staff("r4 c'8 d'8 e'8 f'8 r4")
+# crescendo = abjad.spannertools.Crescendo()
+# abjad.attach(crescendo, staff[1], staff[3])
+# abjad.show(staff) 
 
 # d.update(
 # 	(0,1,2,3,4):"yo"

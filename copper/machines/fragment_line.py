@@ -27,7 +27,6 @@ class FragmentLine(object):
         previous_info = None # rest and/or duration extension of fragment calculated once we know the FOLLOWING fragment's position, so need to track this
         previous_fragment = None
 
-        # TO DO... maybe use this to help with warning below?
         # def get_first_nonrest_counts(counts):
         #     for c in counts:
         #         if c > 0:
@@ -40,24 +39,63 @@ class FragmentLine(object):
             my_info = self.info[i].copy()
             my_info.original_index = i
             
-            my_info.counts_before = int(self.info[i].counts_before + (fragment.attack_offset * self.rhythm_default_multiplier))
-            
-            if fragment.attack_offset<0 and fragment.keep_original_attack:
-                # if attack precedes original and not tied to original attack, then two notes (lead-in note, then another on the original attack)
-                pre_attack_counts = int(abs(fragment.attack_offset)*self.rhythm_default_multiplier)
-                if fragment.duration:
-                    my_info.counts = [pre_attack_counts, int(fragment.duration * self.rhythm_default_multiplier)]
-                else:
-                    # TO DO... WARNING!!! assumes counts has only 1 item (will not work with added rests or repeated notes)
-                    # .... this needs to be fixed
-                    my_info.counts = [pre_attack_counts, int(self.info[i].counts[0] + fragment.release_offset*self.rhythm_default_multiplier)]
-            else:
+           
+            # if fragment.attack_offset<0 and fragment.keep_original_attack:
+            #     # if attack precedes original and not tied to original attack, then two notes (lead-in note, then another on the original attack)
+            #     pre_attack_counts = int(abs(fragment.attack_offset)*self.rhythm_default_multiplier)
+                
+            #         # TO DO... WARNING!!! assumes counts has only 1 item (will not work with added rests or repeated notes)
+            #         # .... this needs to be fixed
+            #     my_info.counts = []
+            #     for c_i, c in enumerate(self.info[i].counts):
+            #         attack_offset_counts = fragment.attack_offset*self.rhythm_default_multiplier
+            #         if c_i > 0 and attack_offset_counts < 0 and my_info.counts[c_i-1] < 0:
+            #             if attack_offset_counts < my_info.counts[c_i-1]:
+            #                 fragment.attack_offset = (attack_offset_counts - my_info.counts[c_i-1]) / self.rhythm_default_multiplier
+            #                 my_info.counts[c_i-1] = 0
+            #             else:
+            #                 my_info.counts[c_i-1] = int(my_info.counts[c_i-1] - attack_offset_counts)
+            #                 fragment.attack_offset = 0
+            #         if c > 0:
+            #             if fragment.duration:
+            #                 my_info.counts += [pre_attack_counts, int(fragment.duration * self.rhythm_default_multiplier)]
+            #             else:
+            #                 my_info.counts += [pre_attack_counts, int(c + fragment.release_offset*self.rhythm_default_multiplier)]
+            #         elif c < 0:
+            #             my_info.counts += [c]
+
+            # else:
                 # if not keeping original attack in addition to a preceding one, then there is just one note...
-                if fragment.duration:
-                    my_info.counts = [int(fragment.duration * self.rhythm_default_multiplier)]
-                else:
-                    # TO DO... SAME WARNING AS ABOVE
-                    my_info.counts = [int(self.info[i].counts[0] - (fragment.attack_offset + fragment.release_offset)*self.rhythm_default_multiplier),]
+
+            my_info.counts = []
+            for c_i, c in enumerate(self.info[i].counts):
+                pre_attack_counts = int(abs(fragment.attack_offset)*self.rhythm_default_multiplier) # only applies if fragment.attack_offset<0 and fragment.keep_original_attack
+                attack_offset_counts = fragment.attack_offset*self.rhythm_default_multiplier
+                if c > 0:
+                    if fragment.duration:
+                        if fragment.attack_offset<0 and fragment.keep_original_attack:                            
+                            my_info.counts += [pre_attack_counts]
+                        my_info.counts += [int(fragment.duration * self.rhythm_default_multiplier)]
+                    else:
+                        if fragment.attack_offset<0 and fragment.keep_original_attack:         
+                            my_info.counts += [pre_attack_counts, int(c + fragment.release_offset*self.rhythm_default_multiplier)]                   
+                        else:
+                            my_info.counts += [int(c + (fragment.release_offset-fragment.attack_offset)*self.rhythm_default_multiplier),]
+                elif c < 0:
+                    my_info.counts += [c]
+                if c_i > 0 and attack_offset_counts < 0 and my_info.counts[c_i-1] < 0:
+                    if attack_offset_counts < my_info.counts[c_i-1]:
+                        fragment.attack_offset = (attack_offset_counts - my_info.counts[c_i-1]) / self.rhythm_default_multiplier
+                        my_info.counts[c_i-1] = 0
+                    else:
+                        # print(fragment.attack_offset)
+                        my_info.counts[c_i-1] = int(my_info.counts[c_i-1] - attack_offset_counts)
+                        fragment.attack_offset = 0
+            
+            # print(my_info.counts)
+            my_info.counts = [c for c in my_info.counts if c != 0] # this cleans up 0s, which cause problems
+
+            my_info.counts_before = int(self.info[i].counts_before + (fragment.attack_offset * self.rhythm_default_multiplier))
 
             if previous_info is None:
                 self.rhythm_initial_silence = my_info.counts_before / self.rhythm_default_multiplier

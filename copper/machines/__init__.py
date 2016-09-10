@@ -21,3 +21,4 @@ from copper.machines.harmony import *
 from copper.machines.reverse import *
 from copper.machines.fragment_line import *
 from copper.machines.arrange_attachments import *
+from copper.machines import slurs

@@ -116,7 +116,7 @@ class IndexedData(SetAttributeMixin, collections.UserDict):
     def keylist(self):
         return sorted(list(self.data.keys()))
 
-    def fill(self, indices, value):
+    def fillme(self, indices, value):
         if self.limit <= max(indices):
             self.limit = max(indices) + 1
         for i in indices:
@@ -125,6 +125,12 @@ class IndexedData(SetAttributeMixin, collections.UserDict):
                 self[i] = value()
             else:
                 self[i] = value
+
+    @classmethod
+    def fill(cls, indices, value):
+        me = cls()
+        me.fillme(indices, value)
+        return me
 
     def as_list(self):
         # TO DO: this is a little screwy and doesn't work for indices outside the limits or for min_limit !=0
