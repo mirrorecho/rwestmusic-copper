@@ -7,7 +7,7 @@ from copper.machines.tools import IndexedData as ID # just to avoid a lot of typ
 
 class ArrangeAttachments(object):
     """
-    mixin to be used with ChooseLine
+    mixin to be used with SegmentedLine
     """
     # TO DO... consider working this logic in to the base bubble Attachment class? (right now it's duplicative)
     instructions = ID()
@@ -39,7 +39,7 @@ class ArrangeAttachments(object):
     # def process_leaf(self, leaves, logical_ties, leaf, logical_tie, leaf_index, logical_tie_index, info_index, info_note_index):
 
 
-    # TO DO... maybe this method should be a part of the base ChooseLine, and only deal with the actual attachments here
+    # TO DO... maybe this method should be a part of the base SegmentedLine, and only deal with the actual attachments here
     def process_logical_ties(self, music, **kwargs):
         leaves = abjad.select(music).by_leaf()
         logical_ties = abjad.select(music).by_logical_tie(pitched=True) # TO DO... QUESTION? what does pitched=True do?

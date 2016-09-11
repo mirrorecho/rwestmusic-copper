@@ -5,7 +5,7 @@ from calliope import bubbles
 from copper import machines
 
 class Hold(bubbles.Line):
-    line = None # TO DO... should this inherit from ChooseLine instead of referencing it???
+    line = None # TO DO... should this inherit from SegmentedLine instead of referencing it???
     indices = ()
     dynamics = () # e.g. ( ("p","mf", None),  )
     counts = () # e.g. ( (3,3), )
@@ -86,6 +86,6 @@ class Hold(bubbles.Line):
 
 # -------------------------------------------------------------------------------------------------
 # bubbles.illustrate_me(__file__, 
-#     lambda: ChooseLine(pitch_segments=machines.Pitches(), rhythm_segments=machines.Rhythms()).score(),
+#     lambda: SegmentedLine(pitch_segments=machines.Pitches(), rhythm_segments=machines.Rhythms()).score(),
 #     subfolder="machine_illustrations"
 #     )

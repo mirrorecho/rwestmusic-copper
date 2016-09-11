@@ -7,23 +7,39 @@ from copy import deepcopy
 # b = None
 # print( set(dir(d)) - set(dir(b)) )
 
+# TO DO EVENTUALLY... look into abjad tree data structures (or other tree structures)... may be useful here instead of reinventing the wheel
 class SetAttributeMixin(object):
     def __init__(self, **kwargs):
         super().__init__()
         for name, value in kwargs.items():
             setattr(self, name, value)
 
-    def __str__(self):
-        my_string = ""
-        # TO DO... this is silly...
-        class DummyClass(object):
-            pass
-        for a in sorted(set(dir(self)) - set(dir(DummyClass()))):
-            my_string += a + "=" + str(getattr(self, a)) + " | "
-        return my_string
+    # MAY NEED THESE????
+    # def __str__(self):
+    #     my_string = ""
+    #     # TO DO... this is silly...
+    #     class DummyClass(object):
+    #         pass
+    #     for a in sorted(set(dir(self)) - set(dir(DummyClass()))):
+    #         my_string += a + "=" + str(getattr(self, a)) + " | "
+    #     return my_string
 
-    def copy(self):
-        return deepcopy(self) # deep copy probably not needed... but just to be safe...
+    # def copy(self):
+    #     return deepcopy(self) # deep copy probably not needed... but just to be safe...
+
+class Tree(SetAttributeMixin, abjad.datastructuretools.TreeContainer):
+    children_type = None
+
+    def my_index(self):
+        return self.graph_order[-1]
+
+    def branch(self, **kwargs):
+        new_branch = self.children_type(**kwargs)
+        self.append( new_branch )
+        return new_branch
+
+    # TO DO... add flattened subs here...
+
 
 class IndexedData(SetAttributeMixin, collections.UserDict):
     """
@@ -34,7 +50,7 @@ class IndexedData(SetAttributeMixin, collections.UserDict):
     limit=1
     cyclic = True
     over_limit_defaults=True # if False, then attempting to get by indices >= limit will throw an exception. (only applies if cyclic=False)
-    items_type = None # WARNING, this must be defined at the class level
+    items_type = object # WARNING, this must be defined at the class level
 
     # TO DO: implement this?
     # def keys(self):
@@ -75,6 +91,7 @@ class IndexedData(SetAttributeMixin, collections.UserDict):
         return max(self.data)
 
     def update(self, from_dict):
+        print(from_dict)
         if isinstance(from_dict, IndexedData):
             from_dict = from_dict.data
         for key in from_dict:
@@ -187,7 +204,7 @@ class IndexedData(SetAttributeMixin, collections.UserDict):
 
 
 def by_logical_tie_group_rests(music):
-    logical_ties = abjad.select(music).by_logical_tie
+    logical_ties = abjad.select(music).by_logical_tie()
 
     return_logical_ties = []
     previous_rest_list = []

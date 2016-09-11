@@ -14,7 +14,7 @@ from copper.machines.pitch_displacement import *
 from copper.machines.pitches import *
 from copper.machines.rhythms import *
 from copper.machines.drones import *
-from copper.machines.choose_line import *
+from copper.machines.segmented_line import *
 from copper.machines.fifths_pitches import *
 from copper.machines.broken_rhythms import *
 from copper.machines.harmony import *

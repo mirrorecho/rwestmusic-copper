@@ -5,28 +5,28 @@ from calliope import bubbles
 from copper import machines
 from copper.machines.tools import IndexedData as ID # just to avoid a lot of typing
 
-class CrossLine(machines.Rhythms, machines.ChooseLine):
+class CrossLine(machines.Rhythms, machines.SegmentedLine):
     """
     mixes and matches pitches from other lines, using its own rhythm
     """
     lines = ID()
     def get_line(self, index):
     	"""
-		hook, that should be overriden to return a ChooseLine object for a given rhythmic index.
+		hook, that should be overriden to return a SegmentedLine object for a given rhythmic index.
     	"""
     	return self.lines[index]
 
 
     # TO DO... tie preceding?
 
-class CrossFragmentLine(machines.Rhythms, machines.ChooseLine):
+class CrossFragmentLine(machines.Rhythms, machines.SegmentedLine):
     """
     mixes and matches pitches from other lines, using its own rhythm
     """
     lines = ID()
     def get_line(self, index):
         """
-        hook, that should be overriden to return a ChooseLine object for a given rhythmic index.
+        hook, that should be overriden to return a SegmentedLine object for a given rhythmic index.
         """
         return self.lines[index]
 
@@ -39,6 +39,6 @@ def MyCrossLine(CrossLine):
 
 # -------------------------------------------------------------------------------------------------
 # bubbles.illustrate_me(__file__, 
-#     lambda: ChooseLine(pitch_segments=machines.Pitches(), rhythm_segments=machines.Rhythms()).score(),
+#     lambda: SegmentedLine(pitch_segments=machines.Pitches(), rhythm_segments=machines.Rhythms()).score(),
 #     subfolder="machine_illustrations"
 #     )

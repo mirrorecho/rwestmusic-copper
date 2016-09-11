@@ -74,13 +74,31 @@
 # - think of info as events
 # ----------------------------
 
-import abjad
-from calliope import bubbles
 
 import abjad
 from calliope import bubbles
-from copper import machines
-from copper.machines import Fragments
+# from copper import machines
+# from copper.machines import Fragments
+
+a = abjad.datastructuretools.TreeContainer(name='a')
+# b = abjad.datastructuretools.TreeContainer(name='b')
+# c = abjad.datastructuretools.TreeContainer(name='c')
+# d = abjad.datastructuretools.TreeContainer(name='d')
+# e = abjad.datastructuretools.TreeContainer(name='e')
+# f = abjad.datastructuretools.TreeContainer(name='f')
+# g = abjad.datastructuretools.TreeContainer(name='g')
+
+print(a.graph_order)
+
+a = ("a","b")
+b = ("c","d")
+
+for x, y in zip(a, b):
+    print(x + y)
+
+# a.extend([b,c])
+# b.extend([d,e])
+# c.extend([f,g])
 
 
 # abjad.show(s)
@@ -111,7 +129,7 @@ from copper.machines import Fragments
 
 # print(l2)
 
-# class Line1(machines.Rhythms, machines.Pitches, machines.ChooseLine):
+# class Line1(machines.Rhythms, machines.Pitches, machines.SegmentedLine):
 #     rhythm_sequence = (0,0,0,0,1,2,0,0,1) 
 #     pitch_sequence = (0,1,0,2,2,0,0,1,2)
 #     rhythm_times = 1

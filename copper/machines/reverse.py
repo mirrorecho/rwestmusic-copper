@@ -35,7 +35,7 @@ class ReversableRhythms(object):
 # -------------------------------------------------------------------------------------------------
 
 # bubbles.illustrate_me(__file__, 
-#     lambda: machines.ChooseLine(
+#     lambda: machines.SegmentedLine(
 #             pitch_segments=ReversablePitches(reverse=(0,1,2)), 
 #             rhythm_segments=ReversableRhythms(reverse=(0,1,2)) 
 #             ).score(),

@@ -18,7 +18,7 @@ class Fragments(machines.IndexedData):
 
 class FragmentLine(object):
     """
-    mixin to be used with ChooseLine
+    mixin to be used with SegmentedLine
     """
     fragments = Fragments()
     lines = None # override with indexdata to create fragments that cross lines
@@ -119,6 +119,6 @@ class FragmentLine(object):
 
 # -------------------------------------------------------------------------------------------------
 # bubbles.illustrate_me(__file__, 
-#     lambda: ChooseLine(pitch_segments=machines.Pitches(), rhythm_segments=machines.Rhythms()).score(),
+#     lambda: SegmentedLine(pitch_segments=machines.Pitches(), rhythm_segments=machines.Rhythms()).score(),
 #     subfolder="machine_illustrations"
 #     )

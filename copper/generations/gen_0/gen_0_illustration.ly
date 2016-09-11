@@ -1,4 +1,4 @@
-% 2016-09-06 00:20
+% 2016-09-11 01:28
 
 \version "2.18.2"
 \language "english"
@@ -50,30 +50,6 @@
                 a4
                 c'4
                 b4
-            }
-        }
-        \context Staff = "line2" {
-            \set Staff.instrumentName = \markup { Line2 }
-            \set Staff.shortInstrumentName = \markup { Line2 }
-            {
-                \numericTimeSignature
-                \time 4/4
-                \bar "||"
-                \accidentalStyle modern-cautionary
-                r1
-                r1
-                d'1
-                d'16
-                r2...
-                r1
-                d'2
-                r2
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
             }
         }
     >>
