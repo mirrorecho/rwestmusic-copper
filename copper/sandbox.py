@@ -83,14 +83,16 @@ from copper import machines
 from copper.machines import Fragments
 
 
+# abjad.show(s)
+
 # staff = abjad.Staff("r4 c'8 d'8 e'8 f'8 r4")
 # crescendo = abjad.spannertools.Crescendo()
 # abjad.attach(crescendo, staff[1], staff[3])
 # abjad.show(staff) 
 
 # d.update(
-# 	(0,1,2,3,4):"yo"
-# 	)
+#   (0,1,2,3,4):"yo"
+#   )
 
 # from copper.generations.gen_c import gen_c
 

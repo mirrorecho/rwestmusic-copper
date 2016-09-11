@@ -185,21 +185,24 @@ class IndexedData(SetAttributeMixin, collections.UserDict):
         my_string += str_line(self.limit, "MAX")
         return my_string
 
-class SomeIndexData(SetAttributeMixin):
-    info1 = None
-    info2 = None
 
-class SomeData(IndexedData):
-    items_type = SomeIndexData
+def by_logical_tie_group_rests(music):
+    logical_ties = abjad.select(music).by_logical_tie
 
-d = SomeData({
-    1:SomeData.item(info1="yoyo"),
-    2:SomeData.item(info1="ma"),
-    })
-d2 = SomeData({
-    12:SomeData.item(info1="yoyo2"),
-    23:SomeData.item(info1="ma2"),
-    })
+    return_logical_ties = []
+    previous_rest_list = []
+
+    for logical_tie in logical_ties:
+        if isinstance(logical_tie[0], abjad.Rest):
+            previous_rest_list += [logical_tie[0]]
+        else:
+            if previous_rest_list:
+                return_logical_ties += [abjad.selectiontools.LogicalTie( previous_rest_list )]
+            previous_rest_list = []
+            return_logical_ties += [logical_tie]
+    return return_logical_ties
+
+
 # d2 = IndexedData({
 #     9:SomeData.item(info1="yoyo2"),
 #     11:SomeData.item(info1="ma2"),
