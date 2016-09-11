@@ -59,8 +59,8 @@ class IndexedData(SetAttributeMixin, collections.UserDict):
 
     def __init__(self, initialize_from=None, default=None, limit=None, **kwargs):
         super().__init__(**kwargs)
-        self.default = default or self.default
-        self.limit = limit or self.limit
+        self.default = default if default is not None else self.default
+        self.limit = limit if limit is not None else self.limit
         if initialize_from:
             self.update(initialize_from)
 
@@ -91,12 +91,10 @@ class IndexedData(SetAttributeMixin, collections.UserDict):
         return max(self.data)
 
     def update(self, from_dict):
-        print(from_dict)
         if isinstance(from_dict, IndexedData):
             from_dict = from_dict.data
         for key in from_dict:
             assert isinstance(key, int), "key is not an integer: %s" % key
-        # print(from_dict)
         if self.limit <= max(from_dict):
             self.limit = max(from_dict) + 1
         super().update(from_dict)
@@ -134,14 +132,17 @@ class IndexedData(SetAttributeMixin, collections.UserDict):
         return sorted(list(self.data.keys()))
 
     def fillme(self, indices, value):
-        if self.limit <= max(indices):
-            self.limit = max(indices) + 1
-        for i in indices:
-            if hasattr(value, "__call__"):
-                # TO DO... better to call this over and over or set value once outside of loop?
-                self[i] = value()
-            else:
-                self[i] = value
+        if indices:
+            if self.limit <= max(indices):
+                self.limit = max(indices) + 1
+            for i in indices:
+                if hasattr(value, "__call__"):
+                    # TO DO... better to call this over and over or set value once outside of loop?
+                    self[i] = value()
+                else:
+                    self[i] = value
+        else:
+            print("WARNING: fillme with value '%s' will have no effect since no indices passed." % value)
 
     @classmethod
     def fill(cls, indices, value):
@@ -218,6 +219,7 @@ def by_logical_tie_group_rests(music):
             previous_rest_list = []
             return_logical_ties += [logical_tie]
     return return_logical_ties
+
 
 
 # d2 = IndexedData({

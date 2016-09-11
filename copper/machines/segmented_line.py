@@ -22,9 +22,9 @@ class LogicalTieData(machines.Tree):
 
 class EventData(machines.Tree):
     event_index = None
-    pitch_original = None
-    pitch_displacement_sum = None
-    pitch_displacement_cumulative = None
+    pitch_original = 0
+    pitch_displacement_sum = 0
+    pitch_displacement_cumulative = 0
     children_type = LogicalTieData
 
     def ticks_sum(self):
@@ -68,7 +68,15 @@ class SegmentTree(machines.Tree):
 
 class SegmentedLine(bubbles.Line):
     """
-    behaves like EventsLine, but creates events out of 
+    Base class .... creates music out of defined segments of material in the data attribute (a tre structure of data about segments, events and 
+    logical ties).
+    
+    Plural  set_ methods are overriden in sub classes to set various levels of data... adding to or adjusting the structure of items in the data.
+    In general, these plural methods are called only called once for object they are adding items to... calling them multiple times for the same 
+    object could produce unintended results (e.g. doubly adding something). 
+    
+    Singular set_ methods set the attribues on indiviaul objects, usually based on data elsewhere in the data structure, or defined at the class
+    level.
     """
     data = None
 

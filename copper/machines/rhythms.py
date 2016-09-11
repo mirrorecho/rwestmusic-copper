@@ -6,10 +6,6 @@ from copper import machines
 from copper.machines.tools import IndexedData as ID  # to avoid a lot of typing
 
 
-def make_multipliers(multipliers=None, default=1, cyclic=False):
-    return ID(multipliers, default=default, cyclic=cyclic)
-
-
 class Rhythms(object):
 
     """
@@ -23,7 +19,6 @@ class Rhythms(object):
         (1, 1, 1),
         (4, 1, 1),
     )
-
     rhythm_sequence = (
         0, 1, 2  # these values for testing purposes only
     )
@@ -31,24 +26,16 @@ class Rhythms(object):
     rhythm_default_multiplier = 8
     rhythm_times = 1
 
-    # QUESTION: would it make more sense for these to be added to an inherited
-    # class? (since aug/dimin not possible to start)
-    rhythm_multipliers = make_multipliers()
     rhythm_initial_silence = 0
 
+
     def set_logical_tie(self, logical_tie, **kwargs):
-        """
-        hook in case we need it
-        """
+        # TO DO... maybe only needed on sub rhythmic classes?
         pass
 
     def set_logical_ties(self, event, **kwargs):
         super().set_logical_ties(event, **kwargs)
-        if event.event_index == 0:
-            self.set_logical_tie(
-                event.branch(
-                    ticks=int(self.rhythm_initial_silence * self.rhythm_default_multiplier * -1))
-            )
+        # (by default, there is just 1 logical tie per event... )
         self.set_logical_tie(
             event.branch(
                 ticks=int(event.parent.rhythm_segment[event.my_index()] * self.rhythm_default_multiplier))
@@ -56,25 +43,32 @@ class Rhythms(object):
 
     def set_event(self, event, **kwargs):
         super().set_event(event, **kwargs)
-        event.event_index = len(event.root.events)
-        event.root.events.append(event)
+        # TO DO... remove? Any attributes to set for event level for rhythms?
 
     def set_events(self, segment, **kwargs):
         super().set_events(segment, **kwargs)
         for i in range(len(segment.rhythm_segment)):
             event=segment.branch()
+            event.event_index = len(event.root.events)
+            event.root.events.append(event)
             self.set_event(event, **kwargs)
             self.set_logical_ties(event, **kwargs)
 
     def set_segment(self, segment, **kwargs):
         super().set_segment(segment, **kwargs)
-        rhythm_segment_index = self.rhythm_sequence[segment.my_index() % len(self.rhythm_sequence)]
+        rhythm_segment_index = self.rhythm_sequence[segment.my_index()]
         segment.rhythm_segment = self.rhythm_segments[rhythm_segment_index]
-        segment.rhythm_segment_multiplier = self.rhythm_multipliers[segment.my_index()]
 
     def set_segments(self, **kwargs):
         super().set_segments(**kwargs)
-        for i in range(0,  len(self.rhythm_sequence)*self.rhythm_times):
+        # special case for initial silence:
+        initial_silence_segment = self.data.branch()
+        initial_silence_event = initial_silence_segment.branch()
+        initial_silence_logical_tie = initial_silence_event.branch(
+                    ticks=int(self.rhythm_initial_silence*self.rhythm_default_multiplier*-1) )
+        
+        # now loop through sequence of rhythm segments:
+        for i in range(1,  len(self.rhythm_sequence)*self.rhythm_times):
             segment = self.data.branch()
             self.set_segment(segment, **kwargs)
             self.set_events(segment, **kwargs)
@@ -105,8 +99,8 @@ class Rhythms(object):
             talea=self.get_talea(),
             read_talea_once_only=True,
             # read_talea_once_only = False, # for testing only...
-            # division_masks=division_masks,
-            # extra_counts_per_division=extra_counts_per_division,
+            # division_masks=division_masks, # for testing only...
+            # extra_counts_per_division=extra_counts_per_division, # for testing only...
         )
 
     def music_from_segments(self):

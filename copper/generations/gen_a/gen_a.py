@@ -8,7 +8,7 @@ from copper.generations.gen_0 import gen_0
 
 # -------------------------------------------------------------------------------------------------
 
-class Line1(gen_0.Line1):
+class Line1(machines.PitchesDisplaced, gen_0.Line1):
     metrical_durations = ID(default=((1,1),), limit=18)
     rhythm_initial_silence=24
     pitch_displacement = machines.FifthDisplacement(
@@ -16,6 +16,7 @@ class Line1(gen_0.Line1):
             down =  ( 5,   23) 
             )
 
+# print
 
 # -------------------------------------------------------------------------------------------------
 
@@ -40,6 +41,6 @@ class GenA(gen_0.Gen0):
 
 # -------------------------------------------------------------------------------------------------
 
-bubbles.illustrate_me(__file__, 
-    lambda: GenA().score()
-    )
+# bubbles.illustrate_me(__file__, 
+#     lambda: GenA().score()
+#     )

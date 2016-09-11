@@ -106,6 +106,8 @@ b = ("c","d")
 for x, y in zip(a, b):
     print(x + y)
 
+print(hasattr(set(), "__call__"))
+
 # a.extend([b,c])
 # b.extend([d,e])
 # c.extend([f,g])
