@@ -49,6 +49,7 @@ class IndexedData(SetAttributeMixin, collections.UserDict):
     min_limit=0
     limit=1
     cyclic = True
+    cyclic_start=0
     over_limit_defaults=True # if False, then attempting to get by indices >= limit will throw an exception. (only applies if cyclic=False)
     items_type = object # WARNING, this must be defined at the class level
 
@@ -178,7 +179,13 @@ class IndexedData(SetAttributeMixin, collections.UserDict):
             # TO DO: this is a little screwy and doesn't work for indices outside the limits or for min_limit !=0
             return self.as_list()[key]
         if self.cyclic:
-            key = key % self.limit
+            if self.cyclic_start > 0 and (key >= self.cyclic_start or key < 0):
+                if key > 0:
+                    key = ( (key - self.cyclic_start) % (self.limit - self.cyclic_start) ) + self.cyclic_start
+                else:
+                    key = (key % (self.limit - self.cyclic_start)) + self.cyclic_start
+            else:
+                key = key % self.limit
         if key in self:
             return self.data[key]
         elif key < self.limit or self.over_limit_defaults:
@@ -203,6 +210,8 @@ class IndexedData(SetAttributeMixin, collections.UserDict):
         my_string += str_line(self.limit, "MAX")
         return my_string
 
+class ID1(IndexedData): # just to save typing, since this is used often
+    cyclic_start = 1
 
 def by_logical_tie_group_rests(music):
     logical_ties = abjad.select(music).by_logical_tie()
@@ -221,107 +230,11 @@ def by_logical_tie_group_rests(music):
     return return_logical_ties
 
 
+# d1 = IndexedData()
+# d2 = IndexedData(cyclic_start=2)
 
-# d2 = IndexedData({
-#     9:SomeData.item(info1="yoyo2"),
-#     11:SomeData.item(info1="ma2"),
-#     })
+# d1.extend(["a","b","c","d",'e'])
+# print(d1[5])
 
-# print (d.keys())
-# d += d2
-
-# for i, a in d.non_default_items():
-#     print(i)
-#     print(a)
-
-
-
-# print(type( slice(0,4,None) ))
-# print(d[1:4])
-# print( dir( slice(0,1,None) ) )
- 
-# class FunnyList(list):
-#     def __getitem__(self, index):
-#         print(index.stop)
-#         # return list.__getitem__(self, index)
-
-# l = FunnyList()
-# l.extend( ("a","b","c","d","e") )
-
-# print(l[1:3])
-
-
-# # d.limit=24
-# d[3]="HAHA"
-# d.extend(("a","b","C"))
-# print(d)
-
-# d = IndexedData(limit=6, default="yo")
-# d.cyclic=True
-# d.over_limit_defaults=False
-# d.fill(range(1,4), "yomama")
-# print(d[-41])
-# print(d)
-# print(d.non_default_items())
-
-
-# d = IndexedData({
-#         47: ((1,4),)*4,
-#         4: ((1,4),)*4,
-#         3: ((1,2),)*2,
-#         5: ((1,4),)*4,
-#     }, limit=37, default=((1,1),))
-
-# print(d.flattened())
-
-
-
-# print(d)
-# print(d[11])
-
-# for d2 in d:
-#     print(d2)
-
-# print(d)
-
-
-
-
-# class YoMama(collections.UserDict):
-#     def __init__(self, **kwargs)
-#     super().__init__(**kwargs)
-#     d = collections.defaultdict(lambda : "ba")
-
-
-
-
-
-
-# def dictify(indexed_tuple):
-#     # tuple should be in the form ((0, object), (3, object), etc.)
-#     my_dict = {}
-#     for t in indexed_tuple:
-#         t[]
-
-# class IndexedCollection
-
-# def make_metrical_durations(
-#         number,
-#         default,
-#         exceptions # example:  (3,  ((1,2),)*2 )
-#     ):
-#     exception_roster = [exceptions[0] for e in exceptions]
-#     for n in range(number):
-#         if n in exception_roster:
-#             n[0]
-
-
-
-
-
-# def yomama(n, **kwargs):
-#     print(n)
-#     print(kwargs)
-
-
-# yomama("hot", =(1,2))
+# d2.extend(["a","b","c","d",'e'])
+# print(d2[-4])

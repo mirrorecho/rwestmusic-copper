@@ -29,8 +29,8 @@
 # - (DONE) naming of variables/classes for info items vs entire data set is confusing!
 # - (DONE) redo pitch displacement, multipier, breaks, reverse machines
 # - (DONE) cleanup data (combine rests and remove 0 ticks)
+# - (DONE) implemented cyclic_start (so that segments/events based stuff can cycle back to 1)
 # ----------------------------
-# - cyclic data doesn't work well with initial silence taking up first index... consider changing
 # - redo harmony machine
 # - redo attachments machine
 # - redo fragments machine

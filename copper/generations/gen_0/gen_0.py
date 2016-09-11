@@ -3,8 +3,8 @@
 import abjad
 from calliope import bubbles
 from copper import machines
+from copper.machines import IndexedData as ID, ID1 # just to avoid a lot of typing
 
-ID = machines.IndexedData # just to avoid a lot of typing
 
 # -------------------------------------------------------------------------------------------------
 # HERE IS the actual line class:
@@ -20,12 +20,12 @@ class Line1(
             machines.SegmentedLine):
     metrical_durations = ID({}, default=((1,1),), limit=12)
     rhythm_initial_silence = 12
-    rhythm_sequence = ID({
+    rhythm_sequence = ID1({
         5:1,
         6:2,
         9:1
         }, default=0, limit=10)
-    pitch_sequence = ID({
+    pitch_sequence = ID1({
         2:1,
         4:2,
         5:2,
@@ -36,11 +36,12 @@ class Line1(
     rhythm_multipliers=machines.RhythmsMultiplied.make_multipliers({1:0.5})
     rhythm_reverse=(3,)
     pitch_reverse=(4,)
-    breaks = ID({
+    breaks = ID1({
         1: 0.5,
         3: -1.5,
         4: -4
         })
+
 
 # class FragmentLine1(machines.FragmentLine, Line1):
 #     fragments = machines.Fragments({
