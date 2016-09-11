@@ -21,7 +21,10 @@ class FragmentLine(object):
     mixin to be used with SegmentedLine
     """
     fragments = Fragments()
-    lines = None # override with indexdata to create fragments that cross lines
+    # lines = None # override with indexdata to create fragments that cross lines
+
+    
+
 
     def process_info(self, **kwargs):
         super().process_info(**kwargs)

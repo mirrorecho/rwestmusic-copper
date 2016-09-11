@@ -25,12 +25,22 @@
 # - (DONE) reorder machine
 # - (DONE) update fragmentline to work with rests
 # - (DONE) start orchestrating gen c
+# - (DONE) think of info as events
+# - (DONE) naming of variables/classes for info items vs entire data set is confusing!
 # ----------------------------
-# - cross lines
-# - - - including using any duration (and maybe that will be enough)
-# - rhythm/pulse machine
-# - add events by segment
-# - better fragments with rests
+# - redo multipier, breaks, reverse
+# - cleanup data (combine rests and remove 0 ticks)
+# - redo harmony machine
+# - redo attachments machine
+# - redo fragments machine
+# - add to and refactor existing music
+# - repeat/pulse machine
+# - cross lines combining existing events
+# - cross lines using rhythm overlay
+# - add to and refactor existing music
+# - arrange harmony machine (including working into cross lines)
+# - arrange chords machine (for piano/harp and sometimes strings)
+# - add to and refactor existing music
 # - start gen f short score
 # - start orchestrating gen d
 # - start orchestrating gen e
@@ -40,9 +50,9 @@
 # - start orchestrating gen g
 # - start gen h draft short score
 # - start orchestrating gen h
+# ----------------------------
 # - draft score template
 # - draft parts template
-# ----------------------------
 # - good draft of gen e short score
 # - more orchestrating gen b
 # - review current short scores at piano and adjust
@@ -70,9 +80,9 @@
 # - clean up gen a orchestration
 # - use asserts for error handling
 # - conisistency / plan for what's a class attribute and what's not
-# - naming of variables/classes for info items vs entire data set is confusing!
-# - think of info as events
-# ----------------------------
+
+
+
 
 
 import abjad

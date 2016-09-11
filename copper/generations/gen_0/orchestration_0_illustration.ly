@@ -1,4 +1,4 @@
-% 2016-09-03 12:16
+% 2016-09-11 01:29
 
 \version "2.18.2"
 \language "english"
@@ -605,6 +605,107 @@
                     a4
                     c'4
                     b4
+                }
+            }
+        >>
+        \new StaffGroup <<
+            \new Staff {
+                \set Staff.instrumentName = \markup { "Line 1" }
+                \set Staff.shortInstrumentName = \markup { 1: }
+                {
+                    \numericTimeSignature
+                    \time 4/4
+                    \bar "||"
+                    \accidentalStyle modern-cautionary
+                    R1 * 12
+                }
+            }
+            \new Staff {
+                \set Staff.instrumentName = \markup { "Line 2" }
+                \set Staff.shortInstrumentName = \markup { 2: }
+                {
+                    \numericTimeSignature
+                    \time 4/4
+                    \bar "||"
+                    \accidentalStyle modern-cautionary
+                    R1 * 12
+                }
+            }
+            \new Staff {
+                \set Staff.instrumentName = \markup { "Line 3" }
+                \set Staff.shortInstrumentName = \markup { 3: }
+                {
+                    \numericTimeSignature
+                    \time 4/4
+                    \bar "||"
+                    \accidentalStyle modern-cautionary
+                    R1 * 12
+                }
+            }
+            \new Staff {
+                \set Staff.instrumentName = \markup { "Line 4" }
+                \set Staff.shortInstrumentName = \markup { 4: }
+                {
+                    \numericTimeSignature
+                    \time 4/4
+                    \bar "||"
+                    \accidentalStyle modern-cautionary
+                    R1 * 12
+                }
+            }
+            \new Staff {
+                \set Staff.instrumentName = \markup { "Line 5" }
+                \set Staff.shortInstrumentName = \markup { 5: }
+                {
+                    \numericTimeSignature
+                    \time 4/4
+                    \bar "||"
+                    \accidentalStyle modern-cautionary
+                    R1 * 12
+                }
+            }
+            \new Staff {
+                \set Staff.instrumentName = \markup { "Line 6" }
+                \set Staff.shortInstrumentName = \markup { 6: }
+                {
+                    \numericTimeSignature
+                    \time 4/4
+                    \bar "||"
+                    \accidentalStyle modern-cautionary
+                    R1 * 12
+                }
+            }
+            \new Staff {
+                \set Staff.instrumentName = \markup { "Line 7" }
+                \set Staff.shortInstrumentName = \markup { 7: }
+                {
+                    \numericTimeSignature
+                    \time 4/4
+                    \bar "||"
+                    \accidentalStyle modern-cautionary
+                    R1 * 12
+                }
+            }
+            \new Staff {
+                \set Staff.instrumentName = \markup { "Line 8" }
+                \set Staff.shortInstrumentName = \markup { 8: }
+                {
+                    \numericTimeSignature
+                    \time 4/4
+                    \bar "||"
+                    \accidentalStyle modern-cautionary
+                    R1 * 12
+                }
+            }
+            \new Staff {
+                \set Staff.instrumentName = \markup { "Line 9" }
+                \set Staff.shortInstrumentName = \markup { 9: }
+                {
+                    \numericTimeSignature
+                    \time 4/4
+                    \bar "||"
+                    \accidentalStyle modern-cautionary
+                    R1 * 12
                     \bar "|."
                 }
             }
