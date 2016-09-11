@@ -3,34 +3,23 @@
 import abjad
 from calliope import bubbles
 
-
-class ReversablePitches(object):
+class PitchesReverse(object):
     pitch_reverse=()
 
-    def process_pitch_info_item(self, info_item, **kwargs):
-        if info_item.pitch_sequence_index in self.pitch_reverse:
-            info_item.pitch_segment_is_reversed = 1
-        super().process_pitch_info_item(info_item, **kwargs)
-    
-    def get_pitch_segment(self, index):
-        pitch_segment = super().get_pitch_segment(index)
-        if index in self.pitch_reverse:
-            return pitch_segment[::-1]
-        return pitch_segment
+    def set_segment(self, segment, **kwargs):
+        super().set_segment(segment, **kwargs)
+        if segment.my_index() in self.pitch_reverse:
+            segment.pitch_segment = segment.pitch_segment[::-1]
+            segment.pitch_reverse = True
 
-class ReversableRhythms(object):
+class RhythmsReverse(object):
     rhythm_reverse=()
 
-    def process_rhythm_info_item(self, info_item, **kwargs):
-        if info_item.rhythm_sequence_index in self.rhythm_reverse:
-            info_item.rhythm_segment_is_reversed = 1
-        super().process_rhythm_info_item(info_item, **kwargs)
-
-    def get_rhythm_segment(self, sequence_index, segment_index):
-        my_rhythm = super().get_rhythm_segment(sequence_index, segment_index)
-        if sequence_index in self.rhythm_reverse:
-            return my_rhythm[::-1]
-        return my_rhythm
+    def set_segment(self, segment, **kwargs):
+        super().set_segment(segment, **kwargs)
+        if segment.my_index() in self.rhythm_reverse:
+            segment.rhythm_segment = segment.rhythm_segment[::-1]
+            segment.rhythm_reverse = True
 
 # -------------------------------------------------------------------------------------------------
 

@@ -27,9 +27,10 @@
 # - (DONE) start orchestrating gen c
 # - (DONE) think of info as events
 # - (DONE) naming of variables/classes for info items vs entire data set is confusing!
+# - (DONE) redo pitch displacement, multipier, breaks, reverse machines
+# - (DONE) cleanup data (combine rests and remove 0 ticks)
 # ----------------------------
-# - redo multipier, breaks, reverse
-# - cleanup data (combine rests and remove 0 ticks)
+# - cyclic data doesn't work well with initial silence taking up first index... consider changing
 # - redo harmony machine
 # - redo attachments machine
 # - redo fragments machine
@@ -50,6 +51,7 @@
 # - start orchestrating gen g
 # - start gen h draft short score
 # - start orchestrating gen h
+# - able to output a full score
 # ----------------------------
 # - draft score template
 # - draft parts template
@@ -91,26 +93,28 @@ from calliope import bubbles
 # from copper.machines import Fragments
 
 a = abjad.datastructuretools.TreeContainer(name='a')
-# b = abjad.datastructuretools.TreeContainer(name='b')
-# c = abjad.datastructuretools.TreeContainer(name='c')
-# d = abjad.datastructuretools.TreeContainer(name='d')
-# e = abjad.datastructuretools.TreeContainer(name='e')
-# f = abjad.datastructuretools.TreeContainer(name='f')
-# g = abjad.datastructuretools.TreeContainer(name='g')
+b = abjad.datastructuretools.TreeContainer(name='b')
+c = abjad.datastructuretools.TreeContainer(name='c')
+d = abjad.datastructuretools.TreeContainer(name='d')
+e = abjad.datastructuretools.TreeContainer(name='e')
+f = abjad.datastructuretools.TreeContainer(name='f')
+g = abjad.datastructuretools.TreeContainer(name='g')
 
-print(a.graph_order)
+# print(a.graph_order)
 
-a = ("a","b")
-b = ("c","d")
 
-for x, y in zip(a, b):
-    print(x + y)
+a.extend([b,c])
+b.extend([d,e])
+b.extend([f,g])
 
-print(hasattr(set(), "__call__"))
+g.parent.remove(g)
 
-# a.extend([b,c])
-# b.extend([d,e])
-# c.extend([f,g])
+for i, child in enumerate(b.children):
+	if child.name == "d":
+		b.insert(i, abjad.datastructuretools.TreeContainer(name='d-1'))
+
+print(a)
+
 
 
 # abjad.show(s)
@@ -147,7 +151,7 @@ print(hasattr(set(), "__call__"))
 #     rhythm_times = 1
 #     rhythm_initial_silence=4
 
-# class Line2(machines.BrokenRhythms, Line1):
+# class Line2(machines.RhythmsBroken, Line1):
 #     breaks = ( (1,2), )
 #     pass
 

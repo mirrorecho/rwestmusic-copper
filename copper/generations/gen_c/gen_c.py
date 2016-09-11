@@ -10,7 +10,7 @@ class LineGenC(object):
     metrical_durations = ID(default=((1,1),), limit=24)
 # -------------------------------------------------------------------------------------------------
 
-class Line1(LineGenC, machines.BrokenRhythms, gen_b.Line1):
+class Line1(LineGenC, machines.RhythmsBroken, gen_b.Line1):
     rhythm_initial_silence = 24
     breaks = ID({
             1:  -4,
@@ -30,7 +30,7 @@ class Line1(LineGenC, machines.BrokenRhythms, gen_b.Line1):
 
 # -------------------------------------------------------------------------------------------------
 
-class Line2(LineGenC, machines.BrokenRhythms,gen_b.Line2):
+class Line2(LineGenC, machines.RhythmsBroken,gen_b.Line2):
     rhythm_initial_silence = 22
     breaks = ID({
             2:  -4,
@@ -49,7 +49,7 @@ class Line2(LineGenC, machines.BrokenRhythms,gen_b.Line2):
 
 # -------------------------------------------------------------------------------------------------
 
-class Line3(machines.BrokenRhythms, gen_b.Line3):
+class Line3(machines.RhythmsBroken, gen_b.Line3):
     metrical_durations = ID({
             7:((1,4),)*4,
             8:((1,4),)*4,

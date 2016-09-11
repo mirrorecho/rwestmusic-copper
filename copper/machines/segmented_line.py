@@ -6,6 +6,7 @@ from copper import machines
 # from copper.machines.tools import IndexedData as ID # just to avoid a lot of typing
 
 class LogicalTieData(machines.Tree):
+    original_duration = 0
     ticks = 0
     slur = None
     hairpin = None
@@ -102,6 +103,9 @@ class SegmentedLine(bubbles.Line):
     def set_segments(self, **kwargs):
         pass
 
+    def cleanup_data(self, **kwargs):
+        pass
+
     def music_from_segments(self, **kwargs):
         pass
 
@@ -113,6 +117,7 @@ class SegmentedLine(bubbles.Line):
 
     def music(self, **kwargs):
         self.set_segments(**kwargs)
+        self.cleanup_data(**kwargs)
         my_music = self.container_type( self.music_from_segments(**kwargs) )
         self.process_music(my_music, **kwargs)
         return my_music

@@ -30,16 +30,15 @@ class Rhythms(object):
 
 
     def set_logical_tie(self, logical_tie, **kwargs):
-        # TO DO... maybe only needed on sub rhythmic classes?
-        pass
+        super().set_logical_tie(logical_tie, **kwargs)
+        event = logical_tie.parent
+        logical_tie.original_duration = event.parent.rhythm_segment[event.my_index()]
+        logical_tie.ticks = int(logical_tie.original_duration*self.rhythm_default_multiplier)
 
     def set_logical_ties(self, event, **kwargs):
         super().set_logical_ties(event, **kwargs)
         # (by default, there is just 1 logical tie per event... )
-        self.set_logical_tie(
-            event.branch(
-                ticks=int(event.parent.rhythm_segment[event.my_index()] * self.rhythm_default_multiplier))
-        )
+        self.set_logical_tie( event.branch() )
 
     def set_event(self, event, **kwargs):
         super().set_event(event, **kwargs)
@@ -64,6 +63,8 @@ class Rhythms(object):
         # special case for initial silence:
         initial_silence_segment = self.data.branch()
         initial_silence_event = initial_silence_segment.branch()
+        initial_silence_event.event_index = 0
+        self.data.events.append(initial_silence_event)
         initial_silence_logical_tie = initial_silence_event.branch(
                     ticks=int(self.rhythm_initial_silence*self.rhythm_default_multiplier*-1) )
         
@@ -72,6 +73,22 @@ class Rhythms(object):
             segment = self.data.branch()
             self.set_segment(segment, **kwargs)
             self.set_events(segment, **kwargs)
+
+    def cleanup_data(self, **kwargs):
+        super().cleanup_data(**kwargs)
+        # TO DO... won't work with multiple rests in a row? fix...
+        last_rest = None
+        for logical_tie in self.data.leaves:
+            if last_rest is not None and logical_tie.ticks < 0:
+                last_rest.ticks += logical_tie.ticks
+                logical_tie.parent.remove(logical_tie)
+            elif logical_tie.ticks < 0:
+                last_rest = logical_tie
+            elif logical_tie.ticks > 0:
+                last_rest = None 
+
+            if logical_tie.ticks == 0:
+                logical_tie.parent.remove(logical_tie)
 
     def get_metrical_duration_ticks(self):
         """
