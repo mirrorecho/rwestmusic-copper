@@ -112,6 +112,9 @@ class SegmentedLine(bubbles.Line):
     def process_logical_tie(self, music_logical_tie, data_logical_tie, **kwargs):
         pass
 
+    def process_logical_ties(self, music, **kwargs):
+        pass
+
     def process_music(self, music, **kwargs):
         pass
 

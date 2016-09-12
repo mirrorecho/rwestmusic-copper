@@ -8,7 +8,7 @@ from copper.generations.gen_a import gen_a
 
 # -------------------------------------------------------------------------------------------------
 
-class LineGenB(object):
+class LineGenB(machines.RhythmsMultiplied):
     metrical_durations = ID({}, default=((3,4),), limit=24)
     clef="bass" # TO DO... this doesn't work
 
@@ -43,11 +43,11 @@ class Line2(LineGenB, gen_a.Line1):
 class Line3(LineGenB, gen_a.Line1):
     # TO DO, use fill here to make this cleaner
     metrical_durations = ID({
+        12:( (1,4),)*3,
         13:( (1,4),)*3,
         14:( (1,4),)*3,
         15:( (1,4),)*3,
         16:( (1,4),)*3,
-        17:( (1,4),)*3,
         }, default=((3,4),), limit=24)
     rhythm_initial_silence = 36
     rhythm_multipliers = machines.RhythmsMultiplied.make_multipliers(cyclic=True)

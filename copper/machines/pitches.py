@@ -11,7 +11,6 @@ class Pitches:
             (-3, 0,-1),
         )
     pitch_sequence = (0,1,2) # for testing only
-    pitch_times = 1 # pitch_times to repeat... if more than one then transpositions and other manipulations stay in effect 
     pitch_respell = None
 
     def set_event(self, event, **kwargs):

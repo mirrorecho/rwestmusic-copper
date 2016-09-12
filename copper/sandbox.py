@@ -30,11 +30,16 @@
 # - (DONE) redo pitch displacement, multipier, breaks, reverse machines
 # - (DONE) cleanup data (combine rests and remove 0 ticks)
 # - (DONE) implemented cyclic_start (so that segments/events based stuff can cycle back to 1)
+# - (DONE) redo harmony machine
 # ----------------------------
-# - redo harmony machine
 # - redo attachments machine
+# - - - including easily showing indices
 # - redo fragments machine
 # - add to and refactor existing music
+# - - - many indices need +1
+# - - - pitch_times handled differently
+# - - - breaks are now absolute length, not relative
+# - - - easier attachments
 # - repeat/pulse machine
 # - cross lines combining existing events
 # - cross lines using rhythm overlay
@@ -42,6 +47,7 @@
 # - arrange harmony machine (including working into cross lines)
 # - arrange chords machine (for piano/harp and sometimes strings)
 # - add to and refactor existing music
+# - clefs on short scores
 # - start gen f short score
 # - start orchestrating gen d
 # - start orchestrating gen e
@@ -113,7 +119,8 @@ for i, child in enumerate(b.children):
 	if child.name == "d":
 		b.insert(i, abjad.datastructuretools.TreeContainer(name='d-1'))
 
-print(a)
+# print(a)
+
 
 
 

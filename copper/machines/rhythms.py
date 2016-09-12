@@ -60,7 +60,8 @@ class Rhythms(object):
 
     def set_segments(self, **kwargs):
         super().set_segments(**kwargs)
-        # special case for initial silence:
+        
+        # 0'th segment is special case for initial silence:
         initial_silence_segment = self.data.branch()
         initial_silence_event = initial_silence_segment.branch()
         initial_silence_event.event_index = 0
@@ -68,8 +69,8 @@ class Rhythms(object):
         initial_silence_logical_tie = initial_silence_event.branch(
                     ticks=int(self.rhythm_initial_silence*self.rhythm_default_multiplier*-1) )
         
-        # now loop through sequence of rhythm segments:
-        for i in range(1,  len(self.rhythm_sequence)*self.rhythm_times):
+        # now loop through sequence of rhythm segments after the 0'th index:
+        for i in range( (len(self.rhythm_sequence)-1)*self.rhythm_times ):
             segment = self.data.branch()
             self.set_segment(segment, **kwargs)
             self.set_events(segment, **kwargs)
@@ -126,9 +127,13 @@ class Rhythms(object):
     def process_logical_tie(self, music_logical_tie, data_logical_tie, **kwargs):
         pass
     
-    def process_music(self, music, **kwargs):
-        super().process_music(music, **kwargs)
+    def process_logical_ties(self, music, **kwargs):
+        super().process_logical_ties(music, **kwargs)
         music_logical_ties = machines.by_logical_tie_group_rests(music)
         data_logical_ties = self.data.leaves
         for music_logical_tie, data_logical_tie in zip(music_logical_ties, data_logical_ties):
             self.process_logical_tie(music_logical_tie, data_logical_tie, **kwargs)
+
+    def process_music(self, music, **kwargs):
+        super().process_music(music, **kwargs)
+        self.process_logical_ties(music, **kwargs)
