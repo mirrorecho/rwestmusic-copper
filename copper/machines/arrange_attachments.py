@@ -3,7 +3,19 @@
 import abjad
 from calliope import bubbles
 from copper import machines
-from copper.machines.tools import IndexedData as ID # just to avoid a lot of typing
+from copper.machines import IndexedData as ID # just to avoid a lot of typing
+
+class AttachmentSetData(IndexedSetData):
+    inventory = 
+    instruction = None
+    dynamic = None
+    articulation = None
+    hairpin = None # "<" or ">" to start crescendo or decrescendo, "!" to end
+    slurs = ID() # tuple indicating the logical tie positions at wwhich slur starts or stops e.g.: (None,"(",None,")")
+    show_leaf_indices = False
+    show_info_indices = False
+
+class 
 
 class ArrangeAttachments(object):
     """
@@ -19,6 +31,14 @@ class ArrangeAttachments(object):
     show_info_indices = False
 
     # def set_info(self, attr_name)
+
+    def set_logical_tie(self, logical_tie, **kwargs):
+        super().set_logical_tie(logical_tie, **kwargs)
+        
+
+        event = logical_tie.parent
+        logical_tie.original_duration = event.parent.rhythm_segment[event.my_index()]
+        logical_tie.ticks = int(logical_tie.original_duration*self.rhythm_default_multiplier)
 
     def process_info(self, **kwargs):
         def set_info_attr(attr_name):

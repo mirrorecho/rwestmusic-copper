@@ -15,7 +15,9 @@ class Trumpet1(machines.FragmentLine, machines.ArrangeAttachments, Line1):
         1: Line3()}
         )
     fragments = Frag({
-        0 : Frag.item(),
+        0 : Frag.item().attach(
+                    0,"(", "-", "mf", "!","<", ">", ")", "Oh no!").attach(
+                    1, "fff")
         1:  Frag.item(),
         2:  Frag.item(),
         

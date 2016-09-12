@@ -21,6 +21,10 @@ class Bassoon1(machines.FragmentLine, machines.ArrangeAttachments,  Line2):
 class Bassoon2(machines.FragmentLine, machines.ArrangeAttachments,  Line2):
     fragments = Frag.fill(range(6,12), lambda: machines.FragmentInfo() )
     fragments[11].duration = 3.5
+    fragments.update_items({
+        0: LogicalTieData(dynamics="mf", )
+    })
+
     # fragments()
     # show_info_indices=True
     dynamics=ID({

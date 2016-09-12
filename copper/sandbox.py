@@ -31,7 +31,7 @@
 # - (DONE) cleanup data (combine rests and remove 0 ticks)
 # - (DONE) implemented cyclic_start (so that segments/events based stuff can cycle back to 1)
 # - (DONE) redo harmony machine
-# ----------------------------
+# ---------------------------- MONDAY
 # - redo attachments machine
 # - - - including easily showing indices
 # - redo fragments machine
@@ -41,6 +41,7 @@
 # - - - breaks are now absolute length, not relative
 # - - - easier attachments
 # - repeat/pulse machine
+# - start orchestrating gen d
 # - cross lines combining existing events
 # - cross lines using rhythm overlay
 # - add to and refactor existing music
@@ -48,47 +49,109 @@
 # - arrange chords machine (for piano/harp and sometimes strings)
 # - add to and refactor existing music
 # - clefs on short scores
+# ---- 6 PM!
 # - start gen f short score
-# - start orchestrating gen d
 # - start orchestrating gen e
 # - start gen f draft short score
 # - start orchestrating gen f
 # - start gen g draft short score
 # - start orchestrating gen g
+# - draft score template
 # - start gen h draft short score
 # - start orchestrating gen h
 # - able to output a full score
-# ----------------------------
-# - draft score template
 # - draft parts template
+# ---------------------------- TUESDAY
+# - mac (and maybe linux) midi playback... at least of short scores
 # - good draft of gen e short score
-# - more orchestrating gen b
 # - review current short scores at piano and adjust
+# - more orchestrating gen b
 # - better gen c short score
-# - good draft f short score
-# - good gen g draft short score
+# - more orchestrating gen c
+# - more orchestrating gen d
+# - more orchestrating gen e
+# - more orchestrating gen f
+# - more orchestrating gen g
+# - more orchestrating gen h
+# - good draft gen f short score
+# ---------------------------- WEDNESDAY
+# - good draft gen g short score
+# - dynamics machines, especially with holds
 # - think of gen d in 8th note rhythm_denominator
+# - rhythms with metric modulations
+# - plan out drone, and start better working into machines
+# - plan out cymbal, and start working better into machines
 # - good gen h draft short score
+# ---------------------------- THURSDAY
+# - review current short scores at piano and adjust
 # - good draft orchestration of gen b
 # - good draft orchestration of gen c
-# - good orchestration of gen d
-# - good orchestration of gen e
-# - good orchestration of gen f
-# - good orchestration of gen g
-# - good orchestration of gen h
 # - multimeasure rest generator
-# - good parts template
-# - dynamics machines, especially with holds
-# - show indices/colors
-# - linux midi playback
-# - review fonts
-# - rhythms with metric modulations
+# - good draft orchestration of gen d
+# - good draft orchestration of gen e
 # - tempo markings
+# - good draft orchestration of gen f
+# - good draft orchestration of gen g
+# - good draft orchestration of gen h
 # - rehearsal markings
-# - clean up gen a orchestration
-# - use asserts for error handling
-# - conisistency / plan for what's a class attribute and what's not
+# ---------------------------- FRIDAY
+# - review printed score and mark up
+# - implement printed score markups (or add notes)
+# - games and boces? (only if time allows)
+# - final draft: gen 0 orchestration!
+# - final draft: gen a orchestration!
+# - final draft: gen b orchestration!
+# - final draft: gen c orchestration!
+# - good parts template (aside from percussion)
+# - review fonts
+# - penultimate draft: gen d orchestration!
+# - penultimate draft: gen e orchestration!
+# - penultimate draft: gen f orchestration!
+# - penultimate draft: gen g orchestration!
+# - penultimate draft: gen h orchestration!
+# - review piano part
+# - review harp part (including pedal changes)
+# - review percussion part (non-timpani)
+# - review timpani part (including tunings)
+# ---------------------------- SATURDAY
+# - final draft: gen d orchestration!
+# - final draft: gen e orchestration!
+# - final draft: gen f orchestration!
+# - final draft: gen g orchestration!
+# - final draft: gen h orchestration!
+# - review final draft of printed score and mark up
+# - implement final draft printed score markups (or add notes)
+# - initial review of all parts (everyone has something to do)
+# - adjust based on review of parts
+# - review of doublings (all OK... used effectively?)
+# - review of percussion instruments used
+# ---------------------------- SUNDAY
+# - verify all part transpositions (pic, english horn, clarinet/bass clarinet, horn, double bass)
+# - final score review!
+# - final review/edits of wind parts
+# - - - formatting
+# - - - page breaks
+# - - - transpositions
+# - final review/edits of brass parts
+# - - - formatting
+# - - - page breaks
+# - - - transpositions
+# - final review/edits of piano / harp / perc parts
+# - - - formatting
+# - - - page breaks
+# - - - transpositions
+# - final review/edits of string parts
+# - - - formatting
+# - - - page breaks
+# - - - transpositions
+# - performance and program notes
+# - tital page
 
+# ---------------------------- IF TIME ALLOWS: 
+# - conisistency / plan for what's a class attribute and what's not
+# - better indices/colors
+# - refactor standard stuff into callope
+# - use asserts for error handling
 
 
 
