@@ -150,13 +150,15 @@
 # - tital page
 
 # ---------------------------- IF TIME ALLOWS: 
-# - make sure machines are self-contained. they shouldn't use attributes defined on other ones (except a few base ones like ticks and pitch)
 # - conisistency / plan for what's a class attribute and what's not
 # - - - maybe attachment stuff not, pitch/rhythm stuff is?
 # - better indices/colors
 # - refactor standard stuff into callope
 # - use asserts for error handling
-
+# IMPLEMENTING INTO CALLIOPE:
+# - make sure machines are self-contained. they shouldn't use attributes defined on other ones (except a few base ones like ticks and pitch)
+# - phrases as layer above segments
+# - TaleaDrivenLine as a general case
 
 
 
