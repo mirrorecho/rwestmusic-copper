@@ -5,7 +5,7 @@ from calliope import bubbles
 from copper import machines
 # from copper.machines.tools import IndexedData as ID # just to avoid a lot of typing
 
-class LogicalTieData(machines.Tree):
+class LogicalTieData(machines.AttachmentTagData, machines.Tree):
     original_duration = 0
     ticks = 0
     slur = None
@@ -14,6 +14,12 @@ class LogicalTieData(machines.Tree):
     articulations = None # can either be a single articulation as a string, or a tuple/list of strings for multiple articulations
     instructions = None
 
+    def use_ancestor_attachments(self):
+        return self.is_first_non_rest()
+
+    def is_first_non_rest(self):
+        return self is self.parent.first_non_rest()
+
     def ticks_before(self):
         running_count = 0
         for l in self.root.leaves:
@@ -21,12 +27,17 @@ class LogicalTieData(machines.Tree):
                 return running_count
             running_count += abs(l.ticks)
 
-class EventData(machines.Tree):
+class EventData(machines.AttachmentTagData, machines.Tree):
     event_index = None
     pitch_original = 0
     pitch_displacement_sum = 0
     pitch_displacement_cumulative = 0
     children_type = LogicalTieData
+
+    def first_non_rest(self):
+        for l in self.children:
+            if l.ticks > 0:
+                return l
 
     def ticks_sum(self):
         return sum([abs(t.ticks) for t in self.childen])
@@ -34,7 +45,7 @@ class EventData(machines.Tree):
     def get_pitch(self):
         return self.pitch_original + self.pitch_displacement_cumulative
 
-class SegmentData(machines.Tree):
+class SegmentData(machines.AttachmentTagData, machines.Tree):
     pitch_segment = None
     rhythm_segment = None
     pitch_reverse = False
@@ -42,16 +53,12 @@ class SegmentData(machines.Tree):
     rhythm_multiplier = None
     children_type = EventData
 
-class SegmentTree(machines.Tree):
+class SegmentTree(machines.AttachmentTagData, machines.Tree):
     children_type = SegmentData
-    events = None
-
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-        self.events = []
+    events = ()
 
     def reset_events(self):
-        self.events = [node for node in self.nodes if isinstance(node, EventData)]
+        self.events = tuple([node for node in self.nodes if isinstance(node, EventData)])
         for i, event in enumerate(self.events):
             event.event_index = i
 
@@ -82,8 +89,23 @@ class SegmentedLine(bubbles.Line):
     data = None
 
     def __init__(self, **kwargs):
-        super().__init__(**kwargs)
         self.data = SegmentTree()
+        self.set_segments(**kwargs)
+        self.cleanup_data(**kwargs)
+        self.update_data(**kwargs)
+        super().__init__(**kwargs) # note arrange() is called by BubbleBase __init__ method
+
+    @property
+    def segments(self):
+        return self.data.children
+
+    @property
+    def events(self):
+        return self.data.events
+
+    @property
+    def logical_ties(self):
+        return self.data.leaves
 
     def set_logical_tie(self, logical_tie, **kwargs):
         pass
@@ -106,10 +128,13 @@ class SegmentedLine(bubbles.Line):
     def cleanup_data(self, **kwargs):
         pass
 
+    def update_data(self, **kwargs):
+        pass
+
     def music_from_segments(self, **kwargs):
         pass
 
-    def process_logical_tie(self, music_logical_tie, data_logical_tie, **kwargs):
+    def process_logical_tieprocess_logical_tie(self, music_logical_tie, data_logical_tie, music_leaf_count, **kwargs):
         pass
 
     def process_logical_ties(self, music, **kwargs):
@@ -119,8 +144,6 @@ class SegmentedLine(bubbles.Line):
         pass
 
     def music(self, **kwargs):
-        self.set_segments(**kwargs)
-        self.cleanup_data(**kwargs)
         my_music = self.container_type( self.music_from_segments(**kwargs) )
         self.process_music(my_music, **kwargs)
         return my_music

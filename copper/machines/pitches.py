@@ -4,7 +4,7 @@ import abjad
 from calliope import bubbles
 from copper import machines
 
-class Pitches:
+class Pitches(object):
     pitch_segments = (
             ( 2, 0,-1),
             (-5,-3,-1),
@@ -22,8 +22,8 @@ class Pitches:
         pitch_segment_index = self.pitch_sequence[segment.my_index()]
         segment.pitch_segment = self.pitch_segments[pitch_segment_index]
 
-    def process_logical_tie(self, music_logical_tie, data_logical_tie, **kwargs):
-        super().process_logical_tie(music_logical_tie, data_logical_tie, **kwargs)
+    def process_logical_tie(self, music_logical_tie, data_logical_tie, music_leaf_count, **kwargs):
+        super().process_logical_tie(music_logical_tie, data_logical_tie, music_leaf_count, **kwargs)
         if data_logical_tie.ticks > 0:
             for note in music_logical_tie:
                 note.written_pitch = data_logical_tie.parent.get_pitch()

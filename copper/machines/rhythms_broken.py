@@ -13,8 +13,8 @@ class RhythmsBroken(object):
     breaks = None # Indexed Data with the the indices of the breaks and # of relative duration units to add, or, if negative, the length of the rest to add
 
     def __init__(self, **kwargs):
-        super().__init__(**kwargs)
         self.breaks = self.breaks or ID() # defaults multipliers to 1
+        super().__init__(**kwargs)
 
     def set_logical_ties(self, event, **kwargs):
         super().set_logical_ties(event, **kwargs)

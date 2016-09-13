@@ -3,7 +3,7 @@ from calliope import bubbles
 from copper import machines
 
 
-class RhythmsMultiplied(object):
+class RhythmsMultiplied:
     """
     Simple mixin to multiply relative rhythmic duration values for any segment
     """
@@ -15,8 +15,9 @@ class RhythmsMultiplied(object):
         return machines.IndexedData(multipliers, default=default, cyclic=cyclic)
 
     def __init__(self, **kwargs):
-        super().__init__(**kwargs)
         self.rhythm_multipliers = self.rhythm_multipliers or RhythmsMultiplied.make_multipliers() # defaults multipliers to 1
+        super().__init__(**kwargs)
+
 
     def set_logical_tie(self, logical_tie, **kwargs):
         super().set_logical_tie(logical_tie, **kwargs)

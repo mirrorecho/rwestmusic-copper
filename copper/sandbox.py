@@ -62,6 +62,7 @@
 # - able to output a full score
 # - draft parts template
 # ---------------------------- TUESDAY
+# - tag attachments on individual abjad leaves? (some data structure on LogicalTieData?)
 # - mac (and maybe linux) midi playback... at least of short scores
 # - good draft of gen e short score
 # - review current short scores at piano and adjust
@@ -75,6 +76,7 @@
 # - more orchestrating gen h
 # - good draft gen f short score
 # ---------------------------- WEDNESDAY
+# - better way / machine(s) to tag spanners
 # - good draft gen g short score
 # - dynamics machines, especially with holds
 # - think of gen d in 8th note rhythm_denominator
@@ -169,12 +171,14 @@ e = abjad.datastructuretools.TreeContainer(name='e')
 f = abjad.datastructuretools.TreeContainer(name='f')
 g = abjad.datastructuretools.TreeContainer(name='g')
 
-# print(a.graph_order)
-
 
 a.extend([b,c])
 b.extend([d,e])
 b.extend([f,g])
+
+# print(a.graph_order)
+if not b.children:
+	print("bll")
 
 g.parent.remove(g)
 

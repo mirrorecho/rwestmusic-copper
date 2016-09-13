@@ -8,16 +8,18 @@ from copper.machines import IndexedData as ID, ID1 # just to avoid a lot of typi
 
 # -------------------------------------------------------------------------------------------------
 # HERE IS the actual line class:
-class Line1( machines.Pitches, machines.Rhythms, machines.SegmentedLine):
+# class Line1( machines.Pitches, machines.Rhythms, machines.SegmentedLine):
 # HERE is for testing purposes:
-# class Line1(
-#             machines.PitchesReverse,
-#             machines.RhythmsReverse,
-#             machines.RhythmsBroken, 
-#             machines.RhythmsMultiplied, 
-#             machines.Pitches, 
-#             machines.Rhythms, 
-#             machines.SegmentedLine):
+class Line1(
+            machines.ArrangeAttachments,
+            machines.PitchesReverse,
+            machines.RhythmsReverse,
+            machines.RhythmsBroken, 
+            machines.RhythmsMultiplied, 
+            machines.Pitches, 
+            machines.Rhythms, 
+            machines.SegmentedLine,
+            ):
     metrical_durations = ID({}, default=((1,1),), limit=12)
     rhythm_initial_silence = 12
     rhythm_sequence = ID1({
@@ -43,6 +45,10 @@ class Line1( machines.Pitches, machines.Rhythms, machines.SegmentedLine):
 #         3: -1.5,
 #         4: -4
 #         })
+    def update_data(self, **kwargs):
+        super().update_data(**kwargs)
+        self.segments[4].tag_children("mf")
+
 # l = Line1()
 # print(l.rhythm_sequence)
 
@@ -83,6 +89,8 @@ class Drone2(machines.Drone):
 class Gen0(bubbles.GridStart):
     line1 = Line1()
     # line2 = FragmentLine1()
+
+# print(Gen0())
 
 # -------------------------------------------------------------------------------------------------
 bubbles.illustrate_me(__file__, 

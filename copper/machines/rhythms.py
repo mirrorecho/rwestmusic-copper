@@ -62,6 +62,7 @@ class Rhythms(object):
         super().set_segments(**kwargs)
         
         # 0'th segment is special case for initial silence:
+        self.data.events = []
         initial_silence_segment = self.data.branch()
         initial_silence_event = initial_silence_segment.branch()
         initial_silence_event.event_index = 0
@@ -74,6 +75,7 @@ class Rhythms(object):
             segment = self.data.branch()
             self.set_segment(segment, **kwargs)
             self.set_events(segment, **kwargs)
+        self.data.events = tuple(self.data.events) # necessary? tuplifying is really just a precaution
 
     def cleanup_data(self, **kwargs):
         super().cleanup_data(**kwargs)
@@ -124,15 +126,17 @@ class Rhythms(object):
     def music_from_segments(self):
         return self.get_rhythm_maker()([abjad.Duration(d) for d in self.metrical_durations.flattened()])
 
-    def process_logical_tie(self, music_logical_tie, data_logical_tie, **kwargs):
+    def process_logical_tie(self, music_logical_tie, data_logical_tie, music_leaf_count, **kwargs):
         pass
     
     def process_logical_ties(self, music, **kwargs):
         super().process_logical_ties(music, **kwargs)
         music_logical_ties = machines.by_logical_tie_group_rests(music)
         data_logical_ties = self.data.leaves
+        leaf_count=0
         for music_logical_tie, data_logical_tie in zip(music_logical_ties, data_logical_ties):
-            self.process_logical_tie(music_logical_tie, data_logical_tie, **kwargs)
+            self.process_logical_tie(music_logical_tie, data_logical_tie, leaf_count, **kwargs)
+            leaf_count += len(music_logical_tie)
 
     def process_music(self, music, **kwargs):
         super().process_music(music, **kwargs)

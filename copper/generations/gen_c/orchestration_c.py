@@ -36,6 +36,10 @@ class Trumpet1(machines.FragmentLine, machines.ArrangeAttachments, Line1):
         19:  Frag.item(),
         20:  Frag.item(),
         })
+    def arrange(self, **kwargs):
+        super().arrange(**kwargs)
+        self.segments[0].tag("(", "-", "mf", "!","<", ">", ")", "Oh no!")
+
     slurs = ID({
         0:("(",),
         1:(")",),
