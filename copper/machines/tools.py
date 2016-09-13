@@ -33,12 +33,17 @@ class Tree(SetAttributeMixin, abjad.datastructuretools.TreeContainer):
     def my_index(self):
         return self.graph_order[-1]
 
+    @property
+    def depthwise_index(self):
+        """
+        Not sure how well this performs, but it works
+        """
+        return self.root.depthwise_inventory[self.depth].index(self)
+
     def branch(self, **kwargs):
         new_branch = self.children_type(**kwargs)
         self.append( new_branch )
         return new_branch
-
-    # TO DO... add flattened subs here...
 
 
 class IndexedData(SetAttributeMixin, collections.UserDict):

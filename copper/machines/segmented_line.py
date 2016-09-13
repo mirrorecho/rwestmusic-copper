@@ -28,7 +28,6 @@ class LogicalTieData(machines.AttachmentTagData, machines.Tree):
             running_count += abs(l.ticks)
 
 class EventData(machines.AttachmentTagData, machines.Tree):
-    event_index = None
     pitch_original = 0
     pitch_displacement_sum = 0
     pitch_displacement_cumulative = 0
@@ -55,12 +54,16 @@ class SegmentData(machines.AttachmentTagData, machines.Tree):
 
 class SegmentTree(machines.AttachmentTagData, machines.Tree):
     children_type = SegmentData
-    events = ()
+    
+    @property
+    def events(self):
+        #... how expensive is this to call often??
+        return self.depthwise_inventory[1]
 
-    def reset_events(self):
-        self.events = tuple([node for node in self.nodes if isinstance(node, EventData)])
-        for i, event in enumerate(self.events):
-            event.event_index = i
+    # def reset_events(self):
+    #     self.events = tuple([node for node in self.nodes if isinstance(node, EventData)])
+    #     for i, event in enumerate(self.events):
+    #         event.event_index = i
 
     def logical_tie_data_by_tick(self, tick):
         previous_data = None
@@ -134,7 +137,7 @@ class SegmentedLine(bubbles.Line):
     def music_from_segments(self, **kwargs):
         pass
 
-    def process_logical_tieprocess_logical_tie(self, music_logical_tie, data_logical_tie, music_leaf_count, **kwargs):
+    def process_logical_tieprocess_logical_tie(self, music, music_logical_tie, data_logical_tie, music_leaf_count, **kwargs):
         pass
 
     def process_logical_ties(self, music, **kwargs):

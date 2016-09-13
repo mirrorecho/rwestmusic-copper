@@ -48,7 +48,7 @@ class Rhythms(object):
         super().set_events(segment, **kwargs)
         for i in range(len(segment.rhythm_segment)):
             event=segment.branch()
-            event.event_index = len(event.root.events)
+            # event.event_index = len(event.root.events)
             event.root.events.append(event)
             self.set_event(event, **kwargs)
             self.set_logical_ties(event, **kwargs)
@@ -62,11 +62,11 @@ class Rhythms(object):
         super().set_segments(**kwargs)
         
         # 0'th segment is special case for initial silence:
-        self.data.events = []
+        # self.data.events = []
         initial_silence_segment = self.data.branch()
         initial_silence_event = initial_silence_segment.branch()
-        initial_silence_event.event_index = 0
-        self.data.events.append(initial_silence_event)
+        # initial_silence_event.event_index = 0
+        # self.data.events.append(initial_silence_event)
         initial_silence_logical_tie = initial_silence_event.branch(
                     ticks=int(self.rhythm_initial_silence*self.rhythm_default_multiplier*-1) )
         
@@ -75,7 +75,7 @@ class Rhythms(object):
             segment = self.data.branch()
             self.set_segment(segment, **kwargs)
             self.set_events(segment, **kwargs)
-        self.data.events = tuple(self.data.events) # necessary? tuplifying is really just a precaution
+        # self.data.events = tuple(self.data.events) # necessary? tuplifying is really just a precaution
 
     def cleanup_data(self, **kwargs):
         super().cleanup_data(**kwargs)
@@ -126,7 +126,7 @@ class Rhythms(object):
     def music_from_segments(self):
         return self.get_rhythm_maker()([abjad.Duration(d) for d in self.metrical_durations.flattened()])
 
-    def process_logical_tie(self, music_logical_tie, data_logical_tie, music_leaf_count, **kwargs):
+    def process_logical_tie(self, music, music_logical_tie, data_logical_tie, music_leaf_count, **kwargs):
         pass
     
     def process_logical_ties(self, music, **kwargs):
@@ -135,7 +135,7 @@ class Rhythms(object):
         data_logical_ties = self.data.leaves
         leaf_count=0
         for music_logical_tie, data_logical_tie in zip(music_logical_ties, data_logical_ties):
-            self.process_logical_tie(music_logical_tie, data_logical_tie, leaf_count, **kwargs)
+            self.process_logical_tie(music, music_logical_tie, data_logical_tie, leaf_count, **kwargs)
             leaf_count += len(music_logical_tie)
 
     def process_music(self, music, **kwargs):

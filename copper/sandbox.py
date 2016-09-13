@@ -31,9 +31,10 @@
 # - (DONE) cleanup data (combine rests and remove 0 ticks)
 # - (DONE) implemented cyclic_start (so that segments/events based stuff can cycle back to 1)
 # - (DONE) redo harmony machine
-# ---------------------------- MONDAY
-# - redo attachments machine
-# - - - including easily showing indices
+# - (DONE) redo attachments machine
+# - (DONE) - - including easily showing indices
+# - (DONE) fix harmony machine
+# ---------------------------- TUESDAY
 # - redo fragments machine
 # - add to and refactor existing music
 # - - - many indices need +1
@@ -49,7 +50,6 @@
 # - arrange chords machine (for piano/harp and sometimes strings)
 # - add to and refactor existing music
 # - clefs on short scores
-# ---- 6 PM!
 # - start gen f short score
 # - start orchestrating gen e
 # - start gen f draft short score
@@ -61,7 +61,7 @@
 # - start orchestrating gen h
 # - able to output a full score
 # - draft parts template
-# ---------------------------- TUESDAY
+# ---------------------------- WEDNESDAY
 # - tag attachments on individual abjad leaves? (some data structure on LogicalTieData?)
 # - mac (and maybe linux) midi playback... at least of short scores
 # - good draft of gen e short score
@@ -75,7 +75,6 @@
 # - more orchestrating gen g
 # - more orchestrating gen h
 # - good draft gen f short score
-# ---------------------------- WEDNESDAY
 # - better way / machine(s) to tag spanners
 # - good draft gen g short score
 # - dynamics machines, especially with holds
@@ -85,6 +84,7 @@
 # - plan out cymbal, and start working better into machines
 # - good gen h draft short score
 # ---------------------------- THURSDAY
+# - smart prevent dupes of certain kinds of attachments (e.g. dynamics)
 # - review current short scores at piano and adjust
 # - good draft orchestration of gen b
 # - good draft orchestration of gen c
@@ -150,7 +150,9 @@
 # - tital page
 
 # ---------------------------- IF TIME ALLOWS: 
+# - make sure machines are self-contained. they shouldn't use attributes defined on other ones (except a few base ones like ticks and pitch)
 # - conisistency / plan for what's a class attribute and what's not
+# - - - maybe attachment stuff not, pitch/rhythm stuff is?
 # - better indices/colors
 # - refactor standard stuff into callope
 # - use asserts for error handling
@@ -171,10 +173,12 @@ e = abjad.datastructuretools.TreeContainer(name='e')
 f = abjad.datastructuretools.TreeContainer(name='f')
 g = abjad.datastructuretools.TreeContainer(name='g')
 
-
 a.extend([b,c])
 b.extend([d,e])
 b.extend([f,g])
+
+def grandchildren(self):
+	return self.depthwise_index
 
 # print(a.graph_order)
 if not b.children:

@@ -93,8 +93,8 @@ class PitchesDisplaced(object):
     def set_event(self, event, **kwargs):
         super().set_event(event, **kwargs)
         pitch_displacement = self.get_pitch_displacement(**kwargs)
-        event.pitch_displacement_sum = pitch_displacement.get_sum(event.event_index)
-        event.pitch_displacement_cumulative = pitch_displacement.get_cumulative(event.event_index)
+        event.pitch_displacement_sum = pitch_displacement.get_sum(event.depthwise_index)
+        event.pitch_displacement_cumulative = pitch_displacement.get_cumulative(event.depthwise_index)
 
 
 # OLD PitchDisplacement attributes no longer used... TO DO... remove...
