@@ -21,9 +21,9 @@ class RhythmsMultiplied:
 
     def set_logical_tie(self, logical_tie, **kwargs):
         super().set_logical_tie(logical_tie, **kwargs)
-        segment_index = logical_tie.parent.parent.my_index()
+        segment_index = logical_tie.parent.parent.my_index
         logical_tie.ticks = int(logical_tie.ticks * self.rhythm_multipliers[segment_index])
 
     def set_segment(self, segment, **kwargs):
         super().set_segment(segment, **kwargs)
-        segment.rhythm_segment_multiplier = self.rhythm_multipliers[segment.my_index()]
+        segment.rhythm_segment_multiplier = self.rhythm_multipliers[segment.my_index]

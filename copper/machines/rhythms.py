@@ -32,7 +32,7 @@ class Rhythms(object):
     def set_logical_tie(self, logical_tie, **kwargs):
         super().set_logical_tie(logical_tie, **kwargs)
         event = logical_tie.parent
-        logical_tie.original_duration = event.parent.rhythm_segment[event.my_index()]
+        logical_tie.original_duration = event.parent.rhythm_segment[event.my_index]
         logical_tie.ticks = int(logical_tie.original_duration*self.rhythm_default_multiplier)
 
     def set_logical_ties(self, event, **kwargs):
@@ -55,20 +55,15 @@ class Rhythms(object):
 
     def set_segment(self, segment, **kwargs):
         super().set_segment(segment, **kwargs)
-        rhythm_segment_index = self.rhythm_sequence[segment.my_index()]
+        rhythm_segment_index = self.rhythm_sequence[segment.my_index]
         segment.rhythm_segment = self.rhythm_segments[rhythm_segment_index]
 
     def set_segments(self, **kwargs):
         super().set_segments(**kwargs)
-        
-        # 0'th segment is special case for initial silence:
-        # self.data.events = []
         initial_silence_segment = self.data.branch()
         initial_silence_event = initial_silence_segment.branch()
-        # initial_silence_event.event_index = 0
-        # self.data.events.append(initial_silence_event)
         initial_silence_logical_tie = initial_silence_event.branch(
-                    ticks=int(self.rhythm_initial_silence*self.rhythm_default_multiplier*-1) )
+                    ticks=int(self.rhythm_initial_silence*self.rhythm_default_multiplier), rest=True )
         
         # now loop through sequence of rhythm segments after the 0'th index:
         for i in range( (len(self.rhythm_sequence)-1)*self.rhythm_times ):
@@ -79,18 +74,19 @@ class Rhythms(object):
 
     def cleanup_data(self, **kwargs):
         super().cleanup_data(**kwargs)
-        # TO DO... won't work with multiple rests in a row? fix...
+        # TO DO... remove empty events or empty segments...
+
         last_rest = None
         for logical_tie in self.data.leaves:
-            if last_rest is not None and logical_tie.ticks < 0:
-                last_rest.ticks += logical_tie.ticks
-                logical_tie.parent.remove(logical_tie)
-            elif logical_tie.ticks < 0:
-                last_rest = logical_tie
-            elif logical_tie.ticks > 0:
-                last_rest = None 
-
-            if logical_tie.ticks == 0:
+            # if last_rest is not None and logical_tie.rest:
+            #     last_rest.ticks += logical_tie.ticks
+            #     logical_tie.parent.remove(logical_tie)
+            # elif logical_tie.rest:
+            #     last_rest = logical_tie
+            # else:
+            #     last_rest = None 
+            # print(logical_tie.graph_order)
+            if logical_tie.ticks <= 0: # TO DO... why are some logical ties missing parents?
                 logical_tie.parent.remove(logical_tie)
 
     def get_metrical_duration_ticks(self):
@@ -100,19 +96,19 @@ class Rhythms(object):
         """
         return int(sum([d[0]/d[1] for d in self.metrical_durations.flattened()]) * self.rhythm_denominator)
 
-    def get_ticks_list(self):
+    def get_signed_ticks_list(self):
         """
-        returns flattened list of all ticks, padded at the end based on the length
+        returns flattened list of all ticks, padded at the end based on the length, with rests as negative values
         """
-        ticks_list = [l.ticks for l in self.data.leaves]
-        ticks_end = self.data.ticks_end()
+        ticks_list = [l.ticks*-1 if l.rest else l.ticks for l in self.data.leaves]
+        ticks_end = self.data.ticks
         metrical_duration_ticks = self.get_metrical_duration_ticks()
         if metrical_duration_ticks > ticks_end:
             ticks_list.append(int(ticks_end - metrical_duration_ticks))
         return ticks_list
 
     def get_talea(self):
-        return abjad.rhythmmakertools.Talea(self.get_ticks_list(), self.rhythm_denominator)
+        return abjad.rhythmmakertools.Talea(self.get_signed_ticks_list(), self.rhythm_denominator)
 
     def get_rhythm_maker(self):
         return abjad.rhythmmakertools.TaleaRhythmMaker(

@@ -18,16 +18,16 @@ class RhythmsBroken(object):
 
     def set_logical_ties(self, event, **kwargs):
         super().set_logical_ties(event, **kwargs)
-        segment_index = event.parent.my_index()
+        segment_index = event.parent.my_index
         if segment_index in self.breaks.keylist():
             for i, logical_tie in enumerate(event.children):
                 if logical_tie.original_duration > 1:
-                    break_ticks = int(self.breaks[segment_index] * self.rhythm_default_multiplier)
-                    if break_ticks < 0:
+                    break_signed_ticks = int(self.breaks[segment_index] * self.rhythm_default_multiplier)
+                    if break_signed_ticks < 0:
                         # if a rest is being added, then it's added as a new logical tie:
                         insert_index = i+1 if event.parent.rhythm_reverse else i #insert rest after if segment reversed, else before
-                        event.insert(insert_index, machines.LogicalTieData(ticks=break_ticks)) # TO Do.. should we call set_logical_tie on this new logical tie data?
+                        event.insert(insert_index, machines.LogicalTieData(ticks=abs(break_signed_ticks), rest=True )) # TO Do.. should we call set_logical_tie on this new logical tie data?
                     else:
                         # otherwise, the existing note is extended:
-                        logical_tie.ticks += break_ticks
+                        logical_tie.ticks += break_signed_ticks
 

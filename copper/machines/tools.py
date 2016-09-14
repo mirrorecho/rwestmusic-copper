@@ -1,7 +1,7 @@
 import collections
 import abjad
 from calliope import bubbles
-from copy import deepcopy
+from copy import copy, deepcopy
 
 # d = {}
 # b = None
@@ -30,8 +30,11 @@ class SetAttributeMixin(object):
 class Tree(SetAttributeMixin, abjad.datastructuretools.TreeContainer):
     children_type = None
 
+    @property
     def my_index(self):
-        return self.graph_order[-1]
+        return self.parent.index(self)
+        # return self.graph_order[-1] # NOTE... this does the same thing... which performs better??
+
 
     @property
     def depthwise_index(self):
@@ -39,6 +42,12 @@ class Tree(SetAttributeMixin, abjad.datastructuretools.TreeContainer):
         Not sure how well this performs, but it works
         """
         return self.root.depthwise_inventory[self.depth].index(self)
+
+    def copy(self):
+        new_self = deepcopy(self)
+        # for child in self.children:
+        #     new_self.append(child.copy())
+        return new_self
 
     def branch(self, **kwargs):
         new_branch = self.children_type(**kwargs)

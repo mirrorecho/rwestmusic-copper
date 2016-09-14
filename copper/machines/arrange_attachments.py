@@ -81,16 +81,17 @@ class AttachmentTagData(object):
     #     for kwarg in kwargs:
     #         self.attachment_names.add(kwarg)
 
+    @property
     def use_ancestor_attachments(self): 
         """
         in general, the first item uses parent attachments (e.g. if event is first item in a segment, and a segment
         is tagged with "mf", then event is event is also "mf"... but not if event is second item in the segment)
         ...overriden in LogicalTieData so that the first NONREST item uses ancestor attachments (instead of first item)
         """
-        return self.my_index() == 0 
+        return self.my_index == 0 
 
     def get_ancestor_attachment_names(self):
-        if self.parent and self.use_ancestor_attachments():
+        if self.parent and self.use_ancestor_attachments:
             return self.parent.attachment_names | self.parent.get_ancestor_attachment_names()
         else:
             return set()

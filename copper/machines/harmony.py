@@ -24,7 +24,7 @@ class Harmony(object):
         harmonic_index = 0
         for music_logical_tie, data_logical_tie in zip(music_logical_ties, data_logical_ties):
             harmonic_segment = harmonic_segments[harmonic_index % len(harmonic_segments)]
-            if data_logical_tie.ticks > 0:
+            if not data_logical_tie.rest:
                 self.process_logical_tie(music_logical_tie, data_logical_tie, harmonic_segment, **kwargs)
                 harmonic_index += 1
 

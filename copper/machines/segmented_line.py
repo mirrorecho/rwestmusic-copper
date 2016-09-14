@@ -8,43 +8,66 @@ from copper import machines
 class LogicalTieData(machines.AttachmentTagData, machines.Tree):
     original_duration = 0
     ticks = 0
-    slur = None
-    hairpin = None
-    dynamic = None
-    articulations = None # can either be a single articulation as a string, or a tuple/list of strings for multiple articulations
-    instructions = None
+    rest = False
 
+    @property
     def use_ancestor_attachments(self):
-        return self.is_first_non_rest()
+        return self.is_first_non_rest
 
+    @property
     def is_first_non_rest(self):
-        return self is self.parent.first_non_rest()
+        return self is self.parent.first_non_rest
 
+    @property
     def ticks_before(self):
         running_count = 0
         for l in self.root.leaves:
             if l is self:
                 return running_count
-            running_count += abs(l.ticks)
+            running_count += l.ticks
+    @property
+    def ticks_after(self):
+        return self.ticks_before + self.ticks
 
-class EventData(machines.AttachmentTagData, machines.Tree):
+class ParentAttachmentTagData(machines.AttachmentTagData, machines.Tree):
+    @property
+    def ticks(self):
+        return sum([l.ticks for l in self.leaves])
+
+    @property
+    def ticks_before(self):
+        if self.children:
+            return self.children[0].ticks_before
+        return 0
+
+    @property
+    def ticks_after(self):
+        return self.ticks_before + self.ticks
+
+class EventData(ParentAttachmentTagData):
     pitch_original = 0
     pitch_displacement_sum = 0
     pitch_displacement_cumulative = 0
     children_type = LogicalTieData
 
+    @property
     def first_non_rest(self):
         for l in self.children:
-            if l.ticks > 0:
+            if not l.rest:
                 return l
 
-    def ticks_sum(self):
-        return sum([abs(t.ticks) for t in self.childen])
+    def remove_bookend_rests(self):
+        if self.children:
+            if self.children[0].rest:
+                self.pop(0)
+        if self.children:
+            if self.children[-1].rest:
+                self.pop(-1)
 
     def get_pitch(self):
         return self.pitch_original + self.pitch_displacement_cumulative
 
-class SegmentData(machines.AttachmentTagData, machines.Tree):
+class SegmentData(ParentAttachmentTagData):
     pitch_segment = None
     rhythm_segment = None
     pitch_reverse = False
@@ -52,13 +75,13 @@ class SegmentData(machines.AttachmentTagData, machines.Tree):
     rhythm_multiplier = None
     children_type = EventData
 
-class SegmentTree(machines.AttachmentTagData, machines.Tree):
+class SegmentTree(ParentAttachmentTagData):
     children_type = SegmentData
     
     @property
     def events(self):
         #... how expensive is this to call often??
-        return self.depthwise_inventory[1]
+        return self.depthwise_inventory[2]
 
     # def reset_events(self):
     #     self.events = tuple([node for node in self.nodes if isinstance(node, EventData)])
@@ -71,11 +94,12 @@ class SegmentTree(machines.AttachmentTagData, machines.Tree):
         for logical_tie_data in self.leaves:
             if running_count > tick:
                 return previous_data
-            running_count += abs(logical_tie_data.ticks)
+            running_count += logical_tie_data.ticks
             previous_data = logical_tie_data
 
-    def ticks_end(self):
-        return sum([abs(l.ticks) for l in self.leaves])
+    @property
+    def ticks(self):
+        return sum([l.ticks for l in self.leaves])
 
 class SegmentedLine(bubbles.Line):
     """

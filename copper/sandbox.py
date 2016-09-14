@@ -34,6 +34,7 @@
 # - (DONE) redo attachments machine
 # - (DONE) - - including easily showing indices
 # - (DONE) fix harmony machine
+# - (DONE) implement rests as positive values (with rest attribute) on logical ties
 # ---------------------------- TUESDAY
 # - redo fragments machine
 # - add to and refactor existing music
@@ -96,6 +97,7 @@
 # - good draft orchestration of gen g
 # - good draft orchestration of gen h
 # - rehearsal markings
+# - keep relative durations as negative?
 # ---------------------------- FRIDAY
 # - review printed score and mark up
 # - implement printed score markups (or add notes)
@@ -157,6 +159,7 @@
 # - use asserts for error handling
 # IMPLEMENTING INTO CALLIOPE:
 # - make sure machines are self-contained. they shouldn't use attributes defined on other ones (except a few base ones like ticks and pitch)
+# - - - (e.g. pitch displacement should be more isolated... not built into structure of EventData)
 # - phrases as layer above segments
 # - TaleaDrivenLine as a general case
 
@@ -164,33 +167,42 @@
 
 import abjad
 from calliope import bubbles
+from copy import copy
 # from copper import machines
 # from copper.machines import Fragments
 
 a = abjad.datastructuretools.TreeContainer(name='a')
 b = abjad.datastructuretools.TreeContainer(name='b')
+b1 = abjad.datastructuretools.TreeContainer(name='b1')
 c = abjad.datastructuretools.TreeContainer(name='c')
 d = abjad.datastructuretools.TreeContainer(name='d')
 e = abjad.datastructuretools.TreeContainer(name='e')
 f = abjad.datastructuretools.TreeContainer(name='f')
 g = abjad.datastructuretools.TreeContainer(name='g')
 
+
 a.extend([b,c])
 b.extend([d,e])
-b.extend([f,g])
+c.extend([f,g])
 
-def grandchildren(self):
-	return self.depthwise_index
+# a.pop(-1)
+# print(a)
 
-# print(a.graph_order)
-if not b.children:
-	print("bll")
 
-g.parent.remove(g)
+# print(g.parent.index(g))
 
-for i, child in enumerate(b.children):
-	if child.name == "d":
-		b.insert(i, abjad.datastructuretools.TreeContainer(name='d-1'))
+# def grandchildren(self):
+# 	return self.depthwise_index
+
+# # print(a.graph_order)
+# if not b.children:
+# 	print("bll")
+
+# g.parent.remove(g)
+
+# for i, child in enumerate(b.children):
+# 	if child.name == "d":
+# 		b.insert(i, abjad.datastructuretools.TreeContainer(name='d-1'))
 
 # print(a)
 
