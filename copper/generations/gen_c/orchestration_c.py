@@ -94,7 +94,7 @@ class Clarinet1(machines.FragmentLine, machines.ArrangeAttachments, Line3):
     fragments = Frag.fill( range(0,7), lambda: Frag.item() )
 class Clarinet2(machines.FragmentLine, machines.ArrangeAttachments, Line4):
     fragments = Frag({
-        0: Frag.item(attack_offset=-2, keep_original_attack=True),
+        0: Frag.item(attack_offset=-2, keep_attack=True),
         1: Frag.item(),
         2: Frag.item(),
         })

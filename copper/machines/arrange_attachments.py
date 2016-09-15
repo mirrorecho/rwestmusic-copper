@@ -11,7 +11,7 @@ class AttachmentTagData(object):
     # TO DO... abjad may already define these somewhere.. research:
     # TO DO... add lilypond commands here
     articulations_inventory = set((".", "-", ">",".","^"))
-    dynamics_inventory = set(("ppp","pp","mp","mf","f","ff","fff"))
+    dynamics_inventory = set(("ppp","pp","p","mp","mf","f","ff","fff"))
     
     slurs_inventory = set(("(", "((")) # note... double parens could be used to indicate larger phrasing slur
     hairpins_inventory = set( ("\<","\>") ) # note... may not be needed
@@ -21,8 +21,8 @@ class AttachmentTagData(object):
 
     # defines things that the spanners close:
     spanner_closures = {
-        ")":    ("(",),
-        "))":   ("((",),
+        ")":    set(("(",),),
+        "))":   set(("((",),),
     }
     for item in dynamics_inventory | hairpins_inventory | set( ("\!",) ):
         spanner_closures[item] = hairpins_inventory
@@ -61,25 +61,46 @@ class AttachmentTagData(object):
             if arg[:5] == "data:":
                 self.attachment_names.add(str(getattr(self, arg[5:])))
             else:
+                # ovewrite existing dynamics and hairpins:
+                if arg in self.dynamics_inventory:
+                    self.attachment_names -= self.dynamics_inventory
+                elif arg in self.hairpins_inventory:
+                    self.attachment_names -= self.hairpins_inventory
+
                 self.attachment_names.add(arg)
 
-    def untag(self, *kwargs):
-        for kwarg in kwargs:
-            self.attachment_names.remove(kwarg)
-
-    def tag_children(self, *kwargs):
-        for kwarg in kwargs:
-            if isinstance(kwarg, ID):
+    def tag_children(self, *args):
+        for arg in args:
+            if isinstance(arg, ID):
                 for i, child in enumerate(self.children):
-                    child.attachment_names -= set(kwarg[i])
+                    child_set = set(arg[i])
+                    # ovewrite existing dynamics and hairpins:
+                    if child_set & self.dynamics_inventory:
+                        child.attachment_names -= self.dynamics_inventory
+                    if child_set & self.hairpins_inventory:
+                        child.attachment_names -= self.hairpins_inventory
+                    child.attachment_names |= child_set
             else:
                 for child in self.children:
-                    child.attachment_names.remove(kwarg)
+                    child.tag(arg)
+
+    def untag(self, *args):
+        for arg in args:
+            self.attachment_names.remove(arg)
+
+    def untag_children(self, *args):
+        for arg in args:
+            if isinstance(arg, ID):
+                for i, child in enumerate(self.children):
+                    child.attachment_names -= set(arg[i])
+            else:
+                for child in self.children:
+                    child.attachment_names.remove(arg)
 
     # TO DO add if useful...
-    # def tag_children(self, *kwargs):
-    #     for kwarg in kwargs:
-    #         self.attachment_names.add(kwarg)
+    # def tag_children(self, *args):
+    #     for arg in args:
+    #         self.attachment_names.add(arg)
 
     @property
     def use_ancestor_attachments(self): 
@@ -157,97 +178,32 @@ class ArrangeAttachments(object):
         
         # attachments = data_logical_tie.get_all_attachments()
 
+        # loop through attachments to close open spanners
         for attachment_name in data_logical_tie.get_all_attachment_names():
+            spanners_to_close = set(self._open_spanners) & AttachmentTagData.spanner_closures.get(attachment_name, set() )
+            for p in spanners_to_close:
+                spanner = data_logical_tie.get_attachment(p)
+                start_index = self._open_spanners[p]
+                stop_index = music_leaf_index + 1
+                if isinstance(spanner, abjad.Slur):
+                    # slurs go to the end of the logical tie, not the beginning
+                    stop_index += len(music_logical_tie) - 1
+                abjad.attach(spanner, music[start_index:stop_index])
+                del self._open_spanners[p]
 
-            possible_open_spanners = AttachmentTagData.spanner_closures.get(attachment_name, ())
-            for p in possible_open_spanners:
-                if p in self._open_spanners:
-                    spanner = data_logical_tie.get_attachment(p)
-                    start_index = self._open_spanners[p]
-                    stop_index = music_leaf_index + 1
-                    if isinstance(spanner, abjad.Slur):
-                        # slurs go to the end of the logical tie, not the beginning
-                        stop_index += len(music_logical_tie) - 1
-                    abjad.attach(spanner, music[start_index:stop_index])
-                    del self._open_spanners[p]
-            
+        # NOTE... here it's important to through attachments a second time... or we might delete the attachment we just added!! (and get an 
+        # eratic exception that's confusing since it would depend on the arbitrary order of looping through the set)
+        for attachment_name in data_logical_tie.get_all_attachment_names():            
             if attachment_name in AttachmentTagData.start_spanners_inventory:
                 self._open_spanners[attachment_name]=music_leaf_index
             else:
                 attachment = data_logical_tie.get_attachment(attachment_name)
                 if attachment:
                     abjad.attach(attachment, music_logical_tie[0])
+            # print(attachment_name)
+        # print("-------------------------------------------------")
             
+    def process_logical_ties(self, music, **kwargs):
+        self._open_spanners = {} # important in case music() metchod gets called twice on the same object
+        super().process_logical_ties(music, **kwargs)
 
-
-
-
-        # leaves = abjad.select(music).by_leaf()
-        # logical_ties = abjad.select(music).by_logical_tie(pitched=True) # TO DO... QUESTION? what does pitched=True do?
-
-        # logical_tie_index = 0
-        # info_index = 0
-        # info_note_index = 0
-        
-        # logical_tie = logical_ties[logical_tie_index]
-
-        # hairpin_start = None # once endo starts, would be set such as (42, "")
-        # slur_start = None # set to number of slur starting
-
-        # for i, leaf in enumerate(leaves):
-
-        #     if len(logical_ties) > logical_tie_index + 1 and leaf is logical_ties[logical_tie_index + 1][0]:
-        #         logical_tie_index += 1
-        #         logical_tie = logical_ties[logical_tie_index]
-
-        #     if self.show_info_indices:
-        #         if leaf is logical_tie[0]:
-        #             markup_string = "%s:%s" % (self.info[info_index].original_index or info_index, info_note_index)
-        #             # markup_string += " %s|%s" % ( self.info[info_index].counts_before, self.info[info_index].counts )
-        #             markup_object = abjad.markuptools.Markup(markup_string, direction=Up)
-        #             abjad.attach(markup_object, leaf)
-
-        #     if self.show_leaf_indices:
-        #         markup_string = "(%s)" % i
-        #         markup_object = abjad.markuptools.Markup(markup_string, direction=Down)
-        #         abjad.attach(markup_object, leaf)
-
-
-        #     if leaf is logical_tie[0]:
-        #         my_info = self.info[info_index]
-
-        #         has_dynamic = False
-        #         if len(my_info.dynamics) > info_note_index and my_info.dynamics[info_note_index]:
-        #             has_dynamic = True
-        #             dynamic = abjad.Dynamic(my_info.dynamics[info_note_index])
-        #             abjad.attach(dynamic, leaf)
-        #         if len(my_info.articulations) > info_note_index and my_info.articulations[info_note_index]:
-        #                 articulation = abjad.Articulation(my_info.articulations[info_note_index])
-        #                 abjad.attach(articulation, leaf)
-        #         if len(my_info.instructions) > info_note_index and my_info.instructions[info_note_index]:
-        #                 markup_object = abjad.markuptools.Markup(my_info.instructions[info_note_index], direction=Up)
-        #                 abjad.attach(markup_object, leaf)
-
-        #         if len(my_info.slurs) > info_note_index and my_info.slurs[info_note_index] == "(":
-        #             slur_start = i
-                
-        #         if len(my_info.hairpins) > info_note_index and my_info.hairpins[info_note_index]:
-        #             hairpin_descriptor = my_info.hairpins[info_note_index]
-        #             if hairpin_start:
-        #                 hairpin = abjad.Hairpin(hairpin_start[1])
-        #                 abjad.attach(hairpin, music[hairpin_start[0]:i+1])
-        #                 hairpin_start = None
-        #             if hairpin_descriptor in ("<", ">"):
-        #                 hairpin_start = (i, hairpin_descriptor)
-
-        #     if leaf is logical_tie[-1]:
-        #         if slur_start and len(my_info.slurs) > info_note_index and my_info.slurs[info_note_index] == ")":
-        #                 abjad.attach(abjad.Slur(), music[slur_start:i+1])
-        #                 slur_start = None
-
-        #         info_note_index +=1
-        #         if info_note_index >= len(my_info.logical_tie_counts()):
-        #             info_index += 1
-        #             info_note_index = 0 
-
-                

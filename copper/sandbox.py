@@ -36,6 +36,7 @@
 # - (DONE) fix harmony machine
 # - (DONE) implement rests as positive values (with rest attribute) on logical ties
 # - (DONE) redo fragments machine
+# - (DONE) smart prevent dupes of certain kinds of attachments (e.g. dynamics)
 # ---------------------------- TUESDAY
 # - add to and refactor existing music
 # - - - section a orchestration
@@ -86,7 +87,8 @@
 # - plan out cymbal, and start working better into machines
 # - good gen h draft short score
 # ---------------------------- THURSDAY
-# - smart prevent dupes of certain kinds of attachments (e.g. dynamics)
+# - get data by original depthwise index
+# - get_lilypond_file is being called twice on the bottom of orchestration files... fix
 # - review current short scores at piano and adjust
 # - good draft orchestration of gen b
 # - good draft orchestration of gen c
@@ -185,6 +187,17 @@ g = abjad.datastructuretools.TreeContainer(name='g')
 a.extend([b,c])
 b.extend([d,e])
 c.extend([f,g])
+
+
+dynamics_inventory = set(("ppp","pp","p","mp","mf","f","ff","fff"))
+hairpins_inventory = set( ("\<","\>") ) # note... may not be needed
+
+d1 = set( ("-","-","p") )
+
+if d1 & dynamics_inventory:
+	print( "YOYOYOYOY")
+
+print( len(d1 & dynamics_inventory) )
 
 # a.pop(-1)
 # print(a)

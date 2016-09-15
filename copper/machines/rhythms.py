@@ -87,7 +87,7 @@ class Rhythms(object):
                 last_rest = logical_tie
             else:
                 last_rest = None 
-            print(logical_tie.graph_order)
+            # print(logical_tie.graph_order)
             if logical_tie.ticks <= 0: # TO DO... why are some logical ties missing parents?
                 logical_tie.parent.remove(logical_tie)
 
@@ -133,6 +133,8 @@ class Rhythms(object):
         data_logical_ties = self.data.leaves
         leaf_count=0
         for music_logical_tie, data_logical_tie in zip(music_logical_ties, data_logical_ties):
+            # print( "TL: %s" % leaf_count  )
+            # print(music_logical_tie)
             self.process_logical_tie(music, music_logical_tie, data_logical_tie, leaf_count, **kwargs)
             leaf_count += len(music_logical_tie)
 

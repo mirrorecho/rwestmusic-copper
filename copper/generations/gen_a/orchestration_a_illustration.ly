@@ -1,4 +1,4 @@
-% 2016-09-10 15:00
+% 2016-09-15 02:47
 
 \version "2.18.2"
 \language "english"
@@ -118,7 +118,29 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 18
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        a'1 \pp ~ \< ^ \markup { 16 }
+                        a'2.
+                        r8
+                        a'8 \p ~ ^ \markup { 19 }
+                        a'2.
+                        r8
+                        a'8 ~ ^ \markup { 22 }
+                        a'2.
+                        r4
+                        r1
+                        r1
+                        r1
+                        r1
                     }
                 }
                 \new Staff {
@@ -129,7 +151,32 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 18
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r2
+                        d'2 \pp ~ \< ^ \markup { 16 }
+                        d'1 ~
+                        d'4
+                        r8
+                        a'2 \p ~ ^ \markup { 19 }
+                        a'8 ~
+                        a'4
+                        r8
+                        d'2 ~ ^ \markup { 22 }
+                        d'8 ~
+                        d'4
+                        r2.
+                        r1
+                        r1
                     }
                 }
             >>
@@ -403,7 +450,7 @@
                         fs'4
                         fs'4 \mp ~ \>
                         fs'2
-                        fs'2 \pp ~ \<
+                        fs'2 \p ~
                         fs'2.
                         fs'4 \pp ~ \<
                         fs'1
@@ -444,7 +491,7 @@
                         b8 \pp ~ \<
                         b4
                         b2. \mp \>
-                        fs'1 \pp ~ \<
+                        fs'1 \p ~
                         fs'4
                         b2. \pp ~ \<
                         b2
@@ -554,29 +601,23 @@
                         r1
                         r1
                         r1
-                        b2. \pp \< ^ \markup { "5:0 256|[24, 28]" }
-                        b4 \mp ~ \> ^ \markup { "5:1 256|[24, 28]" }
+                        b2. \pp \<
+                        b4 \mp ~ \>
                         b2 ~
                         b8
-                        e'4. \pp \< ^ \markup { "9:0 308|[12, 16]" }
-                        e'2 \mp \> ^ \markup { "9:1 308|[12, 16]" }
-                        e'2 \pp \< ^ \markup { "12:0 336|[16, 32, -8]" }
-                        e'1 \mp \> ^ \markup { "12:1 336|[16, 32, -8]" }
-                        r4
-                        fs'2. \pp \< ^ \markup { "17:0 392|[24, 16]" }
-                        fs'2 \mp \> ^ \markup { "17:1 392|[24, 16]" }
-                        a'2 \p ~ \<
-                            ^ \markup {
-                                \column
-                                    {
-                                        "21:0 432|[24, 16]"
-                                        "solo cello"
-                                    }
-                                }
+                        e'4. \pp \<
+                        e'2 \mp \>
+                        e'2 \p ~
+                        e'1 ~
+                        e'4
+                        fs'2. \pp \<
+                        fs'2 \mp \>
+                        \clef tenor
+                        a'2 \pp ~ \< ^ \markup { "solo cello" }
                         a'4
-                        a'2 \mf ( ^ \markup { "21:1 432|[24, 16]" }
-                        b'4 ) ^ \markup { "22:0 472|[8]" }
-                        fs'1 \mp ~ ^ \markup { "23:0 480|[40]" }
+                        a'2 \mp \< (
+                        b'4 \mf \p )
+                        fs'1 \mp \p ~
                         fs'4
                         r2.
                         r1
@@ -601,16 +642,15 @@
                         r1
                         r1
                         r2
-                        b2 \pp ~ \< ^ \markup { "5:0 304|[24, 28]" }
+                        b2 \pp ~ \<
                         b4
-                        b2. \mp ~ \> ^ \markup { "5:1 304|[24, 28]" }
+                        b2. \mp ~ \>
                         b8
-                        a4. \pp \< ^ \markup { "9:0 356|[12, 16]" }
-                        a2 \mp \> ^ \markup { "9:1 356|[12, 16]" }
-                        a2 \pp \< ^ \markup { "12:0 384|[16, 32]" }
-                        a2 \mp ~ ^ \markup { "12:1 384|[16, 32]" }
-                        a2
-                        r2
+                        a4. \pp \<
+                        a2 \mp \>
+                        a2. \p
+                        r4
+                        r1
                         r1
                         r1
                         r1
@@ -641,7 +681,43 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    R1 * 18
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    d'2 ^ \markup { 1 }
+                    c'4 ^ \markup { 2 }
+                    b4 ^ \markup { 3 }
+                    d'2 ^ \markup { 4 }
+                    e'4 ^ \markup { 5 }
+                    b4 ^ \markup { 6 }
+                    d'2 ^ \markup { 7 }
+                    g'4 ^ \markup { 8 }
+                    fs'4 ^ \markup { 9 }
+                    e'2 ^ \markup { 10 }
+                    g'4 ^ \markup { 11 }
+                    fs'4 ^ \markup { 12 }
+                    e'4 ^ \markup { 13 }
+                    g'4 ^ \markup { 14 }
+                    fs'4 ^ \markup { 15 }
+                    a'4 ~ ^ \markup { 16 }
+                    a'2.
+                    g'4 ^ \markup { 17 }
+                    fs'4 ^ \markup { 18 }
+                    a'2 ^ \markup { 19 }
+                    g'4 ^ \markup { 20 }
+                    fs'4 ^ \markup { 21 }
+                    a'2 ^ \markup { 22 }
+                    b'4 ^ \markup { 23 }
+                    fs'4 ^ \markup { 24 }
+                    e'4 ^ \markup { 25 }
+                    g'4 ^ \markup { 26 }
+                    fs'4 ^ \markup { 27 }
+                    r1
+                    r1
+                    r1
                 }
             }
             \new Staff {
@@ -652,7 +728,46 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    R1 * 18
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r2
+                    d'2 ^ \markup { 1 }
+                    g'4 ^ \markup { 2 }
+                    b4 ^ \markup { 3 }
+                    g2 ^ \markup { 4 }
+                    a4 ^ \markup { 5 }
+                    b4 ^ \markup { 6 }
+                    d'2 ^ \markup { 7 }
+                    c'4 ^ \markup { 8 }
+                    b4 ^ \markup { 9 }
+                    a2 ^ \markup { 10 }
+                    c'4 ^ \markup { 11 }
+                    b4 ^ \markup { 12 }
+                    a4 ^ \markup { 13 }
+                    c'4 ^ \markup { 14 }
+                    fs'4 ^ \markup { 15 }
+                    d'2. ~ ^ \markup { 16 }
+                    d'4
+                    g'4 ^ \markup { 17 }
+                    fs'4 ^ \markup { 18 }
+                    a'4 ~ ^ \markup { 19 }
+                    a'4
+                    g'4 ^ \markup { 20 }
+                    b4 ^ \markup { 21 }
+                    d'4 ~ ^ \markup { 22 }
+                    d'4
+                    e'4 ^ \markup { 23 }
+                    fs'4 ^ \markup { 24 }
+                    b'4 ^ \markup { 25 }
+                    d''4 ^ \markup { 26 }
+                    cs''4 ^ \markup { 27 }
+                    r2
+                    r1
                 }
             }
             \new Staff {
