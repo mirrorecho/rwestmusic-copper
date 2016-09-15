@@ -30,6 +30,15 @@ class SetAttributeMixin(object):
 class Tree(SetAttributeMixin, abjad.datastructuretools.TreeContainer):
     children_type = None
 
+    # sometimes items are moved arround... this can be used track where an element had been placed previously, which is often useful
+    original_index = None 
+    original_depthwise_index = None # TO DO... consider making these IndexedData objects at the parent level?
+
+    def index_children(self):
+        for i, child in enumerate(self.children):
+            child.original_index = i
+            child.original_depthwise_index = child.depthwise_index # TO DO... this could get expensive
+
     @property
     def my_index(self):
         return self.parent.index(self)

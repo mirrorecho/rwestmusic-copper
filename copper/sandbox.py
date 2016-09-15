@@ -35,9 +35,10 @@
 # - (DONE) - - including easily showing indices
 # - (DONE) fix harmony machine
 # - (DONE) implement rests as positive values (with rest attribute) on logical ties
+# - (DONE) redo fragments machine
 # ---------------------------- TUESDAY
-# - redo fragments machine
 # - add to and refactor existing music
+# - - - section a orchestration
 # - - - many indices need +1
 # - - - pitch_times handled differently
 # - - - breaks are now absolute length, not relative

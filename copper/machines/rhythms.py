@@ -39,6 +39,7 @@ class Rhythms(object):
         super().set_logical_ties(event, **kwargs)
         # (by default, there is just 1 logical tie per event... )
         self.set_logical_tie( event.branch() )
+        event.index_children()
 
     def set_event(self, event, **kwargs):
         super().set_event(event, **kwargs)
@@ -52,6 +53,7 @@ class Rhythms(object):
             event.root.events.append(event)
             self.set_event(event, **kwargs)
             self.set_logical_ties(event, **kwargs)
+        segment.index_children()
 
     def set_segment(self, segment, **kwargs):
         super().set_segment(segment, **kwargs)
@@ -70,7 +72,7 @@ class Rhythms(object):
             segment = self.data.branch()
             self.set_segment(segment, **kwargs)
             self.set_events(segment, **kwargs)
-        # self.data.events = tuple(self.data.events) # necessary? tuplifying is really just a precaution
+        self.data.index_children()
 
     def cleanup_data(self, **kwargs):
         super().cleanup_data(**kwargs)
@@ -78,14 +80,14 @@ class Rhythms(object):
 
         last_rest = None
         for logical_tie in self.data.leaves:
-            # if last_rest is not None and logical_tie.rest:
-            #     last_rest.ticks += logical_tie.ticks
-            #     logical_tie.parent.remove(logical_tie)
-            # elif logical_tie.rest:
-            #     last_rest = logical_tie
-            # else:
-            #     last_rest = None 
-            # print(logical_tie.graph_order)
+            if last_rest is not None and logical_tie.rest:
+                last_rest.ticks += logical_tie.ticks
+                logical_tie.parent.remove(logical_tie)
+            elif logical_tie.rest:
+                last_rest = logical_tie
+            else:
+                last_rest = None 
+            print(logical_tie.graph_order)
             if logical_tie.ticks <= 0: # TO DO... why are some logical ties missing parents?
                 logical_tie.parent.remove(logical_tie)
 

@@ -68,8 +68,7 @@ class FragmentLine(object):
 
             if ticks_gap > 0:
             #     # note, previous event will never end in a rest, since we removed bookened rest... so safe to insert
-                previous_event.branch(ticks=attack_offset_ticks, rest=True)
-                print(previous_event.ticks / 8)
+                print(previous_event.branch(ticks=ticks_gap, rest=True))
 
             # NOW SETTING THE TICKS ON THIS EVENT BASED ON DURATION OF ORIGINAL EVENT
             # either set this event's first logical tie tie to the override duration, or to original event's ticks
@@ -79,12 +78,14 @@ class FragmentLine(object):
                         new_event[0].ticks = int(fragment.duration * self.rhythm_default_multiplier)
             else:
                 if attack_offset_ticks < 0 and fragment.keep_original_attack:
-                    new_event.insert(0, ticks=attack_offset_tickst)
-                    new_event[0].ticks -= attack_offset_ticks
+                    new_event.insert(0, machines.LogicalTieData(ticks=abs(attack_offset_ticks) ) )
+                else:
+                    new_event[-1].ticks -= attack_offset_ticks
 
                 new_event[-1].ticks += int(fragment.release_offset * self.rhythm_default_multiplier)
             previous_event = new_event
             print("--------------------------------")
+
         setattr(self, "_data_originaal", self.data)
         self.data = new_data
 

@@ -56,12 +56,12 @@ class AttachmentTagData(object):
     # def get_attachments(self, **kwargs):
     #     return [AttachmentSetData.get_attachment(a) for a in self.attachment_names]
 
-    def tag(self, *kwargs):
-        for kwarg in kwargs:
-            if kwarg=="index":
-                self.attachment_names.add(str(self.depthwise_index))
+    def tag(self, *args):
+        for arg in args:
+            if arg[:5] == "data:":
+                self.attachment_names.add(str(getattr(self, arg[5:])))
             else:
-                self.attachment_names.add(kwarg)
+                self.attachment_names.add(arg)
 
     def untag(self, *kwargs):
         for kwarg in kwargs:
@@ -127,7 +127,9 @@ class ArrangeAttachments(object):
     """
     mixin to be used with SegmentedLine
     """
-    show_indices_type = None
+    show_data_type = None
+    show_data_attr = None
+
     _open_spanners = None # to be set to a dict containing spanner start as they key, and music leaf index as the value
 
     def __init__(self, **kwargs):
@@ -136,10 +138,12 @@ class ArrangeAttachments(object):
 
     def update_data(self, **kwargs):
         super().update_data(**kwargs)
-        if self.show_indices_type:
+        if self.show_data_type or self.show_data_attr:
+            show_data_type = self.show_data_type or machines.EventData
+            show_data_attr = self.show_data_attr or "depthwise_index"
             # TO DO: there must be a way to make this more elegant:
-            for node in [node for node in self.data.nodes if isinstance(node, self.show_indices_type)]:
-                node.tag("index")
+            for node in [node for node in self.data.nodes if isinstance(node, show_data_type)]:
+                node.tag("data:" + show_data_attr)
 
     # TO DO... implement if useful?
     # def tag(self, *kwargs):
