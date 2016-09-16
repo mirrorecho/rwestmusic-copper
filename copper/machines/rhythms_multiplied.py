@@ -11,8 +11,8 @@ class RhythmsMultiplied:
     rhythm_multipliers = None # should be set to an indexed data object that defines multiplier for eacch segment index
 
     @classmethod
-    def make_multipliers(cls, multipliers=None, default=1, cyclic=False):
-        return machines.IndexedData(multipliers, default=default, cyclic=cyclic)
+    def make_multipliers(cls, multipliers=None, default=1, cyclic=False, **kwargs):
+        return machines.IndexedData(multipliers, default=default, cyclic=cyclic, **kwargs)
 
     def __init__(self, **kwargs):
         self.rhythm_multipliers = self.rhythm_multipliers or RhythmsMultiplied.make_multipliers() # defaults multipliers to 1

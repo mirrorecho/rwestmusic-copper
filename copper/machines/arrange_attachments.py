@@ -9,7 +9,7 @@ class AttachmentTagData(object):
     attachment_names = None # to be set to a set
     
     # TO DO... abjad may already define these somewhere.. research:
-    # TO DO... add lilypond commands here
+    # TO DO... implement beaming here... would be especially userful with span_every
     articulations_inventory = set((".", "-", ">",".","^"))
     dynamics_inventory = set(("ppp","pp","p","mp","mf","f","ff","fff"))
     
@@ -26,8 +26,6 @@ class AttachmentTagData(object):
     }
     for item in dynamics_inventory | hairpins_inventory | set( ("\!",) ):
         spanner_closures[item] = hairpins_inventory
-
-
 
     def __init__(self, **kwargs):
         self.attachment_names = set()
@@ -49,8 +47,6 @@ class AttachmentTagData(object):
                 return abjad.indicatortools.LilyPondCommand(attachment_name[1:])
             else:
                 return abjad.Markup(attachment_name, direction=Up)
-
-
 
     # TO DO... only if needed
     # def get_attachments(self, **kwargs):
@@ -119,6 +115,32 @@ class AttachmentTagData(object):
 
     def get_all_attachment_names(self):
         return self.attachment_names | self.get_ancestor_attachment_names()
+
+    # TO DO... consider implementing this
+    # # TO DO.. this should be able to work with original_depthwise_index (or fragments should not reset segments)
+    # def span_children(self, spanner):
+    #     # TO DO... something more elegant to associate spanners with end spanners
+    #     if spanner == "(":
+    #         end_spanner = ")"
+    #     if spanner == "((":
+    #         end_spanner = "))"
+    #     if spanner == "\<" or spanner == "\>":
+    #         end_spanner = "\!"
+    #     self.children[0]
+
+    @classmethod
+    def span_every(cls, spanner, items, every_count=2):
+        # TO DO... something more elegant to associate spanners with end spanners
+        if spanner == "(":
+            end_spanner = ")"
+        if spanner == "((":
+            end_spanner = "))"
+        if spanner == "\<" or spanner == "\>":
+            end_spanner = "\!"
+        
+        for i in range(0, len(items), every_count):
+            items[i].tag(spanner)
+            items[i+every_count-1].tag(end_spanner)
 
     # TO DO.. only if needed:
     # def get_all_attachments(self):

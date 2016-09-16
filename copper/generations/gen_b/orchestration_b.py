@@ -8,54 +8,44 @@ from copper import staves
 
 Frag = machines.Fragments
 
-class Bassoon1(machines.FragmentLine, machines.ArrangeAttachments,  Line2):
-    fragments = Frag.fill(range(0,6), lambda: machines.FragmentInfo() ) # TO DEO... this is long and nasty
-    fragments[5].duration = 3.5
-    # fragments()
-    # show_info_indices=True
-    dynamics=ID({
-        0:("mp",)
-        })
-    slurs = machines.slurs.every(0,6)
+class Oboe2(machines.FragmentLine, Line1):
+    fragments = Frag.fill(range(1,10), lambda: machines.FragmentInfo() )
+    fragments[9].duration = 3.5
+    def update_data(self):
+        super().update_data()
+        self.segments[1].tag("mf")
+        machines.AttachmentTagData.span_every("(", self.events[1:10],3)
 
-class Bassoon2(machines.FragmentLine, machines.ArrangeAttachments,  Line2):
-    fragments = Frag.fill(range(6,12), lambda: machines.FragmentInfo() )
-    fragments[11].duration = 3.5
-    fragments.update_items({
-        0: LogicalTieData(dynamics="mf", )
-    })
+class Bassoon1(machines.FragmentLine, Line2):
+    fragments = Frag.fill(range(1,7), lambda: machines.FragmentInfo() ) # TO DO... this is long and nasty
+    fragments[6].duration = 3.5
+    
+    def update_data(self):
+        super().update_data()
+        self.segments[1].tag("mf")
+        machines.AttachmentTagData.span_every("(", self.events[1:7])
 
-    # fragments()
-    # show_info_indices=True
-    dynamics=ID({
-        0:("mp",)
-        })
-    slurs = machines.slurs.every(6,12)
+class Bassoon2(machines.FragmentLine, Line2):
+    fragments = Frag.fill(range(7,13), lambda: machines.FragmentInfo() )
+    fragments[12].duration = 3.5
+    def update_data(self):
+        super().update_data()
+        self.segments[1].tag("mf")
+        machines.AttachmentTagData.span_every("(", self.events[1:7])
 
-class Bassoon2(machines.FragmentLine, machines.ArrangeAttachments,  Line2):
-    fragments = Frag.fill(range(6,12), lambda: machines.FragmentInfo() )
-    fragments[11].duration = 3.5
-    # fragments()
-    # show_info_indices=True
-    dynamics=ID({
-        0:("mp",)
-        })
-    slurs = machines.slurs.every(6,12)
+    slurs = machines.slurs.every(7,13)
 
-class Oboe2(machines.FragmentLine, machines.ArrangeAttachments,  Line1):
-    fragments = Frag.fill(range(0,9), lambda: machines.FragmentInfo() )
-    fragments[8].duration = 3.5
 
-class Tuba(machines.FragmentLine, machines.ArrangeAttachments,  Line3):
-    fragments = Frag.fill(range(0,6), lambda: machines.FragmentInfo() )
-    fragments[5].duration = 3.25
+class Tuba(machines.FragmentLine, Line3):
+    fragments = Frag.fill(range(1,7), lambda: machines.FragmentInfo() )
+    fragments[6].duration = 3.25
 
 class OrchestrationB(staves.CopperMusic, GenB):
     bubble_default = bubbles.Line("R2.*24")
     oboe2 = Oboe2()
     bassoon1 = Bassoon1()
     bassoon2 = Bassoon2()
-    tuba = Tuba()
+    # tuba = Tuba()
     # clarinet1 = Clarinet1()
     # clarinet2 = Clarinet2()
     # violinI1 = ViolinI1() 

@@ -8,6 +8,9 @@ from copper.generations.gen_b import gen_b
 
 class LineGenC(machines.RhythmsBroken):
     metrical_durations = ID(default=((1,1),), limit=24)
+    def update_data(self):
+        super().update_data()
+        self.logical_ties[0].untag("\clef bass")
 # -------------------------------------------------------------------------------------------------
 
 class Line1(LineGenC, gen_b.Line1):

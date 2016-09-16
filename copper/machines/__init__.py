@@ -17,6 +17,7 @@ from copper.machines.pitches import *
 from copper.machines.pitches_displaced import *
 from copper.machines.rhythms_multiplied import *
 from copper.machines.rhythms_broken import *
+from copper.machines.rhythms_pulsed import *
 
 
 from copper.machines.drones import *

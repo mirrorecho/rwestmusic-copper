@@ -63,6 +63,11 @@ class Tree(SetAttributeMixin, abjad.datastructuretools.TreeContainer):
         self.append( new_branch )
         return new_branch
 
+    def __str__(self):
+        my_return_string = self.__class__.__name__ + ":" + str(self.depthwise_index)
+        if self.parent and self.parent is not self.root:
+            my_return_string = str(self.parent) + " | " + my_return_string
+        return my_return_string
 
 class IndexedData(SetAttributeMixin, collections.UserDict):
     """

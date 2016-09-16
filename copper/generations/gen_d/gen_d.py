@@ -35,6 +35,10 @@ class Line2(HarmonyLineGenD, gen_c.Line2):
                         down=(23,24,27)
                         )
     pitch_respell = "sharps"
+    # TO DO... ditto, should come up with some more elegant way to do this copy/multiplication
+    breaks = gen_c.Line2.breaks.copy()
+    for i in breaks.keylist():
+        breaks[i] = breaks[i] * 1.5
 
 # -------------------------------------------------------------------------------------------------
 

@@ -8,99 +8,89 @@ from copper import staves
 
 Frag = machines.Fragments
 
-class Trumpet1(machines.FragmentLine, machines.ArrangeAttachments, Line1):
+class Trumpet1(machines.FragmentLine, Line1):
     # rhythm_reverse = (1,)
-    lines = ID({
-        0: Line1(),
-        1: Line3()}
-        )
+    # TO DO... implement this:
+    # lines = ID({
+    #     0: Line1(),
+    #     1: Line3()}
+    #     )
     fragments = Frag({
-        0 : Frag.item().attach(
-                    0,"(", "-", "mf", "!","<", ">", ")", "Oh no!").attach(
-                    1, "fff")
-        1:  Frag.item(),
+        1 : Frag.item(),
         2:  Frag.item(),
-        
-        # 3:  Frag.item(line_index=1, line_info_index=0),
-        # 4:  Frag.item(line_index=1, line_info_index=1),
-        # 5:  Frag.item(line_index=1, line_info_index=2),
-
-        6:  Frag.item(),
+        3:  Frag.item(),
         7:  Frag.item(),
         8:  Frag.item(),
-        11:  Frag.item(),
+        9:  Frag.item(),
         12:  Frag.item(),
         13:  Frag.item(),
         14:  Frag.item(),
-        18:  Frag.item(),
+        15:  Frag.item(),
         19:  Frag.item(),
         20:  Frag.item(),
+        21:  Frag.item(),
         })
-    def arrange(self, **kwargs):
-        super().arrange(**kwargs)
-        self.segments[0].tag("(", "-", "mf", "!","<", ">", ")", "Oh no!")
 
     slurs = ID({
-        0:("(",),
-        1:(")",),
-        6:("(",),
-        7:(")",),
-        11:("(",),
-        12:(")",),
-        18:("(",),
-        19:(")",),
+        1:("(",),
+        2:(")",),
+        7:("(",),
+        8:(")",),
+        12:("(",),
+        13:(")",),
+        19:("(",),
+        20:(")",),
     })
     articulations=ID({
-        2:(".",),
-        8:(".",),
-        13:("-",),
-        14:(".",),
-        20:(".",),
+        3:(".",),
+        9:(".",),
+        14:("-",),
+        15:(".",),
+        21:(".",),
         })
     dynamics=ID({
-            0:("mf",),
+            1:("mf",),
             })
-    show_info_indices=True
 
 class Trumpet2(Trumpet1):
     pass
 
-class Trombone1(machines.FragmentLine, machines.ArrangeAttachments, Line1):
+class Trombone1(machines.FragmentLine, Line1):
     fragments = Frag({
-        3 : Frag.item(),
-        4:  Frag.item(),
+        4 : Frag.item(),
         5:  Frag.item(),
+        6:  Frag.item(),
         })
     articulations=ID({
-        3:("-",),
         4:("-",),
-        5:(".",)
+        5:("-",),
+        6:(".",)
         })
     dynamics=ID({
-            3:("mf",),
+            4:("mf",),
             })
 
 class Trombone2(Trombone1):
     pass
 
-class Oboe1(machines.FragmentLine, machines.ArrangeAttachments, Line1):
+class Oboe1(machines.FragmentLine, Line1):
     fragments = Frag({
-        15: Frag.item(),
         16: Frag.item(),
         17: Frag.item(),
+        18: Frag.item(),
         })
 
-class Clarinet1(machines.FragmentLine, machines.ArrangeAttachments, Line3):
-    fragments = Frag.fill( range(0,7), lambda: Frag.item() )
-class Clarinet2(machines.FragmentLine, machines.ArrangeAttachments, Line4):
+class Clarinet1(machines.FragmentLine, Line3):
+    fragments = Frag.fill( range(1,8), lambda: Frag.item() )
+class Clarinet2(machines.FragmentLine, Line4):
     fragments = Frag({
-        0: Frag.item(attack_offset=-2, keep_attack=True),
-        1: Frag.item(),
+        1: Frag.item(attack_offset=-2, keep_attack=True),
         2: Frag.item(),
+        # 32: Frag.item(),
         })
 
-class ViolinI1(machines.FragmentLine, machines.ArrangeAttachments, Line2):
-    fragments = Frag.fill( range(0,27), lambda: Frag.item() )
+class ViolinI1(machines.FragmentLine, Line2):
+    fragments = Frag.fill( range(1,28), lambda: Frag.item() )
     show_info_indices=True
 
 class OrchestrationC(staves.CopperMusic, GenC):

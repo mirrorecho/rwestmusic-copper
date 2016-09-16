@@ -37,13 +37,14 @@
 # - (DONE) implement rests as positive values (with rest attribute) on logical ties
 # - (DONE) redo fragments machine
 # - (DONE) smart prevent dupes of certain kinds of attachments (e.g. dynamics)
-# ---------------------------- TUESDAY
-# - add to and refactor existing music
-# - - - section a orchestration
-# - - - many indices need +1
-# - - - pitch_times handled differently
-# - - - breaks are now absolute length, not relative
-# - - - easier attachments
+# - (DONE) add to and refactor existing music
+# - (DONE) - - section a orchestration
+# - (DONE) - - many indices need +1
+# - (DONE) - - pitch_times handled differently
+# - (DONE) - - breaks are now absolute length, not relative
+# - (DONE) - - easier attachments
+# - (DONE) clefs on short scores
+# ---------------------------- THURSDAY
 # - repeat/pulse machine
 # - start orchestrating gen d
 # - cross lines combining existing events
@@ -51,8 +52,8 @@
 # - add to and refactor existing music
 # - arrange harmony machine (including working into cross lines)
 # - arrange chords machine (for piano/harp and sometimes strings)
+# - verify ability to concat sections
 # - add to and refactor existing music
-# - clefs on short scores
 # - start gen f short score
 # - start orchestrating gen e
 # - start gen f draft short score
@@ -64,7 +65,7 @@
 # - start orchestrating gen h
 # - able to output a full score
 # - draft parts template
-# ---------------------------- WEDNESDAY
+# ---------------------------- FRIDAY
 # - tag attachments on individual abjad leaves? (some data structure on LogicalTieData?)
 # - mac (and maybe linux) midi playback... at least of short scores
 # - good draft of gen e short score
@@ -86,7 +87,6 @@
 # - plan out drone, and start better working into machines
 # - plan out cymbal, and start working better into machines
 # - good gen h draft short score
-# ---------------------------- THURSDAY
 # - get data by original depthwise index
 # - get_lilypond_file is being called twice on the bottom of orchestration files... fix
 # - review current short scores at piano and adjust
@@ -101,7 +101,8 @@
 # - good draft orchestration of gen h
 # - rehearsal markings
 # - keep relative durations as negative?
-# ---------------------------- FRIDAY
+# ---------------------------- SATURDAY
+# - (if time) - pulse machine that separates pulses into separate events (so that each pitch can be displaced)
 # - review printed score and mark up
 # - implement printed score markups (or add notes)
 # - games and boces? (only if time allows)
@@ -120,7 +121,8 @@
 # - review harp part (including pedal changes)
 # - review percussion part (non-timpani)
 # - review timpani part (including tunings)
-# ---------------------------- SATURDAY
+# - allow slices of data to be tagged
+# - errors should show class names / lines that throw them
 # - final draft: gen d orchestration!
 # - final draft: gen e orchestration!
 # - final draft: gen f orchestration!
@@ -155,6 +157,7 @@
 # - tital page
 
 # ---------------------------- IF TIME ALLOWS: 
+# - more readable indices (small font, all in a row)
 # - conisistency / plan for what's a class attribute and what's not
 # - - - maybe attachment stuff not, pitch/rhythm stuff is?
 # - better indices/colors
@@ -165,7 +168,8 @@
 # - - - (e.g. pitch displacement should be more isolated... not built into structure of EventData)
 # - phrases as layer above segments
 # - TaleaDrivenLine as a general case
-
+# - orchestrate first, then short score
+# - machines to be arbitrarily applied at logical_tie, event, segment, or phrase level
 
 
 import abjad

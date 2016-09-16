@@ -9,49 +9,49 @@ from copper.generations.gen_d import gen_d
 class LineGenE(object):
     metrical_durations = ID(default=((3,4),), limit=35)
     # metrical_durations = ( (3,4), ) * 35
-    # clef="bass" # TO DO... this doesn't work
+
 
 # -------------------------------------------------------------------------------------------------
 
 class Line1(LineGenE, gen_d.Line1):
     pitch_displacement = machines.FifthDisplacement()
-    pitch_displacement.cycle_fifth(1, cycle=(1,0,0,-1,-1,1), times=5)
-    pitch_displacement.cycle_fifth(30, cycle=(0,-1,-1,0,1,1), times=12)
-    pitch_times = 4
+    pitch_displacement.cycle_fifth(2, cycle=(1,0,0,-1,-1,1), times=5)
+    pitch_displacement.cycle_fifth(31, cycle=(0,-1,-1,0,1,1), times=12)
     rhythm_initial_silence = 24
-    rhythm_times = 3
+    rhythm_times = 4
 
 # -------------------------------------------------------------------------------------------------
 
 class Line2(LineGenE, gen_d.Line2):
     pitch_displacement = gen_d.Line2.pitch_displacement.copy()
-    pitch_displacement.flat(2,8)
+    pitch_displacement.flat(3,9)
     # pitch_displacement.up(22)
-    pitch_displacement.cycle_fifth(23, cycle=(1,1,0,-1,-1,0), times=12)
-    pitch_times = 5
-    rhythm_times = 3
+    pitch_displacement.cycle_fifth(24, cycle=(1,1,0,-1,-1,0), times=12)
+    rhythm_times = 5
     rhythm_initial_silence = 27
 
 # -------------------------------------------------------------------------------------------------
 
-class Line3(LineGenE, machines.ReversableRhythms, machines.ReversablePitches, gen_d.Line3):
-    pitch_displacement = machines.FifthDisplacement(up=(0,))
-    pitch_displacement.cycle_fifth(25, cycle=(-1,-1,1,1), times=2)
-    pitch_displacement.cycle_fifth(32, cycle=(-1,-1,0,1,0,1), times=4)
-    pitch_reverse = (3,5,12,14)
-    pitch_times = 2
-    rhythm_reverse = (0,1,2,3,5,6,7,9,10,11,12,14,15,16)
-    rhythm_multipliers = machines.rhythms.make_multipliers()
-    rhythm_multipliers.extend( (0.5,1,0.5,1,1,0.5,0.5,1,1) + (1,1,1,1,1,0.5,1,1,3) )
+class Line3(LineGenE, machines.RhythmsReverse, machines.PitchesReverse, gen_d.Line3):
+    pitch_displacement = machines.FifthDisplacement(up=(1,))
+    pitch_displacement.cycle_fifth(26, cycle=(-1,-1,1,1), times=2)
+    pitch_displacement.cycle_fifth(33, cycle=(-1,-1,0,1,0,1), times=4)
+    pitch_reverse = (4,6,13,15)
+
+    # TO DO... use better ID methods to populate these...
+    rhythm_reverse = (1,2,3,4,6,7,8,10,11,12,13,15,16,17)
+    rhythm_multipliers = machines.RhythmsMultiplied.make_multipliers(cyclic_start=1, cyclic=True)
+    rhythm_multipliers.extend( (1,) + (0.5,1,0.5,1,1,0.5,0.5,1,1) + (1,1,1,1,1,0.5,1,1,3) )
+    
     breaks = ID({ 
-                1:  -3,
-                3:  -3,
-                5:   6,
-                7:   1,
-                9:   6,
-                10:  1,
-                14:  2,
-                16:  1 
+                2:  -3,
+                4:  -3,
+                6:   3,
+                8:   1,
+                10:   6,
+                11:  1,
+                15:  1,
+                17:  1 
                 })
     rhythm_times = 2
     rhythm_initial_silence = 23
@@ -60,16 +60,19 @@ class Line3(LineGenE, machines.ReversableRhythms, machines.ReversablePitches, ge
 
 class Line4(Line3):
     pitch_displacement = machines.FifthDisplacement(
-                up      = (24,),
-                down    = (25,)
+                up      = (25,),
+                down    = (26,)
                 )
+    def update_data(self):
+        super().update_data()
+        self.logical_ties[0].tag("\clef bass")
 
 # -------------------------------------------------------------------------------------------------
 
 class Line5(Line4):
     pitch_displacement = machines.FifthDisplacement(
-                up      = (   28,     34,   37,  40,41,    46,     51,52),
-                down    = ( 27,  32,33,  36,  39,     43,45,  47,49)
+                up      = (   29,     35,   38,  41,42,    47,     52,53),
+                down    = ( 28,  33,34,  37,  40,     44,46,  48,50)
                 )
 
 # -------------------------------------------------------------------------------------------------
