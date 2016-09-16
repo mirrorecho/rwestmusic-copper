@@ -1,4 +1,4 @@
-% 2016-09-15 19:46
+% 2016-09-16 01:12
 
 \version "2.18.2"
 \language "english"
@@ -193,7 +193,10 @@
                         b8 ~ ] ^ \markup { 6 }
                         b2. )
                         r2.
-                        r2.
+                        g4 ( ^ \markup { 1 }
+                        f8 ) [ ^ \markup { 2 }
+                        e8 ] ( ^ \markup { 3 }
+                        c4 ) ^ \markup { 4 }
                         r2.
                         r2.
                         r2.

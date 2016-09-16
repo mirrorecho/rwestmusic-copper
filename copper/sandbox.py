@@ -46,15 +46,14 @@
 # - (DONE) clefs on short scores
 # - (DONE) repeat/pulse machine
 # - (DONE) start orchestrating gen d
-# ---------------------------- THURSDAY
-# - cross lines combining existing events
-# - cross lines using rhythm overlay
-# - add to and refactor existing music
-# - arrange harmony machine (including working into cross lines)
+# - (DONE) cross lines combining existing events
+# - (DONE) add to and refactor existing music
 # ---------------------------- FRIDAY
+# - arrange harmony machine (including working into cross lines)
 # - arrange chords machine (for piano/harp and sometimes strings)
 # - verify ability to concat sections
 # - add to and refactor existing music
+# ------- 11:00 AM!!!!!
 # - start gen f short score
 # - start orchestrating gen e
 # - start gen f draft short score
@@ -67,6 +66,7 @@
 # - able to output a full score
 # - draft parts template
 # - tag attachments on individual abjad leaves? (some data structure on LogicalTieData?)
+# ------- 2:00 PM!!!!!
 # - mac (and maybe linux) midi playback... at least of short scores
 # - good draft of gen e short score
 # - review current short scores at piano and adjust
@@ -78,14 +78,15 @@
 # - more orchestrating gen f
 # - more orchestrating gen g
 # - more orchestrating gen h
+# ------- 6:00 PM!!!!!
 # - good draft gen f short score
 # - better way / machine(s) to tag spanners
 # - good draft gen g short score
-# - dynamics machines, especially with holds
 # - think of gen d in 8th note rhythm_denominator
 # - rhythms with metric modulations
 # - plan out drone, and start better working into machines
 # - plan out cymbal, and start working better into machines
+# ------- 9:00 PM!!!!!
 # - good gen h draft short score
 # - get data by original depthwise index
 # - get_lilypond_file is being called twice on the bottom of orchestration files... fix
@@ -93,16 +94,18 @@
 # - good draft orchestration of gen b
 # - good draft orchestration of gen c
 # - multimeasure rest generator
+# ------- MIDNIGHT !!!!!
 # - good draft orchestration of gen d
 # - good draft orchestration of gen e
 # - tempo markings
 # - good draft orchestration of gen f
 # - good draft orchestration of gen g
 # - good draft orchestration of gen h
-# - keep relative durations as negative?
+# - (if time) cross lines using rhythm overlay
+# - (if time) - pulse machine that separates pulses into separate events (so that each pitch can be displaced)
 # ---------------------------- SATURDAY
 # - rehearsal markings
-# - (if time) - pulse machine that separates pulses into separate events (so that each pitch can be displaced)
+# - dynamics machines, especially with holds
 # - review printed score and mark up
 # - implement printed score markups (or add notes)
 # - games and boces? (only if time allows)
@@ -157,6 +160,7 @@
 # - tital page
 
 # ---------------------------- IF TIME ALLOWS: 
+# - keep relative durations as negative?
 # - more readable indices (small font, all in a row)
 # - conisistency / plan for what's a class attribute and what's not
 # - - - maybe attachment stuff not, pitch/rhythm stuff is?

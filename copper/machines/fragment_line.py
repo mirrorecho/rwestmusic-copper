@@ -37,12 +37,19 @@ class FragmentLine(object):
         # this gets another new segment for appending all the new events to:
         fragments_segment = new_data.branch()
 
-        for i, fragment in self.fragments.non_default_items(): 
+        def get_event_fragment(index,fragment):
+            index = getattr(fragment, "from_index", None) or index
+            if hasattr(self, "lines"):
+                my_line = self.lines[getattr(fragment, "line", 0)] or self
+            else:
+                my_line = self
+            my_event = my_line.events[index]
+            return(my_event.first_non_rest.ticks_before, index, my_event, fragment)
+
+        sorted_events_fragments = sorted( [ get_event_fragment(i,f) for i,f in self.fragments.non_default_items() ] )
+
+        for ticks_before, i, original_event, fragment in sorted_events_fragments: 
             # TO DO... incorporate multiple lines here... e.g. ...
-            # if self.lines:
-            #     original_event = ...
-            # print(i)
-            original_event = self.events[i]
 
             new_event = original_event.copy()
             # new_event = fragments_segment.branch()
@@ -54,7 +61,7 @@ class FragmentLine(object):
             attack_offset_ticks = int(fragment.attack_offset*self.rhythm_default_multiplier)
 
             # # # GOING BACK TO THE PREVIOUS EVENT AND RESET TICKS SO THAT THIS EVENT FALLS IN THE RIGHT PLACE
-            ticks_gap = original_event.first_non_rest.ticks_before - previous_event.ticks_after + attack_offset_ticks
+            ticks_gap = ticks_before - previous_event.ticks_after + attack_offset_ticks
             # print("GAP:%s" % (ticks_gap / 8) )
 
             # print("PREVIOUS TICKS:%s" % (previous_event.ticks / 8) )

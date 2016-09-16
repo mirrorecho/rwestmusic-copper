@@ -17,13 +17,24 @@ class Oboe2(machines.FragmentLine, Line1):
         machines.AttachmentTagData.span_every("(", self.events[1:10],3)
 
 class Bassoon1(machines.FragmentLine, Line2):
+    lines=ID({
+        1:Line1(),
+        2:Line2(),
+        3:Line3()
+        })
     fragments = Frag.fill(range(1,7), lambda: machines.FragmentInfo() ) # TO DO... this is long and nasty
+    fragments += Frag({
+        1000: Frag.item(line=3, from_index=1),
+        2000: Frag.item(line=3, from_index=2),
+        3000: Frag.item(line=3, from_index=3),
+        4000: Frag.item(line=3, from_index=4, duration=1)
+        })
     fragments[6].duration = 3.5
     
     def update_data(self):
         super().update_data()
         self.segments[1].tag("mf")
-        machines.AttachmentTagData.span_every("(", self.events[1:7])
+        machines.AttachmentTagData.span_every("(", self.events[1:11])
 
 class Bassoon2(machines.FragmentLine, Line2):
     fragments = Frag.fill(range(7,13), lambda: machines.FragmentInfo() )

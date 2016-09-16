@@ -26,11 +26,36 @@ class Line2(Line1):
             up =    (2,15,17,22,25),
             down =  ( 3, 16,21) 
             )
-    # class NewData:
-    #     pitch_displacement = machines.FifthDisplacement(
-    #             up =    (1,14,16,21,24),
-    #             down =  ( 2, 15,20) 
-    #             )
+
+# FOR TESTING FRAGMENTS ONLY:
+# Frag = machines.Fragments
+# class Line3(
+#             Line1,
+#             machines.FragmentLine,
+#             # machines.RhythmsPulsed,
+#             # machines.PitchesReverse,
+#             # machines.RhythmsReverse,
+#             # machines.RhythmsBroken, 
+#             # machines.RhythmsMultiplied, 
+#             machines.ArrangeAttachments,
+#             machines.Pitches, 
+#             machines.Rhythms, 
+#             machines.SegmentedLine
+#             ):
+#     lines = ID({
+#         0:Line1(),
+#         1:Line2(),
+#         })
+#     fragments = Frag({
+#         2:Frag.item(),
+#         3:Frag.item(),
+#         4:Frag.item(),
+#         5:Frag.item(),
+#         6:Frag.item(), 
+#         6000:Frag.item(line=1, from_index=6), # TO DO... rethink this (the re-indexing part is really screwy, but at least it works for now)
+#         9:Frag.item(),
+#         })
+#     # show_data_attr="depthwise_index" # TO DO... why does this create dupe indices?
 
 
 # -------------------------------------------------------------------------------------------------
@@ -38,6 +63,7 @@ class Line2(Line1):
 class GenA(gen_0.Gen0):
     line1 = Line1()
     line2 = Line2()
+    # line3 = Line3() # FOR TESTING ONLY
 
 # -------------------------------------------------------------------------------------------------
 
