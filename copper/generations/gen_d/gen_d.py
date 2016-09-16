@@ -43,7 +43,21 @@ class Line2(HarmonyLineGenD, gen_c.Line2):
 # -------------------------------------------------------------------------------------------------
 
 class Line3(gen_c.Line3):
-    pass
+    metrical_durations = ID(default=((3,8),(3,8),(3,8),), limit=24)
+    rhythm_multipliers = machines.RhythmsMultiplied.make_multipliers(cyclic_start=1, cyclic=True)
+    rhythm_multipliers.extend( (1,) + (0.5,1,0.5,1,1,0.5,0.5,1,1) + (1,1,1,1,1,0.5,1,1,3) )
+    rhythm_times = 1
+    
+    breaks = ID({ 
+                2:  -3,
+                4:  -3,
+                6:   3,
+                8:   1,
+                10:   6,
+                11:  1,
+                15:  1,
+                17:  1 
+                })
 
 # -------------------------------------------------------------------------------------------------
 
@@ -77,7 +91,7 @@ class GenD(bubbles.GridStart): #  TO DO...? should all jen bubbles inherit from 
     time_signature = (9,8)
     line1 = Line1()
     line2 = Line2()
-    # line3 = bubbles.Line("R1*3") + Line3() + bubbles.Line("r2 R1*3")
+    line3 = Line3()
     # line4 = bubbles.Line("R1*3") + Line4() + bubbles.Line("r2 R1*3")
     line5 = Line5() 
 

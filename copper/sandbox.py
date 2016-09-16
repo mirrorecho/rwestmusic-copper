@@ -44,13 +44,14 @@
 # - (DONE) - - breaks are now absolute length, not relative
 # - (DONE) - - easier attachments
 # - (DONE) clefs on short scores
+# - (DONE) repeat/pulse machine
+# - (DONE) start orchestrating gen d
 # ---------------------------- THURSDAY
-# - repeat/pulse machine
-# - start orchestrating gen d
 # - cross lines combining existing events
 # - cross lines using rhythm overlay
 # - add to and refactor existing music
 # - arrange harmony machine (including working into cross lines)
+# ---------------------------- FRIDAY
 # - arrange chords machine (for piano/harp and sometimes strings)
 # - verify ability to concat sections
 # - add to and refactor existing music
@@ -65,7 +66,6 @@
 # - start orchestrating gen h
 # - able to output a full score
 # - draft parts template
-# ---------------------------- FRIDAY
 # - tag attachments on individual abjad leaves? (some data structure on LogicalTieData?)
 # - mac (and maybe linux) midi playback... at least of short scores
 # - good draft of gen e short score
@@ -99,9 +99,9 @@
 # - good draft orchestration of gen f
 # - good draft orchestration of gen g
 # - good draft orchestration of gen h
-# - rehearsal markings
 # - keep relative durations as negative?
 # ---------------------------- SATURDAY
+# - rehearsal markings
 # - (if time) - pulse machine that separates pulses into separate events (so that each pitch can be displaced)
 # - review printed score and mark up
 # - implement printed score markups (or add notes)

@@ -40,21 +40,8 @@ class Line3(LineGenE, machines.RhythmsReverse, machines.PitchesReverse, gen_d.Li
 
     # TO DO... use better ID methods to populate these...
     rhythm_reverse = (1,2,3,4,6,7,8,10,11,12,13,15,16,17)
-    rhythm_multipliers = machines.RhythmsMultiplied.make_multipliers(cyclic_start=1, cyclic=True)
-    rhythm_multipliers.extend( (1,) + (0.5,1,0.5,1,1,0.5,0.5,1,1) + (1,1,1,1,1,0.5,1,1,3) )
-    
-    breaks = ID({ 
-                2:  -3,
-                4:  -3,
-                6:   3,
-                8:   1,
-                10:   6,
-                11:  1,
-                15:  1,
-                17:  1 
-                })
-    rhythm_times = 2
     rhythm_initial_silence = 23
+    rhythm_times = 1
 
 # -------------------------------------------------------------------------------------------------
 

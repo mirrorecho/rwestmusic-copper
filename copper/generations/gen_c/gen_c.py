@@ -101,7 +101,6 @@ class GenC(gen_b.GenB): #  TO DO...? should all jen bubbles inherit from GridSta
     time_signature = (4,4)
     line1 = Line1()
     line2 = Line2()
-    # line2A = Line2Fragment() # just a test
     line3 = Line3()
     line4 = Line4()
 
