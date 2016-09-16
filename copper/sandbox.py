@@ -48,12 +48,11 @@
 # - (DONE) start orchestrating gen d
 # - (DONE) cross lines combining existing events
 # - (DONE) add to and refactor existing music
+# - (DONE) arrange harmony machine (including working into cross lines)
+# - (DONE) arrange chords machine (for piano/harp and sometimes strings)
 # ---------------------------- FRIDAY
-# - arrange harmony machine (including working into cross lines)
-# - arrange chords machine (for piano/harp and sometimes strings)
 # - verify ability to concat sections
 # - add to and refactor existing music
-# ------- 11:00 AM!!!!!
 # - start gen f short score
 # - start orchestrating gen e
 # - start gen f draft short score
@@ -64,9 +63,9 @@
 # - start gen h draft short score
 # - start orchestrating gen h
 # - able to output a full score
+# ------- 6:00 PM!!!!!
 # - draft parts template
 # - tag attachments on individual abjad leaves? (some data structure on LogicalTieData?)
-# ------- 2:00 PM!!!!!
 # - mac (and maybe linux) midi playback... at least of short scores
 # - good draft of gen e short score
 # - review current short scores at piano and adjust
@@ -78,7 +77,7 @@
 # - more orchestrating gen f
 # - more orchestrating gen g
 # - more orchestrating gen h
-# ------- 6:00 PM!!!!!
+# ------- 8:00 PM!!!!!
 # - good draft gen f short score
 # - better way / machine(s) to tag spanners
 # - good draft gen g short score
@@ -86,7 +85,7 @@
 # - rhythms with metric modulations
 # - plan out drone, and start better working into machines
 # - plan out cymbal, and start working better into machines
-# ------- 9:00 PM!!!!!
+# ------- 9:30 PM!!!!!
 # - good gen h draft short score
 # - get data by original depthwise index
 # - get_lilypond_file is being called twice on the bottom of orchestration files... fix
@@ -101,7 +100,7 @@
 # - good draft orchestration of gen f
 # - good draft orchestration of gen g
 # - good draft orchestration of gen h
-# - (if time) cross lines using rhythm overlay
+# - (if time) cross lines using rhythm overlay (including mixing together into chords)
 # - (if time) - pulse machine that separates pulses into separate events (so that each pitch can be displaced)
 # ---------------------------- SATURDAY
 # - rehearsal markings

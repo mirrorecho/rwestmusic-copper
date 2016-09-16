@@ -1,4 +1,4 @@
-% 2016-09-15 23:39
+% 2016-09-16 14:40
 
 \version "2.18.2"
 \language "english"
@@ -19,20 +19,21 @@
                 \time 9/8
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                r1
-                r8
-                r1
-                r8
-                r1
-                r8
-                r1
-                r8
-                r1
-                r8
+                r2.
+                r4.
+                r2.
+                r4.
+                r2.
+                r4.
+                r2.
+                r4.
+                r2.
+                r4.
                 <d' g' cs''>2.
                 <e a d'>4.
                 <d' g' cs''>4.
-                r2.
+                r4.
+                r4.
                 r2.
                 <b e' g'>4. ~
                 <b e' g'>4.
@@ -43,37 +44,40 @@
                 <a' d'' gs''>4.
                 <b e' a'>4.
                 <e' d'' gs''>4.
-                <b g' e''>1 ~
-                <b g' e''>8
+                <b g' e''>2. ~
+                <b g' e''>4.
                 <d' b' gs''>4.
                 <b g' e''>4.
-                <e' fs' g'>4.
-                <e' fs' g'>4.
-                <fs' g' a'>4.
-                r4.
-                r4.
-                <fs' g' a'>2. ~
-                <fs' g' a'>2.
-                <d' e' fs'>4.
-                <e' fs' g'>4.
-                r2.
-                r2.
-                <d' g' cs''>4. ~
-                <d' g' cs''>4.
-                <e a d'>4.
-                <d' g' cs''>4.
-                <b e' g'>2.
-                <d c' fs'>4.
-                <b g' e''>4.
-                <a' d'' gs''>4.
-                <b e' a'>4.
                 <e' d'' gs''>4.
+                <b g' b'>4.
+                <a' d'' gs''>4.
+                r4.
+                r4.
+                <b g' e''>4. ~
+                <b g' e''>4. ~
                 <b g' e''>2.
                 <d' b' gs''>4.
-                <b g' e''>4.
+                <b g' b'>4.
                 r4.
-                r1
-                r8
+                r4.
+                r2.
+                <fs' g' a'>4. ~
+                <fs' g' a'>4.
+                <d' e' fs'>4.
+                <fs' g' a'>4.
+                <e' fs' g'>2.
+                <e' fs' g'>4.
+                <fs' g' a'>4.
+                <fs' g' a'>4.
+                <d' e' fs'>4.
+                <e' fs' g'>4.
+                <fs' g' a'>4. ~
+                <fs' g' a'>4.
+                <d' e' fs'>4.
+                <fs' g' a'>4.
+                r4.
+                r2.
+                r4.
             }
         }
         \context Staff = "line2" {
@@ -84,60 +88,63 @@
                 \time 9/8
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                r1
-                r8
-                r1
-                r8
-                r1
-                r8
-                r1
-                r8
-                r1
-                r8
-                r1
-                r8
-                <d' g' cs''>2.
-                <e' fs' a'>4.
-                <a' d'' gs''>4.
-                <gs'' a'' cs'''>2.
-                <fs'' gs'' a''>4.
-                <gs'' a'' b''>4.
+                r2.
                 r4.
-                r1
-                r8
-                <gs'' a'' b''>2.
-                <fs' b' e''>4.
-                <b e' g'>4.
+                r2.
+                r4.
+                r2.
+                r4.
+                r2.
+                r4.
+                r2.
+                r4.
+                r2.
+                r4.
                 <d' g' cs''>2.
                 <e' fs' a'>4.
                 <a' d'' gs''>4.
+                <gs'' a'' cs'''>4. ~
                 <gs'' a'' cs'''>4.
                 <fs'' gs'' a''>4.
                 <gs'' a'' b''>4.
-                <gs'' a'' b''>4. ~
-                <gs'' a'' b''>1 ~
-                <gs'' a'' b''>8
-                <fs' b' e''>4.
-                <b e' g'>4.
-                <d' g' cs''>4. ~
-                <d' g' cs''>4.
-                <e' fs' a'>4.
-                <a' d'' gs''>4.
-                <gs'' a'' cs'''>2.
-                <fs'' gs'' a''>4.
-                <gs'' a'' b''>4.
-                <gs'' a'' b''>4.
-                <fs' b' e''>4.
-                <b e' g'>4.
+                r4.
                 r2.
-                r1
-                r8
-                r1
-                r8
-                r1
-                r8
-                r1
-                r8
+                r4.
+                <gs'' a'' b''>2.
+                <fs' b' e''>4.
+                <b e' g'>4.
+                <b c' d'>4. ~
+                <b c' d'>4.
+                <g a b>4.
+                <b c' d'>4.
+                <a b c'>4.
+                <a b c'>4.
+                <b c' d'>4.
+                <b c' d'>4. ~
+                <b c' d'>2. ~
+                <b c' d'>4.
+                <g a b>4.
+                <a b c'>4.
+                <b c' d'>4. ~
+                <b c' d'>4.
+                <g a b>4.
+                <b c' d'>4.
+                <a b c'>2.
+                <a b c'>4.
+                <b c' d'>4.
+                <b c' d'>4.
+                <g a b>4.
+                <a b c'>4.
+                r4.
+                r4.
+                r2.
+                r4.
+                r2.
+                r4.
+                r2.
+                r4.
+                r2.
+                r4.
             }
         }
         \context Staff = "line3" {

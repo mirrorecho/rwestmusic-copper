@@ -10,8 +10,11 @@ class FragmentInfo(machines.SetAttributeMixin):
     keep_attack = False # note, True only makes sense if attack_offset <0
     duration_before_next = None #set to extend note up to the next fragment note (with a rest of this length), overrides release_offset
     duration = None # set to fix to a specific duration, overrides both release_offset and duration_before_next
-    line_index = 0
-    line_info_index = None
+
+    from_index = None # overrides the index (allows same index to be used, especially for different lines)
+    line = 0
+    chord_positions = None # if fragment event is a chord, then set this to list/tuple to indicate indices to use (None will output full chord)
+
 
 class Fragments(machines.IndexedData):
     items_type=FragmentInfo
@@ -38,20 +41,31 @@ class FragmentLine(object):
         fragments_segment = new_data.branch()
 
         def get_event_fragment(index,fragment):
-            index = getattr(fragment, "from_index", None) or index
+            index = fragment.from_index or index
             if hasattr(self, "lines"):
-                my_line = self.lines[getattr(fragment, "line", 0)] or self
+                my_line = self.lines[fragment.line] or self
             else:
                 my_line = self
+            # if isinstance(my_event, machines.Harmony):
             my_event = my_line.events[index]
             return(my_event.first_non_rest.ticks_before, index, my_event, fragment)
 
         sorted_events_fragments = sorted( [ get_event_fragment(i,f) for i,f in self.fragments.non_default_items() ] )
 
         for ticks_before, i, original_event, fragment in sorted_events_fragments: 
-            # TO DO... incorporate multiple lines here... e.g. ...
 
             new_event = original_event.copy()
+            if isinstance(new_event.pitch, (list,tuple)) and fragment.chord_positions:
+                # if fragment uses only 1 chord position, then change pitch material to single values
+                if len(fragment.chord_positions) == 1:
+                    new_event.pitch = new_event.pitch[fragment.chord_positions[0]]
+                # otherwise, update the chord positions:
+                else:
+                    pitches = []
+                    for c in fragment.chord_positions:
+                        pitches += [ new_event.pitch[c] ]
+                    new_event.pitch = sorted( pitches ) # always sort chord pitches so that chord positions consistent
+
             # new_event = fragments_segment.branch()
             # new_event.branch(ticks=8)
             fragments_segment.append(new_event)

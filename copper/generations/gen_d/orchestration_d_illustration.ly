@@ -1,4 +1,4 @@
-% 2016-09-16 00:46
+% 2016-09-16 15:02
 
 \version "2.18.2"
 \language "english"
@@ -294,7 +294,57 @@
                         \time 9/8
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 27
+                        r2.
+                        r4.
+                        r2.
+                        r4.
+                        r2.
+                        r4.
+                        r2.
+                        r4.
+                        r2.
+                        r8
+                        cs''4 \mp \< ^ \markup { 1 }
+                        cs''2.
+                        d'4. ^ \markup { 2 }
+                        cs''4. ^ \markup { 3 }
+                        r4.
+                        <e' fs'>4. \ff ^ \markup { 2 }
+                        r2.
+                        <b e' g'>4. ~ ^ \markup { 4 }
+                        <b e' g'>4.
+                        r4.
+                        r4.
+                        r2.
+                        r4.
+                        r2.
+                        r4.
+                        r2.
+                        r4.
+                        r2.
+                        r4.
+                        r2.
+                        r4.
+                        r2.
+                        r4.
+                        r2.
+                        r4.
+                        r2.
+                        r4.
+                        r2.
+                        r4.
+                        r2.
+                        r4.
+                        r2.
+                        r4.
+                        r2.
+                        r4.
+                        r2.
+                        r4.
+                        r2.
+                        r4.
+                        r2.
+                        r4.
                     }
                 }
                 \new Staff {
@@ -369,8 +419,8 @@
                             ^ \markup {
                                 \column
                                     {
-                                        _
                                         1
+                                        _
                                     }
                                 }
                         d'8 ~ ^ \markup { _ }
@@ -464,8 +514,8 @@
                             ^ \markup {
                                 \column
                                     {
-                                        _
                                         1
+                                        _
                                     }
                                 }
                         d'8 ~ ^ \markup { _ }
@@ -579,61 +629,65 @@
                     \time 9/8
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    r1
-                    r8
-                    r1
-                    r8
-                    r1
-                    r8
-                    r1
-                    r8
-                    r1
-                    r8
-                    <d' g' cs''>2.
-                    <e a d'>4.
-                    <d' g' cs''>4.
                     r2.
+                    r4.
                     r2.
-                    <b e' g'>4. ~
+                    r4.
+                    r2.
+                    r4.
+                    r2.
+                    r4.
+                    r2.
+                    r4.
+                    <d' g' cs''>2. ^ \markup { 1 }
+                    <e a d'>4. ^ \markup { 2 }
+                    <d' g' cs''>4. ^ \markup { 3 }
+                    r4.
+                    r4.
+                    r2.
+                    <b e' g'>4. ~ ^ \markup { 4 }
                     <b e' g'>4.
-                    <d c' fs'>4.
-                    <b g' e''>4.
+                    <d c' fs'>4. ^ \markup { 5 }
+                    <b g' e''>4. ^ \markup { 6 }
                     r2.
-                    <a' d'' gs''>4. ~
+                    <a' d'' gs''>4. ~ ^ \markup { 7 }
                     <a' d'' gs''>4.
-                    <b e' a'>4.
-                    <e' d'' gs''>4.
-                    <b g' e''>1 ~
-                    <b g' e''>8
-                    <d' b' gs''>4.
+                    <b e' a'>4. ^ \markup { 8 }
+                    <e' d'' gs''>4. ^ \markup { 9 }
+                    <b g' e''>2. ~ ^ \markup { 10 }
                     <b g' e''>4.
-                    <e' fs' g'>4.
-                    <e' fs' g'>4.
-                    <fs' g' a'>4.
+                    <d' b' gs''>4. ^ \markup { 11 }
+                    <b g' e''>4. ^ \markup { 12 }
+                    <e' d'' gs''>4. ^ \markup { 13 }
+                    <b g' b'>4. ^ \markup { 14 }
+                    <a' d'' gs''>4. ^ \markup { 15 }
                     r4.
                     r4.
-                    <fs' g' a'>2. ~
-                    <fs' g' a'>2.
-                    <d' e' fs'>4.
-                    <e' fs' g'>4.
-                    r2.
-                    r2.
-                    <d' g' cs''>4. ~
-                    <d' g' cs''>4.
-                    <e a d'>4.
-                    <d' g' cs''>4.
-                    <b e' g'>2.
-                    <d c' fs'>4.
-                    <b g' e''>4.
-                    <a' d'' gs''>4.
-                    <b e' a'>4.
-                    <e' d'' gs''>4.
+                    <b g' e''>4. ~ ^ \markup { 16 }
+                    <b g' e''>4. ~
                     <b g' e''>2.
-                    <d' b' gs''>4.
-                    <b g' e''>4.
+                    <d' b' gs''>4. ^ \markup { 17 }
+                    <b g' b'>4. ^ \markup { 18 }
                     r4.
-                    r1
-                    r8
+                    r4.
+                    r2.
+                    <fs' g' a'>4. ~ ^ \markup { 19 }
+                    <fs' g' a'>4.
+                    <d' e' fs'>4. ^ \markup { 20 }
+                    <fs' g' a'>4. ^ \markup { 21 }
+                    <e' fs' g'>2. ^ \markup { 22 }
+                    <e' fs' g'>4. ^ \markup { 23 }
+                    <fs' g' a'>4. ^ \markup { 24 }
+                    <fs' g' a'>4. ^ \markup { 25 }
+                    <d' e' fs'>4. ^ \markup { 26 }
+                    <e' fs' g'>4. ^ \markup { 27 }
+                    <fs' g' a'>4. ~ ^ \markup { 28 }
+                    <fs' g' a'>4.
+                    <d' e' fs'>4. ^ \markup { 29 }
+                    <fs' g' a'>4. ^ \markup { 30 }
+                    r4.
+                    r2.
+                    r4.
                 }
             }
             \new Staff {
@@ -644,60 +698,63 @@
                     \time 9/8
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    r1
-                    r8
-                    r1
-                    r8
-                    r1
-                    r8
-                    r1
-                    r8
-                    r1
-                    r8
-                    r1
-                    r8
-                    <d' g' cs''>2.
-                    <e' fs' a'>4.
-                    <a' d'' gs''>4.
-                    <gs'' a'' cs'''>2.
-                    <fs'' gs'' a''>4.
-                    <gs'' a'' b''>4.
-                    r4.
-                    r1
-                    r8
-                    <gs'' a'' b''>2.
-                    <fs' b' e''>4.
-                    <b e' g'>4.
-                    <d' g' cs''>2.
-                    <e' fs' a'>4.
-                    <a' d'' gs''>4.
-                    <gs'' a'' cs'''>4.
-                    <fs'' gs'' a''>4.
-                    <gs'' a'' b''>4.
-                    <gs'' a'' b''>4. ~
-                    <gs'' a'' b''>1 ~
-                    <gs'' a'' b''>8
-                    <fs' b' e''>4.
-                    <b e' g'>4.
-                    <d' g' cs''>4. ~
-                    <d' g' cs''>4.
-                    <e' fs' a'>4.
-                    <a' d'' gs''>4.
-                    <gs'' a'' cs'''>2.
-                    <fs'' gs'' a''>4.
-                    <gs'' a'' b''>4.
-                    <gs'' a'' b''>4.
-                    <fs' b' e''>4.
-                    <b e' g'>4.
                     r2.
-                    r1
-                    r8
-                    r1
-                    r8
-                    r1
-                    r8
-                    r1
-                    r8
+                    r4.
+                    r2.
+                    r4.
+                    r2.
+                    r4.
+                    r2.
+                    r4.
+                    r2.
+                    r4.
+                    r2.
+                    r4.
+                    <d' g' cs''>2. ^ \markup { 1 }
+                    <e' fs' a'>4. ^ \markup { 2 }
+                    <a' d'' gs''>4. ^ \markup { 3 }
+                    <gs'' a'' cs'''>4. ~ ^ \markup { 4 }
+                    <gs'' a'' cs'''>4.
+                    <fs'' gs'' a''>4. ^ \markup { 5 }
+                    <gs'' a'' b''>4. ^ \markup { 6 }
+                    r4.
+                    r2.
+                    r4.
+                    <gs'' a'' b''>2. ^ \markup { 7 }
+                    <fs' b' e''>4. ^ \markup { 8 }
+                    <b e' g'>4. ^ \markup { 9 }
+                    <b c' d'>4. ~ ^ \markup { 10 }
+                    <b c' d'>4.
+                    <g a b>4. ^ \markup { 11 }
+                    <b c' d'>4. ^ \markup { 12 }
+                    <a b c'>4. ^ \markup { 13 }
+                    <a b c'>4. ^ \markup { 14 }
+                    <b c' d'>4. ^ \markup { 15 }
+                    <b c' d'>4. ~ ^ \markup { 16 }
+                    <b c' d'>2. ~
+                    <b c' d'>4.
+                    <g a b>4. ^ \markup { 17 }
+                    <a b c'>4. ^ \markup { 18 }
+                    <b c' d'>4. ~ ^ \markup { 19 }
+                    <b c' d'>4.
+                    <g a b>4. ^ \markup { 20 }
+                    <b c' d'>4. ^ \markup { 21 }
+                    <a b c'>2. ^ \markup { 22 }
+                    <a b c'>4. ^ \markup { 23 }
+                    <b c' d'>4. ^ \markup { 24 }
+                    <b c' d'>4. ^ \markup { 25 }
+                    <g a b>4. ^ \markup { 26 }
+                    <a b c'>4. ^ \markup { 27 }
+                    r4.
+                    r4.
+                    r2.
+                    r4.
+                    r2.
+                    r4.
+                    r2.
+                    r4.
+                    r2.
+                    r4.
                 }
             }
             \new Staff {

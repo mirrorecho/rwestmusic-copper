@@ -197,7 +197,6 @@ class ArrangeAttachments(object):
     # TO DO... maybe this method should be a part of the base SegmentedLine, and only deal with the actual attachments here
     def process_logical_tie(self, music, music_logical_tie, data_logical_tie, music_leaf_index, **kwargs):
         super().process_logical_tie(music, music_logical_tie, data_logical_tie, music_leaf_index, **kwargs)
-        
         # attachments = data_logical_tie.get_all_attachments()
 
         # loop through attachments to close open spanners
@@ -221,7 +220,7 @@ class ArrangeAttachments(object):
             else:
                 attachment = data_logical_tie.get_attachment(attachment_name)
                 if attachment:
-                    abjad.attach(attachment, music_logical_tie[0])
+                    abjad.attach(attachment, music[music_leaf_index])
             # print(attachment_name)
         # print("-------------------------------------------------")
             

@@ -45,11 +45,10 @@ class ParentAttachmentTagData(machines.AttachmentTagData, machines.Tree):
         return self.ticks_before + self.ticks
 
 class EventData(ParentAttachmentTagData):
-    pitch_original = 0
-    pitch_displacement_sum = 0
-    pitch_displacement_cumulative = 0
+    pitch = 0 # note, this could be set to a list/tuple to indicate
+    original_pitch = 0 # just a way to track what's going on if pitch is transposed
     children_type = LogicalTieData
-
+    
     @property
     def first_non_rest(self):
         for l in self.children:
@@ -64,8 +63,6 @@ class EventData(ParentAttachmentTagData):
             if self.children[-1].rest:
                 self.pop(-1)
 
-    def get_pitch(self):
-        return self.pitch_original + self.pitch_displacement_cumulative
 
 class SegmentData(ParentAttachmentTagData):
     pitch_segment = None

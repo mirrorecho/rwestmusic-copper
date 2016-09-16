@@ -7,7 +7,7 @@ from copper.machines import IndexedData as ID, ID1 # just to avoid a lot of typi
 from copper.generations.gen_c import gen_c
 
 class HarmonyLineGenD(machines.Harmony):
-    metrical_durations = ID(default=((9,8),), limit=24)
+    metrical_durations = ID(default=((6,8),(3,8),), limit=24)
     rhythm_multipliers = machines.RhythmsMultiplied.make_multipliers(default=1.5)
 
 # -------------------------------------------------------------------------------------------------

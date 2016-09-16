@@ -7,6 +7,22 @@ from copper.generations.gen_d.gen_d import *
 from copper import staves
 
 Frag = machines.Fragments
+ID = machines.IndexedData
+
+class ViolinI1(machines.FragmentLine, Line1):
+    lines = ID({1:Line1(),2:Line2(),})
+
+    fragments = Frag({
+        1:Frag.item(attack_offset=-1, keep_attack=True, chord_positions=(-1,)),
+        2:Frag.item(chord_positions=(-1,)),
+        3:Frag.item(chord_positions=(-1,)),
+        3000: Frag.item(line=2, from_index=2, chord_positions=(0,1)),
+        4:Frag.item(),
+        })
+    def update_data(self):
+        super().update_data()
+        self.events[1].tag("mp","\<")
+        self.events[4].tag("ff")
 
 class Viola1(machines.FragmentLine, Line3):
     fragments = Frag({
@@ -40,7 +56,7 @@ class OrchestrationD(staves.CopperMusic, GenD):
     # bassoon1 = Bassoon1()
     # bassoon2 = Bassoon2()
     # tuba = Tuba()
-    # violinI1 = ViolinI1() 
+    violinI1 = ViolinI1() 
     # violinI2 = ViolinI2() 
     # violinII1 = ViolinII1() 
     # violinII2 = ViolinII2()

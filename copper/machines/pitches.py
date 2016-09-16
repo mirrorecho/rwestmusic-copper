@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+import copy
 
 import abjad
 from calliope import bubbles
@@ -15,7 +16,9 @@ class Pitches(object):
 
     def set_event(self, event, **kwargs):
         super().set_event(event, **kwargs)
-        event.pitch_original = event.parent.pitch_segment[event.my_index]
+        if event.parent.pitch_segment: # need to test for this because harmony wouldn't have set pitch segment on parent
+            event.original_pitch = event.parent.pitch_segment[event.my_index]
+            event.pitch = event.original_pitch
 
     def set_segment(self, segment, **kwargs):
         super().set_segment(segment, **kwargs)
@@ -25,8 +28,21 @@ class Pitches(object):
     def process_logical_tie(self, music, music_logical_tie, data_logical_tie, music_leaf_count, **kwargs):
         super().process_logical_tie(music, music_logical_tie, data_logical_tie, music_leaf_count, **kwargs)
         if not data_logical_tie.rest:
-            for note in music_logical_tie:
-                note.written_pitch = data_logical_tie.parent.get_pitch()
+            pitch = data_logical_tie.parent.pitch
+            if  isinstance(pitch, (list, tuple)):
+                # NOTE, decided to implement here (as opposed to in harmony machine), because want chords to be able to be implemented generally
+                for note in music_logical_tie:
+                    chord = abjad.Chord()
+                    chord.note_heads = pitch
+                    chord.written_duration = copy.deepcopy(note.written_duration)
+                    m = abjad.mutate([note])
+                    m.replace(chord)
+            elif isinstance(pitch, int):
+                for note in music_logical_tie:
+                    note.written_pitch = pitch
+            else:
+                self.warn("can't set pitch because '%s' is not int, list, or tuple" % pitch,  data_logical_tie )
+
 
     # TO DO... is this even needed or does base Line class handle it OK?
     def process_music(self, music, **kwargs):
