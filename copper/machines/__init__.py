@@ -14,6 +14,17 @@ from copper.machines.arrange_attachments import *
 from copper.machines.segmented_line import *
 from copper.machines.rhythms import *
 from copper.machines.pitches import *
+
+# TO DO... is maybe not the best place for this!!!!
+# minumum needed for any basic line with rhythms & pitches, with no special manipulations applied
+class PitchedLine(machines.ArrangeAttachments, machines.Pitches, machines.Rhythms, machines.SegmentedLine):
+    pass
+
+# minumum needed for any basic line with rhythms only, with no special manipulations applied
+class RhythmicLine(machines.ArrangeAttachments, machines.Rhythms, machines.SegmentedLine):
+    pass
+
+
 from copper.machines.pitches_displaced import *
 from copper.machines.rhythms_multiplied import *
 from copper.machines.rhythms_broken import *

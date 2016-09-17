@@ -13,7 +13,7 @@ from copper import staves
 # class Clarinet2(machines.FragmentLine, Line2):
 #     fragment_indices=(15, 17, 21, 22, 23 )
 
-KWARGS = {"keep_attack":True, "duration_before_next":0,}
+KWARGS = {"keep_attack":True, "before_next":0,}
 # DURATIONS = ID(None, ((1,1),), 18)
 Frag = machines.Fragments
 
@@ -38,8 +38,8 @@ class Clarinet1(machines.FragmentLine, Line1):
             }, 
             default=((1,1),), limit=18)
     fragments = Frag({
-            16 : Frag.item(attack_offset= -3, duration_before_next=0.5),
-            19 : Frag.item(attack_offset= -1.5, duration_before_next=0.5),
+            16 : Frag.item(attack_offset= -3, before_next=0.5),
+            19 : Frag.item(attack_offset= -1.5, before_next=0.5),
             22 : Frag.item(attack_offset= -1.5, duration=3.5),
             })
     def update_data(self):

@@ -8,8 +8,8 @@ class FragmentInfo(machines.SetAttributeMixin):
     attack_offset=0
     release_offset=0
     keep_attack = False # note, True only makes sense if attack_offset <0
-    duration_before_next = None #set to extend note up to the next fragment note (with a rest of this length), overrides release_offset
-    duration = None # set to fix to a specific duration, overrides both release_offset and duration_before_next
+    before_next = None #set to extend note up to the next fragment note (with a rest of this length), overrides release_offset
+    duration = None # set to fix to a specific duration, overrides both release_offset and before_next
 
     from_index = None # overrides the index (allows same index to be used, especially for different lines)
     line = 0
@@ -94,8 +94,8 @@ class FragmentLine(object):
             # DEALING WITH DURATION_BEFORE_NEXT ON PREVIOUS EVENT:
             # if previous event is being extended up until a specific duration before this one, then 
             # that duration becomes the ticks_gap, and previous note is extended
-            if previous_fragment and previous_fragment.duration_before_next is not None:
-                ticks_before = int(previous_fragment.duration_before_next * self.rhythm_default_multiplier)
+            if previous_fragment and previous_fragment.before_next is not None:
+                ticks_before = int(previous_fragment.before_next * self.rhythm_default_multiplier)
                 if ticks_gap >= ticks_before:
                     previous_event[-1].ticks += ticks_gap - ticks_before
                     ticks_gap = ticks_before

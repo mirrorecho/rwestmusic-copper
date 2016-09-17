@@ -18,21 +18,21 @@ class ViolinI1(machines.FragmentLine, Line1):
 
 
 # {
-#     0: (line=violin1, rhythm_offset=4, tie_to_original_attack=False, duration_before_next=0),
+#     0: (line=violin1, rhythm_offset=4, tie_to_original_attack=False, before_next=0),
 # }
 
 # v = Violin1()
-# violinI1.add_fragment(0, rhythm_offset=4, tie_to_original_attack=False, duration_before_next=0,)
-# violinII1.add_fragment(1, rhythm_offset=4, tie_to_original_attack=False, duration_before_next=0,)
-# viola1.add_fragment(2, rhythm_offset=4, tie_to_original_attack=False, duration_before_next=0,)
-# violin1.add_fragment(3, rhythm_offset=4, tie_to_original_attack=False, duration_before_next=0,)
-# violin1.add_fragment(7, rhythm_offset=4, tie_to_original_attack=False, duration_before_next=0,)
-# violin1.add_fragment(13, rhythm_offset=4, tie_to_original_attack=False, duration_before_next=0,)
-# violin1.add_fragment(16, rhythm_offset=4, tie_to_original_attack=False, duration_before_next=0,)
-# violin1.add_fragment(21, rhythm_offset=4, tie_to_original_attack=False, duration_before_next=0,)
-# violin1.add_fragment(25, rhythm_offset=4, tie_to_original_attack=False, duration_before_next=0,)
+# violinI1.add_fragment(0, rhythm_offset=4, tie_to_original_attack=False, before_next=0,)
+# violinII1.add_fragment(1, rhythm_offset=4, tie_to_original_attack=False, before_next=0,)
+# viola1.add_fragment(2, rhythm_offset=4, tie_to_original_attack=False, before_next=0,)
+# violin1.add_fragment(3, rhythm_offset=4, tie_to_original_attack=False, before_next=0,)
+# violin1.add_fragment(7, rhythm_offset=4, tie_to_original_attack=False, before_next=0,)
+# violin1.add_fragment(13, rhythm_offset=4, tie_to_original_attack=False, before_next=0,)
+# violin1.add_fragment(16, rhythm_offset=4, tie_to_original_attack=False, before_next=0,)
+# violin1.add_fragment(21, rhythm_offset=4, tie_to_original_attack=False, before_next=0,)
+# violin1.add_fragment(25, rhythm_offset=4, tie_to_original_attack=False, before_next=0,)
 
-KWARGS = {"tie_to_original_attack":False, "duration_before_next":0,}
+KWARGS = {"tie_to_original_attack":False, "before_next":0,}
 DURATIONS = ID(None, ((1,1),), 18)
 F = machines.Fragments
 # Fragments = ClassedID(machines.FragmentInfo)
@@ -69,7 +69,7 @@ class ViolinI1(machines.FragmentLine, Line1):
     metrical_durations = ((1,1),)*11 + ((1,2),)*2 + ((1,1),)*6
     # def get_fragments(self):
     #     super().get_fragments()
-    #     self.add_fragment(25, rhythm_offset=4, tie_to_original_attack=False, duration_before_next=0,)
+    #     self.add_fragment(25, rhythm_offset=4, tie_to_original_attack=False, before_next=0,)
 
     fragment_indices=(
         0,      3,      7,      13,     16,     21,     25  )

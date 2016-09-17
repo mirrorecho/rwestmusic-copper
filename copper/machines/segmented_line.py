@@ -172,6 +172,7 @@ class SegmentedLine(bubbles.Line):
         self.process_music(my_music, **kwargs)
         return my_music
 
+
 # -------------------------------------------------------------------------------------------------
 
 

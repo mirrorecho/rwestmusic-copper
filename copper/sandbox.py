@@ -52,9 +52,9 @@
 # - (DONE) arrange chords machine (for piano/harp and sometimes strings)
 # - (DONE) verify ability to concat sections
 # - (DONE) add to and refactor existing music
-# ---------------------------- FRIDAY
-# - start gen f short score
-# - start orchestrating gen e
+# - (DONE) start gen f short score
+# - (DONE) start orchestrating gen e
+# ---------------------------- SATURDAY
 # - start gen f draft short score
 # - start orchestrating gen f
 # - start gen g draft short score
@@ -62,8 +62,8 @@
 # - draft score template
 # - start gen h draft short score
 # - start orchestrating gen h
+# ------ NOON !!!!!!!!!! --------------
 # - able to output a full score
-# ------- 11:00 PM!!!!!
 # - draft parts template
 # - tag attachments on individual abjad leaves? (some data structure on LogicalTieData?)
 # - mac (and maybe linux) midi playback... at least of short scores
@@ -77,7 +77,6 @@
 # - more orchestrating gen f
 # - more orchestrating gen g
 # - more orchestrating gen h
-# ---------------------------- SATURDAY
 # - good draft gen f short score
 # - better way / machine(s) to tag spanners
 # - good draft gen g short score
@@ -101,6 +100,7 @@
 # - (if time) cross lines using rhythm overlay (including mixing together into chords)
 # - (if time) - pulse machine that separates pulses into separate events (so that each pitch can be displaced)
 # - (if time) - tag to show any data attribute
+# - (if time) - smarter error handling
 # - rehearsal markings
 # - more dynamics machines, especially with holds
 # - review printed score and mark up
@@ -130,11 +130,11 @@
 # - final draft: gen h orchestration!
 # - review final draft of printed score and mark up
 # - implement final draft printed score markups (or add notes)
+# ---------------------------- SUNDAY
 # - initial review of all parts (everyone has something to do)
 # - adjust based on review of parts
 # - review of doublings (all OK... used effectively?)
 # - review of percussion instruments used
-# ---------------------------- SUNDAY
 # - verify all part transpositions (pic, english horn, clarinet/bass clarinet, horn, double bass)
 # - final score review!
 # - final review/edits of wind parts
@@ -171,6 +171,7 @@
 # - TaleaDrivenLine as a general case
 # - orchestrate first, then short score
 # - machines to be arbitrarily applied at logical_tie, event, segment, or phrase level
+# - project startup script
 
 
 import abjad
@@ -248,7 +249,7 @@ print( len(d1 & dynamics_inventory) )
 
 
 # my_dict = {
-#     0: (line=a, rhythm_offset=4, tie_to_original_attack=False, duration_before_next=0),
+#     0: (line=a, rhythm_offset=4, tie_to_original_attack=False, before_next=0),
 # }
 
 # l = [[1, 2, 3], [4, 5, 6], [7], [8, 9]]
