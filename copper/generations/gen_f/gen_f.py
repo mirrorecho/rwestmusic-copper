@@ -22,6 +22,7 @@ class LineGenF(object):
 class Line3(LineGenF, gen_e.Line4):
     # rhythm_reverse = list(gen_e.Line4.rhythm_reverse)
     # rhythm_reverse.remove(7)
+    show_data_type=machines.SegmentData
     pitch_displacement =  machines.FifthDisplacement(
             up=(     6,7,     16, 19,20, 22, 24, 26),
             down=(2,4,  8,9,12, 18,    21, 23, )
@@ -32,8 +33,18 @@ class Line3(LineGenF, gen_e.Line4):
             ) 
     breaks = gen_e.Line4.breaks + ID({
         1:1,
-        3:1
+        3:1,
+        10:-4,
+        11:0,
+        13:-1,
+        19:-2,
+        25:-1,
+        26:1,
         })
+    rhythm_times = 3
+    rhythm_multipliers = gen_e.Line4.rhythm_multipliers
+    rhythm_multipliers[18]=1
+
     def update_data(self):
         super().update_data()
         if self.__class__.__name__ == "Line3": # this helps restrict tags to short score only

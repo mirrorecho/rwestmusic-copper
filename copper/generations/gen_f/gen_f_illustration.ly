@@ -1,4 +1,4 @@
-% 2016-09-17 01:43
+% 2016-09-17 13:27
 
 \version "2.18.2"
 \language "english"
@@ -27,57 +27,99 @@
                 r1
                 r2.
                 d''8 [ ^ \markup { 1 }
-                f'8 ] ^ \markup { 2 }
-                e''2 ^ \markup { 3 }
-                f''4 ^ \markup { 4 }
-                g'4 ^ \markup { 5 }
-                e''2 ^ \markup { 6 }
+                f'8 ]
+                e''2
+                f''4 ^ \markup { 2 }
+                g'4
+                e''2
                 r2
                 r4
-                d''8 [ ^ \markup { 7 }
-                f'8 ] ^ \markup { 8 }
-                a'2 ^ \markup { 9 }
-                a'4 ^ \markup { 10 }
-                as'4 ^ \markup { 11 }
-                c''2 ^ \markup { 12 }
+                d''8 [ ^ \markup { 3 }
+                f'8 ]
+                a'2
+                a'4 ^ \markup { 4 }
+                as'4
+                c''2
                 r2.
-                c''4 ^ \markup { 13 }
-                ds''4 ^ \markup { 14 }
-                d''4 ^ \markup { 15 }
-                a'8 [ ^ \markup { 16 }
-                as'8 ] ^ \markup { 17 }
-                f''4 ~ ^ \markup { 18 }
+                c''4 ^ \markup { 5 }
+                ds''4
+                d''4
+                a'8 [ ^ \markup { 6 }
+                as'8 ]
+                f''4 ~
                 f''1
-                c''8 [ ^ \markup { 19 }
-                f''8 ] ^ \markup { 20 }
-                a''4 ^ \markup { 21 }
-                c''4 ^ \markup { 22 }
-                g'4 ^ \markup { 23 }
-                e''2. ^ \markup { 24 }
-                d''4 ^ \markup { 25 }
-                c''4 ^ \markup { 26 }
-                b'4 ^ \markup { 27 }
+                c''8 [ ^ \markup { 7 }
+                f''8 ]
+                a''4
+                c''4 ^ \markup { 8 }
+                g'4
+                e''2.
+                d''4 ^ \markup { 9 }
+                c''4
+                b'4
+                d''4 ^ \markup { 10 }
+                c''4
+                b'2
                 r2
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
+                r2
+                g'4 ^ \markup { 11 }
+                a'4
+                b'2
+                d''4 ^ \markup { 12 }
+                c''4
+                b'2
+                b'4 ^ \markup { 13 }
+                c''4
+                a'2
+                r4
+                a'4 ^ \markup { 14 }
+                c''4
+                b'4
+                b'8 [ ^ \markup { 15 }
+                c''8 ]
+                d''4 ~
+                d''2
+                d''4 ^ \markup { 16 }
+                c''4
+                b'2
+                g'4 ^ \markup { 17 }
+                a'4
+                b'2.
+                a'4 ^ \markup { 18 }
+                c''4
+                b'4
+                r2
+                d''2 ^ \markup { 19 }
+                c''4
+                b'4
+                g'2 ^ \markup { 20 }
+                a'4
+                b'4
+                d''2 ^ \markup { 21 }
+                c''4
+                b'4
+                a'2 ^ \markup { 22 }
+                c''4
+                b'4
+                a'4 ^ \markup { 23 }
+                c''4
+                b'4
+                d''4 ~ ^ \markup { 24 }
+                d''2.
+                c''4
+                b'4
+                r4
+                d''2 ^ \markup { 25 }
+                c''4
+                b'4
+                g'2 ~ ^ \markup { 26 }
+                g'4
+                a'4
+                b'4
+                a'4 ^ \markup { 27 }
+                c''4
+                b'4
+                r2
             }
         }
         \context Staff = "line4" {

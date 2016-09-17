@@ -54,15 +54,15 @@
 # - (DONE) add to and refactor existing music
 # - (DONE) start gen f short score
 # - (DONE) start orchestrating gen e
+# - (DONE) more getting going with gen f draft short score
 # ---------------------------- SATURDAY
-# - start gen f draft short score
 # - start orchestrating gen f
 # - start gen g draft short score
 # - start orchestrating gen g
 # - draft score template
-# - start gen h draft short score
-# - start orchestrating gen h
-# ------ NOON !!!!!!!!!! --------------
+# - (if time) start gen h draft short score
+# - (if time) start orchestrating gen h
+# ------ 4PM !!!!!!!!!! --------------
 # - able to output a full score
 # - draft parts template
 # - tag attachments on individual abjad leaves? (some data structure on LogicalTieData?)
