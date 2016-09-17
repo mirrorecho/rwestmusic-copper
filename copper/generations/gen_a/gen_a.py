@@ -10,7 +10,7 @@ from copper.generations.gen_0 import gen_0
 
 class Line1(machines.PitchesDisplaced, gen_0.Line1):
     metrical_durations = ID(default=((1,1),), limit=18)
-    rhythm_initial_silence=24
+    rhythm_initial_silence=24 # TO DO... this should be much shorter...! (14, not 24)... or maybe something else will go there?
     pitch_displacement = machines.FifthDisplacement(
             up =    (4,8,22),
             down =  ( 6,   24) 

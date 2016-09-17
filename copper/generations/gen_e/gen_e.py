@@ -52,7 +52,8 @@ class Line4(Line3):
                 )
     def update_data(self):
         super().update_data()
-        self.logical_ties[0].tag("\clef bass")
+        if self.__class__.__name__ == "Line4": # this helps restrict tags to short score only
+            self.events[0].tag("\clef bass")
 
 # -------------------------------------------------------------------------------------------------
 
@@ -64,14 +65,22 @@ class Line5(Line4):
 
 # -------------------------------------------------------------------------------------------------
 
+class Line6(LineGenE, gen_d.Line4):
+    rhythm_multipliers = machines.RhythmsMultiplied.make_multipliers({}, 0.5)
+    # TO DO... need to work on this!
+
+# -------------------------------------------------------------------------------------------------
+
+
 
 class GenE(bubbles.GridStart): #  TO DO...? should all jen bubbles inherit from GridStart?
     time_signature = (3,4)
     line1 = Line1() 
     line2 = Line2() 
-    line3 = Line3() # + bubbles.Line("R1*4")
-    line4 = Line4() # + bubbles.Line("R1*5")
-    line5 = Line5() # + bubbles.Line("R1*5")
+    line3 = Line3() 
+    line4 = Line4() 
+    line5 = Line5() 
+    line6 = Line6() 
     # line3 = bubbles.Line("R1*3") + Line3() + bubbles.Line("r2 R1*3")
     # line4 = bubbles.Line("R1*3") + Line4() + bubbles.Line("r2 R1*3")
 

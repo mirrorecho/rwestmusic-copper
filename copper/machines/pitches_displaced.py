@@ -26,6 +26,15 @@ class PitchDisplacementData(machines.IndexedData):
         else:
             self[index] = set(intervals)       
 
+    def update(self, from_dict):
+        if isinstance(from_dict, PitchDisplacementData):
+            for i, intervals in from_dict.non_default_items():
+                self.update_item(i, intervals)
+            if self.limit <= max(from_dict.data):
+                self.limit = max(from_dict.data) + 1
+        else:
+            super().update(from_dict)
+
     def remove_from_item(self, index, intervals):
          if index in self.keylist():
             self[index] -= set(intervals)
@@ -52,7 +61,9 @@ class PitchDisplacementData(machines.IndexedData):
                 self.update_item(start_index+i, (interval*interval_multiplier,))
 
 
-class FifthDisplacement(PitchDisplacementData):
+class IntervalDisplacement(PitchDisplacementData):
+    displacement_interval = 0
+
     def __init__(self, initialize_from=None, up=(), down=(), flat=(), **kwargs):
         super().__init__(**kwargs)
         self.up(*up)
@@ -60,21 +71,26 @@ class FifthDisplacement(PitchDisplacementData):
         self.flat(*flat)
 
     def cycle_fifth(self, start_index=0, **kwargs):
-        self.cycle_interval(start_index=start_index, interval=7, **kwargs)
+        self.cycle_interval(start_index=start_index, interval=self.displacement_interval, **kwargs)
 
     def up(self, *indices):
         if indices:
-            self.fillme(indices, (7,))
+            self.fillme(indices, (self.displacement_interval,))
 
     def down(self, *indices):
         if indices:
-            self.fillme(indices, (-7,))
+            self.fillme(indices, (self.displacement_interval * -1,))
 
     def flat(self, *indices):
         if indices:
             for i in indices:
-                self.remove_from_item(i, (7,-7))
+                self.remove_from_item(i, (self.displacement_interval,self.displacement_interval * -1))
 
+class FifthDisplacement(IntervalDisplacement):
+    displacement_interval = 7
+
+class OctaveDisplacement(IntervalDisplacement):
+    displacement_interval = 12
 
 class PitchesDisplaced(object):
     """
@@ -96,113 +112,3 @@ class PitchesDisplaced(object):
         event.pitch = event.original_pitch + pitch_displacement.get_cumulative(event.depthwise_index)
 
 
-# OLD PitchDisplacement attributes no longer used... TO DO... remove...
-    # displacements = None
-
-    # def __init__(self, **kwargs):
-    #     self.displacements = {}
-
-    # def __iadd__(self, other):
-    #     for index, interval_set in other.displacements.items():
-    #         self.update(index, interval_set)
-    #     return self
-
-    # def copy(self):
-    #     d = type(self)()
-    #     d += self
-    #     return d
-
-    # def __add__(self, other):
-    #     d = self.copy() 
-    #     for index, interval_set in other.displacements.items():
-    #         d.update(index, interval_set)
-    #     return d
-
-    # def update(self, index, intervals):
-    #     if index in self.displacements:
-    #         self.displacements[index] |= set(intervals)
-    #     else:
-    #         self.displacements[index] = set(intervals)        
-
-    # def update_row(self, indices, intervals):
-    #     for i, index in enumerate(indices):
-    #         self.update(index, (intervals[i % len(intervals) ],) )
-
-    # def update_once(self, index, interval):
-    #     self.update(index, (interval,))
-    #     self.update(index+1, (0-interval,))
-
-    # def remove(self, index, intervals):
-    #     if index in self.displacements:
-    #         self.displacements[index] -= set(intervals)
-
-    # def remove_sets(self, indices):
-    #     for i in indices:
-    #         self.displacements.pop(i)
-
-    # def cycle_interval(self, start_index=0, interval=0, cycle=(), times=0):
-    #     for i in range(len(cycle) * times):
-    #         interval_multiplier = cycle[i % len(cycle)]
-    #         if interval_multiplier != 0:
-    #             self.update(start_index+i, (interval*interval_multiplier,))
-
-    # def displace_pitches(self, pitch_numbers, **kwargs):
-    #     transposed_pitch_numbers = []
-    #     current_transpose = 0
-    #     for i, p in enumerate(pitch_numbers):
-    #         current_transpose += self.get_sum(i, **kwargs)
-    #         transposed_pitch_numbers += [p + current_transpose]
-    #     return transposed_pitch_numbers
-
-    # def __str__(self):
-    #     return self.displacements.__str__()
-
-
-
-# AND OLD FIFTH DISPLACEMENT DATA
-# class FifthDisplacement(machines.PitchDisplacement):
-#     def __init__(self, up=(), down=(), flat=()):
-#         super().__init__()
-#         self.up(*up)
-#         self.down(*down)
-#         self.flat(*flat)
-
-#     def cycle_fifth(self, start_index=0, **kwargs):
-#         self.cycle_interval(start_index=start_index, interval=7, **kwargs)
-
-#     def up(self, *indices):
-#         self.update_row(indices, (7,))
-
-#     def down(self, *indices):
-#         self.update_row(indices, (-7,))
-
-#     def flat(self, *indices):
-#         for i in indices:
-#             self.remove(i, (7,-7))
-
-    # def up_once(self, index):
-    #     self.update_once(index, 7)
-
-    # def down_once(self, index):
-    #     self.update_once(index, -7)
-
-    # def populate(self, 
-    #         indices=(),
-    #         pitch_numbers=(),
-    #         pitch_range=None,
-    #         iterations = 20,
-    #         ):
-    #     if len(indices) != len(pitch_numbers):
-    #         print("WARNING POPULATING DISPLACED FIFTHS: indice length differs from pitch numbers length... may produce unintended results.")
-    #     # for i in indices:
-
-
-    # def printme(self):
-    #     for i in sorted(self.displacements):
-    #         retstring = ""
-    #         if 7 in self.displacements[i]:
-    #             retstring +="++"
-    #         if -7 in self.displacements[i]:
-    #             retstring +="--"
-    #         retstring = retstring + " " + str(i)
-    #         print(retstring)

@@ -67,7 +67,7 @@
 # - draft parts template
 # - tag attachments on individual abjad leaves? (some data structure on LogicalTieData?)
 # - mac (and maybe linux) midi playback... at least of short scores
-# - good draft of gen e short score
+# - good draft of gen e short score (especially Line 6)
 # - review current short scores at piano and adjust
 # - more orchestrating gen b
 # - better gen c short score

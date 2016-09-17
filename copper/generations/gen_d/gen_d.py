@@ -80,7 +80,6 @@ class Line4(gen_c.Line4):
                         down=(20,22,        36,37,38,  41,43,  53),
                         )
     pitch_displacement.cycle_fifth(55, cycle=(-1,0,1,-1,1,0), times=3)
-    print(pitch_displacement)
     breaks = ID1({
             10:  -12.5,
             19:  -3.5,
