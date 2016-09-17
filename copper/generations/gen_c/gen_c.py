@@ -26,7 +26,7 @@ class Line1(LineGenC, gen_b.Line1):
             12: -8
             })
     pitch_displacement = machines.FifthDisplacement()
-    pitch_displacement.cycle_fifth(2, cycle=(1,1,-1,-1,-1,1), times=9)
+    pitch_displacement.cycle_fifth(2, cycle=(1,1,-1,-1,-1,1), times=6)
     pitch_displacement.flat(11)
     pitch_respell = "sharps"
     rhythm_times = 2
@@ -92,9 +92,11 @@ class Line4(Line3):
     rhythm_initial_silence = 30
     rhythm_times=1 # TO DO: ditto as Line3 - do we want to repeat?? (would need to adjust or truncate the end)
     pitch_displacement = machines.FifthDisplacement(
-            up      = (2,8,9),
-            down    = ( 7,)
+            up      = (2,9),
             )
+    rhythm_multipliers = Line3.rhythm_multipliers.copy()
+    rhythm_multipliers[8] = 0.5
+
 # -------------------------------------------------------------------------------------------------
 
 class GenC(gen_b.GenB): #  TO DO...? should all jen bubbles inherit from GridStart?

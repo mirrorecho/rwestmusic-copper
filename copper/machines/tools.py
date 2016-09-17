@@ -139,6 +139,13 @@ class IndexedData(SetAttributeMixin, collections.UserDict):
 
     def copy(self):
         d = type(self)()
+        # TO DO EVENTUALLY... could make this more elegant
+        d.default = self.default
+        d.min_limit=self.min_limit
+        d.limit=self.limit
+        d.cyclic = self.cyclic
+        d.cyclic_start=self.cyclic_start
+        d.over_limit_defaults=self.over_limit_defaults
         d += self
         return d
 

@@ -1,4 +1,4 @@
-% 2016-09-15 23:33
+% 2016-09-16 19:43
 
 \version "2.18.2"
 \language "english"
@@ -208,7 +208,7 @@
                 d'8 [ ^ \markup { 4 }
                 e'16 ^ \markup { 5 }
                 fs'16 ] ^ \markup { 6 }
-                d'4 ^ \markup { 7 }
+                a'4 ^ \markup { 7 }
                 g'8 [ ^ \markup { 8 }
                 cs''8 ] ^ \markup { 9 }
                 b'8 [ ^ \markup { 10 }
@@ -225,14 +225,13 @@
                 e''2
                 d''8 [ ^ \markup { 20 }
                 cs''8 ] ^ \markup { 21 }
-                a'8 [ ^ \markup { 22 }
-                b'16 ^ \markup { 23 }
-                cs''16 ] ^ \markup { 24 }
+                a'4 ^ \markup { 22 }
+                b'8 [ ^ \markup { 23 }
+                cs''8 ] ^ \markup { 24 }
                 b'8 [ ^ \markup { 25 }
                 d''8 ] ^ \markup { 26 }
                 cs''8 ^ \markup { 27 }
                 r8
-                r4
                 r4
                 r2
                 r4

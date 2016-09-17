@@ -53,8 +53,8 @@ class Line3(LineGenB, gen_a.Line1):
         16:( (1,4),)*3,
         }, default=((3,4),), limit=24)
     rhythm_initial_silence = 36
-    rhythm_multipliers = machines.RhythmsMultiplied.make_multipliers(cyclic=True)
-    rhythm_multipliers.extend( (1,) + (0.5,0.25)*14 )
+    rhythm_multipliers = machines.RhythmsMultiplied.make_multipliers(cyclic=True, cyclic_start=1)
+    rhythm_multipliers.extend( (1,0.5,) + (0.25,0.5,)*4 )
     pitch_displacement = machines.FifthDisplacement(
         down = ( 1,) )
 # -------------------------------------------------------------------------------------------------

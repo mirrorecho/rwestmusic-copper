@@ -50,9 +50,9 @@
 # - (DONE) add to and refactor existing music
 # - (DONE) arrange harmony machine (including working into cross lines)
 # - (DONE) arrange chords machine (for piano/harp and sometimes strings)
+# - (DONE) verify ability to concat sections
+# - (DONE) add to and refactor existing music
 # ---------------------------- FRIDAY
-# - verify ability to concat sections
-# - add to and refactor existing music
 # - start gen f short score
 # - start orchestrating gen e
 # - start gen f draft short score
@@ -63,7 +63,7 @@
 # - start gen h draft short score
 # - start orchestrating gen h
 # - able to output a full score
-# ------- 6:00 PM!!!!!
+# ------- 11:00 PM!!!!!
 # - draft parts template
 # - tag attachments on individual abjad leaves? (some data structure on LogicalTieData?)
 # - mac (and maybe linux) midi playback... at least of short scores
@@ -77,7 +77,7 @@
 # - more orchestrating gen f
 # - more orchestrating gen g
 # - more orchestrating gen h
-# ------- 8:00 PM!!!!!
+# ---------------------------- SATURDAY
 # - good draft gen f short score
 # - better way / machine(s) to tag spanners
 # - good draft gen g short score
@@ -85,7 +85,6 @@
 # - rhythms with metric modulations
 # - plan out drone, and start better working into machines
 # - plan out cymbal, and start working better into machines
-# ------- 9:30 PM!!!!!
 # - good gen h draft short score
 # - get data by original depthwise index
 # - get_lilypond_file is being called twice on the bottom of orchestration files... fix
@@ -93,7 +92,6 @@
 # - good draft orchestration of gen b
 # - good draft orchestration of gen c
 # - multimeasure rest generator
-# ------- MIDNIGHT !!!!!
 # - good draft orchestration of gen d
 # - good draft orchestration of gen e
 # - tempo markings
@@ -102,9 +100,9 @@
 # - good draft orchestration of gen h
 # - (if time) cross lines using rhythm overlay (including mixing together into chords)
 # - (if time) - pulse machine that separates pulses into separate events (so that each pitch can be displaced)
-# ---------------------------- SATURDAY
+# - (if time) - tag to show any data attribute
 # - rehearsal markings
-# - dynamics machines, especially with holds
+# - more dynamics machines, especially with holds
 # - review printed score and mark up
 # - implement printed score markups (or add notes)
 # - games and boces? (only if time allows)
