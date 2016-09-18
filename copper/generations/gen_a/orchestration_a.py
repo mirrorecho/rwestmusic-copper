@@ -18,10 +18,10 @@ LINES = ID({
 # ------------------------------------------------------------------------------------------------------------
 # BASE CLASSES AND HELPERS
 
-class ArrangeA(machines.FragmentLine, machines.PitchedLine):
-    metrical_durations = ID(default=((1,1),), limit=18)
+class ArrangeA(gen_a.GenA, machines.FragmentLine, machines.PitchedLine):
     unarranged = bubbles.Line("R1 * 18") # TO DO: is this the right length????
     lines = LINES
+    start_bar_line = "||"
     # show_data_attr="depthwise_index"
     def update_data(self):
         super().update_data()
@@ -215,11 +215,8 @@ class Bass(ArrangeA):
 # ------------------------------------------------------------------------------------------------------------
 # ALL LINES ASSOCIATED WITH STAVES
 
-class OrchestrationA(staves.CopperMusic, gen_a.GenA): # TO DO... maybe these shouldn't inherit from the gens????
+class OrchestrationA(staves.CopperMusic): 
     bubble_default = ArrangeA.unarranged # in case any parts are commented out
-    rehearsal_mark_number = 1
-    tempo_units_per_minute = 72
-    # tempo_text = "half = dotted half" # TO DO... need to figure out how we can insert metric modulations here
     flute1 = Flute1() # TO DO...  maybe this should always be piccolo?
     flute2 = Flute2()
     flute3 = Flute3()

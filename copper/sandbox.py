@@ -55,26 +55,26 @@
 # - (DONE) start gen f short score
 # - (DONE) start orchestrating gen e
 # - (DONE) more getting going with gen f draft short score
-# ---------------------------- SATURDAY
-#  - consistent orchestraton files, with tech ability to generate full score (through h)
-# - - - refactor gen c
-# - - - make sure gen 0,a,b, work OK (including refactoring, fixing)
-# - - - add orchestration files for gen g and h
-# - - - make sure entire score can be output
-# - - - remove gen h (and make sure still ends OK at G)
+# - (DONE) consistent orchestraton files, with tech ability to generate full score (through h)
+# - (DONE) - - refactor gen c
+# - (DONE) - - make sure gen 0,a,b, work OK (including refactoring, fixing)
+# - (DONE) - - add orchestration files for gen g and h
+# - (DONE) - - make sure entire score can be output
+# - (DONE) - - remove gen h (and make sure still ends OK at G)
+# - (DONE) rehearsal markings
+# ---------------------------- SUNDAY
 # - start orchestrating gen f
 # - start gen g draft short score
 # - start orchestrating gen g
+# - able to create parts
 # - draft score template
 # - (if time) start gen h draft short score
 # - (if time) start orchestrating gen h
 # - able to output a full score
 # - draft parts template
-# - rehearsal markings
 # - tempo markings
 # - some rhythms with metric modulations
 # - work drones into standard machines
-# ---------------------------- SUNDAY
 # - tag attachments on individual abjad leaves? (some data structure on LogicalTieData?)
 # - mac (and maybe linux) midi playback... at least of short scores
 # - good draft of gen e short score (especially Line 6)
@@ -105,6 +105,7 @@
 # - good draft orchestration of gen f
 # - good draft orchestration of gen g
 # - good draft orchestration of gen h
+# - high mallet tremolos (St Augustine)
 # - (if time) cross lines using rhythm overlay (including mixing together into chords)
 # - (if time) - pulse machine that separates pulses into separate events (so that each pitch can be displaced)
 # - (if time) - tag to show any data attribute
@@ -147,6 +148,8 @@
 # - review of doublings (all OK... used effectively?)
 # - review of percussion instruments used
 # - verify all part transpositions (pic, english horn, clarinet/bass clarinet, horn, double bass)
+# - cues?
+# - better rehearsal markings?
 # - final score review!
 # - - double check score order
 # - final review/edits of wind parts
@@ -166,6 +169,7 @@
 # - - - page breaks
 # - - - transpositions
 # - performance and program notes
+# - (if time, else later)... warn if orchestrated lines don't inherit from arrangement base classes (i.e. they should be getting rehearsal marks, etc.)
 # - tital page
 
 # ---------------------------- IF TIME ALLOWS: 
@@ -191,6 +195,7 @@
 # - move some of the arrangement stuff that's currently in base bubble grids to machines / inherited lines (probably would perform better)
 # - initial silence is specific to copper ... make it work in another way (or keep it in the inherited copper classes only)
 # - go back through rep... ESPECIALLY elements & tokei orchestra pieces, accomodate, and make them even better!!!!!!!!!!!!!  (listen to recordints too... )
+# - short score illustrations should include staff-level attachments such as tempo, clef, etc.
 
 import abjad
 from calliope import bubbles

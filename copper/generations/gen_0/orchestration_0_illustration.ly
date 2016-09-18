@@ -1,4 +1,4 @@
-% 2016-09-18 01:17
+% 2016-09-18 03:39
 
 \version "2.18.2"
 \language "english"
@@ -52,10 +52,8 @@
                     \set Staff.shortInstrumentName = \markup { Fl.1 }
                     {
                         \numericTimeSignature
-                        \time 5/4
-                        \bar "||"
+                        \time 4/4
                         \accidentalStyle modern-cautionary
-                        \tempo 4=48
                         R1 * 12
                     }
                 }
@@ -64,10 +62,8 @@
                     \set Staff.shortInstrumentName = \markup { Fl.2 }
                     {
                         \numericTimeSignature
-                        \time 5/4
-                        \bar "||"
+                        \time 4/4
                         \accidentalStyle modern-cautionary
-                        \tempo 4=48
                         R1 * 12
                     }
                 }
@@ -76,10 +72,8 @@
                     \set Staff.shortInstrumentName = \markup { Fl.3 }
                     {
                         \numericTimeSignature
-                        \time 5/4
-                        \bar "||"
+                        \time 4/4
                         \accidentalStyle modern-cautionary
-                        \tempo 4=48
                         R1 * 12
                     }
                 }
@@ -92,10 +86,8 @@
                     \set Staff.shortInstrumentName = \markup { Ob.1 }
                     {
                         \numericTimeSignature
-                        \time 5/4
-                        \bar "||"
+                        \time 4/4
                         \accidentalStyle modern-cautionary
-                        \tempo 4=48
                         R1 * 12
                     }
                 }
@@ -104,10 +96,8 @@
                     \set Staff.shortInstrumentName = \markup { Ob.2 }
                     {
                         \numericTimeSignature
-                        \time 5/4
-                        \bar "||"
+                        \time 4/4
                         \accidentalStyle modern-cautionary
-                        \tempo 4=48
                         R1 * 12
                     }
                 }
@@ -120,10 +110,8 @@
                     \set Staff.shortInstrumentName = \markup { Cl.1 }
                     {
                         \numericTimeSignature
-                        \time 5/4
-                        \bar "||"
+                        \time 4/4
                         \accidentalStyle modern-cautionary
-                        \tempo 4=48
                         R1 * 12
                     }
                 }
@@ -132,10 +120,8 @@
                     \set Staff.shortInstrumentName = \markup { Cl.2 }
                     {
                         \numericTimeSignature
-                        \time 5/4
-                        \bar "||"
+                        \time 4/4
                         \accidentalStyle modern-cautionary
-                        \tempo 4=48
                         R1 * 12
                     }
                 }
@@ -149,10 +135,8 @@
                     \set Staff.shortInstrumentName = \markup { Bsn.1 }
                     {
                         \numericTimeSignature
-                        \time 5/4
-                        \bar "||"
+                        \time 4/4
                         \accidentalStyle modern-cautionary
-                        \tempo 4=48
                         R1 * 12
                     }
                 }
@@ -162,10 +146,8 @@
                     \set Staff.shortInstrumentName = \markup { Bsn.2 }
                     {
                         \numericTimeSignature
-                        \time 5/4
-                        \bar "||"
+                        \time 4/4
                         \accidentalStyle modern-cautionary
-                        \tempo 4=48
                         R1 * 12
                     }
                 }
@@ -179,10 +161,11 @@
                     \set Staff.instrumentName = \markup { "Horn in F 1" }
                     \set Staff.shortInstrumentName = \markup { Hn.1 }
                     {
+                        \numericTimeSignature
+                        \time 4/4
+                        \accidentalStyle modern-cautionary
                         {
-                            \bar "||"
                             \accidentalStyle modern-cautionary
-                            \tempo 4=48
                             r2
                             d2 \pp ~ \<
                             d1 \mp ~ \>
@@ -190,6 +173,7 @@
                             r2
                         }
                         {
+                            \accidentalStyle modern-cautionary
                             r2
                             d2 \pp ~ \<
                             d1 \mp ~ \>
@@ -197,6 +181,7 @@
                             r2
                         }
                         {
+                            \accidentalStyle modern-cautionary
                             r2
                             d2 \pp ~ \<
                             d1 \mp ~ \>
@@ -204,6 +189,7 @@
                             r2
                         }
                         {
+                            \accidentalStyle modern-cautionary
                             r2
                             d2 \pp ~ \<
                             d1 \mp ~ \>
@@ -216,27 +202,33 @@
                     \set Staff.instrumentName = \markup { "Horn in F 2" }
                     \set Staff.shortInstrumentName = \markup { Hn.2 }
                     {
+                        \numericTimeSignature
+                        \time 4/4
+                        \accidentalStyle modern-cautionary
                         {
+                            \accidentalStyle modern-cautionary
                             {
-                                \bar "||"
                                 \accidentalStyle modern-cautionary
-                                \tempo 4=48
                                 R1
                             }
                             {
+                                \accidentalStyle modern-cautionary
                                 {
+                                    \accidentalStyle modern-cautionary
                                     r1
                                     d1 \pp ~ \<
                                     d2. \mp ~ \>
                                     d4 \pp
                                 }
                                 {
+                                    \accidentalStyle modern-cautionary
                                     r1
                                     d1 \pp ~ \<
                                     d2. \mp ~ \>
                                     d4 \pp
                                 }
                                 {
+                                    \accidentalStyle modern-cautionary
                                     r1
                                     d1 \pp ~ \<
                                     d2. \mp ~ \>
@@ -245,6 +237,7 @@
                             }
                         }
                         {
+                            \accidentalStyle modern-cautionary
                             R1 * 2
                         }
                     }
@@ -258,10 +251,8 @@
                     \set Staff.shortInstrumentName = \markup { Tpt.1 }
                     {
                         \numericTimeSignature
-                        \time 5/4
-                        \bar "||"
+                        \time 4/4
                         \accidentalStyle modern-cautionary
-                        \tempo 4=48
                         R1 * 12
                     }
                 }
@@ -270,10 +261,8 @@
                     \set Staff.shortInstrumentName = \markup { Tpt.2 }
                     {
                         \numericTimeSignature
-                        \time 5/4
-                        \bar "||"
+                        \time 4/4
                         \accidentalStyle modern-cautionary
-                        \tempo 4=48
                         R1 * 12
                     }
                 }
@@ -287,10 +276,8 @@
                     \set Staff.shortInstrumentName = \markup { Tbn.1 }
                     {
                         \numericTimeSignature
-                        \time 5/4
-                        \bar "||"
+                        \time 4/4
                         \accidentalStyle modern-cautionary
-                        \tempo 4=48
                         R1 * 12
                     }
                 }
@@ -300,10 +287,8 @@
                     \set Staff.shortInstrumentName = \markup { Tbn.2 }
                     {
                         \numericTimeSignature
-                        \time 5/4
-                        \bar "||"
+                        \time 4/4
                         \accidentalStyle modern-cautionary
-                        \tempo 4=48
                         R1 * 12
                     }
                 }
@@ -314,10 +299,8 @@
                 \set Staff.shortInstrumentName = \markup { Tba }
                 {
                     \numericTimeSignature
-                    \time 5/4
-                    \bar "||"
+                    \time 4/4
                     \accidentalStyle modern-cautionary
-                    \tempo 4=48
                     R1 * 12
                 }
             }
@@ -329,10 +312,8 @@
                 \set Staff.shortInstrumentName = \markup { Timp }
                 {
                     \numericTimeSignature
-                    \time 5/4
-                    \bar "||"
+                    \time 4/4
                     \accidentalStyle modern-cautionary
-                    \tempo 4=48
                     R1 * 12
                 }
             }
@@ -342,10 +323,8 @@
                 \set Staff.shortInstrumentName = \markup { Perc.1 }
                 {
                     \numericTimeSignature
-                    \time 5/4
-                    \bar "||"
+                    \time 4/4
                     \accidentalStyle modern-cautionary
-                    \tempo 4=48
                     R1 * 12
                 }
             }
@@ -355,10 +334,8 @@
                 \set Staff.shortInstrumentName = \markup { Perc.2 }
                 {
                     \numericTimeSignature
-                    \time 5/4
-                    \bar "||"
+                    \time 4/4
                     \accidentalStyle modern-cautionary
-                    \tempo 4=48
                     R1 * 12
                 }
             }
@@ -369,10 +346,8 @@
             \new Staff {
                 {
                     \numericTimeSignature
-                    \time 5/4
-                    \bar "||"
+                    \time 4/4
                     \accidentalStyle modern-cautionary
-                    \tempo 4=48
                     R1 * 12
                 }
             }
@@ -380,17 +355,13 @@
                 \clef "bass"
                 {
                     \numericTimeSignature
-                    \time 5/4
-                    \bar "||"
+                    \time 4/4
                     \accidentalStyle modern-cautionary
-                    \tempo 4=48
                     R1 * 12
                 }
             }
             {
-                \bar "||"
                 \accidentalStyle modern-cautionary
-                \tempo 4=48
                 R1 * 12
             }
         >>
@@ -400,10 +371,8 @@
             \new Staff {
                 {
                     \numericTimeSignature
-                    \time 5/4
-                    \bar "||"
+                    \time 4/4
                     \accidentalStyle modern-cautionary
-                    \tempo 4=48
                     R1 * 12
                 }
             }
@@ -411,10 +380,8 @@
                 \clef "bass"
                 {
                     \numericTimeSignature
-                    \time 5/4
-                    \bar "||"
+                    \time 4/4
                     \accidentalStyle modern-cautionary
-                    \tempo 4=48
                     R1 * 12
                 }
             }
@@ -427,9 +394,9 @@
                     \set Staff.instrumentName = \markup { "Violin I Div 1" }
                     \set Staff.shortInstrumentName = \markup { Vln.I.1 }
                     {
-                        \bar "||"
+                        \numericTimeSignature
+                        \time 4/4
                         \accidentalStyle modern-cautionary
-                        \tempo 4=48
                         r1 ^ \markup { "mute on" }
                         r1
                         r1
@@ -467,9 +434,9 @@
                     \set Staff.instrumentName = \markup { "Violin I Div 2" }
                     \set Staff.shortInstrumentName = \markup { Vln.I.2 }
                     {
-                        \bar "||"
+                        \numericTimeSignature
+                        \time 4/4
                         \accidentalStyle modern-cautionary
-                        \tempo 4=48
                         r1 ^ \markup { "mute on" }
                         r1
                         r1
@@ -511,9 +478,9 @@
                     \set Staff.instrumentName = \markup { "Violin II Div 1" }
                     \set Staff.shortInstrumentName = \markup { Vln.II.1 }
                     {
-                        \bar "||"
+                        \numericTimeSignature
+                        \time 4/4
                         \accidentalStyle modern-cautionary
-                        \tempo 4=48
                         r1 ^ \markup { "mute on" }
                         r1
                         r1
@@ -551,9 +518,9 @@
                     \set Staff.instrumentName = \markup { "Violin II Div 2" }
                     \set Staff.shortInstrumentName = \markup { Vln.II.2 }
                     {
-                        \bar "||"
+                        \numericTimeSignature
+                        \time 4/4
                         \accidentalStyle modern-cautionary
-                        \tempo 4=48
                         r1 ^ \markup { "mute on" }
                         r1
                         r1
@@ -596,9 +563,9 @@
                     \set Staff.instrumentName = \markup { "Viola Div 1" }
                     \set Staff.shortInstrumentName = \markup { Vla.1 }
                     {
-                        \bar "||"
+                        \numericTimeSignature
+                        \time 4/4
                         \accidentalStyle modern-cautionary
-                        \tempo 4=48
                         r1 ^ \markup { "mute on" }
                         r1
                         r1
@@ -637,9 +604,9 @@
                     \set Staff.instrumentName = \markup { "Viola Div 2" }
                     \set Staff.shortInstrumentName = \markup { Vla.2 }
                     {
-                        \bar "||"
+                        \numericTimeSignature
+                        \time 4/4
                         \accidentalStyle modern-cautionary
-                        \tempo 4=48
                         r1 ^ \markup { "mute on" }
                         r1
                         r1
@@ -682,9 +649,9 @@
                     \set Staff.instrumentName = \markup { "Cello Div 1" }
                     \set Staff.shortInstrumentName = \markup { Vc.1 }
                     {
-                        \bar "||"
+                        \numericTimeSignature
+                        \time 4/4
                         \accidentalStyle modern-cautionary
-                        \tempo 4=48
                         r1 ^ \markup { "mute on" }
                         r1
                         r1
@@ -723,9 +690,9 @@
                     \set Staff.instrumentName = \markup { "Cello Div 2" }
                     \set Staff.shortInstrumentName = \markup { Vc.2 }
                     {
-                        \bar "||"
+                        \numericTimeSignature
+                        \time 4/4
                         \accidentalStyle modern-cautionary
-                        \tempo 4=48
                         r1 ^ \markup { "mute on" }
                         r1
                         r1
@@ -765,9 +732,9 @@
                 \set Staff.instrumentName = \markup { Bass }
                 \set Staff.shortInstrumentName = \markup { Cb }
                 {
-                    \bar "||"
+                    \numericTimeSignature
+                    \time 4/4
                     \accidentalStyle modern-cautionary
-                    \tempo 4=48
                     r1 ^ \markup { "mute on" }
                     r1
                     r1
@@ -808,49 +775,47 @@
                 \set Staff.instrumentName = \markup { "Line 1" }
                 \set Staff.shortInstrumentName = \markup { 1: }
                 {
-                    \bar "||"
+                    \numericTimeSignature
+                    \time 4/4
                     \accidentalStyle modern-cautionary
-                    \tempo 4=48
                     r1
                     r1
                     r1
-                    d'2 ^ \markup { 1 }
-                    c'4 ^ \markup { 2 }
-                    b4 ^ \markup { 3 }
-                    g2 ^ \markup { 4 }
-                    a4 ^ \markup { 5 }
-                    b4 ^ \markup { 6 }
-                    d'2 ^ \markup { 7 }
-                    c'4 ^ \markup { 8 }
-                    b4 ^ \markup { 9 }
-                    a2 ^ \markup { 10 }
-                    c'4 ^ \markup { 11 }
-                    b4 ^ \markup { 12 }
-                    a4 ^ \markup { 13 }
-                    c'4 ^ \markup { 14 }
-                    b4 ^ \markup { 15 }
-                    d'4 ~ ^ \markup { 16 }
+                    d'2
+                    c'4
+                    b4
+                    g2
+                    a4
+                    b4
+                    d'2
+                    c'4
+                    b4
+                    a2
+                    c'4
+                    b4
+                    a4
+                    c'4
+                    b4
+                    d'4 ~
                     d'2.
-                    c'4 ^ \markup { 17 }
-                    b4 ^ \markup { 18 }
-                    d'2 ^ \markup { 19 }
-                    c'4 ^ \markup { 20 }
-                    b4 ^ \markup { 21 }
-                    g2 ^ \markup { 22 }
-                    a4 ^ \markup { 23 }
-                    b4 ^ \markup { 24 }
-                    a4 ^ \markup { 25 }
-                    c'4 ^ \markup { 26 }
-                    b4 ^ \markup { 27 }
+                    c'4
+                    b4
+                    d'2
+                    c'4
+                    b4
+                    g2
+                    a4
+                    b4
+                    a4
+                    c'4
+                    b4
                 }
             }
             \new Staff {
                 \set Staff.instrumentName = \markup { "Line 2" }
                 \set Staff.shortInstrumentName = \markup { 2: }
                 {
-                    \bar "||"
                     \accidentalStyle modern-cautionary
-                    \tempo 4=48
                     R1 * 12
                 }
             }
@@ -858,9 +823,7 @@
                 \set Staff.instrumentName = \markup { "Line 3" }
                 \set Staff.shortInstrumentName = \markup { 3: }
                 {
-                    \bar "||"
                     \accidentalStyle modern-cautionary
-                    \tempo 4=48
                     R1 * 12
                 }
             }
@@ -868,9 +831,7 @@
                 \set Staff.instrumentName = \markup { "Line 4" }
                 \set Staff.shortInstrumentName = \markup { 4: }
                 {
-                    \bar "||"
                     \accidentalStyle modern-cautionary
-                    \tempo 4=48
                     R1 * 12
                 }
             }
@@ -878,9 +839,7 @@
                 \set Staff.instrumentName = \markup { "Line 5" }
                 \set Staff.shortInstrumentName = \markup { 5: }
                 {
-                    \bar "||"
                     \accidentalStyle modern-cautionary
-                    \tempo 4=48
                     R1 * 12
                 }
             }
@@ -888,9 +847,7 @@
                 \set Staff.instrumentName = \markup { "Line 6" }
                 \set Staff.shortInstrumentName = \markup { 6: }
                 {
-                    \bar "||"
                     \accidentalStyle modern-cautionary
-                    \tempo 4=48
                     R1 * 12
                 }
             }
@@ -898,9 +855,7 @@
                 \set Staff.instrumentName = \markup { "Line 7" }
                 \set Staff.shortInstrumentName = \markup { 7: }
                 {
-                    \bar "||"
                     \accidentalStyle modern-cautionary
-                    \tempo 4=48
                     R1 * 12
                 }
             }
@@ -908,9 +863,7 @@
                 \set Staff.instrumentName = \markup { "Line 8" }
                 \set Staff.shortInstrumentName = \markup { 8: }
                 {
-                    \bar "||"
                     \accidentalStyle modern-cautionary
-                    \tempo 4=48
                     R1 * 12
                 }
             }
@@ -918,9 +871,7 @@
                 \set Staff.instrumentName = \markup { "Line 9" }
                 \set Staff.shortInstrumentName = \markup { 9: }
                 {
-                    \bar "||"
                     \accidentalStyle modern-cautionary
-                    \tempo 4=48
                     R1 * 12
                     \bar "|."
                 }

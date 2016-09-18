@@ -6,20 +6,23 @@ from copper import machines
 from copper.machines.tools import IndexedData as ID # just to avoid a lot of typing
 from copper.generations.gen_e import gen_e
 
-class LineGenF(object):
+class GenF(object):
+    time_signature = (4,4)
     metrical_durations = ID(default=((4,4),), limit=36)
-    # metrical_durations = ( (3,4), ) * 35
+    rehearsal_mark_number = 6
+    # tempo_units_per_minute = 144
+    start_bar_line = "||"
 
 # -------------------------------------------------------------------------------------------------
-class Line1(LineGenF, gen_e.Line1):
+class Line1(GenF, gen_e.Line1):
     pass
 
 # -------------------------------------------------------------------------------------------------
-class Line2(LineGenF, gen_e.Line2):
+class Line2(GenF, gen_e.Line2):
     pass
 # -------------------------------------------------------------------------------------------------
 
-class Line3(LineGenF, gen_e.Line4):
+class Line3(GenF, gen_e.Line4):
     # rhythm_reverse = list(gen_e.Line4.rhythm_reverse)
     # rhythm_reverse.remove(7)
     show_data_type=machines.SegmentData
@@ -52,7 +55,7 @@ class Line3(LineGenF, gen_e.Line4):
 
 # -------------------------------------------------------------------------------------------------
 
-class Line4(LineGenF, gen_e.Line3):
+class Line4(GenF, gen_e.Line3):
     pitch_displacement = gen_e.Line3.pitch_displacement.copy()
     pitch_displacement.update_item(1, (-12,))
     def update_data(self):
@@ -62,32 +65,27 @@ class Line4(LineGenF, gen_e.Line3):
 
 # -------------------------------------------------------------------------------------------------
 
-class Line5(LineGenF, gen_e.Line5):
+class Line5(GenF, gen_e.Line5):
     pass
 # -------------------------------------------------------------------------------------------------
 
-class Line6(LineGenF, gen_e.Line6):
+class Line6(GenF, gen_e.Line6):
     show_data_type = machines.SegmentData
 # -------------------------------------------------------------------------------------------------
 
-class Line7(LineGenF, gen_e.Line6):
+class Line7(GenF, gen_e.Line6):
     show_data_type = machines.SegmentData
-
-# -------------------------------------------------------------------------------------------------
-
-class GenF(bubbles.GridStart): #  TO DO...? should all jen bubbles inherit from GridStart?
-    time_signature = (4,4)
-    # line1 = Line1() 
-    # line2 = Line2() 
-    line3 = Line3() 
-    line4 = Line4() 
-    line5 = Line5()
-    line6 = Line6()
-    # line7 = Line7()
 
 # -------------------------------------------------------------------------------------------------
 
 bubbles.illustrate_me(__file__, 
-    lambda : GenF().score()
+    lambda : bubbles.Bubble(
+            line1 = Line1(),
+            line2 = Line2(),
+            line3 = Line3(),
+            line4 = Line4(),
+            line5 = Line5(),
+            line6 = Line6(),
+        ).score()
     )
 

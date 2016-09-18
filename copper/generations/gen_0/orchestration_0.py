@@ -16,9 +16,8 @@ LINES = ID({
 # ------------------------------------------------------------------------------------------------------------
 # BASE CLASSES AND HELPERS
 
-class Arrange0(machines.FragmentLine, machines.PitchedLine):
-    metrical_durations = ID(default=((4,4),), limit=12)
-    unarranged =  bubbles.Line("R1*12") # TO DO: is this the right length????
+class Arrange0(gen_0.Gen0, machines.FragmentLine, machines.PitchedLine):
+    unarranged =  bubbles.Line("R1*12") 
     lines = LINES
     # show_data_attr="depthwise_index"
     def update_data(self):
@@ -57,10 +56,10 @@ class Bassoon2(Arrange0):
 # ------------------------------------------------------------------------------------------------------------
 # BRASS
 
-class Horn1(bubbles.Line):
+class Horn1(gen_0.Gen0, bubbles.Line):
     music = gen_0.Drone1() * 4
 
-class Horn2(bubbles.Line):
+class Horn2(gen_0.Gen0, bubbles.Line):
     music = bubbles.Line("R1") + gen_0.Drone2() * 3 + bubbles.Line("R1*2") # TO DO... figure out how the drone can cross sections!
 
 class Trumpet1(Arrange0):
@@ -124,9 +123,8 @@ class Bass(machines.PitchesDisplaced, StringsArrange0):
 # ------------------------------------------------------------------------------------------------------------
 # ALL LINES ASSOCIATED WITH STAVES
 
-class Orchestration0(staves.CopperMusic, gen_0.Gen0): # TO DO... maybe these shouldn't inherit from the gens????
+class Orchestration0(staves.CopperMusic): 
     bubble_default = Arrange0.unarranged # in case any parts are commented out
-    tempo_units_per_minute = 48
     flute1 = Flute1() # TO DO...  maybe this should always be piccolo?
     flute2 = Flute2()
     flute3 = Flute3()

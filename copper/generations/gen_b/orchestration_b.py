@@ -18,8 +18,7 @@ LINES = ID({
 # ------------------------------------------------------------------------------------------------------------
 # BASE CLASSES AND HELPERS
 
-class ArrangeB(machines.FragmentLine, machines.PitchedLine):
-    metrical_durations = ID({}, default=((3,4),), limit=24)
+class ArrangeB(gen_b.GenB, machines.FragmentLine, machines.PitchedLine):
     unarranged = bubbles.Line("R2. * 24") # TO DO: is this the right length????
     lines = LINES
     # show_data_attr="depthwise_index"
@@ -162,10 +161,8 @@ class Bass(ArrangeB):
 # ------------------------------------------------------------------------------------------------------------
 # ALL LINES ASSOCIATED WITH STAVES
 
-class OrchestrationB(staves.CopperMusic, gen_b.GenB): # TO DO... maybe these shouldn't inherit from the gens????
+class OrchestrationB(staves.CopperMusic):
     bubble_default = ArrangeB.unarranged # in case any parts are commented out
-    rehearsal_mark_number = 2
-    # tempo_units_per_minute = 72
     flute1 = Flute1() # TO DO...  maybe this should always be piccolo?
     flute2 = Flute2()
     flute3 = Flute3()

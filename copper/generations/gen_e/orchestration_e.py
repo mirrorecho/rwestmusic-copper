@@ -22,8 +22,7 @@ LINES = ID({
 # ------------------------------------------------------------------------------------------------------------
 # BASE CLASSES AND HELPERS
 
-class ArrangeE(machines.FragmentLine, machines.PitchedLine):
-    metrical_durations = ID(default=((3,4),), limit=35)
+class ArrangeE(gen_e.GenE, machines.FragmentLine, machines.PitchedLine):
     unarranged = bubbles.Line("R2. * 35") # is this the right length????
     lines = LINES
     # show_data_attr="depthwise_index"
@@ -198,10 +197,8 @@ class Bass(ArrangeE):
 # ------------------------------------------------------------------------------------------------------------
 # ALL LINES ASSOCIATED WITH STAVES
 
-class OrchestrationE(staves.CopperMusic, gen_e.GenE):
+class OrchestrationE(staves.CopperMusic):
     bubble_default = ArrangeE.unarranged # in case any parts are commented out
-    rehearsal_mark_number = 5
-    tempo_units_per_minute = 108
     flute1 = Flute1() # TO DO...  maybe this should always be piccolo?
     flute2 = Flute2()
     flute3 = Flute3()

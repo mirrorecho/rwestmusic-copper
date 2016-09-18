@@ -6,8 +6,17 @@ from copper import machines
 from copper.machines import IndexedData as ID, ID1 # just to avoid a lot of typing
 from copper.generations.gen_c import gen_c
 
-class HarmonyLineGenD(machines.Harmony):
+class GenD(object):
+    time_signature = (9,8)
     metrical_durations = ID(default=((6,8),(3,8),), limit=24)
+    rehearsal_mark_number = 4
+    # tempo_units_per_minute = 72
+    # tempo_duration=(3,8)
+    start_bar_line = "||"
+
+# -------------------------------------------------------------------------------------------------
+
+class HarmonyLineGenD(GenD, machines.Harmony):
     rhythm_multipliers = machines.RhythmsMultiplied.make_multipliers(default=1.5)
 
 # -------------------------------------------------------------------------------------------------
@@ -44,7 +53,7 @@ class Line2(HarmonyLineGenD, gen_c.Line2):
 
 # -------------------------------------------------------------------------------------------------
 
-class Line3(gen_c.Line3):
+class Line3(GenD, gen_c.Line3):
     metrical_durations = ID(default=((3,8),(3,8),(3,8),), limit=24)
     rhythm_multipliers = machines.RhythmsMultiplied.make_multipliers(cyclic_start=1, cyclic=False)
     rhythm_multipliers.extend( (1,) + (0.5,1,0.5,1,1,0.5,0.5,1,1) + (1,1,1,1,1,0.5,1,1,3) )
@@ -68,7 +77,7 @@ class Line3(gen_c.Line3):
 
 # -------------------------------------------------------------------------------------------------
 
-class Line4(gen_c.Line4):
+class Line4(GenD, gen_c.Line4):
     metrical_durations = ID(default=((3,8),(3,8),(3,8),), limit=24)
     rhythm_times = 3
     rhythm_initial_silence = ((8 * 3) + 2) * 3/2
@@ -93,7 +102,7 @@ class Line4(gen_c.Line4):
 
 # -------------------------------------------------------------------------------------------------
 
-class Line5(gen_c.Line4):
+class Line5(GenD, gen_c.Line4):
     metrical_durations = ID(default=((9,8),), limit=24)
     metrical_durations.fillme(range(12,24), ((3,8),)*3)
     rhythm_initial_silence = (11*3 + 2) * 3/2
@@ -113,17 +122,12 @@ class Line5(gen_c.Line4):
 
 # -------------------------------------------------------------------------------------------------
 
-
-class GenD(bubbles.GridStart): #  TO DO...? should all jen bubbles inherit from GridStart?
-    time_signature = (9,8)
-    line1 = Line1()
-    line2 = Line2()
-    line3 = Line3()
-    line4 = Line4()
-    line5 = Line5() 
-
-# -------------------------------------------------------------------------------------------------
-
 bubbles.illustrate_me(__file__, 
-    lambda: GenD().score()
+    lambda: bubbles.Bubble(
+            line1 = Line1(),
+            line2 = Line2(),
+            line3 = Line3(),
+            line4 = Line4(),
+            line5 = Line5(),
+        ).score()
     )

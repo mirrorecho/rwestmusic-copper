@@ -1,4 +1,4 @@
-% 2016-09-17 23:55
+% 2016-09-18 04:15
 
 \version "2.18.2"
 \language "english"
@@ -53,9 +53,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
-                        \bar "||"
                         \accidentalStyle modern-cautionary
-                        \tempo 4=96
                         \mark #3
                         R1 * 24
                     }
@@ -66,9 +64,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
-                        \bar "||"
                         \accidentalStyle modern-cautionary
-                        \tempo 4=96
                         \mark #3
                         R1 * 24
                     }
@@ -79,9 +75,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
-                        \bar "||"
                         \accidentalStyle modern-cautionary
-                        \tempo 4=96
                         \mark #3
                         R1 * 24
                     }
@@ -96,9 +90,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
-                        \bar "||"
                         \accidentalStyle modern-cautionary
-                        \tempo 4=96
                         \mark #3
                         r1
                         r1
@@ -113,10 +105,10 @@
                         r1
                         r1
                         r2
-                        e''2 \mf ~ ^ \markup { 16 }
+                        e''2 \mf ~
                         e''2
-                        g'4 ^ \markup { 17 }
-                        b4 ^ \markup { 18 }
+                        g'4
+                        b4
                         r1
                         r1
                         r1
@@ -135,9 +127,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
-                        \bar "||"
                         \accidentalStyle modern-cautionary
-                        \tempo 4=96
                         \mark #3
                         R1 * 24
                     }
@@ -152,9 +142,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
-                        \bar "||"
                         \accidentalStyle modern-cautionary
-                        \tempo 4=96
                         \mark #3
                         r1
                         r1
@@ -163,13 +151,13 @@
                         r1
                         r1
                         r1
-                        d'4 \mf ^ \markup { 1 }
-                        g'8 [ ^ \markup { 2 }
-                        cs''8 ^ \markup { 3 }
-                        a'8 ^ \markup { 4 }
-                        e'16 ^ \markup { 5 }
-                        fs'16 ] ^ \markup { 6 }
-                        a'4 ^ \markup { 7 }
+                        d'4 \mf
+                        g'8 [
+                        cs''8
+                        a'8
+                        e'16
+                        fs'16 ]
+                        a'4
                         r1
                         r1
                         r1
@@ -194,9 +182,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
-                        \bar "||"
                         \accidentalStyle modern-cautionary
-                        \tempo 4=96
                         \mark #3
                         r1
                         r1
@@ -205,9 +191,9 @@
                         r1
                         r1
                         r1
-                        d'2 \mf ^ \markup { 1 }
+                        d'2 \mf
                         d'4
-                        g'8 ^ \markup { 2 }
+                        g'8
                         r8
                         r1
                         r1
@@ -238,9 +224,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
-                        \bar "||"
                         \accidentalStyle modern-cautionary
-                        \tempo 4=96
                         \mark #3
                         R1 * 24
                     }
@@ -252,9 +236,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
-                        \bar "||"
                         \accidentalStyle modern-cautionary
-                        \tempo 4=96
                         \mark #3
                         R1 * 24
                     }
@@ -271,9 +253,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
-                        \bar "||"
                         \accidentalStyle modern-cautionary
-                        \tempo 4=96
                         \mark #3
                         R1 * 24
                     }
@@ -284,9 +264,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
-                        \bar "||"
                         \accidentalStyle modern-cautionary
-                        \tempo 4=96
                         \mark #3
                         R1 * 24
                     }
@@ -301,9 +279,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
-                        \bar "||"
                         \accidentalStyle modern-cautionary
-                        \tempo 4=96
                         \mark #3
                         r1
                         r1
@@ -311,26 +287,26 @@
                         r1
                         r1
                         r1
-                        d'2 \mf ( ^ \markup { 1 }
-                        g'4 ) ^ \markup { 2 }
-                        cs''4 -\staccato ^ \markup { 3 }
+                        d'2 \mf (
+                        g'4 )
+                        cs''4 -\staccato
                         r1
                         r1
                         r2
-                        d'4 ( ^ \markup { 7 }
-                        g'8 ) [ ^ \markup { 8 }
-                        cs''8 -\staccato ] ^ \markup { 9 }
+                        d'4 (
+                        g'8 ) [
+                        cs''8 -\staccato ]
                         r1
-                        b4 ( ^ \markup { 12 }
-                        e'4 ) ^ \markup { 13 }
-                        d''4 -\staccato ^ \markup { 14 }
-                        af''4 ( ^ \markup { 15 }
+                        b4 (
+                        e'4 )
+                        d''4 -\staccato
+                        af''4 (
                         r1
                         r1
                         r1
-                        a'4 ) ^ \markup { 19 }
-                        d''8 -\tenuto [ ^ \markup { 20 }
-                        af''8 ] ^ \markup { 21 }
+                        a'4 )
+                        d''8 -\tenuto [
+                        af''8 ]
                         r2
                         r1
                         r1
@@ -348,9 +324,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
-                        \bar "||"
                         \accidentalStyle modern-cautionary
-                        \tempo 4=96
                         \mark #3
                         r1
                         r1
@@ -358,26 +332,26 @@
                         r1
                         r1
                         r1
-                        d'2 \mf ( ^ \markup { 1 }
-                        g'4 ) ^ \markup { 2 }
-                        cs''4 -\staccato ^ \markup { 3 }
+                        d'2 \mf (
+                        g'4 )
+                        cs''4 -\staccato
                         r1
                         r1
                         r2
-                        d'4 ( ^ \markup { 7 }
-                        g'8 ) [ ^ \markup { 8 }
-                        cs''8 -\staccato ] ^ \markup { 9 }
+                        d'4 (
+                        g'8 ) [
+                        cs''8 -\staccato ]
                         r1
-                        b4 ( ^ \markup { 12 }
-                        e'4 ) ^ \markup { 13 }
-                        d''4 -\staccato ^ \markup { 14 }
-                        af''4 ( ^ \markup { 15 }
+                        b4 (
+                        e'4 )
+                        d''4 -\staccato
+                        af''4 (
                         r1
                         r1
                         r1
-                        a'4 ) ^ \markup { 19 }
-                        d''8 -\tenuto [ ^ \markup { 20 }
-                        af''8 ] ^ \markup { 21 }
+                        a'4 )
+                        d''8 -\tenuto [
+                        af''8 ]
                         r2
                         r1
                         r1
@@ -400,9 +374,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
-                        \bar "||"
                         \accidentalStyle modern-cautionary
-                        \tempo 4=96
                         \mark #3
                         r1
                         r1
@@ -412,9 +384,9 @@
                         r1
                         r1
                         r1
-                        d'2 -\tenuto \mf ^ \markup { 4 }
-                        a4 -\tenuto ^ \markup { 5 }
-                        e4 -\staccato ^ \markup { 6 }
+                        d'2 -\tenuto \mf
+                        a4 -\tenuto
+                        e4 -\staccato
                         r1
                         r1
                         r1
@@ -439,9 +411,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
-                        \bar "||"
                         \accidentalStyle modern-cautionary
-                        \tempo 4=96
                         \mark #3
                         r1
                         r1
@@ -451,9 +421,9 @@
                         r1
                         r1
                         r1
-                        d'2 -\tenuto \mf ^ \markup { 4 }
-                        a4 -\tenuto ^ \markup { 5 }
-                        e4 -\staccato ^ \markup { 6 }
+                        d'2 -\tenuto \mf
+                        a4 -\tenuto
+                        e4 -\staccato
                         r1
                         r1
                         r1
@@ -479,9 +449,7 @@
                 {
                     \numericTimeSignature
                     \time 4/4
-                    \bar "||"
                     \accidentalStyle modern-cautionary
-                    \tempo 4=96
                     \mark #3
                     R1 * 24
                 }
@@ -495,9 +463,7 @@
                 {
                     \numericTimeSignature
                     \time 4/4
-                    \bar "||"
                     \accidentalStyle modern-cautionary
-                    \tempo 4=96
                     \mark #3
                     R1 * 24
                 }
@@ -509,9 +475,7 @@
                 {
                     \numericTimeSignature
                     \time 4/4
-                    \bar "||"
                     \accidentalStyle modern-cautionary
-                    \tempo 4=96
                     \mark #3
                     R1 * 24
                 }
@@ -523,9 +487,7 @@
                 {
                     \numericTimeSignature
                     \time 4/4
-                    \bar "||"
                     \accidentalStyle modern-cautionary
-                    \tempo 4=96
                     \mark #3
                     R1 * 24
                 }
@@ -538,9 +500,7 @@
                 {
                     \numericTimeSignature
                     \time 4/4
-                    \bar "||"
                     \accidentalStyle modern-cautionary
-                    \tempo 4=96
                     \mark #3
                     R1 * 24
                 }
@@ -550,20 +510,13 @@
                 {
                     \numericTimeSignature
                     \time 4/4
-                    \bar "||"
                     \accidentalStyle modern-cautionary
-                    \tempo 4=96
                     \mark #3
                     R1 * 24
                 }
             }
             {
-                \numericTimeSignature
-                \time 4/4
-                \bar "||"
                 \accidentalStyle modern-cautionary
-                \tempo 4=96
-                \mark #3
                 R1 * 24
             }
         >>
@@ -574,9 +527,7 @@
                 {
                     \numericTimeSignature
                     \time 4/4
-                    \bar "||"
                     \accidentalStyle modern-cautionary
-                    \tempo 4=96
                     \mark #3
                     R1 * 24
                 }
@@ -586,9 +537,7 @@
                 {
                     \numericTimeSignature
                     \time 4/4
-                    \bar "||"
                     \accidentalStyle modern-cautionary
-                    \tempo 4=96
                     \mark #3
                     R1 * 24
                 }
@@ -604,9 +553,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
-                        \bar "||"
                         \accidentalStyle modern-cautionary
-                        \tempo 4=96
                         \mark #3
                         r1
                         r1
@@ -614,38 +561,38 @@
                         r1
                         r1
                         r2
-                        d'2 \mf ^ \markup { 1 }
-                        g'4 ^ \markup { 2 }
-                        fs'4 ^ \markup { 3 }
-                        d'4 ^ \markup { 4 }
-                        a8 [ ^ \markup { 5 }
-                        b8 ] ^ \markup { 6 }
-                        r1
-                        a'2 ^ \markup { 7 }
-                        d''4 ^ \markup { 8 }
-                        fs'4 ^ \markup { 9 }
-                        e'4 ^ \markup { 10 }
-                        g'8 [ ^ \markup { 11 }
-                        fs'8 ] ^ \markup { 12 }
-                        e'4 ^ \markup { 13 }
-                        g'4 ^ \markup { 14 }
-                        fs'4 ^ \markup { 15 }
-                        a'2 ^ \markup { 16 }
-                        g'8 [ ^ \markup { 17 }
-                        fs'8 ] ^ \markup { 18 }
-                        a'1 ~ ^ \markup { 19 }
-                        a'2
-                        g'2 ~ ^ \markup { 20 }
+                        d'2 \mf
                         g'4
-                        fs'2. ^ \markup { 21 }
-                        d'1 ~ ^ \markup { 22 }
-                        d'2
-                        e'2 ~ ^ \markup { 23 }
+                        fs'4
+                        d'4
+                        a8 [
+                        b8 ]
+                        r1
+                        a'2
+                        d''4
+                        fs'4
                         e'4
-                        fs'2. ^ \markup { 24 }
-                        e'4 ^ \markup { 25 }
-                        g'4 ^ \markup { 26 }
-                        fs'4 ^ \markup { 27 }
+                        g'8 [
+                        fs'8 ]
+                        e'4
+                        g'4
+                        fs'4
+                        a'2
+                        g'8 [
+                        fs'8 ]
+                        a'1 ~
+                        a'2
+                        g'2 ~
+                        g'4
+                        fs'2.
+                        d'1 ~
+                        d'2
+                        e'2 ~
+                        e'4
+                        fs'2.
+                        e'4
+                        g'4
+                        fs'4
                         r4
                         r1
                         r1
@@ -661,9 +608,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
-                        \bar "||"
                         \accidentalStyle modern-cautionary
-                        \tempo 4=96
                         \mark #3
                         R1 * 24
                     }
@@ -678,9 +623,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
-                        \bar "||"
                         \accidentalStyle modern-cautionary
-                        \tempo 4=96
                         \mark #3
                         R1 * 24
                     }
@@ -691,9 +634,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
-                        \bar "||"
                         \accidentalStyle modern-cautionary
-                        \tempo 4=96
                         \mark #3
                         R1 * 24
                     }
@@ -709,9 +650,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
-                        \bar "||"
                         \accidentalStyle modern-cautionary
-                        \tempo 4=96
                         \mark #3
                         R1 * 24
                     }
@@ -723,9 +662,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
-                        \bar "||"
                         \accidentalStyle modern-cautionary
-                        \tempo 4=96
                         \mark #3
                         R1 * 24
                     }
@@ -741,9 +678,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
-                        \bar "||"
                         \accidentalStyle modern-cautionary
-                        \tempo 4=96
                         \mark #3
                         R1 * 24
                     }
@@ -755,9 +690,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
-                        \bar "||"
                         \accidentalStyle modern-cautionary
-                        \tempo 4=96
                         \mark #3
                         R1 * 24
                     }
@@ -770,9 +703,7 @@
                 {
                     \numericTimeSignature
                     \time 4/4
-                    \bar "||"
                     \accidentalStyle modern-cautionary
-                    \tempo 4=96
                     \mark #3
                     R1 * 24
                 }
@@ -787,7 +718,6 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    \tempo 4=96
                     \mark #3
                     r1
                     r1
@@ -795,47 +725,47 @@
                     r1
                     r1
                     r1
-                    d'2 ^ \markup { 1 }
-                    g'4 ^ \markup { 2 }
-                    cs''4 ^ \markup { 3 }
+                    d'2
+                    g'4
+                    cs''4
                     r1
-                    d'2 ^ \markup { 4 }
-                    a4 ^ \markup { 5 }
-                    e4 ^ \markup { 6 }
+                    d'2
+                    a4
+                    e4
                     r2
-                    d'4 ^ \markup { 7 }
-                    g'8 [ ^ \markup { 8 }
-                    cs''8 ] ^ \markup { 9 }
-                    e'2. ^ \markup { 10 }
-                    g'4 ^ \markup { 11 }
-                    b4 ^ \markup { 12 }
-                    e'4 ^ \markup { 13 }
-                    d''4 ^ \markup { 14 }
-                    gs''4 ^ \markup { 15 }
+                    d'4
+                    g'8 [
+                    cs''8 ]
+                    e'2.
+                    g'4
+                    b4
+                    e'4
+                    d''4
+                    gs''4
                     r2
-                    e''2 ~ ^ \markup { 16 }
+                    e''2 ~
                     e''2
-                    g'4 ^ \markup { 17 }
-                    b4 ^ \markup { 18 }
+                    g'4
+                    b4
                     r1
-                    a'4 ^ \markup { 19 }
-                    d''8 [ ^ \markup { 20 }
-                    gs''8 ] ^ \markup { 21 }
-                    a'2 ~ ^ \markup { 22 }
+                    a'4
+                    d''8 [
+                    gs''8 ]
+                    a'2 ~
                     a'1
-                    e'2. ^ \markup { 23 }
-                    b4 ~ ^ \markup { 24 }
+                    e'2.
+                    b4 ~
                     b2
-                    e'2 ^ \markup { 25 }
-                    d''2 ^ \markup { 26 }
-                    gs''2 ^ \markup { 27 }
-                    e''2 ^ \markup { 28 }
-                    g'4 ^ \markup { 29 }
-                    b4 ^ \markup { 30 }
+                    e'2
+                    d''2
+                    gs''2
+                    e''2
+                    g'4
+                    b4
                     r1
-                    d'2 ^ \markup { 31 }
-                    b'4 ^ \markup { 32 }
-                    gs''4 ^ \markup { 33 }
+                    d'2
+                    b'4
+                    gs''4
                     r1
                 }
             }
@@ -847,7 +777,6 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    \tempo 4=96
                     \mark #3
                     r1
                     r1
@@ -855,38 +784,38 @@
                     r1
                     r1
                     r2
-                    d'2 ^ \markup { 1 }
-                    g'4 ^ \markup { 2 }
-                    fs'4 ^ \markup { 3 }
-                    d'4 ^ \markup { 4 }
-                    a8 [ ^ \markup { 5 }
-                    b8 ] ^ \markup { 6 }
-                    r1
-                    a'2 ^ \markup { 7 }
-                    d''4 ^ \markup { 8 }
-                    fs'4 ^ \markup { 9 }
-                    e'4 ^ \markup { 10 }
-                    g'8 [ ^ \markup { 11 }
-                    fs'8 ] ^ \markup { 12 }
-                    e'4 ^ \markup { 13 }
-                    g'4 ^ \markup { 14 }
-                    fs'4 ^ \markup { 15 }
-                    a'2 ^ \markup { 16 }
-                    g'8 [ ^ \markup { 17 }
-                    fs'8 ] ^ \markup { 18 }
-                    a'1 ~ ^ \markup { 19 }
-                    a'2
-                    g'2 ~ ^ \markup { 20 }
-                    g'4
-                    fs'2. ^ \markup { 21 }
-                    d'1 ~ ^ \markup { 22 }
                     d'2
-                    e'2 ~ ^ \markup { 23 }
+                    g'4
+                    fs'4
+                    d'4
+                    a8 [
+                    b8 ]
+                    r1
+                    a'2
+                    d''4
+                    fs'4
                     e'4
-                    fs'2. ^ \markup { 24 }
-                    e'4 ^ \markup { 25 }
-                    g'4 ^ \markup { 26 }
-                    fs'4 ^ \markup { 27 }
+                    g'8 [
+                    fs'8 ]
+                    e'4
+                    g'4
+                    fs'4
+                    a'2
+                    g'8 [
+                    fs'8 ]
+                    a'1 ~
+                    a'2
+                    g'2 ~
+                    g'4
+                    fs'2.
+                    d'1 ~
+                    d'2
+                    e'2 ~
+                    e'4
+                    fs'2.
+                    e'4
+                    g'4
+                    fs'4
                     r4
                     r1
                     r1
@@ -904,7 +833,6 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    \tempo 4=96
                     \mark #3
                     r1
                     r1
@@ -913,35 +841,35 @@
                     r1
                     r1
                     r1
-                    d'4 ^ \markup { 1 }
-                    g'8 [ ^ \markup { 2 }
-                    cs''8 ] ^ \markup { 3 }
-                    a'8 [ ^ \markup { 4 }
-                    e'16 ^ \markup { 5 }
-                    fs'16 ] ^ \markup { 6 }
-                    a'4 ^ \markup { 7 }
-                    d''8 [ ^ \markup { 8 }
-                    gs''8 ] ^ \markup { 9 }
-                    cs'''8 [ ^ \markup { 10 }
-                    a''16 ^ \markup { 11 }
-                    gs''16 ] ^ \markup { 12 }
-                    fs''8 [ ^ \markup { 13 }
-                    a''8 ] ^ \markup { 14 }
-                    gs''8 [ ^ \markup { 15 }
-                    b''8 ~ ] ^ \markup { 16 }
+                    d'4
+                    g'8 [
+                    cs''8 ]
+                    a'8 [
+                    e'16
+                    fs'16 ]
+                    a'4
+                    d''8 [
+                    gs''8 ]
+                    cs'''8 [
+                    a''16
+                    gs''16 ]
+                    fs''8 [
+                    a''8 ]
+                    gs''8 [
+                    b''8 ~ ]
                     b''8 [
-                    a''16 ^ \markup { 17 }
-                    gs''16 ] ^ \markup { 18 }
-                    b''4 ~ ^ \markup { 19 }
+                    a''16
+                    gs''16 ]
+                    b''4 ~
                     b''2
-                    a''8 [ ^ \markup { 20 }
-                    gs''8 ] ^ \markup { 21 }
-                    e''8 [ ^ \markup { 22 }
-                    fs''16 ^ \markup { 23 }
-                    gs''16 ] ^ \markup { 24 }
-                    fs''8 [ ^ \markup { 25 }
-                    a''8 ] ^ \markup { 26 }
-                    gs''8 ^ \markup { 27 }
+                    a''8 [
+                    gs''8 ]
+                    e''8 [
+                    fs''16
+                    gs''16 ]
+                    fs''8 [
+                    a''8 ]
+                    gs''8
                     r8
                     r1
                     r4
@@ -968,7 +896,6 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    \tempo 4=96
                     \mark #3
                     r1
                     r1
@@ -978,35 +905,35 @@
                     r1
                     r1
                     r2
-                    d'4 ^ \markup { 1 }
-                    g'8 [ ^ \markup { 2 }
-                    fs'8 ] ^ \markup { 3 }
-                    d'8 [ ^ \markup { 4 }
-                    e'16 ^ \markup { 5 }
-                    fs'16 ] ^ \markup { 6 }
-                    a'4 ^ \markup { 7 }
-                    g'8 [ ^ \markup { 8 }
-                    cs''8 ] ^ \markup { 9 }
-                    b'8 [ ^ \markup { 10 }
-                    d''16 ^ \markup { 11 }
-                    cs''16 ] ^ \markup { 12 }
-                    b'8 [ ^ \markup { 13 }
-                    d''8 ] ^ \markup { 14 }
-                    cs''8 [ ^ \markup { 15 }
-                    e''8 ~ ] ^ \markup { 16 }
+                    d'4
+                    g'8 [
+                    fs'8 ]
+                    d'8 [
+                    e'16
+                    fs'16 ]
+                    a'4
+                    g'8 [
+                    cs''8 ]
+                    b'8 [
+                    d''16
+                    cs''16 ]
+                    b'8 [
+                    d''8 ]
+                    cs''8 [
+                    e''8 ~ ]
                     e''8 [
-                    d''16 ^ \markup { 17 }
-                    cs''16 ] ^ \markup { 18 }
-                    e''4 ~ ^ \markup { 19 }
+                    d''16
+                    cs''16 ]
+                    e''4 ~
                     e''2
-                    d''8 [ ^ \markup { 20 }
-                    cs''8 ] ^ \markup { 21 }
-                    a'4 ^ \markup { 22 }
-                    b'8 [ ^ \markup { 23 }
-                    cs''8 ] ^ \markup { 24 }
-                    b'8 [ ^ \markup { 25 }
-                    d''8 ] ^ \markup { 26 }
-                    cs''8 ^ \markup { 27 }
+                    d''8 [
+                    cs''8 ]
+                    a'4
+                    b'8 [
+                    cs''8 ]
+                    b'8 [
+                    d''8 ]
+                    cs''8
                     r8
                     r4
                     r2
@@ -1037,12 +964,7 @@
                 \set Staff.instrumentName = \markup { "Line 5" }
                 \set Staff.shortInstrumentName = \markup { 5: }
                 {
-                    \numericTimeSignature
-                    \time 4/4
-                    \bar "||"
                     \accidentalStyle modern-cautionary
-                    \tempo 4=96
-                    \mark #3
                     R1 * 24
                 }
             }
@@ -1050,12 +972,7 @@
                 \set Staff.instrumentName = \markup { "Line 6" }
                 \set Staff.shortInstrumentName = \markup { 6: }
                 {
-                    \numericTimeSignature
-                    \time 4/4
-                    \bar "||"
                     \accidentalStyle modern-cautionary
-                    \tempo 4=96
-                    \mark #3
                     R1 * 24
                 }
             }
@@ -1063,12 +980,7 @@
                 \set Staff.instrumentName = \markup { "Line 7" }
                 \set Staff.shortInstrumentName = \markup { 7: }
                 {
-                    \numericTimeSignature
-                    \time 4/4
-                    \bar "||"
                     \accidentalStyle modern-cautionary
-                    \tempo 4=96
-                    \mark #3
                     R1 * 24
                 }
             }
@@ -1076,12 +988,7 @@
                 \set Staff.instrumentName = \markup { "Line 8" }
                 \set Staff.shortInstrumentName = \markup { 8: }
                 {
-                    \numericTimeSignature
-                    \time 4/4
-                    \bar "||"
                     \accidentalStyle modern-cautionary
-                    \tempo 4=96
-                    \mark #3
                     R1 * 24
                 }
             }
@@ -1089,12 +996,7 @@
                 \set Staff.instrumentName = \markup { "Line 9" }
                 \set Staff.shortInstrumentName = \markup { 9: }
                 {
-                    \numericTimeSignature
-                    \time 4/4
-                    \bar "||"
                     \accidentalStyle modern-cautionary
-                    \tempo 4=96
-                    \mark #3
                     R1 * 24
                     \bar "|."
                 }

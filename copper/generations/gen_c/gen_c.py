@@ -6,14 +6,17 @@ from copper.machines import IndexedData as ID, ID1 # just to avoid a lot of typi
 from copper.generations.gen_b import gen_b
 
 
-class LineGenC(machines.RhythmsBroken):
+class GenC(object):
+    time_signature = (4,4)
     metrical_durations = ID(default=((1,1),), limit=24)
-    def update_data(self):
-        super().update_data()
-        self.logical_ties[0].untag("\clef bass")
+    rehearsal_mark_number = 3
+    start_bar_line = "||"
+    # tempo_units_per_minute = 96
+
 # -------------------------------------------------------------------------------------------------
 
-class Line1(LineGenC, gen_b.Line1):
+class Line1(GenC, machines.RhythmsBroken, gen_b.Line1):
+    clef = None
     rhythm_initial_silence = 24
     breaks = ID1({
             2:  -4,
@@ -33,7 +36,8 @@ class Line1(LineGenC, gen_b.Line1):
 
 # -------------------------------------------------------------------------------------------------
 
-class Line2(LineGenC, gen_b.Line2):
+class Line2(GenC, machines.RhythmsBroken, gen_b.Line2):
+    clef = None
     rhythm_initial_silence = 22
     breaks = ID1({
             3:  -4,
@@ -52,7 +56,8 @@ class Line2(LineGenC, gen_b.Line2):
 
 # -------------------------------------------------------------------------------------------------
 
-class Line3(LineGenC, gen_b.Line3):
+class Line3(GenC, machines.RhythmsBroken, gen_b.Line3):
+    clef = None
     metrical_durations = ID({
             7:((1,4),)*4,
             8:((1,4),)*4,
@@ -77,7 +82,8 @@ class Line3(LineGenC, gen_b.Line3):
 # -------------------------------------------------------------------------------------------------
 
 class Line4(Line3):
-    metrical_durations = ID({
+    clef = None
+    metrical_durations = ID({ # TO DO... mobve this to arrangement?
             8:((1,4),)*4,
             9:((1,4),)*4,
             10:((1,2),(1,4),(1,4),),
@@ -99,15 +105,11 @@ class Line4(Line3):
 
 # -------------------------------------------------------------------------------------------------
 
-class GenC(gen_b.GenB): #  TO DO...? should all jen bubbles inherit from GridStart?
-    time_signature = (4,4)
-    line1 = Line1()
-    line2 = Line2()
-    line3 = Line3()
-    line4 = Line4()
-
-# -------------------------------------------------------------------------------------------------
-
 bubbles.illustrate_me(__file__, 
-    lambda: GenC().score()
+    lambda: bubbles.Bubble(
+            line1 = Line1(),
+            line2 = Line2(),
+            line3 = Line3(),
+            line4 = Line4(),
+        ).score()
     )

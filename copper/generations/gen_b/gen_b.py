@@ -8,15 +8,17 @@ from copper.generations.gen_a import gen_a
 
 # -------------------------------------------------------------------------------------------------
 
-class LineGenB(machines.RhythmsMultiplied):
+class GenB(object): # basic attributes, such as starting time signature, rehearsal mark, etc.
     metrical_durations = ID({}, default=((3,4),), limit=24)
-    def update_data(self):
-        super().update_data()
-        self.logical_ties[0].tag("\clef bass")
+    rehearsal_mark_number = 2
+    # tempo_units_per_minute = 72
+    start_bar_line = "||"
+    time_signature = (3,4)
 
 # -------------------------------------------------------------------------------------------------
 
-class Line1(LineGenB, gen_a.Line1):
+class Line1(GenB, machines.RhythmsMultiplied, gen_a.Line1):
+    clef = "bass"
     rhythm_initial_silence=29
     rhythm_multipliers = machines.RhythmsMultiplied.make_multipliers({
                 3:0.5,
@@ -32,7 +34,8 @@ class Line1(LineGenB, gen_a.Line1):
 
 # -------------------------------------------------------------------------------------------------
 
-class Line2(LineGenB, gen_a.Line1):
+class Line2(GenB, machines.RhythmsMultiplied, gen_a.Line1):
+    clef = "bass"
     rhythm_initial_silence=24
     rhythm_multipliers = machines.RhythmsMultiplied.make_multipliers()
     rhythm_multipliers.extend( (1,) + (1,0.5)*3 + (3,3) )
@@ -42,7 +45,8 @@ class Line2(LineGenB, gen_a.Line1):
 
 # -------------------------------------------------------------------------------------------------
 
-class Line3(LineGenB, gen_a.Line1):
+class Line3(GenB, machines.RhythmsMultiplied, gen_a.Line1):
+    clef = "bass"
     # TO DO, use fill here to make this cleaner
     metrical_durations = ID({
         12:( (1,4),)*3,
@@ -56,17 +60,14 @@ class Line3(LineGenB, gen_a.Line1):
     rhythm_multipliers.extend( (1,0.5,) + (0.25,0.5,)*4 )
     pitch_displacement = machines.FifthDisplacement(
         down = ( 1,) )
-# -------------------------------------------------------------------------------------------------
-
-class GenB(gen_a.GenA): #  TO DO...? should all jen bubbles inherit from GridStart?
-    time_signature = (3,4)
-    line1 = bubbles.Line("\\clef bass ") + Line1()
-    line2 = Line2()
-    line3 = Line3()
 
 # -------------------------------------------------------------------------------------------------
 
 bubbles.illustrate_me(__file__, 
-    lambda: GenB().score()
+    lambda: bubbles.Bubble(
+            line1 = Line1(),
+            line2 = Line2(),
+            line3 = Line3(),
+        ).score()
     )
 

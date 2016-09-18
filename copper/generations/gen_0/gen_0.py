@@ -6,11 +6,15 @@ from copper import machines
 from copper.machines import IndexedData as ID, ID1 # just to avoid a lot of typing
 
 class Gen0(object): # basic attributes, such as starting time signature, rehearsal mark, etc.
+    metrical_durations = ID(default=((4,4),), limit=12)
+    # tempo_units_per_minute = 48 # TO DO... tempo indication makes everything SLOW... WHY?????
+    tempo_text = "Slow"
+    time_signature = (4,4)
 
 # -------------------------------------------------------------------------------------------------
 # HERE IS the actual line class:
-class Line1(machines.PitchedLine):
-
+class Line1(Gen0, machines.PitchedLine):
+    # time_signature = (4,4)
 # HERE is for testing purposes:
 # class Line1(
 #             machines.RhythmsPulsed,
@@ -40,7 +44,7 @@ class Line1(machines.PitchedLine):
         }, default=0, limit=10)
     # ------------------------------------------------------------------------------------------
     # # show_data_type=machines.SegmentData
-    show_data_attr="original_depthwise_index"
+    # show_data_attr="original_depthwise_index"
     # ------------------------------------------------------------------------------------------
     # ------------------------------------------------------------------------------------------
     # # UNCOMMENT FOR TESTING PURPOSES:
@@ -91,13 +95,9 @@ class Drone2(machines.Drone):
         (3,"pp"),
         )
 
-
-# -------------------------------------------------------------------------------------------------
-
-class Gen0(bubbles.GridStart):
-    line1 = Line1()
-
 # -------------------------------------------------------------------------------------------------
 bubbles.illustrate_me(__file__, 
-    lambda: Gen0().score()
+    lambda: bubbles.Bubble(
+            line1 = Line1()
+        ).score()
     )

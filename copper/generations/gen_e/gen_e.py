@@ -6,14 +6,16 @@ from copper import machines
 from copper.machines.tools import IndexedData as ID # just to avoid a lot of typing
 from copper.generations.gen_d import gen_d
 
-class LineGenE(object):
+class GenE(object): 
+    time_signature = (3,4)
     metrical_durations = ID(default=((3,4),), limit=35)
-    # metrical_durations = ( (3,4), ) * 35
-
+    rehearsal_mark_number = 5
+    # tempo_units_per_minute = 108
+    start_bar_line = "||"
 
 # -------------------------------------------------------------------------------------------------
 
-class Line1(LineGenE, gen_d.Line1):
+class Line1(GenE, gen_d.Line1):
     pitch_displacement = machines.FifthDisplacement()
     pitch_displacement.cycle_fifth(2, cycle=(1,0,0,-1,-1,1), times=5)
     pitch_displacement.cycle_fifth(31, cycle=(0,-1,-1,0,1,1), times=12)
@@ -22,7 +24,7 @@ class Line1(LineGenE, gen_d.Line1):
 
 # -------------------------------------------------------------------------------------------------
 
-class Line2(LineGenE, gen_d.Line2):
+class Line2(GenE, gen_d.Line2):
     pitch_displacement = gen_d.Line2.pitch_displacement.copy()
     pitch_displacement.flat(3,9)
     # pitch_displacement.up(22)
@@ -32,7 +34,7 @@ class Line2(LineGenE, gen_d.Line2):
 
 # -------------------------------------------------------------------------------------------------
 
-class Line3(LineGenE, machines.RhythmsReverse, machines.PitchesReverse, gen_d.Line3):
+class Line3(GenE, machines.RhythmsReverse, machines.PitchesReverse, gen_d.Line3):
     pitch_displacement = machines.FifthDisplacement(up=(1,))
     pitch_displacement.cycle_fifth(26, cycle=(-1,-1,1,1), times=2)
     pitch_displacement.cycle_fifth(33, cycle=(-1,-1,0,1,0,1), times=4)
@@ -41,19 +43,16 @@ class Line3(LineGenE, machines.RhythmsReverse, machines.PitchesReverse, gen_d.Li
     # TO DO... use better ID methods to populate these...
     rhythm_reverse = (1,2,3,4,6,7,8,10,11,12,13,15,16,17)
     rhythm_initial_silence = 23
-    rhythm_times = 1
+    rhythm_times = 2
 
 # -------------------------------------------------------------------------------------------------
 
 class Line4(Line3):
+    clef = "bass"
     pitch_displacement = machines.FifthDisplacement(
                 up      = (25,),
                 down    = (26,)
                 )
-    def update_data(self):
-        super().update_data()
-        if self.__class__.__name__ == "Line4": # this helps restrict tags to short score only
-            self.events[0].tag("\clef bass")
 
 # -------------------------------------------------------------------------------------------------
 
@@ -65,29 +64,20 @@ class Line5(Line4):
 
 # -------------------------------------------------------------------------------------------------
 
-class Line6(LineGenE, gen_d.Line4):
+class Line6(GenE, gen_d.Line4):
     rhythm_multipliers = machines.RhythmsMultiplied.make_multipliers({}, 0.5)
     # TO DO... need to work on this!
 
 # -------------------------------------------------------------------------------------------------
 
-
-
-class GenE(bubbles.GridStart): #  TO DO...? should all jen bubbles inherit from GridStart?
-    time_signature = (3,4)
-    line1 = Line1() 
-    line2 = Line2() 
-    line3 = Line3() 
-    line4 = Line4() 
-    line5 = Line5() 
-    line6 = Line6() 
-    # line3 = bubbles.Line("R1*3") + Line3() + bubbles.Line("r2 R1*3")
-    # line4 = bubbles.Line("R1*3") + Line4() + bubbles.Line("r2 R1*3")
-
-
-# -------------------------------------------------------------------------------------------------
-
 bubbles.illustrate_me(__file__, 
-    lambda : GenE().score()
+    lambda : bubbles.Bubble(
+            line1 = Line1(),
+            line2 = Line2(),
+            line3 = Line3(),
+            line4 = Line4(),
+            line5 = Line5(),
+            line6 = Line6(),
+        ).score()
     )
 
