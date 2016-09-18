@@ -52,18 +52,20 @@ class AttachmentTagData(object):
     # def get_attachments(self, **kwargs):
     #     return [AttachmentSetData.get_attachment(a) for a in self.attachment_names]
 
-    def tag(self, *args):
+    def set_tag(self, my_set, *args):
         for arg in args:
             if arg[:5] == "data:":
-                self.attachment_names.add(str(getattr(self, arg[5:])))
+                my_set.add(str(getattr(self, arg[5:])))
             else:
                 # ovewrite existing dynamics and hairpins:
                 if arg in self.dynamics_inventory:
-                    self.attachment_names -= self.dynamics_inventory
+                    my_set -= self.dynamics_inventory
                 elif arg in self.hairpins_inventory:
-                    self.attachment_names -= self.hairpins_inventory
+                    my_set -= self.hairpins_inventory
+                my_set.add(arg)        
 
-                self.attachment_names.add(arg)
+    def tag(self, *args):
+        self.set_tag(self.attachment_names, *args)
 
     def tag_children(self, *args):
         for arg in args:
@@ -93,6 +95,14 @@ class AttachmentTagData(object):
                 for child in self.children:
                     child.attachment_names.remove(arg)
 
+    def combine_tags(self, new_set, old_set):
+        # note, can't do simple union since that could dupe dynamics or hairpins, so need to call set_tag method on each one
+        # .... here, new_set values override old_set values for hairpins and dynamics
+        combined_set = set(old_set) # makes a copy
+        for n in new_set:
+            self.set_tag(combined_set, n)
+        return combined_set
+
     # TO DO add if useful...
     # def tag_children(self, *args):
     #     for arg in args:
@@ -109,12 +119,12 @@ class AttachmentTagData(object):
 
     def get_ancestor_attachment_names(self):
         if self.parent and self.use_ancestor_attachments:
-            return self.parent.attachment_names | self.parent.get_ancestor_attachment_names()
+            return self.combine_tags(self.parent.attachment_names, self.parent.get_ancestor_attachment_names())
         else:
             return set()
 
     def get_all_attachment_names(self):
-        return self.attachment_names | self.get_ancestor_attachment_names()
+        return self.combine_tags(self.attachment_names, self.get_ancestor_attachment_names())
 
     # TO DO... consider implementing this
     # # TO DO.. this should be able to work with original_depthwise_index (or fragments should not reset segments)

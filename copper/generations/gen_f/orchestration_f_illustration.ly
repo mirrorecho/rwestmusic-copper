@@ -1,4 +1,4 @@
-% 2016-09-18 05:03
+% 2016-09-18 13:28
 
 \version "2.18.2"
 \language "english"
@@ -299,19 +299,75 @@
                     R1 * 36
                 }
             }
-            \new RhythmicStaff {
-                \clef "percussion"
-                \set Staff.instrumentName = \markup { "Percussion 2" }
-                \set Staff.shortInstrumentName = \markup { Perc.2 }
-                {
-                    \numericTimeSignature
-                    \time 4/4
-                    \bar "||"
-                    \accidentalStyle modern-cautionary
-                    \mark #6
-                    R1 * 36
+            \new StaffGroup \with {
+                systemStartDelimiter = #'SystemStartSquare
+            } <<
+                \new RhythmicStaff {
+                    \clef "percussion"
+                    \set Staff.instrumentName = \markup { "Percussion 2" }
+                    \set Staff.shortInstrumentName = \markup { Perc.2 }
+                    {
+                        \numericTimeSignature
+                        \time 4/4
+                        \bar "||"
+                        \accidentalStyle modern-cautionary
+                        \mark #6
+                        R1 * 36
+                    }
                 }
-            }
+                \new Staff {
+                    \set Staff.instrumentName = \markup { "Perc. 2 - Vibraphone" }
+                    \set Staff.shortInstrumentName = \markup { Vib. }
+                    {
+                        \numericTimeSignature
+                        \time 4/4
+                        \bar "||"
+                        \accidentalStyle modern-cautionary
+                        \mark #6
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r2.
+                        d''8 \fff [ ^ \markup { 1 }
+                        f'8 ] ^ \markup { 2 }
+                        e''2 ^ \markup { 3 }
+                        f''4 ^ \markup { 4 }
+                        g'4 ^ \markup { 5 }
+                        e''2 ^ \markup { 6 }
+                        r2
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                    }
+                }
+            >>
         >>
         \new PianoStaff <<
             \set PianoStaff.instrumentName = \markup { Harp }
@@ -706,98 +762,98 @@
                     r1
                     r2.
                     d''8 [ ^ \markup { 1 }
-                    f'8 ]
-                    e''2
-                    f''4 ^ \markup { 2 }
-                    g'4
-                    e''2
+                    f'8 ] ^ \markup { 2 }
+                    e''2 ^ \markup { 3 }
+                    f''4 ^ \markup { 4 }
+                    g'4 ^ \markup { 5 }
+                    e''2 ^ \markup { 6 }
                     r2
                     r4
-                    d''8 [ ^ \markup { 3 }
-                    f'8 ]
-                    a'2
-                    a'4 ^ \markup { 4 }
-                    as'4
-                    c''2
+                    d''8 [ ^ \markup { 7 }
+                    f'8 ] ^ \markup { 8 }
+                    a'2 ^ \markup { 9 }
+                    a'4 ^ \markup { 10 }
+                    as'4 ^ \markup { 11 }
+                    c''2 ^ \markup { 12 }
                     r2.
-                    c''4 ^ \markup { 5 }
-                    ds''4
-                    d''4
-                    a'8 [ ^ \markup { 6 }
-                    as'8 ]
-                    f''4 ~
+                    c''4 ^ \markup { 13 }
+                    ds''4 ^ \markup { 14 }
+                    d''4 ^ \markup { 15 }
+                    a'8 [ ^ \markup { 16 }
+                    as'8 ] ^ \markup { 17 }
+                    f''4 ~ ^ \markup { 18 }
                     f''1
-                    c''8 [ ^ \markup { 7 }
-                    f''8 ]
-                    a''4
-                    c''4 ^ \markup { 8 }
-                    g'4
-                    e''2.
-                    d''4 ^ \markup { 9 }
-                    c''4
-                    b'4
-                    d''4 ^ \markup { 10 }
-                    c''4
-                    b'2
+                    c''8 [ ^ \markup { 19 }
+                    f''8 ] ^ \markup { 20 }
+                    a''4 ^ \markup { 21 }
+                    c''4 ^ \markup { 22 }
+                    g'4 ^ \markup { 23 }
+                    e''2. ^ \markup { 24 }
+                    d''4 ^ \markup { 25 }
+                    c''4 ^ \markup { 26 }
+                    b'4 ^ \markup { 27 }
+                    d''4 ^ \markup { 28 }
+                    c''4 ^ \markup { 29 }
+                    b'2 ^ \markup { 30 }
                     r2
                     r2
-                    g'4 ^ \markup { 11 }
-                    a'4
-                    b'2
-                    d''4 ^ \markup { 12 }
-                    c''4
-                    b'2
-                    b'4 ^ \markup { 13 }
-                    c''4
-                    a'2
+                    g'4 ^ \markup { 31 }
+                    a'4 ^ \markup { 32 }
+                    b'2 ^ \markup { 33 }
+                    d''4 ^ \markup { 34 }
+                    c''4 ^ \markup { 35 }
+                    b'2 ^ \markup { 36 }
+                    b'4 ^ \markup { 37 }
+                    c''4 ^ \markup { 38 }
+                    a'2 ^ \markup { 39 }
                     r4
-                    a'4 ^ \markup { 14 }
-                    c''4
-                    b'4
-                    b'8 [ ^ \markup { 15 }
-                    c''8 ]
-                    d''4 ~
+                    a'4 ^ \markup { 40 }
+                    c''4 ^ \markup { 41 }
+                    b'4 ^ \markup { 42 }
+                    b'8 [ ^ \markup { 43 }
+                    c''8 ] ^ \markup { 44 }
+                    d''4 ~ ^ \markup { 45 }
                     d''2
-                    d''4 ^ \markup { 16 }
-                    c''4
-                    b'2
-                    g'4 ^ \markup { 17 }
-                    a'4
-                    b'2.
-                    a'4 ^ \markup { 18 }
-                    c''4
-                    b'4
+                    d''4 ^ \markup { 46 }
+                    c''4 ^ \markup { 47 }
+                    b'2 ^ \markup { 48 }
+                    g'4 ^ \markup { 49 }
+                    a'4 ^ \markup { 50 }
+                    b'2. ^ \markup { 51 }
+                    a'4 ^ \markup { 52 }
+                    c''4 ^ \markup { 53 }
+                    b'4 ^ \markup { 54 }
                     r2
-                    d''2 ^ \markup { 19 }
-                    c''4
-                    b'4
-                    g'2 ^ \markup { 20 }
-                    a'4
-                    b'4
-                    d''2 ^ \markup { 21 }
-                    c''4
-                    b'4
-                    a'2 ^ \markup { 22 }
-                    c''4
-                    b'4
-                    a'4 ^ \markup { 23 }
-                    c''4
-                    b'4
-                    d''4 ~ ^ \markup { 24 }
+                    d''2 ^ \markup { 55 }
+                    c''4 ^ \markup { 56 }
+                    b'4 ^ \markup { 57 }
+                    g'2 ^ \markup { 58 }
+                    a'4 ^ \markup { 59 }
+                    b'4 ^ \markup { 60 }
+                    d''2 ^ \markup { 61 }
+                    c''4 ^ \markup { 62 }
+                    b'4 ^ \markup { 63 }
+                    a'2 ^ \markup { 64 }
+                    c''4 ^ \markup { 65 }
+                    b'4 ^ \markup { 66 }
+                    a'4 ^ \markup { 67 }
+                    c''4 ^ \markup { 68 }
+                    b'4 ^ \markup { 69 }
+                    d''4 ~ ^ \markup { 70 }
                     d''2.
-                    c''4
-                    b'4
+                    c''4 ^ \markup { 71 }
+                    b'4 ^ \markup { 72 }
                     r4
-                    d''2 ^ \markup { 25 }
-                    c''4
-                    b'4
-                    g'2 ~ ^ \markup { 26 }
+                    d''2 ^ \markup { 73 }
+                    c''4 ^ \markup { 74 }
+                    b'4 ^ \markup { 75 }
+                    g'2 ~ ^ \markup { 76 }
                     g'4
-                    a'4
-                    b'4
-                    a'4 ^ \markup { 27 }
-                    c''4
-                    b'4
+                    a'4 ^ \markup { 77 }
+                    b'4 ^ \markup { 78 }
+                    a'4 ^ \markup { 79 }
+                    c''4 ^ \markup { 80 }
+                    b'4 ^ \markup { 81 }
                     r2
                 }
             }

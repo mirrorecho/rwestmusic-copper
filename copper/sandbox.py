@@ -62,6 +62,7 @@
 # - (DONE) - - make sure entire score can be output
 # - (DONE) - - remove gen h (and make sure still ends OK at G)
 # - (DONE) rehearsal markings
+# - (DONE) (warning!) - sets combined with ancestors will dupe 
 # ---------------------------- SUNDAY
 # - start orchestrating gen f
 # - start gen g draft short score
@@ -120,9 +121,11 @@
 # - final draft: gen a orchestration!
 # - final draft: gen b orchestration!
 # - final draft: gen c orchestration!
+# - use marimba?
 # - good parts template (aside from percussion)
 # - better fragments
 # - review fonts
+# - allow slices of data to be tagged
 # - penultimate draft: gen d orchestration!
 # - penultimate draft: gen e orchestration!
 # - penultimate draft: gen f orchestration!
@@ -131,8 +134,8 @@
 # - review piano part
 # - review harp part (including pedal changes)
 # - review percussion part (non-timpani)
+# - percussion beaters (including vibraphone mallets and motor)
 # - review timpani part (including tunings)
-# - allow slices of data to be tagged
 # - errors should show class names / lines that throw them
 # - final draft: gen d orchestration!
 # - final draft: gen e orchestration!
@@ -171,7 +174,6 @@
 # - performance and program notes
 # - (if time, else later)... warn if orchestrated lines don't inherit from arrangement base classes (i.e. they should be getting rehearsal marks, etc.)
 # - tital page
-
 # ---------------------------- IF TIME ALLOWS: 
 # - keep relative durations as negative?
 # - more readable indices (small font, all in a row)

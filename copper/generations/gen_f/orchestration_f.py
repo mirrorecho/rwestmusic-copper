@@ -28,6 +28,8 @@ class ArrangeF(gen_f.GenF, machines.FragmentLine, machines.PitchedLine):
     # show_data_attr="depthwise_index"
     def update_data(self):
         super().update_data()
+        if len(self.segments)>1:
+            self.segments[1].tag("mp")
 
 # ------------------------------------------------------------------------------------------------------------
 # WINDS
@@ -95,6 +97,21 @@ class Perc1(ArrangeF):
 class Perc2(ArrangeF):
     pass
 
+class Vibes(ArrangeF):
+    line = 3
+    fragments = Frag({
+        1:Frag.item(),
+        2:Frag.item(),
+        3:Frag.item(),
+        4:Frag.item(),
+        5:Frag.item(),
+        6:Frag.item(),
+        })
+    def update_data(self):
+        super().update_data()
+        self.logical_ties[1].tag("fff")
+        self.events[1].tag("ppp")
+
 class Harp1(ArrangeF):
     pass
 
@@ -161,6 +178,7 @@ class OrchestrationF(staves.CopperMusic): # TO DO... maybe these shouldn't inher
     timpani = Timpani()
     perc1 = Perc1()
     perc2 = Perc2()
+    vibes = Vibes()
     harp1 = Harp1()
     harp2 = Harp2()
     piano1 = Piano1()

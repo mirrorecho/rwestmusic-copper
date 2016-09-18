@@ -31,13 +31,17 @@ class CopperTrombones(InstrumentStaffGroup):
     trombone1 = BubbleStaff(instrument=instrumenttools.TenorTrombone(instrument_name="Tenor Trombone 1", short_instrument_name="tbn.1"), clef="bass")
     trombone2 = BubbleStaff(instrument=instrumenttools.TenorTrombone(instrument_name="Tenor Trombone 2", short_instrument_name="tbn.2"), clef="bass")
 
+class CapperPerc2(InstrumentStaffGroup):
+    perc2 = BubbleRhythmicStaff(instrument=instrumenttools.Percussion(instrument_name="Percussion 2", short_instrument_name="perc.2"))
+    vibes = BubbleStaff(instrument=instrumenttools.Vibraphone(instrument_name="Perc. 2 - Vibraphone", short_instrument_name="vib."))
+
 class CopperPerc(BubbleStaffGroup):
     # TO DO EVENTUALLY... shouldn't always add crotales.... 
     # crotales = BubbleStaff(instrument=instrumenttools.Instrument(instrument_name="Crotales", short_instrument_name="cro."))
     timpani = BubbleStaff(instrument=instrumenttools.Instrument(instrument_name="Timpani", short_instrument_name="timp"), clef="bass")
     perc1 = BubbleRhythmicStaff(instrument=instrumenttools.Percussion(instrument_name="Percussion 1", short_instrument_name="perc.1"))
-    perc2 = BubbleRhythmicStaff(instrument=instrumenttools.Percussion(instrument_name="Percussion 2", short_instrument_name="perc.2"))
-    sequence = ("timpani", "perc1", "perc2",)
+    perc2_combo = CapperPerc2()
+    sequence = ("timpani", "perc1", "perc2_combo",)
 
 
 class CopperViolinIDiv(InstrumentStaffGroup):

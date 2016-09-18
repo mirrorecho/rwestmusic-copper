@@ -25,7 +25,7 @@ class Line2(GenF, gen_e.Line2):
 class Line3(GenF, gen_e.Line4):
     # rhythm_reverse = list(gen_e.Line4.rhythm_reverse)
     # rhythm_reverse.remove(7)
-    show_data_type=machines.SegmentData
+    show_data_type=machines.EventData
     pitch_displacement =  machines.FifthDisplacement(
             up=(     6,7,     16, 19,20, 22, 24, 26),
             down=(2,4,  8,9,12, 18,    21, 23, )

@@ -89,6 +89,9 @@ class Perc1(Arrange0):
 class Perc2(Arrange0):
     pass
 
+class Vibes(Arrange0):
+    pass
+
 class Harp1(Arrange0):
     pass
 
@@ -144,6 +147,7 @@ class Orchestration0(staves.CopperMusic):
     timpani = Timpani()
     perc1 = Perc1()
     perc2 = Perc2()
+    vibes = Vibes()
     harp1 = Harp1()
     harp2 = Harp2()
     piano1 = Piano1()
