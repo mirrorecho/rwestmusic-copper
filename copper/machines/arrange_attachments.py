@@ -18,6 +18,10 @@ class AttachmentTagData(object):
 
     start_spanners_inventory = slurs_inventory | hairpins_inventory
     stop_spanners_inventory = set( (")", "))", "\!"), )
+    stem_tremolos_inventory = set( (":8",":16",":32") )
+    tremolos_inventory = set( ("tremolo:1", "tremolo:2", "tremolo:3",) )
+
+    # TO DO... should prevent dupes in tremolos
 
     # defines things that the spanners close:
     spanner_closures = {
@@ -42,6 +46,12 @@ class AttachmentTagData(object):
             return abjad.Crescendo()
         elif attachment_name == "\>":
             return abjad.Decrescendo()
+        elif attachment_name in self.stem_tremolos_inventory:
+            tremolo_flags = int(attachment_name[1:])
+            return abjad.indicatortools.StemTremolo(tremolo_flags)
+        elif attachment_name in self.tremolos_inventory:
+            tremolo_count = int(attachment_name[8:])
+            return abjad.indicatortools.Tremolo(beam_count=tremolo_count, is_slurred=True)
         elif not attachment_name in self.stop_spanners_inventory:
             if attachment_name[0] == "\\":
                 return abjad.indicatortools.LilyPondCommand(attachment_name[1:])

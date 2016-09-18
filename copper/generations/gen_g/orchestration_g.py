@@ -10,6 +10,12 @@ Frag = machines.Fragments
 ID = machines.IndexedData
 ID1 = machines.ID1
 
+class HarmonyPulsed11(gen_g.Line1): #( using double digits for new lines to create pulses of the harmonies)
+    rhythm_pulses = ID({}, default=0.5)
+
+class HarmonyPulsed12(gen_g.Line2):
+    rhythm_pulses = ID({}, default=0.5)
+
 LINES = ID({
     1:gen_g.Line1(),
     2:gen_g.Line2(),
@@ -19,6 +25,8 @@ LINES = ID({
     6:gen_g.Line6(),
     7:gen_g.Line7(),
     8:gen_g.Line8(),
+    11:HarmonyPulsed11(), #( using double digits for new lines to create pulses of the harmonies)
+    12:HarmonyPulsed12(), 
     })
 # ------------------------------------------------------------------------------------------------------------
 # BASE CLASSES AND HELPERS
@@ -29,6 +37,7 @@ class ArrangeG(gen_g.GenG, machines.FragmentLine, machines.PitchedLine):
     # show_data_attr="depthwise_index"
     def update_data(self):
         super().update_data()
+        self.segments[1].tag("mf")
 
 # ------------------------------------------------------------------------------------------------------------
 # WINDS
@@ -115,22 +124,34 @@ class Piano2(ArrangeG):
 # STRINGS
 
 class ViolinI1(ArrangeG):
-    pass
+    fragments = Frag.make(*[
+        Frag.it(11, i, chord_positions=-1) for i in range(1, 20)
+        ])
 
 class ViolinI2(ArrangeG):
-    pass
+    fragments = Frag.make(*[
+        Frag.it(11, i, chord_positions=-2) for i in range(1, 20)
+        ])
 
 class ViolinII1(ArrangeG):
-    pass
+    fragments = Frag.make(*[
+        Frag.it(11, i, chord_positions=-3) for i in range(1, 20)
+        ])
 
 class ViolinII2(ArrangeG):
-    pass
+    fragments = Frag.make(*[
+        Frag.it(12, i, chord_positions=-1) for i in range(1, 20)
+        ])
 
 class Viola1(ArrangeG):
-    pass
+    fragments = Frag.make(*[
+        Frag.it(12, i, chord_positions=-2) for i in range(1, 20)
+        ])
 
 class Viola2(ArrangeG):
-    pass
+    fragments = Frag.make(*[
+        Frag.it(12, i, chord_positions=-3) for i in range(1, 20)
+        ])
 
 class Cello1(ArrangeG):
     pass

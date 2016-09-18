@@ -141,7 +141,8 @@ class CopperMusic(Bubble):
     timpani = Placeholder()
     perc1 = Placeholder()
     perc2 = Placeholder()
-    harp = Placeholder() # TO DO... consider whether this needs to be 2 staves
+    harp1 = Placeholder() 
+    harp2 = Placeholder() 
     piano1 = Placeholder()
     piano2 = Placeholder()
     violinI1 = Placeholder()

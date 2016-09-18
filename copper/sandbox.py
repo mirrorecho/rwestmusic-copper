@@ -63,16 +63,17 @@
 # - (DONE) - - remove gen h (and make sure still ends OK at G)
 # - (DONE) rehearsal markings
 # - (DONE) (warning!) - sets combined with ancestors will dupe 
+# - (DONE) added tremolos to tagging
+# - (DONE) better fragments
+# - (DONE) start orchestrating gen f
+# - (DONE) start gen g draft short score
+# - (DONE) start orchestrating gen g
 # ---------------------------- SUNDAY
-# - start orchestrating gen f
-# - start gen g draft short score
-# - start orchestrating gen g
 # - able to create parts
 # - draft score template
-# - (if time) start gen h draft short score
-# - (if time) start orchestrating gen h
 # - able to output a full score
 # - draft parts template
+# - tag to respell flats/sharps (on individual notes)
 # - tempo markings
 # - some rhythms with metric modulations
 # - work drones into standard machines
@@ -80,6 +81,8 @@
 # - mac (and maybe linux) midi playback... at least of short scores
 # - good draft of gen e short score (especially Line 6)
 # - review current short scores at piano and adjust
+# - (if time) start gen h draft short score
+# - (if time) start orchestrating gen h
 # - more orchestrating gen b
 # - better gen c short score
 # - more orchestrating gen c
@@ -123,7 +126,6 @@
 # - final draft: gen c orchestration!
 # - use marimba?
 # - good parts template (aside from percussion)
-# - better fragments
 # - review fonts
 # - allow slices of data to be tagged
 # - penultimate draft: gen d orchestration!
@@ -177,6 +179,7 @@
 # ---------------------------- IF TIME ALLOWS: 
 # - keep relative durations as negative?
 # - more readable indices (small font, all in a row)
+# - tremolos won't work with tied notes
 # - conisistency / plan for what's a class attribute and what's not
 # - - - maybe attachment stuff not, pitch/rhythm stuff is?
 # - better indices/colors

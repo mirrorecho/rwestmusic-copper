@@ -14,10 +14,24 @@ class FragmentInfo(machines.SetAttributeMixin):
     from_index = None # overrides the index (allows same index to be used, especially for different lines)
     line = None
     chord_positions = None # if fragment event is a chord, then set this to list/tuple to indicate indices to use (None will output full chord)
-
+    tags = None # a tuple that can be used to create a set of tags to be added to the new event
 
 class Fragments(machines.IndexedData):
     items_type=FragmentInfo
+
+    @classmethod
+    def it(cls, line_index, event_index, tags=None, **kwargs):
+        if tags:
+            tags = (tags,) if isinstance(tags, str) else tags
+        return Fragments.item(line=line_index, from_index=event_index, tags=tags, **kwargs)
+
+    # TO DO... should refactor so that all fragment definitions work like this...
+    @classmethod
+    def make(cls, *fragment_items):
+        me = cls()
+        for f in fragment_items:
+            me[me.limit] = f
+        return me
 
 class FragmentLine(object):
     """
@@ -65,9 +79,13 @@ class FragmentLine(object):
 
                 new_event = original_event.copy()
                 if isinstance(new_event.pitch, (list,tuple)) and fragment.chord_positions:
+                    chord_positions = fragment.chord_positions
+                    # just so we don't have to use lists/tuples everywere:
+                    if isinstance(chord_positions, int):
+                        chord_positions = [chord_positions]
                     # if fragment uses only 1 chord position, then change pitch material to single values
-                    if len(fragment.chord_positions) == 1:
-                        new_event.pitch = new_event.pitch[fragment.chord_positions[0]]
+                    if len(chord_positions) == 1:
+                        new_event.pitch = new_event.pitch[chord_positions[0]]
                     # otherwise, update the chord positions:
                     else:
                         pitches = []
@@ -128,6 +146,10 @@ class FragmentLine(object):
                 # otherwise, adjust original duration by the attack offset, if duration not overriden
                 elif not fragment.duration:
                     new_event[0].ticks -= attack_offset_ticks
+
+                if fragment.tags:
+                    for t in fragment.tags:
+                        new_event[0].tag(t)
 
                 previous_event = new_event
                 previous_fragment = fragment

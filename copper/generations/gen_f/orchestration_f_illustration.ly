@@ -1,4 +1,4 @@
-% 2016-09-18 13:28
+% 2016-09-18 15:51
 
 \version "2.18.2"
 \language "english"
@@ -68,7 +68,51 @@
                         \bar "||"
                         \accidentalStyle modern-cautionary
                         \mark #6
-                        R1 * 36
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r4
+                        e''2. :32 \mp \<
+                            ^ \markup {
+                                \column
+                                    {
+                                        3
+                                        f.t.
+                                    }
+                                }
+                        e''4 -\staccato \mf ^ \markup { 6 }
+                        r2.
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
                     }
                 }
                 \new Staff {
@@ -330,12 +374,12 @@
                         r1
                         r1
                         r2.
-                        d''8 \fff [ ^ \markup { 1 }
+                        d''8 \mp [ ^ \markup { 1 }
                         f'8 ] ^ \markup { 2 }
-                        e''2 ^ \markup { 3 }
+                        e''2 :32 ^ \markup { 3 }
                         f''4 ^ \markup { 4 }
-                        g'4 ^ \markup { 5 }
-                        e''2 ^ \markup { 6 }
+                        r4
+                        e''2 :32 ^ \markup { 6 }
                         r2
                         r1
                         r1
@@ -379,7 +423,46 @@
                     \bar "||"
                     \accidentalStyle modern-cautionary
                     \mark #6
-                    R1 * 36
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r2..
+                    f'8 \mp ^ \markup { 2 }
+                    r4
+                    e''4 ^ \markup { 3 }
+                    r4
+                    g'4 ^ \markup { 5 }
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
                 }
             }
             \new Staff {
@@ -393,10 +476,6 @@
                     R1 * 36
                 }
             }
-            {
-                \accidentalStyle modern-cautionary
-                R1 * 36
-            }
         >>
         \new PianoStaff <<
             \set PianoStaff.instrumentName = \markup { Piano }
@@ -408,7 +487,46 @@
                     \bar "||"
                     \accidentalStyle modern-cautionary
                     \mark #6
-                    R1 * 36
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r2..
+                    f'8 \mp ^ \markup { 2 }
+                    r4
+                    e''4 ^ \markup { 3 }
+                    r4
+                    g'4 ^ \markup { 5 }
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
+                    r1
                 }
             }
             \new Staff {

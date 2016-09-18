@@ -10,6 +10,7 @@ class GenF(object):
     time_signature = (4,4)
     metrical_durations = ID(default=((4,4),), limit=36)
     rehearsal_mark_number = 6
+    rhythm_initial_silence = 27
     # tempo_units_per_minute = 144
     start_bar_line = "||"
 
@@ -44,7 +45,7 @@ class Line3(GenF, gen_e.Line4):
         25:-1,
         26:1,
         })
-    rhythm_times = 3
+    rhythm_times = 3 # NOTE... 3rd time cuts off... maybe that's Ok
     rhythm_multipliers = gen_e.Line4.rhythm_multipliers
     rhythm_multipliers[18]=1
 
@@ -56,12 +57,20 @@ class Line3(GenF, gen_e.Line4):
 # -------------------------------------------------------------------------------------------------
 
 class Line4(GenF, gen_e.Line3):
-    pitch_displacement = gen_e.Line3.pitch_displacement.copy()
-    pitch_displacement.update_item(1, (-12,))
-    def update_data(self):
-        super().update_data()
-        if self.__class__.__name__ == "Line4": # this helps restrict tags to short score only
-            self.logical_ties[0].tag("\clef bass")
+    show_data_type=machines.SegmentData
+    pitch_displacement = gen_e.Line3.pitch_displacement +\
+        machines.FifthDisplacement(
+            up=   (    11,         25, 26, 27, 31),
+            down= (1,10, 14, 15, 18,        )) +\
+        machines.OctaveDisplacement(
+            up=  (  10,),
+            down=(1,  28))
+    pitch_reverse = gen_e.Line3.pitch_reverse + (3,)
+    breaks = gen_e.Line3.breaks + {
+        10:4
+        }
+    respell = "flats"
+    clef = "bass"
 
 # -------------------------------------------------------------------------------------------------
 

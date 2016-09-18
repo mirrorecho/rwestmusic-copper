@@ -25,7 +25,7 @@ LINES = ID({
 class ArrangeF(gen_f.GenF, machines.FragmentLine, machines.PitchedLine):
     unarranged = bubbles.Line("R1 * 36") # TO DO: is this the right length????
     lines = LINES
-    # show_data_attr="depthwise_index"
+    show_data_attr="original_depthwise_index"
     def update_data(self):
         super().update_data()
         if len(self.segments)>1:
@@ -38,7 +38,10 @@ class Flute1(ArrangeF):
     pass
 
 class Flute2(ArrangeF):
-    pass
+    fragments = Frag.make(
+        Frag.it(3, 3, attack_offset=1, before_next=0, tags=("\<","f.t.",":32") ),
+        Frag.it(3, 6, duration=1, tags=("mf",".") ),
+        )
 
 class Flute3(ArrangeF):
     pass
@@ -98,28 +101,31 @@ class Perc2(ArrangeF):
     pass
 
 class Vibes(ArrangeF):
-    line = 3
-    fragments = Frag({
-        1:Frag.item(),
-        2:Frag.item(),
-        3:Frag.item(),
-        4:Frag.item(),
-        5:Frag.item(),
-        6:Frag.item(),
-        })
-    def update_data(self):
-        super().update_data()
-        self.logical_ties[1].tag("fff")
-        self.events[1].tag("ppp")
+    fragments = Frag.make(
+        Frag.it(3, 1),
+        Frag.it(3, 2),
+        Frag.it(3, 3, tags=":32"),
+        Frag.it(3, 4),
+        # Frag.it(3, 5),
+        Frag.it(3, 6, tags=":32"),
+        )
 
 class Harp1(ArrangeF):
-    pass
+    fragments = Frag.make(
+        Frag.it(3, 2),
+        Frag.it(3, 3, duration=1, attack_offset=1),
+        Frag.it(3, 5),
+    )
 
 class Harp2(ArrangeF):
     pass
 
 class Piano1(ArrangeF):
-    pass
+    fragments = Frag.make(
+        Frag.it(3, 2),
+        Frag.it(3, 3, duration=1, attack_offset=1),
+        Frag.it(3, 5),
+    )
 
 class Piano2(ArrangeF):
     pass
