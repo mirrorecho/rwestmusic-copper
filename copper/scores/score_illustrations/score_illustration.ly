@@ -1,4 +1,4 @@
-% 2016-09-17 23:32
+% 2016-09-18 01:03
 
 \version "2.18.2"
 \language "english"
@@ -52,17 +52,31 @@
                     \set Staff.shortInstrumentName = \markup { Fl.1 }
                     {
                         {
-                            \numericTimeSignature
-                            \time 4/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
                             R1 * 12
                         }
                         {
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #1
                             R1 * 18
+                        }
+                        {
+                            R2. * 24
+                        }
+                        {
+                            R1 * 24
+                        }
+                        {
+                            R1 * 27
+                        }
+                        {
+                            R2. * 35
+                        }
+                        {
+                            R1 * 36
+                        }
+                        {
+                            R2. * 48
+                        }
+                        {
+                            R1 * 48
                         }
                     }
                 }
@@ -71,17 +85,31 @@
                     \set Staff.shortInstrumentName = \markup { Fl.2 }
                     {
                         {
-                            \numericTimeSignature
-                            \time 4/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
                             R1 * 12
                         }
                         {
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #1
                             R1 * 18
+                        }
+                        {
+                            R2. * 24
+                        }
+                        {
+                            R1 * 24
+                        }
+                        {
+                            R1 * 27
+                        }
+                        {
+                            R2. * 35
+                        }
+                        {
+                            R1 * 36
+                        }
+                        {
+                            R2. * 48
+                        }
+                        {
+                            R1 * 48
                         }
                     }
                 }
@@ -90,17 +118,31 @@
                     \set Staff.shortInstrumentName = \markup { Fl.3 }
                     {
                         {
-                            \numericTimeSignature
-                            \time 4/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
                             R1 * 12
                         }
                         {
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #1
                             R1 * 18
+                        }
+                        {
+                            R2. * 24
+                        }
+                        {
+                            R1 * 24
+                        }
+                        {
+                            R1 * 27
+                        }
+                        {
+                            R2. * 35
+                        }
+                        {
+                            R1 * 36
+                        }
+                        {
+                            R2. * 48
+                        }
+                        {
+                            R1 * 48
                         }
                     }
                 }
@@ -113,17 +155,57 @@
                     \set Staff.shortInstrumentName = \markup { Ob.1 }
                     {
                         {
-                            \numericTimeSignature
-                            \time 4/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
                             R1 * 12
                         }
                         {
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #1
                             R1 * 18
+                        }
+                        {
+                            R2. * 24
+                        }
+                        {
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r2
+                            e''2 \mf ~ ^ \markup { 16 }
+                            e''2
+                            g'4 ^ \markup { 17 }
+                            b4 ^ \markup { 18 }
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                        }
+                        {
+                            R1 * 27
+                        }
+                        {
+                            R2. * 35
+                        }
+                        {
+                            R1 * 36
+                        }
+                        {
+                            R2. * 48
+                        }
+                        {
+                            R1 * 48
                         }
                     }
                 }
@@ -132,17 +214,61 @@
                     \set Staff.shortInstrumentName = \markup { Ob.2 }
                     {
                         {
-                            \numericTimeSignature
-                            \time 4/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
                             R1 * 12
                         }
                         {
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #1
                             R1 * 18
+                        }
+                        {
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2
+                            d'4 \mf ~ ( ^ \markup { 1 }
+                            d'4
+                            c'4 ^ \markup { 2 }
+                            b4 ) ^ \markup { 3 }
+                            g2 ( ^ \markup { 4 }
+                            a4 ^ \markup { 5 }
+                            b4 ) ^ \markup { 6 }
+                            d'4 ( ^ \markup { 7 }
+                            c'8 [ ^ \markup { 8 }
+                            b8 ~ ] ^ \markup { 9 }
+                            b2. )
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                        }
+                        {
+                            R1 * 24
+                        }
+                        {
+                            R1 * 27
+                        }
+                        {
+                            R2. * 35
+                        }
+                        {
+                            R1 * 36
+                        }
+                        {
+                            R2. * 48
+                        }
+                        {
+                            R1 * 48
                         }
                     }
                 }
@@ -155,16 +281,9 @@
                     \set Staff.shortInstrumentName = \markup { Cl.1 }
                     {
                         {
-                            \numericTimeSignature
-                            \time 4/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
                             R1 * 12
                         }
                         {
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #1
                             r1
                             r1
                             r1
@@ -190,6 +309,56 @@
                             r1
                             r1
                         }
+                        {
+                            R2. * 24
+                        }
+                        {
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            d'4 \mf ^ \markup { 1 }
+                            g'8 [ ^ \markup { 2 }
+                            cs''8 ^ \markup { 3 }
+                            a'8 ^ \markup { 4 }
+                            e'16 ^ \markup { 5 }
+                            fs'16 ] ^ \markup { 6 }
+                            a'4 ^ \markup { 7 }
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                        }
+                        {
+                            R1 * 27
+                        }
+                        {
+                            R2. * 35
+                        }
+                        {
+                            R1 * 36
+                        }
+                        {
+                            R2. * 48
+                        }
+                        {
+                            R1 * 48
+                        }
                     }
                 }
                 \new Staff {
@@ -197,16 +366,9 @@
                     \set Staff.shortInstrumentName = \markup { Cl.2 }
                     {
                         {
-                            \numericTimeSignature
-                            \time 4/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
                             R1 * 12
                         }
                         {
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #1
                             r1
                             r1
                             r1
@@ -234,6 +396,53 @@
                             r1
                             r1
                         }
+                        {
+                            R2. * 24
+                        }
+                        {
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            d'2 \mf ^ \markup { 1 }
+                            d'4
+                            g'8 ^ \markup { 2 }
+                            r8
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                        }
+                        {
+                            R1 * 27
+                        }
+                        {
+                            R2. * 35
+                        }
+                        {
+                            R1 * 36
+                        }
+                        {
+                            R2. * 48
+                        }
+                        {
+                            R1 * 48
+                        }
                     }
                 }
             >>
@@ -246,17 +455,61 @@
                     \set Staff.shortInstrumentName = \markup { Bsn.1 }
                     {
                         {
-                            \numericTimeSignature
-                            \time 4/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
                             R1 * 12
                         }
                         {
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #1
                             R1 * 18
+                        }
+                        {
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            d'2 \mf ( ^ \markup { 1 }
+                            c'4 ) ^ \markup { 2 }
+                            e4 ( ^ \markup { 3 }
+                            g4 ) ^ \markup { 4 }
+                            a8 [ ( ^ \markup { 5 }
+                            b8 ~ ] ^ \markup { 6 }
+                            b2. )
+                            r2.
+                            g4 ( ^ \markup { 1 }
+                            f8 ) [ ^ \markup { 2 }
+                            e8 ] ( ^ \markup { 3 }
+                            c4 ) ^ \markup { 4 }
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                        }
+                        {
+                            R1 * 24
+                        }
+                        {
+                            R1 * 27
+                        }
+                        {
+                            R2. * 35
+                        }
+                        {
+                            R1 * 36
+                        }
+                        {
+                            R2. * 48
+                        }
+                        {
+                            R1 * 48
                         }
                     }
                 }
@@ -266,17 +519,58 @@
                     \set Staff.shortInstrumentName = \markup { Bsn.2 }
                     {
                         {
-                            \numericTimeSignature
-                            \time 4/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
                             R1 * 12
                         }
                         {
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #1
                             R1 * 18
+                        }
+                        {
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            d'2 \mf ( ^ \markup { 7 }
+                            c'4 ) ^ \markup { 8 }
+                            b4 ( ^ \markup { 9 }
+                            a4 ) ^ \markup { 10 }
+                            f8 [ ( ^ \markup { 11 }
+                            e8 ~ ] ^ \markup { 12 }
+                            e2. )
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                        }
+                        {
+                            R1 * 24
+                        }
+                        {
+                            R1 * 27
+                        }
+                        {
+                            R2. * 35
+                        }
+                        {
+                            R1 * 36
+                        }
+                        {
+                            R2. * 48
+                        }
+                        {
+                            R1 * 48
                         }
                     }
                 }
@@ -292,10 +586,6 @@
                     {
                         {
                             {
-                                \numericTimeSignature
-                                \time 4/4
-                                \bar "||"
-                                \accidentalStyle modern-cautionary
                                 r2
                                 d2 \pp ~ \<
                                 d1 \mp ~ \>
@@ -325,10 +615,68 @@
                             }
                         }
                         {
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #1
                             R1 * 18
+                        }
+                        {
+                            R2. * 24
+                        }
+                        {
+                            R1 * 24
+                        }
+                        {
+                            R1 * 27
+                        }
+                        {
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2
+                            d'4 \mf ( ^ \markup { 1 }
+                            b2 ^ \markup { 3 }
+                            a4 ^ \markup { 5 }
+                            b2 ) ^ \markup { 6 }
+                            r4
+                            r2
+                            d'4 ( ^ \markup { 7 }
+                            b2 ^ \markup { 9 }
+                            c'4 ^ \markup { 11 }
+                            a2 ) ^ \markup { 12 }
+                            r4
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                        }
+                        {
+                            R1 * 36
+                        }
+                        {
+                            R2. * 48
+                        }
+                        {
+                            R1 * 48
                         }
                     }
                 }
@@ -339,10 +687,6 @@
                         {
                             {
                                 {
-                                    \numericTimeSignature
-                                    \time 4/4
-                                    \bar "||"
-                                    \accidentalStyle modern-cautionary
                                     R1
                                 }
                                 {
@@ -371,10 +715,71 @@
                             }
                         }
                         {
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #1
                             R1 * 18
+                        }
+                        {
+                            R2. * 24
+                        }
+                        {
+                            R1 * 24
+                        }
+                        {
+                            R1 * 27
+                        }
+                        {
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2
+                            c'4 \p ~ \< ^ \markup { 2 }
+                            c'2 ~
+                            c'8 [
+                            c'8 \mf ~ ]
+                            c'4
+                            g2 ~ ^ \markup { 4 }
+                            g4.
+                            r8
+                            c'4 \p ~ \< ^ \markup { 8 }
+                            c'2 ~
+                            c'8 [
+                            c'8 \mf ~ ]
+                            c'4
+                            b2 ~ ^ \markup { 10 }
+                            b2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                        }
+                        {
+                            R1 * 36
+                        }
+                        {
+                            R2. * 48
+                        }
+                        {
+                            R1 * 48
                         }
                     }
                 }
@@ -387,17 +792,105 @@
                     \set Staff.shortInstrumentName = \markup { Tpt.1 }
                     {
                         {
-                            \numericTimeSignature
-                            \time 4/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
                             R1 * 12
                         }
                         {
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #1
                             R1 * 18
+                        }
+                        {
+                            R2. * 24
+                        }
+                        {
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            d'2 \mf ( ^ \markup { 1 }
+                            g'4 ) ^ \markup { 2 }
+                            cs''4 -\staccato ^ \markup { 3 }
+                            r1
+                            r1
+                            r2
+                            d'4 ( ^ \markup { 7 }
+                            g'8 ) [ ^ \markup { 8 }
+                            cs''8 -\staccato ] ^ \markup { 9 }
+                            r1
+                            b4 ( ^ \markup { 12 }
+                            e'4 ) ^ \markup { 13 }
+                            d''4 -\staccato ^ \markup { 14 }
+                            af''4 ( ^ \markup { 15 }
+                            r1
+                            r1
+                            r1
+                            a'4 ) ^ \markup { 19 }
+                            d''8 -\tenuto [ ^ \markup { 20 }
+                            af''8 ] ^ \markup { 21 }
+                            r2
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                        }
+                        {
+                            R1 * 27
+                        }
+                        {
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2
+                            a'4 \p ~ \< ^ \markup { 1 }
+                            a'2 ~
+                            a'8 [
+                            g'8 \mf ] ( ^ \markup { 2 }
+                            fs'2. ) ^ \markup { 3 }
+                            r2
+                            a'4 \p ~ \< ^ \markup { 7 }
+                            a'2 ~
+                            a'8 [
+                            g'8 \mf ] ( ^ \markup { 8 }
+                            fs'2. ) ^ \markup { 9 }
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                        }
+                        {
+                            R1 * 36
+                        }
+                        {
+                            R2. * 48
+                        }
+                        {
+                            R1 * 48
                         }
                     }
                 }
@@ -406,17 +899,105 @@
                     \set Staff.shortInstrumentName = \markup { Tpt.2 }
                     {
                         {
-                            \numericTimeSignature
-                            \time 4/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
                             R1 * 12
                         }
                         {
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #1
                             R1 * 18
+                        }
+                        {
+                            R2. * 24
+                        }
+                        {
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            d'2 \mf ( ^ \markup { 1 }
+                            g'4 ) ^ \markup { 2 }
+                            cs''4 -\staccato ^ \markup { 3 }
+                            r1
+                            r1
+                            r2
+                            d'4 ( ^ \markup { 7 }
+                            g'8 ) [ ^ \markup { 8 }
+                            cs''8 -\staccato ] ^ \markup { 9 }
+                            r1
+                            b4 ( ^ \markup { 12 }
+                            e'4 ) ^ \markup { 13 }
+                            d''4 -\staccato ^ \markup { 14 }
+                            af''4 ( ^ \markup { 15 }
+                            r1
+                            r1
+                            r1
+                            a'4 ) ^ \markup { 19 }
+                            d''8 -\tenuto [ ^ \markup { 20 }
+                            af''8 ] ^ \markup { 21 }
+                            r2
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                        }
+                        {
+                            R1 * 27
+                        }
+                        {
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r4
+                            d'4 \p \< ( ^ \markup { 4 }
+                            e'4 ) ^ \markup { 5 }
+                            fs'2. \mf ~ ^ \markup { 6 }
+                            fs'2
+                            r4
+                            r4
+                            fs'4 \p \< ( ^ \markup { 10 }
+                            g'4 ) ^ \markup { 11 }
+                            e'2. \mf ~ ^ \markup { 12 }
+                            e'2
+                            r4
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                        }
+                        {
+                            R1 * 36
+                        }
+                        {
+                            R2. * 48
+                        }
+                        {
+                            R1 * 48
                         }
                     }
                 }
@@ -430,17 +1011,56 @@
                     \set Staff.shortInstrumentName = \markup { Tbn.1 }
                     {
                         {
-                            \numericTimeSignature
-                            \time 4/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
                             R1 * 12
                         }
                         {
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #1
                             R1 * 18
+                        }
+                        {
+                            R2. * 24
+                        }
+                        {
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            d'2 -\tenuto \mf ^ \markup { 4 }
+                            a4 -\tenuto ^ \markup { 5 }
+                            e4 -\staccato ^ \markup { 6 }
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                        }
+                        {
+                            R1 * 27
+                        }
+                        {
+                            R2. * 35
+                        }
+                        {
+                            R1 * 36
+                        }
+                        {
+                            R2. * 48
+                        }
+                        {
+                            R1 * 48
                         }
                     }
                 }
@@ -450,17 +1070,56 @@
                     \set Staff.shortInstrumentName = \markup { Tbn.2 }
                     {
                         {
-                            \numericTimeSignature
-                            \time 4/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
                             R1 * 12
                         }
                         {
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #1
                             R1 * 18
+                        }
+                        {
+                            R2. * 24
+                        }
+                        {
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            d'2 -\tenuto \mf ^ \markup { 4 }
+                            a4 -\tenuto ^ \markup { 5 }
+                            e4 -\staccato ^ \markup { 6 }
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                        }
+                        {
+                            R1 * 27
+                        }
+                        {
+                            R2. * 35
+                        }
+                        {
+                            R1 * 36
+                        }
+                        {
+                            R2. * 48
+                        }
+                        {
+                            R1 * 48
                         }
                     }
                 }
@@ -471,17 +1130,59 @@
                 \set Staff.shortInstrumentName = \markup { Tba }
                 {
                     {
-                        \numericTimeSignature
-                        \time 4/4
-                        \bar "||"
-                        \accidentalStyle modern-cautionary
                         R1 * 12
                     }
                     {
-                        \bar "||"
-                        \accidentalStyle modern-cautionary
-                        \mark #1
                         R1 * 18
+                    }
+                    {
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        g4 \mp ^ \markup { 1 }
+                        f8 [ ^ \markup { 2 }
+                        e8 ^ \markup { 3 }
+                        c8 ^ \markup { 4 }
+                        d16 ^ \markup { 5 }
+                        e16 ~ ] ^ \markup { 6 }
+                        e2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                    }
+                    {
+                        R1 * 24
+                    }
+                    {
+                        R1 * 27
+                    }
+                    {
+                        R2. * 35
+                    }
+                    {
+                        R1 * 36
+                    }
+                    {
+                        R2. * 48
+                    }
+                    {
+                        R1 * 48
                     }
                 }
             }
@@ -493,17 +1194,31 @@
                 \set Staff.shortInstrumentName = \markup { Timp }
                 {
                     {
-                        \numericTimeSignature
-                        \time 4/4
-                        \bar "||"
-                        \accidentalStyle modern-cautionary
                         R1 * 12
                     }
                     {
-                        \bar "||"
-                        \accidentalStyle modern-cautionary
-                        \mark #1
                         R1 * 18
+                    }
+                    {
+                        R2. * 24
+                    }
+                    {
+                        R1 * 24
+                    }
+                    {
+                        R1 * 27
+                    }
+                    {
+                        R2. * 35
+                    }
+                    {
+                        R1 * 36
+                    }
+                    {
+                        R2. * 48
+                    }
+                    {
+                        R1 * 48
                     }
                 }
             }
@@ -513,17 +1228,31 @@
                 \set Staff.shortInstrumentName = \markup { Perc.1 }
                 {
                     {
-                        \numericTimeSignature
-                        \time 4/4
-                        \bar "||"
-                        \accidentalStyle modern-cautionary
                         R1 * 12
                     }
                     {
-                        \bar "||"
-                        \accidentalStyle modern-cautionary
-                        \mark #1
                         R1 * 18
+                    }
+                    {
+                        R2. * 24
+                    }
+                    {
+                        R1 * 24
+                    }
+                    {
+                        R1 * 27
+                    }
+                    {
+                        R2. * 35
+                    }
+                    {
+                        R1 * 36
+                    }
+                    {
+                        R2. * 48
+                    }
+                    {
+                        R1 * 48
                     }
                 }
             }
@@ -533,17 +1262,31 @@
                 \set Staff.shortInstrumentName = \markup { Perc.2 }
                 {
                     {
-                        \numericTimeSignature
-                        \time 4/4
-                        \bar "||"
-                        \accidentalStyle modern-cautionary
                         R1 * 12
                     }
                     {
-                        \bar "||"
-                        \accidentalStyle modern-cautionary
-                        \mark #1
                         R1 * 18
+                    }
+                    {
+                        R2. * 24
+                    }
+                    {
+                        R1 * 24
+                    }
+                    {
+                        R1 * 27
+                    }
+                    {
+                        R2. * 35
+                    }
+                    {
+                        R1 * 36
+                    }
+                    {
+                        R2. * 48
+                    }
+                    {
+                        R1 * 48
                     }
                 }
             }
@@ -558,17 +1301,31 @@
             }
             {
                 {
-                    \numericTimeSignature
-                    \time 4/4
-                    \bar "||"
-                    \accidentalStyle modern-cautionary
                     R1 * 12
                 }
                 {
-                    \bar "||"
-                    \accidentalStyle modern-cautionary
-                    \mark #1
                     R1 * 18
+                }
+                {
+                    R2. * 24
+                }
+                {
+                    R1 * 24
+                }
+                {
+                    R1 * 27
+                }
+                {
+                    R2. * 35
+                }
+                {
+                    R1 * 36
+                }
+                {
+                    R2. * 48
+                }
+                {
+                    R1 * 48
                 }
             }
         >>
@@ -578,17 +1335,31 @@
             \new Staff {
                 {
                     {
-                        \numericTimeSignature
-                        \time 4/4
-                        \bar "||"
-                        \accidentalStyle modern-cautionary
                         R1 * 12
                     }
                     {
-                        \bar "||"
-                        \accidentalStyle modern-cautionary
-                        \mark #1
                         R1 * 18
+                    }
+                    {
+                        R2. * 24
+                    }
+                    {
+                        R1 * 24
+                    }
+                    {
+                        R1 * 27
+                    }
+                    {
+                        R2. * 35
+                    }
+                    {
+                        R1 * 36
+                    }
+                    {
+                        R2. * 48
+                    }
+                    {
+                        R1 * 48
                     }
                 }
             }
@@ -596,17 +1367,31 @@
                 \clef "bass"
                 {
                     {
-                        \numericTimeSignature
-                        \time 4/4
-                        \bar "||"
-                        \accidentalStyle modern-cautionary
                         R1 * 12
                     }
                     {
-                        \bar "||"
-                        \accidentalStyle modern-cautionary
-                        \mark #1
                         R1 * 18
+                    }
+                    {
+                        R2. * 24
+                    }
+                    {
+                        R1 * 24
+                    }
+                    {
+                        R1 * 27
+                    }
+                    {
+                        R2. * 35
+                    }
+                    {
+                        R1 * 36
+                    }
+                    {
+                        R2. * 48
+                    }
+                    {
+                        R1 * 48
                     }
                 }
             }
@@ -620,10 +1405,6 @@
                     \set Staff.shortInstrumentName = \markup { Vln.I.1 }
                     {
                         {
-                            \numericTimeSignature
-                            \time 4/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
                             r1 ^ \markup { "mute on" }
                             r1
                             r1
@@ -657,9 +1438,6 @@
                             b4 )
                         }
                         {
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #1
                             r1 ^ \markup { "mute off" }
                             r1
                             r1
@@ -701,6 +1479,159 @@
                             r1
                             r1
                         }
+                        {
+                            R2. * 24
+                        }
+                        {
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r2
+                            d'2 \mf ^ \markup { 1 }
+                            g'4 ^ \markup { 2 }
+                            fs'4 ^ \markup { 3 }
+                            d'4 ^ \markup { 4 }
+                            a8 [ ^ \markup { 5 }
+                            b8 ] ^ \markup { 6 }
+                            r1
+                            a'2 ^ \markup { 7 }
+                            d''4 ^ \markup { 8 }
+                            fs'4 ^ \markup { 9 }
+                            e'4 ^ \markup { 10 }
+                            g'8 [ ^ \markup { 11 }
+                            fs'8 ] ^ \markup { 12 }
+                            e'4 ^ \markup { 13 }
+                            g'4 ^ \markup { 14 }
+                            fs'4 ^ \markup { 15 }
+                            a'2 ^ \markup { 16 }
+                            g'8 [ ^ \markup { 17 }
+                            fs'8 ] ^ \markup { 18 }
+                            a'1 ~ ^ \markup { 19 }
+                            a'2
+                            g'2 ~ ^ \markup { 20 }
+                            g'4
+                            fs'2. ^ \markup { 21 }
+                            d'1 ~ ^ \markup { 22 }
+                            d'2
+                            e'2 ~ ^ \markup { 23 }
+                            e'4
+                            fs'2. ^ \markup { 24 }
+                            e'4 ^ \markup { 25 }
+                            g'4 ^ \markup { 26 }
+                            fs'4 ^ \markup { 27 }
+                            r4
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                        }
+                        {
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r8
+                            cs''4 \mp \< ^ \markup { 1 }
+                            cs''2.
+                            d'4. ^ \markup { 2 }
+                            cs''4. ^ \markup { 3 }
+                            r4.
+                            <e' fs'>4. \ff ^ \markup { 2 }
+                            r2.
+                            <b e' g'>4. ~ ^ \markup { 4 }
+                            <b e' g'>4.
+                            r4.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                        }
+                        {
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            g'2. ^ \markup { 1 }
+                            d'4. ^ \markup { 2 }
+                            g'4. ^ \markup { 3 }
+                            r2.
+                            r2.
+                            e'2. ^ \markup { 4 }
+                            g'4. ^ \markup { 5 }
+                            a'4. ^ \markup { 6 }
+                            r2.
+                            g'2. ^ \markup { 7 }
+                            d'4. ^ \markup { 8 }
+                            g'4. ^ \markup { 9 }
+                            a'2. ~ ^ \markup { 10 }
+                            a'4.
+                            r4.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                        }
+                        {
+                            R1 * 36
+                        }
+                        {
+                            R2. * 48
+                        }
+                        {
+                            R1 * 48
+                        }
                     }
                 }
                 \new Staff {
@@ -708,10 +1639,6 @@
                     \set Staff.shortInstrumentName = \markup { Vln.I.2 }
                     {
                         {
-                            \numericTimeSignature
-                            \time 4/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
                             r1 ^ \markup { "mute on" }
                             r1
                             r1
@@ -745,9 +1672,6 @@
                             b4 )
                         }
                         {
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #1
                             r1 ^ \markup { "mute off" }
                             r1
                             r1
@@ -788,6 +1712,115 @@
                             d''1 \mp
                             r1
                         }
+                        {
+                            R2. * 24
+                        }
+                        {
+                            R1 * 24
+                        }
+                        {
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r8
+                            cs''4 \mp \< ^ \markup { 1 }
+                            cs''2.
+                            d'4. ^ \markup { 2 }
+                            cs''4. ^ \markup { 3 }
+                            r4.
+                            <e' fs'>4. \ff ^ \markup { 2 }
+                            r2.
+                            <b e' g'>4. ~ ^ \markup { 4 }
+                            <b e' g'>4.
+                            r4.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                        }
+                        {
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            fs'2. ^ \markup { 1 }
+                            a4. ^ \markup { 2 }
+                            fs'4. ^ \markup { 3 }
+                            r2.
+                            r2.
+                            c'2. ^ \markup { 4 }
+                            fs'4. ^ \markup { 5 }
+                            c'4. ^ \markup { 6 }
+                            r2.
+                            fs'2. ^ \markup { 7 }
+                            a4. ^ \markup { 8 }
+                            fs'4. ^ \markup { 9 }
+                            c'2. ~ ^ \markup { 10 }
+                            c'4.
+                            r4.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                        }
+                        {
+                            R1 * 36
+                        }
+                        {
+                            R2. * 48
+                        }
+                        {
+                            R1 * 48
+                        }
                     }
                 }
             >>
@@ -799,10 +1832,6 @@
                     \set Staff.shortInstrumentName = \markup { Vln.II.1 }
                     {
                         {
-                            \numericTimeSignature
-                            \time 4/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
                             r1 ^ \markup { "mute on" }
                             r1
                             r1
@@ -836,9 +1865,6 @@
                             b4 )
                         }
                         {
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #1
                             r1 ^ \markup { "mute off" }
                             r1
                             r1
@@ -849,8 +1875,8 @@
                                 ^ \markup {
                                     \column
                                         {
-                                            2
                                             normal
+                                            2
                                         }
                                     }
                             c'2
@@ -878,6 +1904,64 @@
                             r1
                             r1
                         }
+                        {
+                            R2. * 24
+                        }
+                        {
+                            R1 * 24
+                        }
+                        {
+                            R1 * 27
+                        }
+                        {
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            g'2. ^ \markup { 1 }
+                            d'4. ^ \markup { 2 }
+                            g'4. ^ \markup { 3 }
+                            b'2. ^ \markup { 4 }
+                            g'4. ^ \markup { 5 }
+                            a'4. ^ \markup { 6 }
+                            r2.
+                            r2.
+                            a'2. ^ \markup { 7 }
+                            d'4. ^ \markup { 8 }
+                            g'4. ^ \markup { 9 }
+                            b2. ^ \markup { 10 }
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                        }
+                        {
+                            R1 * 36
+                        }
+                        {
+                            R2. * 48
+                        }
+                        {
+                            R1 * 48
+                        }
                     }
                 }
                 \new Staff {
@@ -885,10 +1969,6 @@
                     \set Staff.shortInstrumentName = \markup { Vln.II.2 }
                     {
                         {
-                            \numericTimeSignature
-                            \time 4/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
                             r1 ^ \markup { "mute on" }
                             r1
                             r1
@@ -922,9 +2002,6 @@
                             b4 )
                         }
                         {
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #1
                             r1 ^ \markup { "mute off" }
                             r1
                             r1
@@ -937,8 +2014,8 @@
                                 ^ \markup {
                                     \column
                                         {
-                                            2
                                             normal
+                                            2
                                         }
                                     }
                             g'2. \mp \>
@@ -964,6 +2041,64 @@
                             cs''4
                             r2.
                         }
+                        {
+                            R2. * 24
+                        }
+                        {
+                            R1 * 24
+                        }
+                        {
+                            R1 * 27
+                        }
+                        {
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            fs'2. ^ \markup { 1 }
+                            b4. ^ \markup { 2 }
+                            fs'4. ^ \markup { 3 }
+                            g'2. ^ \markup { 4 }
+                            fs'4. ^ \markup { 5 }
+                            g'4. ^ \markup { 6 }
+                            r2.
+                            r2.
+                            g'2. ^ \markup { 7 }
+                            b4. ^ \markup { 8 }
+                            e'4. ^ \markup { 9 }
+                            g2. ^ \markup { 10 }
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                        }
+                        {
+                            R1 * 36
+                        }
+                        {
+                            R2. * 48
+                        }
+                        {
+                            R1 * 48
+                        }
                     }
                 }
             >>
@@ -976,10 +2111,6 @@
                     \set Staff.shortInstrumentName = \markup { Vla.1 }
                     {
                         {
-                            \numericTimeSignature
-                            \time 4/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
                             r1 ^ \markup { "mute on" }
                             r1
                             r1
@@ -1013,9 +2144,6 @@
                             b4 )
                         }
                         {
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #1
                             r1 ^ \markup { "mute off" }
                             r1
                             r1
@@ -1050,6 +2178,125 @@
                             r1
                             r1
                         }
+                        {
+                            R2. * 24
+                        }
+                        {
+                            R1 * 24
+                        }
+                        {
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            d'4 \mf
+                                ^ \markup {
+                                    \column
+                                        {
+                                            1
+                                            _
+                                        }
+                                    }
+                            d'4 ^ \markup { _ }
+                            g'8 [ ( ^ \markup { 2 }
+                            cs''8 -\staccato ] ) ^ \markup { 3 }
+                            r4.
+                            r4.
+                            a'4. ~ ^ \markup { 4 }
+                            a'8
+                            e'4 ^ \markup { 5 }
+                            fs'4 ^ \markup { 6 }
+                            r2
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                        }
+                        {
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            g'2. ^ \markup { 1 }
+                            d'4. ^ \markup { 2 }
+                            g'4. ^ \markup { 3 }
+                            r2.
+                            r2.
+                            e'2. ^ \markup { 4 }
+                            g'4. ^ \markup { 5 }
+                            a'4. ^ \markup { 6 }
+                            r2.
+                            g'2. ^ \markup { 7 }
+                            d'4. ^ \markup { 8 }
+                            g'4. ^ \markup { 9 }
+                            a'2. ~ ^ \markup { 10 }
+                            a'4.
+                            r4.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                        }
+                        {
+                            R1 * 36
+                        }
+                        {
+                            R2. * 48
+                        }
+                        {
+                            R1 * 48
+                        }
                     }
                 }
                 \new Staff {
@@ -1058,10 +2305,6 @@
                     \set Staff.shortInstrumentName = \markup { Vla.2 }
                     {
                         {
-                            \numericTimeSignature
-                            \time 4/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
                             r1 ^ \markup { "mute on" }
                             r1
                             r1
@@ -1095,9 +2338,6 @@
                             b4 )
                         }
                         {
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #1
                             r1 ^ \markup { "mute off" }
                             r1
                             r1
@@ -1131,6 +2371,124 @@
                             b'1
                             r1
                         }
+                        {
+                            R2. * 24
+                        }
+                        {
+                            R1 * 24
+                        }
+                        {
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            d'4 \mf
+                                ^ \markup {
+                                    \column
+                                        {
+                                            1
+                                            _
+                                        }
+                                    }
+                            d'4 ^ \markup { _ }
+                            g'8 [ ( ^ \markup { 2 }
+                            cs''8 -\staccato ] ) ^ \markup { 3 }
+                            r4.
+                            r4.
+                            a'4. ~ ^ \markup { 4 }
+                            a'8
+                            e'4 ^ \markup { 5 }
+                            fs'4 ^ \markup { 6 }
+                            r2
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                            r2.
+                            r4.
+                        }
+                        {
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            g'2. ^ \markup { 1 }
+                            d'4. ^ \markup { 2 }
+                            g'4. ^ \markup { 3 }
+                            b'2. ^ \markup { 4 }
+                            g'4. ^ \markup { 5 }
+                            a'4. ^ \markup { 6 }
+                            r2.
+                            r2.
+                            a'2. ^ \markup { 7 }
+                            d'4. ^ \markup { 8 }
+                            g'4. ^ \markup { 9 }
+                            b2. ^ \markup { 10 }
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                            r2.
+                        }
+                        {
+                            R1 * 36
+                        }
+                        {
+                            R2. * 48
+                        }
+                        {
+                            R1 * 48
+                        }
                     }
                 }
             >>
@@ -1143,10 +2501,6 @@
                     \set Staff.shortInstrumentName = \markup { Vc.1 }
                     {
                         {
-                            \numericTimeSignature
-                            \time 4/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
                             r1 ^ \markup { "mute on" }
                             r1
                             r1
@@ -1180,9 +2534,6 @@
                             b4 )
                         }
                         {
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #1
                             r1 ^ \markup { "mute off" }
                             r1
                             r1
@@ -1226,6 +2577,27 @@
                             r1
                             r1
                         }
+                        {
+                            R2. * 24
+                        }
+                        {
+                            R1 * 24
+                        }
+                        {
+                            R1 * 27
+                        }
+                        {
+                            R2. * 35
+                        }
+                        {
+                            R1 * 36
+                        }
+                        {
+                            R2. * 48
+                        }
+                        {
+                            R1 * 48
+                        }
                     }
                 }
                 \new Staff {
@@ -1234,10 +2606,6 @@
                     \set Staff.shortInstrumentName = \markup { Vc.2 }
                     {
                         {
-                            \numericTimeSignature
-                            \time 4/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
                             r1 ^ \markup { "mute on" }
                             r1
                             r1
@@ -1271,9 +2639,6 @@
                             b4 )
                         }
                         {
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #1
                             r1 ^ \markup { "mute off" }
                             r1
                             r1
@@ -1305,6 +2670,27 @@
                             r1
                             r1
                         }
+                        {
+                            R2. * 24
+                        }
+                        {
+                            R1 * 24
+                        }
+                        {
+                            R1 * 27
+                        }
+                        {
+                            R2. * 35
+                        }
+                        {
+                            R1 * 36
+                        }
+                        {
+                            R2. * 48
+                        }
+                        {
+                            R1 * 48
+                        }
                     }
                 }
             >>
@@ -1314,10 +2700,6 @@
                 \set Staff.shortInstrumentName = \markup { Cb }
                 {
                     {
-                        \numericTimeSignature
-                        \time 4/4
-                        \bar "||"
-                        \accidentalStyle modern-cautionary
                         r1 ^ \markup { "mute on" }
                         r1
                         r1
@@ -1352,10 +2734,28 @@
                         b'4 )
                     }
                     {
-                        \bar "||"
-                        \accidentalStyle modern-cautionary
-                        \mark #1
                         R1 * 18
+                    }
+                    {
+                        R2. * 24
+                    }
+                    {
+                        R1 * 24
+                    }
+                    {
+                        R1 * 27
+                    }
+                    {
+                        R2. * 35
+                    }
+                    {
+                        R1 * 36
+                    }
+                    {
+                        R2. * 48
+                    }
+                    {
+                        R1 * 48
                         \bar "|."
                     }
                 }

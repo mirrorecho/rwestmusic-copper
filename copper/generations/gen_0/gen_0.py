@@ -5,10 +5,12 @@ from calliope import bubbles
 from copper import machines
 from copper.machines import IndexedData as ID, ID1 # just to avoid a lot of typing
 
+class Gen0(object): # basic attributes, such as starting time signature, rehearsal mark, etc.
 
 # -------------------------------------------------------------------------------------------------
 # HERE IS the actual line class:
 class Line1(machines.PitchedLine):
+
 # HERE is for testing purposes:
 # class Line1(
 #             machines.RhythmsPulsed,
@@ -21,6 +23,7 @@ class Line1(machines.PitchedLine):
 #             machines.Rhythms, 
 #             machines.SegmentedLine,
 #             ):
+
     metrical_durations = ID({}, default=((1,1),), limit=12)
     rhythm_initial_silence = 12
     rhythm_sequence = ID1({
@@ -68,31 +71,6 @@ class Line1(machines.PitchedLine):
     #     self.events[2].tag("\>")
     #     self.events[4].tag("\!",")")
 
-
-# class Line1F(machines.FragmentLine, Line1):
-#     fragments = ID({
-#         # 1: machines.Fragments.item(),
-#         2: machines.Fragments.item(),
-#         4: machines.Fragments.item(attack_offset=2, release_offset=-4),
-#         10: machines.Fragments.item(),
-#         11: machines.Fragments.item(),
-#         18: machines.Fragments.item(),
-#         27: machines.Fragments.item(),
-#     })
-
-
-
-# class FragmentLine1(machines.FragmentLine, Line1):
-#     fragments = machines.Fragments({
-#         0: machines.Fragments.item(attack_offset=-4, duration=0.25, before_next=1, keep_attack=True),
-#         # 3: machines.Fragments.item(duration=1),
-#         6: machines.Fragments.item(),
-#         })
-
-# f = FragmentLine1()
-# f.music() # forces calculations...
-# print(FragmentLine1().info.non_default_items())
-
 # TO DO... 
 class Drone1(machines.Drone):
     counts = (2,2,4,2,2)
@@ -118,8 +96,6 @@ class Drone2(machines.Drone):
 
 class Gen0(bubbles.GridStart):
     line1 = Line1()
-    # line1_f = Line1F()
-    # line2 = FragmentLine1()
 
 # -------------------------------------------------------------------------------------------------
 bubbles.illustrate_me(__file__, 

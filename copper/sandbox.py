@@ -190,7 +190,7 @@
 # - BOXES BOXES BOXES!!!!
 # - move some of the arrangement stuff that's currently in base bubble grids to machines / inherited lines (probably would perform better)
 # - initial silence is specific to copper ... make it work in another way (or keep it in the inherited copper classes only)
-
+# - go back through rep... ESPECIALLY elements & tokei orchestra pieces, accomodate, and make them even better!!!!!!!!!!!!!  (listen to recordints too... )
 
 import abjad
 from calliope import bubbles
