@@ -56,15 +56,25 @@
 # - (DONE) start orchestrating gen e
 # - (DONE) more getting going with gen f draft short score
 # ---------------------------- SATURDAY
+#  - consistent orchestraton files, with tech ability to generate full score (through h)
+# - - - refactor gen c
+# - - - make sure gen 0,a,b, work OK (including refactoring, fixing)
+# - - - add orchestration files for gen g and h
+# - - - make sure entire score can be output
+# - - - remove gen h (and make sure still ends OK at G)
 # - start orchestrating gen f
 # - start gen g draft short score
 # - start orchestrating gen g
 # - draft score template
 # - (if time) start gen h draft short score
 # - (if time) start orchestrating gen h
-# ------ 4PM !!!!!!!!!! --------------
 # - able to output a full score
 # - draft parts template
+# - rehearsal markings
+# - tempo markings
+# - some rhythms with metric modulations
+# - work drones into standard machines
+# ---------------------------- SUNDAY
 # - tag attachments on individual abjad leaves? (some data structure on LogicalTieData?)
 # - mac (and maybe linux) midi playback... at least of short scores
 # - good draft of gen e short score (especially Line 6)
@@ -81,7 +91,6 @@
 # - better way / machine(s) to tag spanners
 # - good draft gen g short score
 # - think of gen d in 8th note rhythm_denominator
-# - rhythms with metric modulations
 # - plan out drone, and start better working into machines
 # - plan out cymbal, and start working better into machines
 # - good gen h draft short score
@@ -93,7 +102,6 @@
 # - multimeasure rest generator
 # - good draft orchestration of gen d
 # - good draft orchestration of gen e
-# - tempo markings
 # - good draft orchestration of gen f
 # - good draft orchestration of gen g
 # - good draft orchestration of gen h
@@ -101,7 +109,8 @@
 # - (if time) - pulse machine that separates pulses into separate events (so that each pitch can be displaced)
 # - (if time) - tag to show any data attribute
 # - (if time) - smarter error handling
-# - rehearsal markings
+# - more rhythms with metric modulations 
+# - tempo markings indicate metric modulations (see http://abjad.mbrsi.org/api/tools/indicatortools/MetricModulation.html)
 # - more dynamics machines, especially with holds
 # - review printed score and mark up
 # - implement printed score markups (or add notes)
@@ -111,6 +120,7 @@
 # - final draft: gen b orchestration!
 # - final draft: gen c orchestration!
 # - good parts template (aside from percussion)
+# - better fragments
 # - review fonts
 # - penultimate draft: gen d orchestration!
 # - penultimate draft: gen e orchestration!
@@ -130,13 +140,15 @@
 # - final draft: gen h orchestration!
 # - review final draft of printed score and mark up
 # - implement final draft printed score markups (or add notes)
-# ---------------------------- SUNDAY
+# - consider... should Orchestration classes not inherit from Gen classes? (e.g. class OrchestrationF(staves.CopperMusic, gen_f.GenF):)  ... remove GenF inheritance?
+# - (if time) better way to handle octave transposing instruments in scores
 # - initial review of all parts (everyone has something to do)
 # - adjust based on review of parts
 # - review of doublings (all OK... used effectively?)
 # - review of percussion instruments used
 # - verify all part transpositions (pic, english horn, clarinet/bass clarinet, horn, double bass)
 # - final score review!
+# - - double check score order
 # - final review/edits of wind parts
 # - - - formatting
 # - - - page breaks
@@ -171,39 +183,55 @@
 # - TaleaDrivenLine as a general case
 # - orchestrate first, then short score
 # - machines to be arbitrarily applied at logical_tie, event, segment, or phrase level
+# - replace some class-defined stuff with modules / introspection (i.e. should not need to create a class to describe grid bubble lines that are described above)
 # - project startup script
+# - consistent naming with data children (e.g. don't use "children" ... should always say "events", etc.)
+# - adding and removing staves
+# - BOXES BOXES BOXES!!!!
+# - move some of the arrangement stuff that's currently in base bubble grids to machines / inherited lines (probably would perform better)
+# - initial silence is specific to copper ... make it work in another way (or keep it in the inherited copper classes only)
 
 
 import abjad
 from calliope import bubbles
 from copy import copy
-# from copper import machines
+from copper import machines
 # from copper.machines import Fragments
 
-a = abjad.datastructuretools.TreeContainer(name='a')
-b = abjad.datastructuretools.TreeContainer(name='b')
-b1 = abjad.datastructuretools.TreeContainer(name='b1')
-c = abjad.datastructuretools.TreeContainer(name='c')
-d = abjad.datastructuretools.TreeContainer(name='d')
-e = abjad.datastructuretools.TreeContainer(name='e')
-f = abjad.datastructuretools.TreeContainer(name='f')
-g = abjad.datastructuretools.TreeContainer(name='g')
+# a = machines.IndexedData(default=78)
+# b = machines.IndexedData({
+#             14:   2,
+#             })
+# c = a + b
+# print(a)
+# print(b)
+# print(c)
 
 
-a.extend([b,c])
-b.extend([d,e])
-c.extend([f,g])
+# a = abjad.datastructuretools.TreeContainer(name='a')
+# b = abjad.datastructuretools.TreeContainer(name='b')
+# b1 = abjad.datastructuretools.TreeContainer(name='b1')
+# c = abjad.datastructuretools.TreeContainer(name='c')
+# d = abjad.datastructuretools.TreeContainer(name='d')
+# e = abjad.datastructuretools.TreeContainer(name='e')
+# f = abjad.datastructuretools.TreeContainer(name='f')
+# g = abjad.datastructuretools.TreeContainer(name='g')
 
 
-dynamics_inventory = set(("ppp","pp","p","mp","mf","f","ff","fff"))
-hairpins_inventory = set( ("\<","\>") ) # note... may not be needed
+# a.extend([b,c])
+# b.extend([d,e])
+# c.extend([f,g])
 
-d1 = set( ("-","-","p") )
 
-if d1 & dynamics_inventory:
-	print( "YOYOYOYOY")
+# dynamics_inventory = set(("ppp","pp","p","mp","mf","f","ff","fff"))
+# hairpins_inventory = set( ("\<","\>") ) # note... may not be needed
 
-print( len(d1 & dynamics_inventory) )
+# d1 = set( ("-","-","p") )
+
+# if d1 & dynamics_inventory:
+# 	print( "YOYOYOYOY")
+
+# print( len(d1 & dynamics_inventory) )
 
 # a.pop(-1)
 # print(a)

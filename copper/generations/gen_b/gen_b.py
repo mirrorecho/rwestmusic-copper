@@ -10,7 +10,6 @@ from copper.generations.gen_a import gen_a
 
 class LineGenB(machines.RhythmsMultiplied):
     metrical_durations = ID({}, default=((3,4),), limit=24)
-    clef="bass" # TO DO... this doesn't work
     def update_data(self):
         super().update_data()
         self.logical_ties[0].tag("\clef bass")

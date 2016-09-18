@@ -34,10 +34,11 @@ class CopperTrombones(InstrumentStaffGroup):
 class CopperPerc(BubbleStaffGroup):
     # TO DO EVENTUALLY... shouldn't always add crotales.... 
     # crotales = BubbleStaff(instrument=instrumenttools.Instrument(instrument_name="Crotales", short_instrument_name="cro."))
+    timpani = BubbleStaff(instrument=instrumenttools.Instrument(instrument_name="Timpani", short_instrument_name="timp"), clef="bass")
     perc1 = BubbleRhythmicStaff(instrument=instrumenttools.Percussion(instrument_name="Percussion 1", short_instrument_name="perc.1"))
     perc2 = BubbleRhythmicStaff(instrument=instrumenttools.Percussion(instrument_name="Percussion 2", short_instrument_name="perc.2"))
-    # timpani = BubbleStaff(instrument=instrumenttools.Instrument(instrument_name="Timpani", short_instrument_name="timp"), clef="bass")
-    sequence = ("perc1", "perc2",)
+    sequence = ("timpani", "perc1", "perc2",)
+
 
 class CopperViolinIDiv(InstrumentStaffGroup):
     violinI1 = BubbleStaff(instrument=instrumenttools.Violin(instrument_name="Violin I Div 1", short_instrument_name="vln.I.1"))
@@ -99,16 +100,25 @@ class CopperShortScore(BubbleStaffGroup):
 
 class CopperScore(BubbleFormatLargeScore):
     hide_empty = True
+    show_short_score = False
+
     winds = CopperWinds()
     brass = CopperBrass()
+    harp = BubbleHarp(instrument=instrumenttools.Harp(instrument_name="Harp", short_instrument_name="hp."))
+    piano = BubblePiano(instrument=instrumenttools.Piano(instrument_name="Piano", short_instrument_name="pno."))
     perc = CopperPerc()
     strings = CopperStringsDiv()
     short_score = CopperShortScore()
-    # sequence = ("winds", "brass", "perc", "taiko", "strings")
-    sequence = ("winds", "brass", "perc", "taiko", "strings", "short_score")
+
+    def sequence(self, **kwargs):
+        if self.show_short_score:
+            return ("winds", "brass", "perc", "harp", "piano", "strings", "short_score")
+        else:
+            return ("winds", "brass", "perc", "harp", "piano", "strings")
 
 class CopperMusic(Bubble):
-    flute1 = Placeholder()
+
+    flute1 = Placeholder() # TO DO...  maybe this should always be piccolo?
     flute2 = Placeholder()
     flute3 = Placeholder()
     oboe1 = Placeholder()
@@ -124,9 +134,12 @@ class CopperMusic(Bubble):
     trombone1 = Placeholder()
     trombone2 = Placeholder()
     tuba = Placeholder()
+    timpani = Placeholder()
     perc1 = Placeholder()
     perc2 = Placeholder()
-    # timpani = Placeholder()
+    harp = Placeholder() # TO DO... consider whether this needs to be 2 staves
+    piano1 = Placeholder()
+    piano2 = Placeholder()
     violinI1 = Placeholder()
     violinI2 = Placeholder()
     violinII1 = Placeholder()
@@ -146,6 +159,11 @@ class CopperMusic(Bubble):
     line7 = Placeholder()
     line8 = Placeholder()
     line9 = Placeholder()
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.info("finished initializing bubbles")
+
 
 # music = CopperMusic()
 # music.show()

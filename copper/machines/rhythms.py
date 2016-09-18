@@ -102,7 +102,12 @@ class Rhythms(object):
         """
         returns flattened list of all ticks, padded at the end based on the length, with rests as negative values
         """
-        ticks_list = [l.ticks*-1 if l.rest else l.ticks for l in self.data.leaves]
+        ticks_list = []
+        for l in self.data.leaves:
+            if isinstance(l, machines.LogicalTieData):
+                ticks_list.append(l.ticks*-1 if l.rest else l.ticks)
+            else:
+                self.warn("item in data structure has no logical ties... skipping; output may be screwed up", l)
         ticks_end = self.data.ticks
         metrical_duration_ticks = self.get_metrical_duration_ticks()
         if metrical_duration_ticks > ticks_end:

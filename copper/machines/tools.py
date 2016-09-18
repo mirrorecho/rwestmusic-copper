@@ -117,15 +117,18 @@ class IndexedData(SetAttributeMixin, collections.UserDict):
     # NOTE: due to the iterable implementation, max(some_indexed_data) will return the max VALUE (not max key as a normal dictionary would),
     # so implementing this to get the max key
     def maxkey(self):
-        return max(self.data)
+        if len(self.data) > 0:
+            return max(self.data)
 
     def update(self, from_dict):
         if isinstance(from_dict, IndexedData):
             from_dict = from_dict.data
         for key in from_dict:
             assert isinstance(key, int), "key is not an integer: %s" % key
-        if self.limit <= max(from_dict):
-            self.limit = max(from_dict) + 1
+        # test for length 0, otherwise calling max on dict fails
+        from_limit = 0 if len(from_dict) == 0 else max(from_dict)
+        if self.limit <= from_limit:
+            self.limit = from_limit + 1
         super().update(from_dict)
 
     def __iadd__(self, other):

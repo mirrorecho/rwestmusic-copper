@@ -1,4 +1,4 @@
-% 2016-09-14 22:48
+% 2016-09-17 23:41
 
 \version "2.18.2"
 \language "english"
@@ -8,7 +8,7 @@
 \header {
     composer = \markup { "Randall West" }
     tagline = \markup { [] }
-    title = \markup { [] }
+    title = \markup { "Copper: 0" }
 }
 
 \layout {
@@ -55,6 +55,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \tempo 4=48
                         R1 * 12
                     }
                 }
@@ -66,6 +67,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \tempo 4=48
                         R1 * 12
                     }
                 }
@@ -77,6 +79,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \tempo 4=48
                         R1 * 12
                     }
                 }
@@ -92,6 +95,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \tempo 4=48
                         R1 * 12
                     }
                 }
@@ -103,6 +107,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \tempo 4=48
                         R1 * 12
                     }
                 }
@@ -118,6 +123,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \tempo 4=48
                         R1 * 12
                     }
                 }
@@ -129,6 +135,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \tempo 4=48
                         R1 * 12
                     }
                 }
@@ -145,6 +152,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \tempo 4=48
                         R1 * 12
                     }
                 }
@@ -157,6 +165,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \tempo 4=48
                         R1 * 12
                     }
                 }
@@ -175,6 +184,7 @@
                             \time 4/4
                             \bar "||"
                             \accidentalStyle modern-cautionary
+                            \tempo 4=48
                             r2
                             d2 \pp ~ \<
                             d1 \mp ~ \>
@@ -214,6 +224,7 @@
                                 \time 4/4
                                 \bar "||"
                                 \accidentalStyle modern-cautionary
+                                \tempo 4=48
                                 R1
                             }
                             {
@@ -254,6 +265,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \tempo 4=48
                         R1 * 12
                     }
                 }
@@ -265,6 +277,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \tempo 4=48
                         R1 * 12
                     }
                 }
@@ -281,6 +294,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \tempo 4=48
                         R1 * 12
                     }
                 }
@@ -293,6 +307,7 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \tempo 4=48
                         R1 * 12
                     }
                 }
@@ -306,11 +321,25 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
+                    \tempo 4=48
                     R1 * 12
                 }
             }
         >>
         \new StaffGroup <<
+            \new Staff {
+                \clef "bass"
+                \set Staff.instrumentName = \markup { Timpani }
+                \set Staff.shortInstrumentName = \markup { Timp }
+                {
+                    \numericTimeSignature
+                    \time 4/4
+                    \bar "||"
+                    \accidentalStyle modern-cautionary
+                    \tempo 4=48
+                    R1 * 12
+                }
+            }
             \new RhythmicStaff {
                 \clef "percussion"
                 \set Staff.instrumentName = \markup { "Percussion 1" }
@@ -320,6 +349,7 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
+                    \tempo 4=48
                     R1 * 12
                 }
             }
@@ -332,6 +362,65 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
+                    \tempo 4=48
+                    R1 * 12
+                }
+            }
+        >>
+        \new PianoStaff <<
+            \set PianoStaff.instrumentName = \markup { Harp }
+            \set PianoStaff.shortInstrumentName = \markup { Hp. }
+            \new Staff {
+                {
+                    \numericTimeSignature
+                    \time 4/4
+                    \bar "||"
+                    \accidentalStyle modern-cautionary
+                    \tempo 4=48
+                    R1 * 12
+                }
+            }
+            \new Staff {
+                \clef "bass"
+                {
+                    \numericTimeSignature
+                    \time 4/4
+                    \bar "||"
+                    \accidentalStyle modern-cautionary
+                    \tempo 4=48
+                    R1 * 12
+                }
+            }
+            {
+                \numericTimeSignature
+                \time 4/4
+                \bar "||"
+                \accidentalStyle modern-cautionary
+                \tempo 4=48
+                R1 * 12
+            }
+        >>
+        \new PianoStaff <<
+            \set PianoStaff.instrumentName = \markup { Piano }
+            \set PianoStaff.shortInstrumentName = \markup { Pno. }
+            \new Staff {
+                {
+                    \numericTimeSignature
+                    \time 4/4
+                    \bar "||"
+                    \accidentalStyle modern-cautionary
+                    \tempo 4=48
+                    R1 * 12
+                }
+            }
+            \new Staff {
+                \clef "bass"
+                {
+                    \numericTimeSignature
+                    \time 4/4
+                    \bar "||"
+                    \accidentalStyle modern-cautionary
+                    \tempo 4=48
                     R1 * 12
                 }
             }
@@ -348,37 +437,38 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \tempo 4=48
                         r1 ^ \markup { "mute on" }
-                        r1 \ppp ^ \markup { "sul pont., non vib." }
                         r1
-                        d'2
-                        c'4
-                        b4
+                        r1
+                        d'2 \ppp ^ \markup { "sul pont., non vib." }
+                        c'4 (
+                        b4 )
                         g2
-                        a4
-                        b4
+                        a4 (
+                        b4 )
                         d'2
-                        c'4
-                        b4
+                        c'4 (
+                        b4 )
                         a2
-                        c'4
-                        b4
+                        c'4 (
+                        b4 )
                         a4
-                        c'4
-                        b4
+                        c'4 (
+                        b4 )
                         d'4 ~
                         d'2.
-                        c'4
-                        b4
+                        c'4 (
+                        b4 )
                         d'2
-                        c'4
-                        b4
+                        c'4 (
+                        b4 )
                         g2
+                        a4 (
+                        b4 )
                         a4
-                        b4
-                        a4
-                        c'4
-                        b4
+                        c'4 (
+                        b4 )
                     }
                 }
                 \new Staff {
@@ -389,7 +479,38 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 12
+                        \tempo 4=48
+                        r1 ^ \markup { "mute on" }
+                        r1
+                        r1
+                        d'2 \ppp ^ \markup { "sul pont., non vib." }
+                        c'4 (
+                        b4 )
+                        g2
+                        a4 (
+                        b4 )
+                        d'2
+                        c'4 (
+                        b4 )
+                        a2
+                        c'4 (
+                        b4 )
+                        a4
+                        c'4 (
+                        b4 )
+                        d'4 ~
+                        d'2.
+                        c'4 (
+                        b4 )
+                        d'2
+                        c'4 (
+                        b4 )
+                        g2
+                        a4 (
+                        b4 )
+                        a4
+                        c'4 (
+                        b4 )
                     }
                 }
             >>
@@ -404,37 +525,38 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \tempo 4=48
                         r1 ^ \markup { "mute on" }
-                        r1 \ppp ^ \markup { "sul pont., non vib." }
                         r1
-                        d'2
-                        c'4
-                        b4
+                        r1
+                        d'2 \ppp ^ \markup { "sul pont., non vib." }
+                        c'4 (
+                        b4 )
                         g2
-                        a4
-                        b4
+                        a4 (
+                        b4 )
                         d'2
-                        c'4
-                        b4
+                        c'4 (
+                        b4 )
                         a2
-                        c'4
-                        b4
+                        c'4 (
+                        b4 )
                         a4
-                        c'4
-                        b4
+                        c'4 (
+                        b4 )
                         d'4 ~
                         d'2.
-                        c'4
-                        b4
+                        c'4 (
+                        b4 )
                         d'2
-                        c'4
-                        b4
+                        c'4 (
+                        b4 )
                         g2
+                        a4 (
+                        b4 )
                         a4
-                        b4
-                        a4
-                        c'4
-                        b4
+                        c'4 (
+                        b4 )
                     }
                 }
                 \new Staff {
@@ -445,7 +567,38 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 12
+                        \tempo 4=48
+                        r1 ^ \markup { "mute on" }
+                        r1
+                        r1
+                        d'2 \ppp ^ \markup { "sul pont., non vib." }
+                        c'4 (
+                        b4 )
+                        g2
+                        a4 (
+                        b4 )
+                        d'2
+                        c'4 (
+                        b4 )
+                        a2
+                        c'4 (
+                        b4 )
+                        a4
+                        c'4 (
+                        b4 )
+                        d'4 ~
+                        d'2.
+                        c'4 (
+                        b4 )
+                        d'2
+                        c'4 (
+                        b4 )
+                        g2
+                        a4 (
+                        b4 )
+                        a4
+                        c'4 (
+                        b4 )
                     }
                 }
             >>
@@ -461,37 +614,38 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \tempo 4=48
                         r1 ^ \markup { "mute on" }
-                        r1 \ppp ^ \markup { "sul pont., non vib." }
                         r1
-                        d'2
-                        c'4
-                        b4
+                        r1
+                        d'2 \ppp ^ \markup { "sul pont., non vib." }
+                        c'4 (
+                        b4 )
                         g2
-                        a4
-                        b4
+                        a4 (
+                        b4 )
                         d'2
-                        c'4
-                        b4
+                        c'4 (
+                        b4 )
                         a2
-                        c'4
-                        b4
+                        c'4 (
+                        b4 )
                         a4
-                        c'4
-                        b4
+                        c'4 (
+                        b4 )
                         d'4 ~
                         d'2.
-                        c'4
-                        b4
+                        c'4 (
+                        b4 )
                         d'2
-                        c'4
-                        b4
+                        c'4 (
+                        b4 )
                         g2
+                        a4 (
+                        b4 )
                         a4
-                        b4
-                        a4
-                        c'4
-                        b4
+                        c'4 (
+                        b4 )
                     }
                 }
                 \new Staff {
@@ -503,7 +657,38 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 12
+                        \tempo 4=48
+                        r1 ^ \markup { "mute on" }
+                        r1
+                        r1
+                        d'2 \ppp ^ \markup { "sul pont., non vib." }
+                        c'4 (
+                        b4 )
+                        g2
+                        a4 (
+                        b4 )
+                        d'2
+                        c'4 (
+                        b4 )
+                        a2
+                        c'4 (
+                        b4 )
+                        a4
+                        c'4 (
+                        b4 )
+                        d'4 ~
+                        d'2.
+                        c'4 (
+                        b4 )
+                        d'2
+                        c'4 (
+                        b4 )
+                        g2
+                        a4 (
+                        b4 )
+                        a4
+                        c'4 (
+                        b4 )
                     }
                 }
             >>
@@ -519,37 +704,38 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \tempo 4=48
                         r1 ^ \markup { "mute on" }
-                        r1 \ppp ^ \markup { "sul pont., non vib." }
                         r1
-                        d'2
-                        c'4
-                        b4
+                        r1
+                        d'2 \ppp ^ \markup { "sul pont., non vib." }
+                        c'4 (
+                        b4 )
                         g2
-                        a4
-                        b4
+                        a4 (
+                        b4 )
                         d'2
-                        c'4
-                        b4
+                        c'4 (
+                        b4 )
                         a2
-                        c'4
-                        b4
+                        c'4 (
+                        b4 )
                         a4
-                        c'4
-                        b4
+                        c'4 (
+                        b4 )
                         d'4 ~
                         d'2.
-                        c'4
-                        b4
+                        c'4 (
+                        b4 )
                         d'2
-                        c'4
-                        b4
+                        c'4 (
+                        b4 )
                         g2
+                        a4 (
+                        b4 )
                         a4
-                        b4
-                        a4
-                        c'4
-                        b4
+                        c'4 (
+                        b4 )
                     }
                 }
                 \new Staff {
@@ -561,7 +747,38 @@
                         \time 4/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        R1 * 12
+                        \tempo 4=48
+                        r1 ^ \markup { "mute on" }
+                        r1
+                        r1
+                        d'2 \ppp ^ \markup { "sul pont., non vib." }
+                        c'4 (
+                        b4 )
+                        g2
+                        a4 (
+                        b4 )
+                        d'2
+                        c'4 (
+                        b4 )
+                        a2
+                        c'4 (
+                        b4 )
+                        a4
+                        c'4 (
+                        b4 )
+                        d'4 ~
+                        d'2.
+                        c'4 (
+                        b4 )
+                        d'2
+                        c'4 (
+                        b4 )
+                        g2
+                        a4 (
+                        b4 )
+                        a4
+                        c'4 (
+                        b4 )
                     }
                 }
             >>
@@ -574,37 +791,39 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
+                    \tempo 4=48
                     r1 ^ \markup { "mute on" }
-                    r1 \ppp ^ \markup { "sul pont., non vib." }
                     r1
-                    d'2
-                    c'4
-                    b4
-                    g2
-                    a4
-                    b4
-                    d'2
-                    c'4
-                    b4
-                    a2
-                    c'4
-                    b4
-                    a4
-                    c'4
-                    b4
-                    d'4 ~
-                    d'2.
-                    c'4
-                    b4
-                    d'2
-                    c'4
-                    b4
-                    g2
-                    a4
-                    b4
-                    a4
-                    c'4
-                    b4
+                    r1
+                    \clef tenor
+                    d''2 \ppp ^ \markup { "sul pont., non vib." }
+                    c''4 (
+                    b'4 )
+                    g'2
+                    a'4 (
+                    b'4 )
+                    d''2
+                    c''4 (
+                    b'4 )
+                    a'2
+                    c''4 (
+                    b'4 )
+                    a'4
+                    c''4 (
+                    b'4 )
+                    d''4 ~
+                    d''2.
+                    c''4 (
+                    b'4 )
+                    d''2
+                    c''4 (
+                    b'4 )
+                    g'2
+                    a'4 (
+                    b'4 )
+                    a'4
+                    c''4 (
+                    b'4 )
                 }
             }
         >>
@@ -617,7 +836,38 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    R1 * 12
+                    \tempo 4=48
+                    r1
+                    r1
+                    r1
+                    d'2 ^ \markup { 1 }
+                    c'4 ^ \markup { 2 }
+                    b4 ^ \markup { 3 }
+                    g2 ^ \markup { 4 }
+                    a4 ^ \markup { 5 }
+                    b4 ^ \markup { 6 }
+                    d'2 ^ \markup { 7 }
+                    c'4 ^ \markup { 8 }
+                    b4 ^ \markup { 9 }
+                    a2 ^ \markup { 10 }
+                    c'4 ^ \markup { 11 }
+                    b4 ^ \markup { 12 }
+                    a4 ^ \markup { 13 }
+                    c'4 ^ \markup { 14 }
+                    b4 ^ \markup { 15 }
+                    d'4 ~ ^ \markup { 16 }
+                    d'2.
+                    c'4 ^ \markup { 17 }
+                    b4 ^ \markup { 18 }
+                    d'2 ^ \markup { 19 }
+                    c'4 ^ \markup { 20 }
+                    b4 ^ \markup { 21 }
+                    g2 ^ \markup { 22 }
+                    a4 ^ \markup { 23 }
+                    b4 ^ \markup { 24 }
+                    a4 ^ \markup { 25 }
+                    c'4 ^ \markup { 26 }
+                    b4 ^ \markup { 27 }
                 }
             }
             \new Staff {
@@ -628,6 +878,7 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
+                    \tempo 4=48
                     R1 * 12
                 }
             }
@@ -639,6 +890,7 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
+                    \tempo 4=48
                     R1 * 12
                 }
             }
@@ -650,6 +902,7 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
+                    \tempo 4=48
                     R1 * 12
                 }
             }
@@ -661,6 +914,7 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
+                    \tempo 4=48
                     R1 * 12
                 }
             }
@@ -672,6 +926,7 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
+                    \tempo 4=48
                     R1 * 12
                 }
             }
@@ -683,6 +938,7 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
+                    \tempo 4=48
                     R1 * 12
                 }
             }
@@ -694,6 +950,7 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
+                    \tempo 4=48
                     R1 * 12
                 }
             }
@@ -705,6 +962,7 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
+                    \tempo 4=48
                     R1 * 12
                     \bar "|."
                 }

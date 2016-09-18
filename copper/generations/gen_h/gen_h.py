@@ -4,7 +4,7 @@ import abjad
 from calliope import bubbles
 from copper import machines
 from copper.machines.tools import IndexedData as ID # just to avoid a lot of typing
-from copper.generations.gen_h import gen_h
+from copper.generations.gen_g import gen_g
 
 class LineGenH(object):
     metrical_durations = ID(default=((4,4),), limit=48)
@@ -12,42 +12,42 @@ class LineGenH(object):
 
 # -------------------------------------------------------------------------------------------------
 
-class Line1(LineGenH, gen_h.Line1):
+class Line1(LineGenH, gen_g.Line1):
     pass
 
 # -------------------------------------------------------------------------------------------------
 
-class Line2(LineGenH, gen_h.Line2):
+class Line2(LineGenH, gen_g.Line2):
     pass
 # -------------------------------------------------------------------------------------------------
 
-class Line3(LineGenH, gen_h.Line3):
-    pass
-
-# -------------------------------------------------------------------------------------------------
-
-class Line4(LineGenH, gen_h.Line4):
+class Line3(LineGenH, gen_g.Line3):
     pass
 
 # -------------------------------------------------------------------------------------------------
 
-class Line5(LineGenH, gen_h.Line5):
+class Line4(LineGenH, gen_g.Line4):
+    pass
+
+# -------------------------------------------------------------------------------------------------
+
+class Line5(LineGenH, gen_g.Line5):
     pass
 # -------------------------------------------------------------------------------------------------
 
-class Line6(LineGenH, gen_h.Line6):
+class Line6(LineGenH, gen_g.Line6):
     pass
 # -------------------------------------------------------------------------------------------------
 
-class Line7(LineGenH, gen_h.Line7):
+class Line7(LineGenH, gen_g.Line7):
     pass
 # -------------------------------------------------------------------------------------------------
 
-class Line8(LineGenH, gen_h.Line8):
+class Line8(LineGenH, gen_g.Line8):
     pass
 # -------------------------------------------------------------------------------------------------
 
-class Line9(LineGenH, gen_h.Line8):
+class Line9(Line8):
     pass
 # -------------------------------------------------------------------------------------------------
 
@@ -66,6 +66,6 @@ class GenH(bubbles.GridStart): #  TO DO...? should all jen bubbles inherit from 
 # -------------------------------------------------------------------------------------------------
 
 bubbles.illustrate_me(__file__, 
-    lambda : GenG().score()
+    lambda : GenH().score()
     )
 

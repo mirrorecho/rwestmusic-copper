@@ -7,7 +7,7 @@ from copper.machines.tools import IndexedData as ID # just to avoid a lot of typ
 from copper.generations.gen_f import gen_f
 
 class LineGenG(object):
-    metrical_durations = ID(default=((4,4),), limit=48)
+    metrical_durations = ID(default=((3,4),), limit=48)
     initial_silence=24
 
 # -------------------------------------------------------------------------------------------------
@@ -19,6 +19,7 @@ class Line1(LineGenG, gen_f.Line1):
 
 class Line2(LineGenG, gen_f.Line2):
     pass
+
 # -------------------------------------------------------------------------------------------------
 
 class Line3(LineGenG, gen_f.Line3):
@@ -43,7 +44,7 @@ class Line7(LineGenG, gen_f.Line7):
     pass
 # -------------------------------------------------------------------------------------------------
 
-class Line8(LineGenG, gen_f.Line8):
+class Line8(Line7):
     pass
 # -------------------------------------------------------------------------------------------------
 

@@ -93,6 +93,7 @@ class Line1(machines.PitchedLine):
 # f.music() # forces calculations...
 # print(FragmentLine1().info.non_default_items())
 
+# TO DO... 
 class Drone1(machines.Drone):
     counts = (2,2,4,2,2)
     left_counts = 1

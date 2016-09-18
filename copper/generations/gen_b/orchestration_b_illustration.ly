@@ -1,4 +1,4 @@
-% 2016-09-16 01:12
+% 2016-09-17 23:54
 
 \version "2.18.2"
 \language "english"
@@ -8,7 +8,7 @@
 \header {
     composer = \markup { "Randall West" }
     tagline = \markup { [] }
-    title = \markup { [] }
+    title = \markup { "Copper: B" }
 }
 
 \layout {
@@ -55,6 +55,7 @@
                         \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \mark #2
                         R2. * 24
                     }
                 }
@@ -66,6 +67,7 @@
                         \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \mark #2
                         R2. * 24
                     }
                 }
@@ -77,6 +79,7 @@
                         \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \mark #2
                         R2. * 24
                     }
                 }
@@ -92,6 +95,7 @@
                         \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \mark #2
                         R2. * 24
                     }
                 }
@@ -103,7 +107,7 @@
                         \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        \clef bass
+                        \mark #2
                         r2.
                         r2.
                         r2.
@@ -149,6 +153,7 @@
                         \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \mark #2
                         R2. * 24
                     }
                 }
@@ -160,6 +165,7 @@
                         \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \mark #2
                         R2. * 24
                     }
                 }
@@ -176,7 +182,7 @@
                         \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        \clef bass
+                        \mark #2
                         r2.
                         r2.
                         r2.
@@ -219,7 +225,7 @@
                         \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        \clef bass
+                        \mark #2
                         r2.
                         r2.
                         r2.
@@ -264,6 +270,7 @@
                         \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \mark #2
                         R2. * 24
                     }
                 }
@@ -275,6 +282,7 @@
                         \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \mark #2
                         R2. * 24
                     }
                 }
@@ -290,6 +298,7 @@
                         \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \mark #2
                         R2. * 24
                     }
                 }
@@ -301,6 +310,7 @@
                         \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \mark #2
                         R2. * 24
                     }
                 }
@@ -317,6 +327,7 @@
                         \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \mark #2
                         R2. * 24
                     }
                 }
@@ -329,6 +340,7 @@
                         \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \mark #2
                         R2. * 24
                     }
                 }
@@ -342,11 +354,53 @@
                     \time 3/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    R2. * 24
+                    \mark #2
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    g4 \mp ^ \markup { 1 }
+                    f8 [ ^ \markup { 2 }
+                    e8 ^ \markup { 3 }
+                    c8 ^ \markup { 4 }
+                    d16 ^ \markup { 5 }
+                    e16 ~ ] ^ \markup { 6 }
+                    e2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
+                    r2.
                 }
             }
         >>
         \new StaffGroup <<
+            \new Staff {
+                \clef "bass"
+                \set Staff.instrumentName = \markup { Timpani }
+                \set Staff.shortInstrumentName = \markup { Timp }
+                {
+                    \numericTimeSignature
+                    \time 3/4
+                    \bar "||"
+                    \accidentalStyle modern-cautionary
+                    \mark #2
+                    R2. * 24
+                }
+            }
             \new RhythmicStaff {
                 \clef "percussion"
                 \set Staff.instrumentName = \markup { "Percussion 1" }
@@ -356,6 +410,7 @@
                     \time 3/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
+                    \mark #2
                     R2. * 24
                 }
             }
@@ -368,6 +423,65 @@
                     \time 3/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
+                    \mark #2
+                    R2. * 24
+                }
+            }
+        >>
+        \new PianoStaff <<
+            \set PianoStaff.instrumentName = \markup { Harp }
+            \set PianoStaff.shortInstrumentName = \markup { Hp. }
+            \new Staff {
+                {
+                    \numericTimeSignature
+                    \time 3/4
+                    \bar "||"
+                    \accidentalStyle modern-cautionary
+                    \mark #2
+                    R2. * 24
+                }
+            }
+            \new Staff {
+                \clef "bass"
+                {
+                    \numericTimeSignature
+                    \time 3/4
+                    \bar "||"
+                    \accidentalStyle modern-cautionary
+                    \mark #2
+                    R2. * 24
+                }
+            }
+            {
+                \numericTimeSignature
+                \time 3/4
+                \bar "||"
+                \accidentalStyle modern-cautionary
+                \mark #2
+                R2. * 24
+            }
+        >>
+        \new PianoStaff <<
+            \set PianoStaff.instrumentName = \markup { Piano }
+            \set PianoStaff.shortInstrumentName = \markup { Pno. }
+            \new Staff {
+                {
+                    \numericTimeSignature
+                    \time 3/4
+                    \bar "||"
+                    \accidentalStyle modern-cautionary
+                    \mark #2
+                    R2. * 24
+                }
+            }
+            \new Staff {
+                \clef "bass"
+                {
+                    \numericTimeSignature
+                    \time 3/4
+                    \bar "||"
+                    \accidentalStyle modern-cautionary
+                    \mark #2
                     R2. * 24
                 }
             }
@@ -384,6 +498,7 @@
                         \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \mark #2
                         R2. * 24
                     }
                 }
@@ -395,6 +510,7 @@
                         \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \mark #2
                         R2. * 24
                     }
                 }
@@ -410,6 +526,7 @@
                         \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \mark #2
                         R2. * 24
                     }
                 }
@@ -421,6 +538,7 @@
                         \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \mark #2
                         R2. * 24
                     }
                 }
@@ -437,6 +555,7 @@
                         \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \mark #2
                         R2. * 24
                     }
                 }
@@ -449,6 +568,7 @@
                         \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \mark #2
                         R2. * 24
                     }
                 }
@@ -465,6 +585,7 @@
                         \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \mark #2
                         R2. * 24
                     }
                 }
@@ -477,6 +598,7 @@
                         \time 3/4
                         \bar "||"
                         \accidentalStyle modern-cautionary
+                        \mark #2
                         R2. * 24
                     }
                 }
@@ -490,6 +612,7 @@
                     \time 3/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
+                    \mark #2
                     R2. * 24
                 }
             }
@@ -504,6 +627,7 @@
                     \bar "||"
                     \accidentalStyle modern-cautionary
                     \clef bass
+                    \mark #2
                     r2.
                     r2.
                     r2.
@@ -556,6 +680,7 @@
                     \bar "||"
                     \accidentalStyle modern-cautionary
                     \clef bass
+                    \mark #2
                     r2.
                     r2.
                     r2.
@@ -605,6 +730,7 @@
                     \bar "||"
                     \accidentalStyle modern-cautionary
                     \clef bass
+                    \mark #2
                     r2.
                     r2.
                     r2.
@@ -664,6 +790,7 @@
                     \time 3/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
+                    \mark #2
                     R2. * 24
                 }
             }
@@ -675,6 +802,7 @@
                     \time 3/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
+                    \mark #2
                     R2. * 24
                 }
             }
@@ -686,6 +814,7 @@
                     \time 3/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
+                    \mark #2
                     R2. * 24
                 }
             }
@@ -697,6 +826,7 @@
                     \time 3/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
+                    \mark #2
                     R2. * 24
                 }
             }
@@ -708,6 +838,7 @@
                     \time 3/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
+                    \mark #2
                     R2. * 24
                 }
             }
@@ -719,6 +850,7 @@
                     \time 3/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
+                    \mark #2
                     R2. * 24
                     \bar "|."
                 }
