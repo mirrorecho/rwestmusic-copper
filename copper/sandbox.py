@@ -72,6 +72,10 @@
 # - (DONE) draft score stylesheet
 # - (DONE) able to output a full score
 # - (DONE) draft parts template
+# ---------------------------- MONDAY
+# - drones good draft throughout (including orchestration)
+# - short score good draft throughout
+# - cymbal good draft throughout
 # ---------------------------- ASAP!!!!!!
 # - more orchestrating gen b
 # - better gen c short score
