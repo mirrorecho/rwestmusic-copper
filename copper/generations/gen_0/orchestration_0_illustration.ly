@@ -1,45 +1,24 @@
-% 2016-09-18 19:20
+% 2016-09-19 02:08
 
 \version "2.18.2"
 \language "english"
 
+\include "../../scores/stylesheets/score.ily"
+
 #(set-global-staff-size 16)
 
-\header {
-    composer = \markup { "Randall West" }
-    tagline = \markup { [] }
-    title = \markup { "Copper: 0" }
-}
+\header {}
 
 \layout {
     \context {
         \Staff \RemoveEmptyStaves
-        \override VerticalAxisGroup.remove-first = ##t
     }
     \context {
         \RhythmicStaff \RemoveEmptyStaves
-        \override VerticalAxisGroup.remove-first = ##t
-    }
-    \context {
-        \Staff \RemoveEmptyStaves
-        \override VerticalAxisGroup.remove-first = ##t
-    }
-    \context {
-        \RhythmicStaff \RemoveEmptyStaves
-        \override VerticalAxisGroup.remove-first = ##t
     }
 }
 
-\paper {
-    bottom-margin = 0.5\in
-    left-margin = 0.75\in
-    paper-height = 17\in
-    paper-width = 11\in
-    right-margin = 0.5\in
-    system-separator-markup = \slashSeparator
-    system-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 20) (stretchability . 0))
-    top-margin = 0.5\in
-}
+\paper {}
 
 \score {
     \new Score <<
@@ -305,18 +284,18 @@
                 }
             }
         >>
-        \new StaffGroup <<
-            \new Staff {
-                \clef "bass"
-                \set Staff.instrumentName = \markup { Timpani }
-                \set Staff.shortInstrumentName = \markup { Timp }
-                {
-                    \numericTimeSignature
-                    \time 4/4
-                    \accidentalStyle modern-cautionary
-                    R1 * 12
-                }
+        \new Staff {
+            \clef "bass"
+            \set Staff.instrumentName = \markup { Timpani }
+            \set Staff.shortInstrumentName = \markup { Timp }
+            {
+                \numericTimeSignature
+                \time 4/4
+                \accidentalStyle modern-cautionary
+                R1 * 12
             }
+        }
+        \new StaffGroup <<
             \new RhythmicStaff {
                 \clef "percussion"
                 \set Staff.instrumentName = \markup { "Percussion 1" }

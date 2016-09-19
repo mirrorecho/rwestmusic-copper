@@ -69,10 +69,14 @@
 # - (DONE) start gen g draft short score
 # - (DONE) start orchestrating gen g
 # - (DONE!!!!! yay) able to create parts
-# ---------------------------- SUNDAY
-# - draft score stylesheet
-# - able to output a full score
-# - draft parts template
+# - (DONE) draft score stylesheet
+# - (DONE) able to output a full score
+# - (DONE) draft parts template
+# ---------------------------- ASAP!!!!!!
+# - more orchestrating gen b
+# - better gen c short score
+# - more orchestrating gen c
+# - more orchestrating gen d
 # - tag to respell flats/sharps (on individual notes)
 # - tempo markings
 # - some rhythms with metric modulations
@@ -83,10 +87,6 @@
 # - review current short scores at piano and adjust
 # - (if time) start gen h draft short score
 # - (if time) start orchestrating gen h
-# - more orchestrating gen b
-# - better gen c short score
-# - more orchestrating gen c
-# - more orchestrating gen d
 # - more orchestrating gen e
 # - more orchestrating gen f
 # - more orchestrating gen g
@@ -182,6 +182,7 @@
 
 
 # ---------------------------- FUTURE:
+# - new monitor / studio setup!!!
 # - replace some class-defined stuff with modules / introspection (i.e. should not need to create a class to describe grid bubble lines that are described above)
 # - parts need to be WAY WAY WAY simpler to generate!!!!
 # - - - should be able to specify a few simple settings in module
@@ -206,6 +207,7 @@
 # - consistent naming with data children (e.g. don't use "children" ... should always say "events", etc.)
 # - adding and removing staves
 # - BOXES BOXES BOXES!!!!
+# - sponsor lilypond development
 # - move some of the arrangement stuff that's currently in base bubble grids to machines / inherited lines (probably would perform better)
 # - initial silence is specific to copper ... make it work in another way (or keep it in the inherited copper classes only)
 # - go back through rep... ESPECIALLY elements & tokei orchestra pieces, accomodate, and make them even better!!!!!!!!!!!!!  (listen to recordints too... )

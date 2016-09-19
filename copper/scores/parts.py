@@ -22,6 +22,7 @@ from copper import staves
 
 class PartsBase(bubbles.BubbleScore):
     title = "Copper"
+    stylesheets=("stylesheets/parts.ily",)
 
 # -------------------------------------------------------------------------------------------------
 # WIND PARTS
@@ -512,7 +513,7 @@ def string_parts():
 
 # -------------------------------------------------------------------------------------------------
 
-wind_parts()
-brass_parts()
-hit_parts()
+# wind_parts()
+# brass_parts()
+# hit_parts()
 string_parts()

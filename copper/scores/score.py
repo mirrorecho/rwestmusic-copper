@@ -21,6 +21,7 @@ from copper import staves
 class CopperFullMusic(bubbles.GridSequence, staves.CopperMusic):
     grid_sequence = (
         orchestration_0.get_orchestration_0()(),
+        orchestration_a.get_orchestration_a()(),
         orchestration_b.get_orchestration_b()(),
         orchestration_c.get_orchestration_c()(),
         orchestration_d.get_orchestration_d()(),
@@ -33,6 +34,7 @@ class CopperFullMusic(bubbles.GridSequence, staves.CopperMusic):
 # -------------------------------------------------------------------------------------------------
 # OUTPUT SCORE
 class CopperFullScore(staves.CopperScore):
+    stylesheets=("stylesheets/score.ily",)
     show_short_score=True
     hide_empty=True
     title="Copper"

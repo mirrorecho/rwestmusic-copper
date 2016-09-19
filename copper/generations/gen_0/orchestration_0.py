@@ -173,8 +173,13 @@ def get_orchestration_0():
 
 # -------------------------------------------------------------------------
 # OUTPUT SCORE
-
+ 
 bubbles.illustrate_me(__file__, 
-    lambda: staves.CopperScore( get_orchestration_0()(), title="Copper: 0", show_short_score=True, hide_empty=True).get_lilypond_file()
+    lambda: staves.CopperScore( 
+        get_orchestration_0()(), 
+        stylesheets=("../../scores/stylesheets/score.ily",),
+        title="Copper: 0", 
+        show_short_score=True, 
+        hide_empty=True).get_lilypond_file()
     )
 

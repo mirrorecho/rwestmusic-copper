@@ -1,13 +1,11 @@
-% 2016-09-19 00:30
+% 2016-09-19 02:27
 
 \version "2.18.2"
 \language "english"
 
-\header {
-    composer = \markup { "Randall West" }
-    tagline = \markup { [] }
-    title = \markup { Copper }
-}
+\include "stylesheets/parts.ily"
+
+\header {}
 
 \layout {
     \context {
