@@ -16,8 +16,8 @@ class AttachmentTagData(object):
     slurs_inventory = set(("(", "((")) # note... double parens could be used to indicate larger phrasing slur
     hairpins_inventory = set( ("\<","\>") ) # note... may not be needed
 
-    start_spanners_inventory = slurs_inventory | hairpins_inventory
-    stop_spanners_inventory = set( (")", "))", "\!"), )
+    start_spanners_inventory = set(("~",)) | slurs_inventory | hairpins_inventory
+    stop_spanners_inventory = set( (")", "))", "\!", "~!"), )
     stem_tremolos_inventory = set( (":8",":16",":32") )
     tremolos_inventory = set( ("tremolo:1", "tremolo:2", "tremolo:3",) )
 
@@ -27,6 +27,7 @@ class AttachmentTagData(object):
     spanner_closures = {
         ")":    set(("(",),),
         "))":   set(("((",),),
+        "~!":   set(("~",),), # (made up shorthand for end tie)
     }
     for item in dynamics_inventory | hairpins_inventory | set( ("\!",) ):
         spanner_closures[item] = hairpins_inventory
@@ -52,6 +53,8 @@ class AttachmentTagData(object):
         elif attachment_name in self.tremolos_inventory:
             tremolo_count = int(attachment_name[8:])
             return abjad.indicatortools.Tremolo(beam_count=tremolo_count, is_slurred=True)
+        elif attachment_name == "~":
+            return abjad.spannertools.Tie()
         elif not attachment_name in self.stop_spanners_inventory:
             if attachment_name[0] == "\\":
                 return abjad.indicatortools.LilyPondCommand(attachment_name[1:])
@@ -229,6 +232,7 @@ class ArrangeAttachments(object):
                 if isinstance(spanner, abjad.Slur):
                     # slurs go to the end of the logical tie, not the beginning
                     stop_index += len(music_logical_tie) - 1
+                print(spanner)
                 abjad.attach(spanner, music[start_index:stop_index])
                 del self._open_spanners[p]
 

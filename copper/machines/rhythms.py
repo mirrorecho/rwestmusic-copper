@@ -33,12 +33,15 @@ class Rhythms(object):
         super().set_logical_tie(logical_tie, **kwargs)
         event = logical_tie.parent
         logical_tie.original_duration = event.parent.rhythm_segment[event.my_index]
-        logical_tie.ticks = int(logical_tie.original_duration*self.rhythm_default_multiplier)
+        if logical_tie.original_duration < 0:
+            logical_tie.rest = True
+        logical_tie.ticks = abs(int(logical_tie.original_duration*self.rhythm_default_multiplier))
 
     def set_logical_ties(self, event, **kwargs):
         super().set_logical_ties(event, **kwargs)
         # (by default, there is just 1 logical tie per event... )
         self.set_logical_tie( event.branch() )
+        # self.info("setting logical tie", event)
         event.index_children()
 
     def set_event(self, event, **kwargs):
@@ -79,7 +82,10 @@ class Rhythms(object):
         # TO DO... remove empty events or empty segments...
 
         last_rest = None
-        for logical_tie in self.data.leaves:
+        for logical_tie in self.logical_ties:
+            parent_event = logical_tie.parent
+            grandparent_segment = parent_event.parent
+
             if last_rest is not None and logical_tie.rest:
                 last_rest.ticks += logical_tie.ticks
                 logical_tie.parent.remove(logical_tie)
@@ -88,8 +94,16 @@ class Rhythms(object):
             else:
                 last_rest = None 
             # print(logical_tie.graph_order)
-            if logical_tie.ticks <= 0: # TO DO... why are some logical ties missing parents?
+            if logical_tie.ticks <= 0:
+                self.warn("0/negative ticks detected and removed...", logical_tie)
                 logical_tie.parent.remove(logical_tie)
+
+            # now, remove empty parents and grandparents
+            if not parent_event.children:
+                grandparent_segment.remove(parent_event)
+            if not grandparent_segment.children:
+                grandparent_segment.parent.remove(grandparent_segment)
+
 
     def get_metrical_duration_ticks(self):
         """
@@ -103,7 +117,7 @@ class Rhythms(object):
         returns flattened list of all ticks, padded at the end based on the length, with rests as negative values
         """
         ticks_list = []
-        for l in self.data.leaves:
+        for l in self.logical_ties:
             if isinstance(l, machines.LogicalTieData):
                 ticks_list.append(l.ticks*-1 if l.rest else l.ticks)
             else:
@@ -135,9 +149,8 @@ class Rhythms(object):
     def process_logical_ties(self, music, **kwargs):
         super().process_logical_ties(music, **kwargs)
         music_logical_ties = machines.by_logical_tie_group_rests(music)
-        data_logical_ties = self.data.leaves
         leaf_count=0
-        for music_logical_tie, data_logical_tie in zip(music_logical_ties, data_logical_ties):
+        for music_logical_tie, data_logical_tie in zip(music_logical_ties, self.logical_ties):
             # print( "TL: %s" % leaf_count  )
             # print(music_logical_tie)
             self.process_logical_tie(music, music_logical_tie, data_logical_tie, leaf_count, **kwargs)

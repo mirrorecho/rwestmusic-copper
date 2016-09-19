@@ -13,6 +13,10 @@ class Gen0(object): # basic attributes, such as starting time signature, rehears
 
 # -------------------------------------------------------------------------------------------------
 # HERE IS the actual line class:
+class Drone0(Gen0, machines.Drone0):
+    pass
+
+
 class Line1(Gen0, machines.PitchedLine):
     # time_signature = (4,4)
 # HERE is for testing purposes:
@@ -98,6 +102,7 @@ class Drone2(machines.Drone):
 # -------------------------------------------------------------------------------------------------
 bubbles.illustrate_me(__file__, 
     lambda: bubbles.Bubble(
-            line1 = Line1()
+            line1 = Line1(),
+            drone0 = Drone0(),
         ).score()
     )

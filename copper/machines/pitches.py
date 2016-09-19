@@ -17,7 +17,8 @@ class Pitches(object):
     def set_event(self, event, **kwargs):
         super().set_event(event, **kwargs)
         if event.parent.pitch_segment: # need to test for this because harmony wouldn't have set pitch segment on parent
-            event.original_pitch = event.parent.pitch_segment[event.my_index]
+            # TO DO... this could be more elegant... Use cyclic Indexed Data? for pitch segments?
+            event.original_pitch = event.parent.pitch_segment[event.my_index % len (event.parent.pitch_segment)]
             event.pitch = event.original_pitch
 
     def set_segment(self, segment, **kwargs):

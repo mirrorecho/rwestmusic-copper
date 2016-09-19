@@ -1,4 +1,4 @@
-% 2016-09-18 04:30
+% 2016-09-19 18:49
 
 \version "2.18.2"
 \language "english"
@@ -11,13 +11,36 @@
 
 \score {
     \new Score <<
+        \context Staff = "drone0" {
+            \set Staff.instrumentName = \markup { Drone0 }
+            \set Staff.shortInstrumentName = \markup { Drone0 }
+            {
+                r2
+                d2 \pp ~ \< ^ \markup { 1 }
+                d1 \mp ~ \> ^ \markup { 2 }
+                d2 \pp ^ \markup { 3 }
+                r2
+                r2
+                d2 \pp ~ \< ^ \markup { 5 }
+                d1 \mp ~ \> ^ \markup { 6 }
+                d2 \pp ^ \markup { 7 }
+                r2
+                r2
+                d2 \pp ~ \< ^ \markup { 9 }
+                d1 \mp ~ \> ^ \markup { 10 }
+                d2 \pp ^ \markup { 11 }
+                r2
+                r2
+                d2 \pp ~ \< ^ \markup { 13 }
+                d1 \mp ~ \> ^ \markup { 14 }
+                d2 \pp ^ \markup { 15 }
+                r2
+            }
+        }
         \context Staff = "line1" {
             \set Staff.instrumentName = \markup { Line1 }
             \set Staff.shortInstrumentName = \markup { Line1 }
             {
-                \numericTimeSignature
-                \time 4/4
-                \accidentalStyle modern-cautionary
                 r1
                 r1
                 r1

@@ -200,6 +200,7 @@
 # - refactor standard stuff into callope
 # - use asserts for error handling
 # - keep relative durations as negative?
+# - bug, first rest in rhythm is removed if rhythm_initial_silence is also 0 (can work around be always using rhythm_initial_silence... but this is screwy)
 # IMPLEMENTING INTO CALLIOPE:
 # - make sure machines are self-contained. they shouldn't use attributes defined on other ones (except a few base ones like ticks and pitch)
 # - - - (e.g. pitch displacement should be more isolated... not built into structure of EventData)
