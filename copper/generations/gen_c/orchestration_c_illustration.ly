@@ -1,4 +1,4 @@
-% 2016-09-18 04:15
+% 2016-09-18 20:53
 
 \version "2.18.2"
 \language "english"
@@ -53,6 +53,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
+                        \bar "||"
                         \accidentalStyle modern-cautionary
                         \mark #3
                         R1 * 24
@@ -64,6 +65,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
+                        \bar "||"
                         \accidentalStyle modern-cautionary
                         \mark #3
                         R1 * 24
@@ -75,6 +77,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
+                        \bar "||"
                         \accidentalStyle modern-cautionary
                         \mark #3
                         R1 * 24
@@ -90,6 +93,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
+                        \bar "||"
                         \accidentalStyle modern-cautionary
                         \mark #3
                         r1
@@ -127,6 +131,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
+                        \bar "||"
                         \accidentalStyle modern-cautionary
                         \mark #3
                         R1 * 24
@@ -142,6 +147,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
+                        \bar "||"
                         \accidentalStyle modern-cautionary
                         \mark #3
                         r1
@@ -182,6 +188,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
+                        \bar "||"
                         \accidentalStyle modern-cautionary
                         \mark #3
                         r1
@@ -224,6 +231,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
+                        \bar "||"
                         \accidentalStyle modern-cautionary
                         \mark #3
                         R1 * 24
@@ -236,6 +244,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
+                        \bar "||"
                         \accidentalStyle modern-cautionary
                         \mark #3
                         R1 * 24
@@ -253,6 +262,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
+                        \bar "||"
                         \accidentalStyle modern-cautionary
                         \mark #3
                         R1 * 24
@@ -264,6 +274,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
+                        \bar "||"
                         \accidentalStyle modern-cautionary
                         \mark #3
                         R1 * 24
@@ -279,6 +290,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
+                        \bar "||"
                         \accidentalStyle modern-cautionary
                         \mark #3
                         r1
@@ -324,6 +336,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
+                        \bar "||"
                         \accidentalStyle modern-cautionary
                         \mark #3
                         r1
@@ -374,6 +387,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
+                        \bar "||"
                         \accidentalStyle modern-cautionary
                         \mark #3
                         r1
@@ -411,6 +425,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
+                        \bar "||"
                         \accidentalStyle modern-cautionary
                         \mark #3
                         r1
@@ -449,6 +464,7 @@
                 {
                     \numericTimeSignature
                     \time 4/4
+                    \bar "||"
                     \accidentalStyle modern-cautionary
                     \mark #3
                     R1 * 24
@@ -463,6 +479,7 @@
                 {
                     \numericTimeSignature
                     \time 4/4
+                    \bar "||"
                     \accidentalStyle modern-cautionary
                     \mark #3
                     R1 * 24
@@ -475,23 +492,41 @@
                 {
                     \numericTimeSignature
                     \time 4/4
+                    \bar "||"
                     \accidentalStyle modern-cautionary
                     \mark #3
                     R1 * 24
                 }
             }
-            \new RhythmicStaff {
-                \clef "percussion"
-                \set Staff.instrumentName = \markup { "Percussion 2" }
-                \set Staff.shortInstrumentName = \markup { Perc.2 }
-                {
-                    \numericTimeSignature
-                    \time 4/4
-                    \accidentalStyle modern-cautionary
-                    \mark #3
-                    R1 * 24
+            \new StaffGroup \with {
+                systemStartDelimiter = #'SystemStartSquare
+            } <<
+                \new RhythmicStaff {
+                    \clef "percussion"
+                    \set Staff.instrumentName = \markup { "Percussion 2" }
+                    \set Staff.shortInstrumentName = \markup { Perc.2 }
+                    {
+                        \numericTimeSignature
+                        \time 4/4
+                        \bar "||"
+                        \accidentalStyle modern-cautionary
+                        \mark #3
+                        R1 * 24
+                    }
                 }
-            }
+                \new Staff {
+                    \set Staff.instrumentName = \markup { "Perc. 2 - Vibraphone" }
+                    \set Staff.shortInstrumentName = \markup { Vib. }
+                    {
+                        \numericTimeSignature
+                        \time 4/4
+                        \bar "||"
+                        \accidentalStyle modern-cautionary
+                        \mark #3
+                        R1 * 24
+                    }
+                }
+            >>
         >>
         \new PianoStaff <<
             \set PianoStaff.instrumentName = \markup { Harp }
@@ -500,6 +535,7 @@
                 {
                     \numericTimeSignature
                     \time 4/4
+                    \bar "||"
                     \accidentalStyle modern-cautionary
                     \mark #3
                     R1 * 24
@@ -510,14 +546,11 @@
                 {
                     \numericTimeSignature
                     \time 4/4
+                    \bar "||"
                     \accidentalStyle modern-cautionary
                     \mark #3
                     R1 * 24
                 }
-            }
-            {
-                \accidentalStyle modern-cautionary
-                R1 * 24
             }
         >>
         \new PianoStaff <<
@@ -527,6 +560,7 @@
                 {
                     \numericTimeSignature
                     \time 4/4
+                    \bar "||"
                     \accidentalStyle modern-cautionary
                     \mark #3
                     R1 * 24
@@ -537,6 +571,7 @@
                 {
                     \numericTimeSignature
                     \time 4/4
+                    \bar "||"
                     \accidentalStyle modern-cautionary
                     \mark #3
                     R1 * 24
@@ -553,6 +588,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
+                        \bar "||"
                         \accidentalStyle modern-cautionary
                         \mark #3
                         r1
@@ -608,6 +644,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
+                        \bar "||"
                         \accidentalStyle modern-cautionary
                         \mark #3
                         R1 * 24
@@ -623,6 +660,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
+                        \bar "||"
                         \accidentalStyle modern-cautionary
                         \mark #3
                         R1 * 24
@@ -634,6 +672,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
+                        \bar "||"
                         \accidentalStyle modern-cautionary
                         \mark #3
                         R1 * 24
@@ -650,6 +689,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
+                        \bar "||"
                         \accidentalStyle modern-cautionary
                         \mark #3
                         R1 * 24
@@ -662,6 +702,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
+                        \bar "||"
                         \accidentalStyle modern-cautionary
                         \mark #3
                         R1 * 24
@@ -678,6 +719,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
+                        \bar "||"
                         \accidentalStyle modern-cautionary
                         \mark #3
                         R1 * 24
@@ -690,6 +732,7 @@
                     {
                         \numericTimeSignature
                         \time 4/4
+                        \bar "||"
                         \accidentalStyle modern-cautionary
                         \mark #3
                         R1 * 24
@@ -703,6 +746,7 @@
                 {
                     \numericTimeSignature
                     \time 4/4
+                    \bar "||"
                     \accidentalStyle modern-cautionary
                     \mark #3
                     R1 * 24

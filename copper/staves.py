@@ -38,7 +38,6 @@ class CapperPerc2(InstrumentStaffGroup):
 class CopperPerc(BubbleStaffGroup):
     # TO DO EVENTUALLY... shouldn't always add crotales.... 
     # crotales = BubbleStaff(instrument=instrumenttools.Instrument(instrument_name="Crotales", short_instrument_name="cro."))
-    timpani = BubbleStaff(instrument=instrumenttools.Instrument(instrument_name="Timpani", short_instrument_name="timp"), clef="bass")
     perc1 = BubbleRhythmicStaff(instrument=instrumenttools.Percussion(instrument_name="Percussion 1", short_instrument_name="perc.1"))
     perc2_combo = CapperPerc2()
     sequence = ("timpani", "perc1", "perc2_combo",)
@@ -108,17 +107,18 @@ class CopperScore(BubbleFormatLargeScore):
 
     winds = CopperWinds()
     brass = CopperBrass()
+    timpani = BubbleStaff(instrument=instrumenttools.Instrument(instrument_name="Timpani", short_instrument_name="timp"), clef="bass")
+    perc = CopperPerc()
     harp = BubbleHarp(instrument=instrumenttools.Harp(instrument_name="Harp", short_instrument_name="hp."))
     piano = BubblePiano(instrument=instrumenttools.Piano(instrument_name="Piano", short_instrument_name="pno."))
-    perc = CopperPerc()
     strings = CopperStringsDiv()
     short_score = CopperShortScore()
 
     def sequence(self, **kwargs):
         if self.show_short_score:
-            return ("winds", "brass", "perc", "harp", "piano", "strings", "short_score")
+            return ("winds", "brass", "timpani", "perc", "harp", "piano", "strings", "short_score")
         else:
-            return ("winds", "brass", "perc", "harp", "piano", "strings")
+            return ("winds", "brass", "timpani", "perc", "harp", "piano", "strings")
 
 class CopperMusic(Bubble):
 

@@ -1,4 +1,4 @@
-% 2016-09-18 15:51
+% 2016-09-18 22:48
 
 \version "2.18.2"
 \language "english"
@@ -74,18 +74,18 @@
                         r1
                         r1
                         r1
+                        r1
                         r4
                         e''2. :32 \mp \<
                             ^ \markup {
                                 \column
                                     {
-                                        3
                                         f.t.
+                                        3
                                     }
                                 }
                         e''4 -\staccato \mf ^ \markup { 6 }
                         r2.
-                        r1
                         r1
                         r1
                         r1
@@ -373,6 +373,7 @@
                         r1
                         r1
                         r1
+                        r1
                         r2.
                         d''8 \mp [ ^ \markup { 1 }
                         f'8 ] ^ \markup { 2 }
@@ -381,7 +382,6 @@
                         r4
                         e''2 :32 ^ \markup { 6 }
                         r2
-                        r1
                         r1
                         r1
                         r1
@@ -428,13 +428,13 @@
                     r1
                     r1
                     r1
+                    r1
                     r2..
                     f'8 \mp ^ \markup { 2 }
                     r4
                     e''4 ^ \markup { 3 }
                     r4
                     g'4 ^ \markup { 5 }
-                    r1
                     r1
                     r1
                     r1
@@ -492,13 +492,13 @@
                     r1
                     r1
                     r1
+                    r1
                     r2..
                     f'8 \mp ^ \markup { 2 }
                     r4
                     e''4 ^ \markup { 3 }
                     r4
                     g'4 ^ \markup { 5 }
-                    r1
                     r1
                     r1
                     r1
@@ -688,80 +688,80 @@
                     r1
                     r1
                     r1
+                    r2.
+                    <d' fs' g'>4 ~
+                    <d' fs' g'>2
+                    <e a d'>4.
+                    <d' fs' g'>8 ~
+                    <d' fs' g'>4
+                    r2.
+                    r2.
+                    <e c' e'>4 ~
+                    <e c' e'>2
+                    <a fs' g'>4.
+                    <e c' a'>8 ~
+                    <e c' a'>4
+                    r2.
                     <d' fs' g'>2.
                     <e a d'>4 ~
                     <e a d'>8
-                    <d' fs' g'>4.
-                    r2
-                    r1
-                    <e c' e'>2.
-                    <a fs' g'>4 ~
-                    <a fs' g'>8
-                    <e c' a'>4.
+                    <a fs' g'>4.
+                    <e c' a'>2 ~
+                    <e c' a'>2 ~
+                    <e c' a'>8
+                    <a, d g>4.
+                    <c f b>4.
+                    <a, f a>4.
+                    <g, f b>4 ~
+                    <g, f b>8
+                    <a, f d'>4.
                     r2
                     r4
-                    <d' fs' g'>2.
-                    <e a d'>4.
-                    <a fs' g'>4.
-                    <e c' a'>4 ~
-                    <e c' a'>2..
+                    <c f b>2. ~
+                    <c f b>2.
+                    <a, d g>4 ~
+                    <a, d g>8
+                    <g, f b>4.
+                    r2
+                    r1
+                    <a, f d'>2.
+                    <f, d b>4 ~
+                    <f, d b>8
+                    <a, f d'>4.
+                    <g, f b>2 ~
+                    <g, f b>4
+                    <a, f a>4.
+                    <c f b>4.
+                    <a, f d'>4.
+                    <f, d b>4.
+                    <a, f a>4 ~
+                    <a, f a>8
+                    <c f b>2.
                     <a, d g>8 ~
                     <a, d g>4
                     <c f b>4.
-                    <a, f a>4.
-                    <g, f b>4.
-                    <a, f d'>4.
-                    r4
-                    r2
-                    <c f b>2 ~
-                    <c f b>1
-                    <a, d g>4.
-                    <g, f b>4.
-                    r4
-                    r1
-                    r4
-                    <a, f d'>2.
-                    <f, d b>4.
-                    <a, f d'>4.
-                    <g, f b>4 ~
-                    <g, f b>2
-                    <a, f a>4.
-                    <c f b>8 ~
-                    <c f b>4
-                    <a, f d'>4.
-                    <f, d b>4.
-                    <a, f a>4.
-                    <c f b>2 ~
-                    <c f b>8 ~
-                    <c f b>8
-                    <a, d g>4.
-                    <c f b>4.
-                    r8
-                    r1
                     r4.
-                    <a, f a>2 ~
-                    <a, f a>8 ~
-                    <a, f a>8
-                    <g, f b>4.
-                    <a, f d'>4.
+                    r1
                     r8
+                    <a, f a>2.
+                    <g, f b>8 ~
+                    <g, f b>4
+                    <a, f d'>4.
+                    r4.
                     r1
                     r1
-                    r2..
-                    <c f b>8 ~
-                    <c f b>2 ~
-                    <c f b>8
+                    r2
+                    r8
+                    <c f b>4. ~
+                    <c f b>4.
                     <g a b>4.
-                    <a b c'>4.
-                    <b c' d'>2 ~
-                    <b c' d'>8 ~
-                    <b c' d'>8
-                    <g a b>4.
+                    <a b c'>4 ~
+                    <a b c'>8
+                    <b c' d'>2.
+                    <g a b>8 ~
+                    <g a b>4
                     <b c' d'>4.
-                    <a b c'>8 ~
-                    <a b c'>4
                     <a b c'>4.
-                    <b c' d'>4.
                 }
             }
             \new Staff {
@@ -878,6 +878,7 @@
                     r1
                     r1
                     r1
+                    r1
                     r2.
                     d''8 [ ^ \markup { 1 }
                     f'8 ] ^ \markup { 2 }
@@ -970,9 +971,6 @@
                     a'4 ^ \markup { 77 }
                     b'4 ^ \markup { 78 }
                     a'4 ^ \markup { 79 }
-                    c''4 ^ \markup { 80 }
-                    b'4 ^ \markup { 81 }
-                    r2
                 }
             }
             \new Staff {
@@ -983,78 +981,80 @@
                     \time 4/4
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    \clef bass
+                    \clef "bass"
                     \mark #6
                     r1
                     r1
                     r1
                     r1
                     r1
+                    r1
                     r2.
-                    a8 [
-                    g8 ]
-                    fs4
+                    d8 [ ^ \markup { 1 }
+                    c8 ]
+                    b,4
+                    g,4 ^ \markup { 2 }
+                    a,4
+                    b,4 ~
+                    b,4
+                    r2.
+                    b,8 [ ^ \markup { 3 }
+                    c8 ]
                     d4
-                    e4
-                    fs4 ~
-                    fs4
-                    r2.
-                    a8 [
-                    g8 ]
-                    fs4
-                    fs4
-                    g4
-                    e2
+                    e4 ^ \markup { 4 }
+                    c'4
+                    a2
                     r2
                     r4
-                    e4
-                    g4
-                    fs4
-                    fs8 [
-                    g8 ]
-                    a2. ~
-                    a2
-                    a8 [
-                    g8 ]
-                    fs4
-                    d4
-                    e4
-                    fs2 ~
-                    fs4
-                    e4
-                    c4
-                    e,4
-                    d4
-                    g4
-                    b,2 ~
-                    b,1 ~
-                    b,2
-                    c,4
+                    a4 ^ \markup { 5 }
+                    f4
                     a,4
-                    b,2.
-                    g,4
-                    f,4
-                    b,2
+                    a,8 [ ^ \markup { 6 }
+                    bf,8 ]
+                    f,2. ~
+                    f,2
+                    f,8 [ ^ \markup { 7 }
+                    ef,8 ]
+                    d,4
+                    bf,,4 ^ \markup { 8 }
+                    c,4
+                    d,2 ~
+                    d,4
+                    g,4 ^ \markup { 9 }
+                    bf,4
+                    a,4
+                    g,4 ^ \markup { 10 }
+                    c4
+                    e,2 ~
+                    e,1
+                    c,4 ^ \markup { 11 }
+                    a,4
+                    b,2 ~
                     b,4
+                    g,4 ^ \markup { 12 }
+                    f,4
+                    b,4 ~
+                    b,4
+                    b,4 ^ \markup { 13 }
                     g4
-                    a,2
-                    d,4
+                    a,4 ~
+                    a,4
+                    d,4 ^ \markup { 14 }
                     f,4
                     b,4
-                    b,8 [
+                    b,8 [ ^ \markup { 15 }
                     g8 ]
-                    d4 ~
-                    d2
-                    g,4
+                    d2.
+                    g,4 ^ \markup { 16 }
                     f,4
                     b,2
-                    g,4
+                    g,4 ^ \markup { 17 }
                     e4
-                    b,2.
-                    d,4
+                    b,2 ~
+                    b,4
+                    d,4 ^ \markup { 18 }
                     f,4
                     b,4
-                    r2
                     r1
                     r1
                     r1
@@ -1077,6 +1077,7 @@
                     \accidentalStyle modern-cautionary
                     \clef "bass"
                     \mark #6
+                    r1
                     r1
                     r1
                     r1
@@ -1156,7 +1157,6 @@
                     r1
                     r1
                     r1
-                    r1
                 }
             }
             \new Staff {
@@ -1168,9 +1168,6 @@
                     \bar "||"
                     \accidentalStyle modern-cautionary
                     \mark #6
-                    r1
-                    r1
-                    r1
                     r1
                     r1
                     r1
@@ -1271,6 +1268,9 @@
                     f8 [
                     e8 ]
                     r2.
+                    r1
+                    r1
+                    r1
                     r1
                     r1
                     r1
@@ -1296,9 +1296,6 @@
                     r1
                     r1
                     r1
-                    r1
-                    r1
-                    r1
                     r2.
                     d'4 ^ \markup { 1 }
                     g'8 [
@@ -1393,6 +1390,9 @@
                     f8 [
                     e8 ]
                     r2.
+                    r1
+                    r1
+                    r1
                     r1
                     r1
                     r1

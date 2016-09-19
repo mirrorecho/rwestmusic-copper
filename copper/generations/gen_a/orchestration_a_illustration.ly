@@ -1,4 +1,4 @@
-% 2016-09-18 03:48
+% 2016-09-18 20:49
 
 \version "2.18.2"
 \language "english"
@@ -311,17 +311,31 @@
                     R1 * 18
                 }
             }
-            \new RhythmicStaff {
-                \clef "percussion"
-                \set Staff.instrumentName = \markup { "Percussion 2" }
-                \set Staff.shortInstrumentName = \markup { Perc.2 }
-                {
-                    \bar "||"
-                    \accidentalStyle modern-cautionary
-                    \mark #1
-                    R1 * 18
+            \new StaffGroup \with {
+                systemStartDelimiter = #'SystemStartSquare
+            } <<
+                \new RhythmicStaff {
+                    \clef "percussion"
+                    \set Staff.instrumentName = \markup { "Percussion 2" }
+                    \set Staff.shortInstrumentName = \markup { Perc.2 }
+                    {
+                        \bar "||"
+                        \accidentalStyle modern-cautionary
+                        \mark #1
+                        R1 * 18
+                    }
                 }
-            }
+                \new Staff {
+                    \set Staff.instrumentName = \markup { "Perc. 2 - Vibraphone" }
+                    \set Staff.shortInstrumentName = \markup { Vib. }
+                    {
+                        \bar "||"
+                        \accidentalStyle modern-cautionary
+                        \mark #1
+                        R1 * 18
+                    }
+                }
+            >>
         >>
         \new PianoStaff <<
             \set PianoStaff.instrumentName = \markup { Harp }
@@ -342,10 +356,6 @@
                     \mark #1
                     R1 * 18
                 }
-            }
-            {
-                \accidentalStyle modern-cautionary
-                R1 * 18
             }
         >>
         \new PianoStaff <<
@@ -649,8 +659,8 @@
                         a'2 \pp ~ \< ^ \markup { "solo cello" }
                         a'4
                         a'2 \mp \< (
-                        b'4 \mf \p )
-                        fs'1 \mp \p ~
+                        b'4 \p )
+                        fs'1 \p ~
                         fs'4
                         r2.
                         r1

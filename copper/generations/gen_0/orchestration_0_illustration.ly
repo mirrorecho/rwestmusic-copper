@@ -1,4 +1,4 @@
-% 2016-09-18 03:39
+% 2016-09-18 19:20
 
 \version "2.18.2"
 \language "english"
@@ -328,17 +328,31 @@
                     R1 * 12
                 }
             }
-            \new RhythmicStaff {
-                \clef "percussion"
-                \set Staff.instrumentName = \markup { "Percussion 2" }
-                \set Staff.shortInstrumentName = \markup { Perc.2 }
-                {
-                    \numericTimeSignature
-                    \time 4/4
-                    \accidentalStyle modern-cautionary
-                    R1 * 12
+            \new StaffGroup \with {
+                systemStartDelimiter = #'SystemStartSquare
+            } <<
+                \new RhythmicStaff {
+                    \clef "percussion"
+                    \set Staff.instrumentName = \markup { "Percussion 2" }
+                    \set Staff.shortInstrumentName = \markup { Perc.2 }
+                    {
+                        \numericTimeSignature
+                        \time 4/4
+                        \accidentalStyle modern-cautionary
+                        R1 * 12
+                    }
                 }
-            }
+                \new Staff {
+                    \set Staff.instrumentName = \markup { "Perc. 2 - Vibraphone" }
+                    \set Staff.shortInstrumentName = \markup { Vib. }
+                    {
+                        \numericTimeSignature
+                        \time 4/4
+                        \accidentalStyle modern-cautionary
+                        R1 * 12
+                    }
+                }
+            >>
         >>
         \new PianoStaff <<
             \set PianoStaff.instrumentName = \markup { Harp }
@@ -359,10 +373,6 @@
                     \accidentalStyle modern-cautionary
                     R1 * 12
                 }
-            }
-            {
-                \accidentalStyle modern-cautionary
-                R1 * 12
             }
         >>
         \new PianoStaff <<

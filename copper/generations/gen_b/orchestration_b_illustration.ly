@@ -1,4 +1,4 @@
-% 2016-09-18 04:14
+% 2016-09-18 20:51
 
 \version "2.18.2"
 \language "english"
@@ -414,19 +414,35 @@
                     R2. * 24
                 }
             }
-            \new RhythmicStaff {
-                \clef "percussion"
-                \set Staff.instrumentName = \markup { "Percussion 2" }
-                \set Staff.shortInstrumentName = \markup { Perc.2 }
-                {
-                    \numericTimeSignature
-                    \time 3/4
-                    \bar "||"
-                    \accidentalStyle modern-cautionary
-                    \mark #2
-                    R2. * 24
+            \new StaffGroup \with {
+                systemStartDelimiter = #'SystemStartSquare
+            } <<
+                \new RhythmicStaff {
+                    \clef "percussion"
+                    \set Staff.instrumentName = \markup { "Percussion 2" }
+                    \set Staff.shortInstrumentName = \markup { Perc.2 }
+                    {
+                        \numericTimeSignature
+                        \time 3/4
+                        \bar "||"
+                        \accidentalStyle modern-cautionary
+                        \mark #2
+                        R2. * 24
+                    }
                 }
-            }
+                \new Staff {
+                    \set Staff.instrumentName = \markup { "Perc. 2 - Vibraphone" }
+                    \set Staff.shortInstrumentName = \markup { Vib. }
+                    {
+                        \numericTimeSignature
+                        \time 3/4
+                        \bar "||"
+                        \accidentalStyle modern-cautionary
+                        \mark #2
+                        R2. * 24
+                    }
+                }
+            >>
         >>
         \new PianoStaff <<
             \set PianoStaff.instrumentName = \markup { Harp }
@@ -451,10 +467,6 @@
                     \mark #2
                     R2. * 24
                 }
-            }
-            {
-                \accidentalStyle modern-cautionary
-                R2. * 24
             }
         >>
         \new PianoStaff <<

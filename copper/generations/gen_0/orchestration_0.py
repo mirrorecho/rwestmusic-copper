@@ -126,48 +126,55 @@ class Bass(machines.PitchesDisplaced, StringsArrange0):
 # ------------------------------------------------------------------------------------------------------------
 # ALL LINES ASSOCIATED WITH STAVES
 
-class Orchestration0(staves.CopperMusic): 
-    bubble_default = Arrange0.unarranged # in case any parts are commented out
-    flute1 = Flute1() # TO DO...  maybe this should always be piccolo?
-    flute2 = Flute2()
-    flute3 = Flute3()
-    oboe1 = Oboe1()
-    oboe2 = Oboe2()
-    clarinet1 = Clarinet1()
-    clarinet2 = Clarinet2()
-    bassoon1 = Bassoon1()
-    bassoon2 = Bassoon2()
-    horn1 = Horn1()
-    horn2 = Horn2()
-    trumpet1 = Trumpet1()
-    trumpet2 = Trumpet2()
-    trombone1 = Trombone1()
-    trombone2 = Trombone2()
-    tuba = Tuba()
-    timpani = Timpani()
-    perc1 = Perc1()
-    perc2 = Perc2()
-    vibes = Vibes()
-    harp1 = Harp1()
-    harp2 = Harp2()
-    piano1 = Piano1()
-    piano2 = Piano2()
-    violinI1 = StringsArrange0()
-    violinI2 = StringsArrange0()
-    violinII1 = StringsArrange0()
-    violinII2 = StringsArrange0()
-    viola1 = StringsArrange0()
-    viola2 = StringsArrange0()
-    cello1 = StringsArrange0()
-    cello2 = StringsArrange0()
-    bass = Bass()
+# TO DO... this is screwy... isntead, should be able to use introspection to pull classes from this module
+def get_orchestration_0():
+    class Orchestration0(staves.CopperMusic): 
+        bubble_default = Arrange0.unarranged # in case any parts are commented out
+        flute1 = Flute1() # TO DO...  maybe this should always be piccolo?
+        flute2 = Flute2()
+        flute3 = Flute3()
+        oboe1 = Oboe1()
+        oboe2 = Oboe2()
+        clarinet1 = Clarinet1()
+        clarinet2 = Clarinet2()
+        bassoon1 = Bassoon1()
+        bassoon2 = Bassoon2()
+        horn1 = Horn1()
+        horn2 = Horn2()
+        trumpet1 = Trumpet1()
+        trumpet2 = Trumpet2()
+        trombone1 = Trombone1()
+        trombone2 = Trombone2()
+        tuba = Tuba()
+        timpani = Timpani()
+        perc1 = Perc1()
+        perc2 = Perc2()
+        vibes = Vibes()
+        harp1 = Harp1()
+        harp2 = Harp2()
+        piano1 = Piano1()
+        piano2 = Piano2()
+        violinI1 = StringsArrange0()
+        violinI2 = StringsArrange0()
+        violinII1 = StringsArrange0()
+        violinII2 = StringsArrange0()
+        viola1 = StringsArrange0()
+        viola2 = StringsArrange0()
+        cello1 = StringsArrange0()
+        cello2 = StringsArrange0()
+        bass = Bass()
+        line1 = LINES[1]
+    return Orchestration0
 
-    line1 = LINES[1]
+
+# print(dir())
+# print(__package__)
+# print(get_orchestration_0().bass)
 
 # -------------------------------------------------------------------------
 # OUTPUT SCORE
 
 bubbles.illustrate_me(__file__, 
-    lambda: staves.CopperScore( Orchestration0(), title="Copper: 0", show_short_score=True, hide_empty=True).get_lilypond_file()
+    lambda: staves.CopperScore( get_orchestration_0()(), title="Copper: 0", show_short_score=True, hide_empty=True).get_lilypond_file()
     )
 

@@ -1,4 +1,4 @@
-% 2016-09-18 04:54
+% 2016-09-18 20:55
 
 \version "2.18.2"
 \language "english"
@@ -299,19 +299,35 @@
                     R1 * 27
                 }
             }
-            \new RhythmicStaff {
-                \clef "percussion"
-                \set Staff.instrumentName = \markup { "Percussion 2" }
-                \set Staff.shortInstrumentName = \markup { Perc.2 }
-                {
-                    \numericTimeSignature
-                    \time 9/8
-                    \bar "||"
-                    \accidentalStyle modern-cautionary
-                    \mark #4
-                    R1 * 27
+            \new StaffGroup \with {
+                systemStartDelimiter = #'SystemStartSquare
+            } <<
+                \new RhythmicStaff {
+                    \clef "percussion"
+                    \set Staff.instrumentName = \markup { "Percussion 2" }
+                    \set Staff.shortInstrumentName = \markup { Perc.2 }
+                    {
+                        \numericTimeSignature
+                        \time 9/8
+                        \bar "||"
+                        \accidentalStyle modern-cautionary
+                        \mark #4
+                        R1 * 27
+                    }
                 }
-            }
+                \new Staff {
+                    \set Staff.instrumentName = \markup { "Perc. 2 - Vibraphone" }
+                    \set Staff.shortInstrumentName = \markup { Vib. }
+                    {
+                        \numericTimeSignature
+                        \time 9/8
+                        \bar "||"
+                        \accidentalStyle modern-cautionary
+                        \mark #4
+                        R1 * 27
+                    }
+                }
+            >>
         >>
         \new PianoStaff <<
             \set PianoStaff.instrumentName = \markup { Harp }
@@ -1240,24 +1256,40 @@
                     af''8 [
                     gf''8
                     f''8 ]
-                    \bar "|."
                 }
             }
             \new Staff {
                 \set Staff.instrumentName = \markup { "Line 6" }
                 \set Staff.shortInstrumentName = \markup { 6: }
+                {
+                    \accidentalStyle modern-cautionary
+                    R1 * 27
+                }
             }
             \new Staff {
                 \set Staff.instrumentName = \markup { "Line 7" }
                 \set Staff.shortInstrumentName = \markup { 7: }
+                {
+                    \accidentalStyle modern-cautionary
+                    R1 * 27
+                }
             }
             \new Staff {
                 \set Staff.instrumentName = \markup { "Line 8" }
                 \set Staff.shortInstrumentName = \markup { 8: }
+                {
+                    \accidentalStyle modern-cautionary
+                    R1 * 27
+                }
             }
             \new Staff {
                 \set Staff.instrumentName = \markup { "Line 9" }
                 \set Staff.shortInstrumentName = \markup { 9: }
+                {
+                    \accidentalStyle modern-cautionary
+                    R1 * 27
+                    \bar "|."
+                }
             }
         >>
     >>

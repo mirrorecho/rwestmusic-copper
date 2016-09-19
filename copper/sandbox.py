@@ -68,9 +68,9 @@
 # - (DONE) start orchestrating gen f
 # - (DONE) start gen g draft short score
 # - (DONE) start orchestrating gen g
+# - (DONE!!!!! yay) able to create parts
 # ---------------------------- SUNDAY
-# - able to create parts
-# - draft score template
+# - draft score stylesheet
 # - able to output a full score
 # - draft parts template
 # - tag to respell flats/sharps (on individual notes)
@@ -91,6 +91,7 @@
 # - more orchestrating gen f
 # - more orchestrating gen g
 # - more orchestrating gen h
+# - (maybe?) need to be able to tag base arrangment stuff even on "unarranged" bubble
 # - good draft gen f short score
 # - better way / machine(s) to tag spanners
 # - good draft gen g short score
@@ -103,7 +104,6 @@
 # - review current short scores at piano and adjust
 # - good draft orchestration of gen b
 # - good draft orchestration of gen c
-# - multimeasure rest generator
 # - good draft orchestration of gen d
 # - good draft orchestration of gen e
 # - good draft orchestration of gen f
@@ -157,6 +157,9 @@
 # - better rehearsal markings?
 # - final score review!
 # - - double check score order
+# - multimeasure rest generator
+# - double check that part output matches score (or make part code not suck)
+# - - - NO REALLY REALLY REALLY double check score and parts (easy to mistype classes in parts file)... need to check both code & output
 # - final review/edits of wind parts
 # - - - formatting
 # - - - page breaks
@@ -176,8 +179,14 @@
 # - performance and program notes
 # - (if time, else later)... warn if orchestrated lines don't inherit from arrangement base classes (i.e. they should be getting rehearsal marks, etc.)
 # - tital page
-# ---------------------------- IF TIME ALLOWS: 
-# - keep relative durations as negative?
+
+
+# ---------------------------- FUTURE:
+# - replace some class-defined stuff with modules / introspection (i.e. should not need to create a class to describe grid bubble lines that are described above)
+# - parts need to be WAY WAY WAY simpler to generate!!!!
+# - - - should be able to specify a few simple settings in module
+# - - - separate PDF and Ly files
+# - - - simple declaritve file(s) for how score/parts are organized
 # - more readable indices (small font, all in a row)
 # - tremolos won't work with tied notes
 # - conisistency / plan for what's a class attribute and what's not
@@ -185,6 +194,7 @@
 # - better indices/colors
 # - refactor standard stuff into callope
 # - use asserts for error handling
+# - keep relative durations as negative?
 # IMPLEMENTING INTO CALLIOPE:
 # - make sure machines are self-contained. they shouldn't use attributes defined on other ones (except a few base ones like ticks and pitch)
 # - - - (e.g. pitch displacement should be more isolated... not built into structure of EventData)
@@ -192,7 +202,6 @@
 # - TaleaDrivenLine as a general case
 # - orchestrate first, then short score
 # - machines to be arbitrarily applied at logical_tie, event, segment, or phrase level
-# - replace some class-defined stuff with modules / introspection (i.e. should not need to create a class to describe grid bubble lines that are described above)
 # - project startup script
 # - consistent naming with data children (e.g. don't use "children" ... should always say "events", etc.)
 # - adding and removing staves

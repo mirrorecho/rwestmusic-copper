@@ -20,15 +20,14 @@ from copper import staves
 
 class CopperFullMusic(bubbles.GridSequence, staves.CopperMusic):
     grid_sequence = (
-        orchestration_0.Orchestration0(),
-        orchestration_a.OrchestrationA(),
-        orchestration_b.OrchestrationB(),
-        orchestration_c.OrchestrationC(),
-        orchestration_d.OrchestrationD(),
-        orchestration_e.OrchestrationE(),
-        orchestration_f.OrchestrationF(),
-        orchestration_g.OrchestrationG(),
-        orchestration_h.OrchestrationH(),
+        orchestration_0.get_orchestration_0()(),
+        orchestration_b.get_orchestration_b()(),
+        orchestration_c.get_orchestration_c()(),
+        orchestration_d.get_orchestration_d()(),
+        orchestration_e.get_orchestration_e()(),
+        orchestration_f.get_orchestration_f()(),
+        orchestration_g.get_orchestration_g()(),
+        orchestration_h.get_orchestration_h()(),
         )
 
 # -------------------------------------------------------------------------------------------------
