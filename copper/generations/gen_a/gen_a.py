@@ -14,6 +14,9 @@ class GenA(object): # basic attributes, such as starting time signature, rehears
     # tempo_text = "half = dotted half" # TO DO... need to figure out how we can insert metric modulations here
     # time_signature = (4,4)
 
+class Drone0(GenA, machines.Drone0):
+    pass
+
 # -------------------------------------------------------------------------------------------------
 
 class Line1(GenA, machines.PitchesDisplaced, gen_0.Line1):

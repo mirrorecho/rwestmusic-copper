@@ -79,31 +79,37 @@ class Rhythms(object):
 
     def cleanup_data(self, **kwargs):
         super().cleanup_data(**kwargs)
-        # TO DO... remove empty events or empty segments...
+
+        # self.info("", self.logical_ties)
+        def remove_empty_ancestors(tree_item):
+            parent_item = tree_item.parent
+            if parent_item and not tree_item.children:
+                parent_item.remove(tree_item)
+                remove_empty_ancestors(parent_item)
 
         last_rest = None
-        for logical_tie in self.logical_ties:
-            parent_event = logical_tie.parent
-            grandparent_segment = parent_event.parent
 
-            if last_rest is not None and logical_tie.rest:
-                last_rest.ticks += logical_tie.ticks
-                logical_tie.parent.remove(logical_tie)
-            elif logical_tie.rest:
-                last_rest = logical_tie
+        for leaf in self.data.leaves:
+            parent_item = leaf.parent
+            if not isinstance(leaf, machines.LogicalTieData):
+                # just in case there are already empty events / segments showing up as leaves ... remove them
+                parent_item.remove(leaf)
             else:
-                last_rest = None 
-            # print(logical_tie.graph_order)
-            if logical_tie.ticks <= 0:
-                self.warn("0/negative ticks detected and removed...", logical_tie)
-                logical_tie.parent.remove(logical_tie)
+                logical_tie = leaf
+                if last_rest is not None and logical_tie.rest:
+                    last_rest.ticks += logical_tie.ticks
+                    parent_item.remove(logical_tie)
+                elif logical_tie.rest:
+                    last_rest = logical_tie
+                else:
+                    last_rest = None 
+                # print(logical_tie.graph_order)
+                if logical_tie.ticks <= 0:
+                    self.warn("0/negative ticks detected and removed...", logical_tie)
+                    parent_item.remove(logical_tie)
 
             # now, remove empty parents and grandparents
-            if not parent_event.children:
-                grandparent_segment.remove(parent_event)
-            if not grandparent_segment.children:
-                grandparent_segment.parent.remove(grandparent_segment)
-
+            remove_empty_ancestors(parent_item)
 
     def get_metrical_duration_ticks(self):
         """

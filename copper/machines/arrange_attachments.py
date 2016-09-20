@@ -79,6 +79,7 @@ class AttachmentTagData(object):
 
     def tag(self, *args):
         self.set_tag(self.attachment_names, *args)
+        return self
 
     def tag_children(self, *args):
         for arg in args:
@@ -94,10 +95,13 @@ class AttachmentTagData(object):
             else:
                 for child in self.children:
                     child.tag(arg)
+        return self
 
     def untag(self, *args):
         for arg in args:
-            self.attachment_names.remove(arg)
+            if arg in self.attachment_names:
+                self.attachment_names.remove(arg)
+        return self
 
     def untag_children(self, *args):
         for arg in args:
@@ -107,6 +111,7 @@ class AttachmentTagData(object):
             else:
                 for child in self.children:
                     child.attachment_names.remove(arg)
+        return self
 
     def combine_tags(self, new_set, old_set):
         # note, can't do simple union since that could dupe dynamics or hairpins, so need to call set_tag method on each one
@@ -232,7 +237,6 @@ class ArrangeAttachments(object):
                 if isinstance(spanner, abjad.Slur):
                     # slurs go to the end of the logical tie, not the beginning
                     stop_index += len(music_logical_tie) - 1
-                print(spanner)
                 abjad.attach(spanner, music[start_index:stop_index])
                 del self._open_spanners[p]
 

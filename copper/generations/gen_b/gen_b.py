@@ -3,7 +3,7 @@
 import abjad
 from calliope import bubbles
 from copper import machines
-from copper.machines import IndexedData as ID # just to avoid a lot of typing
+from copper.machines import IndexedData as ID, ID1 # just to avoid a lot of typing
 from copper.generations.gen_a import gen_a
 
 # -------------------------------------------------------------------------------------------------
@@ -14,6 +14,10 @@ class GenB(object): # basic attributes, such as starting time signature, rehears
     # tempo_units_per_minute = 72
     start_bar_line = "||"
     time_signature = (3,4)
+
+class Drone0(GenB, machines.Drone0):
+    rhythm_sequence = ID(default=1, limit=10)
+    rhythm_initial_silence = 3
 
 # -------------------------------------------------------------------------------------------------
 

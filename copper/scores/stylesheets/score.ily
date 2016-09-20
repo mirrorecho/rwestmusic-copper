@@ -1,5 +1,5 @@
 #(set-default-paper-size "tabloid" 'portrait)
-#(set-global-staff-size 12)
+#(set-global-staff-size 16)
 
 \header {
     composer = "Randall West"
@@ -45,6 +45,15 @@
         \override BarNumber  #'stencil = #(make-stencil-boxer 0.1 0.25 ly:text-interface::print)
         \override RehearsalMark #'font-size = #6
     }
+    \context {
+        \Staff \RemoveEmptyStaves
+        \override VerticalAxisGroup #'remove-first = ##t % NOTE: comment this out to show staves on first page
+        \override Hairpin #'minimum-length = #6
+    }
+    \context {
+        \RhythmicStaff \RemoveEmptyStaves
+        \override VerticalAxisGroup #'remove-first = ##t % NOTE: comment this out to show staves on first page
+        \override Hairpin #'minimum-length = #6
     }
 }
 

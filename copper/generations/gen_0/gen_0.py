@@ -12,10 +12,10 @@ class Gen0(object): # basic attributes, such as starting time signature, rehears
     time_signature = (4,4)
 
 # -------------------------------------------------------------------------------------------------
-# HERE IS the actual line class:
 class Drone0(Gen0, machines.Drone0):
     pass
 
+# HERE IS the actual line class:
 
 class Line1(Gen0, machines.PitchedLine):
     # time_signature = (4,4)
@@ -79,30 +79,10 @@ class Line1(Gen0, machines.PitchedLine):
     #     self.events[2].tag("\>")
     #     self.events[4].tag("\!",")")
 
-# TO DO... 
-class Drone1(machines.Drone):
-    counts = (2,2,4,2,2)
-    left_counts = 1
-    right_counts = 1
-    dynamics = (
-        (1,"pp"),
-        (2,"mp"),
-        (3,"pp"),
-        )
-class Drone2(machines.Drone):
-    counts = (4,4,3,1)
-    left_counts = 1
-    right_counts = 0
-    dynamics = (
-        (1,"pp"),
-        (2,"mp"),
-        (3,"pp"),
-        )
-
 # -------------------------------------------------------------------------------------------------
 bubbles.illustrate_me(__file__, 
     lambda: bubbles.Bubble(
-            line1 = Line1(),
             drone0 = Drone0(),
+            line1 = Line1(),
         ).score()
     )

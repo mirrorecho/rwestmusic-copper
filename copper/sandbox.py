@@ -76,7 +76,8 @@
 # - drones good draft throughout (including orchestration)
 # - short score good draft throughout
 # - cymbal good draft throughout
-# ---------------------------- ASAP!!!!!!
+# ---------------------------- TUESDAY AT APA
+# - transposing parts
 # - more orchestrating gen b
 # - better gen c short score
 # - more orchestrating gen c
@@ -188,6 +189,7 @@
 # ---------------------------- FUTURE:
 # - new monitor / studio setup!!!
 # - replace some class-defined stuff with modules / introspection (i.e. should not need to create a class to describe grid bubble lines that are described above)
+# - think about data cleanup carefully, and adjust
 # - parts need to be WAY WAY WAY simpler to generate!!!!
 # - - - should be able to specify a few simple settings in module
 # - - - separate PDF and Ly files
@@ -197,10 +199,12 @@
 # - conisistency / plan for what's a class attribute and what's not
 # - - - maybe attachment stuff not, pitch/rhythm stuff is?
 # - better indices/colors
+# - separate stylesheets for working score / short score (vs performance score, parts, etc.)
 # - refactor standard stuff into callope
 # - use asserts for error handling
 # - keep relative durations as negative?
 # - bug, first rest in rhythm is removed if rhythm_initial_silence is also 0 (can work around be always using rhythm_initial_silence... but this is screwy)
+# - could go CRAZY (in a good way) with fragments, inheritance, etc. ... spend time on this, it could be fruitful
 # IMPLEMENTING INTO CALLIOPE:
 # - make sure machines are self-contained. they shouldn't use attributes defined on other ones (except a few base ones like ticks and pitch)
 # - - - (e.g. pitch displacement should be more isolated... not built into structure of EventData)

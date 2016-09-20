@@ -11,6 +11,7 @@ ID = machines.IndexedData
 ID1 = machines.ID1
 
 LINES = ID({
+    0:gen_0.Drone0(),
     1:gen_0.Line1(),
     })
 # ------------------------------------------------------------------------------------------------------------
@@ -56,11 +57,13 @@ class Bassoon2(Arrange0):
 # ------------------------------------------------------------------------------------------------------------
 # BRASS
 
-class Horn1(gen_0.Gen0, bubbles.Line):
-    music = gen_0.Drone1() * 4
+class Horn1(Arrange0):
+    fragments = Frag.make(
+        *[Frag.it(0, i) for i in range(1,16)] # TO DO... note, 0 here throws exception... why?
+        )
 
-class Horn2(gen_0.Gen0, bubbles.Line):
-    music = bubbles.Line("R1") + gen_0.Drone2() * 3 + bubbles.Line("R1*2") # TO DO... figure out how the drone can cross sections!
+class Horn2(Horn1):
+    line_offset = 2
 
 class Trumpet1(Arrange0):
     pass

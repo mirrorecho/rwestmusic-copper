@@ -11,6 +11,7 @@ ID = machines.IndexedData
 ID1 = machines.ID1
 
 LINES = ID({
+    0:gen_b.Drone0(),
     1:gen_b.Line1(),
     2:gen_b.Line2(),
     3:gen_b.Line3(),
@@ -43,11 +44,13 @@ class Oboe1(ArrangeB):
     pass
 
 class Oboe2(ArrangeB):
-    fragments = Frag.fill(range(1,10), lambda: Frag.item() )
-    fragments[9].duration = 3.5
+    fragments = Frag.make(
+        *Frag.its(1, (1,10) ),
+        )
+    fragments.update_by(1,1, tags=("mf","English Horn"))
+    fragments.update_by(1,9, duration=3.5)
     def update_data(self):
         super().update_data()
-        self.segments[1].tag("mf")
         machines.AttachmentTagData.span_every("(", self.events[1:10],3)
 
 class Clarinet1(ArrangeB):
@@ -57,27 +60,33 @@ class Clarinet2(ArrangeB):
     pass
 
 class Bassoon1(ArrangeB):
-    line=2
-    fragments = Frag.fill(range(1,7), lambda: Frag.item() ) 
-    fragments += Frag({
-        1000: Frag.item(line=3, from_index=1), # TO DO... this is long and nasty
-        2000: Frag.item(line=3, from_index=2),
-        3000: Frag.item(line=3, from_index=3),
-        4000: Frag.item(line=3, from_index=4, duration=1)
-        })
-    fragments[6].duration = 3.5
+    show_data_attr="original_depthwise_index"
+    line_offset = ID({0:6},default=0,cyclic=False) # TO DO... maybe better just to add offset to the Frag definition all the time
+    fragments = Frag.make(
+        *Frag.its(0, (1,7) ),
+        *Frag.its(2, (3,7) ), 
+        *Frag.its(3, (1,5) ),
+        )
+    fragments.update_by(2,6, duration=3.5)
+    fragments.update_by(3,4, duration=1)
     def update_data(self):
         super().update_data()
-        self.segments[1].tag("mf")
-        machines.AttachmentTagData.span_every("(", self.events[1:11])
+        self.event_by(0,6).untag("mp","\>").tag("~!")
+        first_melodic_event = self.event_by(2,3).tag("mf")
+        machines.AttachmentTagData.span_every("(", self.events[first_melodic_event.depthwise_index:])
 
 class Bassoon2(ArrangeB):
-    fragments = Frag.fill(range(7,13), lambda: Frag.item(line=2,) )
-    fragments[12].duration = 3.5
+    show_data_attr="original_depthwise_index"
+    # line_offset = ID({0:6},default=0,cyclic=False)
+    fragments = Frag.make(
+        *Frag.its(0, (1,8) ),
+        *Frag.its(2, (7,13) ), 
+        # *Frag.its(3, (1,5) ),
+        )
     def update_data(self):
         super().update_data()
-        self.segments[1].tag("mf")
-        machines.AttachmentTagData.span_every("(", self.events[1:7])
+        first_melodic_event = self.event_by(2,7).tag("mf")
+        machines.AttachmentTagData.span_every("(", self.events[first_melodic_event.depthwise_index:])
 
 # ------------------------------------------------------------------------------------------------------------
 # BRASS
@@ -89,7 +98,9 @@ class Horn2(ArrangeB):
     pass
 
 class Trumpet1(ArrangeB):
-    pass
+    fragments = Frag.make(
+        Frag.it(1, 1, attack_offset=-2, release_offset=2, keep_attack=True, tags=("cup mute",)),
+        )
 
 class Trumpet2(ArrangeB):
     pass
@@ -211,6 +222,12 @@ def get_orchestration_b():
 # OUTPUT SCORE
 
 bubbles.illustrate_me(__file__, 
-    lambda: staves.CopperScore( get_orchestration_b()(), title="Copper: B", show_short_score=True, hide_empty=True).get_lilypond_file()
+    lambda: staves.CopperScore( 
+        get_orchestration_b()(), 
+        stylesheets=("../../scores/stylesheets/score.ily",),
+        title="Copper: A", 
+        show_short_score=True, 
+        hide_empty=True).get_lilypond_file()
     )
+
 

@@ -1,45 +1,15 @@
-% 2016-09-18 20:49
+% 2016-09-19 22:25
 
 \version "2.18.2"
 \language "english"
 
-#(set-global-staff-size 16)
+\include "../../scores/stylesheets/score.ily"
 
-\header {
-    composer = \markup { "Randall West" }
-    tagline = \markup { [] }
-    title = \markup { "Copper: A" }
-}
+\header {}
 
-\layout {
-    \context {
-        \Staff \RemoveEmptyStaves
-        \override VerticalAxisGroup.remove-first = ##t
-    }
-    \context {
-        \RhythmicStaff \RemoveEmptyStaves
-        \override VerticalAxisGroup.remove-first = ##t
-    }
-    \context {
-        \Staff \RemoveEmptyStaves
-        \override VerticalAxisGroup.remove-first = ##t
-    }
-    \context {
-        \RhythmicStaff \RemoveEmptyStaves
-        \override VerticalAxisGroup.remove-first = ##t
-    }
-}
+\layout {}
 
-\paper {
-    bottom-margin = 0.5\in
-    left-margin = 0.75\in
-    paper-height = 17\in
-    paper-width = 11\in
-    right-margin = 0.5\in
-    system-separator-markup = \slashSeparator
-    system-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 20) (stretchability . 0))
-    top-margin = 0.5\in
-}
+\paper {}
 
 \score {
     \new Score <<
@@ -212,7 +182,26 @@
                         \bar "||"
                         \accidentalStyle modern-cautionary
                         \mark #1
-                        R1 * 18
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        d2 \pp ~ \<
+                        d2 \mp ~ ~ \>
+                        d2 ~
+                        d2 \pp
                     }
                 }
                 \new Staff {
@@ -222,7 +211,26 @@
                         \bar "||"
                         \accidentalStyle modern-cautionary
                         \mark #1
-                        R1 * 18
+                        r1
+                        r2
+                        d2 \pp ~ \<
+                        d1 \mp ~ \>
+                        d2 \pp
+                        r2
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
                     }
                 }
             >>
@@ -261,7 +269,32 @@
                         \bar "||"
                         \accidentalStyle modern-cautionary
                         \mark #1
-                        R1 * 18
+                        d2 \pp ~ \<
+                        d2 \mp ~ ~ \>
+                        d2 ~
+                        d2 \pp
+                        r1
+                        d2 \pp ~ \<
+                        d2 \mp ~ ~ \>
+                        d2 ~
+                        d2 \pp
+                        r1
+                        d2 \pp ~ \<
+                        d2 \mp ~ ~ \>
+                        d2 ~
+                        d2 \pp
+                        r1
+                        d2 \pp ~ \<
+                        d2 \mp ~ ~ \>
+                        d2 ~
+                        d2 \pp
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
                     }
                 }
                 \new Staff {
@@ -272,7 +305,28 @@
                         \bar "||"
                         \accidentalStyle modern-cautionary
                         \mark #1
-                        R1 * 18
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        r1
+                        d2 \pp ~ \<
+                        d2 \mp ~ ~ \>
+                        d2 ~
+                        d2 \pp
+                        r1
+                        d2 \pp ~ \<
+                        d2 \mp ~ ~ \>
+                        d2 ~
+                        d2 \pp
+                        r1
                     }
                 }
             >>
@@ -284,22 +338,47 @@
                     \bar "||"
                     \accidentalStyle modern-cautionary
                     \mark #1
-                    R1 * 18
+                    r1
+                    r1
+                    r1
+                    r1
+                    r2
+                    d2 \pp ~ \<
+                    d1 \mp ~ \>
+                    d2 \pp
+                    r2
+                    r2
+                    d2 \pp ~ \<
+                    d1 \mp ~ \>
+                    d2 \pp
+                    r2
+                    r2
+                    d2 \pp ~ \<
+                    d1 \mp ~ \>
+                    d2 \pp
+                    r2
+                    r2
+                    d2 \pp ~ \<
+                    d1 \mp ~ \>
+                    d2 \pp
+                    r2
+                    r1
+                    r1
                 }
             }
         >>
-        \new StaffGroup <<
-            \new Staff {
-                \clef "bass"
-                \set Staff.instrumentName = \markup { Timpani }
-                \set Staff.shortInstrumentName = \markup { Timp }
-                {
-                    \bar "||"
-                    \accidentalStyle modern-cautionary
-                    \mark #1
-                    R1 * 18
-                }
+        \new Staff {
+            \clef "bass"
+            \set Staff.instrumentName = \markup { Timpani }
+            \set Staff.shortInstrumentName = \markup { Timp }
+            {
+                \bar "||"
+                \accidentalStyle modern-cautionary
+                \mark #1
+                R1 * 18
             }
+        }
+        \new StaffGroup <<
             \new RhythmicStaff {
                 \clef "percussion"
                 \set Staff.instrumentName = \markup { "Percussion 1" }
@@ -396,29 +475,29 @@
                         r1
                         r1
                         d'1 \pp \< ^ \markup { normal }
-                        d'2 \mp ~ \>
+                        d'2 -\accent \mp ~ \>
                         d'8
                         d'4. \pp \<
-                        d'1 \mp \>
+                        d'1 -\accent \mp \>
                         g'2 \pp \<
-                        g'2 \mp ~ \>
+                        g'2 -\accent \mp ~ \>
                         g'2 ~
                         g'8
                         g'4. \pp ~ \<
                         g'4
-                        g'2. \mp ~ \>
+                        g'2. -\accent \mp ~ \>
                         g'4.
                         g'8 \pp ~ \<
                         g'4
-                        g'4 \mp ~ \>
+                        g'4 -\accent \mp ~ \>
                         g'2 ~
                         g'8
                         a'4. \pp ~ \<
                         a'4
-                        a'4. \mp \>
+                        a'4. -\accent \mp \>
                         g'4. \pp ~ \<
                         g'2
-                        g'2 \mp ~
+                        g'2 -\accent \mp ~
                         g'2
                         r2
                         r1
@@ -441,28 +520,28 @@
                         r2
                         d'2 \pp ~ \< ^ \markup { normal }
                         d'2
-                        d'2 \mp ~ \>
+                        d'2 -\accent \mp ~ \>
                         d'8
                         g4. \pp \<
-                        g2 \mp ~ \>
+                        g2 -\accent \mp ~ \>
                         g2
                         c'2 \pp \<
-                        c'1 \mp ~ \>
+                        c'1 -\accent \mp ~ \>
                         c'8
                         c'4. \pp ~ \<
                         c'4
-                        c'4 \mp ~ \>
+                        c'4 -\accent \mp ~ \>
                         c'2..
                         g'8 \pp ~ \<
                         g'4
-                        g'2. \mp ~ \>
+                        g'2. -\accent \mp ~ \>
                         g'8
                         d'2 \pp ~ \<
                         d'8
-                        d'4 \mp ~ \>
+                        d'4 -\accent \mp ~ \>
                         d'8
                         d''2.. \pp \<
-                        d''1 \mp
+                        d''1 -\accent \mp
                         r1
                     }
                 }
@@ -485,25 +564,25 @@
                         r2.
                         c'4 \pp ~ \< ^ \markup { normal }
                         c'2
-                        c'2 \mp ~ \>
+                        c'2 -\accent \mp ~ \>
                         c'4
                         e'4 \pp \<
-                        e'2 \mp ~ \>
+                        e'2 -\accent \mp ~ \>
                         e'4
                         fs'2 \pp \<
-                        fs'4 \mp ~ \>
+                        fs'4 -\accent \mp ~ \>
                         fs'4.
                         fs'8 \pp ~ \<
                         fs'4
-                        fs'4 \mp ~ \>
+                        fs'4 -\accent \mp ~ \>
                         fs'2
                         fs'2 \p ~
                         fs'2.
                         fs'4 \pp ~ \<
                         fs'1
-                        fs'1 \mp \>
+                        fs'1 -\accent \mp \>
                         fs'2. \pp \<
-                        fs'4 \mp ~
+                        fs'4 -\accent \mp ~
                         fs'2.
                         r4
                         r1
@@ -526,26 +605,26 @@
                         r1
                         r4
                         g'2. \pp \< ^ \markup { normal }
-                        g'2. \mp \>
+                        g'2. -\accent \mp \>
                         a4 \pp \<
-                        a2 \mp ~ \>
+                        a2 -\accent \mp ~ \>
                         a4
                         b4 \pp ~ \<
                         b4
-                        b4 \mp ~ \>
+                        b4 -\accent \mp ~ \>
                         b4.
                         b8 \pp ~ \<
                         b4
-                        b2. \mp \>
+                        b2. -\accent \mp \>
                         fs'1 \p ~
                         fs'4
                         b2. \pp ~ \<
                         b2
-                        b2 \mp ~ \>
+                        b2 -\accent \mp ~ \>
                         b2
                         cs''2 \pp ~ \<
                         cs''4
-                        cs''2. \mp ~
+                        cs''2. -\accent \mp ~
                         cs''4
                         r2.
                     }
@@ -570,20 +649,20 @@
                         r1
                         r4
                         b2 \pp \< ^ \markup { normal }
-                        b4 \mp ~ \>
+                        b4 -\accent \mp ~ \>
                         b2
                         d'2 \pp \<
-                        d'1 \mp \>
+                        d'1 -\accent \mp \>
                         g'2 \pp \<
-                        g'2 \mp ~ \>
+                        g'2 -\accent \mp ~ \>
                         g'1
                         g'1 \pp ~ \<
                         g'2.
-                        g'4 \mp ~ \>
+                        g'4 -\accent \mp ~ \>
                         g'2
                         e'2 \pp ~ \<
                         e'4
-                        e'2. \mp ~
+                        e'2. -\accent \mp ~
                         e'2
                         r2
                         r1
@@ -608,19 +687,19 @@
                         r2.
                         b4 \pp ~ \< ^ \markup { normal }
                         b4
-                        b2. \mp \>
+                        b2. -\accent \mp \>
                         d'2 \pp \<
-                        d'2 \mp ~ \>
+                        d'2 -\accent \mp ~ \>
                         d'2
                         c'2 \pp \<
-                        c'1 \mp ~ \>
+                        c'1 -\accent \mp ~ \>
                         c'2
                         g'2 \pp ~ \<
                         g'1 ~
                         g'4
-                        g'2. \mp \>
+                        g'2. -\accent \mp \>
                         b'2. \pp \<
-                        b'4 \mp ~
+                        b'4 -\accent \mp ~
                         b'1
                         r1
                     }
@@ -645,22 +724,22 @@
                         r1
                         r1
                         b2. \pp \< ^ \markup { normal }
-                        b4 \mp ~ \>
+                        b4 -\accent \mp ~ \>
                         b2 ~
                         b8
                         e'4. \pp \<
-                        e'2 \mp \>
+                        e'2 -\accent \mp \>
                         e'2 \p ~
                         e'1 ~
                         e'4
                         fs'2. \pp \<
-                        fs'2 \mp \>
+                        fs'2 -\accent \mp \>
                         \clef tenor
-                        a'2 \pp ~ \< ^ \markup { "solo cello" }
+                        a'2 \p ~ \< ^ \markup { "solo cello" }
                         a'4
-                        a'2 \mp \< (
-                        b'4 \p )
-                        fs'1 \p ~
+                        a'2 \mf (
+                        b'4 )
+                        fs'1 \mp ~
                         fs'4
                         r2.
                         r1
@@ -686,10 +765,10 @@
                         r2
                         b2 \pp ~ \< ^ \markup { normal }
                         b4
-                        b2. \mp ~ \>
+                        b2. -\accent \mp ~ \>
                         b8
                         a4. \pp \<
-                        a2 \mp \>
+                        a2 -\accent \mp \>
                         a2. \p
                         r4
                         r1

@@ -12,6 +12,7 @@ ID = machines.IndexedData
 ID1 = machines.ID1
 
 LINES = ID({
+    0:gen_a.Drone0(),
     1:gen_a.Line1(),
     2:gen_a.Line2(),
     })
@@ -72,10 +73,16 @@ class Bassoon2(ArrangeA):
 # BRASS
 
 class Horn1(ArrangeA):
-    pass
+    line_offset = 2
+    fragments = Frag.make(
+        *[Frag.it(0, i) for i in range(20,24)] # TO DO... note, 0 here throws exception... why?
+        )
 
 class Horn2(ArrangeA):
-    pass
+    line_offset = 4
+    fragments = Frag.make(
+        *[Frag.it(0, i) for i in range(1,5)] # TO DO... note, 0 here throws exception... why?
+        )
 
 class Trumpet1(ArrangeA):
     pass
@@ -84,13 +91,23 @@ class Trumpet2(ArrangeA):
     pass
 
 class Trombone1(ArrangeA):
-    pass
+    line_offset = -2
+    fragments = Frag.make(
+        *[Frag.it(0, i) for i in range(1,16)] # TO DO... note, 0 here throws exception... why?
+        )
+
 
 class Trombone2(ArrangeA):
-    pass
+    line_offset = -2
+    fragments = Frag.make(
+        *[Frag.it(0, i) for i in range(16,28)] # TO DO... note, 0 here throws exception... why?
+        )
 
 class Tuba(ArrangeA):
-    pass
+    line_offset = 4
+    fragments = Frag.make(
+        *[Frag.it(0, i) for i in range(5,20)] # TO DO... note, 0 here throws exception... why?
+        )
 
 # ------------------------------------------------------------------------------------------------------------
 # TIMPANI / PERCUSSION / HARP / PIANO
@@ -133,7 +150,7 @@ class StringsArrangeA(ArrangeA):
         for event in self.events[1:]:
             if len(event) > 1:
                 event[0].tag("pp", "\<")
-                event[1].tag("mp", "\>")
+                event[1].tag("mp", "\>", ">")
             else:
                 event[0].tag("p")
 
@@ -193,6 +210,7 @@ CELLO_BASE_FRAGMENTS = Frag({
             })
 
 class Cello1(StringsArrangeA):
+    # show_data_attr="depthwise_index"
     fragments = CELLO_BASE_FRAGMENTS + {
             18: Frag.item(attack_offset= -3, **STRING_KWARGS),
             22 : Frag.item(attack_offset= -3, **STRING_KWARGS),
@@ -201,10 +219,12 @@ class Cello1(StringsArrangeA):
             }
     def update_data(self):
         super().update_data()
-        self.events[5].tag("\clef tenor", "solo cello")
-        self.events[5][1].tag("\<","(")
-        self.events[6].tag("mf",")")
-        self.events[7].tag("mp")
+        self.events[5][0].tag("\clef tenor", "solo cello","p")
+        self.events[5][1].tag("mf","(")
+        self.events[5][1].untag(">","\>")
+        self.events[6][0].tag(")")
+        self.events[6][0].untag("p")
+        self.events[7][0].tag("mp")
 
 class Cello2(StringsArrangeA):
     line = 2
@@ -263,5 +283,11 @@ def get_orchestration_a():
 # OUTPUT SCORE
 
 bubbles.illustrate_me(__file__, 
-    lambda: staves.CopperScore( get_orchestration_a()(), title="Copper: A", show_short_score=True, hide_empty=True).get_lilypond_file()
+    lambda: staves.CopperScore( 
+        get_orchestration_a()(), 
+        stylesheets=("../../scores/stylesheets/score.ily",),
+        title="Copper: A", 
+        show_short_score=True, 
+        hide_empty=True).get_lilypond_file()
     )
+

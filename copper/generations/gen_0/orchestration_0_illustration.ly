@@ -1,22 +1,13 @@
-% 2016-09-19 02:08
+% 2016-09-19 21:57
 
 \version "2.18.2"
 \language "english"
 
 \include "../../scores/stylesheets/score.ily"
 
-#(set-global-staff-size 16)
-
 \header {}
 
-\layout {
-    \context {
-        \Staff \RemoveEmptyStaves
-    }
-    \context {
-        \RhythmicStaff \RemoveEmptyStaves
-    }
-}
+\layout {}
 
 \paper {}
 
@@ -143,38 +134,26 @@
                         \numericTimeSignature
                         \time 4/4
                         \accidentalStyle modern-cautionary
-                        {
-                            \accidentalStyle modern-cautionary
-                            r2
-                            d2 \pp ~ \<
-                            d1 \mp ~ \>
-                            d2 \pp
-                            r2
-                        }
-                        {
-                            \accidentalStyle modern-cautionary
-                            r2
-                            d2 \pp ~ \<
-                            d1 \mp ~ \>
-                            d2 \pp
-                            r2
-                        }
-                        {
-                            \accidentalStyle modern-cautionary
-                            r2
-                            d2 \pp ~ \<
-                            d1 \mp ~ \>
-                            d2 \pp
-                            r2
-                        }
-                        {
-                            \accidentalStyle modern-cautionary
-                            r2
-                            d2 \pp ~ \<
-                            d1 \mp ~ \>
-                            d2 \pp
-                            r2
-                        }
+                        r2
+                        d2 \pp ~ \<
+                        d1 \mp ~ \>
+                        d2 \pp
+                        r2
+                        r2
+                        d2 \pp ~ \<
+                        d1 \mp ~ \>
+                        d2 \pp
+                        r2
+                        r2
+                        d2 \pp ~ \<
+                        d1 \mp ~ \>
+                        d2 \pp
+                        r2
+                        r2
+                        d2 \pp ~ \<
+                        d1 \mp ~ \>
+                        d2 \pp
+                        r2
                     }
                 }
                 \new Staff {
@@ -184,41 +163,26 @@
                         \numericTimeSignature
                         \time 4/4
                         \accidentalStyle modern-cautionary
-                        {
-                            \accidentalStyle modern-cautionary
-                            {
-                                \accidentalStyle modern-cautionary
-                                R1
-                            }
-                            {
-                                \accidentalStyle modern-cautionary
-                                {
-                                    \accidentalStyle modern-cautionary
-                                    r1
-                                    d1 \pp ~ \<
-                                    d2. \mp ~ \>
-                                    d4 \pp
-                                }
-                                {
-                                    \accidentalStyle modern-cautionary
-                                    r1
-                                    d1 \pp ~ \<
-                                    d2. \mp ~ \>
-                                    d4 \pp
-                                }
-                                {
-                                    \accidentalStyle modern-cautionary
-                                    r1
-                                    d1 \pp ~ \<
-                                    d2. \mp ~ \>
-                                    d4 \pp
-                                }
-                            }
-                        }
-                        {
-                            \accidentalStyle modern-cautionary
-                            R1 * 2
-                        }
+                        r1
+                        d2 \pp ~ \<
+                        d2 \mp ~ ~ \>
+                        d2 ~
+                        d2 \pp
+                        r1
+                        d2 \pp ~ \<
+                        d2 \mp ~ ~ \>
+                        d2 ~
+                        d2 \pp
+                        r1
+                        d2 \pp ~ \<
+                        d2 \mp ~ ~ \>
+                        d2 ~
+                        d2 \pp
+                        r1
+                        d2 \pp ~ \<
+                        d2 \mp ~ ~ \>
+                        d2 ~
+                        d2 \pp
                     }
                 }
             >>

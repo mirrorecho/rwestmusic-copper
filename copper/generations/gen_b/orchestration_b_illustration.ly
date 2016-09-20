@@ -1,45 +1,15 @@
-% 2016-09-18 20:51
+% 2016-09-20 01:03
 
 \version "2.18.2"
 \language "english"
 
-#(set-global-staff-size 16)
+\include "../../scores/stylesheets/score.ily"
 
-\header {
-    composer = \markup { "Randall West" }
-    tagline = \markup { [] }
-    title = \markup { "Copper: B" }
-}
+\header {}
 
-\layout {
-    \context {
-        \Staff \RemoveEmptyStaves
-        \override VerticalAxisGroup.remove-first = ##t
-    }
-    \context {
-        \RhythmicStaff \RemoveEmptyStaves
-        \override VerticalAxisGroup.remove-first = ##t
-    }
-    \context {
-        \Staff \RemoveEmptyStaves
-        \override VerticalAxisGroup.remove-first = ##t
-    }
-    \context {
-        \RhythmicStaff \RemoveEmptyStaves
-        \override VerticalAxisGroup.remove-first = ##t
-    }
-}
+\layout {}
 
-\paper {
-    bottom-margin = 0.5\in
-    left-margin = 0.75\in
-    paper-height = 17\in
-    paper-width = 11\in
-    right-margin = 0.5\in
-    system-separator-markup = \slashSeparator
-    system-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 20) (stretchability . 0))
-    top-margin = 0.5\in
-}
+\paper {}
 
 \score {
     \new Score <<
@@ -118,7 +88,7 @@
                         r2.
                         r2.
                         r2
-                        d'4 \mf ~ (
+                        d'4 \mf ~ ( ^ \markup { "English Horn" }
                         d'4
                         c'4
                         b4 )
@@ -186,23 +156,22 @@
                         r2.
                         r2.
                         r2.
+                        d2. \pp ~ \< ^ \markup { 1 }
+                        d2. \mp ~ \> ^ \markup { 2 }
+                        d2. \pp ^ \markup { 3 }
                         r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        d'2 \mf (
-                        c'4 )
-                        e4 (
-                        g4 )
-                        a8 [ (
-                        b8 ~ ]
+                        d2. \pp ~ \< ^ \markup { 5 }
+                        d2. ^ \markup { 6 }
+                        e4 \mf ( ^ \markup { 3 }
+                        g4 ) ^ \markup { 4 }
+                        a8 [ ( ^ \markup { 5 }
+                        b8 ~ ] ^ \markup { 6 }
                         b2. )
                         r2.
-                        g4 (
-                        f8 ) [
-                        e8 ] (
-                        c4 )
+                        g4 ( ^ \markup { 1 }
+                        f8 ) [ ^ \markup { 2 }
+                        e8 ] ( ^ \markup { 3 }
+                        c4 ) ^ \markup { 4 }
                         r2.
                         r2.
                         r2.
@@ -227,22 +196,22 @@
                         \accidentalStyle modern-cautionary
                         \mark #2
                         r2.
+                        d2. \pp ~ \< ^ \markup { 1 }
+                        d2. \mp ~ \> ^ \markup { 2 }
+                        d2. \pp ^ \markup { 3 }
+                        r2.
+                        d2. \pp ~ \< ^ \markup { 5 }
+                        d2. \mp ~ \> ^ \markup { 6 }
+                        d2. \pp ^ \markup { 7 }
                         r2.
                         r2.
+                        d'2 \mf ( ^ \markup { 7 }
+                        c'4 ) ^ \markup { 8 }
+                        b4 ( ^ \markup { 9 }
+                        a4 ) ^ \markup { 10 }
+                        f8 [ ( ^ \markup { 11 }
+                        e8 ] ) ^ \markup { 12 }
                         r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        d'2 \mf (
-                        c'4 )
-                        b4 (
-                        a4 )
-                        f8 [ (
-                        e8 ~ ]
-                        e2. )
                         r2.
                         r2.
                         r2.
@@ -299,7 +268,31 @@
                         \bar "||"
                         \accidentalStyle modern-cautionary
                         \mark #2
-                        R2. * 24
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        d'2 \mp ^ \markup { "cup mute" }
+                        d'4 ~
+                        d'2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
+                        r2.
                     }
                 }
                 \new Staff {
@@ -387,20 +380,20 @@
                 }
             }
         >>
-        \new StaffGroup <<
-            \new Staff {
-                \clef "bass"
-                \set Staff.instrumentName = \markup { Timpani }
-                \set Staff.shortInstrumentName = \markup { Timp }
-                {
-                    \numericTimeSignature
-                    \time 3/4
-                    \bar "||"
-                    \accidentalStyle modern-cautionary
-                    \mark #2
-                    R2. * 24
-                }
+        \new Staff {
+            \clef "bass"
+            \set Staff.instrumentName = \markup { Timpani }
+            \set Staff.shortInstrumentName = \markup { Timp }
+            {
+                \numericTimeSignature
+                \time 3/4
+                \bar "||"
+                \accidentalStyle modern-cautionary
+                \mark #2
+                R2. * 24
             }
+        }
+        \new StaffGroup <<
             \new RhythmicStaff {
                 \clef "percussion"
                 \set Staff.instrumentName = \markup { "Percussion 1" }

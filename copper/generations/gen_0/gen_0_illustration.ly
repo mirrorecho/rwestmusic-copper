@@ -1,4 +1,4 @@
-% 2016-09-19 18:49
+% 2016-09-19 20:47
 
 \version "2.18.2"
 \language "english"
@@ -15,25 +15,28 @@
             \set Staff.instrumentName = \markup { Drone0 }
             \set Staff.shortInstrumentName = \markup { Drone0 }
             {
+                \numericTimeSignature
+                \time 4/4
+                \accidentalStyle modern-cautionary
                 r2
-                d2 \pp ~ \< ^ \markup { 1 }
-                d1 \mp ~ \> ^ \markup { 2 }
-                d2 \pp ^ \markup { 3 }
-                r2
-                r2
-                d2 \pp ~ \< ^ \markup { 5 }
-                d1 \mp ~ \> ^ \markup { 6 }
-                d2 \pp ^ \markup { 7 }
+                d2 \pp ~ \<
+                d1 \mp ~ \>
+                d2 \pp
                 r2
                 r2
-                d2 \pp ~ \< ^ \markup { 9 }
-                d1 \mp ~ \> ^ \markup { 10 }
-                d2 \pp ^ \markup { 11 }
+                d2 \pp ~ \<
+                d1 \mp ~ \>
+                d2 \pp
                 r2
                 r2
-                d2 \pp ~ \< ^ \markup { 13 }
-                d1 \mp ~ \> ^ \markup { 14 }
-                d2 \pp ^ \markup { 15 }
+                d2 \pp ~ \<
+                d1 \mp ~ \>
+                d2 \pp
+                r2
+                r2
+                d2 \pp ~ \<
+                d1 \mp ~ \>
+                d2 \pp
                 r2
             }
         }
@@ -41,6 +44,9 @@
             \set Staff.instrumentName = \markup { Line1 }
             \set Staff.shortInstrumentName = \markup { Line1 }
             {
+                \numericTimeSignature
+                \time 4/4
+                \accidentalStyle modern-cautionary
                 r1
                 r1
                 r1

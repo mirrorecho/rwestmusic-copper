@@ -1,22 +1,13 @@
-% 2016-09-19 02:11
+% 2016-09-19 22:26
 
 \version "2.18.2"
 \language "english"
 
 \include "stylesheets/score.ily"
 
-#(set-global-staff-size 16)
-
 \header {}
 
-\layout {
-    \context {
-        \Staff \RemoveEmptyStaves
-    }
-    \context {
-        \RhythmicStaff \RemoveEmptyStaves
-    }
-}
+\layout {}
 
 \paper {}
 
@@ -42,14 +33,6 @@
                             \mark #1
                             R1 * 18
                         }
-                        {
-                            \numericTimeSignature
-                            \time 3/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #2
-                            R2. * 24
-                        }
                     }
                 }
                 \new Staff {
@@ -68,14 +51,6 @@
                             \mark #1
                             R1 * 18
                         }
-                        {
-                            \numericTimeSignature
-                            \time 3/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #2
-                            R2. * 24
-                        }
                     }
                 }
                 \new Staff {
@@ -93,14 +68,6 @@
                             \accidentalStyle modern-cautionary
                             \mark #1
                             R1 * 18
-                        }
-                        {
-                            \numericTimeSignature
-                            \time 3/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #2
-                            R2. * 24
                         }
                     }
                 }
@@ -124,14 +91,6 @@
                             \mark #1
                             R1 * 18
                         }
-                        {
-                            \numericTimeSignature
-                            \time 3/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #2
-                            R2. * 24
-                        }
                     }
                 }
                 \new Staff {
@@ -149,44 +108,6 @@
                             \accidentalStyle modern-cautionary
                             \mark #1
                             R1 * 18
-                        }
-                        {
-                            \numericTimeSignature
-                            \time 3/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #2
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2
-                            d'4 \mf ~ (
-                            d'4
-                            c'4
-                            b4 )
-                            g2 (
-                            a4
-                            b4 )
-                            d'4 (
-                            c'8 [
-                            b8 ~ ]
-                            b2. )
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
                         }
                     }
                 }
@@ -233,14 +154,6 @@
                             r1
                             r1
                         }
-                        {
-                            \numericTimeSignature
-                            \time 3/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #2
-                            R2. * 24
-                        }
                     }
                 }
                 \new Staff {
@@ -284,14 +197,6 @@
                             r1
                             r1
                         }
-                        {
-                            \numericTimeSignature
-                            \time 3/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #2
-                            R2. * 24
-                        }
                     }
                 }
             >>
@@ -315,44 +220,6 @@
                             \mark #1
                             R1 * 18
                         }
-                        {
-                            \numericTimeSignature
-                            \time 3/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #2
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            d'2 \mf (
-                            c'4 )
-                            e4 (
-                            g4 )
-                            a8 [ (
-                            b8 ~ ]
-                            b2. )
-                            r2.
-                            g4 (
-                            f8 ) [
-                            e8 ] (
-                            c4 )
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                        }
                     }
                 }
                 \new Staff {
@@ -372,41 +239,6 @@
                             \mark #1
                             R1 * 18
                         }
-                        {
-                            \numericTimeSignature
-                            \time 3/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #2
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            d'2 \mf (
-                            c'4 )
-                            b4 (
-                            a4 )
-                            f8 [ (
-                            e8 ~ ]
-                            e2. )
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                            r2.
-                        }
                     }
                 }
             >>
@@ -423,52 +255,51 @@
                             \numericTimeSignature
                             \time 4/4
                             \accidentalStyle modern-cautionary
-                            {
-                                \accidentalStyle modern-cautionary
-                                r2
-                                d2 \pp ~ \<
-                                d1 \mp ~ \>
-                                d2 \pp
-                                r2
-                            }
-                            {
-                                \accidentalStyle modern-cautionary
-                                r2
-                                d2 \pp ~ \<
-                                d1 \mp ~ \>
-                                d2 \pp
-                                r2
-                            }
-                            {
-                                \accidentalStyle modern-cautionary
-                                r2
-                                d2 \pp ~ \<
-                                d1 \mp ~ \>
-                                d2 \pp
-                                r2
-                            }
-                            {
-                                \accidentalStyle modern-cautionary
-                                r2
-                                d2 \pp ~ \<
-                                d1 \mp ~ \>
-                                d2 \pp
-                                r2
-                            }
+                            r2
+                            d2 \pp ~ \<
+                            d1 \mp ~ \>
+                            d2 \pp
+                            r2
+                            r2
+                            d2 \pp ~ \<
+                            d1 \mp ~ \>
+                            d2 \pp
+                            r2
+                            r2
+                            d2 \pp ~ \<
+                            d1 \mp ~ \>
+                            d2 \pp
+                            r2
+                            r2
+                            d2 \pp ~ \<
+                            d1 \mp ~ \>
+                            d2 \pp
+                            r2
                         }
                         {
                             \bar "||"
                             \accidentalStyle modern-cautionary
                             \mark #1
-                            R1 * 18
-                        }
-                        {
-                            \numericTimeSignature
-                            \time 3/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #2
-                            R2. * 24
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            d2 \pp ~ \<
+                            d2 \mp ~ ~ \>
+                            d2 ~
+                            d2 \pp
                         }
                     }
                 }
@@ -480,55 +311,51 @@
                             \numericTimeSignature
                             \time 4/4
                             \accidentalStyle modern-cautionary
-                            {
-                                \accidentalStyle modern-cautionary
-                                {
-                                    \accidentalStyle modern-cautionary
-                                    R1
-                                }
-                                {
-                                    \accidentalStyle modern-cautionary
-                                    {
-                                        \accidentalStyle modern-cautionary
-                                        r1
-                                        d1 \pp ~ \<
-                                        d2. \mp ~ \>
-                                        d4 \pp
-                                    }
-                                    {
-                                        \accidentalStyle modern-cautionary
-                                        r1
-                                        d1 \pp ~ \<
-                                        d2. \mp ~ \>
-                                        d4 \pp
-                                    }
-                                    {
-                                        \accidentalStyle modern-cautionary
-                                        r1
-                                        d1 \pp ~ \<
-                                        d2. \mp ~ \>
-                                        d4 \pp
-                                    }
-                                }
-                            }
-                            {
-                                \accidentalStyle modern-cautionary
-                                R1 * 2
-                            }
+                            r1
+                            d2 \pp ~ \<
+                            d2 \mp ~ ~ \>
+                            d2 ~
+                            d2 \pp
+                            r1
+                            d2 \pp ~ \<
+                            d2 \mp ~ ~ \>
+                            d2 ~
+                            d2 \pp
+                            r1
+                            d2 \pp ~ \<
+                            d2 \mp ~ ~ \>
+                            d2 ~
+                            d2 \pp
+                            r1
+                            d2 \pp ~ \<
+                            d2 \mp ~ ~ \>
+                            d2 ~
+                            d2 \pp
                         }
                         {
                             \bar "||"
                             \accidentalStyle modern-cautionary
                             \mark #1
-                            R1 * 18
-                        }
-                        {
-                            \numericTimeSignature
-                            \time 3/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #2
-                            R2. * 24
+                            r1
+                            r2
+                            d2 \pp ~ \<
+                            d1 \mp ~ \>
+                            d2 \pp
+                            r2
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
                         }
                     }
                 }
@@ -552,14 +379,6 @@
                             \mark #1
                             R1 * 18
                         }
-                        {
-                            \numericTimeSignature
-                            \time 3/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #2
-                            R2. * 24
-                        }
                     }
                 }
                 \new Staff {
@@ -577,14 +396,6 @@
                             \accidentalStyle modern-cautionary
                             \mark #1
                             R1 * 18
-                        }
-                        {
-                            \numericTimeSignature
-                            \time 3/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #2
-                            R2. * 24
                         }
                     }
                 }
@@ -607,15 +418,32 @@
                             \bar "||"
                             \accidentalStyle modern-cautionary
                             \mark #1
-                            R1 * 18
-                        }
-                        {
-                            \numericTimeSignature
-                            \time 3/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #2
-                            R2. * 24
+                            d2 \pp ~ \<
+                            d2 \mp ~ ~ \>
+                            d2 ~
+                            d2 \pp
+                            r1
+                            d2 \pp ~ \<
+                            d2 \mp ~ ~ \>
+                            d2 ~
+                            d2 \pp
+                            r1
+                            d2 \pp ~ \<
+                            d2 \mp ~ ~ \>
+                            d2 ~
+                            d2 \pp
+                            r1
+                            d2 \pp ~ \<
+                            d2 \mp ~ ~ \>
+                            d2 ~
+                            d2 \pp
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
                         }
                     }
                 }
@@ -634,15 +462,28 @@
                             \bar "||"
                             \accidentalStyle modern-cautionary
                             \mark #1
-                            R1 * 18
-                        }
-                        {
-                            \numericTimeSignature
-                            \time 3/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #2
-                            R2. * 24
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            r1
+                            d2 \pp ~ \<
+                            d2 \mp ~ ~ \>
+                            d2 ~
+                            d2 \pp
+                            r1
+                            d2 \pp ~ \<
+                            d2 \mp ~ ~ \>
+                            d2 ~
+                            d2 \pp
+                            r1
                         }
                     }
                 }
@@ -662,43 +503,32 @@
                         \bar "||"
                         \accidentalStyle modern-cautionary
                         \mark #1
-                        R1 * 18
-                    }
-                    {
-                        \numericTimeSignature
-                        \time 3/4
-                        \bar "||"
-                        \accidentalStyle modern-cautionary
-                        \mark #2
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        g4 \mp
-                        f8 [
-                        e8
-                        c8
-                        d16
-                        e16 ~ ]
-                        e2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
+                        r1
+                        r1
+                        r1
+                        r1
+                        r2
+                        d2 \pp ~ \<
+                        d1 \mp ~ \>
+                        d2 \pp
+                        r2
+                        r2
+                        d2 \pp ~ \<
+                        d1 \mp ~ \>
+                        d2 \pp
+                        r2
+                        r2
+                        d2 \pp ~ \<
+                        d1 \mp ~ \>
+                        d2 \pp
+                        r2
+                        r2
+                        d2 \pp ~ \<
+                        d1 \mp ~ \>
+                        d2 \pp
+                        r2
+                        r1
+                        r1
                     }
                 }
             }
@@ -720,14 +550,6 @@
                     \mark #1
                     R1 * 18
                 }
-                {
-                    \numericTimeSignature
-                    \time 3/4
-                    \bar "||"
-                    \accidentalStyle modern-cautionary
-                    \mark #2
-                    R2. * 24
-                }
             }
         }
         \new StaffGroup <<
@@ -747,14 +569,6 @@
                         \accidentalStyle modern-cautionary
                         \mark #1
                         R1 * 18
-                    }
-                    {
-                        \numericTimeSignature
-                        \time 3/4
-                        \bar "||"
-                        \accidentalStyle modern-cautionary
-                        \mark #2
-                        R2. * 24
                     }
                 }
             }
@@ -777,14 +591,6 @@
                             \accidentalStyle modern-cautionary
                             \mark #1
                             R1 * 18
-                        }
-                        {
-                            \numericTimeSignature
-                            \time 3/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #2
-                            R2. * 24
                         }
                     }
                 }
@@ -811,14 +617,6 @@
                         \mark #1
                         R1 * 18
                     }
-                    {
-                        \numericTimeSignature
-                        \time 3/4
-                        \bar "||"
-                        \accidentalStyle modern-cautionary
-                        \mark #2
-                        R2. * 24
-                    }
                 }
             }
             \new Staff {
@@ -835,14 +633,6 @@
                         \accidentalStyle modern-cautionary
                         \mark #1
                         R1 * 18
-                    }
-                    {
-                        \numericTimeSignature
-                        \time 3/4
-                        \bar "||"
-                        \accidentalStyle modern-cautionary
-                        \mark #2
-                        R2. * 24
                     }
                 }
             }
@@ -864,14 +654,6 @@
                         \mark #1
                         R1 * 18
                     }
-                    {
-                        \numericTimeSignature
-                        \time 3/4
-                        \bar "||"
-                        \accidentalStyle modern-cautionary
-                        \mark #2
-                        R2. * 24
-                    }
                 }
             }
             \new Staff {
@@ -888,14 +670,6 @@
                         \accidentalStyle modern-cautionary
                         \mark #1
                         R1 * 18
-                    }
-                    {
-                        \numericTimeSignature
-                        \time 3/4
-                        \bar "||"
-                        \accidentalStyle modern-cautionary
-                        \mark #2
-                        R2. * 24
                     }
                 }
             }
@@ -954,41 +728,33 @@
                             r1
                             r1
                             d'1 \pp \< ^ \markup { normal }
-                            d'2 \mp ~ \>
+                            d'2 -\accent \mp ~ \>
                             d'8
                             d'4. \pp \<
-                            d'1 \mp \>
+                            d'1 -\accent \mp \>
                             g'2 \pp \<
-                            g'2 \mp ~ \>
+                            g'2 -\accent \mp ~ \>
                             g'2 ~
                             g'8
                             g'4. \pp ~ \<
                             g'4
-                            g'2. \mp ~ \>
+                            g'2. -\accent \mp ~ \>
                             g'4.
                             g'8 \pp ~ \<
                             g'4
-                            g'4 \mp ~ \>
+                            g'4 -\accent \mp ~ \>
                             g'2 ~
                             g'8
                             a'4. \pp ~ \<
                             a'4
-                            a'4. \mp \>
+                            a'4. -\accent \mp \>
                             g'4. \pp ~ \<
                             g'2
-                            g'2 \mp ~
+                            g'2 -\accent \mp ~
                             g'2
                             r2
                             r1
                             r1
-                        }
-                        {
-                            \numericTimeSignature
-                            \time 3/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #2
-                            R2. * 24
                         }
                     }
                 }
@@ -1045,37 +811,29 @@
                             r2
                             d'2 \pp ~ \< ^ \markup { normal }
                             d'2
-                            d'2 \mp ~ \>
+                            d'2 -\accent \mp ~ \>
                             d'8
                             g4. \pp \<
-                            g2 \mp ~ \>
+                            g2 -\accent \mp ~ \>
                             g2
                             c'2 \pp \<
-                            c'1 \mp ~ \>
+                            c'1 -\accent \mp ~ \>
                             c'8
                             c'4. \pp ~ \<
                             c'4
-                            c'4 \mp ~ \>
+                            c'4 -\accent \mp ~ \>
                             c'2..
                             g'8 \pp ~ \<
                             g'4
-                            g'2. \mp ~ \>
+                            g'2. -\accent \mp ~ \>
                             g'8
                             d'2 \pp ~ \<
                             d'8
-                            d'4 \mp ~ \>
+                            d'4 -\accent \mp ~ \>
                             d'8
                             d''2.. \pp \<
-                            d''1 \mp
+                            d''1 -\accent \mp
                             r1
-                        }
-                        {
-                            \numericTimeSignature
-                            \time 3/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #2
-                            R2. * 24
                         }
                     }
                 }
@@ -1135,37 +893,29 @@
                             r2.
                             c'4 \pp ~ \< ^ \markup { normal }
                             c'2
-                            c'2 \mp ~ \>
+                            c'2 -\accent \mp ~ \>
                             c'4
                             e'4 \pp \<
-                            e'2 \mp ~ \>
+                            e'2 -\accent \mp ~ \>
                             e'4
                             fs'2 \pp \<
-                            fs'4 \mp ~ \>
+                            fs'4 -\accent \mp ~ \>
                             fs'4.
                             fs'8 \pp ~ \<
                             fs'4
-                            fs'4 \mp ~ \>
+                            fs'4 -\accent \mp ~ \>
                             fs'2
                             fs'2 \p ~
                             fs'2.
                             fs'4 \pp ~ \<
                             fs'1
-                            fs'1 \mp \>
+                            fs'1 -\accent \mp \>
                             fs'2. \pp \<
-                            fs'4 \mp ~
+                            fs'4 -\accent \mp ~
                             fs'2.
                             r4
                             r1
                             r1
-                        }
-                        {
-                            \numericTimeSignature
-                            \time 3/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #2
-                            R2. * 24
                         }
                     }
                 }
@@ -1222,36 +972,28 @@
                             r1
                             r4
                             g'2. \pp \< ^ \markup { normal }
-                            g'2. \mp \>
+                            g'2. -\accent \mp \>
                             a4 \pp \<
-                            a2 \mp ~ \>
+                            a2 -\accent \mp ~ \>
                             a4
                             b4 \pp ~ \<
                             b4
-                            b4 \mp ~ \>
+                            b4 -\accent \mp ~ \>
                             b4.
                             b8 \pp ~ \<
                             b4
-                            b2. \mp \>
+                            b2. -\accent \mp \>
                             fs'1 \p ~
                             fs'4
                             b2. \pp ~ \<
                             b2
-                            b2 \mp ~ \>
+                            b2 -\accent \mp ~ \>
                             b2
                             cs''2 \pp ~ \<
                             cs''4
-                            cs''2. \mp ~
+                            cs''2. -\accent \mp ~
                             cs''4
                             r2.
-                        }
-                        {
-                            \numericTimeSignature
-                            \time 3/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #2
-                            R2. * 24
                         }
                     }
                 }
@@ -1312,32 +1054,24 @@
                             r1
                             r4
                             b2 \pp \< ^ \markup { normal }
-                            b4 \mp ~ \>
+                            b4 -\accent \mp ~ \>
                             b2
                             d'2 \pp \<
-                            d'1 \mp \>
+                            d'1 -\accent \mp \>
                             g'2 \pp \<
-                            g'2 \mp ~ \>
+                            g'2 -\accent \mp ~ \>
                             g'1
                             g'1 \pp ~ \<
                             g'2.
-                            g'4 \mp ~ \>
+                            g'4 -\accent \mp ~ \>
                             g'2
                             e'2 \pp ~ \<
                             e'4
-                            e'2. \mp ~
+                            e'2. -\accent \mp ~
                             e'2
                             r2
                             r1
                             r1
-                        }
-                        {
-                            \numericTimeSignature
-                            \time 3/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #2
-                            R2. * 24
                         }
                     }
                 }
@@ -1396,29 +1130,21 @@
                             r2.
                             b4 \pp ~ \< ^ \markup { normal }
                             b4
-                            b2. \mp \>
+                            b2. -\accent \mp \>
                             d'2 \pp \<
-                            d'2 \mp ~ \>
+                            d'2 -\accent \mp ~ \>
                             d'2
                             c'2 \pp \<
-                            c'1 \mp ~ \>
+                            c'1 -\accent \mp ~ \>
                             c'2
                             g'2 \pp ~ \<
                             g'1 ~
                             g'4
-                            g'2. \mp \>
+                            g'2. -\accent \mp \>
                             b'2. \pp \<
-                            b'4 \mp ~
+                            b'4 -\accent \mp ~
                             b'1
                             r1
-                        }
-                        {
-                            \numericTimeSignature
-                            \time 3/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #2
-                            R2. * 24
                         }
                     }
                 }
@@ -1479,34 +1205,26 @@
                             r1
                             r1
                             b2. \pp \< ^ \markup { normal }
-                            b4 \mp ~ \>
+                            b4 -\accent \mp ~ \>
                             b2 ~
                             b8
                             e'4. \pp \<
-                            e'2 \mp \>
+                            e'2 -\accent \mp \>
                             e'2 \p ~
                             e'1 ~
                             e'4
                             fs'2. \pp \<
-                            fs'2 \mp \>
+                            fs'2 -\accent \mp \>
                             \clef tenor
-                            a'2 \pp ~ \< ^ \markup { "solo cello" }
+                            a'2 \p ~ \< ^ \markup { "solo cello" }
                             a'4
-                            a'2 \mp \< (
-                            b'4 \p )
-                            fs'1 \p ~
+                            a'2 \mf (
+                            b'4 )
+                            fs'1 \mp ~
                             fs'4
                             r2.
                             r1
                             r1
-                        }
-                        {
-                            \numericTimeSignature
-                            \time 3/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #2
-                            R2. * 24
                         }
                     }
                 }
@@ -1566,10 +1284,10 @@
                             r2
                             b2 \pp ~ \< ^ \markup { normal }
                             b4
-                            b2. \mp ~ \>
+                            b2. -\accent \mp ~ \>
                             b8
                             a4. \pp \<
-                            a2 \mp \>
+                            a2 -\accent \mp \>
                             a2. \p
                             r4
                             r1
@@ -1578,14 +1296,6 @@
                             r1
                             r1
                             r1
-                        }
-                        {
-                            \numericTimeSignature
-                            \time 3/4
-                            \bar "||"
-                            \accidentalStyle modern-cautionary
-                            \mark #2
-                            R2. * 24
                         }
                     }
                 }
@@ -1637,14 +1347,6 @@
                         \accidentalStyle modern-cautionary
                         \mark #1
                         R1 * 18
-                    }
-                    {
-                        \numericTimeSignature
-                        \time 3/4
-                        \bar "||"
-                        \accidentalStyle modern-cautionary
-                        \mark #2
-                        R2. * 24
                     }
                 }
             }
@@ -1733,55 +1435,6 @@
                         r1
                         r1
                     }
-                    {
-                        \numericTimeSignature
-                        \time 3/4
-                        \bar "||"
-                        \accidentalStyle modern-cautionary
-                        \clef "bass"
-                        \mark #2
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2
-                        d'4 ~
-                        d'4
-                        c'4
-                        b4
-                        g2
-                        a4
-                        b4
-                        d'4
-                        c'8 [
-                        b8 ]
-                        a2
-                        c'4
-                        b4
-                        a4
-                        c'4
-                        b4
-                        d'2 ~
-                        d'2
-                        c'4
-                        b4
-                        d'4
-                        c'8 [
-                        b8 ]
-                        g2. ~
-                        g2.
-                        a2.
-                        b2.
-                        a2
-                        c'4 ~
-                        c'4
-                        b2
-                    }
                 }
             }
             \new Staff {
@@ -1838,52 +1491,6 @@
                         r2
                         r1
                     }
-                    {
-                        \numericTimeSignature
-                        \time 3/4
-                        \bar "||"
-                        \accidentalStyle modern-cautionary
-                        \clef "bass"
-                        \mark #2
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        d'2
-                        c'4
-                        e4
-                        g4
-                        a8 [
-                        b8 ]
-                        d'2
-                        c'4
-                        b4
-                        a4
-                        f8 [
-                        e8 ]
-                        d4
-                        bf,4
-                        a,4
-                        c2
-                        bf,8 [
-                        a,8 ]
-                        c2. ~
-                        c2.
-                        bf,2.
-                        a,2.
-                        f,2. ~
-                        f,2.
-                        g,2.
-                        a,2.
-                        g,4
-                        bf,4
-                        a,4
-                        r2.
-                    }
                 }
             }
             \new Staff {
@@ -1897,63 +1504,6 @@
                     {
                         \accidentalStyle modern-cautionary
                         R1 * 18
-                    }
-                    {
-                        \numericTimeSignature
-                        \time 3/4
-                        \bar "||"
-                        \accidentalStyle modern-cautionary
-                        \clef "bass"
-                        \mark #2
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        g4
-                        f8 [
-                        e8 ]
-                        c8 [
-                        d16
-                        e16 ]
-                        g4
-                        f8 [
-                        e8 ]
-                        d8 [
-                        f16
-                        e16 ]
-                        d8 [
-                        f8 ]
-                        e8 [
-                        g8 ~ ]
-                        g8 [
-                        f16
-                        e16 ]
-                        g4
-                        f8 [
-                        e8 ]
-                        c8 [
-                        d16
-                        e16 ]
-                        d8 [
-                        f8 ]
-                        e8
-                        r8
-                        r4
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
-                        r2.
                     }
                 }
             }
@@ -1969,10 +1519,6 @@
                         \accidentalStyle modern-cautionary
                         R1 * 18
                     }
-                    {
-                        \accidentalStyle modern-cautionary
-                        R2. * 24
-                    }
                 }
             }
             \new Staff {
@@ -1986,10 +1532,6 @@
                     {
                         \accidentalStyle modern-cautionary
                         R1 * 18
-                    }
-                    {
-                        \accidentalStyle modern-cautionary
-                        R2. * 24
                     }
                 }
             }
@@ -2005,10 +1547,6 @@
                         \accidentalStyle modern-cautionary
                         R1 * 18
                     }
-                    {
-                        \accidentalStyle modern-cautionary
-                        R2. * 24
-                    }
                 }
             }
             \new Staff {
@@ -2022,10 +1560,6 @@
                     {
                         \accidentalStyle modern-cautionary
                         R1 * 18
-                    }
-                    {
-                        \accidentalStyle modern-cautionary
-                        R2. * 24
                     }
                 }
             }
@@ -2041,10 +1575,6 @@
                         \accidentalStyle modern-cautionary
                         R1 * 18
                     }
-                    {
-                        \accidentalStyle modern-cautionary
-                        R2. * 24
-                    }
                 }
             }
             \new Staff {
@@ -2058,10 +1588,6 @@
                     {
                         \accidentalStyle modern-cautionary
                         R1 * 18
-                    }
-                    {
-                        \accidentalStyle modern-cautionary
-                        R2. * 24
                         \bar "|."
                     }
                 }
