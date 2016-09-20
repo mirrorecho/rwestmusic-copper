@@ -275,8 +275,9 @@ def get_orchestration_a():
         cello1 = Cello1()
         cello2 = Cello2()
         bass = Bass()
-        line1 = LINES[1]
-        line2 = LINES[2]
+        drone0 = LINES[0].show_data(show_data_attr="original_depthwise_index")
+        line1 = LINES[1].show_data(show_data_attr="original_depthwise_index")
+        line2 = LINES[2].show_data(show_data_attr="original_depthwise_index")
     return OrchestrationA
 
 # -------------------------------------------------------------------------
@@ -285,7 +286,6 @@ def get_orchestration_a():
 bubbles.illustrate_me(__file__, 
     lambda: staves.CopperScore( 
         get_orchestration_a()(), 
-        stylesheets=("../../scores/stylesheets/score.ily",),
         title="Copper: A", 
         show_short_score=True, 
         hide_empty=True).get_lilypond_file()

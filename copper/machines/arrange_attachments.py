@@ -203,18 +203,28 @@ class ArrangeAttachments(object):
 
     _open_spanners = None # to be set to a dict containing spanner start as they key, and music leaf index as the value
 
-    def __init__(self, **kwargs):
+    def __init__(self, show_data_type=None, show_data_attr=None, **kwargs):
+        
+        # setting these here, because we want them set on self BEFORE calling super().__init__
+        self.show_data_type = show_data_type or self.show_data_type
+        self.show_data_attr = show_data_attr or self.show_data_attr
         self._open_spanners = {}
+        
         super().__init__(**kwargs)
 
-    def update_data(self, **kwargs):
-        super().update_data(**kwargs)
-        if self.show_data_type or self.show_data_attr:
-            show_data_type = self.show_data_type or machines.EventData
-            show_data_attr = self.show_data_attr or "depthwise_index"
+    # TO DO... rethink how this is implemented once bubbles are module based (better something for output settings.... )
+    def show_data(self, show_data_type=None, show_data_attr=None):
+        if show_data_type or show_data_attr:
+            show_data_type = show_data_type or machines.EventData
+            show_data_attr = show_data_attr or "depthwise_index"
             # TO DO: there must be a way to make this more elegant:
             for node in [node for node in self.data.nodes if isinstance(node, show_data_type)]:
                 node.tag("data:" + show_data_attr)
+        return self
+
+    def update_data(self, **kwargs):
+        super().update_data(**kwargs)
+        self.show_data(self.show_data_type, self.show_data_attr)
 
     # TO DO... implement if useful?
     # def tag(self, *kwargs):

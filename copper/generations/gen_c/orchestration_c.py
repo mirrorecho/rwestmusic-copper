@@ -11,6 +11,7 @@ ID = machines.IndexedData
 ID1 = machines.ID1
 
 LINES = ID({
+    0:gen_c.Drone0(),
     1:gen_c.Line1(),
     2:gen_c.Line2(),
     3:gen_c.Line3(),
@@ -224,16 +225,21 @@ def get_orchestration_c():
         cello1 = Cello1()
         cello2 = Cello2()
         bass = Bass()
-        line1 = LINES[1]
-        line2 = LINES[2]
-        line3 = LINES[3]
-        line4 = LINES[4]
+        drone0 = LINES[0].show_data(show_data_attr="original_depthwise_index")
+        line1 = LINES[1].show_data(show_data_attr="original_depthwise_index")
+        line2 = LINES[2].show_data(show_data_attr="original_depthwise_index")
+        line3 = LINES[3].show_data(show_data_attr="original_depthwise_index")
+        line4 = LINES[4].show_data(show_data_attr="original_depthwise_index")
     return OrchestrationC
 
 # -------------------------------------------------------------------------
 # OUTPUT SCORE
 
 bubbles.illustrate_me(__file__, 
-    lambda: staves.CopperScore( get_orchestration_c()(), title="Copper: C", show_short_score=True, hide_empty=True).get_lilypond_file()
+    lambda: staves.CopperScore( 
+        get_orchestration_c()(), 
+        title="Copper: C", 
+        show_short_score=True, 
+        hide_empty=True).get_lilypond_file()
     )
 

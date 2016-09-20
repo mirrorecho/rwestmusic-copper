@@ -5,6 +5,7 @@ from calliope import bubbles
 from copper import machines
 from copper.machines.tools import IndexedData as ID # just to avoid a lot of typing
 from copper.generations.gen_0 import gen_0
+from copper import staves
 
 class GenA(object): # basic attributes, such as starting time signature, rehearsal mark, etc.
     metrical_durations = ID(default=((1,1),), limit=18)
@@ -36,10 +37,14 @@ class Line2(Line1):
             )
 
 # -------------------------------------------------------------------------------------------------
-
 bubbles.illustrate_me(__file__, 
-    lambda: bubbles.Bubble(
-            line1 = Line1(),
-            line2 = Line2(),
-        ).score()
+    lambda: staves.CopperShortScore(
+            bubbles.Bubble(
+                drone0 = Drone0(show_data_attr="original_depthwise_index"),
+                line1 = Line1(show_data_attr="original_depthwise_index"),
+                line2 = Line2(show_data_attr="original_depthwise_index"),
+            ),
+            sequence = ("line1","line2","drone0"),
+        ).get_lilypond_file(),
+    as_midi=True,
     )

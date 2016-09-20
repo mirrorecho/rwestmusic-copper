@@ -11,6 +11,7 @@ ID = machines.IndexedData
 ID1 = machines.ID1
 
 LINES = ID({
+    0:gen_h.Drone0(),
     1:gen_h.Line1(),
     2:gen_h.Line2(),
     3:gen_h.Line3(),
@@ -182,20 +183,25 @@ def get_orchestration_h():
         cello1 = Cello1()
         cello2 = Cello2()
         bass = Bass()
-        line1 = LINES[1]
-        line2 = LINES[2]
-        line3 = LINES[3]
-        line4 = LINES[4]
-        line5 = LINES[5]
-        line6 = LINES[6]
-        line7 = LINES[7]
-        line8 = LINES[8]
-        line9 = LINES[9]
+        drone0 = LINES[0].show_data(show_data_attr="original_depthwise_index")
+        line1 = LINES[1].show_data(show_data_attr="original_depthwise_index")
+        line2 = LINES[2].show_data(show_data_attr="original_depthwise_index")
+        line3 = LINES[3].show_data(show_data_attr="original_depthwise_index")
+        line4 = LINES[4].show_data(show_data_attr="original_depthwise_index")
+        line5 = LINES[5].show_data(show_data_attr="original_depthwise_index")
+        line6 = LINES[6].show_data(show_data_attr="original_depthwise_index")
+        line7 = LINES[7].show_data(show_data_attr="original_depthwise_index")
+        line8 = LINES[8].show_data(show_data_attr="original_depthwise_index")
+        line9 = LINES[9].show_data(show_data_attr="original_depthwise_index")
     return OrchestrationH
 
 # -------------------------------------------------------------------------
 # OUTPUT SCORE
 
 bubbles.illustrate_me(__file__, 
-    lambda: staves.CopperScore( get_orchestration_h()(), title="Copper: H", show_short_score=True, hide_empty=True).get_lilypond_file()
+    lambda: staves.CopperScore( 
+        get_orchestration_h()(), 
+        title="Copper: H", 
+        show_short_score=True, 
+        hide_empty=True).get_lilypond_file()
     )

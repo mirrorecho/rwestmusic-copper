@@ -9,19 +9,20 @@ ID = machines.IndexedData
 ID1 = machines.ID1
 
 class Drone0(machines.PitchedLine):
-    rhythm_initial_silence = 3
+    # show_data_attr="original_depthwise_index"
+    rhythm_initial_silence = 2
     pitch_segments = (
             ( -10, ),
         )
     rhythm_segments = (
         # NOTE... include others here?
         (2, 4, 2, -4),
-        (3, 3, 3, -3), # good for 3/4 meter
+        (3, 3, 3, -3), # for 3/4 meter or 9/8 meter
     )
     rhythm_sequence = ID({
         # NOTE: could cycle through a few possibilities
-        }, default=0, limit=10)
-    pitch_sequence = ID(default=0, limit=10)
+        }, default=0, limit=22)
+    pitch_sequence = ID(default=0, limit=22)
     initial_dynamic = "pp"
     middle_dynamic = "mp"
     end_dynamic = "pp"

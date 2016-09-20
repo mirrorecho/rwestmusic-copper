@@ -89,7 +89,7 @@ class CopperStringsDiv(BubbleStaffGroup):
     bass = BubbleStaff(instrument=instrumenttools.Contrabass(instrument_name="Bass", short_instrument_name="cb"), clef="bass")
     sequence = ("violinIs","violinIIs","violas","cellos","bass")
 
-class CopperShortScore(BubbleStaffGroup):
+class CopperShortScoreStaves(BubbleStaffGroup):
     line1 = BubbleStaff(instrument=instrumenttools.Violin(instrument_name="Line 1", short_instrument_name="1:"))
     line2 = BubbleStaff(instrument=instrumenttools.Violin(instrument_name="Line 2", short_instrument_name="2:"))
     line3 = BubbleStaff(instrument=instrumenttools.Violin(instrument_name="Line 3", short_instrument_name="3:"))
@@ -99,11 +99,27 @@ class CopperShortScore(BubbleStaffGroup):
     line7 = BubbleStaff(instrument=instrumenttools.Violin(instrument_name="Line 7", short_instrument_name="7:"))
     line8 = BubbleStaff(instrument=instrumenttools.Violin(instrument_name="Line 8", short_instrument_name="8:"))
     line9 = BubbleStaff(instrument=instrumenttools.Violin(instrument_name="Line 9", short_instrument_name="9:"))
-    sequence = ("line1","line2","line3","line4","line5","line6","line7","line8","line9",)
+    drone0 = BubbleStaff(instrument=instrumenttools.Cello(instrument_name="Drone", short_instrument_name="0:"), clef="bass")
+    sequence = ("line1","line2","line3","line4","line5","line6","line7","line8","line9","drone0")
+
+class CopperShortScore(BubbleScore):
+    line1 = BubbleStaff(instrument=instrumenttools.Violin(instrument_name="Line 1", short_instrument_name="1:"))
+    line2 = BubbleStaff(instrument=instrumenttools.Violin(instrument_name="Line 2", short_instrument_name="2:"))
+    line3 = BubbleStaff(instrument=instrumenttools.Violin(instrument_name="Line 3", short_instrument_name="3:"))
+    line4 = BubbleStaff(instrument=instrumenttools.Violin(instrument_name="Line 4", short_instrument_name="4:"))
+    line5 = BubbleStaff(instrument=instrumenttools.Violin(instrument_name="Line 5", short_instrument_name="5:"))
+    line6 = BubbleStaff(instrument=instrumenttools.Violin(instrument_name="Line 6", short_instrument_name="6:"))
+    line7 = BubbleStaff(instrument=instrumenttools.Violin(instrument_name="Line 7", short_instrument_name="7:"))
+    line8 = BubbleStaff(instrument=instrumenttools.Violin(instrument_name="Line 8", short_instrument_name="8:"))
+    line9 = BubbleStaff(instrument=instrumenttools.Violin(instrument_name="Line 9", short_instrument_name="9:"))
+    drone0 = BubbleStaff(instrument=instrumenttools.Cello(instrument_name="Drone", short_instrument_name="0:"), clef="bass")
+    sequence = ("line1","line2","line3","line4","line5","line6","line7","line8","line9","drone0")
+
 
 class CopperScore(BubbleFormatLargeScore):
     hide_empty = True
     show_short_score = False
+    stylesheets=("../../scores/stylesheets/score.ily",)
 
     winds = CopperWinds()
     brass = CopperBrass()
@@ -112,13 +128,21 @@ class CopperScore(BubbleFormatLargeScore):
     harp = BubbleHarp(instrument=instrumenttools.Harp(instrument_name="Harp", short_instrument_name="hp."))
     piano = BubblePiano(instrument=instrumenttools.Piano(instrument_name="Piano", short_instrument_name="pno."))
     strings = CopperStringsDiv()
-    short_score = CopperShortScore()
+    short_score = CopperShortScoreStaves()
 
     def sequence(self, **kwargs):
         if self.show_short_score:
             return ("winds", "brass", "timpani", "perc", "harp", "piano", "strings", "short_score")
         else:
             return ("winds", "brass", "timpani", "perc", "harp", "piano", "strings")
+
+# class CopperShortScoreMusic(Bubble):
+#     line1 = Placeholder()
+#     drone0 = Placeholder()
+
+#     def __init__(self, **kwargs):
+#         super().__init__(**kwargs)
+#         self.info("finished initializing bubbles")
 
 class CopperMusic(Bubble):
 
@@ -164,6 +188,7 @@ class CopperMusic(Bubble):
     line7 = Placeholder()
     line8 = Placeholder()
     line9 = Placeholder()
+    drone0 = Placeholder()
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)

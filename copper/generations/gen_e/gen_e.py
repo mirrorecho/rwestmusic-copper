@@ -5,13 +5,18 @@ from calliope import bubbles
 from copper import machines
 from copper.machines.tools import IndexedData as ID # just to avoid a lot of typing
 from copper.generations.gen_d import gen_d
+from copper import staves
 
 class GenE(object): 
     time_signature = (3,4)
-    metrical_durations = ID(default=((3,4),), limit=35)
+    metrical_durations = ID(default=((3,4),), limit=35) # TO DO... is this the right count?
     rehearsal_mark_number = 5
     # tempo_units_per_minute = 108
     start_bar_line = "||"
+
+class Drone0(GenE, machines.Drone0):
+    rhythm_sequence = ID(default=1, limit=22)
+    rhythm_initial_silence = 3
 
 # -------------------------------------------------------------------------------------------------
 
@@ -71,13 +76,18 @@ class Line6(GenE, gen_d.Line4):
 # -------------------------------------------------------------------------------------------------
 
 bubbles.illustrate_me(__file__, 
-    lambda : bubbles.Bubble(
-            line1 = Line1(),
-            line2 = Line2(),
-            line3 = Line3(),
-            line4 = Line4(),
-            line5 = Line5(),
-            line6 = Line6(),
-        ).score()
+    lambda: staves.CopperShortScore(
+            bubbles.Bubble(
+                drone0 = Drone0(show_data_attr="original_depthwise_index"),
+                line1 = Line1(show_data_attr="original_depthwise_index"),
+                line2 = Line2(show_data_attr="original_depthwise_index"),
+                line3 = Line3(show_data_attr="original_depthwise_index"),
+                line4 = Line4(show_data_attr="original_depthwise_index"),
+                line5 = Line5(show_data_attr="original_depthwise_index"),
+                line6 = Line6(show_data_attr="original_depthwise_index"),
+            ),
+            sequence = ("line1","line2","line3","line4","line5","line6","drone0"),
+        ).get_lilypond_file(),
+    as_midi=True,
     )
 

@@ -74,10 +74,13 @@
 # - (DONE) draft parts template
 # ---------------------------- MONDAY
 # - drones good draft throughout (including orchestration)
-# - short score good draft throughout
 # - cymbal good draft throughout
 # ---------------------------- TUESDAY AT APA
+# - mac (and maybe linux) midi playback... at least of short scores
 # - transposing parts
+# - short score good draft throughout
+# - create midi files / garage band projects for each short score generation
+
 # - more orchestrating gen b
 # - better gen c short score
 # - more orchestrating gen c
@@ -87,7 +90,6 @@
 # - some rhythms with metric modulations
 # - work drones into standard machines
 # - tag attachments on individual abjad leaves? (some data structure on LogicalTieData?)
-# - mac (and maybe linux) midi playback... at least of short scores
 # - good draft of gen e short score (especially Line 6)
 # - review current short scores at piano and adjust
 # - (if time) start gen h draft short score
@@ -221,6 +223,9 @@
 # - initial silence is specific to copper ... make it work in another way (or keep it in the inherited copper classes only)
 # - go back through rep... ESPECIALLY elements & tokei orchestra pieces, accomodate, and make them even better!!!!!!!!!!!!!  (listen to recordints too... )
 # - short score illustrations should include staff-level attachments such as tempo, clef, etc.
+# - fix illustrate_me funkiness added for OSX sublimetext virtual environment support
+# - look ingo abjad's IOManager run_lilypond method ... seems like lilypond_path argument unused... submit a fix?
+# - better way to specify header (title, composer, footer, etc) without sticking it in the stylesheet
 
 import abjad
 from calliope import bubbles

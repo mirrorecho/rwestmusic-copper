@@ -166,7 +166,8 @@ def get_orchestration_0():
         cello1 = StringsArrange0()
         cello2 = StringsArrange0()
         bass = Bass()
-        line1 = LINES[1]
+        drone0 = LINES[0].show_data(show_data_attr="original_depthwise_index")
+        line1 = LINES[1].show_data(show_data_attr="original_depthwise_index")
     return Orchestration0
 
 
@@ -179,9 +180,8 @@ def get_orchestration_0():
  
 bubbles.illustrate_me(__file__, 
     lambda: staves.CopperScore( 
-        get_orchestration_0()(), 
-        stylesheets=("../../scores/stylesheets/score.ily",),
-        title="Copper: 0", 
+        get_orchestration_0()(),
+        title="Copper: 0", # TO DO... note that title attribute is not currently used (re-implement?)
         show_short_score=True, 
         hide_empty=True).get_lilypond_file()
     )
