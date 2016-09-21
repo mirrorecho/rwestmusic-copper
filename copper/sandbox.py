@@ -1,5 +1,3 @@
-
-# ----------------------------
 # NEXT UP:
 # ----------------------------
 # - (DONE... uses more flexible cycles) smarter 5ths (with a fancier machine... how???)
@@ -72,26 +70,34 @@
 # - (DONE) draft score stylesheet
 # - (DONE) able to output a full score
 # - (DONE) draft parts template
-# ---------------------------- MONDAY
+# - (DONE) get_lilypond_file is being called twice on the bottom of orchestration files... fix
+# - (DONE) consider... should Orchestration classes not inherit from Gen classes? (e.g. class OrchestrationF(staves.CopperMusic, gen_f.GenF):)  ... remove GenF inheritance?
+# - (DONE) get data by original depthwise index (at least for events)
+# - (DONE) work drones into standard machines
+# - (DONE) mac (and maybe linux) midi playback... at least of short scores
+# - (DONE) better gen c short score
+# ---------------------------- TUESDAY
+# - short scores aren't showing line #s/names
+# - create midi files / garage band projects for each short score generation
+# - short score decent draft throughout
+# - plan out drone, and start better working into machines
+# - plan out cymbal, and start working better into machines
 # - drones good draft throughout (including orchestration)
 # - cymbal good draft throughout
-# ---------------------------- TUESDAY AT APA
-# - mac (and maybe linux) midi playback... at least of short scores
-# - transposing parts
-# - short score good draft throughout
-# - create midi files / garage band projects for each short score generation
-
 # - more orchestrating gen b
-# - better gen c short score
 # - more orchestrating gen c
 # - more orchestrating gen d
+# ---------------------------- WEDENSDAY AT APA
+# - 8va spanner (e.g. end of gen d)
+# - multimeasure rest generator
+# - transposing parts
 # - tag to respell flats/sharps (on individual notes)
 # - tempo markings
+# ---------------------------- WEDENSDAY EVENING
 # - some rhythms with metric modulations
-# - work drones into standard machines
-# - tag attachments on individual abjad leaves? (some data structure on LogicalTieData?)
+# - (maybe) tag attachments on individual abjad leaves? (some data structure on LogicalTieData?)
 # - good draft of gen e short score (especially Line 6)
-# - review current short scores at piano and adjust
+# - review short score (as  a whole) at piano / listen to playback, and adjust
 # - (if time) start gen h draft short score
 # - (if time) start orchestrating gen h
 # - more orchestrating gen e
@@ -100,15 +106,12 @@
 # - more orchestrating gen h
 # - (maybe?) need to be able to tag base arrangment stuff even on "unarranged" bubble
 # - good draft gen f short score
-# - better way / machine(s) to tag spanners
+# - (maybe) better way / machine(s) to tag spanners
 # - good draft gen g short score
 # - think of gen d in 8th note rhythm_denominator
-# - plan out drone, and start better working into machines
-# - plan out cymbal, and start working better into machines
-# - good gen h draft short score
-# - get data by original depthwise index
-# - get_lilypond_file is being called twice on the bottom of orchestration files... fix
+# - (maybe) good gen h draft short score
 # - review current short scores at piano and adjust
+# ---------------------------- THURSDAY APA
 # - good draft orchestration of gen b
 # - - - do something cool with the dissonance (Bb, A), at line3, event 27
 # - good draft orchestration of gen c
@@ -128,6 +131,7 @@
 # - review printed score and mark up
 # - implement printed score markups (or add notes)
 # - games and boces? (only if time allows)
+# ---------------------------- THURSDAY EVENING
 # - final draft: gen 0 orchestration!
 # - final draft: gen a orchestration!
 # - final draft: gen b orchestration!
@@ -135,7 +139,7 @@
 # - use marimba?
 # - good parts template (aside from percussion)
 # - review fonts
-# - allow slices of data to be tagged
+# - (if time) allow slices of data to be tagged
 # - penultimate draft: gen d orchestration!
 # - penultimate draft: gen e orchestration!
 # - penultimate draft: gen f orchestration!
@@ -147,14 +151,15 @@
 # - percussion beaters (including vibraphone mallets and motor)
 # - review timpani part (including tunings)
 # - errors should show class names / lines that throw them
+# ---------------------------- FRIDAY APA
 # - final draft: gen d orchestration!
 # - final draft: gen e orchestration!
 # - final draft: gen f orchestration!
 # - final draft: gen g orchestration!
 # - final draft: gen h orchestration!
+# ---------------------------- FRIDAY EVENING
 # - review final draft of printed score and mark up
 # - implement final draft printed score markups (or add notes)
-# - consider... should Orchestration classes not inherit from Gen classes? (e.g. class OrchestrationF(staves.CopperMusic, gen_f.GenF):)  ... remove GenF inheritance?
 # - (if time) better way to handle octave transposing instruments in scores
 # - initial review of all parts (everyone has something to do)
 # - adjust based on review of parts
@@ -165,7 +170,6 @@
 # - better rehearsal markings?
 # - final score review!
 # - - double check score order
-# - multimeasure rest generator
 # - double check that part output matches score (or make part code not suck)
 # - - - NO REALLY REALLY REALLY double check score and parts (easy to mistype classes in parts file)... need to check both code & output
 # - final review/edits of wind parts
@@ -186,7 +190,7 @@
 # - - - transpositions
 # - performance and program notes
 # - (if time, else later)... warn if orchestrated lines don't inherit from arrangement base classes (i.e. they should be getting rehearsal marks, etc.)
-# - tital page
+# - title page
 
 
 # ---------------------------- FUTURE:

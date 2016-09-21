@@ -1,4 +1,4 @@
-% 2016-09-20 17:52
+% 2016-09-20 23:10
 
 \version "2.18.2"
 \language "english"
@@ -12,8 +12,8 @@
 \score {
     \new Score <<
         \new Staff {
-            \set Staff.instrumentName = \markup { "Line 1" }
-            \set Staff.shortInstrumentName = \markup { 1: }
+            %%% \set PianoStaff.instrumentName = \markup { "Line 1" } %%%
+            %%% \set PianoStaff.shortInstrumentName = \markup { 1: } %%%
             {
                 \numericTimeSignature
                 \time 9/8
@@ -82,8 +82,8 @@
             }
         }
         \new Staff {
-            \set Staff.instrumentName = \markup { "Line 2" }
-            \set Staff.shortInstrumentName = \markup { 2: }
+            %%% \set PianoStaff.instrumentName = \markup { "Line 2" } %%%
+            %%% \set PianoStaff.shortInstrumentName = \markup { 2: } %%%
             {
                 \numericTimeSignature
                 \time 9/8
@@ -103,40 +103,40 @@
                 r2.
                 r4.
                 <d' g' cs''>2. ^ \markup { 1 }
-                <e' fs' a'>4. ^ \markup { 2 }
-                <a' d'' gs''>4. ^ \markup { 3 }
+                <fs' b' e''>4. ^ \markup { 2 }
+                <d'' e'' gs''>4. ^ \markup { 3 }
                 <gs'' a'' cs'''>4. ~ ^ \markup { 4 }
                 <gs'' a'' cs'''>4.
                 <fs'' gs'' a''>4. ^ \markup { 5 }
-                <gs'' a'' b''>4. ^ \markup { 6 }
+                <b'' ds''' e'''>4. ^ \markup { 6 }
                 r4.
                 r2.
                 r4.
-                <gs'' a'' b''>2. ^ \markup { 7 }
-                <fs' b' e''>4. ^ \markup { 8 }
-                <b e' g'>4. ^ \markup { 9 }
-                <b c' d'>4. ~ ^ \markup { 10 }
-                <b c' d'>4.
-                <g a b>4. ^ \markup { 11 }
-                <b c' d'>4. ^ \markup { 12 }
-                <a b c'>4. ^ \markup { 13 }
-                <a b c'>4. ^ \markup { 14 }
-                <b c' d'>4. ^ \markup { 15 }
-                <b c' d'>4. ~ ^ \markup { 16 }
-                <b c' d'>2. ~
-                <b c' d'>4.
-                <g a b>4. ^ \markup { 17 }
-                <a b c'>4. ^ \markup { 18 }
-                <b c' d'>4. ~ ^ \markup { 19 }
-                <b c' d'>4.
-                <g a b>4. ^ \markup { 20 }
-                <b c' d'>4. ^ \markup { 21 }
-                <a b c'>2. ^ \markup { 22 }
-                <a b c'>4. ^ \markup { 23 }
-                <b c' d'>4. ^ \markup { 24 }
-                <b c' d'>4. ^ \markup { 25 }
-                <g a b>4. ^ \markup { 26 }
-                <a b c'>4. ^ \markup { 27 }
+                <ds''' e''' fs'''>2. ^ \markup { 7 }
+                <cs'' fs'' b''>4. ^ \markup { 8 }
+                <fs' b' d''>4. ^ \markup { 9 }
+                <fs' g' a'>4. ~ ^ \markup { 10 }
+                <fs' g' a'>4.
+                <d' e' fs'>4. ^ \markup { 11 }
+                <fs' g' a'>4. ^ \markup { 12 }
+                <e' fs' g'>4. ^ \markup { 13 }
+                <e' fs' g'>4. ^ \markup { 14 }
+                <fs' g' a'>4. ^ \markup { 15 }
+                <fs' g' a'>4. ~ ^ \markup { 16 }
+                <fs' g' a'>2. ~
+                <fs' g' a'>4.
+                <d' e' fs'>4. ^ \markup { 17 }
+                <e' fs' g'>4. ^ \markup { 18 }
+                <fs' g' a'>4. ~ ^ \markup { 19 }
+                <fs' g' a'>4.
+                <d' e' fs'>4. ^ \markup { 20 }
+                <fs' g' a'>4. ^ \markup { 21 }
+                <e' fs' g'>2. ^ \markup { 22 }
+                <e' fs' g'>4. ^ \markup { 23 }
+                <fs' g' a'>4. ^ \markup { 24 }
+                <fs' g' a'>4. ^ \markup { 25 }
+                <d' e' fs'>4. ^ \markup { 26 }
+                <e' fs' g'>4. ^ \markup { 27 }
                 r4.
                 r4.
                 r2.
@@ -150,8 +150,8 @@
             }
         }
         \new Staff {
-            \set Staff.instrumentName = \markup { "Line 3" }
-            \set Staff.shortInstrumentName = \markup { 3: }
+            %%% \set PianoStaff.instrumentName = \markup { "Line 3" } %%%
+            %%% \set PianoStaff.shortInstrumentName = \markup { 3: } %%%
             {
                 \numericTimeSignature
                 \time 9/8
@@ -176,69 +176,71 @@
                 r4.
                 r4.
                 r4.
-                r4
-                d'8 ~ ^ \markup { 1 }
-                d'8 [
-                g'8 ^ \markup { 2 }
+                r4.
+                r4.
+                r4.
+                r4.
+                r4.
+                r4.
+                r4.
+                r4.
+                r4.
+                r4.
+                r4.
+                r4.
+                r4.
+                r4.
+                r4.
+                r4.
+                r4.
+                r4.
+                r4.
+                r8
+                d'4 ^ \markup { 1 }
+                g'8 [ ^ \markup { 2 }
                 cs''8 ] ^ \markup { 3 }
+                r8
                 r4.
-                r4.
-                a'4. ~ ^ \markup { 4 }
-                a'8
-                e'4 ^ \markup { 5 }
-                fs'4 ^ \markup { 6 }
-                a'8 ~ ^ \markup { 7 }
-                a'8 [
-                d''8 ^ \markup { 8 }
-                gs''8 ] ^ \markup { 9 }
-                r4.
-                r4.
-                cs'''4. ~ ^ \markup { 10 }
-                cs'''8
-                a''4 ^ \markup { 11 }
-                gs''4 ^ \markup { 12 }
-                fs''8 ~ ^ \markup { 13 }
-                fs''8
-                a''4 ^ \markup { 14 }
-                gs''4 ^ \markup { 15 }
-                b''8 ~ ^ \markup { 16 }
-                b''4. ~
-                b''4. ~
-                b''4.
-                d''8 [ ^ \markup { 17 }
-                fs'8 ^ \markup { 18 }
-                d'8 ~ ] ^ \markup { 19 }
-                d'8 [
-                f8 ^ \markup { 20 }
-                b8 ] ^ \markup { 21 }
-                d'4. ~ ^ \markup { 22 }
-                d'4.
-                b'4 ^ \markup { 23 }
-                fs'8 ~ ^ \markup { 24 }
-                fs'8
-                a4 ^ \markup { 25 }
-                f4 ^ \markup { 26 }
-                b8 ~ ^ \markup { 27 }
-                b8
                 r4
+                e''8 ~ ^ \markup { 4 }
+                e''4.
+                b'4 ^ \markup { 5 }
+                fs'8 ~ ^ \markup { 6 }
+                fs'8
+                e''4 ^ \markup { 7 }
+                d''8 [ ^ \markup { 8 }
+                gs''8 ] ^ \markup { 9 }
+                r8
                 r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
+                r4
+                cs'''8 ~ ^ \markup { 10 }
+                cs'''4.
+                a''4 ^ \markup { 11 }
+                gs''8 ~ ^ \markup { 12 }
+                gs''8
+                fs''4 ^ \markup { 13 }
+                a''4 ^ \markup { 14 }
+                gs''8 ~ ^ \markup { 15 }
+                gs''8
+                b''4 ~ ^ \markup { 16 }
+                b''4. ~
+                b''4. ~
+                b''4
+                a''8 ^ \markup { 17 }
+                cs''8 ^ \markup { 18 }
+                a'4 ^ \markup { 19 }
+                c'8 [ ^ \markup { 20 }
+                fs'8 ^ \markup { 21 }
+                a'8 ~ ] ^ \markup { 22 }
+                a'4. ~
+                a'4
+                fs''8 ~ ^ \markup { 23 }
+                fs''8
+                cs''4 ^ \markup { 24 }
+                e'4 ^ \markup { 25 }
+                c'8 ~ ^ \markup { 26 }
+                c'8
+                fs'4 ^ \markup { 27 }
                 r4.
                 r4.
                 r4.
@@ -252,8 +254,8 @@
             }
         }
         \new Staff {
-            \set Staff.instrumentName = \markup { "Line 4" }
-            \set Staff.shortInstrumentName = \markup { 4: }
+            %%% \set PianoStaff.instrumentName = \markup { "Line 4" } %%%
+            %%% \set PianoStaff.shortInstrumentName = \markup { 4: } %%%
             {
                 \numericTimeSignature
                 \time 9/8
@@ -290,9 +292,9 @@
                 g'8 ^ \markup { 2 }
                 fs'8 [ ^ \markup { 3 }
                 d'8 ^ \markup { 4 }
-                e'16 ^ \markup { 5 }
+                b'16 ^ \markup { 5 }
                 fs'16 ] ^ \markup { 6 }
-                a'4 ^ \markup { 7 }
+                e''4 ^ \markup { 7 }
                 g'8 ^ \markup { 8 }
                 cs''8 [ ^ \markup { 9 }
                 b'8 ^ \markup { 10 }
@@ -310,9 +312,10 @@
                 g4 ^ \markup { 22 }
                 a8 [ ^ \markup { 23 }
                 fs'8 ^ \markup { 24 }
-                b'8 ] ^ \markup { 25 }
-                d''8 [ ^ \markup { 26 }
-                gs''8 ] ^ \markup { 27 }
+                b'8 ~ ] ^ \markup { 25 }
+                b'8
+                d''4 ^ \markup { 26 }
+                gs''4 ^ \markup { 27 }
                 r8
                 r4.
                 r4.
@@ -346,9 +349,10 @@
                 g4 ^ \markup { 49 }
                 a8 [ ^ \markup { 50 }
                 b8 ^ \markup { 51 }
-                a8 ] ^ \markup { 52 }
-                f8 [ ^ \markup { 53 }
-                e8 ] ^ \markup { 54 }
+                a8 ~ ] ^ \markup { 52 }
+                a8
+                f4 ^ \markup { 53 }
+                e4 ^ \markup { 54 }
                 r8
                 r4.
                 r4.
@@ -377,21 +381,19 @@
                 c4 ^ \markup { 76 }
                 d8 [ ^ \markup { 77 }
                 e8 ^ \markup { 78 }
-                d8 ] ^ \markup { 79 }
-                f8 [ ^ \markup { 80 }
-                e8 ] ^ \markup { 81 }
+                d8 ~ ] ^ \markup { 79 }
+                d8
+                f4 ^ \markup { 80 }
+                e4 ^ \markup { 81 }
                 r8
-                r4.
-                r4.
-                r4.
                 r4.
                 r4.
                 r4.
             }
         }
         \new Staff {
-            \set Staff.instrumentName = \markup { "Line 5" }
-            \set Staff.shortInstrumentName = \markup { 5: }
+            %%% \set PianoStaff.instrumentName = \markup { "Line 5" } %%%
+            %%% \set PianoStaff.shortInstrumentName = \markup { 5: } %%%
             {
                 \numericTimeSignature
                 \time 9/8
@@ -553,9 +555,9 @@
             }
         }
         \new Staff {
+            %%% \set PianoStaff.instrumentName = \markup { Drone } %%%
+            %%% \set PianoStaff.shortInstrumentName = \markup { 0: } %%%
             \clef "bass"
-            \set Staff.instrumentName = \markup { Drone }
-            \set Staff.shortInstrumentName = \markup { 0: }
             {
                 \numericTimeSignature
                 \time 9/8
