@@ -76,24 +76,24 @@
 # - (DONE) work drones into standard machines
 # - (DONE) mac (and maybe linux) midi playback... at least of short scores
 # - (DONE) better gen c short score
-# ---------------------------- TUESDAY
-# - short scores aren't showing line #s/names
-# - create midi files / garage band projects for each short score generation
-# - short score decent draft throughout
-# - plan out drone, and start better working into machines
-# - plan out cymbal, and start working better into machines
-# - drones good draft throughout (including orchestration)
-# - cymbal good draft throughout
-# - more orchestrating gen b
-# - more orchestrating gen c
-# - more orchestrating gen d
 # ---------------------------- WEDENSDAY AT APA
+# - short scores aren't showing line #s/names
 # - 8va spanner (e.g. end of gen d)
 # - multimeasure rest generator
 # - transposing parts
 # - tag to respell flats/sharps (on individual notes)
 # - tempo markings
+# - plan out drone, and start better working into machines
+# - plan out cymbal, and start working better into machines
+# - draft short scores throughout (based on sight only)
+# - create midi files / garage band projects for each short score generation
 # ---------------------------- WEDENSDAY EVENING
+# - midi review of short scores, with decent draft throughout
+# - drones good draft throughout (including orchestration)
+# - cymbal good draft throughout
+# - more orchestrating gen b
+# - more orchestrating gen c
+# - more orchestrating gen d
 # - some rhythms with metric modulations
 # - (maybe) tag attachments on individual abjad leaves? (some data structure on LogicalTieData?)
 # - good draft of gen e short score (especially Line 6)
