@@ -3,6 +3,11 @@
 *.sublime-workspace
 
 ##########################################
+# random mac files
+.DS_Store
+
+
+##########################################
 # settings file
 settings.py
 _settings.py
@@ -18,6 +23,9 @@ _settings.py
 pdf/
 .tar.gz
 
+##########################################
+# Misc Playback TOols (e.g. garage band)
+*.band/
 
 ##########################################
 # Lilypond gitignore
