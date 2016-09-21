@@ -81,6 +81,7 @@ class IntervalDisplacement(PitchDisplacementData):
         if indices:
             self.fillme(indices, (self.displacement_interval * -1,))
 
+    # TO DO.. this naming is confusing (i.e. confused with sharp/flat vs not up/down)
     def flat(self, *indices):
         if indices:
             for i in indices:

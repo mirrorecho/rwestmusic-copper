@@ -46,8 +46,8 @@ class Line2(GenC, machines.RhythmsBroken, gen_b.Line2):
             3:  -4,
             })
     pitch_displacement = machines.FifthDisplacement(
-            up      = (2,7,8),
-            down    = ( 5,  9)
+            up      = (2,8),
+            down    = (   9,)
             )
 
 # JUST A TEST:
@@ -69,7 +69,8 @@ class Line3(GenC, machines.RhythmsBroken, gen_b.Line3):
             12:((1,4),)*2 + ((1,2),),
             },
             default=((1,1),), limit=24)
-    rhythm_initial_silence = 28
+    # rhythm_initial_silence = 28
+    rhythm_initial_silence = 56
     breaks = ID1({
             7:   2,
             10:  -0.5,
@@ -79,8 +80,8 @@ class Line3(GenC, machines.RhythmsBroken, gen_b.Line3):
     pitch_respell = "sharps"
     rhythm_times = 1 # TO DO: do we want to repeat?? (would need to adjust or truncate the end)
     pitch_displacement = machines.FifthDisplacement(
-            up      = (2,3,8,9,10,),
-            down    = (   5,     11)
+            up      = (2,3,4,7,9,10,  17),
+            down    = (   5,6,     11)
             )
 # -------------------------------------------------------------------------------------------------
 
@@ -101,7 +102,8 @@ class Line4(Line3):
     rhythm_initial_silence = 30
     rhythm_times=1 # TO DO: ditto as Line3 - do we want to repeat?? (would need to adjust or truncate the end)
     pitch_displacement = machines.FifthDisplacement(
-            up      = (2,9),
+            up      = (2,5,7,9),
+            down =      ( 6,8,)
             )
     rhythm_multipliers = Line3.rhythm_multipliers.copy()
     rhythm_multipliers[8] = 0.5

@@ -110,6 +110,7 @@
 # - get_lilypond_file is being called twice on the bottom of orchestration files... fix
 # - review current short scores at piano and adjust
 # - good draft orchestration of gen b
+# - - - do something cool with the dissonance (Bb, A), at line3, event 27
 # - good draft orchestration of gen c
 # - good draft orchestration of gen d
 # - good draft orchestration of gen e
@@ -190,6 +191,7 @@
 
 # ---------------------------- FUTURE:
 # - new monitor / studio setup!!!
+# - I LOATHE GARAGE BAND... need some better way to create playback
 # - replace some class-defined stuff with modules / introspection (i.e. should not need to create a class to describe grid bubble lines that are described above)
 # - think about data cleanup carefully, and adjust
 # - parts need to be WAY WAY WAY simpler to generate!!!!
@@ -207,6 +209,7 @@
 # - keep relative durations as negative?
 # - bug, first rest in rhythm is removed if rhythm_initial_silence is also 0 (can work around be always using rhythm_initial_silence... but this is screwy)
 # - could go CRAZY (in a good way) with fragments, inheritance, etc. ... spend time on this, it could be fruitful
+# - go through all to dos!
 # IMPLEMENTING INTO CALLIOPE:
 # - make sure machines are self-contained. they shouldn't use attributes defined on other ones (except a few base ones like ticks and pitch)
 # - - - (e.g. pitch displacement should be more isolated... not built into structure of EventData)
