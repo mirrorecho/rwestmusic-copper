@@ -65,7 +65,8 @@ class Line3(GenD, gen_c.Line3):
     rhythm_times = 1
     pitch_displacement = gen_c.Line3.pitch_displacement +\
             machines.FifthDisplacement(
-                        down=(17,)
+                        up = (1,8),
+                        down=(   9,17,)
                         )
     pitch_displacement.cycle_fifth(18, cycle=(-1,-1,-1,1,1,1), times=6)
 
@@ -90,8 +91,8 @@ class Line4(GenD, gen_c.Line4):
     # show_data_type=machines.SegmentData
     pitch_displacement = gen_c.Line4.pitch_displacement +\
             machines.FifthDisplacement(
-                        up=  (     24,25,27,        40,     45),
-                        down=(20,22,        36,37,38,  41,43,  53),
+                        up=  (19,     24,25,27,        40,     45),
+                        down=(  20,22,        36,37,38,  41,43,  53),
                         )
     pitch_displacement.cycle_fifth(55, cycle=(-1,0,1,-1,1,0), times=3)
     breaks = ID1({
@@ -100,8 +101,8 @@ class Line4(GenD, gen_c.Line4):
             # 11:  2,
             # 13:  1,
             }, cyclic=False)
-    def update_data(self):
-        super().update_data()
+    def update_data(self, **kwargs):
+        super().update_data(**kwargs)
         if self.__class__.__name__ == "Line4": # this helps restrict tags to short score only
             self.events[55].tag("\clef bass")
 
@@ -124,8 +125,8 @@ class Line5(GenD, gen_c.Line4):
             )
     # pitch_displacement[0] = (-24,) # TEMP USE ... see 2 octaves down for ease-of-viewing only
     pitch_respell = "flats"
-    def update_data(self):
-        super().update_data()
+    def update_data(self, **kwargs):
+        super().update_data(**kwargs)
         self.events[7].tag("8va")
         self.events[126].tag("8va!")
 
@@ -134,14 +135,15 @@ class Line5(GenD, gen_c.Line4):
 bubbles.illustrate_me(__file__, 
     lambda: staves.CopperShortScore(
             bubbles.Bubble(
-                drone0 = Drone0(show_data_attr="original_depthwise_index"),
-                line1 = Line1(show_data_attr="original_depthwise_index"),
-                line2 = Line2(show_data_attr="original_depthwise_index"),
-                line3 = Line3(show_data_attr="original_depthwise_index"),
-                line4 = Line4(show_data_attr="original_depthwise_index"),
-                line5 = Line5(show_data_attr="original_depthwise_index"),
+                drone0 = Drone0(show_data_attr="original_depthwise_index", accidental_style="forget"),
+                line1 = Line1(show_data_attr="original_depthwise_index", accidental_style="forget"),
+                line2 = Line2(show_data_attr="original_depthwise_index", accidental_style="forget"),
+                line3 = Line3(show_data_attr="original_depthwise_index", accidental_style="forget"),
+                line4 = Line4(show_data_attr="original_depthwise_index", accidental_style="forget"),
+                line5 = Line5(show_data_attr="original_depthwise_index", accidental_style="forget"),
             ),
             sequence = ("line1","line2","line3","line4","line5","drone0"),
+            stylesheets = ("../../scores/stylesheets/shortscore.ily",)
         ).get_lilypond_file(),
     as_midi=True,
     )

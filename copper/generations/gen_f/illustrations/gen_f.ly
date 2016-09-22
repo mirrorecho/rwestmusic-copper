@@ -1,7 +1,9 @@
-% 2016-09-20 18:05
+% 2016-09-22 01:23
 
 \version "2.18.2"
 \language "english"
+
+\include "../../scores/stylesheets/shortscore.ily"
 
 \header {}
 
@@ -14,18 +16,16 @@
         \new Staff {
             \set Staff.instrumentName = \markup { "Line 1" }
             \set Staff.shortInstrumentName = \markup { 1: }
+            \time 4/4
             {
                 \numericTimeSignature
-                \time 4/4
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                \mark #6
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
+                {
+                    \mark #6
+                    \mark #6
+                    R1 * 6
+                }
                 r2.
                 <d' fs' g'>4 ~ ^ \markup { 1 }
                 <d' fs' g'>2
@@ -61,7 +61,9 @@
                 <a, d g>8
                 <g, f b>4. ^ \markup { 18 }
                 r2
-                r1
+                {
+                    R1 * 1
+                }
                 <a, f d'>2. ^ \markup { 19 }
                 <f, d b>4 ~ ^ \markup { 20 }
                 <f, d b>8
@@ -79,15 +81,18 @@
                 <a, d g>4
                 <c f b>4. ^ \markup { 30 }
                 r4.
-                r1
+                {
+                    R1 * 1
+                }
                 r8
                 <a, f a>2. ^ \markup { 31 }
                 <g, f b>8 ~ ^ \markup { 32 }
                 <g, f b>4
                 <a, f d'>4. ^ \markup { 33 }
                 r4.
-                r1
-                r1
+                {
+                    R1 * 2
+                }
                 r2
                 r8
                 <c f b>4. ~ ^ \markup { 34 }
@@ -105,118 +110,114 @@
         \new Staff {
             \set Staff.instrumentName = \markup { "Line 2" }
             \set Staff.shortInstrumentName = \markup { 2: }
+            \time 4/4
             {
                 \numericTimeSignature
-                \time 4/4
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                \mark #6
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
+                {
+                    \mark #6
+                    \mark #6
+                    R1 * 6
+                }
                 r2.
                 <d' fs' g'>4 ~ ^ \markup { 1 }
                 <d' fs' g'>2
-                <a b d'>4. ^ \markup { 2 }
-                <d' fs' g'>8 ~ ^ \markup { 3 }
-                <d' fs' g'>4
+                <b e' a'>4. ^ \markup { 2 }
+                <fs' g' a'>8 ~ ^ \markup { 3 }
+                <fs' g' a'>4
                 <fs' g' b'>2. ^ \markup { 4 }
                 <e' fs' g'>4. ^ \markup { 5 }
-                <fs' g' a'>4. ^ \markup { 6 }
+                <a' cs'' d''>4. ^ \markup { 6 }
                 r4
-                r1
+                {
+                    R1 * 1
+                }
                 r4
-                <fs' g' a'>2. ^ \markup { 7 }
-                <a b d'>4. ^ \markup { 8 }
-                <b e' g'>4. ^ \markup { 9 }
-                <f g b>4 ~ ^ \markup { 10 }
-                <f g b>2
-                <b d' e'>4. ^ \markup { 11 }
-                <f g b>8 ~ ^ \markup { 12 }
-                <f g b>4
-                <b e' g'>4. ^ \markup { 13 }
-                <d f b>4. ^ \markup { 14 }
-                <b g' a'>4. ^ \markup { 15 }
-                <f g b>2 ~ ^ \markup { 16 }
-                <f g b>8 ~
-                <f g b>2..
-                <b d' e'>8 ~ ^ \markup { 17 }
-                <b d' e'>4
-                <d f b>4. ^ \markup { 18 }
-                <b g' a'>4. ~ ^ \markup { 19 }
-                <b g' a'>4.
-                <c d b>4. ^ \markup { 20 }
-                <b g' a'>4 ~ ^ \markup { 21 }
-                <b g' a'>8
-                <d f b>2. ^ \markup { 22 }
-                <b e' g'>8 ~ ^ \markup { 23 }
-                <b e' g'>4
-                <f g b>4. ^ \markup { 24 }
-                <b g' a'>4. ^ \markup { 25 }
-                <c d b>4. ^ \markup { 26 }
-                <b e' g'>4. ^ \markup { 27 }
-                <f g b>4 ~ ^ \markup { 28 }
-                <f g b>2
-                <b d' e'>4. ^ \markup { 29 }
-                <f g b>8 ~ ^ \markup { 30 }
-                <f g b>4
-                <b e' g'>2. ^ \markup { 31 }
-                <d e f>4. ^ \markup { 32 }
-                <e f g>4. ^ \markup { 33 }
-                <e f g>4 ~ ^ \markup { 34 }
-                <e f g>2
-                <c d e>4. ^ \markup { 35 }
-                <d e f>8 ~ ^ \markup { 36 }
-                <d e f>4
-                <e f g>2. ^ \markup { 37 }
-                <c d e>4. ^ \markup { 38 }
-                <e f g>4. ^ \markup { 39 }
-                <d e f>4 ~ ^ \markup { 40 }
-                <d e f>8
-                <d e f>4. ^ \markup { 41 }
-                <e f g>4. ^ \markup { 42 }
-                <e f g>8 ~ ^ \markup { 43 }
-                <e f g>1 ~
-                <e f g>4.
-                <c d e>4. ^ \markup { 44 }
-                <d e f>4 ~ ^ \markup { 45 }
-                <d e f>8
-                <e f g>2. ^ \markup { 46 }
-                <c d e>8 ~ ^ \markup { 47 }
-                <c d e>4
-                <e f g>4. ^ \markup { 48 }
-                <d e f>4. ~ ^ \markup { 49 }
-                <d e f>4.
-                <d e f>4. ^ \markup { 50 }
-                <e f g>4 ~ ^ \markup { 51 }
-                <e f g>8
-                <e f g>4. ^ \markup { 52 }
-                <c d e>4. ^ \markup { 53 }
-                <d e f>8 ~ ^ \markup { 54 }
-                <d e f>4
-                <e f g>2. ^ \markup { 55 }
+                <cs'' d'' e''>2. ^ \markup { 7 }
+                <e' fs' a'>4. ^ \markup { 8 }
+                <fs' b' d''>4. ^ \markup { 9 }
+                <c' d' fs'>4 ~ ^ \markup { 10 }
+                <c' d' fs'>2
+                <fs' a' b'>4. ^ \markup { 11 }
+                <c' d' fs'>8 ~ ^ \markup { 12 }
+                <c' d' fs'>4
+                <fs' b' d''>4. ^ \markup { 13 }
+                <a c' fs'>4. ^ \markup { 14 }
+                <fs' d'' e''>4. ^ \markup { 15 }
+                <c' d' fs'>2 ~ ^ \markup { 16 }
+                <c' d' fs'>8 ~
+                <c' d' fs'>2..
+                <fs' a' b'>8 ~ ^ \markup { 17 }
+                <fs' a' b'>4
+                <a c' fs'>4. ^ \markup { 18 }
+                <fs' d'' e''>4. ~ ^ \markup { 19 }
+                <fs' d'' e''>4.
+                <g a fs'>4. ^ \markup { 20 }
+                <fs' d'' e''>4 ~ ^ \markup { 21 }
+                <fs' d'' e''>8
+                <a c' fs'>2. ^ \markup { 22 }
+                <fs' b' d''>8 ~ ^ \markup { 23 }
+                <fs' b' d''>4
+                <c' d' fs'>4. ^ \markup { 24 }
+                <fs' d'' e''>4. ^ \markup { 25 }
+                <g a fs'>4. ^ \markup { 26 }
+                <fs' b' d''>4. ^ \markup { 27 }
+                <c' d' fs'>4 ~ ^ \markup { 28 }
+                <c' d' fs'>2
+                <fs' a' b'>4. ^ \markup { 29 }
+                <c' d' fs'>8 ~ ^ \markup { 30 }
+                <c' d' fs'>4
+                <fs' b' d''>2. ^ \markup { 31 }
+                <a b c'>4. ^ \markup { 32 }
+                <b c' d'>4. ^ \markup { 33 }
+                <b c' d'>4 ~ ^ \markup { 34 }
+                <b c' d'>2
+                <g a b>4. ^ \markup { 35 }
+                <a b c'>8 ~ ^ \markup { 36 }
+                <a b c'>4
+                <b c' d'>2. ^ \markup { 37 }
+                <g a b>4. ^ \markup { 38 }
+                <b c' d'>4. ^ \markup { 39 }
+                <a b c'>4 ~ ^ \markup { 40 }
+                <a b c'>8
+                <a b c'>4. ^ \markup { 41 }
+                <b c' d'>4. ^ \markup { 42 }
+                <b c' d'>8 ~ ^ \markup { 43 }
+                <b c' d'>1 ~
+                <b c' d'>4.
+                <g a b>4. ^ \markup { 44 }
+                <a b c'>4 ~ ^ \markup { 45 }
+                <a b c'>8
+                <b c' d'>2. ^ \markup { 46 }
+                <g a b>8 ~ ^ \markup { 47 }
+                <g a b>4
+                <b c' d'>4. ^ \markup { 48 }
+                <a b c'>4. ~ ^ \markup { 49 }
+                <a b c'>4.
+                <a b c'>4. ^ \markup { 50 }
+                <b c' d'>4 ~ ^ \markup { 51 }
+                <b c' d'>8
+                <b c' d'>4. ^ \markup { 52 }
+                <g a b>4. ^ \markup { 53 }
+                <a b c'>8 ~ ^ \markup { 54 }
+                <a b c'>4
+                <b c' d'>2. ^ \markup { 55 }
             }
         }
         \new Staff {
             \set Staff.instrumentName = \markup { "Line 3" }
             \set Staff.shortInstrumentName = \markup { 3: }
+            \time 4/4
             {
                 \numericTimeSignature
-                \time 4/4
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                \clef "bass"
-                \clef treble
-                \mark #6
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
+                {
+                    \mark #6
+                    \mark #6
+                    R1 * 6
+                }
                 r2.
                 d''8 [ ^ \markup { 1 }
                 f'8 ] ^ \markup { 2 }
@@ -314,19 +315,16 @@
         \new Staff {
             \set Staff.instrumentName = \markup { "Line 4" }
             \set Staff.shortInstrumentName = \markup { 4: }
+            \time 4/4
             {
                 \numericTimeSignature
-                \time 4/4
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                \clef "bass"
-                \mark #6
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
+                {
+                    \mark #6
+                    \mark #6
+                    R1 * 6
+                }
                 r2.
                 d8 [ ^ \markup { 1 }
                 c8 ]
@@ -393,34 +391,24 @@
                 d,4 ^ \markup { 18 }
                 f,4
                 b,4
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
+                {
+                    R1 * 10
+                }
             }
         }
         \new Staff {
             \set Staff.instrumentName = \markup { "Line 5" }
             \set Staff.shortInstrumentName = \markup { 5: }
+            \time 4/4
             {
                 \numericTimeSignature
-                \time 4/4
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                \clef "bass"
-                \mark #6
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
+                {
+                    \mark #6
+                    \mark #6
+                    R1 * 6
+                }
                 r2.
                 d'8 [ ^ \markup { 1 }
                 c'8 ] ^ \markup { 2 }
@@ -486,40 +474,32 @@
                 f4 ^ \markup { 53 }
                 e4 ^ \markup { 54 }
                 r2
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
+                {
+                    R1 * 9
+                }
             }
         }
         \new Staff {
             \set Staff.instrumentName = \markup { "Line 6" }
             \set Staff.shortInstrumentName = \markup { 6: }
+            \time 4/4
             {
                 \numericTimeSignature
-                \time 4/4
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                \mark #6
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
+                {
+                    \mark #6
+                    \mark #6
+                    R1 * 6
+                }
                 r2.
                 d'4 ^ \markup { 1 }
                 g'8 [
                 fs'8 ]
                 d'4 ^ \markup { 2 }
-                e'8 [
+                b'8 [
                 fs'8 ]
-                a'4 ^ \markup { 3 }
+                e''4 ^ \markup { 3 }
                 g'8 [
                 cs''8 ]
                 b'4 ^ \markup { 4 }
@@ -542,8 +522,9 @@
                 d''8 [
                 gs''8 ]
                 r2.
-                r1
-                r1
+                {
+                    R1 * 2
+                }
                 r4.
                 b''4 ^ \markup { 10 }
                 a''8 [
@@ -606,42 +587,32 @@
                 f8 [
                 e8 ]
                 r2.
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
+                {
+                    R1 * 11
+                }
             }
         }
         \new Staff {
             \set Staff.instrumentName = \markup { "Line 7" }
             \set Staff.shortInstrumentName = \markup { 7: }
+            \time 4/4
             {
                 \numericTimeSignature
-                \time 4/4
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                \mark #6
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
+                {
+                    \mark #6
+                    \mark #6
+                    R1 * 6
+                }
                 r2.
                 d'4 ^ \markup { 1 }
                 g'8 [
                 fs'8 ]
                 d'4 ^ \markup { 2 }
-                e'8 [
+                b'8 [
                 fs'8 ]
-                a'4 ^ \markup { 3 }
+                e''4 ^ \markup { 3 }
                 g'8 [
                 cs''8 ]
                 b'4 ^ \markup { 4 }
@@ -664,8 +635,9 @@
                 d''8 [
                 gs''8 ]
                 r2.
-                r1
-                r1
+                {
+                    R1 * 2
+                }
                 r4.
                 b''4 ^ \markup { 10 }
                 a''8 [
@@ -728,35 +700,25 @@
                 f8 [
                 e8 ]
                 r2.
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
+                {
+                    R1 * 11
+                }
             }
         }
         \new Staff {
             \clef "bass"
             \set Staff.instrumentName = \markup { Drone }
             \set Staff.shortInstrumentName = \markup { 0: }
+            \time 4/4
             {
                 \numericTimeSignature
-                \time 4/4
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                \mark #6
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
+                {
+                    \mark #6
+                    \mark #6
+                    R1 * 6
+                }
                 r2.
                 d4 \pp ~ ~ \< ^ \markup { 1 }
                 d4 ~

@@ -1,7 +1,9 @@
-% 2016-09-21 22:01
+% 2016-09-22 02:09
 
 \version "2.18.2"
 \language "english"
+
+\include "../../scores/stylesheets/shortscore.ily"
 
 \header {}
 
@@ -18,7 +20,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
-                \accidentalStyle modern-cautionary
+                \accidentalStyle forget
                 {
                     \mark #4
                     \mark #4
@@ -83,7 +85,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
-                \accidentalStyle modern-cautionary
+                \accidentalStyle forget
                 {
                     \mark #4
                     \mark #4
@@ -139,7 +141,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
-                \accidentalStyle modern-cautionary
+                \accidentalStyle forget
                 {
                     \mark #4
                     \mark #4
@@ -147,51 +149,51 @@
                 }
                 r4.
                 r8
-                d'4 ^ \markup { 1 }
-                g'8 [ ^ \markup { 2 }
-                cs''8 ] ^ \markup { 3 }
+                a'4 ^ \markup { 1 }
+                d''8 [ ^ \markup { 2 }
+                gs''8 ] ^ \markup { 3 }
                 r8
                 r4.
                 r4
-                e''8 ~ ^ \markup { 4 }
-                e''4.
-                b'4 ^ \markup { 5 }
-                fs'8 ~ ^ \markup { 6 }
-                fs'8
-                e''4 ^ \markup { 7 }
-                d''8 [ ^ \markup { 8 }
-                gs''8 ] ^ \markup { 9 }
+                b''8 ~ ^ \markup { 4 }
+                b''4.
+                fs''4 ^ \markup { 5 }
+                cs''8 ~ ^ \markup { 6 }
+                cs''8
+                b''4 ^ \markup { 7 }
+                e'''8 [ ^ \markup { 8 }
+                ds'''8 ] ^ \markup { 9 }
                 r8
                 r4.
                 r4
-                cs'''8 ~ ^ \markup { 10 }
-                cs'''4.
-                a''4 ^ \markup { 11 }
-                gs''8 ~ ^ \markup { 12 }
-                gs''8
-                fs''4 ^ \markup { 13 }
-                a''4 ^ \markup { 14 }
-                gs''8 ~ ^ \markup { 15 }
-                gs''8
-                b''4 ~ ^ \markup { 16 }
-                b''4. ~
-                b''4. ~
-                b''4
-                a''8 ^ \markup { 17 }
-                cs''8 ^ \markup { 18 }
-                a'4 ^ \markup { 19 }
-                c'8 [ ^ \markup { 20 }
-                fs'8 ^ \markup { 21 }
-                a'8 ~ ] ^ \markup { 22 }
-                a'4. ~
-                a'4
-                fs''8 ~ ^ \markup { 23 }
-                fs''8
-                cs''4 ^ \markup { 24 }
-                e'4 ^ \markup { 25 }
-                c'8 ~ ^ \markup { 26 }
-                c'8
-                fs'4 ^ \markup { 27 }
+                gs'''8 ~ ^ \markup { 10 }
+                gs'''4.
+                e'''4 ^ \markup { 11 }
+                ds'''8 ~ ^ \markup { 12 }
+                ds'''8
+                cs'''4 ^ \markup { 13 }
+                e'''4 ^ \markup { 14 }
+                ds'''8 ~ ^ \markup { 15 }
+                ds'''8
+                fs'''4 ~ ^ \markup { 16 }
+                fs'''4. ~
+                fs'''4. ~
+                fs'''4
+                e'''8 ^ \markup { 17 }
+                gs''8 ^ \markup { 18 }
+                e''4 ^ \markup { 19 }
+                g'8 [ ^ \markup { 20 }
+                cs''8 ^ \markup { 21 }
+                e''8 ~ ] ^ \markup { 22 }
+                e''4. ~
+                e''4
+                cs'''8 ~ ^ \markup { 23 }
+                cs'''8
+                gs''4 ^ \markup { 24 }
+                b'4 ^ \markup { 25 }
+                g'8 ~ ^ \markup { 26 }
+                g'8
+                cs''4 ^ \markup { 27 }
                 r4.
                 {
                     R1 * 27/8
@@ -205,7 +207,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
-                \accidentalStyle modern-cautionary
+                \accidentalStyle forget
                 {
                     \mark #4
                     \mark #4
@@ -231,82 +233,82 @@
                 e''4 ^ \markup { 16 }
                 d''16 [ ^ \markup { 17 }
                 cs''16 ] ^ \markup { 18 }
-                e''4 ^ \markup { 19 }
-                g'8 ^ \markup { 20 }
-                fs'8 ^ \markup { 21 }
-                g4 ^ \markup { 22 }
-                a8 [ ^ \markup { 23 }
-                fs'8 ^ \markup { 24 }
-                b'8 ~ ] ^ \markup { 25 }
-                b'8
-                d''4 ^ \markup { 26 }
-                gs''4 ^ \markup { 27 }
+                b''4 ^ \markup { 19 }
+                d''8 ^ \markup { 20 }
+                cs''8 ^ \markup { 21 }
+                d'4 ^ \markup { 22 }
+                e'8 [ ^ \markup { 23 }
+                cs''8 ^ \markup { 24 }
+                fs''8 ~ ] ^ \markup { 25 }
+                fs''8
+                a''4 ^ \markup { 26 }
+                ds'''4 ^ \markup { 27 }
                 r8
                 r4.
                 r4.
                 {
                     R1 * 9/4
                 }
-                b''4 ^ \markup { 28 }
-                a''8 ^ \markup { 29 }
-                gs''8 [ ^ \markup { 30 }
-                e''8 ^ \markup { 31 }
-                fs''16 ^ \markup { 32 }
-                gs''16 ] ^ \markup { 33 }
-                b''4 ^ \markup { 34 }
-                a''8 ^ \markup { 35 }
-                cs''8 [ ^ \markup { 36 }
-                e'8 ^ \markup { 37 }
-                c'16 ^ \markup { 38 }
-                b16 ] ^ \markup { 39 }
-                e'8 [ ^ \markup { 40 }
-                c'8 ^ \markup { 41 }
-                b8 ] ^ \markup { 42 }
-                g4 ^ \markup { 43 }
-                f16 [ ^ \markup { 44 }
-                b16 ] ^ \markup { 45 }
-                d'4 ^ \markup { 46 }
-                c'8 ^ \markup { 47 }
-                b8 ^ \markup { 48 }
-                g4 ^ \markup { 49 }
-                a8 [ ^ \markup { 50 }
-                b8 ^ \markup { 51 }
-                a8 ~ ] ^ \markup { 52 }
-                a8
-                f4 ^ \markup { 53 }
-                e4 ^ \markup { 54 }
+                fs'''4 ^ \markup { 28 }
+                e'''8 ^ \markup { 29 }
+                ds'''8 [ ^ \markup { 30 }
+                b''8 ^ \markup { 31 }
+                cs'''16 ^ \markup { 32 }
+                ds'''16 ] ^ \markup { 33 }
+                fs'''4 ^ \markup { 34 }
+                e'''8 ^ \markup { 35 }
+                gs''8 [ ^ \markup { 36 }
+                b'8 ^ \markup { 37 }
+                g'16 ^ \markup { 38 }
+                fs'16 ] ^ \markup { 39 }
+                b'8 [ ^ \markup { 40 }
+                g'8 ^ \markup { 41 }
+                fs'8 ] ^ \markup { 42 }
+                d'4 ^ \markup { 43 }
+                c'16 [ ^ \markup { 44 }
+                fs'16 ] ^ \markup { 45 }
+                a'4 ^ \markup { 46 }
+                g'8 ^ \markup { 47 }
+                fs'8 ^ \markup { 48 }
+                d'4 ^ \markup { 49 }
+                e'8 [ ^ \markup { 50 }
+                fs'8 ^ \markup { 51 }
+                e'8 ~ ] ^ \markup { 52 }
+                e'8
+                c'4 ^ \markup { 53 }
+                b4 ^ \markup { 54 }
                 r8
                 r4.
                 r4.
                 \clef bass
-                c4 ^ \markup { 55 }
-                as,8 ^ \markup { 56 }
-                e8 [ ^ \markup { 57 }
-                f,8 ^ \markup { 58 }
-                d16 ^ \markup { 59 }
-                e16 ] ^ \markup { 60 }
-                c4 ^ \markup { 61 }
-                as,8 ^ \markup { 62 }
-                e8 [ ^ \markup { 63 }
-                g,8 ^ \markup { 64 }
-                f16 ^ \markup { 65 }
-                e16 ] ^ \markup { 66 }
-                g,8 [ ^ \markup { 67 }
-                as,8 ^ \markup { 68 }
-                e8 ] ^ \markup { 69 }
-                c4 ^ \markup { 70 }
-                f16 [ ^ \markup { 71 }
-                e16 ] ^ \markup { 72 }
-                g4 ^ \markup { 73 }
-                f8 ^ \markup { 74 }
-                e8 ^ \markup { 75 }
-                c4 ^ \markup { 76 }
-                d8 [ ^ \markup { 77 }
-                e8 ^ \markup { 78 }
-                d8 ~ ] ^ \markup { 79 }
-                d8
-                f4 ^ \markup { 80 }
-                e4 ^ \markup { 81 }
+                g4 ^ \markup { 55 }
+                f8 ^ \markup { 56 }
+                b8 [ ^ \markup { 57 }
+                c8 ^ \markup { 58 }
+                a16 ^ \markup { 59 }
+                b16 ] ^ \markup { 60 }
+                g4 ^ \markup { 61 }
+                f8 ^ \markup { 62 }
+                b8 [ ^ \markup { 63 }
+                d8 ^ \markup { 64 }
+                c'16 ^ \markup { 65 }
+                b16 ] ^ \markup { 66 }
+                d8 [ ^ \markup { 67 }
+                f8 ^ \markup { 68 }
+                b8 ] ^ \markup { 69 }
+                g4 ^ \markup { 70 }
+                c'16 [ ^ \markup { 71 }
+                b16 ] ^ \markup { 72 }
+                d'4 ^ \markup { 73 }
+                c'8 ^ \markup { 74 }
+                b8 ^ \markup { 75 }
+                g4 ^ \markup { 76 }
+                a8 [ ^ \markup { 77 }
+                b8 ^ \markup { 78 }
+                a8 ~ ] ^ \markup { 79 }
+                a8
+                c'4 ^ \markup { 80 }
+                b4 ^ \markup { 81 }
                 r8
                 {
                     R1 * 9/8
@@ -320,7 +322,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
-                \accidentalStyle modern-cautionary
+                \accidentalStyle forget
                 {
                     \mark #4
                     \mark #4
@@ -468,7 +470,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
-                \accidentalStyle modern-cautionary
+                \accidentalStyle forget
                 {
                     \mark #4
                     \mark #4
