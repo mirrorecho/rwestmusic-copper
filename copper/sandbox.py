@@ -91,6 +91,7 @@
 # - - - do something cool with the dissonance (Bb, A), at line3, event 27
 # - more orchestrating gen c
 # - more orchestrating gen d
+# - - - be careful with G natural (against G#) in line 1, event 4
 # - some rhythms with metric modulations
 # - (maybe) tag attachments on individual abjad leaves? (some data structure on LogicalTieData?)
 # - good draft of gen e short score (especially Line 6)

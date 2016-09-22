@@ -86,8 +86,8 @@ class Line4(GenD, gen_c.Line4):
     metrical_durations = ID(default=((3,8),(3,8),(3,8),), limit=24)
     rhythm_times = 3
     rhythm_initial_silence = ((8 * 3) + 2) * 3/2
-    # show_data_attr="my_index"
-    # show_data_type=machines.SegmentData
+    show_data_attr="my_index"
+    show_data_type=machines.SegmentData
     pitch_displacement = gen_c.Line4.pitch_displacement +\
             machines.FifthDisplacement(
                         up=  (     24,25,27,        40,     45),
