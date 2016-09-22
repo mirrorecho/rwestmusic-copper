@@ -27,6 +27,7 @@ class Rhythms(object):
     rhythm_times = 1
 
     rhythm_initial_silence = 0
+    multimasure_rests_length = None
 
 
     def set_logical_tie(self, logical_tie, **kwargs):
@@ -118,6 +119,58 @@ class Rhythms(object):
         """
         return int(sum([d[0]/d[1] for d in self.metrical_durations.flattened()]) * self.rhythm_denominator)
 
+    def replace_multimeasure_rests(self, music):
+
+        if self.time_signature:
+            measure_length = abjad.Duration(self.time_signature)
+        else:
+            # if no time signature specified, then this gets the pair for the duration of the first measure:
+            measure_length = sum([abjad.Duration(i) for i in self.metrical_durations[0]])
+
+        leaves = abjad.select(music).by_leaf()
+        rest_measures = 0
+        measure_duration_tally = abjad.Duration(0)
+        measure_has_only_rests = True # assume innocent until proven guilty
+        measure_music_index = 0
+        start_rest_music_index = 0
+        end_rest_music_index = 0
+        
+        leaves_length = len(leaves)
+        print(music)
+        for i,l in enumerate(leaves):
+            
+            measure_duration_tally += l.written_duration
+            
+            if not isinstance(l, abjad.Rest):
+                measure_has_only_rests = False
+            
+            if measure_duration_tally==measure_length:
+                # if we're at the end of the line or this measure has notes, then maybe we need to add multimeasure rest beforehand
+                # and then go and set rests_length back to 0
+                if i==leaves_length-1 or not measure_has_only_rests:
+                    # then, add multimeasure rest, if > 0
+                    if rest_measures > 0:
+                        print("MUTATE TO ADD REST %s/%s * %s" % (measure_length.pair[0], measure_length.pair[1], rest_measures) )
+                        print("Add from music index %s to %s" % (start_rest_music_index, end_rest_music_index+1) )
+                        print("---------------------------------------")
+                        my_multimeasure_rests = abjad.Container("R1 * %s/%s * %s" % (measure_length.pair[0], measure_length.pair[1], rest_measures))
+                        abjad.mutate(music[start_rest_music_index:end_rest_music_index+1]).replace(my_multimeasure_rests)
+                        print(music)
+                    rest_measures = 0
+                else:
+                    if rest_measures == 0:
+                        start_rest_music_index = measure_music_index
+                    end_rest_music_index = i
+                    rest_measures += 1
+                # this measure is done, so set duration tally back to 0,
+                # assume all rests in measure, and increase music index
+                # for the following measure:
+                measure_duration_tally = abjad.Duration(0)
+                measure_music_index = i + 1 
+                measure_has_only_rests = True
+
+
+
     def get_signed_ticks_list(self):
         """
         returns flattened list of all ticks, padded at the end based on the length, with rests as negative values
@@ -165,3 +218,4 @@ class Rhythms(object):
     def process_music(self, music, **kwargs):
         super().process_music(music, **kwargs)
         self.process_logical_ties(music, **kwargs)
+        self.replace_multimeasure_rests(music)

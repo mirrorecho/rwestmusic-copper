@@ -1,4 +1,4 @@
-% 2016-09-20 23:10
+% 2016-09-21 11:41
 
 \version "2.18.2"
 \language "english"
@@ -12,8 +12,8 @@
 \score {
     \new Score <<
         \new Staff {
-            %%% \set PianoStaff.instrumentName = \markup { "Line 1" } %%%
-            %%% \set PianoStaff.shortInstrumentName = \markup { 1: } %%%
+            \set Staff.instrumentName = \markup { "Line 1" }
+            \set Staff.shortInstrumentName = \markup { 1: }
             {
                 \numericTimeSignature
                 \time 9/8
@@ -82,8 +82,8 @@
             }
         }
         \new Staff {
-            %%% \set PianoStaff.instrumentName = \markup { "Line 2" } %%%
-            %%% \set PianoStaff.shortInstrumentName = \markup { 2: } %%%
+            \set Staff.instrumentName = \markup { "Line 2" }
+            \set Staff.shortInstrumentName = \markup { 2: }
             {
                 \numericTimeSignature
                 \time 9/8
@@ -150,8 +150,8 @@
             }
         }
         \new Staff {
-            %%% \set PianoStaff.instrumentName = \markup { "Line 3" } %%%
-            %%% \set PianoStaff.shortInstrumentName = \markup { 3: } %%%
+            \set Staff.instrumentName = \markup { "Line 3" }
+            \set Staff.shortInstrumentName = \markup { 3: }
             {
                 \numericTimeSignature
                 \time 9/8
@@ -254,8 +254,8 @@
             }
         }
         \new Staff {
-            %%% \set PianoStaff.instrumentName = \markup { "Line 4" } %%%
-            %%% \set PianoStaff.shortInstrumentName = \markup { 4: } %%%
+            \set Staff.instrumentName = \markup { "Line 4" }
+            \set Staff.shortInstrumentName = \markup { 4: }
             {
                 \numericTimeSignature
                 \time 9/8
@@ -392,8 +392,8 @@
             }
         }
         \new Staff {
-            %%% \set PianoStaff.instrumentName = \markup { "Line 5" } %%%
-            %%% \set PianoStaff.shortInstrumentName = \markup { 5: } %%%
+            \set Staff.instrumentName = \markup { "Line 5" }
+            \set Staff.shortInstrumentName = \markup { 5: }
             {
                 \numericTimeSignature
                 \time 9/8
@@ -423,141 +423,143 @@
                 r1
                 r8
                 r2.
-                a,4 ^ \markup { 1 }
-                d8 ^ \markup { 2 }
-                af8 ^ \markup { 3 }
-                b4 ^ \markup { 4 }
-                af'8 [ ^ \markup { 5 }
-                bf'8 ^ \markup { 6 }
-                af''8 ] ^ \markup { 7 }
-                gf''16 [ ^ \markup { 8 }
-                f''16 ^ \markup { 9 }
-                ef''8 ^ \markup { 10 }
-                gf''16 ^ \markup { 11 }
-                f''16 ] ^ \markup { 12 }
-                ef''8 [ ^ \markup { 13 }
-                gf''8 ^ \markup { 14 }
-                f''8 ] ^ \markup { 15 }
-                af''4. ~ ^ \markup { 16 }
-                af''8 [
-                gf''8 ^ \markup { 17 }
-                f''8 ] ^ \markup { 18 }
-                af''8 [ ^ \markup { 19 }
-                gf''16 ^ \markup { 20 }
-                f''16 ^ \markup { 21 }
-                df''8 ] ^ \markup { 22 }
-                ef''16 [ ^ \markup { 23 }
-                f''16 ^ \markup { 24 }
-                ef''8 ^ \markup { 25 }
-                gf''8 ] ^ \markup { 26 }
-                f''8 [ ^ \markup { 27 }
-                af''8 ^ \markup { 28 }
-                gf''16 ^ \markup { 29 }
-                f''16 ] ^ \markup { 30 }
-                df''8 [ ^ \markup { 31 }
-                ef''16 ^ \markup { 32 }
-                f''16 ^ \markup { 33 }
-                af''8 ] ^ \markup { 34 }
-                gf''16 [ ^ \markup { 35 }
-                f''16 ^ \markup { 36 }
-                ef''8 ^ \markup { 37 }
-                gf''16 ^ \markup { 38 }
-                f''16 ] ^ \markup { 39 }
-                ef''8 [ ^ \markup { 40 }
-                gf''8 ^ \markup { 41 }
-                f''8 ] ^ \markup { 42 }
-                af''4 ^ \markup { 43 }
-                gf''16 [ ^ \markup { 44 }
-                f''16 ] ^ \markup { 45 }
-                af''8 [ ^ \markup { 46 }
-                gf''16 ^ \markup { 47 }
-                f''16 ^ \markup { 48 }
-                df''8 ] ^ \markup { 49 }
-                ef''16 [ ^ \markup { 50 }
-                f''16 ^ \markup { 51 }
-                ef''8 ^ \markup { 52 }
-                gf''8 ] ^ \markup { 53 }
-                f''8 [ ^ \markup { 54 }
-                af''8 ^ \markup { 55 }
-                gf''16 ^ \markup { 56 }
-                f''16 ] ^ \markup { 57 }
-                df''8 [ ^ \markup { 58 }
-                ef''16 ^ \markup { 59 }
-                f''16 ^ \markup { 60 }
-                af''8 ] ^ \markup { 61 }
-                gf''16 [ ^ \markup { 62 }
-                f''16 ^ \markup { 63 }
-                ef''8 ^ \markup { 64 }
-                gf''16 ^ \markup { 65 }
-                f''16 ] ^ \markup { 66 }
-                ef''8 [ ^ \markup { 67 }
-                gf''8 ^ \markup { 68 }
-                f''8 ] ^ \markup { 69 }
-                af''4. ~ ^ \markup { 70 }
-                af''8 [
-                gf''8 ^ \markup { 71 }
-                f''8 ] ^ \markup { 72 }
-                af''8 [ ^ \markup { 73 }
-                gf''16 ^ \markup { 74 }
-                f''16 ^ \markup { 75 }
-                df''8 ] ^ \markup { 76 }
-                ef''16 [ ^ \markup { 77 }
-                f''16 ^ \markup { 78 }
-                ef''8 ^ \markup { 79 }
-                gf''8 ] ^ \markup { 80 }
-                f''8 [ ^ \markup { 81 }
-                af''8 ^ \markup { 82 }
-                gf''16 ^ \markup { 83 }
-                f''16 ] ^ \markup { 84 }
-                df''8 [ ^ \markup { 85 }
-                ef''16 ^ \markup { 86 }
-                f''16 ^ \markup { 87 }
-                af''8 ] ^ \markup { 88 }
-                gf''16 [ ^ \markup { 89 }
-                f''16 ^ \markup { 90 }
-                ef''8 ^ \markup { 91 }
-                gf''16 ^ \markup { 92 }
-                f''16 ] ^ \markup { 93 }
-                ef''8 [ ^ \markup { 94 }
-                gf''8 ^ \markup { 95 }
-                f''8 ] ^ \markup { 96 }
-                af''4 ^ \markup { 97 }
-                gf''16 [ ^ \markup { 98 }
-                f''16 ] ^ \markup { 99 }
-                af''8 [ ^ \markup { 100 }
-                gf''16 ^ \markup { 101 }
-                f''16 ^ \markup { 102 }
-                df''8 ] ^ \markup { 103 }
-                ef''16 [ ^ \markup { 104 }
-                f''16 ^ \markup { 105 }
-                ef''8 ^ \markup { 106 }
-                gf''8 ] ^ \markup { 107 }
-                f''8 [ ^ \markup { 108 }
-                af''8 ^ \markup { 109 }
-                gf''16 ^ \markup { 110 }
-                f''16 ] ^ \markup { 111 }
-                df''8 [ ^ \markup { 112 }
-                ef''16 ^ \markup { 113 }
-                f''16 ^ \markup { 114 }
-                af''8 ] ^ \markup { 115 }
-                gf''16 [ ^ \markup { 116 }
-                f''16 ^ \markup { 117 }
-                ef''8 ^ \markup { 118 }
-                gf''16 ^ \markup { 119 }
-                f''16 ] ^ \markup { 120 }
-                ef''8 [ ^ \markup { 121 }
-                gf''8 ^ \markup { 122 }
-                f''8 ] ^ \markup { 123 }
-                af''4. ~ ^ \markup { 124 }
-                af''8 [
-                gf''8 ^ \markup { 125 }
-                f''8 ] ^ \markup { 126 }
+                a'4 ^ \markup { 1 }
+                d''8 ^ \markup { 2 }
+                af''8 ^ \markup { 3 }
+                b''4 ^ \markup { 4 }
+                af'''8 [ ^ \markup { 5 }
+                bf'''8 ^ \markup { 6 }
+                \ottava #1
+                af''''8 ] ^ \markup { 7 }
+                gf''''16 [ ^ \markup { 8 }
+                f''''16 ^ \markup { 9 }
+                ef''''8 ^ \markup { 10 }
+                gf''''16 ^ \markup { 11 }
+                f''''16 ] ^ \markup { 12 }
+                ef''''8 [ ^ \markup { 13 }
+                gf''''8 ^ \markup { 14 }
+                f''''8 ] ^ \markup { 15 }
+                af''''4. ~ ^ \markup { 16 }
+                af''''8 [
+                gf''''8 ^ \markup { 17 }
+                f''''8 ] ^ \markup { 18 }
+                af''''8 [ ^ \markup { 19 }
+                gf''''16 ^ \markup { 20 }
+                f''''16 ^ \markup { 21 }
+                df''''8 ] ^ \markup { 22 }
+                ef''''16 [ ^ \markup { 23 }
+                f''''16 ^ \markup { 24 }
+                ef''''8 ^ \markup { 25 }
+                gf''''8 ] ^ \markup { 26 }
+                f''''8 [ ^ \markup { 27 }
+                af''''8 ^ \markup { 28 }
+                gf''''16 ^ \markup { 29 }
+                f''''16 ] ^ \markup { 30 }
+                df''''8 [ ^ \markup { 31 }
+                ef''''16 ^ \markup { 32 }
+                f''''16 ^ \markup { 33 }
+                af''''8 ] ^ \markup { 34 }
+                gf''''16 [ ^ \markup { 35 }
+                f''''16 ^ \markup { 36 }
+                ef''''8 ^ \markup { 37 }
+                gf''''16 ^ \markup { 38 }
+                f''''16 ] ^ \markup { 39 }
+                ef''''8 [ ^ \markup { 40 }
+                gf''''8 ^ \markup { 41 }
+                f''''8 ] ^ \markup { 42 }
+                af''''4 ^ \markup { 43 }
+                gf''''16 [ ^ \markup { 44 }
+                f''''16 ] ^ \markup { 45 }
+                af''''8 [ ^ \markup { 46 }
+                gf''''16 ^ \markup { 47 }
+                f''''16 ^ \markup { 48 }
+                df''''8 ] ^ \markup { 49 }
+                ef''''16 [ ^ \markup { 50 }
+                f''''16 ^ \markup { 51 }
+                ef''''8 ^ \markup { 52 }
+                gf''''8 ] ^ \markup { 53 }
+                f''''8 [ ^ \markup { 54 }
+                af''''8 ^ \markup { 55 }
+                gf''''16 ^ \markup { 56 }
+                f''''16 ] ^ \markup { 57 }
+                df''''8 [ ^ \markup { 58 }
+                ef''''16 ^ \markup { 59 }
+                f''''16 ^ \markup { 60 }
+                af''''8 ] ^ \markup { 61 }
+                gf''''16 [ ^ \markup { 62 }
+                f''''16 ^ \markup { 63 }
+                ef''''8 ^ \markup { 64 }
+                gf''''16 ^ \markup { 65 }
+                f''''16 ] ^ \markup { 66 }
+                ef''''8 [ ^ \markup { 67 }
+                gf''''8 ^ \markup { 68 }
+                f''''8 ] ^ \markup { 69 }
+                af''''4. ~ ^ \markup { 70 }
+                af''''8 [
+                gf''''8 ^ \markup { 71 }
+                f''''8 ] ^ \markup { 72 }
+                af''''8 [ ^ \markup { 73 }
+                gf''''16 ^ \markup { 74 }
+                f''''16 ^ \markup { 75 }
+                df''''8 ] ^ \markup { 76 }
+                ef''''16 [ ^ \markup { 77 }
+                f''''16 ^ \markup { 78 }
+                ef''''8 ^ \markup { 79 }
+                gf''''8 ] ^ \markup { 80 }
+                f''''8 [ ^ \markup { 81 }
+                af''''8 ^ \markup { 82 }
+                gf''''16 ^ \markup { 83 }
+                f''''16 ] ^ \markup { 84 }
+                df''''8 [ ^ \markup { 85 }
+                ef''''16 ^ \markup { 86 }
+                f''''16 ^ \markup { 87 }
+                af''''8 ] ^ \markup { 88 }
+                gf''''16 [ ^ \markup { 89 }
+                f''''16 ^ \markup { 90 }
+                ef''''8 ^ \markup { 91 }
+                gf''''16 ^ \markup { 92 }
+                f''''16 ] ^ \markup { 93 }
+                ef''''8 [ ^ \markup { 94 }
+                gf''''8 ^ \markup { 95 }
+                f''''8 ] ^ \markup { 96 }
+                af''''4 ^ \markup { 97 }
+                gf''''16 [ ^ \markup { 98 }
+                f''''16 ] ^ \markup { 99 }
+                af''''8 [ ^ \markup { 100 }
+                gf''''16 ^ \markup { 101 }
+                f''''16 ^ \markup { 102 }
+                df''''8 ] ^ \markup { 103 }
+                ef''''16 [ ^ \markup { 104 }
+                f''''16 ^ \markup { 105 }
+                ef''''8 ^ \markup { 106 }
+                gf''''8 ] ^ \markup { 107 }
+                f''''8 [ ^ \markup { 108 }
+                af''''8 ^ \markup { 109 }
+                gf''''16 ^ \markup { 110 }
+                f''''16 ] ^ \markup { 111 }
+                df''''8 [ ^ \markup { 112 }
+                ef''''16 ^ \markup { 113 }
+                f''''16 ^ \markup { 114 }
+                af''''8 ] ^ \markup { 115 }
+                gf''''16 [ ^ \markup { 116 }
+                f''''16 ^ \markup { 117 }
+                ef''''8 ^ \markup { 118 }
+                gf''''16 ^ \markup { 119 }
+                f''''16 ] ^ \markup { 120 }
+                ef''''8 [ ^ \markup { 121 }
+                gf''''8 ^ \markup { 122 }
+                f''''8 ] ^ \markup { 123 }
+                af''''4. ~ ^ \markup { 124 }
+                af''''8 [
+                gf''''8 ^ \markup { 125 }
+                f''''8 ] ^ \markup { 126 }
+                \ottava #0
             }
         }
         \new Staff {
-            %%% \set PianoStaff.instrumentName = \markup { Drone } %%%
-            %%% \set PianoStaff.shortInstrumentName = \markup { 0: } %%%
             \clef "bass"
+            \set Staff.instrumentName = \markup { Drone }
+            \set Staff.shortInstrumentName = \markup { 0: }
             {
                 \numericTimeSignature
                 \time 9/8

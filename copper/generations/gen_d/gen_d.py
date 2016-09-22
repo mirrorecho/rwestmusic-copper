@@ -122,8 +122,12 @@ class Line5(GenD, gen_c.Line4):
     pitch_displacement = machines.FifthDisplacement(
             up =    (1,2,3,4,5,7)
             )
-    pitch_displacement[0] = (-24,) # TEMP USE ... see 2 octaves down for ease-of-viewing only
+    # pitch_displacement[0] = (-24,) # TEMP USE ... see 2 octaves down for ease-of-viewing only
     pitch_respell = "flats"
+    def update_data(self):
+        super().update_data()
+        self.events[7].tag("8va")
+        self.events[126].tag("8va!")
 
 # -------------------------------------------------------------------------------------------------
 

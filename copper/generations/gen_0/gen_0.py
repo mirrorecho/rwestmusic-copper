@@ -33,8 +33,9 @@ class Line1(Gen0, machines.PitchedLine):
 #             machines.SegmentedLine,
 #             ):
 
-    metrical_durations = ID({}, default=((1,1),), limit=12)
+    metrical_durations = ID({}, default=((1,1),), limit=15)
     rhythm_initial_silence = 12
+    rhythm_times = 1
     rhythm_sequence = ID1({
         5:1,
         6:2,
@@ -85,7 +86,7 @@ class Line1(Gen0, machines.PitchedLine):
 bubbles.illustrate_me(__file__, 
     lambda: staves.CopperShortScore(
             bubbles.Bubble(
-                drone0 = Drone0(show_data_attr="original_depthwise_index"),
+                # drone0 = Drone0(show_data_attr="original_depthwise_index"),
                 line1 = Line1(show_data_attr="original_depthwise_index"),
             ),
             sequence = ("line1","drone0"),

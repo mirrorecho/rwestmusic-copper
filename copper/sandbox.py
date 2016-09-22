@@ -76,9 +76,9 @@
 # - (DONE) work drones into standard machines
 # - (DONE) mac (and maybe linux) midi playback... at least of short scores
 # - (DONE) better gen c short score
+# - (DONE) short scores aren't showing line #s/names
+# - (DONE) 8va spanner (e.g. end of gen d)
 # ---------------------------- WEDENSDAY AT APA
-# - short scores aren't showing line #s/names
-# - 8va spanner (e.g. end of gen d)
 # - multimeasure rest generator
 # - transposing parts
 # - tag to respell flats/sharps (on individual notes)
@@ -92,6 +92,7 @@
 # - drones good draft throughout (including orchestration)
 # - cymbal good draft throughout
 # - more orchestrating gen b
+# - - - do something cool with the dissonance (Bb, A), at line3, event 27
 # - more orchestrating gen c
 # - more orchestrating gen d
 # - some rhythms with metric modulations
@@ -113,7 +114,6 @@
 # - review current short scores at piano and adjust
 # ---------------------------- THURSDAY APA
 # - good draft orchestration of gen b
-# - - - do something cool with the dissonance (Bb, A), at line3, event 27
 # - good draft orchestration of gen c
 # - good draft orchestration of gen d
 # - good draft orchestration of gen e
@@ -233,11 +233,27 @@
 # - fix illustrate_me funkiness added for OSX sublimetext virtual environment support
 # - look ingo abjad's IOManager run_lilypond method ... seems like lilypond_path argument unused... submit a fix?
 # - better way to specify header (title, composer, footer, etc) without sticking it in the stylesheet
+# - Tuples!!!!
+# - deal with changing time signatures within a line
+# - - - way to specify
+# - - - update multimeasure rest generator to accomodate
 
 import abjad
 from calliope import bubbles
 from copy import copy
 from copper import machines
+
+# r = abjad.scoretools.make_multimeasure_rests([ (6,8),(3,8), (6,8),(3,8), (6,8),(3,8),  ])
+r = abjad.Container("R1 *9/8 * 4")
+t = abjad.TimeSignature( (9,8) )
+s = abjad.Staff()
+s.append(r)
+abjad.attach(t, s[0])
+abjad.show(s)
+print(format(s))
+
+
+
 # from copper.machines import Fragments
 
 # a = machines.IndexedData(default=78)
