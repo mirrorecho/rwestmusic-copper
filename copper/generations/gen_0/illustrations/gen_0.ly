@@ -1,4 +1,4 @@
-% 2016-09-21 20:22
+% 2016-09-21 20:30
 
 \version "2.18.2"
 \language "english"
@@ -50,7 +50,6 @@
                 b4 ^ \markup { 27 }
                 {
                     R1 * 3
-                    \bar "|."
                 }
             }
         }
@@ -58,6 +57,29 @@
             \clef "bass"
             \set Staff.instrumentName = \markup { Drone }
             \set Staff.shortInstrumentName = \markup { 0: }
+            {
+                \numericTimeSignature
+                \accidentalStyle modern-cautionary
+                \time 4/4
+                r2
+                d2 \pp ~ \< ^ \markup { 1 }
+                d1 \mp ~ \> ^ \markup { 2 }
+                d2 \pp ^ \markup { 3 }
+                r2
+                r2
+                d2 \pp ~ \< ^ \markup { 5 }
+                d1 \mp ~ \> ^ \markup { 6 }
+                d2 \pp ^ \markup { 7 }
+                r2
+                r2
+                d2 \pp ~ \< ^ \markup { 9 }
+                d1 \mp ~ \> ^ \markup { 10 }
+                d2 \pp ^ \markup { 11 }
+                r2
+                r2
+                d2 \pp ^ \markup { 13 }
+                \bar "|."
+            }
         }
     >>
     \midi {}

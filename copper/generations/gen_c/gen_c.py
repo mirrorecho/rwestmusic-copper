@@ -50,13 +50,6 @@ class Line2(GenC, machines.RhythmsBroken, gen_b.Line2):
             down    = (   9,)
             )
 
-# JUST A TEST:
-# class Line2Fragment(machines.FragmentLine, Line2):
-#     fragment_indices = (0,2,7,14)
-#     fragment_override_counts = (3,None,6,None)
-#     fragment_precede_counts=(1,None,2,None)
-#     fragment_precede_ties = (True,True,False,True)
-
 # -------------------------------------------------------------------------------------------------
 
 class Line3(GenC, machines.RhythmsBroken, gen_b.Line3):

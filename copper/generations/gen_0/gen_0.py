@@ -7,7 +7,7 @@ from copper.machines import IndexedData as ID, ID1 # just to avoid a lot of typi
 from copper import staves
 
 class Gen0(object): # basic attributes, such as starting time signature, rehearsal mark, etc.
-    metrical_durations = ID(default=((4,4),), limit=12)
+    metrical_durations = ID(default=((4,4),), limit=10)
     # tempo_units_per_minute = 48 # TO DO... tempo indication makes everything SLOW... WHY?????
     tempo_text = "Slow"
     time_signature = (4,4)
@@ -86,7 +86,7 @@ class Line1(Gen0, machines.PitchedLine):
 bubbles.illustrate_me(__file__, 
     lambda: staves.CopperShortScore(
             bubbles.Bubble(
-                # drone0 = Drone0(show_data_attr="original_depthwise_index"),
+                drone0 = Drone0(show_data_attr="original_depthwise_index"),
                 line1 = Line1(show_data_attr="original_depthwise_index"),
             ),
             sequence = ("line1","drone0"),

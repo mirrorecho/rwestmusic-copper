@@ -138,7 +138,7 @@ class Rhythms(object):
         rests_to_replace = []
 
         leaves_length = len(leaves)
-        print(music)
+        # print(music)
         for i,l in enumerate(leaves):
             
             measure_duration_tally += l.written_duration
@@ -157,11 +157,9 @@ class Rhythms(object):
                 if i==leaves_length-1 or not measure_has_only_rests:
                     # then, add multimeasure rest, if > 0
                     if rest_measures > 0:
-                        print("MUTATE TO ADD REST %s/%s * %s" % (measure_length.pair[0], measure_length.pair[1], rest_measures) )
-                        print("---------------------------------------")
+                        # print("MUTATE TO ADD REST %s/%s * %s" % (measure_length.pair[0], measure_length.pair[1], rest_measures) )
                         my_multimeasure_rests = abjad.Container("R1 * %s/%s * %s" % (measure_length.pair[0], measure_length.pair[1], rest_measures))
                         abjad.mutate(rests_to_replace).replace(my_multimeasure_rests)
-                        print(music)
                     rests_to_replace = []
                     rest_measures = 0
 

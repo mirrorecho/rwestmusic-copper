@@ -1,4 +1,4 @@
-% 2016-09-20 23:40
+% 2016-09-21 21:41
 
 \version "2.18.2"
 \language "english"
@@ -12,24 +12,24 @@
 \score {
     \new Score <<
         \new Staff {
-            %%% \set PianoStaff.instrumentName = \markup { "Line 1" } %%%
-            %%% \set PianoStaff.shortInstrumentName = \markup { 1: } %%%
+            \set Staff.instrumentName = \markup { "Line 1" }
+            \set Staff.shortInstrumentName = \markup { 1: }
+            \time 4/4
             {
                 \numericTimeSignature
-                \time 4/4
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                \mark #3
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
+                {
+                    \mark #3
+                    \mark #3
+                    R1 * 6
+                }
                 d'2 ^ \markup { 1 }
                 g'4 ^ \markup { 2 }
                 cs''4 ^ \markup { 3 }
-                r1
+                {
+                    R1 * 1
+                }
                 d'2 ^ \markup { 4 }
                 a4 ^ \markup { 5 }
                 e4 ^ \markup { 6 }
@@ -48,7 +48,9 @@
                 e''2
                 g'4 ^ \markup { 17 }
                 b4 ^ \markup { 18 }
-                r1
+                {
+                    R1 * 1
+                }
                 a'4 ^ \markup { 19 }
                 d''8 [ ^ \markup { 20 }
                 gs''8 ] ^ \markup { 21 }
@@ -63,27 +65,30 @@
                 e''2 ^ \markup { 28 }
                 g'4 ^ \markup { 29 }
                 b4 ^ \markup { 30 }
-                r1
+                {
+                    R1 * 1
+                }
                 d'2 ^ \markup { 31 }
                 b'4 ^ \markup { 32 }
                 gs''4 ^ \markup { 33 }
-                r1
+                {
+                    R1 * 1
+                }
             }
         }
         \new Staff {
-            %%% \set PianoStaff.instrumentName = \markup { "Line 2" } %%%
-            %%% \set PianoStaff.shortInstrumentName = \markup { 2: } %%%
+            \set Staff.instrumentName = \markup { "Line 2" }
+            \set Staff.shortInstrumentName = \markup { 2: }
+            \time 4/4
             {
                 \numericTimeSignature
-                \time 4/4
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                \mark #3
-                r1
-                r1
-                r1
-                r1
-                r1
+                {
+                    \mark #3
+                    \mark #3
+                    R1 * 5
+                }
                 r2
                 d'2 ^ \markup { 1 }
                 g'4 ^ \markup { 2 }
@@ -91,7 +96,9 @@
                 d'4 ^ \markup { 4 }
                 e'8 [ ^ \markup { 5 }
                 fs'8 ] ^ \markup { 6 }
-                r1
+                {
+                    R1 * 1
+                }
                 a'2 ^ \markup { 7 }
                 d''4 ^ \markup { 8 }
                 fs'4 ^ \markup { 9 }
@@ -118,49 +125,24 @@
                 g'4 ^ \markup { 26 }
                 fs'4 ^ \markup { 27 }
                 r4
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
+                {
+                    R1 * 6
+                }
             }
         }
         \new Staff {
-            %%% \set PianoStaff.instrumentName = \markup { "Line 3" } %%%
-            %%% \set PianoStaff.shortInstrumentName = \markup { 3: } %%%
+            \set Staff.instrumentName = \markup { "Line 3" }
+            \set Staff.shortInstrumentName = \markup { 3: }
+            \time 4/4
             {
                 \numericTimeSignature
-                \time 4/4
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                \mark #3
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r4
-                r4
-                r4
-                r4
-                r4
-                r4
-                r4
-                r4
-                r2
-                r2
-                r4
-                r4
-                r4
-                r4
-                r1
-                r4
-                r4
-                r2
-                r1
+                {
+                    \mark #3
+                    \mark #3
+                    R1 * 14
+                }
                 d'4 ^ \markup { 1 }
                 g'8 [ ^ \markup { 2 }
                 cs''8 ^ \markup { 3 }
@@ -190,29 +172,24 @@
                 e'''4 ^ \markup { 26 }
                 ds'''4 ^ \markup { 27 }
                 r2.
-                r1
-                r1
-                r1
-                r1
-                r1
+                {
+                    R1 * 5
+                }
             }
         }
         \new Staff {
-            %%% \set PianoStaff.instrumentName = \markup { "Line 4" } %%%
-            %%% \set PianoStaff.shortInstrumentName = \markup { 4: } %%%
+            \set Staff.instrumentName = \markup { "Line 4" }
+            \set Staff.shortInstrumentName = \markup { 4: }
+            \time 4/4
             {
                 \numericTimeSignature
-                \time 4/4
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                \mark #3
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
+                {
+                    \mark #3
+                    \mark #3
+                    R1 * 7
+                }
                 r2
                 d'4 ^ \markup { 1 }
                 g'8 [ ^ \markup { 2 }
@@ -243,37 +220,18 @@
                 b'4 ^ \markup { 25 }
                 d''4 ^ \markup { 26 }
                 cs''4 ^ \markup { 27 }
-                r2
-                r4
-                r4
-                r2
-                r4
-                r4
-                r4
-                r4
-                r4
-                r4
-                r4
-                r4
-                r4
-                r4
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
+                {
+                    R1 * 12
+                }
             }
         }
         \new Staff {
-            %%% \set PianoStaff.instrumentName = \markup { Drone } %%%
-            %%% \set PianoStaff.shortInstrumentName = \markup { 0: } %%%
             \clef "bass"
+            \set Staff.instrumentName = \markup { Drone }
+            \set Staff.shortInstrumentName = \markup { 0: }
+            \time 4/4
             {
                 \numericTimeSignature
-                \time 4/4
                 \bar "||"
                 \accidentalStyle modern-cautionary
                 \mark #3

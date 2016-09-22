@@ -14,6 +14,7 @@ class GenA(object): # basic attributes, such as starting time signature, rehears
     tempo_text = "Faster"
     # tempo_text = "half = dotted half" # TO DO... need to figure out how we can insert metric modulations here
     # time_signature = (4,4)
+    # compress_full_bar_rests=False
 
 class Drone0(GenA, machines.Drone0):
     pass

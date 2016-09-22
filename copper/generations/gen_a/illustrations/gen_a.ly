@@ -1,4 +1,4 @@
-% 2016-09-20 19:16
+% 2016-09-21 21:33
 
 \version "2.18.2"
 \language "english"
@@ -14,17 +14,15 @@
         \new Staff {
             \set Staff.instrumentName = \markup { "Line 1" }
             \set Staff.shortInstrumentName = \markup { 1: }
+            \time 4/4
             {
                 \numericTimeSignature
-                \time 4/4
                 \accidentalStyle modern-cautionary
-                \mark #1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
+                {
+                    \mark #1
+                    \mark #1
+                    R1 * 6
+                }
                 d'2 ^ \markup { 1 }
                 c'4 ^ \markup { 2 }
                 b4 ^ \markup { 3 }
@@ -53,26 +51,23 @@
                 e'4 ^ \markup { 25 }
                 g'4 ^ \markup { 26 }
                 fs'4 ^ \markup { 27 }
-                r1
-                r1
-                r1
+                {
+                    R1 * 3
+                }
             }
         }
         \new Staff {
             \set Staff.instrumentName = \markup { "Line 2" }
             \set Staff.shortInstrumentName = \markup { 2: }
+            \time 4/4
             {
                 \numericTimeSignature
-                \time 4/4
                 \accidentalStyle modern-cautionary
-                \mark #1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
-                r1
+                {
+                    \mark #1
+                    \mark #1
+                    R1 * 7
+                }
                 r2
                 d'2 ^ \markup { 1 }
                 g'4 ^ \markup { 2 }
@@ -105,7 +100,9 @@
                 d''4 ^ \markup { 26 }
                 cs''4 ^ \markup { 27 }
                 r2
-                r1
+                {
+                    R1 * 1
+                }
             }
         }
         \new Staff {

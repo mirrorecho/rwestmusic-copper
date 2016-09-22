@@ -78,16 +78,12 @@
 # - (DONE) better gen c short score
 # - (DONE) short scores aren't showing line #s/names
 # - (DONE) 8va spanner (e.g. end of gen d)
-# ---------------------------- WEDENSDAY AT APA
-# - multimeasure rest generator
-# - transposing parts
-# - tag to respell flats/sharps (on individual notes)
-# - tempo markings
+# - (DONE!) multimeasure rest generator
+# ---------------------------- WEDENSDAY EVENING
+# - draft short scores throughout
 # - plan out drone, and start better working into machines
 # - plan out cymbal, and start working better into machines
-# - draft short scores throughout (based on sight only)
 # - create midi files / garage band projects for each short score generation
-# ---------------------------- WEDENSDAY EVENING
 # - midi review of short scores, with decent draft throughout
 # - drones good draft throughout (including orchestration)
 # - cymbal good draft throughout
@@ -113,6 +109,10 @@
 # - (maybe) good gen h draft short score
 # - review current short scores at piano and adjust
 # ---------------------------- THURSDAY APA
+# - transposing parts
+# - tag to respell flats/sharps (on individual notes)
+# - tempo markings
+# ---------------------------- THURSDAY EVENING
 # - good draft orchestration of gen b
 # - good draft orchestration of gen c
 # - good draft orchestration of gen d
@@ -131,7 +131,6 @@
 # - review printed score and mark up
 # - implement printed score markups (or add notes)
 # - games and boces? (only if time allows)
-# ---------------------------- THURSDAY EVENING
 # - final draft: gen 0 orchestration!
 # - final draft: gen a orchestration!
 # - final draft: gen b orchestration!
@@ -168,6 +167,11 @@
 # - verify all part transpositions (pic, english horn, clarinet/bass clarinet, horn, double bass)
 # - cues?
 # - better rehearsal markings?
+# - (if time / necessary) - there's a bug with dupe tie spanners on drones (bug show up if you attempt to print Drone0's music() output)
+# - (if time) - show measure numbers on multimeasure rests
+# - (if time) - limit multimeasure rest length to 8 bars? (see below... could create list of lists to determine measure count)
+# - - - - - maybe better... limit to 8 only if greater than 9?
+# - - - - - also, would be ideal to be able to specify break points... 
 # - final score review!
 # - - double check score order
 # - double check that part output matches score (or make part code not suck)
@@ -237,6 +241,7 @@
 # - deal with changing time signatures within a line
 # - - - way to specify
 # - - - update multimeasure rest generator to accomodate
+# smarter metrical durations (notes vs rests vs beaming)
 
 import abjad
 from calliope import bubbles

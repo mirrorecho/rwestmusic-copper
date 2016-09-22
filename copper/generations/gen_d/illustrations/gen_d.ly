@@ -1,4 +1,4 @@
-% 2016-09-21 11:41
+% 2016-09-21 22:01
 
 \version "2.18.2"
 \language "english"
@@ -14,22 +14,16 @@
         \new Staff {
             \set Staff.instrumentName = \markup { "Line 1" }
             \set Staff.shortInstrumentName = \markup { 1: }
+            \time 9/8
             {
                 \numericTimeSignature
-                \time 9/8
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                \mark #4
-                r2.
-                r4.
-                r2.
-                r4.
-                r2.
-                r4.
-                r2.
-                r4.
-                r2.
-                r4.
+                {
+                    \mark #4
+                    \mark #4
+                    R1 * 45/8
+                }
                 <d' g' cs''>2. ^ \markup { 1 }
                 <e a d'>4. ^ \markup { 2 }
                 <d' g' cs''>4. ^ \markup { 3 }
@@ -77,31 +71,24 @@
                 <e' fs' gs'>4. ^ \markup { 29 }
                 <gs' a' b'>4. ^ \markup { 30 }
                 r4.
-                r2.
-                r4.
+                {
+                    R1 * 9/8
+                }
             }
         }
         \new Staff {
             \set Staff.instrumentName = \markup { "Line 2" }
             \set Staff.shortInstrumentName = \markup { 2: }
+            \time 9/8
             {
                 \numericTimeSignature
-                \time 9/8
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                \mark #4
-                r2.
-                r4.
-                r2.
-                r4.
-                r2.
-                r4.
-                r2.
-                r4.
-                r2.
-                r4.
-                r2.
-                r4.
+                {
+                    \mark #4
+                    \mark #4
+                    R1 * 27/4
+                }
                 <d' g' cs''>2. ^ \markup { 1 }
                 <fs' b' e''>4. ^ \markup { 2 }
                 <d'' e'' gs''>4. ^ \markup { 3 }
@@ -110,8 +97,9 @@
                 <fs'' gs'' a''>4. ^ \markup { 5 }
                 <b'' ds''' e'''>4. ^ \markup { 6 }
                 r4.
-                r2.
-                r4.
+                {
+                    R1 * 9/8
+                }
                 <ds''' e''' fs'''>2. ^ \markup { 7 }
                 <cs'' fs'' b''>4. ^ \markup { 8 }
                 <fs' b' d''>4. ^ \markup { 9 }
@@ -139,61 +127,24 @@
                 <e' fs' g'>4. ^ \markup { 27 }
                 r4.
                 r4.
-                r2.
-                r4.
-                r2.
-                r4.
-                r2.
-                r4.
-                r2.
-                r4.
+                {
+                    R1 * 9/2
+                }
             }
         }
         \new Staff {
             \set Staff.instrumentName = \markup { "Line 3" }
             \set Staff.shortInstrumentName = \markup { 3: }
+            \time 9/8
             {
                 \numericTimeSignature
-                \time 9/8
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                \mark #4
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
+                {
+                    \mark #4
+                    \mark #4
+                    R1 * 27/2
+                }
                 r4.
                 r8
                 d'4 ^ \markup { 1 }
@@ -242,50 +193,24 @@
                 c'8
                 fs'4 ^ \markup { 27 }
                 r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
+                {
+                    R1 * 27/8
+                }
             }
         }
         \new Staff {
             \set Staff.instrumentName = \markup { "Line 4" }
             \set Staff.shortInstrumentName = \markup { 4: }
+            \time 9/8
             {
                 \numericTimeSignature
-                \time 9/8
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                \mark #4
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
+                {
+                    \mark #4
+                    \mark #4
+                    R1 * 9
+                }
                 r4.
                 r4.
                 d'4 ^ \markup { 1 }
@@ -319,12 +244,9 @@
                 r8
                 r4.
                 r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
-                r4.
+                {
+                    R1 * 9/4
+                }
                 b''4 ^ \markup { 28 }
                 a''8 ^ \markup { 29 }
                 gs''8 [ ^ \markup { 30 }
@@ -386,42 +308,24 @@
                 f4 ^ \markup { 80 }
                 e4 ^ \markup { 81 }
                 r8
-                r4.
-                r4.
-                r4.
+                {
+                    R1 * 9/8
+                }
             }
         }
         \new Staff {
             \set Staff.instrumentName = \markup { "Line 5" }
             \set Staff.shortInstrumentName = \markup { 5: }
+            \time 9/8
             {
                 \numericTimeSignature
-                \time 9/8
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                \mark #4
-                r1
-                r8
-                r1
-                r8
-                r1
-                r8
-                r1
-                r8
-                r1
-                r8
-                r1
-                r8
-                r1
-                r8
-                r1
-                r8
-                r1
-                r8
-                r1
-                r8
-                r1
-                r8
+                {
+                    \mark #4
+                    \mark #4
+                    R1 * 99/8
+                }
                 r2.
                 a'4 ^ \markup { 1 }
                 d''8 ^ \markup { 2 }
@@ -560,14 +464,16 @@
             \clef "bass"
             \set Staff.instrumentName = \markup { Drone }
             \set Staff.shortInstrumentName = \markup { 0: }
+            \time 9/8
             {
                 \numericTimeSignature
-                \time 9/8
                 \bar "||"
                 \accidentalStyle modern-cautionary
-                \mark #4
-                r2.
-                r4.
+                {
+                    \mark #4
+                    \mark #4
+                    R1 * 9/8
+                }
                 d2. \pp ~ \< ^ \markup { 1 }
                 d4. \mp ~ ~ \> ^ \markup { 2 }
                 d4. ~
