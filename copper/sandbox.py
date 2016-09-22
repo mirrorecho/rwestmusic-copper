@@ -243,6 +243,7 @@
 # - - - way to specify
 # - - - update multimeasure rest generator to accomodate
 # smarter metrical durations (notes vs rests vs beaming)
+# - be clear about what accepts kwargs and what does not... 
 
 import abjad
 from calliope import bubbles

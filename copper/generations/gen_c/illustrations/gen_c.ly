@@ -1,7 +1,9 @@
-% 2016-09-21 21:41
+% 2016-09-22 01:58
 
 \version "2.18.2"
 \language "english"
+
+\include "../../scores/stylesheets/shortscore.ily"
 
 \header {}
 
@@ -18,7 +20,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
-                \accidentalStyle modern-cautionary
+                \accidentalStyle forget
                 {
                     \mark #3
                     \mark #3
@@ -83,7 +85,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
-                \accidentalStyle modern-cautionary
+                \accidentalStyle forget
                 {
                     \mark #3
                     \mark #3
@@ -137,7 +139,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
-                \accidentalStyle modern-cautionary
+                \accidentalStyle forget
                 {
                     \mark #3
                     \mark #3
@@ -184,7 +186,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
-                \accidentalStyle modern-cautionary
+                \accidentalStyle forget
                 {
                     \mark #3
                     \mark #3
@@ -233,7 +235,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
-                \accidentalStyle modern-cautionary
+                \accidentalStyle forget
                 \mark #3
                 r2
                 d2 \pp ~ \< ^ \markup { 1 }

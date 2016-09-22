@@ -1,7 +1,13 @@
+<<<<<<< HEAD
 % 2016-09-21 22:39
+=======
+% 2016-09-22 02:09
+>>>>>>> origin/organize-events
 
 \version "2.18.2"
 \language "english"
+
+\include "../../scores/stylesheets/shortscore.ily"
 
 \header {}
 
@@ -18,7 +24,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
-                \accidentalStyle modern-cautionary
+                \accidentalStyle forget
                 {
                     \mark #4
                     \mark #4
@@ -83,7 +89,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
-                \accidentalStyle modern-cautionary
+                \accidentalStyle forget
                 {
                     \mark #4
                     \mark #4
@@ -139,7 +145,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
-                \accidentalStyle modern-cautionary
+                \accidentalStyle forget
                 {
                     \mark #4
                     \mark #4
@@ -147,51 +153,51 @@
                 }
                 r4.
                 r8
-                d'4 ^ \markup { 1 }
-                g'8 [ ^ \markup { 2 }
-                cs''8 ] ^ \markup { 3 }
+                a'4 ^ \markup { 1 }
+                d''8 [ ^ \markup { 2 }
+                gs''8 ] ^ \markup { 3 }
                 r8
                 r4.
                 r4
-                e''8 ~ ^ \markup { 4 }
-                e''4.
-                b'4 ^ \markup { 5 }
-                fs'8 ~ ^ \markup { 6 }
-                fs'8
-                e''4 ^ \markup { 7 }
-                d''8 [ ^ \markup { 8 }
-                gs''8 ] ^ \markup { 9 }
+                b''8 ~ ^ \markup { 4 }
+                b''4.
+                fs''4 ^ \markup { 5 }
+                cs''8 ~ ^ \markup { 6 }
+                cs''8
+                b''4 ^ \markup { 7 }
+                e'''8 [ ^ \markup { 8 }
+                ds'''8 ] ^ \markup { 9 }
                 r8
                 r4.
                 r4
-                cs'''8 ~ ^ \markup { 10 }
-                cs'''4.
-                a''4 ^ \markup { 11 }
-                gs''8 ~ ^ \markup { 12 }
-                gs''8
-                fs''4 ^ \markup { 13 }
-                a''4 ^ \markup { 14 }
-                gs''8 ~ ^ \markup { 15 }
-                gs''8
-                b''4 ~ ^ \markup { 16 }
-                b''4. ~
-                b''4. ~
-                b''4
-                a''8 ^ \markup { 17 }
-                cs''8 ^ \markup { 18 }
-                a'4 ^ \markup { 19 }
-                c'8 [ ^ \markup { 20 }
-                fs'8 ^ \markup { 21 }
-                a'8 ~ ] ^ \markup { 22 }
-                a'4. ~
-                a'4
-                fs''8 ~ ^ \markup { 23 }
-                fs''8
-                cs''4 ^ \markup { 24 }
-                e'4 ^ \markup { 25 }
-                c'8 ~ ^ \markup { 26 }
-                c'8
-                fs'4 ^ \markup { 27 }
+                gs'''8 ~ ^ \markup { 10 }
+                gs'''4.
+                e'''4 ^ \markup { 11 }
+                ds'''8 ~ ^ \markup { 12 }
+                ds'''8
+                cs'''4 ^ \markup { 13 }
+                e'''4 ^ \markup { 14 }
+                ds'''8 ~ ^ \markup { 15 }
+                ds'''8
+                fs'''4 ~ ^ \markup { 16 }
+                fs'''4. ~
+                fs'''4. ~
+                fs'''4
+                e'''8 ^ \markup { 17 }
+                gs''8 ^ \markup { 18 }
+                e''4 ^ \markup { 19 }
+                g'8 [ ^ \markup { 20 }
+                cs''8 ^ \markup { 21 }
+                e''8 ~ ] ^ \markup { 22 }
+                e''4. ~
+                e''4
+                cs'''8 ~ ^ \markup { 23 }
+                cs'''8
+                gs''4 ^ \markup { 24 }
+                b'4 ^ \markup { 25 }
+                g'8 ~ ^ \markup { 26 }
+                g'8
+                cs''4 ^ \markup { 27 }
                 r4.
                 {
                     R1 * 27/8
@@ -205,7 +211,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
-                \accidentalStyle modern-cautionary
+                \accidentalStyle forget
                 {
                     \mark #4
                     \mark #4
@@ -320,7 +326,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
-                \accidentalStyle modern-cautionary
+                \accidentalStyle forget
                 {
                     \mark #4
                     \mark #4
@@ -468,7 +474,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
-                \accidentalStyle modern-cautionary
+                \accidentalStyle forget
                 {
                     \mark #4
                     \mark #4

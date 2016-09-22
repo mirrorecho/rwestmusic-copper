@@ -105,13 +105,14 @@ class Line4(Line3):
 bubbles.illustrate_me(__file__, 
     lambda: staves.CopperShortScore(
             bubbles.Bubble(
-                drone0 = Drone0(show_data_attr="original_depthwise_index"),
-                line1 = Line1(show_data_attr="original_depthwise_index"),
-                line2 = Line2(show_data_attr="original_depthwise_index"),
-                line3 = Line3(show_data_attr="original_depthwise_index"),
-                line4 = Line4(show_data_attr="original_depthwise_index"),
+                drone0 = Drone0(show_data_attr="original_depthwise_index", accidental_style="forget"),
+                line1 = Line1(show_data_attr="original_depthwise_index", accidental_style="forget"),
+                line2 = Line2(show_data_attr="original_depthwise_index", accidental_style="forget"),
+                line3 = Line3(show_data_attr="original_depthwise_index", accidental_style="forget"),
+                line4 = Line4(show_data_attr="original_depthwise_index", accidental_style="forget"),
             ),
             sequence = ("line1","line2","line3","line4","drone0"),
+            stylesheets = ("../../scores/stylesheets/shortscore.ily",)
         ).get_lilypond_file(),
     as_midi=True,
     )

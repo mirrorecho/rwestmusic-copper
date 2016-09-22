@@ -51,7 +51,7 @@
     \context {
         \Staff
         \remove Instrument_name_engraver
-        \override Hairpin #'minimum-length = #24
+        \override Hairpin #'minimum-length = #6
     }
     \context {
         \RhythmicStaff
