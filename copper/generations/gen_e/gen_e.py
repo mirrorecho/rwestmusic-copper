@@ -30,6 +30,7 @@ class Line1(GenE, gen_d.Line1):
 # -------------------------------------------------------------------------------------------------
 
 class Line2(GenE, gen_d.Line2):
+    # TO DO... revisit this now that harmonies adjusted in gen_d
     pitch_displacement = gen_d.Line2.pitch_displacement.copy()
     pitch_displacement.flat(3,9)
     # pitch_displacement.up(22)

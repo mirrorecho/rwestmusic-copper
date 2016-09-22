@@ -32,7 +32,7 @@ class Line1(GenC, machines.RhythmsBroken, gen_b.Line1):
             12: -8
             })
     pitch_displacement = machines.FifthDisplacement()
-    pitch_displacement.cycle_fifth(2, cycle=(1,1,-1,-1,-1,1), times=6)
+    pitch_displacement.cycle_fifth(2, cycle=(1,1,-1,-1,-1,1), times=16)
     pitch_displacement.flat(11)
     pitch_respell = "sharps"
     rhythm_times = 2

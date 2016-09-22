@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-% 2016-09-21 22:39
-=======
-% 2016-09-22 02:09
->>>>>>> origin/organize-events
+% 2016-09-22 17:43
 
 \version "2.18.2"
 \language "english"
@@ -38,44 +34,46 @@
                 r2.
                 <b e' g'>4. ~ ^ \markup { 4 }
                 <b e' g'>4.
-                <a g' cs''>4. ^ \markup { 5 }
+                <e' d'' gs''>4. ^ \markup { 5 }
                 <b g' e''>4. ^ \markup { 6 }
                 r2.
                 <a' d'' gs''>4. ~ ^ \markup { 7 }
                 <a' d'' gs''>4.
                 <b e' a'>4. ^ \markup { 8 }
                 <e' d'' gs''>4. ^ \markup { 9 }
-                <fs' g' e''>2. ~ ^ \markup { 10 }
-                <fs' g' e''>4.
-                <a fs' ds''>4. ^ \markup { 11 }
-                <cs' a' b'>4. ^ \markup { 12 }
-                <fs' gs' a'>4. ^ \markup { 13 }
-                <fs' gs' a'>4. ^ \markup { 14 }
-                <gs' a' b'>4. ^ \markup { 15 }
+                <b g' e''>2. ~ ^ \markup { 10 }
+                <b g' e''>4.
+                <d' b' gs''>4. ^ \markup { 11 }
+                <cs'' a'' b''>4. ^ \markup { 12 }
+                \ottava #1
+                <fs'' e''' as'''>4. ^ \markup { 13 }
+                <gs'' e''' gs'''>4. ^ \markup { 14 }
+                <fs''' b''' f''''>4. ^ \markup { 15 }
                 r4.
                 r4.
-                <gs' a' b'>4. ~ ^ \markup { 16 }
-                <gs' a' b'>4. ~
-                <gs' a' b'>2.
-                <e' fs' gs'>4. ^ \markup { 17 }
-                <fs' gs' a'>4. ^ \markup { 18 }
+                <gs'' e''' cs''''>4. ~ ^ \markup { 16 }
+                <gs'' e''' cs''''>4. ~
+                <gs'' e''' cs''''>2.
+                <b'' gs''' f''''>4. ^ \markup { 17 }
+                <gs'' e''' gs'''>4. ^ \markup { 18 }
                 r4.
                 r4.
                 r2.
-                <gs' a' b'>4. ~ ^ \markup { 19 }
-                <gs' a' b'>4.
-                <e' fs' gs'>4. ^ \markup { 20 }
-                <gs' a' b'>4. ^ \markup { 21 }
-                <fs' gs' a'>2. ^ \markup { 22 }
-                <fs' gs' a'>4. ^ \markup { 23 }
-                <gs' a' b'>4. ^ \markup { 24 }
-                <gs' a' b'>4. ^ \markup { 25 }
-                <e' fs' gs'>4. ^ \markup { 26 }
-                <fs' gs' a'>4. ^ \markup { 27 }
-                <gs' a' b'>4. ~ ^ \markup { 28 }
-                <gs' a' b'>4.
-                <e' fs' gs'>4. ^ \markup { 29 }
-                <gs' a' b'>4. ^ \markup { 30 }
+                <fs''' b''' f''''>4. ~ ^ \markup { 19 }
+                <fs''' b''' f''''>4.
+                <gs'' cs''' fs'''>4. ^ \markup { 20 }
+                <fs''' b''' f''''>4. ^ \markup { 21 }
+                <gs'' e''' gs'''>2. ^ \markup { 22 }
+                <cs''' b''' f''''>4. ^ \markup { 23 }
+                <gs'' e''' cs''''>4. ^ \markup { 24 }
+                <fs''' b''' f''''>4. ^ \markup { 25 }
+                <gs'' cs''' fs'''>4. ^ \markup { 26 }
+                <cs''' b''' f''''>4. ^ \markup { 27 }
+                <gs'' e''' cs''''>4. ~ ^ \markup { 28 }
+                <gs'' e''' cs''''>4.
+                <b'' gs''' f''''>4. ^ \markup { 29 }
+                <gs'' e''' cs''''>4. ^ \markup { 30 }
+                \ottava #0
                 r4.
                 {
                     R1 * 9/8
@@ -109,28 +107,29 @@
                 <ds''' e''' fs'''>2. ^ \markup { 7 }
                 <cs'' fs'' b''>4. ^ \markup { 8 }
                 <fs' b' d''>4. ^ \markup { 9 }
-                <fs' g' a'>4. ~ ^ \markup { 10 }
-                <fs' g' a'>4.
-                <d' e' fs'>4. ^ \markup { 11 }
-                <fs' g' a'>4. ^ \markup { 12 }
-                <e' fs' g'>4. ^ \markup { 13 }
-                <e' fs' g'>4. ^ \markup { 14 }
-                <fs' g' a'>4. ^ \markup { 15 }
-                <fs' g' a'>4. ~ ^ \markup { 16 }
-                <fs' g' a'>2. ~
-                <fs' g' a'>4.
-                <d' e' fs'>4. ^ \markup { 17 }
-                <e' fs' g'>4. ^ \markup { 18 }
-                <fs' g' a'>4. ~ ^ \markup { 19 }
-                <fs' g' a'>4.
-                <d' e' fs'>4. ^ \markup { 20 }
-                <fs' g' a'>4. ^ \markup { 21 }
-                <e' fs' g'>2. ^ \markup { 22 }
-                <e' fs' g'>4. ^ \markup { 23 }
-                <fs' g' a'>4. ^ \markup { 24 }
-                <fs' g' a'>4. ^ \markup { 25 }
-                <d' e' fs'>4. ^ \markup { 26 }
-                <e' fs' g'>4. ^ \markup { 27 }
+                \clef bass
+                <a, f d'>4. ~ ^ \markup { 10 }
+                <a, f d'>4.
+                <g,, as,, c,>4. ^ \markup { 11 }
+                <ds,, gs,, d,>4. ^ \markup { 12 }
+                <g, a, f>4. ^ \markup { 13 }
+                <g,, c, ds,>4. ^ \markup { 14 }
+                <ds,, gs,, d,>4. ^ \markup { 15 }
+                <a, c f>4. ~ ^ \markup { 16 }
+                <a, c f>2. ~
+                <a, c f>4.
+                <g,, as,, c,>4. ^ \markup { 17 }
+                <as,,, gs,, d,>4. ^ \markup { 18 }
+                <a, c f>4. ~ ^ \markup { 19 }
+                <a, c f>4.
+                <g,, as,, c,>4. ^ \markup { 20 }
+                <ds,, gs,, d,>4. ^ \markup { 21 }
+                <g, a, f>2. ^ \markup { 22 }
+                <g,, c, ds,>4. ^ \markup { 23 }
+                <ds,, gs,, d,>4. ^ \markup { 24 }
+                <a, c f>4. ^ \markup { 25 }
+                <g,, as,, c,>4. ^ \markup { 26 }
+                <as,,, gs,, d,>4. ^ \markup { 27 }
                 r4.
                 r4.
                 {
@@ -149,58 +148,57 @@
                 {
                     \mark #4
                     \mark #4
-                    R1 * 27/2
+                    R1 * 99/8
                 }
-                r4.
-                r8
                 a'4 ^ \markup { 1 }
-                d''8 [ ^ \markup { 2 }
-                gs''8 ] ^ \markup { 3 }
-                r8
-                r4.
+                d''8 ^ \markup { 2 }
+                gs''8 ^ \markup { 3 }
                 r4
-                b''8 ~ ^ \markup { 4 }
-                b''4.
-                fs''4 ^ \markup { 5 }
-                cs''8 ~ ^ \markup { 6 }
-                cs''8
+                r4.
+                r8
+                b''4 ~ ^ \markup { 4 }
+                b''4
+                fs''8 ~ ^ \markup { 5 }
+                fs''8
+                cs''4 ^ \markup { 6 }
                 b''4 ^ \markup { 7 }
-                e'''8 [ ^ \markup { 8 }
-                ds'''8 ] ^ \markup { 9 }
+                e'''8 ^ \markup { 8 }
+                ds'''8 ^ \markup { 9 }
+                r4
+                r4.
+                r8
+                gs'''4 ~ ^ \markup { 10 }
+                gs'''4
+                e'''8 ~ ^ \markup { 11 }
+                e'''8
+                ds'''4 ^ \markup { 12 }
+                cs'''4 ^ \markup { 13 }
+                e'''8 ~ ^ \markup { 14 }
+                e'''8
+                ds'''4 ^ \markup { 15 }
+                fs'''4. ~ ^ \markup { 16 }
+                fs'''4. ~
+                fs'''4. ~
+                fs'''8 [
+                e'''8 ^ \markup { 17 }
+                gs''8 ] ^ \markup { 18 }
+                e''4 ^ \markup { 19 }
+                g'8 ^ \markup { 20 }
+                cs''8 ^ \markup { 21 }
+                e''4 ~ ^ \markup { 22 }
+                e''4. ~
+                e''8
+                cs'''4 ^ \markup { 23 }
+                gs''4 ^ \markup { 24 }
+                b'8 ~ ^ \markup { 25 }
+                b'8
+                g'4 ^ \markup { 26 }
+                cs''4 ^ \markup { 27 }
                 r8
                 r4.
-                r4
-                gs'''8 ~ ^ \markup { 10 }
-                gs'''4.
-                e'''4 ^ \markup { 11 }
-                ds'''8 ~ ^ \markup { 12 }
-                ds'''8
-                cs'''4 ^ \markup { 13 }
-                e'''4 ^ \markup { 14 }
-                ds'''8 ~ ^ \markup { 15 }
-                ds'''8
-                fs'''4 ~ ^ \markup { 16 }
-                fs'''4. ~
-                fs'''4. ~
-                fs'''4
-                e'''8 ^ \markup { 17 }
-                gs''8 ^ \markup { 18 }
-                e''4 ^ \markup { 19 }
-                g'8 [ ^ \markup { 20 }
-                cs''8 ^ \markup { 21 }
-                e''8 ~ ] ^ \markup { 22 }
-                e''4. ~
-                e''4
-                cs'''8 ~ ^ \markup { 23 }
-                cs'''8
-                gs''4 ^ \markup { 24 }
-                b'4 ^ \markup { 25 }
-                g'8 ~ ^ \markup { 26 }
-                g'8
-                cs''4 ^ \markup { 27 }
                 r4.
                 {
-                    R1 * 27/8
+                    R1 * 9/2
                 }
             }
         }
@@ -220,99 +218,99 @@
                 r4.
                 r4.
                 d'4 ^ \markup { 1 }
-                g'8
-                fs'8 [
-                d'8 ^ \markup { 2 }
-                b'16
-                fs'16 ]
-                e''4 ^ \markup { 3 }
-                g'8
-                cs''8 [
-                b'8 ^ \markup { 4 }
-                d''16
-                cs''16 ]
-                b'8 [ ^ \markup { 5 }
-                d''8
-                cs''8 ]
-                e''4 ^ \markup { 6 }
-                d''16 [
-                cs''16 ]
+                g'8 ^ \markup { 2 }
+                fs'8 [ ^ \markup { 3 }
+                d'8 ^ \markup { 4 }
+                b'16 ^ \markup { 5 }
+                fs'16 ] ^ \markup { 6 }
                 e''4 ^ \markup { 7 }
-                g'8
-                fs'8
-                g4 ^ \markup { 8 }
-                a8 [
-                fs'8
-                b'8 ~ ] ^ \markup { 9 }
-                b'8
-                d''4
-                gs''4
+                d''8 ^ \markup { 8 }
+                gs''8 [ ^ \markup { 9 }
+                fs''8 ^ \markup { 10 }
+                a''16 ^ \markup { 11 }
+                gs''16 ] ^ \markup { 12 }
+                fs''8 [ ^ \markup { 13 }
+                a''8 ^ \markup { 14 }
+                gs''8 ] ^ \markup { 15 }
+                b''4 ^ \markup { 16 }
+                a''16 [ ^ \markup { 17 }
+                gs''16 ] ^ \markup { 18 }
+                fs'''4 ^ \markup { 19 }
+                a''8 ^ \markup { 20 }
+                gs''8 ^ \markup { 21 }
+                a'4 ^ \markup { 22 }
+                b'8 [ ^ \markup { 23 }
+                gs''8 ^ \markup { 24 }
+                cs'''8 ~ ] ^ \markup { 25 }
+                cs'''8
+                e'''4 ^ \markup { 26 }
+                as'''4 ^ \markup { 27 }
                 r8
                 r4.
                 r4.
                 {
                     R1 * 9/4
                 }
-                b''4 ^ \markup { 10 }
-                a''8
-                gs''8 [
-                e''8 ^ \markup { 11 }
-                fs''16
-                gs''16 ]
-                b''4 ^ \markup { 12 }
-                a''8
-                cs''8 [
-                e'8 ^ \markup { 13 }
-                c'16
-                b16 ]
-                e'8 [ ^ \markup { 14 }
-                c'8
-                b8 ]
-                g4 ^ \markup { 15 }
-                f16 [
-                b16 ]
-                d'4 ^ \markup { 16 }
-                c'8
-                b8
-                g4 ^ \markup { 17 }
-                a8 [
-                b8
-                a8 ~ ] ^ \markup { 18 }
-                a8
-                f4
-                e4
+                cs''''4 ^ \markup { 28 }
+                b'''8 ^ \markup { 29 }
+                as'''8 [ ^ \markup { 30 }
+                fs'''8 ^ \markup { 31 }
+                gs'''16 ^ \markup { 32 }
+                as'''16 ] ^ \markup { 33 }
+                cs''''4 ^ \markup { 34 }
+                b'''8 ^ \markup { 35 }
+                ds'''8 [ ^ \markup { 36 }
+                fs''8 ^ \markup { 37 }
+                d''16 ^ \markup { 38 }
+                cs''16 ] ^ \markup { 39 }
+                fs''8 [ ^ \markup { 40 }
+                d''8 ^ \markup { 41 }
+                cs''8 ] ^ \markup { 42 }
+                e''4 ^ \markup { 43 }
+                d''16 [ ^ \markup { 44 }
+                gs''16 ] ^ \markup { 45 }
+                b''4 ^ \markup { 46 }
+                e'''8 ^ \markup { 47 }
+                gs''8 ^ \markup { 48 }
+                e''4 ^ \markup { 49 }
+                fs''8 [ ^ \markup { 50 }
+                gs''8 ^ \markup { 51 }
+                fs''8 ~ ] ^ \markup { 52 }
+                fs''8
+                d''4 ^ \markup { 53 }
+                cs''4 ^ \markup { 54 }
                 r8
                 r4.
                 r4.
                 \clef bass
-                c4 ^ \markup { 19 }
-                as,8
-                e8 [
-                f,8 ^ \markup { 20 }
-                d16
-                e16 ]
-                c4 ^ \markup { 21 }
-                as,8
-                e8 [
-                g,8 ^ \markup { 22 }
-                f16
-                e16 ]
-                g,8 [ ^ \markup { 23 }
-                as,8
-                e8 ]
-                c4 ^ \markup { 24 }
-                f16 [
-                e16 ]
-                g4 ^ \markup { 25 }
-                f8
-                e8
-                c4 ^ \markup { 26 }
-                d8 [
-                e8
-                d8 ~ ] ^ \markup { 27 }
-                d8
-                f4
-                e4
+                a'4 ^ \markup { 55 }
+                g'8 ^ \markup { 56 }
+                cs''8 [ ^ \markup { 57 }
+                d'8 ^ \markup { 58 }
+                b'16 ^ \markup { 59 }
+                cs''16 ] ^ \markup { 60 }
+                a'4 ^ \markup { 61 }
+                g'8 ^ \markup { 62 }
+                cs''8 [ ^ \markup { 63 }
+                e'8 ^ \markup { 64 }
+                d''16 ^ \markup { 65 }
+                cs''16 ] ^ \markup { 66 }
+                e'8 [ ^ \markup { 67 }
+                g'8 ^ \markup { 68 }
+                cs''8 ] ^ \markup { 69 }
+                a'4 ^ \markup { 70 }
+                d''16 [ ^ \markup { 71 }
+                cs''16 ] ^ \markup { 72 }
+                e''4 ^ \markup { 73 }
+                d''8 ^ \markup { 74 }
+                cs''8 ^ \markup { 75 }
+                a'4 ^ \markup { 76 }
+                b'8 [ ^ \markup { 77 }
+                cs''8 ^ \markup { 78 }
+                b'8 ~ ] ^ \markup { 79 }
+                b'8
+                d''4 ^ \markup { 80 }
+                cs''4 ^ \markup { 81 }
                 r8
                 {
                     R1 * 9/8

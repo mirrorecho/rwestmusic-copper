@@ -34,12 +34,16 @@ class Line1(HarmonyLineGenD, gen_c.Line1):
     for i in breaks.keylist():
         breaks[i] = breaks[i] * 1.5
 
-    pitch_displacement = gen_c.Line1.pitch_displacement+\
+    pitch_displacement = gen_c.Line1.pitch_displacement +\
             machines.FifthDisplacement(
-                        up  =(  14,16,20,27,30,35), 
-                        down=(13,    18,),
-                        )
-    pitch_displacement[31] |= set((-12,)) # TEMP USE ... see octave down for ease-of-viewing only
+                        up  =(34, 35, 40), 
+                        down=(),
+                        ) # +\
+    #         machines.FifthDisplacement(
+    #                     up  =(  14,16,20,27,30,35), 
+    #                     down=(13,    18,),
+    #                     )
+    # pitch_displacement[31] |= set((-12,)) # TEMP USE ... see octave down for ease-of-viewing only
     # print(pitch_displacement)
     pitch_respell = "sharps"
 # -------------------------------------------------------------------------------------------------
@@ -48,13 +52,16 @@ class Line2(HarmonyLineGenD, gen_c.Line2):
     rhythm_initial_silence = 6 * (3 * 3/2)
     pitch_displacement = gen_c.Line3.pitch_displacement +\
             machines.FifthDisplacement(
-                        down=(23,24,27)
+                        down=(23,24,27,28,29)
                         )
+    pitch_displacement.cycle_fifth(30, cycle=(-1, -1, 0,-1,-1, 1, 1, 1, 1),  times=9)
+    pitch_displacement.flat(68)
     pitch_respell = "sharps"
     # TO DO... ditto, should come up with some more elegant way to do this copy/multiplication
     breaks = gen_c.Line2.breaks.copy()
     for i in breaks.keylist():
         breaks[i] = breaks[i] * 1.5
+    # print(pitch_displacement)
 
 # -------------------------------------------------------------------------------------------------
 
@@ -69,6 +76,7 @@ class Line3(GenD, gen_c.Line3):
                         down=(   9,17,)
                         )
     pitch_displacement.cycle_fifth(18, cycle=(-1,-1,-1,1,1,1), times=6)
+    rhythm_initial_silence = 49.5
 
     breaks = ID({ 
                 2:  -3,
@@ -88,11 +96,11 @@ class Line4(GenD, gen_c.Line4):
     rhythm_times = 3
     rhythm_initial_silence = ((8 * 3) + 2) * 3/2
     show_data_attr="my_index"
-    show_data_type=machines.SegmentData
+    # show_data_type=machines.SegmentData
     pitch_displacement = gen_c.Line4.pitch_displacement +\
             machines.FifthDisplacement(
-                        up=  (19,     24,25,27,        40,     45),
-                        down=(  20,22,        36,37,38,  41,43,  53),
+                        up=  (8, 19,     24,25,27,        40,  45,47 ),
+                        down=(     20,22,        36,37,38,  41,     48, 53),
                         )
     pitch_displacement.cycle_fifth(55, cycle=(-1,0,1,-1,1,0), times=3)
     breaks = ID1({
@@ -132,12 +140,23 @@ class Line5(GenD, gen_c.Line4):
 
 # -------------------------------------------------------------------------------------------------
 
+# just some tags to make some stuff readable on the short score
+class Line1ShortScore(Line1):
+    def update_data(self, **kwargs):
+        super().update_data(**kwargs)
+        self.events[13].tag("8va")
+        self.events[30].tag("8va!")
+class Line2ShortScore(Line2):
+    def update_data(self, **kwargs):
+        super().update_data(**kwargs)
+        self.events[10].tag("\clef bass")
+
 bubbles.illustrate_me(__file__, 
     lambda: staves.CopperShortScore(
             bubbles.Bubble(
                 drone0 = Drone0(show_data_attr="original_depthwise_index", accidental_style="forget"),
-                line1 = Line1(show_data_attr="original_depthwise_index", accidental_style="forget"),
-                line2 = Line2(show_data_attr="original_depthwise_index", accidental_style="forget"),
+                line1 = Line1ShortScore(show_data_attr="original_depthwise_index", accidental_style="forget"),
+                line2 = Line2ShortScore(show_data_attr="original_depthwise_index", accidental_style="forget"),
                 line3 = Line3(show_data_attr="original_depthwise_index", accidental_style="forget"),
                 line4 = Line4(show_data_attr="original_depthwise_index", accidental_style="forget"),
                 line5 = Line5(show_data_attr="original_depthwise_index", accidental_style="forget"),
