@@ -1,4 +1,4 @@
-% 2016-09-21 18:55
+% 2016-09-21 20:22
 
 \version "2.18.2"
 \language "english"
@@ -48,10 +48,8 @@
                 a4 ^ \markup { 25 }
                 c'4 ^ \markup { 26 }
                 b4 ^ \markup { 27 }
-                r1
-                r1
                 {
-                    R1 * 2
+                    R1 * 3
                     \bar "|."
                 }
             }

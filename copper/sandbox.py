@@ -244,14 +244,6 @@ from copy import copy
 from copper import machines
 
 # r = abjad.scoretools.make_multimeasure_rests([ (6,8),(3,8), (6,8),(3,8), (6,8),(3,8),  ])
-r = abjad.Container("R1 *9/8 * 4")
-t = abjad.TimeSignature( (9,8) )
-s = abjad.Staff()
-s.append(r)
-abjad.attach(t, s[0])
-abjad.show(s)
-print(format(s))
-
 
 
 # from copper.machines import Fragments

@@ -120,7 +120,9 @@ class Rhythms(object):
         return int(sum([d[0]/d[1] for d in self.metrical_durations.flattened()]) * self.rhythm_denominator)
 
     def replace_multimeasure_rests(self, music):
-
+        """
+        TO DO EVENTUALLY... probably some more elegant way to do this, but for now this works
+        """
         if self.time_signature:
             measure_length = abjad.Duration(self.time_signature)
         else:
@@ -130,44 +132,45 @@ class Rhythms(object):
         leaves = abjad.select(music).by_leaf()
         rest_measures = 0
         measure_duration_tally = abjad.Duration(0)
-        measure_has_only_rests = True # assume innocent until proven guilty
-        measure_music_index = 0
-        start_rest_music_index = 0
-        end_rest_music_index = 0
         
+        measure_has_only_rests = True # assume innocent until proven guilty
+        measure_rests_to_replace = []
+        rests_to_replace = []
+
         leaves_length = len(leaves)
         print(music)
         for i,l in enumerate(leaves):
             
             measure_duration_tally += l.written_duration
             
-            if not isinstance(l, abjad.Rest):
+            if isinstance(l, abjad.Rest) and measure_has_only_rests:
+                measure_rests_to_replace.append(l)
+            else:
                 measure_has_only_rests = False
-            
+
             if measure_duration_tally==measure_length:
                 # if we're at the end of the line or this measure has notes, then maybe we need to add multimeasure rest beforehand
                 # and then go and set rests_length back to 0
+                if measure_has_only_rests:
+                    rests_to_replace += measure_rests_to_replace
+                    rest_measures += 1
                 if i==leaves_length-1 or not measure_has_only_rests:
                     # then, add multimeasure rest, if > 0
                     if rest_measures > 0:
                         print("MUTATE TO ADD REST %s/%s * %s" % (measure_length.pair[0], measure_length.pair[1], rest_measures) )
-                        print("Add from music index %s to %s" % (start_rest_music_index, end_rest_music_index+1) )
                         print("---------------------------------------")
                         my_multimeasure_rests = abjad.Container("R1 * %s/%s * %s" % (measure_length.pair[0], measure_length.pair[1], rest_measures))
-                        abjad.mutate(music[start_rest_music_index:end_rest_music_index+1]).replace(my_multimeasure_rests)
+                        abjad.mutate(rests_to_replace).replace(my_multimeasure_rests)
                         print(music)
+                    rests_to_replace = []
                     rest_measures = 0
-                else:
-                    if rest_measures == 0:
-                        start_rest_music_index = measure_music_index
-                    end_rest_music_index = i
-                    rest_measures += 1
+
                 # this measure is done, so set duration tally back to 0,
-                # assume all rests in measure, and increase music index
-                # for the following measure:
+                # assume all rests in measure, and set rests in measure list back to empty
+                # (all for the following measure):
                 measure_duration_tally = abjad.Duration(0)
-                measure_music_index = i + 1 
                 measure_has_only_rests = True
+                measure_rests_to_replace = []
 
 
 
