@@ -12,7 +12,7 @@ from copper import machines
 #         self.down(*down)
 #         self.flat(*flat)
 
-#     def cycle_fifth(self, start_index=0, **kwargs):
+#     def cycle_me(self, start_index=0, **kwargs):
 #         self.cycle_interval(start_index=start_index, interval=7, **kwargs)
 
 #     def up(self, *indices):

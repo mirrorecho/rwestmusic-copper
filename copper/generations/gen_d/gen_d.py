@@ -54,7 +54,7 @@ class Line2(HarmonyLineGenD, gen_c.Line2):
             machines.FifthDisplacement(
                         down=(23,24,27,28,29)
                         )
-    pitch_displacement.cycle_fifth(30, cycle=(-1, -1, 0,-1,-1, 1, 1, 1, 1),  times=9)
+    pitch_displacement.cycle_me(30, cycle=(-1, -1, 0,-1,-1, 1, 1, 1, 1),  times=9)
     pitch_displacement.flat(68)
     pitch_respell = "sharps"
     # TO DO... ditto, should come up with some more elegant way to do this copy/multiplication
@@ -75,7 +75,7 @@ class Line3(GenD, gen_c.Line3):
                         up = (1,8),
                         down=(   9,17,)
                         )
-    pitch_displacement.cycle_fifth(18, cycle=(-1,-1,-1,1,1,1), times=6)
+    pitch_displacement.cycle_me(18, cycle=(-1,-1,-1,1,1,1), times=6)
     rhythm_initial_silence = 49.5
 
     breaks = ID({ 
@@ -102,7 +102,7 @@ class Line4(GenD, gen_c.Line4):
                         up=  (8, 19,     24,25,27,        40,  45,47 ),
                         down=(     20,22,        36,37,38,  41,     48, 53),
                         )
-    pitch_displacement.cycle_fifth(55, cycle=(-1,0,1,-1,1,0), times=3)
+    pitch_displacement.cycle_me(55, cycle=(-1,0,1,-1,1,0), times=3)
     breaks = ID1({
             10:  -12.5,
             19:  -3.5,

@@ -22,8 +22,8 @@ class Drone0(GenE, machines.Drone0):
 
 class Line1(GenE, gen_d.Line1):
     pitch_displacement = machines.FifthDisplacement()
-    pitch_displacement.cycle_fifth(2, cycle=(1,0,0,-1,-1,1), times=5)
-    pitch_displacement.cycle_fifth(31, cycle=(0,-1,-1,0,1,1), times=24)
+    pitch_displacement.cycle_me(2, cycle=(1,0,0,-1,-1,1), times=5)
+    pitch_displacement.cycle_me(31, cycle=(0,-1,-1,0,1,1), times=24)
     rhythm_initial_silence = 24
     rhythm_times = 4
 
@@ -42,7 +42,7 @@ class Line2(GenE, gen_d.Line2):
     # pitch_displacement.down(21)
     # pitch_displacement.flat(3,9,23,27,28)
     # # pitch_displacement.up(22)
-    # pitch_displacement.cycle_fifth(24, cycle=(1,1,0,-1,-1,0), times=12)
+    # pitch_displacement.cycle_me(24, cycle=(1,1,0,-1,-1,0), times=12)
     rhythm_times = 5
     rhythm_initial_silence = 27
     # print(pitch_displacement)
@@ -51,8 +51,8 @@ class Line2(GenE, gen_d.Line2):
 
 class Line3(GenE, machines.RhythmsReverse, machines.PitchesReverse, gen_d.Line3):
     pitch_displacement = machines.FifthDisplacement(up=(1,))
-    pitch_displacement.cycle_fifth(26, cycle=(-1,-1,1,1), times=2)
-    pitch_displacement.cycle_fifth(33, cycle=(-1,-1,0,1,0,1), times=4)
+    pitch_displacement.cycle_me(26, cycle=(-1,-1,1,1), times=2)
+    pitch_displacement.cycle_me(33, cycle=(-1,-1,0,1,0,1), times=4)
     pitch_reverse = (4,6,13,15)
 
     # TO DO... use better ID methods to populate these...

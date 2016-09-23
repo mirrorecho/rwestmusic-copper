@@ -79,17 +79,16 @@
 # - (DONE) short scores aren't showing line #s/names
 # - (DONE) 8va spanner (e.g. end of gen d)
 # - (DONE!) multimeasure rest generator
-# ---------------------------- WEDENSDAY EVENING
+# ---------------------------- THURSDAY EVENING
 # - draft short scores throughout
-# - plan out drone, and start better working into machines
-# - plan out cymbal, and start working better into machines
-# - create midi files / garage band projects for each short score generation
-# - midi review of short scores, with decent draft throughout
-# - drones good draft throughout (including orchestration)
-# - cymbal good draft throughout
 # - more orchestrating gen b
 # - - - do something cool with the dissonance (Bb, A), at line3, event 27
 # - more orchestrating gen c
+# - plan out drone, and start better working into machines
+# - plan out cymbal, and start working better into machines
+# - midi review of short scores, with decent draft throughout
+# - drones good draft throughout (including orchestration)
+# - cymbal good draft throughout
 # - more orchestrating gen d
 # - - - be careful with G natural (against G#) in line 1, event 4
 # - - - consider the low piano chords in line 2 (change short score?)
@@ -112,11 +111,6 @@
 # - think of gen d in 8th note rhythm_denominator
 # - (maybe) good gen h draft short score
 # - review current short scores at piano and adjust
-# ---------------------------- THURSDAY APA
-# - transposing parts
-# - tag to respell flats/sharps (on individual notes)
-# - tempo markings
-# ---------------------------- THURSDAY EVENING
 # - good draft orchestration of gen b
 # - good draft orchestration of gen c
 # - good draft orchestration of gen d
@@ -125,7 +119,8 @@
 # - good draft orchestration of gen g
 # - good draft orchestration of gen h
 # - high mallet tremolos (St Augustine)
-# - (if time) cross lines using rhythm overlay (including mixing together into chords)
+# - (if time) - smarter pitch displacement (stay within range / range of fifths)
+# - (if time) - cross lines using rhythm overlay (including mixing together into chords)
 # - (if time) - pulse machine that separates pulses into separate events (so that each pitch can be displaced)
 # - (if time) - tag to show any data attribute
 # - (if time) - smarter error handling
@@ -155,6 +150,11 @@
 # - review timpani part (including tunings)
 # - errors should show class names / lines that throw them
 # ---------------------------- FRIDAY APA
+# - fix clefs in short scores
+# - create midi files / garage band projects for each short score generation
+# - transposing parts
+# - tag to respell flats/sharps (on individual notes)
+# - tempo markings
 # - final draft: gen d orchestration!
 # - final draft: gen e orchestration!
 # - final draft: gen f orchestration!
