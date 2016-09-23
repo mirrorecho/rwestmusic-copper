@@ -1,5 +1,5 @@
 #(set-default-paper-size "legal" 'landscape)
-#(set-global-staff-size 26)
+#(set-global-staff-size 24)
 
   % % #(set! paper-alist (cons '("10x13" . (cons (* 10 in) (* 13 in))) paper-alist))
 

@@ -30,7 +30,10 @@ class Line1(GenG, machines.RhythmsPulsed, gen_f.Line1):
 # -------------------------------------------------------------------------------------------------
 
 class Line2(GenG, machines.RhythmsPulsed, gen_f.Line2):
-    pass
+    def update_data(self, **kwargs):
+        super().update_data(**kwargs)
+        if self.__class__ is Line2:
+            self.events[1].tag("\clef bass")
 
 # -------------------------------------------------------------------------------------------------
 
@@ -43,6 +46,10 @@ class Line3(GenG, machines.RhythmsPulsed, gen_f.Line3):
 class Line4(GenG, machines.RhythmsPulsed, gen_f.Line4):
     rhythm_pulses = ID({}, default=0.5)
     pitch_displacement = gen_f.Line4.pitch_displacement + machines.FifthDisplacement(up=(10,), down=() )
+    def update_data(self, **kwargs):
+        super().update_data(**kwargs)
+        if self.__class__ is Line4:
+            self.events[1].tag("\clef bass")
 
 # -------------------------------------------------------------------------------------------------
 
@@ -55,6 +62,7 @@ class Line6(GenG, machines.RhythmsPulsed, gen_f.Line6):
 # -------------------------------------------------------------------------------------------------
 
 class Line7(GenG, machines.RhythmsPulsed, gen_f.Line7):
+    rhythm_multipliers = ID({}, default=1)
     rhythm_pulses = ID({}, default=0.5)
 # -------------------------------------------------------------------------------------------------
 

@@ -79,8 +79,18 @@
 # - (DONE) short scores aren't showing line #s/names
 # - (DONE) 8va spanner (e.g. end of gen d)
 # - (DONE!) multimeasure rest generator
-# ---------------------------- THURSDAY EVENING
-# - draft short scores throughout
+# - (DONE) draft short scores through f
+# - (DONE) respell flats/sharps (on individual events or event ranges)
+# ---------------------------- FRIDAY APA
+# - fix so that pulses handle breaks properly when reversed/not reversed
+# - good draft short score of g
+# - transposing parts
+# - tempo markings
+# - rhythmic machine with cymbal roll
+# - print short scores
+# - create midi files / garage band projects for each short score generation
+# - print full scores (and mark up?)
+# ---------------------------- FRIDAY EVENING
 # - more orchestrating gen b
 # - - - do something cool with the dissonance (Bb, A), at line3, event 27
 # - more orchestrating gen c
@@ -104,6 +114,7 @@
 # - more orchestrating gen f
 # - more orchestrating gen g
 # - more orchestrating gen h
+# ---------------------------- SATURDAY EVENING
 # - (maybe?) need to be able to tag base arrangment stuff even on "unarranged" bubble
 # - good draft gen f short score
 # - (maybe) better way / machine(s) to tag spanners
@@ -138,6 +149,7 @@
 # - good parts template (aside from percussion)
 # - review fonts
 # - (if time) allow slices of data to be tagged
+# ---------------------------- SUNDAY
 # - penultimate draft: gen d orchestration!
 # - penultimate draft: gen e orchestration!
 # - penultimate draft: gen f orchestration!
@@ -149,18 +161,11 @@
 # - percussion beaters (including vibraphone mallets and motor)
 # - review timpani part (including tunings)
 # - errors should show class names / lines that throw them
-# ---------------------------- FRIDAY APA
-# - fix clefs in short scores
-# - create midi files / garage band projects for each short score generation
-# - transposing parts
-# - tag to respell flats/sharps (on individual notes)
-# - tempo markings
 # - final draft: gen d orchestration!
 # - final draft: gen e orchestration!
 # - final draft: gen f orchestration!
 # - final draft: gen g orchestration!
 # - final draft: gen h orchestration!
-# ---------------------------- FRIDAY EVENING
 # - review final draft of printed score and mark up
 # - implement final draft printed score markups (or add notes)
 # - (if time) better way to handle octave transposing instruments in scores
@@ -204,6 +209,7 @@
 # ---------------------------- FUTURE:
 # - new monitor / studio setup!!!
 # - I LOATHE GARAGE BAND... need some better way to create playback
+# - fix clefs in short scores
 # - replace some class-defined stuff with modules / introspection (i.e. should not need to create a class to describe grid bubble lines that are described above)
 # - think about data cleanup carefully, and adjust
 # - parts need to be WAY WAY WAY simpler to generate!!!!

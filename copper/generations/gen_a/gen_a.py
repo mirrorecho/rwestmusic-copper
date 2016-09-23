@@ -46,6 +46,7 @@ bubbles.illustrate_me(__file__,
                 line2 = Line2(show_data_attr="original_depthwise_index"),
             ),
             sequence = ("line1","line2","drone0"),
+            stylesheets = ("../../scores/stylesheets/shortscore.ily",)
         ).get_lilypond_file(),
     as_midi=True,
     )

@@ -1,4 +1,4 @@
-% 2016-09-22 22:18
+% 2016-09-23 12:25
 
 \version "2.18.2"
 \language "english"
@@ -71,35 +71,35 @@
                     \mark #2
                     R1 * 6
                 }
-                d'2 ^ \markup { 1 }
-                c'4 ^ \markup { 2 }
-                e4 ^ \markup { 3 }
-                g4 ^ \markup { 4 }
-                a8 [ ^ \markup { 5 }
-                b8 ] ^ \markup { 6 }
-                d'2 ^ \markup { 7 }
-                c'4 ^ \markup { 8 }
-                b4 ^ \markup { 9 }
-                a4 ^ \markup { 10 }
-                f8 [ ^ \markup { 11 }
-                e8 ] ^ \markup { 12 }
-                d4 ^ \markup { 13 }
-                bf,4 ^ \markup { 14 }
-                a,4 ^ \markup { 15 }
-                c2 ^ \markup { 16 }
-                bf,8 [ ^ \markup { 17 }
-                a,8 ] ^ \markup { 18 }
-                c2. ~ ^ \markup { 19 }
+                d'2
+                c'4
+                e4
+                g4
+                a8 [
+                b8 ]
+                d'2
+                c'4
+                b4
+                a4
+                f8 [
+                e8 ]
+                d4
+                as,4
+                a,4
+                c2
+                as,8 [
+                a,8 ]
+                c2. ~
                 c2.
-                bf,2. ^ \markup { 20 }
-                a,2. ^ \markup { 21 }
-                f,2. ~ ^ \markup { 22 }
+                as,2.
+                a,2.
+                f,2. ~
                 f,2.
-                g,2. ^ \markup { 23 }
-                a,2. ^ \markup { 24 }
-                g,4 ^ \markup { 25 }
-                bf,4 ^ \markup { 26 }
-                a,4 ^ \markup { 27 }
+                g,2.
+                a,2.
+                g,4
+                as,4
+                a,4
                 {
                     R1 * 3/4
                 }

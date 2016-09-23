@@ -45,8 +45,9 @@ class ParentAttachmentTagData(machines.AttachmentTagData, machines.Tree):
         return self.ticks_before + self.ticks
 
 class EventData(ParentAttachmentTagData):
-    pitch = 0 # note, this could be set to a list/tuple to indicate
+    pitch = 0 # note, this could be set to a list/tuple to indicate a chord
     original_pitch = 0 # just a way to track what's going on if pitch is transposed
+    respell = None # set to "sharps" or "flats" 
     children_type = LogicalTieData
     from_line = None # used in FragmentLine for EventData that's copied from another line (tracks where it's copied from)
 
