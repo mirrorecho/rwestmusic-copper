@@ -24,8 +24,10 @@ pdf/
 .tar.gz
 
 ##########################################
-# Misc Playback TOols (e.g. garage band)
+# Misc Playback Tools (e.g. garage band)
 *.band/
+*.wav
+*.mp3
 
 ##########################################
 # Lilypond gitignore
