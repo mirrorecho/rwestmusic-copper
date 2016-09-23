@@ -23,7 +23,7 @@ class Drone0(GenE, machines.Drone0):
 class Line1(GenE, gen_d.Line1):
     pitch_displacement = machines.FifthDisplacement()
     pitch_displacement.cycle_fifth(2, cycle=(1,0,0,-1,-1,1), times=5)
-    pitch_displacement.cycle_fifth(31, cycle=(0,-1,-1,0,1,1), times=12)
+    pitch_displacement.cycle_fifth(31, cycle=(0,-1,-1,0,1,1), times=24)
     rhythm_initial_silence = 24
     rhythm_times = 4
 
@@ -45,7 +45,7 @@ class Line2(GenE, gen_d.Line2):
     # pitch_displacement.cycle_fifth(24, cycle=(1,1,0,-1,-1,0), times=12)
     rhythm_times = 5
     rhythm_initial_silence = 27
-    print(pitch_displacement)
+    # print(pitch_displacement)
 
 # -------------------------------------------------------------------------------------------------
 

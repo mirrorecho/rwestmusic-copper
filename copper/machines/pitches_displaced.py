@@ -16,7 +16,7 @@ class PitchDisplacementData(machines.IndexedData):
         if isinstance(value, set):
             super().__setitem__(key, value)
         elif isinstance(value, tuple) or isinstance(value, list):
-            super().__setitem__(key, set(value))
+            super().__setitem__(key, set(value)) # TO DO.. this line should be enough.... 
         else:
             raise TypeError("PitchDisplacementData item value must be a set, or a list or tuple (to be converted to a set)")
 

@@ -19,13 +19,6 @@ class Drone0(GenF, machines.Drone0):
     pass
 
 # -------------------------------------------------------------------------------------------------
-class Line1(GenF, gen_e.Line1):
-    pass
-
-# -------------------------------------------------------------------------------------------------
-class Line2(GenF, gen_e.Line2):
-    pass
-# -------------------------------------------------------------------------------------------------
 
 class Line3(GenF, gen_e.Line4):
     # rhythm_reverse = list(gen_e.Line4.rhythm_reverse)
@@ -52,12 +45,45 @@ class Line3(GenF, gen_e.Line4):
     rhythm_times = 3 # NOTE... 3rd time cuts off... maybe that's Ok
     rhythm_multipliers = gen_e.Line4.rhythm_multipliers
     rhythm_multipliers[18]=1
+    respell = "flats"
+    clef="treble"
 
-    def update_data(self):
-        super().update_data()
-        if self.__class__.__name__ == "Line3": # this helps restrict tags to short score only
-            self.logical_ties[0].tag("\clef treble")
+    # def update_data(self):
+    #     super().update_data()
+    #     if self.__class__.__name__ == "Line3": # this helps restrict tags to short score only
+    #         self.logical_ties[0].tag("\clef treble")
 
+# -------------------------------------------------------------------------------------------------
+
+class Line1(GenF, gen_e.Line1):
+    pitch_displacement = gen_e.Line1.pitch_displacement.copy() # + Line3.pitch_displacement
+    for i,p in Line3.pitch_displacement.non_default_items():
+        for j in range(2):
+            pitch_displacement[i + j*28] |= p
+    pitch_displacement[38] = set((7,))
+    pitch_displacement[40] = set()
+    pitch_displacement[52] = set()
+    # pitch_displacement[39] = set((-12))
+    respell = "flats"
+    # print(pitch_displacement)
+
+    # show_data_type = machines.SegmentData
+    rhythm_multipliers = machines.RhythmsMultiplied.make_multipliers(default=1, limit=40)
+    rhythm_multipliers.fillme(range(1,3),2)
+    rhythm_multipliers.fillme(range(8,20),0.5)
+    # print(rhythm_multipliers)
+    rhythm_initial_silence = 32
+    breaks = gen_e.Line1.breaks.copy()
+    for i in breaks.keylist():
+        breaks[i] = breaks[i] * 2 / 1.5
+    breaks[6] = -3
+    breaks[7] = -6
+    breaks[10] = 2.5
+    breaks[15] = 1.5
+
+# -------------------------------------------------------------------------------------------------
+class Line2(GenF, gen_e.Line2):
+    pass
 # -------------------------------------------------------------------------------------------------
 
 class Line4(GenF, gen_e.Line3):
@@ -74,7 +100,6 @@ class Line4(GenF, gen_e.Line3):
         10:4
         }
     respell = "flats"
-    clef = "bass"
 
 # -------------------------------------------------------------------------------------------------
 
@@ -98,7 +123,7 @@ bubbles.illustrate_me(__file__,
                 line1 = Line1(show_data_attr="original_depthwise_index"),
                 line2 = Line2(show_data_attr="original_depthwise_index"),
                 line3 = Line3(show_data_attr="original_depthwise_index"),
-                line4 = Line4(show_data_attr="original_depthwise_index"),
+                line4 = Line4(show_data_attr="original_depthwise_index", clef="bass"),
                 line5 = Line5(show_data_attr="original_depthwise_index"),
                 line6 = Line6(show_data_attr="original_depthwise_index"),
                 line7 = Line7(show_data_attr="original_depthwise_index"),

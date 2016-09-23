@@ -248,6 +248,8 @@
 # smarter metrical durations (notes vs rests vs beaming)
 # - be clear about what accepts kwargs and what does not... 
 # - better way to show pitch indices in harmony
+# - color code lines, and fragments by line (just tag color... that's enough!)
+# - smart auto-respell pitches
 
 import abjad
 from calliope import bubbles
