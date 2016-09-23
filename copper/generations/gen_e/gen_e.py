@@ -31,12 +31,21 @@ class Line1(GenE, gen_d.Line1):
 
 class Line2(GenE, gen_d.Line2):
     # TO DO... revisit this now that harmonies adjusted in gen_d
-    pitch_displacement = gen_d.Line2.pitch_displacement.copy()
-    pitch_displacement.flat(3,9)
-    # pitch_displacement.up(22)
-    pitch_displacement.cycle_fifth(24, cycle=(1,1,0,-1,-1,0), times=12)
+    pitch_displacement = machines.FifthDisplacement()
+    # pitch_displacement = gen_d.Line2.pitch_displacement.copy()
+    for i,f in gen_d.Line2.pitch_displacement.non_default_items()[::2]:
+        # if i%2 != 0:
+        pitch_displacement[i]=f
+    pitch_displacement.flat(9,38)
+    pitch_displacement.up(26,27,28)
+    # pitch_displacement.up(28,29,31)
+    # pitch_displacement.down(21)
+    # pitch_displacement.flat(3,9,23,27,28)
+    # # pitch_displacement.up(22)
+    # pitch_displacement.cycle_fifth(24, cycle=(1,1,0,-1,-1,0), times=12)
     rhythm_times = 5
     rhythm_initial_silence = 27
+    print(pitch_displacement)
 
 # -------------------------------------------------------------------------------------------------
 
@@ -50,6 +59,7 @@ class Line3(GenE, machines.RhythmsReverse, machines.PitchesReverse, gen_d.Line3)
     rhythm_reverse = (1,2,3,4,6,7,8,10,11,12,13,15,16,17)
     rhythm_initial_silence = 23
     rhythm_times = 2
+
 
 # -------------------------------------------------------------------------------------------------
 
@@ -72,22 +82,31 @@ class Line5(Line4):
 
 class Line6(GenE, gen_d.Line4):
     rhythm_multipliers = machines.RhythmsMultiplied.make_multipliers({}, 0.5)
-    # TO DO... need to work on this!
+    pitch_displacement = gen_d.Line4.pitch_displacement.copy()
+    pitch_displacement.down(9,27,30)
+    pitch_displacement.up(37,56)
+    # print(pitch_displacement)
 
 # -------------------------------------------------------------------------------------------------
+
+class Line2ShortScore(Line2):
+    def update_data(self, **kwargs):
+        super().update_data(**kwargs)
+        self.events[11].tag("\clef bass")
 
 bubbles.illustrate_me(__file__, 
     lambda: staves.CopperShortScore(
             bubbles.Bubble(
                 drone0 = Drone0(show_data_attr="original_depthwise_index"),
                 line1 = Line1(show_data_attr="original_depthwise_index"),
-                line2 = Line2(show_data_attr="original_depthwise_index"),
+                line2 = Line2ShortScore(show_data_attr="original_depthwise_index"),
                 line3 = Line3(show_data_attr="original_depthwise_index"),
                 line4 = Line4(show_data_attr="original_depthwise_index"),
                 line5 = Line5(show_data_attr="original_depthwise_index"),
                 line6 = Line6(show_data_attr="original_depthwise_index"),
             ),
             sequence = ("line1","line2","line3","line4","line5","line6","drone0"),
+             stylesheets = ("../../scores/stylesheets/shortscore.ily",)
         ).get_lilypond_file(),
     as_midi=True,
     )

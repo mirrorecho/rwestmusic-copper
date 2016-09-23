@@ -92,6 +92,8 @@
 # - more orchestrating gen c
 # - more orchestrating gen d
 # - - - be careful with G natural (against G#) in line 1, event 4
+# - - - consider the low piano chords in line 2 (change short score?)
+# - - - rhythm in piano part in line 5 is not well suited to the meter... OK or change?
 # - some rhythms with metric modulations
 # - (maybe) tag attachments on individual abjad leaves? (some data structure on LogicalTieData?)
 # - good draft of gen e short score (especially Line 6)
@@ -99,6 +101,7 @@
 # - (if time) start gen h draft short score
 # - (if time) start orchestrating gen h
 # - more orchestrating gen e
+# - - - think about the low Bb (A#) in the 2nd half of line 2... change?
 # - more orchestrating gen f
 # - more orchestrating gen g
 # - more orchestrating gen h
@@ -250,6 +253,9 @@ import abjad
 from calliope import bubbles
 from copy import copy
 from copper import machines
+
+f = machines.FifthDisplacement(up=(1,2,3),down=(5,6,7))
+print(f.non_default_items()[::2])
 
 # r = abjad.scoretools.make_multimeasure_rests([ (6,8),(3,8), (6,8),(3,8), (6,8),(3,8),  ])
 
