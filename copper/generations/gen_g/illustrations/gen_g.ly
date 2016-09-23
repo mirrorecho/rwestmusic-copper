@@ -1,4 +1,4 @@
-% 2016-09-23 13:01
+% 2016-09-23 17:24
 
 \version "2.18.2"
 \language "english"
@@ -364,12 +364,13 @@
                 g''8 [ ^ \markup { 53 }
                 g''8
                 gf''8 ^ \markup { 54 }
-                gf''8
-                a''8 ^ \markup { 55 }
+                gf''8 ]
+                r4
+                r4
+                a''8 [ ^ \markup { 55 }
+                a''8
+                a''8
                 a''8 ]
-                a''8
-                r2
-                a''8
                 g''8 [ ^ \markup { 56 }
                 g''8
                 gf''8 ^ \markup { 57 }
@@ -415,22 +416,21 @@
                 g''8 [ ^ \markup { 71 }
                 g''8
                 gf''8 ^ \markup { 72 }
-                gf''8
-                a''8 ^ \markup { 73 }
-                a''8 ]
-                a''8
+                gf''8 ]
                 r4
-                a''8 [
+                a''8 [ ^ \markup { 73 }
+                a''8
+                a''8
+                a''8
                 g''8 ^ \markup { 74 }
                 g''8 ]
                 gf''8 [ ^ \markup { 75 }
-                gf''8
-                d''8 ^ \markup { 76 }
+                gf''8 ]
+                d''4. ^ \markup { 76 }
                 d''8
+                d''8 [
                 d''8
-                d''8 ~ ]
-                d''4
-                e''8 [ ^ \markup { 77 }
+                e''8 ^ \markup { 77 }
                 e''8
                 gf''8 ^ \markup { 78 }
                 gf''8 ]
@@ -838,12 +838,12 @@
                 a''8 ] ^ \markup { 12 }
                 g''8 [ ^ \markup { 13 }
                 bf''8 ^ \markup { 14 }
-                a''8 ^ \markup { 15 }
-                c'''8 ^ \markup { 16 }
+                a''8 ] ^ \markup { 15 }
+                c'''4 ^ \markup { 16 }
                 c'''8
-                c'''8 ]
-                c'''4
-                bf''8 [ ^ \markup { 17 }
+                c'''8 [
+                c'''8
+                bf''8 ^ \markup { 17 }
                 a''8 ^ \markup { 18 }
                 g'''8 ^ \markup { 19 }
                 g'''8 ]
@@ -855,15 +855,14 @@
                 a''8 ] ^ \markup { 24 }
                 d'''8 [ ^ \markup { 25 }
                 f'''8 ^ \markup { 26 }
-                a''8 ^ \markup { 27 }
-                c'''8 ] ^ \markup { 28 }
-                r4
+                a''8 ] ^ \markup { 27 }
+                r4.
                 {
                     R1 * 9/4
                 }
                 r2
-                r8
-                c'''8
+                c'''8 [ ^ \markup { 28 }
+                c'''8 ]
                 f'''8 [ ^ \markup { 29 }
                 a''8 ^ \markup { 30 }
                 f''8 ^ \markup { 31 }
@@ -897,14 +896,13 @@
                 b''8 [ ^ \markup { 51 }
                 a''8 ^ \markup { 52 }
                 f''8 ^ \markup { 53 }
-                e''8 ^ \markup { 54 }
-                c''8 ] ^ \markup { 55 }
-                r8
+                e''8 ] ^ \markup { 54 }
+                r4
                 {
                     R1 * 3/4
                 }
-                r8
-                c''8 [
+                c''8 [ ^ \markup { 55 }
+                c''8
                 f''8 ^ \markup { 56 }
                 b''8 ^ \markup { 57 }
                 c''8 ^ \markup { 58 }
@@ -955,48 +953,44 @@
                 {
                     \mark #7
                     \mark #7
-                    R1 * 27/4
+                    R1 * 15/2
                 }
                 r4
                 g'8 [ ^ \markup { 1 }
                 g'8
-                g'8 ]
-                r8
-                r2
-                r8
                 g'8
+                g'8 ]
                 f''8 [ ^ \markup { 2 }
                 f''8
                 a''8 ^ \markup { 3 }
-                a''8
-                f''8 ^ \markup { 4 }
-                f''8 ]
-                f''8
+                a''8 ]
+                r4
                 r2
-                r8
-                r8
+                f''8 [ ^ \markup { 4 }
+                f''8 ]
                 f''8 [
+                f''8
                 d'''8 ^ \markup { 5 }
                 d'''8
                 a''8 ^ \markup { 6 }
                 a''8 ]
+                {
+                    R1 * 3/4
+                }
                 g'''8 [ ^ \markup { 7 }
                 g'''8
-                g'''8 ]
-                r4.
-                r4.
-                g'''8 [
+                g'''8
+                g'''8
                 f'''8 ^ \markup { 8 }
                 f'''8 ]
                 a''8 [ ^ \markup { 9 }
-                a''8
-                g'8 ^ \markup { 10 }
+                a''8 ]
+                r2
+                r4
+                g'8 [ ^ \markup { 10 }
+                g'8
                 g'8
                 g'8 ]
-                r8
-                r2
-                r8
-                g'8
                 f''8 [ ^ \markup { 11 }
                 f''8
                 b''8 ^ \markup { 12 }
@@ -1006,39 +1000,38 @@
                 c'''8 [ ^ \markup { 14 }
                 c'''8
                 b''8 ^ \markup { 15 }
-                b''8
-                d'''8 ^ \markup { 16 }
+                b''8 ]
+                r4
+                r2
+                d'''8 [ ^ \markup { 16 }
                 d'''8 ]
                 d'''8 [
                 d'''8
                 d'''8
                 d'''8
-                d'''8 ]
-                r8
-                r2
-                r8
                 d'''8
+                d'''8 ]
                 g'''8 [ ^ \markup { 17 }
                 g'''8
                 b''8 ^ \markup { 18 }
-                b''8
-                a''8 ^ \markup { 19 }
-                a''8 ]
-                a''8
+                b''8 ]
+                r4
                 r2
-                r8
-                r8
+                a''8 [ ^ \markup { 19 }
+                a''8 ]
                 a''8 [
+                a''8
                 c''8 ^ \markup { 20 }
                 c''8
                 b'8 ^ \markup { 21 }
                 b'8 ]
+                {
+                    R1 * 3/4
+                }
                 c'8 [ ^ \markup { 22 }
                 c'8
-                c'8 ]
-                r4.
-                r4.
-                c'8 [
+                c'8
+                c'8
                 d''8 ^ \markup { 23 }
                 d''8 ]
                 b''8 [ ^ \markup { 24 }
@@ -1048,45 +1041,44 @@
                 g'''8 ^ \markup { 26 }
                 g'''8 ]
                 b''8 [ ^ \markup { 27 }
-                b''8
-                d'''8 ^ \markup { 28 }
+                b''8 ]
+                r2
+                r4.
+                d'''8 [ ^ \markup { 28 }
                 d'''8
                 d'''8 ]
-                r8
-                {
-                    R1 * 3/4
-                }
                 d'''8 [
                 c'''8 ^ \markup { 29 }
                 c'''8
                 e''8 ^ \markup { 30 }
-                e''8
-                c''8 ] ^ \markup { 31 }
-                c''8 [
-                c''8 ]
+                e''8 ]
+                r8
                 r2
-                r4
+                r8
+                c''8 ^ \markup { 31 }
                 c''8 [
+                c''8
+                c''8
                 a''8 ^ \markup { 32 }
                 a''8
                 b''8 ] ^ \markup { 33 }
-                b''8 [
-                d'''8 ^ \markup { 34 }
-                d'''8
-                d'''8 ]
-                r4
+                b''8
                 r2
-                d'''8 [
+                r8
+                r8
+                d'''8 [ ^ \markup { 34 }
+                d'''8
+                d'''8
+                d'''8
                 c''8 ] ^ \markup { 35 }
                 c''8 [
                 e''8 ^ \markup { 36 }
-                e''8
-                a''8 ^ \markup { 37 }
+                e''8 ]
+                r4.
+                r4.
+                a''8 [ ^ \markup { 37 }
                 a''8
                 a''8 ]
-                {
-                    R1 * 3/4
-                }
                 a''8 [
                 f''8 ^ \markup { 38 }
                 f''8
@@ -1097,36 +1089,37 @@
                 f''8 ^ \markup { 41 }
                 f''8
                 e''8 ^ \markup { 42 }
-                e''8
-                g''8 ] ^ \markup { 43 }
-                g''8 [
-                g''8
+                e''8 ]
+                r8
+                r8
+                g''8 [ ^ \markup { 43 }
                 g''8
                 g''8
                 g''8
                 g''8 ]
-                r4
                 g''8 [
+                g''8
+                g''8
                 f''8 ^ \markup { 44 }
                 f''8
                 b''8 ] ^ \markup { 45 }
-                b''8 [
-                d'''8 ^ \markup { 46 }
-                d'''8
-                d'''8 ]
-                r4
+                b''8
                 r2
-                d'''8 [
+                r8
+                r8
+                d'''8 [ ^ \markup { 46 }
+                d'''8
+                d'''8
+                d'''8
                 g'''8 ] ^ \markup { 47 }
                 g'''8 [
                 b''8 ^ \markup { 48 }
-                b''8
-                g''8 ^ \markup { 49 }
+                b''8 ]
+                r4.
+                r4.
+                g''8 [ ^ \markup { 49 }
                 g''8
                 g''8 ]
-                {
-                    R1 * 3/4
-                }
                 g''8 [
                 a''8 ^ \markup { 50 }
                 a''8

@@ -1,4 +1,4 @@
-% 2016-09-22 16:39
+% 2016-09-23 17:21
 
 \version "2.18.2"
 \language "english"
@@ -44,7 +44,7 @@
                 b4 ^ \markup { 12 }
                 e'4 ^ \markup { 13 }
                 d''4 ^ \markup { 14 }
-                gs''4 ^ \markup { 15 }
+                af''4 ^ \markup { 15 }
                 r2
                 e''2 ~ ^ \markup { 16 }
                 e''2
@@ -55,7 +55,7 @@
                 }
                 a'4 ^ \markup { 19 }
                 d''8 [ ^ \markup { 20 }
-                gs''8 ] ^ \markup { 21 }
+                af''8 ] ^ \markup { 21 }
                 a'2 ~ ^ \markup { 22 }
                 a'1
                 e'2. ^ \markup { 23 }
@@ -63,7 +63,7 @@
                 b2
                 e'2 ^ \markup { 25 }
                 d''2 ^ \markup { 26 }
-                gs''2 ^ \markup { 27 }
+                af''2 ^ \markup { 27 }
                 e''2 ^ \markup { 28 }
                 g'4 ^ \markup { 29 }
                 b4 ^ \markup { 30 }
@@ -72,7 +72,7 @@
                 }
                 d'2 ^ \markup { 31 }
                 b'4 ^ \markup { 32 }
-                gs''4 ^ \markup { 33 }
+                af''4 ^ \markup { 33 }
                 {
                     R1 * 1
                 }
@@ -153,26 +153,26 @@
                 fs'16 ] ^ \markup { 6 }
                 e''4 ^ \markup { 7 }
                 d''8 [ ^ \markup { 8 }
-                gs''8 ^ \markup { 9 }
+                af''8 ^ \markup { 9 }
                 cs'''8 ^ \markup { 10 }
                 a''16 ^ \markup { 11 }
-                gs''16 ^ \markup { 12 }
+                af''16 ^ \markup { 12 }
                 fs''8 ^ \markup { 13 }
                 a''8 ^ \markup { 14 }
-                gs''8 ^ \markup { 15 }
+                af''8 ^ \markup { 15 }
                 b''8 ~ ] ^ \markup { 16 }
                 b''8 [
                 e'''16 ^ \markup { 17 }
-                ds'''16 ] ^ \markup { 18 }
+                ef'''16 ] ^ \markup { 18 }
                 fs'''2. ^ \markup { 19 }
                 e'''8 [ ^ \markup { 20 }
-                ds'''8 ^ \markup { 21 }
+                ef'''8 ^ \markup { 21 }
                 b''8 ^ \markup { 22 }
                 cs'''16 ^ \markup { 23 }
-                ds'''16 ] ^ \markup { 24 }
+                ef'''16 ] ^ \markup { 24 }
                 cs'''4 ^ \markup { 25 }
                 e'''4 ^ \markup { 26 }
-                ds'''4 ^ \markup { 27 }
+                ef'''4 ^ \markup { 27 }
                 r2.
                 {
                     R1 * 5

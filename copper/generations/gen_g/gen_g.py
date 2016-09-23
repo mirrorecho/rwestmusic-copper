@@ -64,6 +64,9 @@ class Line6(GenG, machines.RhythmsPulsed, gen_f.Line6):
 class Line7(GenG, machines.RhythmsPulsed, gen_f.Line7):
     rhythm_multipliers = ID({}, default=1)
     rhythm_pulses = ID({}, default=0.5)
+    # breaks = gen_f.Line7.breaks
+    # breaks[1] = -2
+    # breaks[2] = 0
 # -------------------------------------------------------------------------------------------------
 
 class Line8(Line5):

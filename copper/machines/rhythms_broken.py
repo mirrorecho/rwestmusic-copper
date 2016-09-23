@@ -19,15 +19,18 @@ class RhythmsBroken(object):
     def set_logical_ties(self, event, **kwargs):
         super().set_logical_ties(event, **kwargs)
         segment_index = event.parent.my_index
-        if segment_index in self.breaks.keylist():
-            for i, logical_tie in enumerate(event.children):
-                if logical_tie.original_duration > 1:
-                    break_signed_ticks = int(self.breaks[segment_index] * self.rhythm_default_multiplier)
-                    if break_signed_ticks < 0:
-                        # if a rest is being added, then it's added as a new logical tie:
-                        insert_index = i+1 if event.parent.rhythm_reverse else i #insert rest after if segment reversed, else before
-                        event.insert(insert_index, machines.LogicalTieData(ticks=abs(break_signed_ticks), rest=True )) # TO Do.. should we call set_logical_tie on this new logical tie data?
-                    else:
-                        # otherwise, the existing note is extended:
-                        logical_tie.ticks += break_signed_ticks
+
+        if segment_index in self.breaks.keylist() and any([l.original_duration > 1 for l in event.children]):
+            break_signed_ticks = int(self.breaks[segment_index] * self.rhythm_default_multiplier)
+            # if a rest is being added, then it's added as a new logical tie:
+            if break_signed_ticks < 0:
+                insert_index = len(event.children) if event.parent.rhythm_reverse else 0 #insert rest after if segment reversed, else before
+                event.insert(insert_index, machines.LogicalTieData(ticks=abs(break_signed_ticks), rest=True )) # TO Do.. should we call set_logical_tie on this new logical tie data?
+            else:
+                # otherwise, the existing note is extended:
+                if event.parent.rhythm_reverse:
+                    logical_tie = event.last_non_rest
+                else:
+                    logical_tie = event.first_non_rest
+                logical_tie.ticks += break_signed_ticks
 

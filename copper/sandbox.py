@@ -81,16 +81,14 @@
 # - (DONE!) multimeasure rest generator
 # - (DONE) draft short scores through f
 # - (DONE) respell flats/sharps (on individual events or event ranges)
-# ---------------------------- FRIDAY APA
-# - fix so that pulses handle breaks properly when reversed/not reversed
+# - (DONE) fix so that pulses handle breaks properly when reversed/not reversed
+# ---------------------------- FRIDAY EVENING
 # - good draft short score of g
 # - transposing parts
 # - tempo markings
 # - rhythmic machine with cymbal roll
 # - print short scores
 # - create midi files / garage band projects for each short score generation
-# - print full scores (and mark up?)
-# ---------------------------- FRIDAY EVENING
 # - more orchestrating gen b
 # - - - do something cool with the dissonance (Bb, A), at line3, event 27
 # - more orchestrating gen c
@@ -116,6 +114,7 @@
 # - more orchestrating gen h
 # ---------------------------- SATURDAY EVENING
 # - (maybe?) need to be able to tag base arrangment stuff even on "unarranged" bubble
+# - (maybe?) print full scores (and mark up?)
 # - good draft gen f short score
 # - (maybe) better way / machine(s) to tag spanners
 # - good draft gen g short score

@@ -57,6 +57,12 @@ class EventData(ParentAttachmentTagData):
             if not l.rest:
                 return l
 
+    @property
+    def last_non_rest(self):
+        for l in self.children[::-1]:
+            if not l.rest:
+                return l
+
     def remove_bookend_rests(self):
         if self.children:
             if self.children[0].rest:

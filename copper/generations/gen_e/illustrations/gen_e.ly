@@ -1,4 +1,4 @@
-% 2016-09-22 22:08
+% 2016-09-23 17:22
 
 \version "2.18.2"
 \language "english"
@@ -105,32 +105,32 @@
                 <f g b>4. ^ \markup { 12 }
                 <a b c'>4. ^ \markup { 13 }
                 <d e f>4. ^ \markup { 14 }
-                <as, c e>4. ^ \markup { 15 }
+                <bf, c e>4. ^ \markup { 15 }
                 <g b c'>4. ~ ^ \markup { 16 }
                 <g b c'>2. ~
                 <g b c'>4.
                 <c d e>4. ^ \markup { 17 }
-                <g, as, e>4. ^ \markup { 18 }
+                <g, bf, e>4. ^ \markup { 18 }
                 <g b c'>4. ~ ^ \markup { 19 }
                 <g b c'>4.
                 <c d e>4. ^ \markup { 20 }
-                <as, c e>4. ^ \markup { 21 }
+                <bf, c e>4. ^ \markup { 21 }
                 <d b c'>4. ~ ^ \markup { 22 }
                 <d b c'>4.
                 <d e f>4. ^ \markup { 23 }
-                <as, c e>4. ^ \markup { 24 }
+                <bf, c e>4. ^ \markup { 24 }
                 <g b c'>4. ^ \markup { 25 }
                 <c d e>4. ^ \markup { 26 }
-                <g, as, e>4. ^ \markup { 27 }
+                <g, bf, e>4. ^ \markup { 27 }
                 <g b c'>2. ^ \markup { 28 }
                 <c d e>4. ^ \markup { 29 }
-                <as, c e>4. ^ \markup { 30 }
+                <bf, c e>4. ^ \markup { 30 }
                 <d b c'>2. ^ \markup { 31 }
                 <d e f>4. ^ \markup { 32 }
-                <as, c e>4. ^ \markup { 33 }
+                <bf, c e>4. ^ \markup { 33 }
                 <g b c'>2. ^ \markup { 34 }
                 <c d e>4. ^ \markup { 35 }
-                <g, as, e>4. ^ \markup { 36 }
+                <g, bf, e>4. ^ \markup { 36 }
             }
         }
         \new Staff {
