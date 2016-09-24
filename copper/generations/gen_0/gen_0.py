@@ -46,7 +46,16 @@ class Line1(Gen0, machines.PitchedLine):
         4:2,
         5:2,
         8:1,
-        9:2
+        9:2,
+
+        # TRYING MODE CHANGES...
+        # 2:1,
+        # 4:2,
+        # 5:2,
+        # # 6:3,
+        # 7:3,
+        # 8:4,
+        # 9:5
         }, default=0, limit=10)
     # ------------------------------------------------------------------------------------------
     # # show_data_type=machines.SegmentData

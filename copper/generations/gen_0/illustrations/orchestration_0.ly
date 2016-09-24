@@ -1,4 +1,4 @@
-% 2016-09-20 17:39
+% 2016-09-23 21:07
 
 \version "2.18.2"
 \language "english"
@@ -20,9 +20,9 @@
                 \new Staff {
                     \set Staff.instrumentName = \markup { "Flute 1" }
                     \set Staff.shortInstrumentName = \markup { Fl.1 }
+                    \time 4/4
                     {
                         \numericTimeSignature
-                        \time 4/4
                         \accidentalStyle modern-cautionary
                         R1 * 12
                     }
@@ -30,9 +30,9 @@
                 \new Staff {
                     \set Staff.instrumentName = \markup { "Flute 2" }
                     \set Staff.shortInstrumentName = \markup { Fl.2 }
+                    \time 4/4
                     {
                         \numericTimeSignature
-                        \time 4/4
                         \accidentalStyle modern-cautionary
                         R1 * 12
                     }
@@ -40,9 +40,9 @@
                 \new Staff {
                     \set Staff.instrumentName = \markup { "Flute 3" }
                     \set Staff.shortInstrumentName = \markup { Fl.3 }
+                    \time 4/4
                     {
                         \numericTimeSignature
-                        \time 4/4
                         \accidentalStyle modern-cautionary
                         R1 * 12
                     }
@@ -54,9 +54,9 @@
                 \new Staff {
                     \set Staff.instrumentName = \markup { "Oboe 1" }
                     \set Staff.shortInstrumentName = \markup { Ob.1 }
+                    \time 4/4
                     {
                         \numericTimeSignature
-                        \time 4/4
                         \accidentalStyle modern-cautionary
                         R1 * 12
                     }
@@ -64,9 +64,9 @@
                 \new Staff {
                     \set Staff.instrumentName = \markup { "Oboe 2" }
                     \set Staff.shortInstrumentName = \markup { Ob.2 }
+                    \time 4/4
                     {
                         \numericTimeSignature
-                        \time 4/4
                         \accidentalStyle modern-cautionary
                         R1 * 12
                     }
@@ -78,9 +78,9 @@
                 \new Staff {
                     \set Staff.instrumentName = \markup { "Clarinet 1" }
                     \set Staff.shortInstrumentName = \markup { Cl.1 }
+                    \time 4/4
                     {
                         \numericTimeSignature
-                        \time 4/4
                         \accidentalStyle modern-cautionary
                         R1 * 12
                     }
@@ -88,9 +88,9 @@
                 \new Staff {
                     \set Staff.instrumentName = \markup { "Clarinet 2" }
                     \set Staff.shortInstrumentName = \markup { Cl.2 }
+                    \time 4/4
                     {
                         \numericTimeSignature
-                        \time 4/4
                         \accidentalStyle modern-cautionary
                         R1 * 12
                     }
@@ -103,9 +103,9 @@
                     \clef "bass"
                     \set Staff.instrumentName = \markup { "Bassoon 1" }
                     \set Staff.shortInstrumentName = \markup { Bsn.1 }
+                    \time 4/4
                     {
                         \numericTimeSignature
-                        \time 4/4
                         \accidentalStyle modern-cautionary
                         R1 * 12
                     }
@@ -114,9 +114,9 @@
                     \clef "bass"
                     \set Staff.instrumentName = \markup { "Bassoon 2" }
                     \set Staff.shortInstrumentName = \markup { Bsn.2 }
+                    \time 4/4
                     {
                         \numericTimeSignature
-                        \time 4/4
                         \accidentalStyle modern-cautionary
                         R1 * 12
                     }
@@ -130,9 +130,9 @@
                 \new Staff {
                     \set Staff.instrumentName = \markup { "Horn in F 1" }
                     \set Staff.shortInstrumentName = \markup { Hn.1 }
+                    \time 4/4
                     {
                         \numericTimeSignature
-                        \time 4/4
                         \accidentalStyle modern-cautionary
                         r2
                         d2 \pp ~ \<
@@ -150,39 +150,40 @@
                         d2 \pp
                         r2
                         r2
-                        d2 \pp ~ \<
-                        d1 \mp ~ \>
                         d2 \pp
-                        r2
                     }
                 }
                 \new Staff {
                     \set Staff.instrumentName = \markup { "Horn in F 2" }
                     \set Staff.shortInstrumentName = \markup { Hn.2 }
+                    \time 4/4
                     {
                         \numericTimeSignature
-                        \time 4/4
                         \accidentalStyle modern-cautionary
-                        r1
+                        {
+                            R1 * 1
+                        }
                         d2 \pp ~ \<
                         d2 \mp ~ ~ \>
                         d2 ~
                         d2 \pp
-                        r1
+                        {
+                            R1 * 1
+                        }
                         d2 \pp ~ \<
                         d2 \mp ~ ~ \>
                         d2 ~
                         d2 \pp
-                        r1
+                        {
+                            R1 * 1
+                        }
                         d2 \pp ~ \<
                         d2 \mp ~ ~ \>
                         d2 ~
                         d2 \pp
-                        r1
-                        d2 \pp ~ \<
-                        d2 \mp ~ ~ \>
-                        d2 ~
-                        d2 \pp
+                        {
+                            R1 * 1
+                        }
                     }
                 }
             >>
@@ -192,9 +193,9 @@
                 \new Staff {
                     \set Staff.instrumentName = \markup { "Trumpet in C 1" }
                     \set Staff.shortInstrumentName = \markup { Tpt.1 }
+                    \time 4/4
                     {
                         \numericTimeSignature
-                        \time 4/4
                         \accidentalStyle modern-cautionary
                         R1 * 12
                     }
@@ -202,9 +203,9 @@
                 \new Staff {
                     \set Staff.instrumentName = \markup { "Trumpet in C 2" }
                     \set Staff.shortInstrumentName = \markup { Tpt.2 }
+                    \time 4/4
                     {
                         \numericTimeSignature
-                        \time 4/4
                         \accidentalStyle modern-cautionary
                         R1 * 12
                     }
@@ -217,9 +218,9 @@
                     \clef "bass"
                     \set Staff.instrumentName = \markup { "Tenor Trombone 1" }
                     \set Staff.shortInstrumentName = \markup { Tbn.1 }
+                    \time 4/4
                     {
                         \numericTimeSignature
-                        \time 4/4
                         \accidentalStyle modern-cautionary
                         R1 * 12
                     }
@@ -228,9 +229,9 @@
                     \clef "bass"
                     \set Staff.instrumentName = \markup { "Tenor Trombone 2" }
                     \set Staff.shortInstrumentName = \markup { Tbn.2 }
+                    \time 4/4
                     {
                         \numericTimeSignature
-                        \time 4/4
                         \accidentalStyle modern-cautionary
                         R1 * 12
                     }
@@ -240,9 +241,9 @@
                 \clef "bass"
                 \set Staff.instrumentName = \markup { Tuba }
                 \set Staff.shortInstrumentName = \markup { Tba }
+                \time 4/4
                 {
                     \numericTimeSignature
-                    \time 4/4
                     \accidentalStyle modern-cautionary
                     R1 * 12
                 }
@@ -252,9 +253,9 @@
             \clef "bass"
             \set Staff.instrumentName = \markup { Timpani }
             \set Staff.shortInstrumentName = \markup { Timp }
+            \time 4/4
             {
                 \numericTimeSignature
-                \time 4/4
                 \accidentalStyle modern-cautionary
                 R1 * 12
             }
@@ -264,9 +265,9 @@
                 \clef "percussion"
                 \set Staff.instrumentName = \markup { "Percussion 1" }
                 \set Staff.shortInstrumentName = \markup { Perc.1 }
+                \time 4/4
                 {
                     \numericTimeSignature
-                    \time 4/4
                     \accidentalStyle modern-cautionary
                     R1 * 12
                 }
@@ -278,9 +279,9 @@
                     \clef "percussion"
                     \set Staff.instrumentName = \markup { "Percussion 2" }
                     \set Staff.shortInstrumentName = \markup { Perc.2 }
+                    \time 4/4
                     {
                         \numericTimeSignature
-                        \time 4/4
                         \accidentalStyle modern-cautionary
                         R1 * 12
                     }
@@ -288,9 +289,9 @@
                 \new Staff {
                     \set Staff.instrumentName = \markup { "Perc. 2 - Vibraphone" }
                     \set Staff.shortInstrumentName = \markup { Vib. }
+                    \time 4/4
                     {
                         \numericTimeSignature
-                        \time 4/4
                         \accidentalStyle modern-cautionary
                         R1 * 12
                     }
@@ -301,18 +302,18 @@
             \set PianoStaff.instrumentName = \markup { Harp }
             \set PianoStaff.shortInstrumentName = \markup { Hp. }
             \new Staff {
+                \time 4/4
                 {
                     \numericTimeSignature
-                    \time 4/4
                     \accidentalStyle modern-cautionary
                     R1 * 12
                 }
             }
             \new Staff {
                 \clef "bass"
+                \time 4/4
                 {
                     \numericTimeSignature
-                    \time 4/4
                     \accidentalStyle modern-cautionary
                     R1 * 12
                 }
@@ -322,18 +323,18 @@
             \set PianoStaff.instrumentName = \markup { Piano }
             \set PianoStaff.shortInstrumentName = \markup { Pno. }
             \new Staff {
+                \time 4/4
                 {
                     \numericTimeSignature
-                    \time 4/4
                     \accidentalStyle modern-cautionary
                     R1 * 12
                 }
             }
             \new Staff {
                 \clef "bass"
+                \time 4/4
                 {
                     \numericTimeSignature
-                    \time 4/4
                     \accidentalStyle modern-cautionary
                     R1 * 12
                 }
@@ -346,13 +347,13 @@
                 \new Staff {
                     \set Staff.instrumentName = \markup { "Violin I Div 1" }
                     \set Staff.shortInstrumentName = \markup { Vln.I.1 }
+                    \time 4/4
                     {
                         \numericTimeSignature
-                        \time 4/4
                         \accidentalStyle modern-cautionary
-                        r1 ^ \markup { "mute on" }
-                        r1
-                        r1
+                        {
+                            R1 * 3
+                        }
                         d'2 \ppp ^ \markup { "sul pont., non vib." }
                         c'4 (
                         b4 )
@@ -381,18 +382,21 @@
                         a4
                         c'4 (
                         b4 )
+                        {
+                            R1 * 3
+                        }
                     }
                 }
                 \new Staff {
                     \set Staff.instrumentName = \markup { "Violin I Div 2" }
                     \set Staff.shortInstrumentName = \markup { Vln.I.2 }
+                    \time 4/4
                     {
                         \numericTimeSignature
-                        \time 4/4
                         \accidentalStyle modern-cautionary
-                        r1 ^ \markup { "mute on" }
-                        r1
-                        r1
+                        {
+                            R1 * 3
+                        }
                         d'2 \ppp ^ \markup { "sul pont., non vib." }
                         c'4 (
                         b4 )
@@ -421,6 +425,9 @@
                         a4
                         c'4 (
                         b4 )
+                        {
+                            R1 * 3
+                        }
                     }
                 }
             >>
@@ -430,13 +437,13 @@
                 \new Staff {
                     \set Staff.instrumentName = \markup { "Violin II Div 1" }
                     \set Staff.shortInstrumentName = \markup { Vln.II.1 }
+                    \time 4/4
                     {
                         \numericTimeSignature
-                        \time 4/4
                         \accidentalStyle modern-cautionary
-                        r1 ^ \markup { "mute on" }
-                        r1
-                        r1
+                        {
+                            R1 * 3
+                        }
                         d'2 \ppp ^ \markup { "sul pont., non vib." }
                         c'4 (
                         b4 )
@@ -465,18 +472,21 @@
                         a4
                         c'4 (
                         b4 )
+                        {
+                            R1 * 3
+                        }
                     }
                 }
                 \new Staff {
                     \set Staff.instrumentName = \markup { "Violin II Div 2" }
                     \set Staff.shortInstrumentName = \markup { Vln.II.2 }
+                    \time 4/4
                     {
                         \numericTimeSignature
-                        \time 4/4
                         \accidentalStyle modern-cautionary
-                        r1 ^ \markup { "mute on" }
-                        r1
-                        r1
+                        {
+                            R1 * 3
+                        }
                         d'2 \ppp ^ \markup { "sul pont., non vib." }
                         c'4 (
                         b4 )
@@ -505,6 +515,9 @@
                         a4
                         c'4 (
                         b4 )
+                        {
+                            R1 * 3
+                        }
                     }
                 }
             >>
@@ -515,13 +528,13 @@
                     \clef "alto"
                     \set Staff.instrumentName = \markup { "Viola Div 1" }
                     \set Staff.shortInstrumentName = \markup { Vla.1 }
+                    \time 4/4
                     {
                         \numericTimeSignature
-                        \time 4/4
                         \accidentalStyle modern-cautionary
-                        r1 ^ \markup { "mute on" }
-                        r1
-                        r1
+                        {
+                            R1 * 3
+                        }
                         d'2 \ppp ^ \markup { "sul pont., non vib." }
                         c'4 (
                         b4 )
@@ -550,19 +563,22 @@
                         a4
                         c'4 (
                         b4 )
+                        {
+                            R1 * 3
+                        }
                     }
                 }
                 \new Staff {
                     \clef "alto"
                     \set Staff.instrumentName = \markup { "Viola Div 2" }
                     \set Staff.shortInstrumentName = \markup { Vla.2 }
+                    \time 4/4
                     {
                         \numericTimeSignature
-                        \time 4/4
                         \accidentalStyle modern-cautionary
-                        r1 ^ \markup { "mute on" }
-                        r1
-                        r1
+                        {
+                            R1 * 3
+                        }
                         d'2 \ppp ^ \markup { "sul pont., non vib." }
                         c'4 (
                         b4 )
@@ -591,6 +607,9 @@
                         a4
                         c'4 (
                         b4 )
+                        {
+                            R1 * 3
+                        }
                     }
                 }
             >>
@@ -601,13 +620,13 @@
                     \clef "bass"
                     \set Staff.instrumentName = \markup { "Cello Div 1" }
                     \set Staff.shortInstrumentName = \markup { Vc.1 }
+                    \time 4/4
                     {
                         \numericTimeSignature
-                        \time 4/4
                         \accidentalStyle modern-cautionary
-                        r1 ^ \markup { "mute on" }
-                        r1
-                        r1
+                        {
+                            R1 * 3
+                        }
                         d'2 \ppp ^ \markup { "sul pont., non vib." }
                         c'4 (
                         b4 )
@@ -636,19 +655,22 @@
                         a4
                         c'4 (
                         b4 )
+                        {
+                            R1 * 3
+                        }
                     }
                 }
                 \new Staff {
                     \clef "bass"
                     \set Staff.instrumentName = \markup { "Cello Div 2" }
                     \set Staff.shortInstrumentName = \markup { Vc.2 }
+                    \time 4/4
                     {
                         \numericTimeSignature
-                        \time 4/4
                         \accidentalStyle modern-cautionary
-                        r1 ^ \markup { "mute on" }
-                        r1
-                        r1
+                        {
+                            R1 * 3
+                        }
                         d'2 \ppp ^ \markup { "sul pont., non vib." }
                         c'4 (
                         b4 )
@@ -677,6 +699,9 @@
                         a4
                         c'4 (
                         b4 )
+                        {
+                            R1 * 3
+                        }
                     }
                 }
             >>
@@ -684,13 +709,13 @@
                 \clef "bass"
                 \set Staff.instrumentName = \markup { Bass }
                 \set Staff.shortInstrumentName = \markup { Cb }
+                \time 4/4
                 {
                     \numericTimeSignature
-                    \time 4/4
                     \accidentalStyle modern-cautionary
-                    r1 ^ \markup { "mute on" }
-                    r1
-                    r1
+                    {
+                        R1 * 3
+                    }
                     \clef tenor
                     d''2 \ppp ^ \markup { "sul pont., non vib." }
                     c''4 (
@@ -720,6 +745,9 @@
                     a'4
                     c''4 (
                     b'4 )
+                    {
+                        R1 * 3
+                    }
                 }
             }
         >>
@@ -727,13 +755,13 @@
             \new Staff {
                 \set Staff.instrumentName = \markup { "Line 1" }
                 \set Staff.shortInstrumentName = \markup { 1: }
+                \time 4/4
                 {
                     \numericTimeSignature
-                    \time 4/4
                     \accidentalStyle modern-cautionary
-                    r1
-                    r1
-                    r1
+                    {
+                        R1 * 3
+                    }
                     d'2 ^ \markup { 1 }
                     c'4 ^ \markup { 2 }
                     b4 ^ \markup { 3 }
@@ -762,6 +790,9 @@
                     a4 ^ \markup { 25 }
                     c'4 ^ \markup { 26 }
                     b4 ^ \markup { 27 }
+                    {
+                        R1 * 3
+                    }
                 }
             }
             \new Staff {
@@ -832,9 +863,9 @@
                 \clef "bass"
                 \set Staff.instrumentName = \markup { Drone }
                 \set Staff.shortInstrumentName = \markup { 0: }
+                \time 4/4
                 {
                     \numericTimeSignature
-                    \time 4/4
                     \accidentalStyle modern-cautionary
                     r2
                     d2 \pp ~ \< ^ \markup { 1 }
@@ -852,10 +883,7 @@
                     d2 \pp ^ \markup { 11 }
                     r2
                     r2
-                    d2 \pp ~ \< ^ \markup { 13 }
-                    d1 \mp ~ \> ^ \markup { 14 }
-                    d2 \pp ^ \markup { 15 }
-                    r2
+                    d2 \pp ^ \markup { 13 }
                     \bar "|."
                 }
             }

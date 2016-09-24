@@ -206,7 +206,10 @@
 
 
 # ---------------------------- FUTURE:
-# - new monitor / studio setup!!!
+# studio setup!!! 
+#  - - - (mac or linux?)
+# - - - (mac keyboard / mouse?)
+# - - - lower desk is better for tall monitors
 # - I LOATHE GARAGE BAND... need some better way to create playback
 # - fix clefs in short scores
 # - replace some class-defined stuff with modules / introspection (i.e. should not need to create a class to describe grid bubble lines that are described above)

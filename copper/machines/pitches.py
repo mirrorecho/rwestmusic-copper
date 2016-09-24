@@ -6,10 +6,17 @@ from calliope import bubbles
 from copper import machines
 
 class Pitches(object):
-    pitch_segments = (
-            ( 2, 0,-1),
-            (-5,-3,-1),
-            (-3, 0,-1),
+    pitch_segments = ( # TO DO... better to use IndexedData for this?
+            # TO CONSIDER... CHANGE UP THE PITCH SEGMENTS:
+            # ( 2, 0,-2), #0
+            # (-5,-4,-2), #1
+            # (-3, 0,-2), #2
+            # ( 2, 0,-1), #3
+            # (-5,-3,-1), #4
+            # (-3, 0,-1), #5
+            ( 2, 0,-1), #0
+            (-5,-3,-1), #1
+            (-3, 0,-1), #2
         )
     pitch_sequence = (0,1,2) # for testing only
 

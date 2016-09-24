@@ -33,6 +33,11 @@ class Line1(GenB, machines.RhythmsMultiplied, gen_a.Line1):
     pitch_displacement = gen_a.Line1.pitch_displacement +\
                 machines.FifthDisplacement(down=(2,14))
     pitch_displacement.flat(8,24)    
+    def update_data(self, **kwargs):
+        super().update_data(**kwargs)
+        self.tag_events("darkmagenta")
+        if self.__class__ is Line1:
+            self.events[1].tag("\clef bass")
 
 # -------------------------------------------------------------------------------------------------
 
@@ -44,6 +49,11 @@ class Line2(GenB, machines.RhythmsMultiplied, gen_a.Line1):
     pitch_displacement = machines.FifthDisplacement(
         up =    ( 4,),
         down =  (3,11,14) )
+    def update_data(self, **kwargs):
+        super().update_data(**kwargs)
+        self.tag_events("darkgreen", every_child=True)
+        if self.__class__ is Line2:
+            self.events[1].tag("\clef bass")
 
 # -------------------------------------------------------------------------------------------------
 
@@ -58,6 +68,11 @@ class Line3(GenB, machines.RhythmsMultiplied, gen_a.Line1):
         4: ((3,4),),
         }, default=( (1,4),) *3, limit=24)
     rhythm_initial_silence = 36
+    def update_data(self, **kwargs):
+        super().update_data(**kwargs)
+        self.tag_events("blue")
+        if self.__class__ is Line3:
+            self.events[1].tag("\clef bass")
 
     # TO DO... this is ugly:
     rhythm_multipliers = machines.RhythmsMultiplied.make_multipliers(cyclic=True, cyclic_start=1)

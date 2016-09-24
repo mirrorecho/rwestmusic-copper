@@ -1,7 +1,9 @@
-% 2016-09-21 20:30
+% 2016-09-23 23:30
 
 \version "2.18.2"
 \language "english"
+
+\include "../../scores/stylesheets/shortscore.ily"
 
 \header {}
 
@@ -14,6 +16,7 @@
         \new Staff {
             \set Staff.instrumentName = \markup { "Line 1" }
             \set Staff.shortInstrumentName = \markup { 1: }
+            \time 4/4
             {
                 \numericTimeSignature
                 \accidentalStyle modern-cautionary
@@ -22,19 +25,19 @@
                 }
                 d'2 ^ \markup { 1 }
                 c'4 ^ \markup { 2 }
-                b4 ^ \markup { 3 }
+                bf4 ^ \markup { 3 }
                 g2 ^ \markup { 4 }
-                a4 ^ \markup { 5 }
-                b4 ^ \markup { 6 }
+                af4 ^ \markup { 5 }
+                bf4 ^ \markup { 6 }
                 d'2 ^ \markup { 7 }
                 c'4 ^ \markup { 8 }
-                b4 ^ \markup { 9 }
+                bf4 ^ \markup { 9 }
                 a2 ^ \markup { 10 }
                 c'4 ^ \markup { 11 }
-                b4 ^ \markup { 12 }
+                bf4 ^ \markup { 12 }
                 a4 ^ \markup { 13 }
                 c'4 ^ \markup { 14 }
-                b4 ^ \markup { 15 }
+                bf4 ^ \markup { 15 }
                 d'4 ~ ^ \markup { 16 }
                 d'2.
                 c'4 ^ \markup { 17 }
@@ -57,10 +60,10 @@
             \clef "bass"
             \set Staff.instrumentName = \markup { Drone }
             \set Staff.shortInstrumentName = \markup { 0: }
+            \time 4/4
             {
                 \numericTimeSignature
                 \accidentalStyle modern-cautionary
-                \time 4/4
                 r2
                 d2 \pp ~ \< ^ \markup { 1 }
                 d1 \mp ~ \> ^ \markup { 2 }

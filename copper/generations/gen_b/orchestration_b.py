@@ -25,7 +25,7 @@ class ArrangeB(gen_b.GenB, machines.FragmentLine, machines.PitchedLine):
     # show_data_attr="depthwise_index"
     def update_data(self):
         super().update_data()
-        if self.fragments:
+        if self.fragments and len(self.segments) > 1:
             self.segments[1].tag("mp")
 
 # ------------------------------------------------------------------------------------------------------------
@@ -81,6 +81,7 @@ class Bassoon2(ArrangeB):
     fragments = Frag.make(
         *Frag.its(0, (1,8) ),
         *Frag.its(2, (7,13) ), 
+        *Frag.its(3, (7,13) ), 
         # *Frag.its(3, (1,5) ),
         )
     def update_data(self):
@@ -92,7 +93,10 @@ class Bassoon2(ArrangeB):
 # BRASS
 
 class Horn1(ArrangeB):
-    pass
+    line_offset = ID({0:-3},default=0,cyclic=False)
+    fragments = Frag.make(
+        *Frag.its(0, (1,8) ),
+        )
 
 class Horn2(ArrangeB):
     pass
@@ -158,15 +162,35 @@ class ViolinII2(ArrangeB):
     pass
 
 class Viola1(ArrangeB):
-    pass
+    show_data_attr="original_depthwise_index"
+    fragments = Frag.make(
+        Frag.it(2, 1, attack_offset=-3, keep_attack=True),
+        Frag.it(2, 2),
+        Frag.it(2, 6, attack_offset=-2.5, keep_attack=True, before_next=0),
+        Frag.it(1,2, tags="("),
+        Frag.it(1,3, tags=")"),
+        )
+    def update_data(self, **kwargs):
+        super().update_data(**kwargs)
+        self.event_by(2,1)[0].tag("pp","\<")
+        self.event_by(2,1)[1].tag("(",">","mp")
+        self.event_by(2,2).tag(")")
+        self.event_by(2,6)[0].tag("\<","pp")
+        self.event_by(2,6)[1].tag(">","mp")
 
-class Viola2(ArrangeB):
+class Viola2(Viola1):
     pass
 
 class Cello1(ArrangeB):
-    pass
+    fragments = Frag.make(
+        *Frag.its(2, (13,19)),
+        *Frag.its(1, (14,16)),
+        *Frag.its(3, (20,22)),
+        *Frag.its(3, (26,28)),
+        )
+    fragments.update_by(2,18, duration=2.5)
 
-class Cello2(ArrangeB):
+class Cello2(Cello1):
     pass
 
 class Bass(ArrangeB):

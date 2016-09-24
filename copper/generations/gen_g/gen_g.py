@@ -79,7 +79,7 @@ class Line8(Line5):
 bubbles.illustrate_me(__file__, 
     lambda: staves.CopperShortScore(
             bubbles.Bubble(
-                drone0 = Drone0(show_data_attr="original_depthwise_index"),
+                # drone0 = Drone0(show_data_attr="original_depthwise_index"),
                 line1 = Line1(show_data_attr="original_depthwise_index"),
                 line2 = Line2(show_data_attr="original_depthwise_index"),
                 line3 = Line3(show_data_attr="original_depthwise_index"),

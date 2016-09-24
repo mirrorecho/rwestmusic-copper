@@ -1,4 +1,4 @@
-% 2016-09-23 17:24
+% 2016-09-23 23:18
 
 \version "2.18.2"
 \language "english"
@@ -1306,6 +1306,7 @@
                 b8 ]
                 {
                     R1 * 6
+                    \bar "|."
                 }
             }
         }
@@ -1313,87 +1314,6 @@
             \clef "bass"
             \set Staff.instrumentName = \markup { Drone }
             \set Staff.shortInstrumentName = \markup { 0: }
-            \time 3/4
-            {
-                \numericTimeSignature
-                \bar "||"
-                \accidentalStyle modern-cautionary
-                {
-                    \mark #7
-                    \mark #7
-                    R1 * 3/4
-                }
-                d2. \pp ~ \< ^ \markup { 1 }
-                d2. \mp ~ \> ^ \markup { 2 }
-                d2. \pp ^ \markup { 3 }
-                {
-                    R1 * 3/4
-                }
-                d2. \pp ~ \< ^ \markup { 5 }
-                d2. \mp ~ \> ^ \markup { 6 }
-                d2. \pp ^ \markup { 7 }
-                {
-                    R1 * 3/4
-                }
-                d2. \pp ~ \< ^ \markup { 9 }
-                d2. \mp ~ \> ^ \markup { 10 }
-                d2. \pp ^ \markup { 11 }
-                {
-                    R1 * 3/4
-                }
-                d2. \pp ~ \< ^ \markup { 13 }
-                d2. \mp ~ \> ^ \markup { 14 }
-                d2. \pp ^ \markup { 15 }
-                {
-                    R1 * 3/4
-                }
-                d2. \pp ~ \< ^ \markup { 17 }
-                d2. \mp ~ \> ^ \markup { 18 }
-                d2. \pp ^ \markup { 19 }
-                {
-                    R1 * 3/4
-                }
-                d2. \pp ~ \< ^ \markup { 21 }
-                d2. \mp ~ \> ^ \markup { 22 }
-                d2. \pp ^ \markup { 23 }
-                {
-                    R1 * 3/4
-                }
-                d2. \pp ~ \< ^ \markup { 25 }
-                d2. \mp ~ \> ^ \markup { 26 }
-                d2. \pp ^ \markup { 27 }
-                {
-                    R1 * 3/4
-                }
-                d2. \pp ~ \< ^ \markup { 29 }
-                d2. \mp ~ \> ^ \markup { 30 }
-                d2. \pp ^ \markup { 31 }
-                {
-                    R1 * 3/4
-                }
-                d2. \pp ~ \< ^ \markup { 33 }
-                d2. \mp ~ \> ^ \markup { 34 }
-                d2. \pp ^ \markup { 35 }
-                {
-                    R1 * 3/4
-                }
-                d2. \pp ~ \< ^ \markup { 37 }
-                d2. \mp ~ \> ^ \markup { 38 }
-                d2. \pp ^ \markup { 39 }
-                {
-                    R1 * 3/4
-                }
-                d2. \pp ~ \< ^ \markup { 41 }
-                d2. \mp ~ \> ^ \markup { 42 }
-                d2. \pp ^ \markup { 43 }
-                {
-                    R1 * 3/4
-                }
-                d2. \pp ~ \< ^ \markup { 45 }
-                d2. \mp ~ \> ^ \markup { 46 }
-                d2. \pp ^ \markup { 47 }
-                \bar "|."
-            }
         }
     >>
     \midi {}

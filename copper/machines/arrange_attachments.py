@@ -20,6 +20,10 @@ class AttachmentTagData(object):
     stop_spanners_inventory = set( (")", "))", "\!", "~!","8va!"), )
     stem_tremolos_inventory = set( (":8",":16",":32") )
     tremolos_inventory = set( ("tremolo:1", "tremolo:2", "tremolo:3",) )
+    colors_inventory = set(("red",         "green",
+                "blue",        "cyan",           "magenta",     "yellow",
+                "grey",        "darkred",        "darkgreen",   "darkblue",
+                "darkcyan",    "darkmagenta",    "darkyellow",))
 
     # TO DO... should prevent dupes in tremolos
 
@@ -58,6 +62,8 @@ class AttachmentTagData(object):
             return abjad.spannertools.Tie()
         elif attachment_name == "8va":
             return abjad.spannertools.OctavationSpanner(start=1)
+        elif attachment_name in self.colors_inventory:
+            return lambda x : abjad.agenttools.LabelAgent(x).color_leaves(attachment_name)
         elif not attachment_name in self.stop_spanners_inventory:
             if attachment_name[0] == "\\":
                 return abjad.indicatortools.LilyPondCommand(attachment_name[1:])
@@ -212,8 +218,15 @@ class ArrangeAttachments(object):
         self.show_data_type = show_data_type or self.show_data_type
         self.show_data_attr = show_data_attr or self.show_data_attr
         self._open_spanners = {}
-        
         super().__init__(**kwargs)
+
+    def tag_events(self, tag=None, start_index=None, stop_index=None, every_child=False):
+        for e in self.events[start_index:stop_index]:
+            if every_child:
+                for l in e.children:
+                    l.tag(tag)
+            else:
+                e.tag(tag)
 
     # TO DO... rethink how this is implemented once bubbles are module based (better something for output settings.... )
     def show_data(self, show_data_type=None, show_data_attr=None):
@@ -261,7 +274,10 @@ class ArrangeAttachments(object):
             else:
                 attachment = data_logical_tie.get_attachment(attachment_name)
                 if attachment:
-                    abjad.attach(attachment, music[music_leaf_index])
+                    if callable(attachment):
+                        attachment(music_logical_tie)
+                    else:
+                        abjad.attach(attachment, music[music_leaf_index])
             # print(attachment_name)
         # print("-------------------------------------------------")
             

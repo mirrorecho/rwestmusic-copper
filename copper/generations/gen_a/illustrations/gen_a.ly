@@ -1,7 +1,9 @@
-% 2016-09-21 21:33
+% 2016-09-23 23:37
 
 \version "2.18.2"
 \language "english"
+
+\include "../../scores/stylesheets/shortscore.ily"
 
 \header {}
 
@@ -25,23 +27,23 @@
                 }
                 d'2 ^ \markup { 1 }
                 c'4 ^ \markup { 2 }
-                b4 ^ \markup { 3 }
+                bf4 ^ \markup { 3 }
                 d'2 ^ \markup { 4 }
-                e'4 ^ \markup { 5 }
-                b4 ^ \markup { 6 }
+                ef'4 ^ \markup { 5 }
+                bf4 ^ \markup { 6 }
                 d'2 ^ \markup { 7 }
                 g'4 ^ \markup { 8 }
-                fs'4 ^ \markup { 9 }
+                f'4 ^ \markup { 9 }
                 e'2 ^ \markup { 10 }
                 g'4 ^ \markup { 11 }
-                fs'4 ^ \markup { 12 }
+                f'4 ^ \markup { 12 }
                 e'4 ^ \markup { 13 }
                 g'4 ^ \markup { 14 }
-                fs'4 ^ \markup { 15 }
+                f'4 ^ \markup { 15 }
                 a'4 ~ ^ \markup { 16 }
                 a'2.
                 g'4 ^ \markup { 17 }
-                fs'4 ^ \markup { 18 }
+                f'4 ^ \markup { 18 }
                 a'2 ^ \markup { 19 }
                 g'4 ^ \markup { 20 }
                 fs'4 ^ \markup { 21 }
@@ -71,23 +73,23 @@
                 r2
                 d'2 ^ \markup { 1 }
                 g'4 ^ \markup { 2 }
-                b4 ^ \markup { 3 }
+                bf4 ^ \markup { 3 }
                 g2 ^ \markup { 4 }
-                a4 ^ \markup { 5 }
-                b4 ^ \markup { 6 }
+                af4 ^ \markup { 5 }
+                bf4 ^ \markup { 6 }
                 d'2 ^ \markup { 7 }
                 c'4 ^ \markup { 8 }
-                b4 ^ \markup { 9 }
+                bf4 ^ \markup { 9 }
                 a2 ^ \markup { 10 }
                 c'4 ^ \markup { 11 }
-                b4 ^ \markup { 12 }
+                bf4 ^ \markup { 12 }
                 a4 ^ \markup { 13 }
                 c'4 ^ \markup { 14 }
-                fs'4 ^ \markup { 15 }
+                f'4 ^ \markup { 15 }
                 d'2. ~ ^ \markup { 16 }
                 d'4
                 g'4 ^ \markup { 17 }
-                fs'4 ^ \markup { 18 }
+                f'4 ^ \markup { 18 }
                 a'4 ~ ^ \markup { 19 }
                 a'4
                 g'4 ^ \markup { 20 }

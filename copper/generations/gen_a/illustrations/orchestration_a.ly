@@ -1,4 +1,4 @@
-% 2016-09-20 17:41
+% 2016-09-23 20:59
 
 \version "2.18.2"
 \language "english"
@@ -81,17 +81,11 @@
                     {
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        \mark #1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
+                        {
+                            \mark #1
+                            \mark #1
+                            R1 * 10
+                        }
                         a'1 \pp ~ \<
                         a'2 ~
                         a'4
@@ -102,10 +96,9 @@
                         a'8 ~
                         a'2.
                         r4
-                        r1
-                        r1
-                        r1
-                        r1
+                        {
+                            R1 * 4
+                        }
                     }
                 }
                 \new Staff {
@@ -114,18 +107,11 @@
                     {
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        \mark #1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
+                        {
+                            \mark #1
+                            \mark #1
+                            R1 * 11
+                        }
                         r2
                         d'2 \pp ~ \<
                         d'1 ~
@@ -139,8 +125,9 @@
                         d'8 ~
                         d'4
                         r2.
-                        r1
-                        r1
+                        {
+                            R1 * 2
+                        }
                     }
                 }
             >>
@@ -181,23 +168,11 @@
                     {
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        \mark #1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
+                        {
+                            \mark #1
+                            \mark #1
+                            R1 * 16
+                        }
                         d2 \pp ~ \<
                         d2 \mp ~ ~ \>
                         d2 ~
@@ -210,27 +185,19 @@
                     {
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        \mark #1
-                        r1
+                        {
+                            \mark #1
+                            \mark #1
+                            R1 * 1
+                        }
                         r2
                         d2 \pp ~ \<
                         d1 \mp ~ \>
                         d2 \pp
                         r2
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
+                        {
+                            R1 * 14
+                        }
                     }
                 }
             >>
@@ -273,28 +240,30 @@
                         d2 \mp ~ ~ \>
                         d2 ~
                         d2 \pp
-                        r1
+                        {
+                            R1 * 1
+                        }
                         d2 \pp ~ \<
                         d2 \mp ~ ~ \>
                         d2 ~
                         d2 \pp
-                        r1
+                        {
+                            R1 * 1
+                        }
                         d2 \pp ~ \<
                         d2 \mp ~ ~ \>
                         d2 ~
                         d2 \pp
-                        r1
+                        {
+                            R1 * 1
+                        }
                         d2 \pp ~ \<
                         d2 \mp ~ ~ \>
                         d2 ~
                         d2 \pp
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
+                        {
+                            R1 * 7
+                        }
                     }
                 }
                 \new Staff {
@@ -304,29 +273,25 @@
                     {
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        \mark #1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
+                        {
+                            \mark #1
+                            \mark #1
+                            R1 * 12
+                        }
                         d2 \pp ~ \<
                         d2 \mp ~ ~ \>
                         d2 ~
                         d2 \pp
-                        r1
+                        {
+                            R1 * 1
+                        }
                         d2 \pp ~ \<
                         d2 \mp ~ ~ \>
                         d2 ~
                         d2 \pp
-                        r1
+                        {
+                            R1 * 1
+                        }
                     }
                 }
             >>
@@ -337,11 +302,11 @@
                 {
                     \bar "||"
                     \accidentalStyle modern-cautionary
-                    \mark #1
-                    r1
-                    r1
-                    r1
-                    r1
+                    {
+                        \mark #1
+                        \mark #1
+                        R1 * 4
+                    }
                     r2
                     d2 \pp ~ \<
                     d1 \mp ~ \>
@@ -362,8 +327,9 @@
                     d1 \mp ~ \>
                     d2 \pp
                     r2
-                    r1
-                    r1
+                    {
+                        R1 * 2
+                    }
                 }
             }
         >>
@@ -468,12 +434,11 @@
                     {
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        \mark #1
-                        r1 ^ \markup { "mute off" }
-                        r1
-                        r1
-                        r1
-                        r1
+                        {
+                            \mark #1
+                            \mark #1
+                            R1 * 5
+                        }
                         d'1 \pp \< ^ \markup { normal }
                         d'2 -\accent \mp ~ \>
                         d'8
@@ -500,8 +465,9 @@
                         g'2 -\accent \mp ~
                         g'2
                         r2
-                        r1
-                        r1
+                        {
+                            R1 * 2
+                        }
                     }
                 }
                 \new Staff {
@@ -510,13 +476,11 @@
                     {
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        \mark #1
-                        r1 ^ \markup { "mute off" }
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
+                        {
+                            \mark #1
+                            \mark #1
+                            R1 * 6
+                        }
                         r2
                         d'2 \pp ~ \< ^ \markup { normal }
                         d'2
@@ -542,7 +506,9 @@
                         d'8
                         d''2.. \pp \<
                         d''1 -\accent \mp
-                        r1
+                        {
+                            R1 * 1
+                        }
                     }
                 }
             >>
@@ -555,12 +521,11 @@
                     {
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        \mark #1
-                        r1 ^ \markup { "mute off" }
-                        r1
-                        r1
-                        r1
-                        r1
+                        {
+                            \mark #1
+                            \mark #1
+                            R1 * 5
+                        }
                         r2.
                         c'4 \pp ~ \< ^ \markup { normal }
                         c'2
@@ -585,8 +550,9 @@
                         fs'4 -\accent \mp ~
                         fs'2.
                         r4
-                        r1
-                        r1
+                        {
+                            R1 * 2
+                        }
                     }
                 }
                 \new Staff {
@@ -595,14 +561,11 @@
                     {
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        \mark #1
-                        r1 ^ \markup { "mute off" }
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
+                        {
+                            \mark #1
+                            \mark #1
+                            R1 * 7
+                        }
                         r4
                         g'2. \pp \< ^ \markup { normal }
                         g'2. -\accent \mp \>
@@ -640,13 +603,11 @@
                     {
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        \mark #1
-                        r1 ^ \markup { "mute off" }
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
+                        {
+                            \mark #1
+                            \mark #1
+                            R1 * 6
+                        }
                         r4
                         b2 \pp \< ^ \markup { normal }
                         b4 -\accent \mp ~ \>
@@ -665,8 +626,9 @@
                         e'2. -\accent \mp ~
                         e'2
                         r2
-                        r1
-                        r1
+                        {
+                            R1 * 2
+                        }
                     }
                 }
                 \new Staff {
@@ -676,14 +638,11 @@
                     {
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        \mark #1
-                        r1 ^ \markup { "mute off" }
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
+                        {
+                            \mark #1
+                            \mark #1
+                            R1 * 7
+                        }
                         r2.
                         b4 \pp ~ \< ^ \markup { normal }
                         b4
@@ -701,7 +660,9 @@
                         b'2. \pp \<
                         b'4 -\accent \mp ~
                         b'1
-                        r1
+                        {
+                            R1 * 1
+                        }
                     }
                 }
             >>
@@ -715,14 +676,11 @@
                     {
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        \mark #1
-                        r1 ^ \markup { "mute off" }
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
+                        {
+                            \mark #1
+                            \mark #1
+                            R1 * 7
+                        }
                         b2. \pp \< ^ \markup { normal }
                         b4 -\accent \mp ~ \>
                         b2 ~
@@ -742,8 +700,9 @@
                         fs'1 \mp ~
                         fs'4
                         r2.
-                        r1
-                        r1
+                        {
+                            R1 * 2
+                        }
                     }
                 }
                 \new Staff {
@@ -753,15 +712,11 @@
                     {
                         \bar "||"
                         \accidentalStyle modern-cautionary
-                        \mark #1
-                        r1 ^ \markup { "mute off" }
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
+                        {
+                            \mark #1
+                            \mark #1
+                            R1 * 8
+                        }
                         r2
                         b2 \pp ~ \< ^ \markup { normal }
                         b4
@@ -771,12 +726,9 @@
                         a2 -\accent \mp \>
                         a2. \p
                         r4
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
-                        r1
+                        {
+                            R1 * 6
+                        }
                     }
                 }
             >>
@@ -796,17 +748,15 @@
             \new Staff {
                 \set Staff.instrumentName = \markup { "Line 1" }
                 \set Staff.shortInstrumentName = \markup { 1: }
+                \time 4/4
                 {
                     \numericTimeSignature
-                    \time 4/4
                     \accidentalStyle modern-cautionary
-                    \mark #1
-                    r1
-                    r1
-                    r1
-                    r1
-                    r1
-                    r1
+                    {
+                        \mark #1
+                        \mark #1
+                        R1 * 6
+                    }
                     d'2 ^ \markup { 1 }
                     c'4 ^ \markup { 2 }
                     b4 ^ \markup { 3 }
@@ -835,26 +785,23 @@
                     e'4 ^ \markup { 25 }
                     g'4 ^ \markup { 26 }
                     fs'4 ^ \markup { 27 }
-                    r1
-                    r1
-                    r1
+                    {
+                        R1 * 3
+                    }
                 }
             }
             \new Staff {
                 \set Staff.instrumentName = \markup { "Line 2" }
                 \set Staff.shortInstrumentName = \markup { 2: }
+                \time 4/4
                 {
                     \numericTimeSignature
-                    \time 4/4
                     \accidentalStyle modern-cautionary
-                    \mark #1
-                    r1
-                    r1
-                    r1
-                    r1
-                    r1
-                    r1
-                    r1
+                    {
+                        \mark #1
+                        \mark #1
+                        R1 * 7
+                    }
                     r2
                     d'2 ^ \markup { 1 }
                     g'4 ^ \markup { 2 }
@@ -887,7 +834,9 @@
                     d''4 ^ \markup { 26 }
                     cs''4 ^ \markup { 27 }
                     r2
-                    r1
+                    {
+                        R1 * 1
+                    }
                 }
             }
             \new Staff {
