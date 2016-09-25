@@ -31,7 +31,7 @@ class Line1(GenB, machines.RhythmsMultiplied, gen_a.Line1):
                 8:3,
                 9:2}) 
     pitch_displacement = gen_a.Line1.pitch_displacement +\
-                machines.FifthDisplacement(down=(2,14))
+                machines.FifthDisplacement(down=(2,14), up=(27,))
     pitch_displacement.flat(8,24)    
     def update_data(self, **kwargs):
         super().update_data(**kwargs)
@@ -82,8 +82,8 @@ class Line3(GenB, machines.RhythmsMultiplied, gen_a.Line1):
     #     10: 0.5
     # }
     pitch_displacement = machines.FifthDisplacement(
-        up = (       22,  49),
-        down = ( 1, 19, 26),
+        up = (       22,          52,53,54),
+        down = ( 1, 19, 26,38, 46),
         )
     rhythm_times = 2
 

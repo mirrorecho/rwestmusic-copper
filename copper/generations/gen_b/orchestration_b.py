@@ -57,7 +57,19 @@ class Clarinet1(ArrangeB):
     pass
     
 class Clarinet2(ArrangeB):
-    pass
+    metrical_durations = ID({}, default=((1,4),)*3, limit=24)
+    fragments = Frag.make(
+        Frag.it(3, 12, tags=("Bass Clarinet","-","mf") ),
+        Frag.it(3, 13, tags=(".",">") ),
+        Frag.it(3, 16, attack_offset=0.75, duration=0.25, tags="-" ),
+        Frag.it(3, 17, tags="." ),
+        Frag.it(3, 19, duration=0.5, tags=(".",">") ),
+        Frag.it(3, 22, duration=0.25, attack_offset=0.25, tags="("), 
+        Frag.it(3, 23, tags=")"), 
+        Frag.it(3, 24, tags="."), 
+        Frag.it(3, 25, duration=0.5, tags=(".",">")),        
+        )
+    fragments.update_by(3,22, attack_offset=0.25)
 
 class Bassoon1(ArrangeB):
     show_data_attr="original_depthwise_index"
@@ -65,7 +77,14 @@ class Bassoon1(ArrangeB):
     fragments = Frag.make(
         *Frag.its(0, (1,7) ),
         *Frag.its(2, (3,7) ), 
-        *Frag.its(3, (1,5) ),
+        # *Frag.its(3, (1,5) ), # Tuba's taking care of this
+        Frag.it(3,7, duration=2.75),
+        Frag.it(3,12, tags="-"),
+        Frag.it(3,13, tags=(".",">")),
+        Frag.it(1,15, duration=0.5, tags=(".",">")),
+        Frag.it(1,16, duration=1.75),
+        Frag.it(3, 24, tags="."), 
+        Frag.it(2, 20, duration=0.5, tags=(".",">")), 
         )
     fragments.update_by(2,6, duration=3.5)
     fragments.update_by(3,4, duration=1)
@@ -73,7 +92,7 @@ class Bassoon1(ArrangeB):
         super().update_data()
         self.event_by(0,6).untag("mp","\>").tag("~!")
         first_melodic_event = self.event_by(2,3).tag("mf")
-        machines.AttachmentTagData.span_every("(", self.events[first_melodic_event.depthwise_index:])
+        machines.AttachmentTagData.span_every("(", self.events[6:10])
 
 class Bassoon2(ArrangeB):
     show_data_attr="original_depthwise_index"
@@ -81,13 +100,18 @@ class Bassoon2(ArrangeB):
     fragments = Frag.make(
         *Frag.its(0, (1,8) ),
         *Frag.its(2, (7,13) ), 
-        *Frag.its(3, (7,13) ), 
+        *Frag.its(3, (7,12) ), 
+        Frag.it(3,39, tags=("Contra Bsn.", ".",">", "mf")),
+        Frag.it(3,40, duration=2.5),
+        Frag.it(3,46, duration=2),
+        Frag.it(3,49, tags=(".",">")),
         # *Frag.its(3, (1,5) ),
         )
+    fragments.update_by(3,11, duration=0.5)
     def update_data(self):
         super().update_data()
         first_melodic_event = self.event_by(2,7).tag("mf")
-        machines.AttachmentTagData.span_every("(", self.events[first_melodic_event.depthwise_index:])
+        machines.AttachmentTagData.span_every("(", self.events[7:17])
 
 # ------------------------------------------------------------------------------------------------------------
 # BRASS
@@ -96,7 +120,12 @@ class Horn1(ArrangeB):
     line_offset = ID({0:-3},default=0,cyclic=False)
     fragments = Frag.make(
         *Frag.its(0, (1,8) ),
+        Frag.it(1,10, tags=("pp","\<","(") ),
+        Frag.it(1,11, tags=("mf",) ),
+        Frag.it(1,12, tags="\>" ),
+        Frag.it(1,13, duration=3, tags=("p",")") ),
         )
+
 
 class Horn2(ArrangeB):
     pass
@@ -110,14 +139,43 @@ class Trumpet2(ArrangeB):
     pass
 
 class Trombone1(ArrangeB):
-    pass
+    fragments = Frag.make(
+        Frag.it(0,13, tags="\<"),
+        Frag.it(2,19, tags="mf"),
+        Frag.it(0,17, tags="\<"),
+        Frag.it(2,22, tags="mf"),
+        Frag.it(0,21, tags="\<"),
+        Frag.it(2,25, tags="mf"),
+        Frag.it(2,26),
+        Frag.it(2,27, duration=4),
+        )
 
 class Trombone2(ArrangeB):
-    pass
+    fragments = Frag.make(
+        Frag.it(0,15, tags="\<"),
+        Frag.it(2,20, tags="mf"),
+        Frag.it(2,21),
+        Frag.it(0,19, tags="\<"),
+        Frag.it(2,23, tags="mf"),
+        Frag.it(2,24)
+        )
 
 class Tuba(ArrangeB):
-    fragments = Frag.fill(range(1,7), lambda: Frag.item(line=3,) )
-    fragments[6].duration = 3.25
+    fragments = Frag.make(
+        *Frag.its(3, (1,7)),
+        *Frag.its(3, (13,19)),
+        *Frag.its(3, (28,34)),
+        *Frag.its(3, (40,46)),
+        *Frag.its(3, (49,55)),
+        *Frag.its(1, (25,28)),
+        )
+    fragments.update_by(3,6, duration=2.75, tags=">")
+    fragments.update_by(3,18, duration=3.25, tags=">")
+    fragments.update_by(3,33, duration=2.75, tags=">")
+    fragments.update_by(3,45, duration=1.25, tags=">")
+    def update_data(self):
+        super().update_data()
+        machines.AttachmentTagData.span_every("(", self.events[1:])
 
 # ------------------------------------------------------------------------------------------------------------
 # TIMPANI / PERCUSSION / HARP / PIANO
@@ -185,10 +243,12 @@ class Cello1(ArrangeB):
     fragments = Frag.make(
         *Frag.its(2, (13,19)),
         *Frag.its(1, (14,16)),
-        *Frag.its(3, (20,22)),
+        *Frag.its(3, (20,23)),
         *Frag.its(3, (26,28)),
+        *Frag.its(1, (18,24)),
         )
     fragments.update_by(2,18, duration=2.5)
+    fragments.update_by(3,22, duration=2)
 
 class Cello2(Cello1):
     pass
@@ -237,10 +297,10 @@ def get_orchestration_b():
         cello2 = Cello2()
         bass = Bass()
         # SHORT SCORE
-        drone0 = LINES[0].show_data(show_data_attr="original_depthwise_index")
-        line1 = LINES[1].show_data(show_data_attr="original_depthwise_index")
-        line2 = LINES[2].show_data(show_data_attr="original_depthwise_index")
-        line3 = LINES[3].show_data(show_data_attr="original_depthwise_index")
+        # drone0 = LINES[0].show_data(show_data_attr="original_depthwise_index")
+        # line1 = LINES[1].show_data(show_data_attr="original_depthwise_index")
+        # line2 = LINES[2].show_data(show_data_attr="original_depthwise_index")
+        # line3 = LINES[3].show_data(show_data_attr="original_depthwise_index")
     return OrchestrationB
 
 # -------------------------------------------------------------------------
@@ -251,7 +311,8 @@ bubbles.illustrate_me(__file__,
         get_orchestration_b()(), 
         title="Copper: B", 
         show_short_score=True, 
-        hide_empty=True).get_lilypond_file()
+        hide_empty=True).get_lilypond_file(),
+    as_midi=True
     )
 
 

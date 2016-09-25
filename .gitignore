@@ -28,6 +28,8 @@ pdf/
 *.band/
 *.wav
 *.mp3
+*.aria
+*.aiff
 
 ##########################################
 # Lilypond gitignore

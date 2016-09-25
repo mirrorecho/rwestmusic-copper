@@ -177,7 +177,8 @@ class AttachmentTagData(object):
         
         for i in range(0, len(items), every_count):
             items[i].tag(spanner)
-            items[i+every_count-1].tag(end_spanner)
+            if len(items) > i+every_count-1:
+                items[i+every_count-1].tag(end_spanner)
 
     # TO DO.. only if needed:
     # def get_all_attachments(self):

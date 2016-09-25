@@ -83,14 +83,17 @@
 # - (DONE) respell flats/sharps (on individual events or event ranges)
 # - (DONE) fix so that pulses handle breaks properly when reversed/not reversed
 # ---------------------------- FRIDAY EVENING
+# - more orchestrating gen b
+# - - - do something cool with the dissonance (Bb, A), at line3, event 27
+# - (DONE) - - shape range of line 3 (e.g. start high and aned low?)
+# - - - string pizz mimic bass clarinet?
+# - - - add piano...?
 # - good draft short score of g
 # - transposing parts
 # - tempo markings
 # - rhythmic machine with cymbal roll
 # - print short scores
 # - create midi files / garage band projects for each short score generation
-# - more orchestrating gen b
-# - - - do something cool with the dissonance (Bb, A), at line3, event 27
 # - more orchestrating gen c
 # - plan out drone, and start better working into machines
 # - plan out cymbal, and start working better into machines
@@ -258,6 +261,7 @@
 # - better way to show pitch indices in harmony
 # - color code lines, and fragments by line (just tag color... that's enough!)
 # - smart auto-respell pitches
+# - think of sending lines TO fragments in other lines (instead of pulling FROM)?
 
 import abjad
 from calliope import bubbles

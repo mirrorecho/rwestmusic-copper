@@ -1,4 +1,4 @@
-% 2016-09-24 02:08
+% 2016-09-24 17:14
 
 \version "2.18.2"
 \language "english"
@@ -213,7 +213,7 @@
                 \once \override Dots.color = #darkmagenta
                 \once \override NoteHead.color = #darkmagenta
                 \once \override Stem.color = #darkmagenta
-                e2 ^ \markup { 27 }
+                b2 ^ \markup { 27 }
             }
         }
         \new Staff {
@@ -229,180 +229,180 @@
                     \mark #2
                     R1 * 6
                 }
-                \once \override Accidental.color = #green
-                \once \override Beam.color = #green
-                \once \override Dots.color = #green
-                \once \override NoteHead.color = #green
-                \once \override Stem.color = #green
+                \once \override Accidental.color = #darkgreen
+                \once \override Beam.color = #darkgreen
+                \once \override Dots.color = #darkgreen
+                \once \override NoteHead.color = #darkgreen
+                \once \override Stem.color = #darkgreen
                 \clef bass
                 d'2 ^ \markup { 1 }
-                \once \override Accidental.color = #green
-                \once \override Beam.color = #green
-                \once \override Dots.color = #green
-                \once \override NoteHead.color = #green
-                \once \override Stem.color = #green
+                \once \override Accidental.color = #darkgreen
+                \once \override Beam.color = #darkgreen
+                \once \override Dots.color = #darkgreen
+                \once \override NoteHead.color = #darkgreen
+                \once \override Stem.color = #darkgreen
                 c'4 ^ \markup { 2 }
-                \once \override Accidental.color = #green
-                \once \override Beam.color = #green
-                \once \override Dots.color = #green
-                \once \override NoteHead.color = #green
-                \once \override Stem.color = #green
+                \once \override Accidental.color = #darkgreen
+                \once \override Beam.color = #darkgreen
+                \once \override Dots.color = #darkgreen
+                \once \override NoteHead.color = #darkgreen
+                \once \override Stem.color = #darkgreen
                 e4 ^ \markup { 3 }
-                \once \override Accidental.color = #green
-                \once \override Beam.color = #green
-                \once \override Dots.color = #green
-                \once \override NoteHead.color = #green
-                \once \override Stem.color = #green
+                \once \override Accidental.color = #darkgreen
+                \once \override Beam.color = #darkgreen
+                \once \override Dots.color = #darkgreen
+                \once \override NoteHead.color = #darkgreen
+                \once \override Stem.color = #darkgreen
                 g4 ^ \markup { 4 }
-                \once \override Accidental.color = #green
-                \once \override Beam.color = #green
-                \once \override Dots.color = #green
-                \once \override NoteHead.color = #green
-                \once \override Stem.color = #green
+                \once \override Accidental.color = #darkgreen
+                \once \override Beam.color = #darkgreen
+                \once \override Dots.color = #darkgreen
+                \once \override NoteHead.color = #darkgreen
+                \once \override Stem.color = #darkgreen
                 a8 [ ^ \markup { 5 }
-                \once \override Accidental.color = #green
-                \once \override Beam.color = #green
-                \once \override Dots.color = #green
-                \once \override NoteHead.color = #green
-                \once \override Stem.color = #green
+                \once \override Accidental.color = #darkgreen
+                \once \override Beam.color = #darkgreen
+                \once \override Dots.color = #darkgreen
+                \once \override NoteHead.color = #darkgreen
+                \once \override Stem.color = #darkgreen
                 b8 ] ^ \markup { 6 }
-                \once \override Accidental.color = #green
-                \once \override Beam.color = #green
-                \once \override Dots.color = #green
-                \once \override NoteHead.color = #green
-                \once \override Stem.color = #green
+                \once \override Accidental.color = #darkgreen
+                \once \override Beam.color = #darkgreen
+                \once \override Dots.color = #darkgreen
+                \once \override NoteHead.color = #darkgreen
+                \once \override Stem.color = #darkgreen
                 d'2 ^ \markup { 7 }
-                \once \override Accidental.color = #green
-                \once \override Beam.color = #green
-                \once \override Dots.color = #green
-                \once \override NoteHead.color = #green
-                \once \override Stem.color = #green
+                \once \override Accidental.color = #darkgreen
+                \once \override Beam.color = #darkgreen
+                \once \override Dots.color = #darkgreen
+                \once \override NoteHead.color = #darkgreen
+                \once \override Stem.color = #darkgreen
                 c'4 ^ \markup { 8 }
-                \once \override Accidental.color = #green
-                \once \override Beam.color = #green
-                \once \override Dots.color = #green
-                \once \override NoteHead.color = #green
-                \once \override Stem.color = #green
+                \once \override Accidental.color = #darkgreen
+                \once \override Beam.color = #darkgreen
+                \once \override Dots.color = #darkgreen
+                \once \override NoteHead.color = #darkgreen
+                \once \override Stem.color = #darkgreen
                 b4 ^ \markup { 9 }
-                \once \override Accidental.color = #green
-                \once \override Beam.color = #green
-                \once \override Dots.color = #green
-                \once \override NoteHead.color = #green
-                \once \override Stem.color = #green
+                \once \override Accidental.color = #darkgreen
+                \once \override Beam.color = #darkgreen
+                \once \override Dots.color = #darkgreen
+                \once \override NoteHead.color = #darkgreen
+                \once \override Stem.color = #darkgreen
                 a4 ^ \markup { 10 }
-                \once \override Accidental.color = #green
-                \once \override Beam.color = #green
-                \once \override Dots.color = #green
-                \once \override NoteHead.color = #green
-                \once \override Stem.color = #green
+                \once \override Accidental.color = #darkgreen
+                \once \override Beam.color = #darkgreen
+                \once \override Dots.color = #darkgreen
+                \once \override NoteHead.color = #darkgreen
+                \once \override Stem.color = #darkgreen
                 f8 [ ^ \markup { 11 }
-                \once \override Accidental.color = #green
-                \once \override Beam.color = #green
-                \once \override Dots.color = #green
-                \once \override NoteHead.color = #green
-                \once \override Stem.color = #green
+                \once \override Accidental.color = #darkgreen
+                \once \override Beam.color = #darkgreen
+                \once \override Dots.color = #darkgreen
+                \once \override NoteHead.color = #darkgreen
+                \once \override Stem.color = #darkgreen
                 e8 ] ^ \markup { 12 }
-                \once \override Accidental.color = #green
-                \once \override Beam.color = #green
-                \once \override Dots.color = #green
-                \once \override NoteHead.color = #green
-                \once \override Stem.color = #green
+                \once \override Accidental.color = #darkgreen
+                \once \override Beam.color = #darkgreen
+                \once \override Dots.color = #darkgreen
+                \once \override NoteHead.color = #darkgreen
+                \once \override Stem.color = #darkgreen
                 d4 ^ \markup { 13 }
-                \once \override Accidental.color = #green
-                \once \override Beam.color = #green
-                \once \override Dots.color = #green
-                \once \override NoteHead.color = #green
-                \once \override Stem.color = #green
+                \once \override Accidental.color = #darkgreen
+                \once \override Beam.color = #darkgreen
+                \once \override Dots.color = #darkgreen
+                \once \override NoteHead.color = #darkgreen
+                \once \override Stem.color = #darkgreen
                 bf,4 ^ \markup { 14 }
-                \once \override Accidental.color = #green
-                \once \override Beam.color = #green
-                \once \override Dots.color = #green
-                \once \override NoteHead.color = #green
-                \once \override Stem.color = #green
+                \once \override Accidental.color = #darkgreen
+                \once \override Beam.color = #darkgreen
+                \once \override Dots.color = #darkgreen
+                \once \override NoteHead.color = #darkgreen
+                \once \override Stem.color = #darkgreen
                 a,4 ^ \markup { 15 }
-                \once \override Accidental.color = #green
-                \once \override Beam.color = #green
-                \once \override Dots.color = #green
-                \once \override NoteHead.color = #green
-                \once \override Stem.color = #green
+                \once \override Accidental.color = #darkgreen
+                \once \override Beam.color = #darkgreen
+                \once \override Dots.color = #darkgreen
+                \once \override NoteHead.color = #darkgreen
+                \once \override Stem.color = #darkgreen
                 c2 ^ \markup { 16 }
-                \once \override Accidental.color = #green
-                \once \override Beam.color = #green
-                \once \override Dots.color = #green
-                \once \override NoteHead.color = #green
-                \once \override Stem.color = #green
+                \once \override Accidental.color = #darkgreen
+                \once \override Beam.color = #darkgreen
+                \once \override Dots.color = #darkgreen
+                \once \override NoteHead.color = #darkgreen
+                \once \override Stem.color = #darkgreen
                 bf,8 [ ^ \markup { 17 }
-                \once \override Accidental.color = #green
-                \once \override Beam.color = #green
-                \once \override Dots.color = #green
-                \once \override NoteHead.color = #green
-                \once \override Stem.color = #green
+                \once \override Accidental.color = #darkgreen
+                \once \override Beam.color = #darkgreen
+                \once \override Dots.color = #darkgreen
+                \once \override NoteHead.color = #darkgreen
+                \once \override Stem.color = #darkgreen
                 a,8 ] ^ \markup { 18 }
-                \once \override Accidental.color = #green
-                \once \override Beam.color = #green
-                \once \override Dots.color = #green
-                \once \override NoteHead.color = #green
-                \once \override Stem.color = #green
+                \once \override Accidental.color = #darkgreen
+                \once \override Beam.color = #darkgreen
+                \once \override Dots.color = #darkgreen
+                \once \override NoteHead.color = #darkgreen
+                \once \override Stem.color = #darkgreen
                 c2. ~ ^ \markup { 19 }
-                \once \override Accidental.color = #green
-                \once \override Beam.color = #green
-                \once \override Dots.color = #green
-                \once \override NoteHead.color = #green
-                \once \override Stem.color = #green
+                \once \override Accidental.color = #darkgreen
+                \once \override Beam.color = #darkgreen
+                \once \override Dots.color = #darkgreen
+                \once \override NoteHead.color = #darkgreen
+                \once \override Stem.color = #darkgreen
                 c2.
-                \once \override Accidental.color = #green
-                \once \override Beam.color = #green
-                \once \override Dots.color = #green
-                \once \override NoteHead.color = #green
-                \once \override Stem.color = #green
+                \once \override Accidental.color = #darkgreen
+                \once \override Beam.color = #darkgreen
+                \once \override Dots.color = #darkgreen
+                \once \override NoteHead.color = #darkgreen
+                \once \override Stem.color = #darkgreen
                 bf,2. ^ \markup { 20 }
-                \once \override Accidental.color = #green
-                \once \override Beam.color = #green
-                \once \override Dots.color = #green
-                \once \override NoteHead.color = #green
-                \once \override Stem.color = #green
+                \once \override Accidental.color = #darkgreen
+                \once \override Beam.color = #darkgreen
+                \once \override Dots.color = #darkgreen
+                \once \override NoteHead.color = #darkgreen
+                \once \override Stem.color = #darkgreen
                 a,2. ^ \markup { 21 }
-                \once \override Accidental.color = #green
-                \once \override Beam.color = #green
-                \once \override Dots.color = #green
-                \once \override NoteHead.color = #green
-                \once \override Stem.color = #green
+                \once \override Accidental.color = #darkgreen
+                \once \override Beam.color = #darkgreen
+                \once \override Dots.color = #darkgreen
+                \once \override NoteHead.color = #darkgreen
+                \once \override Stem.color = #darkgreen
                 f,2. ~ ^ \markup { 22 }
-                \once \override Accidental.color = #green
-                \once \override Beam.color = #green
-                \once \override Dots.color = #green
-                \once \override NoteHead.color = #green
-                \once \override Stem.color = #green
+                \once \override Accidental.color = #darkgreen
+                \once \override Beam.color = #darkgreen
+                \once \override Dots.color = #darkgreen
+                \once \override NoteHead.color = #darkgreen
+                \once \override Stem.color = #darkgreen
                 f,2.
-                \once \override Accidental.color = #green
-                \once \override Beam.color = #green
-                \once \override Dots.color = #green
-                \once \override NoteHead.color = #green
-                \once \override Stem.color = #green
+                \once \override Accidental.color = #darkgreen
+                \once \override Beam.color = #darkgreen
+                \once \override Dots.color = #darkgreen
+                \once \override NoteHead.color = #darkgreen
+                \once \override Stem.color = #darkgreen
                 g,2. ^ \markup { 23 }
-                \once \override Accidental.color = #green
-                \once \override Beam.color = #green
-                \once \override Dots.color = #green
-                \once \override NoteHead.color = #green
-                \once \override Stem.color = #green
+                \once \override Accidental.color = #darkgreen
+                \once \override Beam.color = #darkgreen
+                \once \override Dots.color = #darkgreen
+                \once \override NoteHead.color = #darkgreen
+                \once \override Stem.color = #darkgreen
                 a,2. ^ \markup { 24 }
-                \once \override Accidental.color = #green
-                \once \override Beam.color = #green
-                \once \override Dots.color = #green
-                \once \override NoteHead.color = #green
-                \once \override Stem.color = #green
+                \once \override Accidental.color = #darkgreen
+                \once \override Beam.color = #darkgreen
+                \once \override Dots.color = #darkgreen
+                \once \override NoteHead.color = #darkgreen
+                \once \override Stem.color = #darkgreen
                 g,4 ^ \markup { 25 }
-                \once \override Accidental.color = #green
-                \once \override Beam.color = #green
-                \once \override Dots.color = #green
-                \once \override NoteHead.color = #green
-                \once \override Stem.color = #green
+                \once \override Accidental.color = #darkgreen
+                \once \override Beam.color = #darkgreen
+                \once \override Dots.color = #darkgreen
+                \once \override NoteHead.color = #darkgreen
+                \once \override Stem.color = #darkgreen
                 bf,4 ^ \markup { 26 }
-                \once \override Accidental.color = #green
-                \once \override Beam.color = #green
-                \once \override Dots.color = #green
-                \once \override NoteHead.color = #green
-                \once \override Stem.color = #green
+                \once \override Accidental.color = #darkgreen
+                \once \override Beam.color = #darkgreen
+                \once \override Dots.color = #darkgreen
+                \once \override NoteHead.color = #darkgreen
+                \once \override Stem.color = #darkgreen
                 a,4 ^ \markup { 27 }
                 {
                     R1 * 3/4
@@ -656,103 +656,103 @@
                 \once \override Dots.color = #blue
                 \once \override NoteHead.color = #blue
                 \once \override Stem.color = #blue
-                bf,16 ^ \markup { 38 }
+                ef,16 ^ \markup { 38 }
                 \once \override Accidental.color = #blue
                 \once \override Beam.color = #blue
                 \once \override Dots.color = #blue
                 \once \override NoteHead.color = #blue
                 \once \override Stem.color = #blue
-                a,16 ] ^ \markup { 39 }
+                d,16 ] ^ \markup { 39 }
                 \once \override Accidental.color = #blue
                 \once \override Beam.color = #blue
                 \once \override Dots.color = #blue
                 \once \override NoteHead.color = #blue
                 \once \override Stem.color = #blue
-                g,8 [ ^ \markup { 40 }
+                c,8 [ ^ \markup { 40 }
                 \once \override Accidental.color = #blue
                 \once \override Beam.color = #blue
                 \once \override Dots.color = #blue
                 \once \override NoteHead.color = #blue
                 \once \override Stem.color = #blue
-                bf,8 ] ^ \markup { 41 }
+                ef,8 ] ^ \markup { 41 }
                 \once \override Accidental.color = #blue
                 \once \override Beam.color = #blue
                 \once \override Dots.color = #blue
                 \once \override NoteHead.color = #blue
                 \once \override Stem.color = #blue
-                a,8 [ ^ \markup { 42 }
+                d,8 [ ^ \markup { 42 }
                 \once \override Accidental.color = #blue
                 \once \override Beam.color = #blue
                 \once \override Dots.color = #blue
                 \once \override NoteHead.color = #blue
                 \once \override Stem.color = #blue
-                c8 ~ ] ^ \markup { 43 }
+                f,8 ~ ] ^ \markup { 43 }
                 \once \override Accidental.color = #blue
                 \once \override Beam.color = #blue
                 \once \override Dots.color = #blue
                 \once \override NoteHead.color = #blue
                 \once \override Stem.color = #blue
-                c8 [
+                f,8 [
                 \once \override Accidental.color = #blue
                 \once \override Beam.color = #blue
                 \once \override Dots.color = #blue
                 \once \override NoteHead.color = #blue
                 \once \override Stem.color = #blue
-                bf,16 ^ \markup { 44 }
+                ef,16 ^ \markup { 44 }
                 \once \override Accidental.color = #blue
                 \once \override Beam.color = #blue
                 \once \override Dots.color = #blue
                 \once \override NoteHead.color = #blue
                 \once \override Stem.color = #blue
-                a,16 ] ^ \markup { 45 }
+                d,16 ] ^ \markup { 45 }
                 \once \override Accidental.color = #blue
                 \once \override Beam.color = #blue
                 \once \override Dots.color = #blue
                 \once \override NoteHead.color = #blue
                 \once \override Stem.color = #blue
-                c4 ^ \markup { 46 }
+                bf,,4 ^ \markup { 46 }
                 \once \override Accidental.color = #blue
                 \once \override Beam.color = #blue
                 \once \override Dots.color = #blue
                 \once \override NoteHead.color = #blue
                 \once \override Stem.color = #blue
-                bf,8 [ ^ \markup { 47 }
+                af,,8 [ ^ \markup { 47 }
                 \once \override Accidental.color = #blue
                 \once \override Beam.color = #blue
                 \once \override Dots.color = #blue
                 \once \override NoteHead.color = #blue
                 \once \override Stem.color = #blue
-                a,8 ] ^ \markup { 48 }
+                g,,8 ] ^ \markup { 48 }
                 \once \override Accidental.color = #blue
                 \once \override Beam.color = #blue
                 \once \override Dots.color = #blue
                 \once \override NoteHead.color = #blue
                 \once \override Stem.color = #blue
-                c8 [ ^ \markup { 49 }
+                ef,,8 [ ^ \markup { 49 }
                 \once \override Accidental.color = #blue
                 \once \override Beam.color = #blue
                 \once \override Dots.color = #blue
                 \once \override NoteHead.color = #blue
                 \once \override Stem.color = #blue
-                d16 ^ \markup { 50 }
+                f,,16 ^ \markup { 50 }
                 \once \override Accidental.color = #blue
                 \once \override Beam.color = #blue
                 \once \override Dots.color = #blue
                 \once \override NoteHead.color = #blue
                 \once \override Stem.color = #blue
-                e16 ] ^ \markup { 51 }
+                g,,16 ] ^ \markup { 51 }
                 \once \override Accidental.color = #blue
                 \once \override Beam.color = #blue
                 \once \override Dots.color = #blue
                 \once \override NoteHead.color = #blue
                 \once \override Stem.color = #blue
-                d4 ^ \markup { 52 }
+                c,4 ^ \markup { 52 }
                 \once \override Accidental.color = #blue
                 \once \override Beam.color = #blue
                 \once \override Dots.color = #blue
                 \once \override NoteHead.color = #blue
                 \once \override Stem.color = #blue
-                f4 ^ \markup { 53 }
+                bf,4 ^ \markup { 53 }
                 \once \override Accidental.color = #blue
                 \once \override Beam.color = #blue
                 \once \override Dots.color = #blue
