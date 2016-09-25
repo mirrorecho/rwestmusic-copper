@@ -89,6 +89,10 @@
 # - - - string pizz mimic bass clarinet?
 # - - - add piano...?
 # - - - should not go above the drone at the end
+# - more orchestrating gen c
+# - - - piano/pizz parts?
+# - - - orchestration of 2nd half of lines 1/2 could be more interesting...
+# - - - ... keep going with trumpets / break up strings / more string tremolos
 # - good draft short score of g
 # - transposing parts
 # - tempo markings
@@ -117,7 +121,6 @@
 # - more orchestrating gen f
 # - more orchestrating gen g
 # - more orchestrating gen h
-# ---------------------------- SATURDAY EVENING
 # - (maybe?) need to be able to tag base arrangment stuff even on "unarranged" bubble
 # - (maybe?) print full scores (and mark up?)
 # - good draft gen f short score
@@ -267,6 +270,9 @@
 # - even cleaner fragments, with slicing and pattern-based alterations/tagging (see Viola1 in orchestration_c)
 # - - - including patterns on fragments (or frag it/line) added together
 # - use inheritance better with fragments
+# - tagging to handle trills
+# - easily construct phrases/segments/events/logical-ties more manually
+# - harmonics machie (reconstitute)
 
 import abjad
 from calliope import bubbles
