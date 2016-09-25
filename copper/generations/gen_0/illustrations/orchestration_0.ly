@@ -1,4 +1,4 @@
-% 2016-09-23 21:07
+% 2016-09-24 23:53
 
 \version "2.18.2"
 \language "english"
@@ -135,21 +135,71 @@
                         \numericTimeSignature
                         \accidentalStyle modern-cautionary
                         r2
+                        \once \override Accidental.color = #grey
+                        \once \override Beam.color = #grey
+                        \once \override Dots.color = #grey
+                        \once \override NoteHead.color = #grey
+                        \once \override Stem.color = #grey
                         d2 \pp ~ \<
+                        \once \override Accidental.color = #grey
+                        \once \override Beam.color = #grey
+                        \once \override Dots.color = #grey
+                        \once \override NoteHead.color = #grey
+                        \once \override Stem.color = #grey
                         d1 \mp ~ \>
+                        \once \override Accidental.color = #grey
+                        \once \override Beam.color = #grey
+                        \once \override Dots.color = #grey
+                        \once \override NoteHead.color = #grey
+                        \once \override Stem.color = #grey
                         d2 \pp
                         r2
                         r2
+                        \once \override Accidental.color = #grey
+                        \once \override Beam.color = #grey
+                        \once \override Dots.color = #grey
+                        \once \override NoteHead.color = #grey
+                        \once \override Stem.color = #grey
                         d2 \pp ~ \<
+                        \once \override Accidental.color = #grey
+                        \once \override Beam.color = #grey
+                        \once \override Dots.color = #grey
+                        \once \override NoteHead.color = #grey
+                        \once \override Stem.color = #grey
                         d1 \mp ~ \>
+                        \once \override Accidental.color = #grey
+                        \once \override Beam.color = #grey
+                        \once \override Dots.color = #grey
+                        \once \override NoteHead.color = #grey
+                        \once \override Stem.color = #grey
                         d2 \pp
                         r2
                         r2
+                        \once \override Accidental.color = #grey
+                        \once \override Beam.color = #grey
+                        \once \override Dots.color = #grey
+                        \once \override NoteHead.color = #grey
+                        \once \override Stem.color = #grey
                         d2 \pp ~ \<
+                        \once \override Accidental.color = #grey
+                        \once \override Beam.color = #grey
+                        \once \override Dots.color = #grey
+                        \once \override NoteHead.color = #grey
+                        \once \override Stem.color = #grey
                         d1 \mp ~ \>
+                        \once \override Accidental.color = #grey
+                        \once \override Beam.color = #grey
+                        \once \override Dots.color = #grey
+                        \once \override NoteHead.color = #grey
+                        \once \override Stem.color = #grey
                         d2 \pp
                         r2
                         r2
+                        \once \override Accidental.color = #grey
+                        \once \override Beam.color = #grey
+                        \once \override Dots.color = #grey
+                        \once \override NoteHead.color = #grey
+                        \once \override Stem.color = #grey
                         d2 \pp
                     }
                 }
@@ -163,23 +213,83 @@
                         {
                             R1 * 1
                         }
+                        \once \override Accidental.color = #grey
+                        \once \override Beam.color = #grey
+                        \once \override Dots.color = #grey
+                        \once \override NoteHead.color = #grey
+                        \once \override Stem.color = #grey
                         d2 \pp ~ \<
+                        \once \override Accidental.color = #grey
+                        \once \override Beam.color = #grey
+                        \once \override Dots.color = #grey
+                        \once \override NoteHead.color = #grey
+                        \once \override Stem.color = #grey
                         d2 \mp ~ ~ \>
+                        \once \override Accidental.color = #grey
+                        \once \override Beam.color = #grey
+                        \once \override Dots.color = #grey
+                        \once \override NoteHead.color = #grey
+                        \once \override Stem.color = #grey
                         d2 ~
+                        \once \override Accidental.color = #grey
+                        \once \override Beam.color = #grey
+                        \once \override Dots.color = #grey
+                        \once \override NoteHead.color = #grey
+                        \once \override Stem.color = #grey
                         d2 \pp
                         {
                             R1 * 1
                         }
+                        \once \override Accidental.color = #grey
+                        \once \override Beam.color = #grey
+                        \once \override Dots.color = #grey
+                        \once \override NoteHead.color = #grey
+                        \once \override Stem.color = #grey
                         d2 \pp ~ \<
+                        \once \override Accidental.color = #grey
+                        \once \override Beam.color = #grey
+                        \once \override Dots.color = #grey
+                        \once \override NoteHead.color = #grey
+                        \once \override Stem.color = #grey
                         d2 \mp ~ ~ \>
+                        \once \override Accidental.color = #grey
+                        \once \override Beam.color = #grey
+                        \once \override Dots.color = #grey
+                        \once \override NoteHead.color = #grey
+                        \once \override Stem.color = #grey
                         d2 ~
+                        \once \override Accidental.color = #grey
+                        \once \override Beam.color = #grey
+                        \once \override Dots.color = #grey
+                        \once \override NoteHead.color = #grey
+                        \once \override Stem.color = #grey
                         d2 \pp
                         {
                             R1 * 1
                         }
+                        \once \override Accidental.color = #grey
+                        \once \override Beam.color = #grey
+                        \once \override Dots.color = #grey
+                        \once \override NoteHead.color = #grey
+                        \once \override Stem.color = #grey
                         d2 \pp ~ \<
+                        \once \override Accidental.color = #grey
+                        \once \override Beam.color = #grey
+                        \once \override Dots.color = #grey
+                        \once \override NoteHead.color = #grey
+                        \once \override Stem.color = #grey
                         d2 \mp ~ ~ \>
+                        \once \override Accidental.color = #grey
+                        \once \override Beam.color = #grey
+                        \once \override Dots.color = #grey
+                        \once \override NoteHead.color = #grey
+                        \once \override Stem.color = #grey
                         d2 ~
+                        \once \override Accidental.color = #grey
+                        \once \override Beam.color = #grey
+                        \once \override Dots.color = #grey
+                        \once \override NoteHead.color = #grey
+                        \once \override Stem.color = #grey
                         d2 \pp
                         {
                             R1 * 1
@@ -762,33 +872,173 @@
                     {
                         R1 * 3
                     }
+                    \once \override Accidental.color = #darkmagenta
+                    \once \override Beam.color = #darkmagenta
+                    \once \override Dots.color = #darkmagenta
+                    \once \override NoteHead.color = #darkmagenta
+                    \once \override Stem.color = #darkmagenta
                     d'2 ^ \markup { 1 }
+                    \once \override Accidental.color = #darkmagenta
+                    \once \override Beam.color = #darkmagenta
+                    \once \override Dots.color = #darkmagenta
+                    \once \override NoteHead.color = #darkmagenta
+                    \once \override Stem.color = #darkmagenta
                     c'4 ^ \markup { 2 }
+                    \once \override Accidental.color = #darkmagenta
+                    \once \override Beam.color = #darkmagenta
+                    \once \override Dots.color = #darkmagenta
+                    \once \override NoteHead.color = #darkmagenta
+                    \once \override Stem.color = #darkmagenta
                     b4 ^ \markup { 3 }
+                    \once \override Accidental.color = #darkmagenta
+                    \once \override Beam.color = #darkmagenta
+                    \once \override Dots.color = #darkmagenta
+                    \once \override NoteHead.color = #darkmagenta
+                    \once \override Stem.color = #darkmagenta
                     g2 ^ \markup { 4 }
+                    \once \override Accidental.color = #darkmagenta
+                    \once \override Beam.color = #darkmagenta
+                    \once \override Dots.color = #darkmagenta
+                    \once \override NoteHead.color = #darkmagenta
+                    \once \override Stem.color = #darkmagenta
                     a4 ^ \markup { 5 }
+                    \once \override Accidental.color = #darkmagenta
+                    \once \override Beam.color = #darkmagenta
+                    \once \override Dots.color = #darkmagenta
+                    \once \override NoteHead.color = #darkmagenta
+                    \once \override Stem.color = #darkmagenta
                     b4 ^ \markup { 6 }
+                    \once \override Accidental.color = #darkmagenta
+                    \once \override Beam.color = #darkmagenta
+                    \once \override Dots.color = #darkmagenta
+                    \once \override NoteHead.color = #darkmagenta
+                    \once \override Stem.color = #darkmagenta
                     d'2 ^ \markup { 7 }
+                    \once \override Accidental.color = #darkmagenta
+                    \once \override Beam.color = #darkmagenta
+                    \once \override Dots.color = #darkmagenta
+                    \once \override NoteHead.color = #darkmagenta
+                    \once \override Stem.color = #darkmagenta
                     c'4 ^ \markup { 8 }
+                    \once \override Accidental.color = #darkmagenta
+                    \once \override Beam.color = #darkmagenta
+                    \once \override Dots.color = #darkmagenta
+                    \once \override NoteHead.color = #darkmagenta
+                    \once \override Stem.color = #darkmagenta
                     b4 ^ \markup { 9 }
+                    \once \override Accidental.color = #darkmagenta
+                    \once \override Beam.color = #darkmagenta
+                    \once \override Dots.color = #darkmagenta
+                    \once \override NoteHead.color = #darkmagenta
+                    \once \override Stem.color = #darkmagenta
                     a2 ^ \markup { 10 }
+                    \once \override Accidental.color = #darkmagenta
+                    \once \override Beam.color = #darkmagenta
+                    \once \override Dots.color = #darkmagenta
+                    \once \override NoteHead.color = #darkmagenta
+                    \once \override Stem.color = #darkmagenta
                     c'4 ^ \markup { 11 }
+                    \once \override Accidental.color = #darkmagenta
+                    \once \override Beam.color = #darkmagenta
+                    \once \override Dots.color = #darkmagenta
+                    \once \override NoteHead.color = #darkmagenta
+                    \once \override Stem.color = #darkmagenta
                     b4 ^ \markup { 12 }
+                    \once \override Accidental.color = #darkmagenta
+                    \once \override Beam.color = #darkmagenta
+                    \once \override Dots.color = #darkmagenta
+                    \once \override NoteHead.color = #darkmagenta
+                    \once \override Stem.color = #darkmagenta
                     a4 ^ \markup { 13 }
+                    \once \override Accidental.color = #darkmagenta
+                    \once \override Beam.color = #darkmagenta
+                    \once \override Dots.color = #darkmagenta
+                    \once \override NoteHead.color = #darkmagenta
+                    \once \override Stem.color = #darkmagenta
                     c'4 ^ \markup { 14 }
+                    \once \override Accidental.color = #darkmagenta
+                    \once \override Beam.color = #darkmagenta
+                    \once \override Dots.color = #darkmagenta
+                    \once \override NoteHead.color = #darkmagenta
+                    \once \override Stem.color = #darkmagenta
                     b4 ^ \markup { 15 }
+                    \once \override Accidental.color = #darkmagenta
+                    \once \override Beam.color = #darkmagenta
+                    \once \override Dots.color = #darkmagenta
+                    \once \override NoteHead.color = #darkmagenta
+                    \once \override Stem.color = #darkmagenta
                     d'4 ~ ^ \markup { 16 }
+                    \once \override Accidental.color = #darkmagenta
+                    \once \override Beam.color = #darkmagenta
+                    \once \override Dots.color = #darkmagenta
+                    \once \override NoteHead.color = #darkmagenta
+                    \once \override Stem.color = #darkmagenta
                     d'2.
+                    \once \override Accidental.color = #darkmagenta
+                    \once \override Beam.color = #darkmagenta
+                    \once \override Dots.color = #darkmagenta
+                    \once \override NoteHead.color = #darkmagenta
+                    \once \override Stem.color = #darkmagenta
                     c'4 ^ \markup { 17 }
+                    \once \override Accidental.color = #darkmagenta
+                    \once \override Beam.color = #darkmagenta
+                    \once \override Dots.color = #darkmagenta
+                    \once \override NoteHead.color = #darkmagenta
+                    \once \override Stem.color = #darkmagenta
                     b4 ^ \markup { 18 }
+                    \once \override Accidental.color = #darkmagenta
+                    \once \override Beam.color = #darkmagenta
+                    \once \override Dots.color = #darkmagenta
+                    \once \override NoteHead.color = #darkmagenta
+                    \once \override Stem.color = #darkmagenta
                     d'2 ^ \markup { 19 }
+                    \once \override Accidental.color = #darkmagenta
+                    \once \override Beam.color = #darkmagenta
+                    \once \override Dots.color = #darkmagenta
+                    \once \override NoteHead.color = #darkmagenta
+                    \once \override Stem.color = #darkmagenta
                     c'4 ^ \markup { 20 }
+                    \once \override Accidental.color = #darkmagenta
+                    \once \override Beam.color = #darkmagenta
+                    \once \override Dots.color = #darkmagenta
+                    \once \override NoteHead.color = #darkmagenta
+                    \once \override Stem.color = #darkmagenta
                     b4 ^ \markup { 21 }
+                    \once \override Accidental.color = #darkmagenta
+                    \once \override Beam.color = #darkmagenta
+                    \once \override Dots.color = #darkmagenta
+                    \once \override NoteHead.color = #darkmagenta
+                    \once \override Stem.color = #darkmagenta
                     g2 ^ \markup { 22 }
+                    \once \override Accidental.color = #darkmagenta
+                    \once \override Beam.color = #darkmagenta
+                    \once \override Dots.color = #darkmagenta
+                    \once \override NoteHead.color = #darkmagenta
+                    \once \override Stem.color = #darkmagenta
                     a4 ^ \markup { 23 }
+                    \once \override Accidental.color = #darkmagenta
+                    \once \override Beam.color = #darkmagenta
+                    \once \override Dots.color = #darkmagenta
+                    \once \override NoteHead.color = #darkmagenta
+                    \once \override Stem.color = #darkmagenta
                     b4 ^ \markup { 24 }
+                    \once \override Accidental.color = #darkmagenta
+                    \once \override Beam.color = #darkmagenta
+                    \once \override Dots.color = #darkmagenta
+                    \once \override NoteHead.color = #darkmagenta
+                    \once \override Stem.color = #darkmagenta
                     a4 ^ \markup { 25 }
+                    \once \override Accidental.color = #darkmagenta
+                    \once \override Beam.color = #darkmagenta
+                    \once \override Dots.color = #darkmagenta
+                    \once \override NoteHead.color = #darkmagenta
+                    \once \override Stem.color = #darkmagenta
                     c'4 ^ \markup { 26 }
+                    \once \override Accidental.color = #darkmagenta
+                    \once \override Beam.color = #darkmagenta
+                    \once \override Dots.color = #darkmagenta
+                    \once \override NoteHead.color = #darkmagenta
+                    \once \override Stem.color = #darkmagenta
                     b4 ^ \markup { 27 }
                     {
                         R1 * 3
@@ -867,22 +1117,86 @@
                 {
                     \numericTimeSignature
                     \accidentalStyle modern-cautionary
+                    \once \override Dots.color = #grey
+                    \once \override Rest.color = #grey
                     r2
+                    \once \override Accidental.color = #grey
+                    \once \override Beam.color = #grey
+                    \once \override Dots.color = #grey
+                    \once \override NoteHead.color = #grey
+                    \once \override Stem.color = #grey
                     d2 \pp ~ \< ^ \markup { 1 }
+                    \once \override Accidental.color = #grey
+                    \once \override Beam.color = #grey
+                    \once \override Dots.color = #grey
+                    \once \override NoteHead.color = #grey
+                    \once \override Stem.color = #grey
                     d1 \mp ~ \> ^ \markup { 2 }
+                    \once \override Accidental.color = #grey
+                    \once \override Beam.color = #grey
+                    \once \override Dots.color = #grey
+                    \once \override NoteHead.color = #grey
+                    \once \override Stem.color = #grey
                     d2 \pp ^ \markup { 3 }
+                    \once \override Dots.color = #grey
+                    \once \override Rest.color = #grey
                     r2
+                    \once \override Dots.color = #grey
+                    \once \override Rest.color = #grey
                     r2
+                    \once \override Accidental.color = #grey
+                    \once \override Beam.color = #grey
+                    \once \override Dots.color = #grey
+                    \once \override NoteHead.color = #grey
+                    \once \override Stem.color = #grey
                     d2 \pp ~ \< ^ \markup { 5 }
+                    \once \override Accidental.color = #grey
+                    \once \override Beam.color = #grey
+                    \once \override Dots.color = #grey
+                    \once \override NoteHead.color = #grey
+                    \once \override Stem.color = #grey
                     d1 \mp ~ \> ^ \markup { 6 }
+                    \once \override Accidental.color = #grey
+                    \once \override Beam.color = #grey
+                    \once \override Dots.color = #grey
+                    \once \override NoteHead.color = #grey
+                    \once \override Stem.color = #grey
                     d2 \pp ^ \markup { 7 }
+                    \once \override Dots.color = #grey
+                    \once \override Rest.color = #grey
                     r2
+                    \once \override Dots.color = #grey
+                    \once \override Rest.color = #grey
                     r2
+                    \once \override Accidental.color = #grey
+                    \once \override Beam.color = #grey
+                    \once \override Dots.color = #grey
+                    \once \override NoteHead.color = #grey
+                    \once \override Stem.color = #grey
                     d2 \pp ~ \< ^ \markup { 9 }
+                    \once \override Accidental.color = #grey
+                    \once \override Beam.color = #grey
+                    \once \override Dots.color = #grey
+                    \once \override NoteHead.color = #grey
+                    \once \override Stem.color = #grey
                     d1 \mp ~ \> ^ \markup { 10 }
+                    \once \override Accidental.color = #grey
+                    \once \override Beam.color = #grey
+                    \once \override Dots.color = #grey
+                    \once \override NoteHead.color = #grey
+                    \once \override Stem.color = #grey
                     d2 \pp ^ \markup { 11 }
+                    \once \override Dots.color = #grey
+                    \once \override Rest.color = #grey
                     r2
+                    \once \override Dots.color = #grey
+                    \once \override Rest.color = #grey
                     r2
+                    \once \override Accidental.color = #grey
+                    \once \override Beam.color = #grey
+                    \once \override Dots.color = #grey
+                    \once \override NoteHead.color = #grey
+                    \once \override Stem.color = #grey
                     d2 \pp ^ \markup { 13 }
                     \bar "|."
                 }

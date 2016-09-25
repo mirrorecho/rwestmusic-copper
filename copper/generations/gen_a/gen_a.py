@@ -36,6 +36,10 @@ class Line2(Line1):
             up =    (2,15,17,22,25),
             down =  ( 3, 16,21) 
             )
+    def update_data(self, **kwargs):
+        super().update_data(**kwargs)
+        if self.__class__.__name__ == "Line2":
+            self.tag_events("darkgreen", every_child=True)
 
 # -------------------------------------------------------------------------------------------------
 bubbles.illustrate_me(__file__, 

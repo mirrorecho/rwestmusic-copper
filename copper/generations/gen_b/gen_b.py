@@ -35,13 +35,12 @@ class Line1(GenB, machines.RhythmsMultiplied, gen_a.Line1):
     pitch_displacement.flat(8,24)    
     def update_data(self, **kwargs):
         super().update_data(**kwargs)
-        self.tag_events("darkmagenta")
         if self.__class__ is Line1:
             self.events[1].tag("\clef bass")
 
 # -------------------------------------------------------------------------------------------------
 
-class Line2(GenB, machines.RhythmsMultiplied, gen_a.Line1):
+class Line2(GenB, machines.RhythmsMultiplied, gen_a.Line2):
     clef = "bass"
     rhythm_initial_silence=24
     rhythm_multipliers = machines.RhythmsMultiplied.make_multipliers()
@@ -51,7 +50,6 @@ class Line2(GenB, machines.RhythmsMultiplied, gen_a.Line1):
         down =  (3,11,14) )
     def update_data(self, **kwargs):
         super().update_data(**kwargs)
-        self.tag_events("darkgreen", every_child=True)
         if self.__class__ is Line2:
             self.events[1].tag("\clef bass")
 
@@ -70,7 +68,8 @@ class Line3(GenB, machines.RhythmsMultiplied, gen_a.Line1):
     rhythm_initial_silence = 36
     def update_data(self, **kwargs):
         super().update_data(**kwargs)
-        self.tag_events("blue")
+        if self.__class__.__name__ == "Line3":
+            self.tag_events("darkyellow", every_child=True)
         if self.__class__ is Line3:
             self.events[1].tag("\clef bass")
 

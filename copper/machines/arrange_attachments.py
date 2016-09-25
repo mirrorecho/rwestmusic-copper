@@ -276,9 +276,16 @@ class ArrangeAttachments(object):
                 attachment = data_logical_tie.get_attachment(attachment_name)
                 if attachment:
                     if callable(attachment):
+                        # TO DO... this won't work with chords!
                         attachment(music_logical_tie)
                     else:
-                        abjad.attach(attachment, music[music_leaf_index])
+                        # stem tremolos should be attached to every leaf in logical tie...
+                        if isinstance(attachment, abjad.indicatortools.StemTremolo):
+                            stop_index = music_leaf_index + len(music_logical_tie)
+                            for leaf in music[music_leaf_index:stop_index]:
+                                abjad.attach(attachment, leaf)
+                        else:
+                            abjad.attach(attachment, music[music_leaf_index])
             # print(attachment_name)
         # print("-------------------------------------------------")
             

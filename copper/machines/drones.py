@@ -34,6 +34,8 @@ class Drone0(machines.PitchedLine):
                 segment[0].tag(self.initial_dynamic, "\<", "~")
                 segment[1].tag(self.middle_dynamic, "\>")
                 segment[2].tag(self.end_dynamic, "~!")
+        if self.__class__.__name__ == "Drone0":
+            self.tag_events("grey", every_child=True)
 
 
 # -------------------------------------------------------------------------------------------------

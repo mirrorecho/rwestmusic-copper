@@ -137,6 +137,7 @@ class Line5(GenD, gen_c.Line4):
         super().update_data(**kwargs)
         self.events[7].tag("8va")
         self.events[126].tag("8va!")
+        self.tag_events("red")
 
 # -------------------------------------------------------------------------------------------------
 

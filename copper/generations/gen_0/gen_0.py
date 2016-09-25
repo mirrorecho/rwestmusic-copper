@@ -91,6 +91,10 @@ class Line1(Gen0, machines.PitchedLine):
     #     self.events[4].tag("\!",")")
 
 # -------------------------------------------------------------------------------------------------
+    def update_data(self, **kwargs):
+        super().update_data(**kwargs)
+        if self.__class__.__name__ == "Line1":
+            self.tag_events("darkmagenta", every_child=True)
 
 bubbles.illustrate_me(__file__, 
     lambda: staves.CopperShortScore(

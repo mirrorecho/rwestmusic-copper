@@ -14,21 +14,25 @@ class FragmentInfo(machines.SetAttributeMixin):
     from_index = None # overrides the index (allows same index to be used, especially for different lines)
     line = None
     chord_positions = None # if fragment event is a chord, then set this to list/tuple to indicate indices to use (None will output full chord)
-    tags = None # a tuple that can be used to create a set of tags to be added to the new event
+    tags = () # a tuple that can be used to create a set of tags to be added to the new event
     untags = None # ditto for untagging
 
 class Fragments(machines.IndexedData):
     items_type=FragmentInfo
 
     @classmethod
-    def it(cls, line_index, event_index, tags=None, **kwargs):
+    def it(cls, line_index, event_index, tags=(), **kwargs):
         if tags:
             tags = (tags,) if isinstance(tags, str) else tags
         return Fragments.item(line=line_index, from_index=event_index, tags=tags, **kwargs)
 
     @classmethod
-    def its(cls, line_index, event_range_tuple, tags=None, **kwargs):
-        return [ Fragments.it(line_index=line_index, event_index=i, tags=tags, **kwargs) for i in range(*event_range_tuple) ]
+    def its(cls, line_index, event_range_tuple, tags=(), slur_me=False, **kwargs):
+        retlist=  [ Fragments.it(line_index=line_index, event_index=i, tags=tags, **kwargs) for i in range(*event_range_tuple) ]
+        if slur_me:
+            retlist[0].tags += ( "(",)
+            retlist[-1].tags += ( ")",)
+        return retlist
 
     # TO DO... should refactor so that all fragment definitions work like this...
     @classmethod

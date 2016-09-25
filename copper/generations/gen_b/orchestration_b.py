@@ -297,10 +297,10 @@ def get_orchestration_b():
         cello2 = Cello2()
         bass = Bass()
         # SHORT SCORE
-        # drone0 = LINES[0].show_data(show_data_attr="original_depthwise_index")
-        # line1 = LINES[1].show_data(show_data_attr="original_depthwise_index")
-        # line2 = LINES[2].show_data(show_data_attr="original_depthwise_index")
-        # line3 = LINES[3].show_data(show_data_attr="original_depthwise_index")
+        drone0 = LINES[0].show_data(show_data_attr="original_depthwise_index")
+        line1 = LINES[1].show_data(show_data_attr="original_depthwise_index")
+        line2 = LINES[2].show_data(show_data_attr="original_depthwise_index")
+        line3 = LINES[3].show_data(show_data_attr="original_depthwise_index")
     return OrchestrationB
 
 # -------------------------------------------------------------------------

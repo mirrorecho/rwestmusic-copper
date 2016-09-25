@@ -34,7 +34,8 @@ class Line1(GenC, machines.RhythmsBroken, gen_b.Line1):
     pitch_displacement = machines.FifthDisplacement()
     pitch_displacement.cycle_me(2, cycle=(1,1,-1,-1,-1,1), times=16)
     pitch_displacement.flat(11)
-    pitch_respell = "sharps"
+    pitch_displacement.up(29)
+    respell = "sharps"
     rhythm_times = 2
 
 # -------------------------------------------------------------------------------------------------
@@ -46,9 +47,10 @@ class Line2(GenC, machines.RhythmsBroken, gen_b.Line2):
             3:  -4,
             })
     pitch_displacement = machines.FifthDisplacement(
-            up      = (2,8),
+            up      = (2,4,24,25,27),
             down    = (   9,)
             )
+    respell="sharps"
 
 # -------------------------------------------------------------------------------------------------
 
@@ -73,9 +75,10 @@ class Line3(GenC, machines.RhythmsBroken, gen_b.Line3):
     pitch_respell = "sharps"
     rhythm_times = 1 # TO DO: do we want to repeat?? (would need to adjust or truncate the end)
     pitch_displacement = machines.FifthDisplacement(
-            up      = (2,3,4,7,9,10,  17),
+            up      = (2,3,4,7,9,10,  17, 27),
             down    = (   5,6,     11)
             )
+    respell="sharps"
 # -------------------------------------------------------------------------------------------------
 
 class Line4(Line3):
@@ -100,6 +103,10 @@ class Line4(Line3):
             )
     rhythm_multipliers = Line3.rhythm_multipliers.copy()
     rhythm_multipliers[8] = 0.5
+    def update_data(self, **kwargs):
+        super().update_data(**kwargs)
+        if self.__class__.__name__ == "Line4":
+            self.tag_events("darkred", every_child=True)
 
 # -------------------------------------------------------------------------------------------------
 bubbles.illustrate_me(__file__, 

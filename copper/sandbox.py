@@ -88,6 +88,7 @@
 # - (DONE) - - shape range of line 3 (e.g. start high and aned low?)
 # - - - string pizz mimic bass clarinet?
 # - - - add piano...?
+# - - - should not go above the drone at the end
 # - good draft short score of g
 # - transposing parts
 # - tempo markings
@@ -96,6 +97,7 @@
 # - create midi files / garage band projects for each short score generation
 # - more orchestrating gen c
 # - plan out drone, and start better working into machines
+# - - - timbre should change abrubtly with each drone
 # - plan out cymbal, and start working better into machines
 # - midi review of short scores, with decent draft throughout
 # - drones good draft throughout (including orchestration)
@@ -262,6 +264,9 @@
 # - color code lines, and fragments by line (just tag color... that's enough!)
 # - smart auto-respell pitches
 # - think of sending lines TO fragments in other lines (instead of pulling FROM)?
+# - even cleaner fragments, with slicing and pattern-based alterations/tagging (see Viola1 in orchestration_c)
+# - - - including patterns on fragments (or frag it/line) added together
+# - use inheritance better with fragments
 
 import abjad
 from calliope import bubbles

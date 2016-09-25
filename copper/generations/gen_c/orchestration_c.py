@@ -27,7 +27,7 @@ class ArrangeC(gen_c.GenC, machines.FragmentLine, machines.PitchedLine):
     def update_data(self):
         super().update_data()
         if self.fragments:
-            self.segments[1].tag("mf")
+            self.segments[1].tag("mp")
 
 # ------------------------------------------------------------------------------------------------------------
 # WINDS
@@ -52,14 +52,16 @@ class Oboe2(ArrangeC):
     pass
 
 class Clarinet1(ArrangeC):
-    fragments = Frag.fill( range(1,8), lambda: Frag.item(line=3,) )
+    fragments = Frag.make(
+        *Frag.its(4,(1,9), slur_me=True),
+        *Frag.its(4,(15,21), slur_me=True),
+        )
 
 class Clarinet2(ArrangeC):
-    fragments = Frag({
-        1: Frag.item(line=4, attack_offset=-2, keep_attack=True),
-        2: Frag.item(line=4,),
-        # 32: Frag.item(),
-        })
+    fragments = Frag.make(
+        *Frag.its(4,(8,16), slur_me=True),
+        *Frag.its(4,(20,28), slur_me=True),
+        )
 
 class Bassoon1(ArrangeC):
     pass
@@ -77,38 +79,47 @@ class Horn2(ArrangeC):
     pass
 
 class Trumpet1(ArrangeC):
-    fragments = Frag({ # TO DO... consoldate so this doesn't look nasty
-        1 : Frag.item(line=1,),
-        2:  Frag.item(line=1,),
-        3:  Frag.item(line=1,),
-        7:  Frag.item(line=1,),
-        8:  Frag.item(line=1,),
-        9:  Frag.item(line=1,),
-        12:  Frag.item(line=1,),
-        13:  Frag.item(line=1,),
-        14:  Frag.item(line=1,),
-        15:  Frag.item(line=1,),
-        19:  Frag.item(line=1,),
-        20:  Frag.item(line=1,),
-        21:  Frag.item(line=1,),
-        })
-    def update_data(self): # TO DO... ditto, could automate this better
-        super().update_data()
-        self.events[1].tag("(")
-        self.events[2].tag(")")
-        self.events[3].tag(".")
-        self.events[4].tag("(")
-        self.events[5].tag(")")
-        self.events[6].tag(".")
-        self.events[7].tag("(")
-        self.events[8].tag(")")
-        self.events[9].tag(".")
-        self.events[10].tag("(")
-        self.events[11].tag(")")
-        self.events[12].tag("-")
+    fragments = Frag.make(
+            Frag.it(2, 2, duration=2, tags="("),
+            Frag.it(2, 4, tags=")"),
+            Frag.it(1, 3, tags="."),
+        )
+    # fragments = Frag({ # TO DO... consoldate so this doesn't look nasty
+    #     1 : Frag.item(line=1,),
+    #     2:  Frag.item(line=1,),
+    #     3:  Frag.item(line=1,),
+    #     7:  Frag.item(line=1,),
+    #     8:  Frag.item(line=1,),
+    #     9:  Frag.item(line=1,),
+    #     12:  Frag.item(line=1,),
+    #     13:  Frag.item(line=1,),
+    #     14:  Frag.item(line=1,),
+    #     15:  Frag.item(line=1,),
+    #     19:  Frag.item(line=1,),
+    #     20:  Frag.item(line=1,),
+    #     21:  Frag.item(line=1,),
+    #     })
+    # def update_data(self): # TO DO... ditto, could automate this better
+    #     super().update_data()
+    #     self.events[1].tag("(")
+    #     self.events[2].tag(")")
+    #     self.events[3].tag(".")
+    #     self.events[4].tag("(")
+    #     self.events[5].tag(")")
+    #     self.events[6].tag(".")
+    #     self.events[7].tag("(")
+    #     self.events[8].tag(")")
+    #     self.events[9].tag(".")
+    #     self.events[10].tag("(")
+    #     self.events[11].tag(")")
+    #     self.events[12].tag("-")
 
-class Trumpet2(Trumpet1):
-    pass
+class Trumpet2(ArrangeC):
+    fragments = Frag.make(
+            Frag.it(1, 1, tags="("),
+            Frag.it(1, 2, tags=")"),
+            Frag.it(2, 5, duration=1, tags="."),
+        )
 
 class Trombone1(ArrangeC):
     fragments = Frag({
@@ -159,22 +170,46 @@ class Piano2(ArrangeC):
 # STRINGS
 
 class ViolinI1(ArrangeC):
-    fragments = Frag.fill( range(1,28), lambda: Frag.item(line=2,) )
+    fragments = Frag.make(
+        Frag.it(1, 3, duration=5, tags=[":32","pp"]),
+        )
 
 class ViolinI2(ArrangeC):
-    pass
+    fragments = Frag.make(
+        Frag.it(2, 5, duration=5, tags=[":32","pp"]),
+        )
 
 class ViolinII1(ArrangeC):
-    pass
+    fragments = Frag.make(
+        Frag.it(1, 4, attack_offset=-5, duration=5, tags=[":32","pp"]),
+        )
 
 class ViolinII2(ArrangeC):
-    pass
+    fragments = Frag.make(
+        Frag.it(1, 4, attack_offset=-5, duration=5, tags=[":32","pp"]),
+        )
 
 class Viola1(ArrangeC):
-    pass
+    fragments = Frag.make(
+        Frag.it(2,7, tags="("),
+        Frag.it(2,8, tags=")"),
+        Frag.it(2,9, tags="-"),
+        )
+    # TO DO EVENTUALLY, distill fragments down to something like this:
+    # bites = Bites(
+    #     Off(line=2)[7:10](
+    #                     7, tags=["(","<"] )(
+    #                     9, duration=3),
+    #     Off(line=2)[13](duration=4),
+    #     )
+
 
 class Viola2(ArrangeC):
-    pass
+    fragments = Frag.make(
+        Frag.it(1,4, tags="("),
+        Frag.it(1,5, tags=")"),
+        Frag.it(1,6, tags="-"),
+        )
 
 class Cello1(ArrangeC):
     pass
