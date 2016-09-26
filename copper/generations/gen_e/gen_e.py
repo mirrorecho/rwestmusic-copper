@@ -26,6 +26,11 @@ class Line1(GenE, gen_d.Line1):
     pitch_displacement.cycle_me(31, cycle=(0,-1,-1,0,1,1), times=24)
     rhythm_initial_silence = 24
     rhythm_times = 4
+    def update_data(self, **kwargs):
+        super().update_data(**kwargs)
+        if self.__class__ is Line1:
+            self.events[11].tag("\clef bass")
+
 
 # -------------------------------------------------------------------------------------------------
 
@@ -46,6 +51,7 @@ class Line2(GenE, gen_d.Line2):
     rhythm_times = 5
     rhythm_initial_silence = 27
     # print(pitch_displacement)
+
 
 # -------------------------------------------------------------------------------------------------
 
@@ -69,6 +75,11 @@ class Line4(Line3):
                 up      = (25,),
                 down    = (26,)
                 )
+    def update_data(self, **kwargs):
+        super().update_data(**kwargs)
+        if self.__class__.__name__ == "Line4":
+            self.tag_events("darkred", every_child=True)
+
 
 # -------------------------------------------------------------------------------------------------
 
@@ -77,6 +88,11 @@ class Line5(Line4):
                 up      = (   29,     35,   38,  41,42,    47,     52,53),
                 down    = ( 28,  33,34,  37,  40,     44,46,  48,50)
                 )
+    def update_data(self, **kwargs):
+        super().update_data(**kwargs)
+        if self.__class__.__name__ == "Line5":
+            self.tag_events("red", every_child=True)
+            self.events[31].tag("\clef bass")
 
 # -------------------------------------------------------------------------------------------------
 
@@ -86,20 +102,20 @@ class Line6(GenE, gen_d.Line4):
     pitch_displacement.down(9,27,30)
     pitch_displacement.up(37,56)
     # print(pitch_displacement)
+    def update_data(self, **kwargs):
+        super().update_data(**kwargs)
+        if self.__class__.__name__ == "Line6":
+            self.tag_events("blue", every_child=True)
 
 # -------------------------------------------------------------------------------------------------
 
-class Line2ShortScore(Line2):
-    def update_data(self, **kwargs):
-        super().update_data(**kwargs)
-        self.events[11].tag("\clef bass")
 
 bubbles.illustrate_me(__file__, 
     lambda: staves.CopperShortScore(
             bubbles.Bubble(
                 drone0 = Drone0(show_data_attr="original_depthwise_index"),
                 line1 = Line1(show_data_attr="original_depthwise_index"),
-                line2 = Line2ShortScore(show_data_attr="original_depthwise_index"),
+                line2 = Line2(show_data_attr="original_depthwise_index"),
                 line3 = Line3(show_data_attr="original_depthwise_index"),
                 line4 = Line4(show_data_attr="original_depthwise_index"),
                 line5 = Line5(show_data_attr="original_depthwise_index"),

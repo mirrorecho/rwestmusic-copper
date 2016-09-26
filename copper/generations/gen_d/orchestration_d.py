@@ -162,7 +162,7 @@ class Piano2(ArrangeD):
 # STRINGS
 
 class ViolinI1(ArrangeD):
-    fragments = Frag.make(
+    fragments = Frag.make( 
         *Frag.its(2, (1,9), chord_positions=-1),
         Frag.it(1, 10, chord_positions=-1),
         # this is the solo violin part:

@@ -1,4 +1,4 @@
-% 2016-09-25 19:47
+% 2016-09-25 22:05
 
 \version "2.18.2"
 \language "english"
@@ -4210,6 +4210,8 @@
                         \mark #4
                         R1 * 99/8
                     }
+                    \once \override Dots.color = #red
+                    \once \override Rest.color = #red
                     r2.
                     \once \override Accidental.color = #red
                     \once \override Beam.color = #red

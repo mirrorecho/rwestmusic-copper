@@ -50,7 +50,7 @@ class Line1(HarmonyLineGenD, gen_c.Line1):
         super().update_data(**kwargs)
         self.respell_events("sharps",0,13)
         self.respell_events("flats",13)
-        if self.__class__.__name__ == "Line1":
+        if self.__class__ is Line1:
             self.events[13].tag("8va")
             self.events[30].tag("8va!")
 
@@ -154,7 +154,8 @@ class Line5(GenD, gen_c.Line4):
         super().update_data(**kwargs)
         self.events[7].tag("8va")
         self.events[126].tag("8va!")
-        self.tag_events("red")
+        if self.__class__ is Line5:
+            self.tag_events("red", every_child=True)
 
 # -------------------------------------------------------------------------------------------------
 

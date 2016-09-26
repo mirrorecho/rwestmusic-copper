@@ -98,6 +98,9 @@
 # - - - more doublings of harmony and piano parts
 # - - - constant vibe
 # - - - are the low 4ths too crunchy?
+# - more orchestrating gen e
+# - - - main melody line events 14-18... trumpets too low (releative to horn?)
+# - - - ...add #s in upper notes at 18? And add other harmonies throughout?
 # - good draft short score of g
 # - transposing parts
 # - tempo markings
@@ -161,7 +164,6 @@
 # - good parts template (aside from percussion)
 # - review fonts
 # - (if time) allow slices of data to be tagged
-# ---------------------------- SUNDAY
 # - penultimate draft: gen d orchestration!
 # - penultimate draft: gen e orchestration!
 # - penultimate draft: gen f orchestration!
@@ -186,8 +188,10 @@
 # - review of doublings (all OK... used effectively?)
 # - review of percussion instruments used
 # - verify all part transpositions (pic, english horn, clarinet/bass clarinet, horn, double bass)
+# - METRICAL DURATION RESPELLINGS
 # - cues?
 # - better rehearsal markings?
+# - double bass transposition (double check it's always up the octave)
 # - (if time / necessary) - there's a bug with dupe tie spanners on drones (bug show up if you attempt to print Drone0's music() output)
 # - (if time) - show measure numbers on multimeasure rests
 # - (if time) - limit multimeasure rest length to 8 bars? (see below... could create list of lists to determine measure count)
@@ -278,6 +282,7 @@
 # - tagging to handle trills
 # - easily construct phrases/segments/events/logical-ties more manually
 # - harmonics machie (reconstitute)
+# - tag at the logical tie/leaf level when defining fragments
 
 import abjad
 from calliope import bubbles

@@ -1,4 +1,4 @@
-% 2016-09-25 19:10
+% 2016-09-26 14:32
 
 \version "2.18.2"
 \language "english"
@@ -1333,6 +1333,8 @@
                     \mark #4
                     R1 * 99/8
                 }
+                \once \override Dots.color = #red
+                \once \override Rest.color = #red
                 r2.
                 \once \override Accidental.color = #red
                 \once \override Beam.color = #red
@@ -1526,6 +1528,7 @@
                 \once \override Dots.color = #red
                 \once \override NoteHead.color = #red
                 \once \override Stem.color = #red
+                \clef bass
                 df''''8 [ ^ \markup { 31 }
                 \once \override Accidental.color = #red
                 \once \override Beam.color = #red
