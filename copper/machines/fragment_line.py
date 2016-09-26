@@ -117,7 +117,7 @@ class FragmentLine(object):
                 if ticks_before >=0:
                     new_event = original_event.copy()
                     new_event.from_line = line_index
-                    if isinstance(new_event.pitch, (list,tuple)) and fragment.chord_positions:
+                    if isinstance(new_event.pitch, (list,tuple)) and fragment.chord_positions is not None:
                         chord_positions = fragment.chord_positions
                         # just so we don't have to use lists/tuples everywere:
                         if isinstance(chord_positions, int):

@@ -277,7 +277,9 @@ class ArrangeAttachments(object):
                 if attachment:
                     if callable(attachment):
                         # TO DO... this won't work with chords!
-                        attachment(music_logical_tie)
+                        # attachment(music_logical_tie)
+                        stop_index = music_leaf_index + len(music_logical_tie)
+                        attachment(music[music_leaf_index:stop_index])
                     else:
                         # stem tremolos should be attached to every leaf in logical tie...
                         if isinstance(attachment, abjad.indicatortools.StemTremolo):

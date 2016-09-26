@@ -93,6 +93,11 @@
 # - - - piano/pizz parts?
 # - - - orchestration of 2nd half of lines 1/2 could be more interesting...
 # - - - ... keep going with trumpets / break up strings / more string tremolos
+# - more orchestrating gen d
+# - - - heterophony with violins with line 3 in 2nd half
+# - - - more doublings of harmony and piano parts
+# - - - constant vibe
+# - - - are the low 4ths too crunchy?
 # - good draft short score of g
 # - transposing parts
 # - tempo markings

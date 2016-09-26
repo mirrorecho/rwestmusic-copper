@@ -28,6 +28,8 @@ class ArrangeD(gen_d.GenD, machines.FragmentLine, machines.PitchedLine):
     # show_data_attr="depthwise_index"
     def update_data(self):
         super().update_data()
+        if self.fragments and len(self.segments)>1:
+            self.segments[1].tag("mp")
 
 # ------------------------------------------------------------------------------------------------------------
 # WINDS
@@ -42,13 +44,34 @@ class Flute3(ArrangeD):
     pass
 
 class Oboe1(ArrangeD):
-    pass
+    fragments = Frag.make(
+        Frag.it(4, 13, attack_offset=-1.5, keep_attack=True, tags=["pp","\<"]),
+        Frag.it(4, 14, tags=["."]),
+        Frag.it(4, 15, tags=["."]),
+        Frag.it(4, 16, tags=["-"]),
+        Frag.it(4, 17, tags=["-"]),
+        Frag.it(4, 18, tags=["."]),
+        Frag.it(4, 19, duration=1.5, tags=["-"]),
+        )
+    def update_data(self, **kwargs):
+        super().update_data(**kwargs)
+        self.event_by(4,13)[1].tag(".",">","mf")
+    respell="sharps"
 
 class Oboe2(ArrangeD):
     pass
 
 class Clarinet1(ArrangeD):
-    pass
+    fragments = Frag.make(
+        Frag.it(4, 20, tags=["mf","-"]),
+        Frag.it(4, 21, tags=[".",">"]),
+        Frag.it(4, 22, tags=["-"]),
+        Frag.it(4, 23, tags=["."]),
+        Frag.it(4, 24, tags=["."]),
+        Frag.it(4, 25, tags=["-"]),
+        Frag.it(4, 26, tags=["-"]),
+        )
+    respell="sharps"
     
 class Clarinet2(ArrangeD):
     pass
@@ -105,55 +128,101 @@ class Harp2(ArrangeD):
     pass
 
 class Piano1(ArrangeD):
-    pass
+    fragments = Frag.make(
+        *Frag.its(5, (1,127)),
+    )
+    fragments.update_by(5,1, tags=["f"])
+    fragments.update_by(5,7, tags=["8va"])
+    fragments.update_by(5,126, tags=["8va!"])
+    fragments.update_by(5,80,tags=["\>"])
+    fragments.update_by(5,85,tags=["mp"])
+    fragments.update_by(5,108,tags=["\>"])
+    fragments.update_by(5,121,tags=["pp"])
+    respell="flats"
 
+# TO DO... use heterophony to better artulate the meter
 class Piano2(ArrangeD):
-    pass
+    fragments = Frag.make(
+        Frag.it(2,12, chord_positions=[0,1], tags=[">"]),
+        Frag.it(2,13, duration=3, tags=[">"]),
+        Frag.it(2,15, chord_positions=[0,1], duration=3, tags=[">"]),
+        Frag.it(1,16, chord_positions=[0,1], duration=3, tags=[">", "\clef treble"]),
+        Frag.it(2,18, chord_positions=[0,1], duration=3, tags=[">", "\clef bass"]),
+        Frag.it(1,18, chord_positions=[0,2], tags=[">", "\clef treble"]),
+        Frag.it(2,20, chord_positions=[1], tags=[">", "\clef bass"]),
+        Frag.it(2,21, chord_positions=[0,1], tags=[">"]),
+        Frag.it(2,22, tags=[">"]),
+        *Frag.its(2,(23,27), chord_positions=[1,2], tags=[">"]),
+        Frag.it(2,27, chord_positions=[0,1], duration=4.5, tags=[">"]),
+        *Frag.its(1,(24,31), chord_positions=[0,1], ),
+    )
+    fragments.update_by(1,24,tags=["\clef treble"])
 
 # ------------------------------------------------------------------------------------------------------------
 # STRINGS
 
 class ViolinI1(ArrangeD):
-    fragments = Frag({
-        1:Frag.item(line=1, attack_offset=-1, keep_attack=True, chord_positions=(-1,)),
-        2:Frag.item(line=1, chord_positions=(-1,)),
-        3:Frag.item(line=1, chord_positions=(-1,)),
-        3000: Frag.item(line=2, from_index=2, chord_positions=(0,1)), # TO DO... 3000 is nasty and confusing!
-        4:Frag.item(line=1,),
-        })
-    def update_data(self):
-        super().update_data()
-        self.events[1].tag("mp","\<")
-        self.events[4].tag("ff")
+    fragments = Frag.make(
+        *Frag.its(2, (1,9), chord_positions=-1),
+        Frag.it(1, 10, chord_positions=-1),
+        # this is the solo violin part:
+        Frag.it(4, 1, tags=["f","-",">","solo vln."]),
+        Frag.it(4, 2, tags=["."]),
+        Frag.it(4, 3, tags=[".",">"]),
+        Frag.it(4, 4, tags=["."]),
+        Frag.it(4, 5, tags=["("]),
+        Frag.it(4, 6, tags=[")","."]),
+        Frag.it(4, 7, tags=["-",">"]),
+        Frag.it(4, 8, tags=["."]),
+        Frag.it(4, 9, tags=[".",">"]),
+        Frag.it(4, 10, tags=["."]),
+        Frag.it(4, 11, tags=["("]),
+        Frag.it(4, 12, tags=[")","."]),
+        *Frag.its(3, (4,28) ),
+        )
+    fragments.update_by(2,7,tags=["tutti vln.I div 1","mp"])
+    respell="sharps"
 
-class ViolinI2(ViolinI1):
-    pass
+# TO DO... use heterophony with violins to accent the meter and create more interest with this line
+class ViolinI2(ArrangeD):
+    fragments = Frag.make(
+        *Frag.its(2, (1,9), chord_positions=-2),
+        Frag.it(1, 10, chord_positions=-2),
+        *Frag.its(3, (4,28) ),
+        )
+    respell="sharps"
 
 class ViolinII1(ArrangeD):
-    pass
+    fragments = Frag.make(
+        *Frag.its(1, (1,10), chord_positions=-1),
+        *Frag.its(2, (9,11), chord_positions=-1),
+        *Frag.its(3, (4,28) ),
+        )
+    respell="sharps"
 
 class ViolinII2(ArrangeD):
-    pass
+    fragments = Frag.make(
+        *Frag.its(1, (1,10), chord_positions=-2),
+        *Frag.its(2, (9,11), chord_positions=-2),
+        *Frag.its(3, (4,28) ),
+        )
+    respell="sharps"
 
 class Viola1(ArrangeD):
-    fragments = Frag({
-        1:Frag.item(line=3, attack_offset=-1, keep_attack=True),
-        2:Frag.item(line=3, ),
-        3:Frag.item(line=3, ),
-        4:Frag.item(line=3, ),
-        5:Frag.item(line=3, ),
-        6:Frag.item(line=3, ),
-        })
-    def update_data(self):
-        super().update_data()
-        self.events[1].tag("mf","_")
-        self.events[1][1].tag("_")
-        self.events[2].tag("(")
-        self.events[3].tag(".",")")
+    fragments = Frag.make(
+        *Frag.its(2, (1,9), chord_positions=0),
+        Frag.it(1, 10, chord_positions=0),
+        )
+    respell="sharps"
+
 
 class Viola2(Viola1):
-    pass
-    # TO DO... use heterophony to better artulate the meter
+    fragments = Frag.make(
+        *Frag.its(1, (1,10), chord_positions=0),
+        *Frag.its(2, (9,11), chord_positions=0),
+        )
+    respell="sharps"
+    
 
 class Cello1(ArrangeD):
     pass
