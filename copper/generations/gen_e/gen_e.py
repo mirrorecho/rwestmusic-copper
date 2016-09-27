@@ -90,9 +90,10 @@ class Line5(Line4):
                 )
     def update_data(self, **kwargs):
         super().update_data(**kwargs)
+        if self.__class__ is "Line5":
+            self.events[31].tag("\clef bass")
         if self.__class__.__name__ == "Line5":
             self.tag_events("red", every_child=True)
-            self.events[31].tag("\clef bass")
 
 # -------------------------------------------------------------------------------------------------
 

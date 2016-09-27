@@ -126,7 +126,7 @@ class Line2(GenF, gen_e.Line2):
 # -------------------------------------------------------------------------------------------------
 
 class Line4(GenF, gen_e.Line3):
-    show_data_type=machines.SegmentData
+    # show_data_type=machines.SegmentData
     pitch_displacement = gen_e.Line3.pitch_displacement +\
         machines.FifthDisplacement(
             up=   (    11,         25, 26, 27, 31),
@@ -214,6 +214,10 @@ class Line7(GenF, gen_e.Line6):
             up=(1,2,3,  23,  36),
             down=(10, 19,  35)
             )
+    def update_data(self, **kwargs):
+        super().update_data(**kwargs)
+        if self.__class__.__name__ == "Line7":
+            self.tag_events("magenta", every_child=True)
 # -------------------------------------------------------------------------------------------------
 
 bubbles.illustrate_me(__file__, 

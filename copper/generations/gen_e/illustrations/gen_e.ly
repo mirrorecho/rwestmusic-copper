@@ -1,4 +1,4 @@
-% 2016-09-26 14:33
+% 2016-09-27 00:18
 
 \version "2.18.2"
 \language "english"
@@ -1504,7 +1504,6 @@
                 \once \override Dots.color = #red
                 \once \override NoteHead.color = #red
                 \once \override Stem.color = #red
-                \clef bass
                 g4 ^ \markup { 31 }
                 \once \override Accidental.color = #red
                 \once \override Beam.color = #red
