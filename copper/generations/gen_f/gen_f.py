@@ -143,6 +143,8 @@ class Line4(GenF, gen_e.Line3):
         super().update_data(**kwargs)
         if self.__class__ is Line4:
             self.events[1].tag("\clef bass")
+        if self.__class__.__name__ == "Line4":
+            self.tag_events("darkred", every_child=True)
 
 # -------------------------------------------------------------------------------------------------
 
