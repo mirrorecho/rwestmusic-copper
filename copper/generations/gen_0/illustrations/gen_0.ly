@@ -1,4 +1,4 @@
-% 2016-09-24 23:53
+% 2016-09-27 13:41
 
 \version "2.18.2"
 \language "english"
@@ -191,9 +191,6 @@
                 \once \override NoteHead.color = #darkmagenta
                 \once \override Stem.color = #darkmagenta
                 b4 ^ \markup { 27 }
-                {
-                    R1 * 3
-                }
             }
         }
         \new Staff {
@@ -284,7 +281,20 @@
                 \once \override Dots.color = #grey
                 \once \override NoteHead.color = #grey
                 \once \override Stem.color = #grey
-                d2 \pp ^ \markup { 13 }
+                d2 \pp ~ \< ^ \markup { 13 }
+                \once \override Accidental.color = #grey
+                \once \override Beam.color = #grey
+                \once \override Dots.color = #grey
+                \once \override NoteHead.color = #grey
+                \once \override Stem.color = #grey
+                d1 \mp ~ \> ^ \markup { 14 }
+                \once \override Accidental.color = #grey
+                \once \override Beam.color = #grey
+                \once \override Dots.color = #grey
+                \once \override NoteHead.color = #grey
+                \once \override Stem.color = #grey
+                d2 \pp ^ \markup { 15 }
+                r2
                 \bar "|."
             }
         }

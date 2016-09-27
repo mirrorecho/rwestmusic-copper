@@ -1,4 +1,4 @@
-% 2016-09-24 23:56
+% 2016-09-27 15:31
 
 \version "2.18.2"
 \language "english"
@@ -19,6 +19,7 @@
             \time 4/4
             {
                 \numericTimeSignature
+                \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                 \accidentalStyle modern-cautionary
                 {
                     \mark #1
@@ -204,6 +205,7 @@
             \time 4/4
             {
                 \numericTimeSignature
+                \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                 \accidentalStyle modern-cautionary
                 {
                     \mark #1
@@ -404,6 +406,7 @@
             \set Staff.instrumentName = \markup { Drone }
             \set Staff.shortInstrumentName = \markup { 0: }
             {
+                \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                 \accidentalStyle modern-cautionary
                 \once \override Dots.color = #grey
                 \once \override Rest.color = #grey

@@ -33,7 +33,7 @@ class CopperTrombones(InstrumentStaffGroup):
 
 class CapperPerc2(InstrumentStaffGroup):
     perc2 = BubbleRhythmicStaff(instrument=instrumenttools.Percussion(instrument_name="Percussion 2", short_instrument_name="perc.2"))
-    vibes = BubbleStaff(instrument=instrumenttools.Vibraphone(instrument_name="Perc. 2 - Vibraphone", short_instrument_name="vib."))
+    vibes = BubbleStaff(instrument=instrumenttools.Vibraphone(instrument_name="Perc. 2 - Vib./Mar./Crot.", short_instrument_name="mar."))
 
 class CopperPerc(BubbleStaffGroup):
     # TO DO EVENTUALLY... shouldn't always add crotales.... 
@@ -165,6 +165,7 @@ class CopperMusic(Bubble):
     timpani = Placeholder()
     perc1 = Placeholder()
     perc2 = Placeholder()
+    vibes = Placeholder()
     harp1 = Placeholder() 
     harp2 = Placeholder() 
     piano1 = Placeholder()

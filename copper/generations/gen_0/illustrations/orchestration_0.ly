@@ -1,4 +1,4 @@
-% 2016-09-24 23:53
+% 2016-09-27 15:21
 
 \version "2.18.2"
 \language "english"
@@ -23,6 +23,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         R1 * 12
                     }
@@ -33,6 +34,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         R1 * 12
                     }
@@ -43,6 +45,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         R1 * 12
                     }
@@ -57,6 +60,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         R1 * 12
                     }
@@ -67,6 +71,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         R1 * 12
                     }
@@ -81,6 +86,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         R1 * 12
                     }
@@ -91,6 +97,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         R1 * 12
                     }
@@ -106,6 +113,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         R1 * 12
                     }
@@ -117,6 +125,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         R1 * 12
                     }
@@ -133,6 +142,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         r2
                         \once \override Accidental.color = #grey
@@ -140,19 +150,19 @@
                         \once \override Dots.color = #grey
                         \once \override NoteHead.color = #grey
                         \once \override Stem.color = #grey
-                        d2 \pp ~ \<
+                        d2 \pp ~ \< ^ \markup { + }
                         \once \override Accidental.color = #grey
                         \once \override Beam.color = #grey
                         \once \override Dots.color = #grey
                         \once \override NoteHead.color = #grey
                         \once \override Stem.color = #grey
-                        d1 \mp ~ \>
+                        d1 \mp ~ \> ^ \markup { + }
                         \once \override Accidental.color = #grey
                         \once \override Beam.color = #grey
                         \once \override Dots.color = #grey
                         \once \override NoteHead.color = #grey
                         \once \override Stem.color = #grey
-                        d2 \pp
+                        d2 \pp ^ \markup { + }
                         r2
                         r2
                         \once \override Accidental.color = #grey
@@ -160,19 +170,19 @@
                         \once \override Dots.color = #grey
                         \once \override NoteHead.color = #grey
                         \once \override Stem.color = #grey
-                        d2 \pp ~ \<
+                        d2 \pp ~ \< ^ \markup { + }
                         \once \override Accidental.color = #grey
                         \once \override Beam.color = #grey
                         \once \override Dots.color = #grey
                         \once \override NoteHead.color = #grey
                         \once \override Stem.color = #grey
-                        d1 \mp ~ \>
+                        d1 \mp ~ \> ^ \markup { + }
                         \once \override Accidental.color = #grey
                         \once \override Beam.color = #grey
                         \once \override Dots.color = #grey
                         \once \override NoteHead.color = #grey
                         \once \override Stem.color = #grey
-                        d2 \pp
+                        d2 \pp ^ \markup { + }
                         r2
                         r2
                         \once \override Accidental.color = #grey
@@ -180,19 +190,19 @@
                         \once \override Dots.color = #grey
                         \once \override NoteHead.color = #grey
                         \once \override Stem.color = #grey
-                        d2 \pp ~ \<
+                        d2 \pp ~ \< ^ \markup { + }
                         \once \override Accidental.color = #grey
                         \once \override Beam.color = #grey
                         \once \override Dots.color = #grey
                         \once \override NoteHead.color = #grey
                         \once \override Stem.color = #grey
-                        d1 \mp ~ \>
+                        d1 \mp ~ \> ^ \markup { + }
                         \once \override Accidental.color = #grey
                         \once \override Beam.color = #grey
                         \once \override Dots.color = #grey
                         \once \override NoteHead.color = #grey
                         \once \override Stem.color = #grey
-                        d2 \pp
+                        d2 \pp ^ \markup { + }
                         r2
                         r2
                         \once \override Accidental.color = #grey
@@ -200,7 +210,20 @@
                         \once \override Dots.color = #grey
                         \once \override NoteHead.color = #grey
                         \once \override Stem.color = #grey
-                        d2 \pp
+                        d2 \pp ~ \< ^ \markup { + }
+                        \once \override Accidental.color = #grey
+                        \once \override Beam.color = #grey
+                        \once \override Dots.color = #grey
+                        \once \override NoteHead.color = #grey
+                        \once \override Stem.color = #grey
+                        d1 \mp ~ \> ^ \markup { + }
+                        \once \override Accidental.color = #grey
+                        \once \override Beam.color = #grey
+                        \once \override Dots.color = #grey
+                        \once \override NoteHead.color = #grey
+                        \once \override Stem.color = #grey
+                        d2 \pp ^ \markup { + }
+                        r2
                     }
                 }
                 \new Staff {
@@ -209,22 +232,23 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         {
-                            R1 * 1
+                            R1 * 2
                         }
                         \once \override Accidental.color = #grey
                         \once \override Beam.color = #grey
                         \once \override Dots.color = #grey
                         \once \override NoteHead.color = #grey
                         \once \override Stem.color = #grey
-                        d2 \pp ~ \<
+                        d2 \pp ~ \< ^ \markup { + }
                         \once \override Accidental.color = #grey
                         \once \override Beam.color = #grey
                         \once \override Dots.color = #grey
                         \once \override NoteHead.color = #grey
                         \once \override Stem.color = #grey
-                        d2 \mp ~ ~ \>
+                        d2 \mp ~ ~ \> ^ \markup { + }
                         \once \override Accidental.color = #grey
                         \once \override Beam.color = #grey
                         \once \override Dots.color = #grey
@@ -236,7 +260,7 @@
                         \once \override Dots.color = #grey
                         \once \override NoteHead.color = #grey
                         \once \override Stem.color = #grey
-                        d2 \pp
+                        d2 \pp ^ \markup { + }
                         {
                             R1 * 1
                         }
@@ -245,13 +269,13 @@
                         \once \override Dots.color = #grey
                         \once \override NoteHead.color = #grey
                         \once \override Stem.color = #grey
-                        d2 \pp ~ \<
+                        d2 \pp ~ \< ^ \markup { + }
                         \once \override Accidental.color = #grey
                         \once \override Beam.color = #grey
                         \once \override Dots.color = #grey
                         \once \override NoteHead.color = #grey
                         \once \override Stem.color = #grey
-                        d2 \mp ~ ~ \>
+                        d2 \mp ~ ~ \> ^ \markup { + }
                         \once \override Accidental.color = #grey
                         \once \override Beam.color = #grey
                         \once \override Dots.color = #grey
@@ -263,7 +287,7 @@
                         \once \override Dots.color = #grey
                         \once \override NoteHead.color = #grey
                         \once \override Stem.color = #grey
-                        d2 \pp
+                        d2 \pp ^ \markup { + }
                         {
                             R1 * 1
                         }
@@ -272,13 +296,13 @@
                         \once \override Dots.color = #grey
                         \once \override NoteHead.color = #grey
                         \once \override Stem.color = #grey
-                        d2 \pp ~ \<
+                        d2 \pp ~ \< ^ \markup { + }
                         \once \override Accidental.color = #grey
                         \once \override Beam.color = #grey
                         \once \override Dots.color = #grey
                         \once \override NoteHead.color = #grey
                         \once \override Stem.color = #grey
-                        d2 \mp ~ ~ \>
+                        d2 \mp ~ ~ \> ^ \markup { + }
                         \once \override Accidental.color = #grey
                         \once \override Beam.color = #grey
                         \once \override Dots.color = #grey
@@ -290,10 +314,22 @@
                         \once \override Dots.color = #grey
                         \once \override NoteHead.color = #grey
                         \once \override Stem.color = #grey
-                        d2 \pp
+                        d2 \pp ^ \markup { + }
                         {
                             R1 * 1
                         }
+                        \once \override Accidental.color = #grey
+                        \once \override Beam.color = #grey
+                        \once \override Dots.color = #grey
+                        \once \override NoteHead.color = #grey
+                        \once \override Stem.color = #grey
+                        d2 \pp \< ^ \markup { + }
+                        \once \override Accidental.color = #grey
+                        \once \override Beam.color = #grey
+                        \once \override Dots.color = #grey
+                        \once \override NoteHead.color = #grey
+                        \once \override Stem.color = #grey
+                        d2 \mp ^ \markup { + }
                     }
                 }
             >>
@@ -306,6 +342,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         R1 * 12
                     }
@@ -316,6 +353,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         R1 * 12
                     }
@@ -331,6 +369,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         R1 * 12
                     }
@@ -342,6 +381,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         R1 * 12
                     }
@@ -354,6 +394,7 @@
                 \time 4/4
                 {
                     \numericTimeSignature
+                    \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                     \accidentalStyle modern-cautionary
                     R1 * 12
                 }
@@ -366,8 +407,25 @@
             \time 4/4
             {
                 \numericTimeSignature
+                \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                 \accidentalStyle modern-cautionary
-                R1 * 12
+                R1 * 10
+                \times 2/3 {
+                    d4 \ppp \<
+                    r4
+                    d4
+                    r4
+                    d4
+                    r4
+                }
+                \times 2/3 {
+                    d4
+                    r4
+                    d4
+                    r4
+                    d4 \mp
+                    r4
+                }
             }
         }
         \new StaffGroup <<
@@ -378,8 +436,23 @@
                 \time 4/4
                 {
                     \numericTimeSignature
+                    \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                     \accidentalStyle modern-cautionary
-                    R1 * 12
+                    r4
+                    c2. :32 \pppp ~ \< ^ \markup { " Susp. cymbal, yarn mallets " }
+                    c1 :32 \pp ~
+                    c1 :32 ~
+                    c1 :32 ~
+                    c1 :32 ~
+                    c1 :32 ~
+                    c1 :32 ~
+                    c1 :32 ~
+                    c1 :32 ~
+                    c1 :32 ~
+                    c1 :32 ~
+                    c2 :32 ~ \<
+                    c4. :32 ~
+                    c8 :32 \mf
                 }
             }
             \new StaffGroup \with {
@@ -392,18 +465,28 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
-                        R1 * 12
+                        R1 * 3
+                        c4 \mp ^ \markup { " Susp. cymbal (same rubber mallets)" }
+                        r4
+                        r2
+                        R1 * 8
                     }
                 }
                 \new Staff {
-                    \set Staff.instrumentName = \markup { "Perc. 2 - Vibraphone" }
-                    \set Staff.shortInstrumentName = \markup { Vib. }
+                    \set Staff.instrumentName = \markup { "Perc. 2 - Vib./Mar./Crot." }
+                    \set Staff.shortInstrumentName = \markup { Mar. }
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
-                        R1 * 12
+                        \clef "bass"
+                        d4 -\accent \fff ^ \markup { "Marimba, hard rubber mallets" }
+                        r4
+                        r2
+                        R1 * 11
                     }
                 }
             >>
@@ -415,6 +498,7 @@
                 \time 4/4
                 {
                     \numericTimeSignature
+                    \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                     \accidentalStyle modern-cautionary
                     R1 * 12
                 }
@@ -424,6 +508,7 @@
                 \time 4/4
                 {
                     \numericTimeSignature
+                    \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                     \accidentalStyle modern-cautionary
                     R1 * 12
                 }
@@ -436,6 +521,7 @@
                 \time 4/4
                 {
                     \numericTimeSignature
+                    \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                     \accidentalStyle modern-cautionary
                     R1 * 12
                 }
@@ -445,6 +531,7 @@
                 \time 4/4
                 {
                     \numericTimeSignature
+                    \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                     \accidentalStyle modern-cautionary
                     R1 * 12
                 }
@@ -457,14 +544,11 @@
                 \new Staff {
                     \set Staff.instrumentName = \markup { "Violin I Div 1" }
                     \set Staff.shortInstrumentName = \markup { Vln.I.1 }
-                    \time 4/4
                     {
-                        \numericTimeSignature
-                        \accidentalStyle modern-cautionary
                         {
-                            R1 * 3
+                            R1 * 3 ^ \markup { "mute on" }
                         }
-                        d'2 \ppp ^ \markup { "sul pont., non vib." }
+                        d'2 \pp ^ \markup { "sul pont., non vib." }
                         c'4 (
                         b4 )
                         g2
@@ -492,22 +576,16 @@
                         a4
                         c'4 (
                         b4 )
-                        {
-                            R1 * 3
-                        }
                     }
                 }
                 \new Staff {
                     \set Staff.instrumentName = \markup { "Violin I Div 2" }
                     \set Staff.shortInstrumentName = \markup { Vln.I.2 }
-                    \time 4/4
                     {
-                        \numericTimeSignature
-                        \accidentalStyle modern-cautionary
                         {
-                            R1 * 3
+                            R1 * 3 ^ \markup { "mute on" }
                         }
-                        d'2 \ppp ^ \markup { "sul pont., non vib." }
+                        d'2 \pp ^ \markup { "sul pont., non vib." }
                         c'4 (
                         b4 )
                         g2
@@ -535,9 +613,6 @@
                         a4
                         c'4 (
                         b4 )
-                        {
-                            R1 * 3
-                        }
                     }
                 }
             >>
@@ -547,14 +622,11 @@
                 \new Staff {
                     \set Staff.instrumentName = \markup { "Violin II Div 1" }
                     \set Staff.shortInstrumentName = \markup { Vln.II.1 }
-                    \time 4/4
                     {
-                        \numericTimeSignature
-                        \accidentalStyle modern-cautionary
                         {
-                            R1 * 3
+                            R1 * 3 ^ \markup { "mute on" }
                         }
-                        d'2 \ppp ^ \markup { "sul pont., non vib." }
+                        d'2 \pp ^ \markup { "sul pont., non vib." }
                         c'4 (
                         b4 )
                         g2
@@ -582,22 +654,16 @@
                         a4
                         c'4 (
                         b4 )
-                        {
-                            R1 * 3
-                        }
                     }
                 }
                 \new Staff {
                     \set Staff.instrumentName = \markup { "Violin II Div 2" }
                     \set Staff.shortInstrumentName = \markup { Vln.II.2 }
-                    \time 4/4
                     {
-                        \numericTimeSignature
-                        \accidentalStyle modern-cautionary
                         {
-                            R1 * 3
+                            R1 * 3 ^ \markup { "mute on" }
                         }
-                        d'2 \ppp ^ \markup { "sul pont., non vib." }
+                        d'2 \pp ^ \markup { "sul pont., non vib." }
                         c'4 (
                         b4 )
                         g2
@@ -625,9 +691,6 @@
                         a4
                         c'4 (
                         b4 )
-                        {
-                            R1 * 3
-                        }
                     }
                 }
             >>
@@ -638,14 +701,11 @@
                     \clef "alto"
                     \set Staff.instrumentName = \markup { "Viola Div 1" }
                     \set Staff.shortInstrumentName = \markup { Vla.1 }
-                    \time 4/4
                     {
-                        \numericTimeSignature
-                        \accidentalStyle modern-cautionary
                         {
-                            R1 * 3
+                            R1 * 3 ^ \markup { "mute on" }
                         }
-                        d'2 \ppp ^ \markup { "sul pont., non vib." }
+                        d'2 \pp ^ \markup { "sul pont., non vib." }
                         c'4 (
                         b4 )
                         g2
@@ -673,23 +733,17 @@
                         a4
                         c'4 (
                         b4 )
-                        {
-                            R1 * 3
-                        }
                     }
                 }
                 \new Staff {
                     \clef "alto"
                     \set Staff.instrumentName = \markup { "Viola Div 2" }
                     \set Staff.shortInstrumentName = \markup { Vla.2 }
-                    \time 4/4
                     {
-                        \numericTimeSignature
-                        \accidentalStyle modern-cautionary
                         {
-                            R1 * 3
+                            R1 * 3 ^ \markup { "mute on" }
                         }
-                        d'2 \ppp ^ \markup { "sul pont., non vib." }
+                        d'2 \pp ^ \markup { "sul pont., non vib." }
                         c'4 (
                         b4 )
                         g2
@@ -717,9 +771,6 @@
                         a4
                         c'4 (
                         b4 )
-                        {
-                            R1 * 3
-                        }
                     }
                 }
             >>
@@ -730,14 +781,11 @@
                     \clef "bass"
                     \set Staff.instrumentName = \markup { "Cello Div 1" }
                     \set Staff.shortInstrumentName = \markup { Vc.1 }
-                    \time 4/4
                     {
-                        \numericTimeSignature
-                        \accidentalStyle modern-cautionary
                         {
-                            R1 * 3
+                            R1 * 3 ^ \markup { "mute on" }
                         }
-                        d'2 \ppp ^ \markup { "sul pont., non vib." }
+                        d'2 \pp ^ \markup { "sul pont., non vib." }
                         c'4 (
                         b4 )
                         g2
@@ -765,23 +813,17 @@
                         a4
                         c'4 (
                         b4 )
-                        {
-                            R1 * 3
-                        }
                     }
                 }
                 \new Staff {
                     \clef "bass"
                     \set Staff.instrumentName = \markup { "Cello Div 2" }
                     \set Staff.shortInstrumentName = \markup { Vc.2 }
-                    \time 4/4
                     {
-                        \numericTimeSignature
-                        \accidentalStyle modern-cautionary
                         {
-                            R1 * 3
+                            R1 * 3 ^ \markup { "mute on" }
                         }
-                        d'2 \ppp ^ \markup { "sul pont., non vib." }
+                        d'2 \pp ^ \markup { "sul pont., non vib." }
                         c'4 (
                         b4 )
                         g2
@@ -809,9 +851,6 @@
                         a4
                         c'4 (
                         b4 )
-                        {
-                            R1 * 3
-                        }
                     }
                 }
             >>
@@ -819,15 +858,12 @@
                 \clef "bass"
                 \set Staff.instrumentName = \markup { Bass }
                 \set Staff.shortInstrumentName = \markup { Cb }
-                \time 4/4
                 {
-                    \numericTimeSignature
-                    \accidentalStyle modern-cautionary
                     {
-                        R1 * 3
+                        R1 * 3 ^ \markup { "mute on" }
                     }
                     \clef tenor
-                    d''2 \ppp ^ \markup { "sul pont., non vib." }
+                    d''2 \pp ^ \markup { "sul pont., non vib." }
                     c''4 (
                     b'4 )
                     g'2
@@ -855,9 +891,6 @@
                     a'4
                     c''4 (
                     b'4 )
-                    {
-                        R1 * 3
-                    }
                 }
             }
         >>
@@ -868,6 +901,7 @@
                 \time 4/4
                 {
                     \numericTimeSignature
+                    \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                     \accidentalStyle modern-cautionary
                     {
                         R1 * 3
@@ -1040,9 +1074,6 @@
                     \once \override NoteHead.color = #darkmagenta
                     \once \override Stem.color = #darkmagenta
                     b4 ^ \markup { 27 }
-                    {
-                        R1 * 3
-                    }
                 }
             }
             \new Staff {
@@ -1116,6 +1147,7 @@
                 \time 4/4
                 {
                     \numericTimeSignature
+                    \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                     \accidentalStyle modern-cautionary
                     \once \override Dots.color = #grey
                     \once \override Rest.color = #grey
@@ -1197,7 +1229,20 @@
                     \once \override Dots.color = #grey
                     \once \override NoteHead.color = #grey
                     \once \override Stem.color = #grey
-                    d2 \pp ^ \markup { 13 }
+                    d2 \pp ~ \< ^ \markup { 13 }
+                    \once \override Accidental.color = #grey
+                    \once \override Beam.color = #grey
+                    \once \override Dots.color = #grey
+                    \once \override NoteHead.color = #grey
+                    \once \override Stem.color = #grey
+                    d1 \mp ~ \> ^ \markup { 14 }
+                    \once \override Accidental.color = #grey
+                    \once \override Beam.color = #grey
+                    \once \override Dots.color = #grey
+                    \once \override NoteHead.color = #grey
+                    \once \override Stem.color = #grey
+                    d2 \pp ^ \markup { 15 }
+                    r2
                     \bar "|."
                 }
             }

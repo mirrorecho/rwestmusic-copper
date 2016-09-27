@@ -47,7 +47,7 @@ class Oboe2(ArrangeA):
 
 class Clarinet1(ArrangeA):
     metrical_durations = ArrangeA.metrical_durations + {
-        11: ((1,2),)*2, 
+        10: ((1,1),),
         }
     # show_data_attr="original_depthwise_index"
     fragments = Frag({
@@ -61,7 +61,10 @@ class Clarinet1(ArrangeA):
         self.events[2].tag("p")
 
 class Clarinet2(Clarinet1):
-    line = 2
+    line=2
+    metrical_durations = ArrangeA.metrical_durations + {
+        12: ((1,1),),
+        }
 
 class Bassoon1(ArrangeA):
     pass
@@ -73,16 +76,18 @@ class Bassoon2(ArrangeA):
 # BRASS
 
 class Horn1(ArrangeA):
-    line_offset = 2
-    fragments = Frag.make(
-        *[Frag.it(0, i) for i in range(20,24)] # TO DO... note, 0 here throws exception... why?
-        )
+    pass
+    # line_offset = 2
+    # fragments = Frag.make(
+    #     *[Frag.it(0, i) for i in range(20,24)] # TO DO... note, 0 here throws exception... why?
+    #     )
 
 class Horn2(ArrangeA):
-    line_offset = 4
-    fragments = Frag.make(
-        *[Frag.it(0, i) for i in range(1,5)] # TO DO... note, 0 here throws exception... why?
-        )
+    pass
+    # line_offset = 4
+    # fragments = Frag.make(
+    #     *[Frag.it(0, i) for i in range(1,5)] # TO DO... note, 0 here throws exception... why?
+    #     )
 
 class Trumpet1(ArrangeA):
     pass
@@ -91,38 +96,64 @@ class Trumpet2(ArrangeA):
     pass
 
 class Trombone1(ArrangeA):
+    metrical_durations = ID(default=((1,1),), limit=18)
     line_offset = -2
     fragments = Frag.make(
-        *[Frag.it(0, i) for i in range(1,16)] # TO DO... note, 0 here throws exception... why?
+        *Frag.its(0, (1,23),) # TO DO... note, 0 here throws exception... why?
         )
+    fragments.update_by(0,1, tags=("straight mute",))
 
 
-class Trombone2(ArrangeA):
-    line_offset = -2
-    fragments = Frag.make(
-        *[Frag.it(0, i) for i in range(16,28)] # TO DO... note, 0 here throws exception... why?
-        )
+class Trombone2(Trombone1):
+    metrical_durations = ID(default=((1,1),), limit=18)
+    line_offset = 6
+    # fragments = Frag.make(
+    #     *[Frag.it(0, i) for i in range(16,28)] # TO DO... note, 0 here throws exception... why?
+    #     )
 
 class Tuba(ArrangeA):
-    line_offset = 4
-    fragments = Frag.make(
-        *[Frag.it(0, i) for i in range(5,20)] # TO DO... note, 0 here throws exception... why?
-        )
+    pass
+    # line_offset = 4
+    # fragments = Frag.make(
+    #     *[Frag.it(0, i) for i in range(5,20)] # TO DO... note, 0 here throws exception... why?
+    #     )
 
 # ------------------------------------------------------------------------------------------------------------
 # TIMPANI / PERCUSSION / HARP / PIANO
 
 class Timpani(ArrangeA):
-    pass
+    music = bubbles.Line(r"""
+        r2 d4\> r4 | d4 r4 d4 r4 | d4 r4 d4 r4 | d4\ppp r4 r2
+        R1 * 11
+        d4\ppp \< r4 r4 d4 | r2 d4 r4 | r4 d4\mp \! r2 
+        """)
 
 class Perc1(ArrangeA):
-    pass
+    music = bubbles.Line(r"""
+        R1 * 6
+        c4 \p ^ \markup {"Susp. cymbal, rubber mallets"} r4 r2 |
+        c4 r4 r2 |
+        R1 * 4 |
+        r4 c4 \p ^ \markup {"triangle", l.v.} r2 |
+        r4 c4 r2 | 
+        R1 * 4
+        """)
 
 class Perc2(ArrangeA):
-    pass
+    music = bubbles.Line(r"""
+        R1
+        c1:32 ~ \pppp \< ^ \markup {" Susp. cymbal, yarn mallets "}
+        c1:32 \pp \! ~
+        c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ 
+        c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ 
+        c2:32 \< ~ c4.:32 ~ c8:32 \mf \!
+        """)
 
 class Vibes(ArrangeA):
-    pass
+    music = bubbles.Line(r"""
+        \clef bass d4 \fff -> 
+        r4 r2 R1*17
+        """)
 
 class Harp1(ArrangeA):
     pass
@@ -153,10 +184,14 @@ class StringsArrangeA(ArrangeA):
                 event[1].tag("mp", "\>", ">")
             else:
                 event[0].tag("p")
+    def after_music(self, music):
+        mute_command = abjad.Markup("mute off", direction=Up)
+        abjad.attach(mute_command, music[0])
 
 class ViolinI1(StringsArrangeA):
     metrical_durations = ArrangeA.metrical_durations + {
-        11: ((1,2),)*2, 
+        5: ((1,1),), 
+        7: ((1,1),), 
         }
     fragments = Frag({
             1 : Frag.item(attack_offset= -4, **STRING_KWARGS),
@@ -170,11 +205,16 @@ class ViolinI1(StringsArrangeA):
 
 class ViolinI2(ViolinI1):
     line = 2
+    metrical_durations = ArrangeA.metrical_durations + {
+        10: ((1,1),), 
+        16: ((1,1),), 
+    }
+
 
 class ViolinII1(StringsArrangeA):
     metrical_durations = ArrangeA.metrical_durations + {
-            9: ((1,2),)*2, 
-            10: ((1,2),)*2, 
+            12: ((1,1),), 
+            13: ((1,1),), 
             }
     fragments = Frag({
             2 : Frag.item(attack_offset= -3, **STRING_KWARGS),
@@ -188,10 +228,16 @@ class ViolinII1(StringsArrangeA):
 
 class ViolinII2(ViolinII1):
     line = 2
+    metrical_durations = ArrangeA.metrical_durations + {
+            12: ((1,1),), 
+            }
 
 class Viola1(StringsArrangeA):
-    # metrical_durations = ArrangeA.metrical_durations + {
-    #         }
+    metrical_durations = ArrangeA.metrical_durations + {
+            8: ((1,1),), 
+            10: ((1,1),), 
+            11: ((1,1),), 
+            }
     fragments = Frag({
             3 : Frag.item(attack_offset= -2, **STRING_KWARGS),
             7 : Frag.item(attack_offset= -2, **STRING_KWARGS),
@@ -202,6 +248,11 @@ class Viola1(StringsArrangeA):
 
 class Viola2(Viola1):
     line = 2
+    metrical_durations = ArrangeA.metrical_durations + {
+            11: ((1,1),), 
+            13: ((1,1),), 
+            16: ((1,1),), 
+            }
 
 CELLO_BASE_FRAGMENTS = Frag({
             6 : Frag.item(attack_offset= -3, **STRING_KWARGS),
@@ -211,6 +262,10 @@ CELLO_BASE_FRAGMENTS = Frag({
 
 class Cello1(StringsArrangeA):
     # show_data_attr="depthwise_index"
+    metrical_durations = ArrangeA.metrical_durations + {
+            10: ((1,1),), 
+            14: ((1,1),), 
+            }
     fragments = CELLO_BASE_FRAGMENTS + {
             18: Frag.item(attack_offset= -3, **STRING_KWARGS),
             22 : Frag.item(attack_offset= -3, **STRING_KWARGS),
@@ -228,12 +283,24 @@ class Cello1(StringsArrangeA):
 
 class Cello2(StringsArrangeA):
     line = 2
+    metrical_durations = ArrangeA.metrical_durations + {
+            10: ((1,1),), 
+            14: ((1,1),), 
+            }
     fragments = CELLO_BASE_FRAGMENTS.copy() # TO DO ... this could be more elegant
     fragments[13].duration=None
     fragments[13].keep_attack=False
 
 class Bass(ArrangeA):
-    pass
+    music = bubbles.Line(r""" 
+        R1 ^ \markup { "mute off" }
+        R1*4
+        \clef bass
+        d'1 ~ \ppp \< ^ \markup { "normal" } 
+        d'1 \p \! ~
+        d'1 ~ d'1 ~ d'1 ~ d'1 ~ d'1 ~ d'1 ~ 
+        d'1 ~ d'1 ~ d'1 ~ d'1 ~ d'1
+        """)
 
 # ------------------------------------------------------------------------------------------------------------
 # ALL LINES ASSOCIATED WITH STAVES

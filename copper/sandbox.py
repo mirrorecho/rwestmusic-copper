@@ -82,7 +82,7 @@
 # - (DONE) draft short scores through f
 # - (DONE) respell flats/sharps (on individual events or event ranges)
 # - (DONE) fix so that pulses handle breaks properly when reversed/not reversed
-# ---------------------------- FRIDAY EVENING
+# ---------------------------- ASAP
 # - more orchestrating gen b
 # - - - do something cool with the dissonance (Bb, A), at line3, event 27
 # - (DONE) - - shape range of line 3 (e.g. start high and aned low?)
@@ -102,6 +102,14 @@
 # - - - main melody line events 14-18... trumpets too low (releative to horn?)
 # - - - ...add #s in upper notes at 18? And add other harmonies throughout?
 # - good draft short score of g
+# - move measure numbers to the bottom.... uncomment/comment stuff in stylesheet, and add this to the score output below last staff:
+    #       \new Dynamics {
+          #   \startMeasureCount
+          #   s2*24
+          #   \stopMeasureCount
+          # }
+
+
 # - transposing parts
 # - tempo markings
 # - rhythmic machine with cymbal roll
@@ -328,7 +336,7 @@ print(f.non_default_items()[::2])
 # d1 = set( ("-","-","p") )
 
 # if d1 & dynamics_inventory:
-# 	print( "YOYOYOYOY")
+#   print( "YOYOYOYOY")
 
 # print( len(d1 & dynamics_inventory) )
 
@@ -339,17 +347,17 @@ print(f.non_default_items()[::2])
 # print(g.parent.index(g))
 
 # def grandchildren(self):
-# 	return self.depthwise_index
+#   return self.depthwise_index
 
 # # print(a.graph_order)
 # if not b.children:
-# 	print("bll")
+#   print("bll")
 
 # g.parent.remove(g)
 
 # for i, child in enumerate(b.children):
-# 	if child.name == "d":
-# 		b.insert(i, abjad.datastructuretools.TreeContainer(name='d-1'))
+#   if child.name == "d":
+#       b.insert(i, abjad.datastructuretools.TreeContainer(name='d-1'))
 
 # print(a)
 

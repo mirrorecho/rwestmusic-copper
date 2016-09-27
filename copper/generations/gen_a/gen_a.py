@@ -8,16 +8,16 @@ from copper.generations.gen_0 import gen_0
 from copper import staves
 
 class GenA(object): # basic attributes, such as starting time signature, rehearsal mark, etc.
-    metrical_durations = ID(default=((1,1),), limit=18)
+    metrical_durations = ID(default=((1,2),(1,2),), limit=18)
     rehearsal_mark_number = 1
     # tempo_units_per_minute = 72 # TO DO... tempo indication makes everything SLOW... WHY?????
-    tempo_text = "Faster"
+    tempo_command = '\\note #"2" #1 = \\note #"2." #1 (\\note #"4" #1 = 72)'
     # tempo_text = "half = dotted half" # TO DO... need to figure out how we can insert metric modulations here
     # time_signature = (4,4)
     # compress_full_bar_rests=False
 
 class Drone0(GenA, machines.Drone0):
-    pass
+    metrical_durations = ID(default=((1,1),), limit=18)
 
 # -------------------------------------------------------------------------------------------------
 

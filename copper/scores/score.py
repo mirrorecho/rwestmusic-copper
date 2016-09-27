@@ -4,13 +4,13 @@ import abjad
 from calliope import bubbles
 from copper.generations.gen_0 import orchestration_0
 from copper.generations.gen_a import orchestration_a
-from copper.generations.gen_b import orchestration_b
-from copper.generations.gen_c import orchestration_c
-from copper.generations.gen_d import orchestration_d
-from copper.generations.gen_e import orchestration_e
-from copper.generations.gen_f import orchestration_f
-from copper.generations.gen_g import orchestration_g
-from copper.generations.gen_h import orchestration_h
+# from copper.generations.gen_b import orchestration_b
+# from copper.generations.gen_c import orchestration_c
+# from copper.generations.gen_d import orchestration_d
+# from copper.generations.gen_e import orchestration_e
+# from copper.generations.gen_f import orchestration_f
+# from copper.generations.gen_g import orchestration_g
+# from copper.generations.gen_h import orchestration_h
 from copper import staves
 
 # NOTE... if special overrides need to be handled here, they could be done like this 
@@ -35,7 +35,7 @@ class CopperFullMusic(bubbles.GridSequence, staves.CopperMusic):
 # OUTPUT SCORE
 class CopperFullScore(staves.CopperScore):
     stylesheets=("stylesheets/score.ily",)
-    show_short_score=True
+    show_short_score=False
     # hide_empty=True
     title="Copper"
 

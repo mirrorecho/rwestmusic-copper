@@ -7,9 +7,11 @@ from copper.machines import IndexedData as ID, ID1 # just to avoid a lot of typi
 from copper import staves
 
 class Gen0(object): # basic attributes, such as starting time signature, rehearsal mark, etc.
-    metrical_durations = ID(default=((4,4),), limit=10)
+    metrical_durations = ID(default=((4,4),), limit=12)
     # tempo_units_per_minute = 48 # TO DO... tempo indication makes everything SLOW... WHY?????
-    tempo_text = "Slow"
+    # tempo_text = "Slow"
+    tempo_command = '\\note #"4" #1 = 48'
+    # tempo_units_per_minute = 48
     time_signature = (4,4)
 
 # -------------------------------------------------------------------------------------------------
@@ -33,7 +35,7 @@ class Line1(Gen0, machines.PitchedLine):
 #             machines.SegmentedLine,
 #             ):
 
-    metrical_durations = ID({}, default=((1,1),), limit=15)
+    metrical_durations = ID({}, default=((1,1),), limit=12)
     rhythm_initial_silence = 12
     rhythm_times = 1
     rhythm_sequence = ID1({
