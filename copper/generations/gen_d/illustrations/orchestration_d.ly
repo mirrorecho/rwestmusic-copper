@@ -1,4 +1,4 @@
-% 2016-09-27 22:51
+% 2016-09-28 02:47
 
 \version "2.18.2"
 \language "english"
@@ -18,12 +18,26 @@
                 systemStartDelimiter = #'SystemStartSquare
             } <<
                 \new Staff {
+                    \set Staff.instrumentName = \markup { Piccolo }
+                    \set Staff.shortInstrumentName = \markup { Picc. }
+                    \time 9/8
+                    {
+                        \numericTimeSignature
+                        \bar "||"
+                        \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
+                        \accidentalStyle modern-cautionary
+                        \mark #4
+                        R1 * 27
+                    }
+                }
+                \new Staff {
                     \set Staff.instrumentName = \markup { "Flute 1" }
                     \set Staff.shortInstrumentName = \markup { Fl.1 }
                     \time 9/8
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                         \accidentalStyle modern-cautionary
                         \mark #4
                         R1 * 27
@@ -36,18 +50,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
-                        \accidentalStyle modern-cautionary
-                        \mark #4
-                        R1 * 27
-                    }
-                }
-                \new Staff {
-                    \set Staff.instrumentName = \markup { "Flute 3" }
-                    \set Staff.shortInstrumentName = \markup { Fl.3 }
-                    \time 9/8
-                    {
-                        \numericTimeSignature
-                        \bar "||"
+                        \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                         \accidentalStyle modern-cautionary
                         \mark #4
                         R1 * 27
@@ -64,6 +67,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                         \accidentalStyle modern-cautionary
                         {
                             \mark #4
@@ -126,6 +130,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                         \accidentalStyle modern-cautionary
                         \mark #4
                         R1 * 27
@@ -142,6 +147,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                         \accidentalStyle modern-cautionary
                         {
                             \mark #4
@@ -210,6 +216,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                         \accidentalStyle modern-cautionary
                         \mark #4
                         R1 * 27
@@ -227,6 +234,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                         \accidentalStyle modern-cautionary
                         \mark #4
                         R1 * 27
@@ -240,6 +248,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                         \accidentalStyle modern-cautionary
                         \mark #4
                         R1 * 27
@@ -258,6 +267,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                         \accidentalStyle modern-cautionary
                         \mark #4
                         R1 * 27
@@ -270,6 +280,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                         \accidentalStyle modern-cautionary
                         \mark #4
                         R1 * 27
@@ -286,6 +297,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                         \accidentalStyle modern-cautionary
                         \mark #4
                         R1 * 27
@@ -298,6 +310,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                         \accidentalStyle modern-cautionary
                         \mark #4
                         R1 * 27
@@ -315,6 +328,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                         \accidentalStyle modern-cautionary
                         \mark #4
                         R1 * 27
@@ -328,6 +342,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                         \accidentalStyle modern-cautionary
                         \mark #4
                         R1 * 27
@@ -342,6 +357,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                     \accidentalStyle modern-cautionary
                     \mark #4
                     R1 * 27
@@ -356,9 +372,52 @@
             {
                 \numericTimeSignature
                 \bar "||"
+                \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                 \accidentalStyle modern-cautionary
                 \mark #4
-                R1 * 27
+                d4.
+                d4.
+                d4.
+                d4.
+                d4.
+                d4.
+                d4.
+                d4.
+                d4.
+                d4.
+                d4.
+                d4.
+                d4.
+                d4.
+                d4.
+                d4.
+                d4.
+                d4.
+                d4.
+                d4.
+                d4.
+                d4.
+                d4.
+                d4.
+                d4.
+                d4.
+                r4. ^ \markup { *dampen }
+                R1 * 117/8
+                d4 \mp \<
+                d8
+                r8
+                d8
+                r8
+                d4
+                d8
+                r8
+                d8
+                r8
+                d4
+                d8
+                r8
+                d8 \f
+                r8
             }
         }
         \new StaffGroup <<
@@ -370,6 +429,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                     \accidentalStyle modern-cautionary
                     \mark #4
                     R1 * 27
@@ -386,6 +446,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                         \accidentalStyle modern-cautionary
                         \mark #4
                         R1 * 27
@@ -398,6 +459,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                         \accidentalStyle modern-cautionary
                         \mark #4
                         R1 * 27
@@ -413,6 +475,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                     \accidentalStyle modern-cautionary
                     \mark #4
                     R1 * 27
@@ -424,6 +487,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                     \accidentalStyle modern-cautionary
                     \mark #4
                     R1 * 27
@@ -438,6 +502,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                     \accidentalStyle modern-cautionary
                     {
                         \mark #4
@@ -1229,6 +1294,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                     \accidentalStyle modern-cautionary
                     {
                         \mark #4
@@ -1423,6 +1489,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                         \accidentalStyle modern-cautionary
                         {
                             \mark #4
@@ -1771,6 +1838,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                         \accidentalStyle modern-cautionary
                         {
                             \mark #4
@@ -2055,6 +2123,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                         \accidentalStyle modern-cautionary
                         {
                             \mark #4
@@ -2353,6 +2422,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                         \accidentalStyle modern-cautionary
                         {
                             \mark #4
@@ -2656,6 +2726,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                         \accidentalStyle modern-cautionary
                         {
                             \mark #4
@@ -2745,6 +2816,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                         \accidentalStyle modern-cautionary
                         {
                             \mark #4
@@ -2856,6 +2928,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                         \accidentalStyle modern-cautionary
                         \mark #4
                         R1 * 27
@@ -2869,6 +2942,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                         \accidentalStyle modern-cautionary
                         \mark #4
                         R1 * 27
@@ -2883,6 +2957,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                     \accidentalStyle modern-cautionary
                     \mark #4
                     R1 * 27
@@ -2897,6 +2972,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                     \accidentalStyle modern-cautionary
                     {
                         \mark #4
@@ -3167,6 +3243,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                     \accidentalStyle modern-cautionary
                     {
                         \mark #4
@@ -3386,6 +3463,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                     \accidentalStyle modern-cautionary
                     {
                         \mark #4
@@ -3653,6 +3731,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                     \accidentalStyle modern-cautionary
                     {
                         \mark #4
@@ -4204,6 +4283,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                     \accidentalStyle modern-cautionary
                     {
                         \mark #4
@@ -5031,6 +5111,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                     \accidentalStyle modern-cautionary
                     {
                         \mark #4

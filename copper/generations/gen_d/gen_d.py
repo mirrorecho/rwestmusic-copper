@@ -11,8 +11,7 @@ class GenD(object):
     time_signature = (9,8)
     metrical_durations = ID(default=((6,8),(3,8),), limit=24)
     rehearsal_mark_number = 4
-    # tempo_units_per_minute = 72
-    # tempo_duration=(3,8)
+    tempo_command = '\\note #"1" #1 = \\note #"2." #1 + \\note #"4." #1 (\\note #"4." #1 = 72)'
     start_bar_line = "||"
 
 class Drone0(GenD, machines.Drone0):

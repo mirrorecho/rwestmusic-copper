@@ -111,7 +111,13 @@ class Tuba(ArrangeD):
 # TIMPANI / PERCUSSION / HARP / PIANO
 
 class Timpani(ArrangeD):
-    pass
+    music = bubbles.Line(r"""
+        r4. d4. d4. | d4. d4. d4. | d4. d4. d4. | d4. d4. d4. | 
+        d4. d4. d4. | d4. d4. d4. | d4. d4. d4. | d4. d4. d4. | d4. d4. r4. ^ \markup { "*dampen" }
+        R1 * 9/8 * 13
+        d4 \mp \<  d8    r8 d8 r8    d4 d8  | 
+        r8 d8 r8    d4 d8    r8 d8 \f \! r8  |
+        """)
 
 class Perc1(ArrangeD):
     pass

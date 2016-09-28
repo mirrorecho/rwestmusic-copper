@@ -1,4 +1,4 @@
-% 2016-09-26 14:32
+% 2016-09-28 02:36
 
 \version "2.18.2"
 \language "english"
@@ -20,6 +20,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
+                \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                 \accidentalStyle forget
                 {
                     \mark #4
@@ -290,6 +291,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
+                \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                 \accidentalStyle forget
                 {
                     \mark #4
@@ -509,6 +511,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
+                \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                 \accidentalStyle forget
                 {
                     \mark #4
@@ -776,6 +779,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
+                \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                 \accidentalStyle forget
                 {
                     \mark #4
@@ -1327,6 +1331,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
+                \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                 \accidentalStyle forget
                 {
                     \mark #4
@@ -1528,7 +1533,6 @@
                 \once \override Dots.color = #red
                 \once \override NoteHead.color = #red
                 \once \override Stem.color = #red
-                \clef bass
                 df''''8 [ ^ \markup { 31 }
                 \once \override Accidental.color = #red
                 \once \override Beam.color = #red
@@ -2123,6 +2127,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
+                \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                 \accidentalStyle forget
                 {
                     \mark #4

@@ -129,7 +129,8 @@ class Bassoon2(ArrangeC):
 
 class Horn1(ArrangeC):
     fragments = Frag.make(
-        Frag.it(1,4, tags="("),
+        Frag.it(0,9, duration=6, tags=["\<"]),
+        Frag.it(1,4, tags=["(","mp"]),
         Frag.it(1,5, tags=")"),
         Frag.it(1,6, tags="-"),
         )
@@ -168,7 +169,13 @@ class Trumpet2(ArrangeC):
         )
 
 class Trombone1(ArrangeC):
-    pass
+    fragments = Frag.make(
+            *Frag.its(0, [1,4], offset=6),
+            *Frag.its(0, [13,16], offset=2),
+            *Frag.its(0, [17,20], offset=6),
+            *Frag.its(0, [25,28], offset=-2),
+            *Frag.its(0, [29,32], offset=2),
+        )
 
 class Trombone2(ArrangeC):
     pass
@@ -176,7 +183,14 @@ class Trombone2(ArrangeC):
 class Tuba(ArrangeC):
     fragments = Frag.make(
             *Frag.its(0, [1,4], offset=-2),
+            *Frag.its(0, [5,8], offset=2),
+            *Frag.its(0, [9,12], offset=6),
+            *Frag.its(0, [17,20], offset=-2),
+            *Frag.its(0, [21,24], offset=2),
+            *Frag.its(0, [25,28], offset=6),
+            # *Frag.its(0, [29,32], offset=6),
         )
+    fragments.update_by(0,7, duration=4)
 
 # ------------------------------------------------------------------------------------------------------------
 # TIMPANI / PERCUSSION / HARP / PIANO
