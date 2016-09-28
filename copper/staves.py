@@ -2,9 +2,10 @@ from abjad import *
 from calliope.bubbles import *
 
 class CopperFlutes(InstrumentStaffGroup):
+    picc = BubbleStaff(instrument=instrumenttools.Flute(instrument_name="Piccolo", short_instrument_name="picc."))
     flute1 = BubbleStaff(instrument=instrumenttools.Flute(instrument_name="Flute 1", short_instrument_name="fl.1"))
     flute2 = BubbleStaff(instrument=instrumenttools.Flute(instrument_name="Flute 2", short_instrument_name="fl.2"))
-    flute3 = BubbleStaff(instrument=instrumenttools.Flute(instrument_name="Flute 3", short_instrument_name="fl.3"))
+    sequence =("picc", "flute1", "flute2")
 
 class CopperOboes(InstrumentStaffGroup):
     oboe1 = BubbleStaff(instrument=instrumenttools.Oboe(instrument_name="Oboe 1", short_instrument_name="ob.1"))
@@ -146,9 +147,9 @@ class CopperScore(BubbleFormatLargeScore):
 
 class CopperMusic(Bubble):
 
-    flute1 = Placeholder() # TO DO...  maybe this should always be piccolo?
+    picc = Placeholder() # TO DO...  maybe this should always be piccolo?
+    flute1 = Placeholder()
     flute2 = Placeholder()
-    flute3 = Placeholder()
     oboe1 = Placeholder()
     oboe2 = Placeholder()
     clarinet1 = Placeholder()

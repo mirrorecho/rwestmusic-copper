@@ -44,13 +44,15 @@ class ArrangeG(gen_g.GenG, machines.FragmentLine, machines.PitchedLine):
 # ------------------------------------------------------------------------------------------------------------
 # WINDS
 
+class Picc(ArrangeG):
+    # transpose=-12
+    pass
+
+
 class Flute1(ArrangeG):
     pass
 
 class Flute2(ArrangeG):
-    pass
-
-class Flute3(ArrangeG):
     pass
 
 class Oboe1(ArrangeG):
@@ -171,9 +173,9 @@ class Bass(ArrangeG):
 def get_orchestration_g():
     class OrchestrationG(staves.CopperMusic):
         bubble_default = ArrangeG.unarranged # in case any parts are commented out
-        flute1 = Flute1() # TO DO...  maybe this should always be piccolo?
+        picc = Picc() # TO DO...  maybe this should always be piccolo?
+        flute1 = Flute1()
         flute2 = Flute2()
-        flute3 = Flute3()
         oboe1 = Oboe1()
         oboe2 = Oboe2()
         clarinet1 = Clarinet1()

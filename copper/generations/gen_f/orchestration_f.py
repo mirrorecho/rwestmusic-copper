@@ -35,7 +35,7 @@ class ArrangeF(gen_f.GenF, machines.FragmentLine, machines.PitchedLine):
 # ------------------------------------------------------------------------------------------------------------
 # WINDS
 
-class Flute1(ArrangeF):
+class Picc(ArrangeF):
     fragments = Frag.make(
         Frag.it(1, 1, chord_positions=-1),
         Frag.it(1, 2, chord_positions=-1),
@@ -49,8 +49,9 @@ class Flute1(ArrangeF):
         Frag.it(1, 15, chord_positions=-1),
         *Frag.its(6, [39,49]),
         )
+    transpose=-12
 
-class Flute2(ArrangeF):
+class Flute1(ArrangeF):
     fragments = Frag.make(
         Frag.it(3, 3, attack_offset=1, before_next=0, tags=("\<","f.t.",":32") ),
         Frag.it(3, 6, duration=1, tags=("mf",".") ),
@@ -58,7 +59,7 @@ class Flute2(ArrangeF):
         *Frag.its(6, [28,40]),
         )
 
-class Flute3(ArrangeF):
+class Flute2(ArrangeF):
         Frag.it(1, 16, chord_positions=-1),
         Frag.it(1, 17, chord_positions=-1),
         Frag.it(1, 18, chord_positions=-1),
@@ -354,9 +355,9 @@ class Bass(ArrangeF):
 def get_orchestration_f():
     class OrchestrationF(staves.CopperMusic): # TO DO... maybe these shouldn't inherit from the gens????
         bubble_default = ArrangeF.unarranged # in case any parts are commented out
-        flute1 = Flute1() # TO DO...  maybe this should always be piccolo?
+        picc = Picc() # TO DO...  maybe this should always be piccolo?
+        flute1 = Flute1()
         flute2 = Flute2()
-        flute3 = Flute3()
         oboe1 = Oboe1()
         oboe2 = Oboe2()
         clarinet1 = Clarinet1()

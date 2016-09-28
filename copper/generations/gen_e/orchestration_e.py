@@ -59,18 +59,19 @@ class WindsArrangeE(ArrangeE):
                 else:
                     event[0].tag("p")
 
+class Picc(WindsArrangeE):
+    fragments = Frag.make(
+        Frag.it(6,19, attack_offset=-3.5, **WIND_KWARGS),
+        Frag.it(6,26, attack_offset=-3.5, **WIND_KWARGS),
+        )
+    transpose=-12
+
 class Flute1(WindsArrangeE):
     fragments = Frag.make(
         Frag.it(6,19, attack_offset=-3.5, **WIND_KWARGS),
         Frag.it(6,26, attack_offset=-3.5, **WIND_KWARGS),
         )
-
 class Flute2(WindsArrangeE):
-    fragments = Frag.make(
-        Frag.it(6,19, attack_offset=-3.5, **WIND_KWARGS),
-        Frag.it(6,26, attack_offset=-3.5, **WIND_KWARGS),
-        )
-class Flute3(WindsArrangeE):
     fragments = Frag.make(
         Frag.it(6,19, attack_offset=-3.5, **WIND_KWARGS),
         Frag.it(6,26, attack_offset=-3.5, **WIND_KWARGS),
@@ -420,9 +421,9 @@ class Bass(ArrangeE):
 def get_orchestration_e():
     class OrchestrationE(staves.CopperMusic):
         bubble_default = ArrangeE.unarranged # in case any parts are commented out
-        flute1 = Flute1() # TO DO...  maybe this should always be piccolo?
+        picc = Picc() # TO DO...  maybe this should always be piccolo?
+        flute1 = Flute1()
         flute2 = Flute2()
-        flute3 = Flute3()
         oboe1 = Oboe1()
         oboe2 = Oboe2()
         clarinet1 = Clarinet1()

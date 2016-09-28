@@ -32,13 +32,13 @@ class ArrangeB(gen_b.GenB, machines.FragmentLine, machines.PitchedLine):
 # ------------------------------------------------------------------------------------------------------------
 # WINDS
 
+class Picc(ArrangeB):
+    pass
+
 class Flute1(ArrangeB):
     pass
 
 class Flute2(ArrangeB):
-    pass
-
-class Flute3(ArrangeB):
     pass
 
 class Oboe1(ArrangeB):
@@ -339,9 +339,10 @@ class Viola1(ViolaArrangeB):
 class Viola2(Viola1):
     pass
 
-class Cello1(ArrangeB):
+# NOTE... swapped order of inheritance so that Cello1 could override instructions
+class Cello2(ArrangeB):
     fragments = Frag.make(
-        Frag.it(2,13, ),
+        Frag.it(2,13,),
         Frag.it(2,14, tags=["("]),
         Frag.it(2,15, tags=[")"]),
         Frag.it(2,16, ),
@@ -359,8 +360,10 @@ class Cello1(ArrangeB):
     fragments.update_by(1,20, tags=["("])
     fragments.update_by(1,21, tags=[")"])
 
-class Cello2(Cello1):
-    pass
+class Cello1(Cello2):
+    def update_data(self, **kwargs):
+        super().update_data(**kwargs)
+        self.events[1].tag("\clef bass", "tutti cello div 1")
 
 class Bass(ArrangeB):
     metrical_durations = ID({
@@ -387,9 +390,9 @@ class Bass(ArrangeB):
 def get_orchestration_b():
     class OrchestrationB(staves.CopperMusic):
         bubble_default = ArrangeB.unarranged # in case any parts are commented out
-        flute1 = Flute1() # TO DO...  maybe this should always be piccolo?
+        picc = Picc() # TO DO...  maybe this should always be piccolo?
+        flute1 = Flute1()
         flute2 = Flute2()
-        flute3 = Flute3()
         oboe1 = Oboe1()
         oboe2 = Oboe2()
         clarinet1 = Clarinet1()

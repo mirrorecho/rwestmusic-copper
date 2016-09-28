@@ -34,7 +34,7 @@ class ArrangeC(gen_c.GenC, machines.FragmentLine, machines.PitchedLine):
 # ------------------------------------------------------------------------------------------------------------
 # WINDS
 
-class Flute1(ArrangeC):
+class Picc(ArrangeC):
     fragments = Frag.make(
         *Frag.its(3,(25,28), slur_me=True),
         Frag.it(1,31, tags=["p"]),
@@ -42,8 +42,15 @@ class Flute1(ArrangeC):
         Frag.it(1,33, duration=5, tags=[")"]),
     )
     fragments.update_by(3,27, duration=4)
+    transpose=-12
 
-class Flute2(ArrangeC):
+class Flute1(ArrangeC):
+    metrical_durations = ArrangeC.metrical_durations + {
+        6: ((2,4),(1,4),(1,4),),
+        14: ((1,4),)*4,
+        15: ((1,4),)*4,
+        17: ((1,4),(1,4),(2,4),),
+    }
     fragments = Frag.make(
         Frag.it(2,5, attack_offset=0.5, duration=4.5),
         *Frag.its(3,(1,9), slur_me=True),
@@ -54,9 +61,14 @@ class Flute2(ArrangeC):
     def after_music(self, music, **kwargs):
         super().after_music(music, **kwargs)
         trill = abjad.spannertools.TrillSpanner(pitch=abjad.NamedPitch("C#5"))
-        abjad.attach(trill, music[2:4])
+        abjad.attach(trill, music[4:6])
 
-class Flute3(ArrangeC):
+class Flute2(ArrangeC):
+    metrical_durations = ArrangeC.metrical_durations + {
+        6: ((2,4),(1,4),(1,4),),
+        15: ((1,4),)*4,
+        17: ((1,4),)*4,
+    }
     fragments = Frag.make(
         Frag.it(2,5, attack_offset=0.5, duration=4.5),
         *Frag.its(3,(8,14), slur_me=True),
@@ -68,7 +80,7 @@ class Flute3(ArrangeC):
     def after_music(self, music, **kwargs):
         super().after_music(music, **kwargs)
         trill = abjad.spannertools.TrillSpanner(pitch=abjad.NamedPitch("C#5"))
-        abjad.attach(trill, music[2:4])
+        abjad.attach(trill, music[4:6])
 
 class Oboe1(ArrangeC):
     fragments = Frag.make(
@@ -85,12 +97,22 @@ class Oboe2(ArrangeC):
     pass
 
 class Clarinet1(ArrangeC):
+    metrical_durations = ArrangeC.metrical_durations + {
+        8: ((1,4),)*4,
+        9: ((1,4),)*4,
+        10: ((2,4),(1,4),(1,4),),
+    }
     fragments = Frag.make(
         *Frag.its(4,(1,9), slur_me=True),
         *Frag.its(4,(15,21), slur_me=True),
         )
 
 class Clarinet2(ArrangeC):
+    metrical_durations = ArrangeC.metrical_durations + {
+        8: ((2,4),(1,4),(1,4),),
+        9: ((1,4),(1,4),(2,4),),
+        # 10: ((2,4),(1,4),(1,4),),
+    }
     fragments = Frag.make(
         *Frag.its(4,(8,16), slur_me=True),
         *Frag.its(4,(20,28), slur_me=True),
@@ -107,9 +129,9 @@ class Bassoon2(ArrangeC):
 
 class Horn1(ArrangeC):
     fragments = Frag.make(
-        Frag.it(2,7, tags="("),
-        Frag.it(2,8, tags=")"),
-        Frag.it(2,9, tags="-"),
+        Frag.it(1,4, tags="("),
+        Frag.it(1,5, tags=")"),
+        Frag.it(1,6, tags="-"),
         )
 
 class Horn2(ArrangeC):
@@ -121,22 +143,28 @@ class Horn2(ArrangeC):
 
 class Trumpet1(ArrangeC):
     fragments = Frag.make(
-            Frag.it(2, 2, duration=2, tags="("),
-            Frag.it(2, 4, tags=")"),
-            Frag.it(1, 3, tags="."),
-            Frag.it(1, 7, tags="("),
-            Frag.it(1, 8, tags=")"),
-            Frag.it(1, 9, tags="."),
+        Frag.it(2, 2, duration=2, tags="("),
+        Frag.it(2, 4, tags=")"),
+        Frag.it(1, 3, tags="."),
+        Frag.it(2,7, tags="("),
+        Frag.it(2,8, tags=")"),
+        Frag.it(2,9, tags="-"),
+        Frag.it(1, 7, tags="("),
+        Frag.it(1, 8, tags=")"),
+        Frag.it(1, 9, tags="."),
         )
 
 
 class Trumpet2(ArrangeC):
     fragments = Frag.make(
-            Frag.it(1, 1, tags="("),
-            Frag.it(1, 2, tags=")"),
-            Frag.it(2, 5, duration=1, tags="."),
-            Frag.it(2, 13, duration=1.5),
-            Frag.it(2, 14, attack_offset=0.5, duration=0.5, tags="."),
+        Frag.it(1, 1, tags="("),
+        Frag.it(1, 2, tags=")"),
+        Frag.it(2, 5, duration=1, tags="."),
+        Frag.it(2,7, tags="("),
+        Frag.it(2,8, tags=")"),
+        Frag.it(2,9, tags="-"),
+        Frag.it(2, 13, duration=1.5),
+        Frag.it(2, 14, attack_offset=0.5, duration=0.5, tags="."),
         )
 
 class Trombone1(ArrangeC):
@@ -334,9 +362,9 @@ class Bass(Cello1):
 def get_orchestration_c():
     class OrchestrationC(staves.CopperMusic):
         bubble_default = ArrangeC.unarranged # in case any parts are commented out
-        flute1 = Flute1() # TO DO...  maybe this should always be piccolo?
+        picc = Picc() # TO DO...  maybe this should always be piccolo?
+        flute1 = Flute1()
         flute2 = Flute2()
-        flute3 = Flute3()
         oboe1 = Oboe1()
         oboe2 = Oboe2()
         clarinet1 = Clarinet1()

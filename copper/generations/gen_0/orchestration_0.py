@@ -27,13 +27,13 @@ class Arrange0(gen_0.Gen0, machines.FragmentLine, machines.PitchedLine):
 # ------------------------------------------------------------------------------------------------------------
 # WINDS
 
+class Picc(Arrange0):
+    pass
+
 class Flute1(Arrange0):
     pass
 
 class Flute2(Arrange0):
-    pass
-
-class Flute3(Arrange0):
     pass
 
 class Oboe1(Arrange0):
@@ -153,9 +153,9 @@ class Bass(machines.PitchesDisplaced, StringsArrange0):
 def get_orchestration_0():
     class Orchestration0(staves.CopperMusic): 
         bubble_default = Arrange0.unarranged # in case any parts are commented out
-        flute1 = Flute1() # TO DO...  maybe this should always be piccolo?
+        picc = Picc() # TO DO...  maybe this should always be piccolo?
+        flute1 = Flute1()
         flute2 = Flute2()
-        flute3 = Flute3()
         oboe1 = Oboe1()
         oboe2 = Oboe2()
         clarinet1 = Clarinet1()

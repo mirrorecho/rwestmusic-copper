@@ -35,13 +35,14 @@ class ArrangeH(gen_h.GenH, machines.FragmentLine, machines.PitchedLine):
 # ------------------------------------------------------------------------------------------------------------
 # WINDS
 
+class Picc(ArrangeH):
+    # transpose=-12
+    pass
+
 class Flute1(ArrangeH):
     pass
 
 class Flute2(ArrangeH):
-    pass
-
-class Flute3(ArrangeH):
     pass
 
 class Oboe1(ArrangeH):
@@ -150,9 +151,9 @@ class Bass(ArrangeH):
 def get_orchestration_h():
     class OrchestrationH(staves.CopperMusic, gen_h.GenH): # TO DO... maybe these shouldn't inherit from the gens????
         bubble_default = ArrangeH.unarranged # in case any parts are commented out
-        flute1 = Flute1() # TO DO...  maybe this should always be piccolo?
+        picc = Picc() # TO DO...  maybe this should always be piccolo?
+        flute1 = Flute1()
         flute2 = Flute2()
-        flute3 = Flute3()
         oboe1 = Oboe1()
         oboe2 = Oboe2()
         clarinet1 = Clarinet1()

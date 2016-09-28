@@ -28,6 +28,23 @@ class PartsBase(bubbles.BubbleScore):
 # WIND PARTS
 
 def wind_parts():
+    class PiccPart(PartsBase):
+        picc = staves.CopperFlutes.picc
+    class PiccMusic(bubbles.Bubble):
+        picc = \
+            orchestration_0.Picc() +\
+            orchestration_a.Picc() +\
+            orchestration_b.Picc() +\
+            orchestration_c.Picc() +\
+            orchestration_d.Picc() +\
+            orchestration_e.Picc() +\
+            orchestration_f.Picc() +\
+            orchestration_g.Picc() #+\
+            # orchestration_h.Picc() +\
+    bubbles.illustrate_me_file("Picc.pdf", __file__, 
+        PiccPart( PiccMusic() ).get_lilypond_file,
+        subfolder="part_illustrations"
+        )
     class Flute1Part(PartsBase):
         flute1 = staves.CopperFlutes.flute1
     class Flute1Music(bubbles.Bubble):
@@ -60,23 +77,6 @@ def wind_parts():
             # orchestration_h.Flute2() +\
     bubbles.illustrate_me_file("Flute2.pdf", __file__, 
         Flute2Part( Flute2Music() ).get_lilypond_file,
-        subfolder="part_illustrations"
-        )
-    class Flute3Part(PartsBase):
-        flute3 = staves.CopperFlutes.flute3
-    class Flute3Music(bubbles.Bubble):
-        flute3 = \
-            orchestration_0.Flute3() +\
-            orchestration_a.Flute3() +\
-            orchestration_b.Flute3() +\
-            orchestration_c.Flute3() +\
-            orchestration_d.Flute3() +\
-            orchestration_e.Flute3() +\
-            orchestration_f.Flute3() +\
-            orchestration_g.Flute3() #+\
-            # orchestration_h.Flute3() +\
-    bubbles.illustrate_me_file("Flute3.pdf", __file__, 
-        Flute3Part( Flute3Music() ).get_lilypond_file,
         subfolder="part_illustrations"
         )
     class OboesPart(PartsBase):

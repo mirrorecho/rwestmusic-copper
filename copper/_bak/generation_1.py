@@ -52,9 +52,9 @@ class Gen1ArrangementMixin(object):
     bubble_default = Line("R1*18")
 
 class Gen1Winds(Gen1ArrangementMixin, GenBubble): # necessary to inherit from GenBubble??
-    flute1 = Line("R1*18") # TO DO... add some doubling, orchestrational color with the flutes
+    picc = Line("R1*18") # TO DO... add some doubling, orchestrational color with the flutes
+    flute1 = Line("R1*18")
     flute2 = Line("R1*18")
-    flute3 = Line("R1*18")
 
 class Arrangement(Gen1Winds, CopperMusic):
     # TO DO... these lines need dynamics, bowing, etc. ... maybe some additional orchestration interest/color.

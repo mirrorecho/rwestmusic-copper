@@ -1,4 +1,4 @@
-% 2016-09-28 00:18
+% 2016-09-28 01:03
 
 \version "2.18.2"
 \language "english"
@@ -1741,7 +1741,8 @@
                         \once \override Dots.color = #darkgreen
                         \once \override NoteHead.color = #darkgreen
                         \once \override Stem.color = #darkgreen
-                        d4 \mp
+                        \clef bass
+                        d4 \mp ^ \markup { "tutti cello div 1" }
                         \once \override Accidental.color = #darkgreen
                         \once \override Beam.color = #darkgreen
                         \once \override Dots.color = #darkgreen
