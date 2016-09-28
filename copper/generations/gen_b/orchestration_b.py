@@ -83,8 +83,10 @@ class Clarinet2(ArrangeB):
         )
     fragments.update_by(3,22, attack_offset=0.25)
     def after_music(self, music):
+        super().after_music(music)
         bass_clarinet_command = abjad.Markup("to Bcl.", direction=Up)
         abjad.attach(bass_clarinet_command, music[0])
+    transpose=12
 
 class Bassoon1(ArrangeB):
     metrical_durations = ArrangeB.metrical_durations + {
@@ -145,6 +147,11 @@ class Bassoon2(ArrangeB):
     fragments.update_by(3,11, duration=0.5, tags=["-", "to Cbn."])
     def update_data(self):
         super().update_data()
+        # for Cbsn. octave transposition... TO DO... this is nasty... make this easier
+        self.event_by(3,39).pitch += 12
+        self.event_by(3,40).pitch += 12
+        self.event_by(3,46).pitch += 12
+        self.event_by(3,49).pitch += 12
         first_melodic_event = self.event_by(2,7).tag("mf")
         machines.AttachmentTagData.span_every("(", self.events[7:17])
 
@@ -371,6 +378,7 @@ class Bass(ArrangeB):
         Frag.it(3,46,),
         Frag.it(3,51,),
         )
+    transpose=12
 
 # ------------------------------------------------------------------------------------------------------------
 # ALL LINES ASSOCIATED WITH STAVES

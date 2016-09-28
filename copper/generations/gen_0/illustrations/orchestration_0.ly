@@ -1,4 +1,4 @@
-% 2016-09-27 15:21
+% 2016-09-27 23:41
 
 \version "2.18.2"
 \language "english"
@@ -439,7 +439,7 @@
                     \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                     \accidentalStyle modern-cautionary
                     r4
-                    c2. :32 \pppp ~ \< ^ \markup { " Susp. cymbal, yarn mallets " }
+                    c2. :32 \pppp ~ \< ^ \markup { " Sus. cymbal, yarn mallets " }
                     c1 :32 \pp ~
                     c1 :32 ~
                     c1 :32 ~
@@ -468,7 +468,7 @@
                         \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         R1 * 3
-                        c4 \mp ^ \markup { " Susp. cymbal (same rubber mallets)" }
+                        c4 \mp ^ \markup { " Sus. cymbal (same rubber mallets)" }
                         r4
                         r2
                         R1 * 8
@@ -544,7 +544,11 @@
                 \new Staff {
                     \set Staff.instrumentName = \markup { "Violin I Div 1" }
                     \set Staff.shortInstrumentName = \markup { Vln.I.1 }
+                    \time 4/4
                     {
+                        \numericTimeSignature
+                        \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
+                        \accidentalStyle modern-cautionary
                         {
                             R1 * 3 ^ \markup { "mute on" }
                         }
@@ -581,7 +585,11 @@
                 \new Staff {
                     \set Staff.instrumentName = \markup { "Violin I Div 2" }
                     \set Staff.shortInstrumentName = \markup { Vln.I.2 }
+                    \time 4/4
                     {
+                        \numericTimeSignature
+                        \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
+                        \accidentalStyle modern-cautionary
                         {
                             R1 * 3 ^ \markup { "mute on" }
                         }
@@ -622,7 +630,11 @@
                 \new Staff {
                     \set Staff.instrumentName = \markup { "Violin II Div 1" }
                     \set Staff.shortInstrumentName = \markup { Vln.II.1 }
+                    \time 4/4
                     {
+                        \numericTimeSignature
+                        \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
+                        \accidentalStyle modern-cautionary
                         {
                             R1 * 3 ^ \markup { "mute on" }
                         }
@@ -659,7 +671,11 @@
                 \new Staff {
                     \set Staff.instrumentName = \markup { "Violin II Div 2" }
                     \set Staff.shortInstrumentName = \markup { Vln.II.2 }
+                    \time 4/4
                     {
+                        \numericTimeSignature
+                        \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
+                        \accidentalStyle modern-cautionary
                         {
                             R1 * 3 ^ \markup { "mute on" }
                         }
@@ -701,7 +717,11 @@
                     \clef "alto"
                     \set Staff.instrumentName = \markup { "Viola Div 1" }
                     \set Staff.shortInstrumentName = \markup { Vla.1 }
+                    \time 4/4
                     {
+                        \numericTimeSignature
+                        \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
+                        \accidentalStyle modern-cautionary
                         {
                             R1 * 3 ^ \markup { "mute on" }
                         }
@@ -739,7 +759,11 @@
                     \clef "alto"
                     \set Staff.instrumentName = \markup { "Viola Div 2" }
                     \set Staff.shortInstrumentName = \markup { Vla.2 }
+                    \time 4/4
                     {
+                        \numericTimeSignature
+                        \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
+                        \accidentalStyle modern-cautionary
                         {
                             R1 * 3 ^ \markup { "mute on" }
                         }
@@ -781,7 +805,11 @@
                     \clef "bass"
                     \set Staff.instrumentName = \markup { "Cello Div 1" }
                     \set Staff.shortInstrumentName = \markup { Vc.1 }
+                    \time 4/4
                     {
+                        \numericTimeSignature
+                        \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
+                        \accidentalStyle modern-cautionary
                         {
                             R1 * 3 ^ \markup { "mute on" }
                         }
@@ -819,7 +847,11 @@
                     \clef "bass"
                     \set Staff.instrumentName = \markup { "Cello Div 2" }
                     \set Staff.shortInstrumentName = \markup { Vc.2 }
+                    \time 4/4
                     {
+                        \numericTimeSignature
+                        \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
+                        \accidentalStyle modern-cautionary
                         {
                             R1 * 3 ^ \markup { "mute on" }
                         }
@@ -858,7 +890,11 @@
                 \clef "bass"
                 \set Staff.instrumentName = \markup { Bass }
                 \set Staff.shortInstrumentName = \markup { Cb }
+                \time 4/4
                 {
+                    \numericTimeSignature
+                    \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
+                    \accidentalStyle modern-cautionary
                     {
                         R1 * 3 ^ \markup { "mute on" }
                     }

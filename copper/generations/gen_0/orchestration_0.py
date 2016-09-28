@@ -136,11 +136,12 @@ class StringsArrange0(gen_0.Line1):
             segment[1].tag("(")
             segment[2].tag(")")
     def after_music(self, music):
+        super().after_music(music)
         mute_command = abjad.Markup("mute on", direction=Up)
         abjad.attach(mute_command, music[0])
 
 class Bass(machines.PitchesDisplaced, StringsArrange0): 
-    pitch_displacement = machines.OctaveDisplacement(up=(0,)) # TO DO... think of some better way to handle this rather than repeating it everywhere
+    transpose=12
     def update_data(self):
         super().update_data()
         self.events[1].tag("\clef tenor")
