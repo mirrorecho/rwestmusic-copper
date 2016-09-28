@@ -17,6 +17,9 @@ class GenD(object):
 class Drone0(GenD, machines.Drone0):
     rhythm_sequence = ID(default=1, limit=12)
     rhythm_initial_silence = 4.5
+    initial_dynamic = "p"
+    middle_dynamic = "mf"
+    end_dynamic = "p"
 
 # -------------------------------------------------------------------------------------------------
 
@@ -127,8 +130,9 @@ class Line4(GenD, gen_c.Line4):
             }, cyclic=False)
     def update_data(self, **kwargs):
         super().update_data(**kwargs)
-        if self.__class__.__name__ == "Line4": # this helps restrict tags to short score only
-            self.events[55].tag("\clef bass")
+        # TO DO should this move into the bass???? (LISTEN)
+        # if self.__class__.__name__ == "Line4": # this helps restrict tags to short score only
+        #     self.events[55].tag("\clef bass")
 
 # -------------------------------------------------------------------------------------------------
 

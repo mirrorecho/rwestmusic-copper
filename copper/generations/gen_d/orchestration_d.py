@@ -35,11 +35,39 @@ class ArrangeD(gen_d.GenD, machines.FragmentLine, machines.PitchedLine):
 # WINDS
 
 class Picc(ArrangeD):
-    # transpose=-12
-    pass
+    transpose=-12
+    fragments = Frag.make(
+        Frag.it(4,28, tags=[">"]),
+        Frag.it(4,29, tags=[">"]),
+        Frag.it(4,30, tags=[">"]),
+        Frag.it(4,31, tags=[">"]),
+        Frag.it(4,32, tags=[">"]),
+        Frag.it(4,33, tags=[">"]),
+        Frag.it(4,34, tags=[">"]),
+        Frag.it(4,35, tags=[">"]),
+        Frag.it(1,18, chord_positions=[-1], tags=[">"]),
+        )
+    def update_data(self, **kwargs):
+        super().update_data(**kwargs)
+        self.respell_events("sharps")
 
 class Flute1(ArrangeD):
-    pass
+    fragments = Frag.make(
+        Frag.it(4,36, tags=[">"]),
+        Frag.it(4,37, tags=[">"]),
+        Frag.it(4,38, tags=[">"]),
+        Frag.it(4,39, tags=[">"]),
+        Frag.it(4,40, tags=[">"]),
+        Frag.it(4,41, tags=[">"]),
+        Frag.it(4,42, tags=[">"]),
+        Frag.it(4,43, tags=[">"]),
+        Frag.it(4,44, tags=[">"]),
+        Frag.it(4,45, tags=[">"]),
+        Frag.it(4,46, tags=[">"]),
+        )
+    def update_data(self, **kwargs):
+        super().update_data(**kwargs)
+        self.respell_events("sharps")
 
 class Flute2(ArrangeD):
     pass
@@ -87,10 +115,16 @@ class Bassoon2(ArrangeD):
 # BRASS
 
 class Horn1(ArrangeD):
-    pass
+    fragments = Frag.make(
+        *Frag.its(0,[1,4], offset=-4.5),
+        *Frag.its(0,[5,8], offset=1.5),
+        )
 
 class Horn2(ArrangeD):
-    pass
+    fragments = Frag.make(
+        *Frag.its(0,[1,4], offset=4.5),
+        *Frag.its(0,[9,12], offset=-1.5),
+        )
 
 class Trumpet1(ArrangeD):
     pass
@@ -120,16 +154,34 @@ class Timpani(ArrangeD):
         """)
 
 class Perc1(ArrangeD):
-    pass
+    music = bubbles.Line(r"""
+
+        r4. c4.:32 ~ \p \< ^ \markup {"Sus. cymbal"} c4.:32 ~
+        c2.:32 ~ \mp \! c4.:32 ~
+
+        c2.:32 ~ c4.:32 ~ c2.:32 ~ c4.:32 ~ c2.:32 ~ c4.:32 ~ c2.:32 ~ c4.:32 ~ 
+        c2.:32 ~ c4.:32 ~ c2.:32 ~ c4.:32 ~ c2.:32 ~ c4.:32 ~ c2.:32 ~ c4.:32 ~ 
+        c2.:32 ~ c4.:32 ~ c2.:32 ~ c4.:32 ~ c2.:32 ~ c4.:32 ~ c2.:32 ~ c4.:32 ~ 
+        c2.:32 ~ c4.:32 ~ c2.:32 ~ c4.:32 ~ c2.:32 ~ c4.:32 ~ c2.:32 ~ c4.:32 ~ 
+        c2.:32 ~ c4.:32 ~ c2.:32 ~ c4.:32 ~ c2.:32 ~ c4.:32 ~ c2.:32 ~ c4.:32 ~ 
+
+        c2.:32 ~ \< c4.:32 ~  c2.:32 ~ c4:32 ~ c8:32 \f \!
+        
+        """)
 
 class Perc2(ArrangeD):
     pass
 
 class Vibes(ArrangeD):
-    pass
+    music = bubbles.Line(r"""
+        \clef bass d4. \fff -> r4. r4. |
+        R1 * 9/8 * 23
+        """)
 
 class Harp1(ArrangeD):
-    pass
+    fragments = Frag.make(
+        Frag.it(4,27, tags=[">"]),
+        )
 
 class Harp2(ArrangeD):
     pass
