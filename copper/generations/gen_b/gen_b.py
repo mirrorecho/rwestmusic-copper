@@ -15,10 +15,13 @@ class GenB(object): # basic attributes, such as starting time signature, rehears
     # tempo_units_per_minute = 72
     start_bar_line = "||"
     time_signature = (3,4)
+    tempo_command = None
 
 class Drone0(GenB, machines.Drone0):
     rhythm_sequence = ID(default=1, limit=10)
     rhythm_initial_silence = 3
+    initial_dynamic = "p"
+    end_dynamic = "p"
 
 # -------------------------------------------------------------------------------------------------
 

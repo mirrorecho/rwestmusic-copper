@@ -84,7 +84,10 @@
 # - (DONE) fix so that pulses handle breaks properly when reversed/not reversed
 # ---------------------------- ASAP
 # - more orchestrating gen b
-# - - - do something cool with the dissonance (Bb, A), at line3, event 27
+# - (DONE) - - do something cool with the dissonance (Bb, A), at line3, event 27
+# - - - better ending 16ths (cutoff tuba, add b clarinet, maybe piano, bassoon, etc.)
+# - - - more trills in bassoon and B cl.
+# - - - end of tuba part ... too long, also maybe shouldn't go up?
 # - (DONE) - - shape range of line 3 (e.g. start high and aned low?)
 # - - - string pizz mimic bass clarinet?
 # - - - add piano...?
@@ -109,9 +112,11 @@
           #   \stopMeasureCount
           # }
 
-
+# - piano repeated chords
 # - transposing parts
+# - - - REMEMBER ENGLISH HORN TRANSPOSITION WHERE APPROPRIATE ONLY!!!!!!
 # - tempo markings
+# # - better to put instrument changes on rest following last note (instead of on last note)
 # - rhythmic machine with cymbal roll
 # - print short scores
 # - create midi files / garage band projects for each short score generation
@@ -291,6 +296,8 @@
 # - easily construct phrases/segments/events/logical-ties more manually
 # - harmonics machie (reconstitute)
 # - tag at the logical tie/leaf level when defining fragments
+# - simple method to slur a bunch of notes with following notes 
+# - piano/harp/etc. part that can combine events from different lines
 
 import abjad
 from calliope import bubbles

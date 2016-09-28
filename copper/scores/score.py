@@ -4,7 +4,7 @@ import abjad
 from calliope import bubbles
 from copper.generations.gen_0 import orchestration_0
 from copper.generations.gen_a import orchestration_a
-# from copper.generations.gen_b import orchestration_b
+from copper.generations.gen_b import orchestration_b
 # from copper.generations.gen_c import orchestration_c
 # from copper.generations.gen_d import orchestration_d
 # from copper.generations.gen_e import orchestration_e
@@ -22,7 +22,7 @@ class CopperFullMusic(bubbles.GridSequence, staves.CopperMusic):
     grid_sequence = (
         orchestration_0.get_orchestration_0()(),
         orchestration_a.get_orchestration_a()(),
-        # orchestration_b.get_orchestration_b()(),
+        orchestration_b.get_orchestration_b()(),
         # orchestration_c.get_orchestration_c()(),
         # orchestration_d.get_orchestration_d()(),
         # orchestration_e.get_orchestration_e()(),

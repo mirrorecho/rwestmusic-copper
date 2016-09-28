@@ -1,4 +1,4 @@
-% 2016-09-25 22:05
+% 2016-09-27 22:51
 
 \version "2.18.2"
 \language "english"
@@ -392,8 +392,8 @@
                     }
                 }
                 \new Staff {
-                    \set Staff.instrumentName = \markup { "Perc. 2 - Vibraphone" }
-                    \set Staff.shortInstrumentName = \markup { Vib. }
+                    \set Staff.instrumentName = \markup { "Perc. 2 - Vib./Mar./Crot." }
+                    \set Staff.shortInstrumentName = \markup { Mar. }
                     \time 9/8
                     {
                         \numericTimeSignature

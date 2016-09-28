@@ -1,4 +1,4 @@
-% 2016-09-24 23:59
+% 2016-09-27 18:00
 
 \version "2.18.2"
 \language "english"
@@ -20,6 +20,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
+                \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                 \accidentalStyle modern-cautionary
                 {
                     \mark #2
@@ -34,7 +35,6 @@
                 \once \override Dots.color = #darkmagenta
                 \once \override NoteHead.color = #darkmagenta
                 \once \override Stem.color = #darkmagenta
-                \clef bass
                 d'4 ~ ^ \markup { 1 }
                 \once \override Accidental.color = #darkmagenta
                 \once \override Beam.color = #darkmagenta
@@ -225,6 +225,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
+                \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                 \accidentalStyle modern-cautionary
                 {
                     \mark #2
@@ -418,6 +419,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
+                \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                 \accidentalStyle modern-cautionary
                 {
                     \mark #2

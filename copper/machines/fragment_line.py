@@ -21,10 +21,14 @@ class Fragments(machines.IndexedData):
     items_type=FragmentInfo
 
     @classmethod
-    def it(cls, line_index, event_index, tags=(), **kwargs):
+    def it(cls, line_index, event_index, tags=(), offset=0, attack_offset=0, release_offset=0, **kwargs):
         if tags:
             tags = (tags,) if isinstance(tags, str) else tags
-        return Fragments.item(line=line_index, from_index=event_index, tags=tags, **kwargs)
+        if offset:
+            attack_offset = attack_offset + offset
+            release_offset = release_offset + offset
+        return Fragments.item(line=line_index, from_index=event_index, tags=tags, 
+                attack_offset=attack_offset, release_offset=release_offset,**kwargs)
 
     @classmethod
     def its(cls, line_index, event_range_tuple, tags=(), slur_me=False, **kwargs):

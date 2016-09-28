@@ -92,7 +92,7 @@ class Timpani(Arrange0):
 
 class Perc1(Arrange0):
     music = bubbles.Line(r"""
-        r4 c2.:32 ~ \pppp \< ^ \markup {" Susp. cymbal, yarn mallets "}
+        r4 c2.:32 ~ \pppp \< ^ \markup {" Sus. cymbal, yarn mallets "}
         c1:32 \pp \! ~
         c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ 
         c2:32 \< ~ c4.:32 ~ c8:32 \mf \!
@@ -100,7 +100,7 @@ class Perc1(Arrange0):
 
 class Perc2(Arrange0):
     music = bubbles.Line(r"""
-        R1*3 c4 \mp ^ \markup {" Susp. cymbal (same rubber mallets)"}
+        R1*3 c4 \mp ^ \markup {" Sus. cymbal (same rubber mallets)"}
         r4 r2
         R1 * 8
         """)

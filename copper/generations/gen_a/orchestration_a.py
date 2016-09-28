@@ -131,22 +131,25 @@ class Timpani(ArrangeA):
 class Perc1(ArrangeA):
     music = bubbles.Line(r"""
         R1 * 6
-        c4 \p ^ \markup {"Susp. cymbal, rubber mallets"} r4 r2 |
-        c4 r4 r2 |
+        c4 \p ^ \markup {"Sus. cymbal, rubber mallets"} r4 r2 |
+        c4 r4 r2 ^ \markup {"to tri."}  |
         R1 * 4 |
-        r4 c4 \p ^ \markup {"triangle", l.v.} r2 |
-        r4 c4 r2 | 
-        R1 * 4
+        r4 c4 \p ^ \markup {"triangle, l.v."} r2 |
+        r4 c4 r2 ^ \markup {"to sus. cym."} | 
+        R1 * 2 |
+        c1:32 ~ ^ \markup {"Sus. cymbal, yarn mallets "} |
+        c2:32 \< ~ c4.:32 ~ c8:32 \mf \!
         """)
 
 class Perc2(ArrangeA):
     music = bubbles.Line(r"""
         R1
-        c1:32 ~ \pppp \< ^ \markup {" Susp. cymbal, yarn mallets "}
+        c1:32 ~ \pppp \< ^ \markup {"Sus. cymbal, yarn mallets"}
         c1:32 \pp \! ~
         c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ 
-        c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ 
-        c2:32 \< ~ c4.:32 ~ c8:32 \mf \!
+        c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ c1:32 
+        R1 ^ \markup {"to mar."} |
+        R1
         """)
 
 class Vibes(ArrangeA):
