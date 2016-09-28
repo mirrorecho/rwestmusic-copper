@@ -11,7 +11,7 @@ class GenC(object):
     metrical_durations = ID(default=((1,1),), limit=24)
     rehearsal_mark_number = 3
     start_bar_line = "||"
-    # tempo_units_per_minute = 96
+    tempo_command = '\\note #"2." #1 = \\note #"1" #1 (\\note #"4" #1 = 96)'
 
 class Drone0(GenC, machines.Drone0):
     pass

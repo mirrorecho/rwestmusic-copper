@@ -27,7 +27,8 @@ class ArrangeC(gen_c.GenC, machines.FragmentLine, machines.PitchedLine):
     def update_data(self):
         super().update_data()
         if self.fragments:
-            self.segments[1].tag("mp")
+            if len(self.segments) > 1:
+                self.segments[1].tag("mp")
     respell="sharps"
 
 # ------------------------------------------------------------------------------------------------------------
@@ -145,22 +146,52 @@ class Trombone2(ArrangeC):
     pass
 
 class Tuba(ArrangeC):
-    pass
+    fragments = Frag.make(
+            *Frag.its(0, [1,4], offset=-2),
+        )
 
 # ------------------------------------------------------------------------------------------------------------
 # TIMPANI / PERCUSSION / HARP / PIANO
 
 class Timpani(ArrangeC):
-    pass
+    music = bubbles.Line(r"""
+        r2 d4 \> r4 | d4 r4 d4 r4 | d4 r4 d4 r4 | d4 \pp \! r4 r2 |
+        R1 * 17
+        \times 2/3 { d4 \p \< r4 d4 r4 d4 r4 }
+        \times 2/3 { d4 r4 d4 r4 d4 r4 }
+        \times 2/3 { d4 r4 d4 r4 d4 \mf \! r4 }
+        """)
 
 class Perc1(ArrangeC):
-    pass
+    music = bubbles.Line(r"""
+        r4 c2.:32 ~ \ppp \< |
+        c1:32 \p \! |
+        R1 * 18 |
+        #24
+        c1:32 ~ ^ \markup {"Sus. cymbal"} |
+        c1:32 ~ c1:32 ~ 
+        c2:32 \< ~ c4.:32 ~ c8:32 \mf \!
+        """)
 
 class Perc2(ArrangeC):
-    pass
+    music = bubbles.Line(r"""
+
+        R1 * 2
+        c1:32 ~ \p ^ \markup {"Sus. cymbal"}
+        c1:32 ~
+
+        c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ 
+        c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ c1:32 
+
+        R1 ^ \markup {"to mar."} |
+        R1 * 3
+        """)
 
 class Vibes(ArrangeC):
-    pass
+    music = bubbles.Line(r"""
+        \clef bass d4 \fff -> 
+        r4 r2 R1*23
+        """)
 
 class Harp1(ArrangeC):
     pass
@@ -281,13 +312,20 @@ class Viola2(ArrangeC):
         )
 
 class Cello1(ArrangeC):
+    music = bubbles.Line(r"""
+        #8
+        d1 \pp ~ d1 ~ d1 ~ d1 ~ d1 ~ d1 ~ d1 ~ d1 ~ 
+        #16
+        d1 ~ d1 ~ d1 ~ d1 ~ d1 ~ d1 ~ d1 ~ d1 ~ 
+        #24
+        d1 ~ d1 ~ d1 ~ d1 ~ d1 ~ d1 ~ d1 ~ d1
+        """)
+
+class Cello2(Cello1):
     pass
 
-class Cello2(ArrangeC):
-    pass
-
-class Bass(ArrangeC):
-    pass
+class Bass(Cello1):
+    transpose=12
 
 # ------------------------------------------------------------------------------------------------------------
 # ALL LINES ASSOCIATED WITH STAVES
