@@ -21,6 +21,9 @@ class Drone0(GenD, machines.Drone0):
     middle_dynamic = "mf"
     end_dynamic = "p"
 
+class Drone10(Drone0):
+    rhythm_initial_silence = 10.5
+
 # -------------------------------------------------------------------------------------------------
 
 class HarmonyLineGenD(GenD, machines.Harmony):
@@ -168,13 +171,14 @@ bubbles.illustrate_me(__file__,
     lambda: staves.CopperShortScore(
             bubbles.Bubble(
                 drone0 = Drone0(show_data_attr="original_depthwise_index", accidental_style="forget"),
+                drone10 = Drone10(show_data_attr="original_depthwise_index", accidental_style="forget"),
                 line1 = Line1(show_data_attr="original_depthwise_index", accidental_style="forget"),
                 line2 = Line2(show_data_attr="original_depthwise_index", accidental_style="forget"),
                 line3 = Line3(show_data_attr="original_depthwise_index", accidental_style="forget"),
                 line4 = Line4(show_data_attr="original_depthwise_index", accidental_style="forget"),
                 line5 = Line5(show_data_attr="original_depthwise_index", accidental_style="forget"),
             ),
-            sequence = ("line1","line2","line3","line4","line5","drone0"),
+            sequence = ("line1","line2","line3","line4","line5","drone0","drone10"),
             stylesheets = ("../../scores/stylesheets/shortscore.ily",)
         ).get_lilypond_file(),
     as_midi=True,

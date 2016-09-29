@@ -101,7 +101,8 @@ class CopperShortScoreStaves(BubbleStaffGroup):
     line8 = BubbleStaff(instrument=instrumenttools.Violin(instrument_name="Line 8", short_instrument_name="8:"))
     line9 = BubbleStaff(instrument=instrumenttools.Violin(instrument_name="Line 9", short_instrument_name="9:"))
     drone0 = BubbleStaff(instrument=instrumenttools.Cello(instrument_name="Drone", short_instrument_name="0:"), clef="bass")
-    sequence = ("line1","line2","line3","line4","line5","line6","line7","line8","line9","drone0")
+    drone10 = BubbleStaff(instrument=instrumenttools.Instrument(instrument_name="Drone 10", short_instrument_name="10:"), clef="bass")
+    sequence = ("line1","line2","line3","line4","line5","line6","line7","line8","line9","drone0","drone10")
 
 class CopperShortScore(BubbleScore):
     line1 = BubbleStaff(instrument=instrumenttools.Instrument(instrument_name="Line 1", short_instrument_name="1:"))
@@ -113,8 +114,9 @@ class CopperShortScore(BubbleScore):
     line7 = BubbleStaff(instrument=instrumenttools.Instrument(instrument_name="Line 7", short_instrument_name="7:"))
     line8 = BubbleStaff(instrument=instrumenttools.Instrument(instrument_name="Line 8", short_instrument_name="8:"))
     line9 = BubbleStaff(instrument=instrumenttools.Instrument(instrument_name="Line 9", short_instrument_name="9:"))
-    drone0 = BubbleStaff(instrument=instrumenttools.Instrument(instrument_name="Drone", short_instrument_name="0:"), clef="bass")
-    sequence = ("line1","line2","line3","line4","line5","line6","line7","line8","line9","drone0")
+    drone0 = BubbleStaff(instrument=instrumenttools.Instrument(instrument_name="Drone 0", short_instrument_name="0:"), clef="bass")
+    drone10 = BubbleStaff(instrument=instrumenttools.Instrument(instrument_name="Drone 10", short_instrument_name="10:"), clef="bass")
+    sequence = ("line1","line2","line3","line4","line5","line6","line7","line8","line9","drone0","drone10")
 
 
 class CopperScore(BubbleFormatLargeScore):

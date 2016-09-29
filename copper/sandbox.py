@@ -233,7 +233,7 @@
 # - performance and program notes
 # - (if time, else later)... warn if orchestrated lines don't inherit from arrangement base classes (i.e. they should be getting rehearsal marks, etc.)
 # - title page
-
+# ADD CANDY ADD CANDY ADD CANDY!!!! :-)
 
 # ---------------------------- FUTURE:
 # studio setup!!! 
@@ -298,6 +298,9 @@
 # - tag at the logical tie/leaf level when defining fragments
 # - simple method to slur a bunch of notes with following notes 
 # - piano/harp/etc. part that can combine events from different lines
+# - refactor so that all fragments.update_by should not be necessary
+# - better error handling when overlapping events create sorting problems in fragments
+# - odd problems if fragments moved before other fragments... fix?
 
 import abjad
 from calliope import bubbles

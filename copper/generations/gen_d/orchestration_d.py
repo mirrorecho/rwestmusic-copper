@@ -12,6 +12,7 @@ ID1 = machines.ID1
 
 LINES = ID({
     0:gen_d.Drone0(),
+    10:gen_d.Drone10(),
     1:gen_d.Line1(),
     2:gen_d.Line2(),
     3:gen_d.Line3(),
@@ -29,14 +30,22 @@ class ArrangeD(gen_d.GenD, machines.FragmentLine, machines.PitchedLine):
     def update_data(self):
         super().update_data()
         if self.fragments and len(self.segments)>1:
-            self.segments[1].tag("mp")
+            self.segments[1].tag("mf")
+
+FAST_METRICAL_DURATIONS = ID( default=((3,8),(3,8),(3,8),), limit=24  )
 
 # ------------------------------------------------------------------------------------------------------------
 # WINDS
 
 class Picc(ArrangeD):
+    metrical_durations = FAST_METRICAL_DURATIONS
     transpose=-12
     fragments = Frag.make(
+        Frag.it(1,13, chord_positions=-1, tags=["-"]),
+        Frag.it(1,14, chord_positions=-1, tags=["-"]),
+        Frag.it(1,15, chord_positions=-1, duration=0.5, tags=["-","."]),
+        Frag.it(5,17, tags=["-"]),
+        Frag.it(5,18, tags=["-"]),
         Frag.it(4,28, tags=[">"]),
         Frag.it(4,29, tags=[">"]),
         Frag.it(4,30, tags=[">"]),
@@ -52,7 +61,12 @@ class Picc(ArrangeD):
         self.respell_events("sharps")
 
 class Flute1(ArrangeD):
+    metrical_durations = FAST_METRICAL_DURATIONS
     fragments = Frag.make(
+        Frag.it(1,11, chord_positions=-1, tags=["-"]),
+        Frag.it(1,12, chord_positions=-1, tags=["-"]),
+        Frag.it(1,13, chord_positions=-2, tags=["-"]),
+        Frag.it(1,14, chord_positions=-2, tags=["-"]),
         Frag.it(4,36, tags=[">"]),
         Frag.it(4,37, tags=[">"]),
         Frag.it(4,38, tags=[">"]),
@@ -70,9 +84,16 @@ class Flute1(ArrangeD):
         self.respell_events("sharps")
 
 class Flute2(ArrangeD):
-    pass
+    metrical_durations = FAST_METRICAL_DURATIONS
+    fragments = Frag.make(
+        Frag.it(1,11, chord_positions=-2, tags=["-"]),
+        Frag.it(1,12, chord_positions=-2, tags=["-"]),
+        Frag.it(1,13, chord_positions=-0, tags=["-"]),
+        Frag.it(1,14, chord_positions=-0, tags=["-"]),
+    )
 
 class Oboe1(ArrangeD):
+    metrical_durations = FAST_METRICAL_DURATIONS
     fragments = Frag.make(
         Frag.it(4, 13, attack_offset=-1.5, keep_attack=True, tags=["pp","\<"]),
         Frag.it(4, 14, tags=["."]),
@@ -88,9 +109,11 @@ class Oboe1(ArrangeD):
     respell="sharps"
 
 class Oboe2(ArrangeD):
+    metrical_durations = FAST_METRICAL_DURATIONS
     pass
 
 class Clarinet1(ArrangeD):
+    metrical_durations = FAST_METRICAL_DURATIONS
     fragments = Frag.make(
         Frag.it(4, 20, tags=["mf","-"]),
         Frag.it(4, 21, tags=[".",">"]),
@@ -118,12 +141,27 @@ class Horn1(ArrangeD):
     fragments = Frag.make(
         *Frag.its(0,[1,4], offset=-4.5),
         *Frag.its(0,[5,8], offset=1.5),
+        *Frag.its(0,[9,12], offset=7.5),
+        Frag.it(0,17, offset=1.5),
+        Frag.it(0,18, duration=1, offset=1.5, tags=["f",">","-"]),
+        Frag.it(2,13, chord_positions=1, attack_offset=1, tags=[">","-"]),
+        Frag.it(10,17, offset=1.5, duration=1.5),
+        Frag.it(2,16, chord_positions=-1, duration=1.5, tags=[">","-","f"]),
+        Frag.it(0,21, duration=6),
+        Frag.it(2,19, chord_positions=-1, duration=1.5, tags=[">","-","f"]),
         )
+    # fragments.update_by(0,18, untags=["\>"])
+    def update_data(self, **kwargs):
+        super().update_data(**kwargs)
+        self.event_by(0,18).untag("\>")
 
 class Horn2(ArrangeD):
     fragments = Frag.make(
         *Frag.its(0,[1,4], offset=4.5),
         *Frag.its(0,[9,12], offset=-1.5),
+        *Frag.its(0,[13,16], offset=4.5),
+        Frag.it(10,17, ),
+        Frag.it(2,16, chord_positions=-2, duration=1.5, tags=[">","-","f"]),
         )
 
 class Trumpet1(ArrangeD):
@@ -133,10 +171,16 @@ class Trumpet2(ArrangeD):
     pass
 
 class Trombone1(ArrangeD):
-    pass
+    fragments = Frag.make(
+        Frag.it(0,17, offset=4.5, duration=1.5),
+        Frag.it(2,14, chord_positions=-1, tags=["f","-",">"]),
+        Frag.it(2,15, chord_positions=-2, tags=["-",">"]),
+    )
 
 class Trombone2(ArrangeD):
-    pass
+    fragments = Frag.make(
+        *Frag.its(10,[17,20], offset=3),
+        )
 
 class Tuba(ArrangeD):
     pass
@@ -187,6 +231,7 @@ class Harp2(ArrangeD):
     pass
 
 class Piano1(ArrangeD):
+    metrical_durations = gen_d.Line5.metrical_durations
     fragments = Frag.make(
         *Frag.its(5, (1,127)),
     )
@@ -221,9 +266,18 @@ class Piano2(ArrangeD):
 # STRINGS
 
 class ViolinI1(ArrangeD):
+    metrical_durations = ArrangeD.metrical_durations + {
+        12: ((3,8),(3,8),(3,8),),
+        13: ((3,8),(3,8),(3,8),),
+        14: ((3,8),(3,8),(3,8),),
+        15: ((3,8),(3,8),(3,8),),
+        16: ((3,8),(3,8),(3,8),),
+        17: ((3,8),(3,8),(3,8),),
+        18: ((3,8),(3,8),(3,8),),
+    }
     fragments = Frag.make( 
-        *Frag.its(2, (1,9), chord_positions=-1),
-        Frag.it(1, 10, chord_positions=-1),
+        *Frag.its(2, (1,9), chord_positions=-1, tags=["-"]),
+        Frag.it(1, 10, chord_positions=-1, tags=["-"]),
         # this is the solo violin part:
         Frag.it(4, 1, tags=["f","-",">","solo vln."]),
         Frag.it(4, 2, tags=["."]),
@@ -239,47 +293,53 @@ class ViolinI1(ArrangeD):
         Frag.it(4, 12, tags=[")","."]),
         *Frag.its(3, (4,28) ),
         )
-    fragments.update_by(2,7,tags=["tutti vln.I div 1","mp"])
+    fragments.update_by(2,7,tags=["tutti vln.I div 1","mf"])
     respell="sharps"
 
 # TO DO... use heterophony with violins to accent the meter and create more interest with this line
 class ViolinI2(ArrangeD):
+    metrical_durations = ViolinI1.metrical_durations 
     fragments = Frag.make(
-        *Frag.its(2, (1,9), chord_positions=-2),
-        Frag.it(1, 10, chord_positions=-2),
+        *Frag.its(2, (1,9), chord_positions=-2, tags=["-"]),
+        Frag.it(1, 10, chord_positions=-2, tags=["-"]),
         *Frag.its(3, (4,28) ),
         )
     respell="sharps"
 
 class ViolinII1(ArrangeD):
+    metrical_durations = ViolinI1.metrical_durations 
     fragments = Frag.make(
-        *Frag.its(1, (1,10), chord_positions=-1),
-        *Frag.its(2, (9,11), chord_positions=-1),
+        *Frag.its(1, (1,10), chord_positions=-1, tags=["-"]),
+        *Frag.its(2, (9,11), chord_positions=-1, tags=["-"]),
         *Frag.its(3, (4,28) ),
         )
+    fragments.update_by(1,6, duration=0.5, tags=[".",">"])
     respell="sharps"
 
 class ViolinII2(ArrangeD):
+    metrical_durations = ViolinI1.metrical_durations 
     fragments = Frag.make(
-        *Frag.its(1, (1,10), chord_positions=-2),
-        *Frag.its(2, (9,11), chord_positions=-2),
+        *Frag.its(1, (1,10), chord_positions=-2, tags=["-"]),
+        *Frag.its(2, (9,11), chord_positions=-2, tags=["-"]),
         *Frag.its(3, (4,28) ),
         )
+    fragments.update_by(1,6, duration=0.5, tags=[".",">"])
     respell="sharps"
 
 class Viola1(ArrangeD):
     fragments = Frag.make(
-        *Frag.its(2, (1,9), chord_positions=0),
-        Frag.it(1, 10, chord_positions=0),
+        *Frag.its(2, (1,9), chord_positions=0, tags=["-"]),
+        Frag.it(1, 10, chord_positions=0, tags=["-"]),
         )
     respell="sharps"
 
 
 class Viola2(Viola1):
     fragments = Frag.make(
-        *Frag.its(1, (1,10), chord_positions=0),
-        *Frag.its(2, (9,11), chord_positions=0),
+        *Frag.its(1, (1,10), chord_positions=0, tags=["-"]),
+        *Frag.its(2, (9,11), chord_positions=0, tags=["-"]),
         )
+    fragments.update_by(1,6, duration=0.5, tags=[".",">"])
     respell="sharps"
     
 
@@ -333,6 +393,7 @@ def get_orchestration_d():
         cello2 = Cello2()
         bass = Bass()
         drone0 = LINES[0].show_data(show_data_attr="original_depthwise_index")
+        drone10 = LINES[10].show_data(show_data_attr="original_depthwise_index")
         line1 = LINES[1].show_data(show_data_attr="original_depthwise_index")
         line2 = LINES[2].show_data(show_data_attr="original_depthwise_index")
         line3 = LINES[3].show_data(show_data_attr="original_depthwise_index")
@@ -348,7 +409,8 @@ bubbles.illustrate_me(__file__,
         get_orchestration_d()(), 
         title="Copper: D", 
         show_short_score=True, 
-        hide_empty=True).get_lilypond_file()
+        hide_empty=True).get_lilypond_file(),
+    as_midi=False
     )
 
 
