@@ -234,6 +234,8 @@
 # - (if time, else later)... warn if orchestrated lines don't inherit from arrangement base classes (i.e. they should be getting rehearsal marks, etc.)
 # - title page
 # ADD CANDY ADD CANDY ADD CANDY!!!! :-)
+# - F measure 12 ... maybe clarinet is too loud for this pause?
+# F masure 15, E against Eb Ok?
 
 # ---------------------------- FUTURE:
 # studio setup!!! 
@@ -242,6 +244,7 @@
 # - - - lower desk is better for tall monitors
 # - I LOATHE GARAGE BAND... need some better way to create playback
 # - fix clefs in short scores
+# - auto metric durations
 # - replace some class-defined stuff with modules / introspection (i.e. should not need to create a class to describe grid bubble lines that are described above)
 # - think about data cleanup carefully, and adjust
 # - parts need to be WAY WAY WAY simpler to generate!!!!
@@ -301,6 +304,7 @@
 # - refactor so that all fragments.update_by should not be necessary
 # - better error handling when overlapping events create sorting problems in fragments
 # - odd problems if fragments moved before other fragments... fix?
+# - smarter tagging with patterns
 
 import abjad
 from calliope import bubbles
