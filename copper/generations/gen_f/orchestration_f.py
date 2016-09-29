@@ -78,7 +78,14 @@ class Oboe2(ArrangeF):
 
 class Clarinet1(ArrangeF):
     fragments = Frag.make(
-        *Frag.its(6, [1,9]),
+        Frag.it(6, 1),
+        Frag.it(6, 2),
+        Frag.it(6, 3),
+        Frag.it(6, 4, transpose=12),
+        Frag.it(6, 5),
+        Frag.it(6, 6),
+        Frag.it(6, 7),
+        Frag.it(6, 8),
         *Frag.its(6, [15,19]),
         Frag.it(6, 55),
         Frag.it(6, 56),
@@ -405,7 +412,7 @@ bubbles.illustrate_me(__file__,
     lambda: staves.CopperScore( 
         get_orchestration_f()(), 
         title="Copper: F", 
-        show_short_score=False, 
+        show_short_score=True, 
         hide_empty=True).get_lilypond_file(),
-    as_midi=True
+    # as_midi=True
     )

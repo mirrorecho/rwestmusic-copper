@@ -1,4 +1,4 @@
-% 2016-09-29 05:10
+% 2016-09-29 05:19
 
 \version "2.18.2"
 \language "english"
@@ -2209,25 +2209,25 @@
                 \once \override Dots.color = #red
                 \once \override NoteHead.color = #red
                 \once \override Stem.color = #red
-                gf,4 ~ ^ \markup { 36 }
+                fs,4 ~ ^ \markup { 36 }
                 \once \override Accidental.color = #red
                 \once \override Beam.color = #red
                 \once \override Dots.color = #red
                 \once \override NoteHead.color = #red
                 \once \override Stem.color = #red
-                gf,2.
+                fs,2.
                 \once \override Accidental.color = #red
                 \once \override Beam.color = #red
                 \once \override Dots.color = #red
                 \once \override NoteHead.color = #red
                 \once \override Stem.color = #red
-                gf,4 ~ ^ \markup { 37 }
+                fs,4 ~ ^ \markup { 37 }
                 \once \override Accidental.color = #red
                 \once \override Beam.color = #red
                 \once \override Dots.color = #red
                 \once \override NoteHead.color = #red
                 \once \override Stem.color = #red
-                gf,4
+                fs,4
                 \once \override Accidental.color = #red
                 \once \override Beam.color = #red
                 \once \override Dots.color = #red

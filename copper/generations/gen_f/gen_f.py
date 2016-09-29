@@ -17,8 +17,8 @@ class GenF(object):
     respell = None
     def update_data(self, **kwargs):
         super().update_data(**kwargs)
-        self.respell_events("flats", 1, 42)
-        self.respell_events("sharps",  44)
+        # self.respell_events("flats", 1, 42)
+        # self.respell_events("sharps",  44)
 
 class Drone0(GenF, machines.Drone0):
     rhythm_initial_silence=2
@@ -114,7 +114,7 @@ class Line2(GenF, gen_e.Line2):
 
     pitch_displacement = pitch_displacement_fifths + pitch_displacement_octaves
 
-    print(pitch_displacement)
+    # print(pitch_displacement)
 
     breaks = gen_e.Line1.breaks.copy()
     rhythm_initial_silence = 28
