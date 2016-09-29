@@ -14,6 +14,11 @@ class GenF(object):
     rhythm_initial_silence = 27
     # tempo_units_per_minute = 144
     start_bar_line = "||"
+    respell = None
+    def update_data(self, **kwargs):
+        super().update_data(**kwargs)
+        self.respell_events("flats", 1, 42)
+        self.respell_events("sharps",  44)
 
 class Drone0(GenF, machines.Drone0):
     rhythm_initial_silence=2
@@ -27,10 +32,11 @@ class Line3(GenF, gen_e.Line4):
     # rhythm_reverse = list(gen_e.Line4.rhythm_reverse)
     # rhythm_reverse.remove(7)
     rhythm_initial_silence=23
+    pitch_reverse = gen_e.Line4.pitch_reverse + (19,25)
     show_data_type=machines.EventData
     pitch_displacement =  machines.FifthDisplacement(
-            up=(     6,7,             19,20, 22, 24, 26),
-            down=(2,4,  8,9,12, 16, 18,    21, 23, )
+            up=(     6,7,             19,20, 22, 24, 26, 30, 58,76),
+            down=(2,4,  8,9,12, 16, 18,    21,  )
             ) +\
         machines.OctaveDisplacement(
             up=(1,3,4,9,     12, 16,  21),
@@ -49,8 +55,8 @@ class Line3(GenF, gen_e.Line4):
     rhythm_times = 3 # NOTE... 3rd time cuts off... maybe that's Ok
     rhythm_multipliers = gen_e.Line4.rhythm_multipliers
     rhythm_multipliers[18]=1
-    respell = "flats"
     clef="treble"
+
 
     # def update_data(self):
     #     super().update_data()
@@ -67,9 +73,11 @@ class Line1(GenF, gen_e.Line1):
     pitch_displacement[38] = set((7,))
     pitch_displacement[40] = set()
     pitch_displacement[52] = set()
+    pitch_displacement.flat(29)
+    pitch_displacement[32] = set((-7,))
+    pitch_displacement.flat(45)
+    pitch_displacement[58] = set((12,))
     pitch_displacement.flat(111)
-    # pitch_displacement[39] = set((-12))
-    respell = "flats"
     # print(pitch_displacement)
 
     # show_data_type = machines.SegmentData
@@ -85,6 +93,10 @@ class Line1(GenF, gen_e.Line1):
     breaks[7] = -6
     breaks[10] = 2.5
     breaks[15] = 1.5
+    def update_data(self, **kwargs):
+        super().update_data(**kwargs)
+        self.respell_events("flats", 1, 18)
+        self.respell_events("sharps",  19)
 
 # -------------------------------------------------------------------------------------------------
 class Line2(GenF, gen_e.Line2):
@@ -94,7 +106,7 @@ class Line2(GenF, gen_e.Line2):
     pitch_displacement_fifths.cycle_me(1, cycle=(1,-1,-1,1), times=36)
     pitch_displacement_fifths.down(12)
     pitch_displacement_fifths.up(34)
-    pitch_displacement_fifths.flat(46,56,71,80,82,92,95,104,107,116,119)
+    pitch_displacement_fifths.flat(45,46,54,56,71,80,82,92,95,104,106,107,116,119,135)
     pitch_displacement_octaves = machines.OctaveDisplacement()
     pitch_displacement_octaves.cycle_me(1, cycle=(-1,1,0,-1,1,0), times=28)
     pitch_displacement_octaves.flat(13)
@@ -102,7 +114,7 @@ class Line2(GenF, gen_e.Line2):
 
     pitch_displacement = pitch_displacement_fifths + pitch_displacement_octaves
 
-    # print(pitch_displacement)
+    print(pitch_displacement)
 
     breaks = gen_e.Line1.breaks.copy()
     rhythm_initial_silence = 28
@@ -121,11 +133,12 @@ class Line2(GenF, gen_e.Line2):
     # for i,p in Line3.pitch_displacement.non_default_items():
     #     for j in range(2):
     #         pitch_displacement[i + j*27] |= p
-    respell = "flats"
     def update_data(self, **kwargs):
         super().update_data(**kwargs)
         if self.__class__ is Line2:
             self.events[1].tag("\clef bass")
+        self.respell_events("flats", 1, 33)
+        self.respell_events("sharps",  34)
 
 # -------------------------------------------------------------------------------------------------
 
@@ -134,17 +147,17 @@ class Line4(GenF, gen_e.Line3):
     rhythm_initial_silence = 28
     pitch_displacement = gen_e.Line3.pitch_displacement +\
         machines.FifthDisplacement(
-            up=   (    11,         25, 26, 27, 31),
-            down= (1,4,7,10, 12, 14, 15, 18,        )) +\
+            up=   (                 16,17, 25, 26, 27, 31, 79),
+            down= (1,4,7, 12, 14, 15,         )) +\
         machines.OctaveDisplacement(
-            up=  ( 4, 7,10,),
-            down=(1,  28))
+            up=  ( 4, 7,  19, ),
+            down=(1,    17, 28, 56))
     pitch_reverse = gen_e.Line3.pitch_reverse + (3,)
     breaks = gen_e.Line3.breaks + {
-        # 2:-6,
+        2:-2,
+        4:-5,
         10:4,
         }
-    respell = "flats"
     def update_data(self, **kwargs):
         super().update_data(**kwargs)
         if self.__class__ is Line4:
@@ -163,14 +176,13 @@ class Line5(GenF, gen_e.Line5):
     breaks[1] = -2
     pitch_displacement = gen_e.Line5.pitch_displacement +\
         machines.FifthDisplacement(
-            up = (3,12,14,15,37),
-            down=(2,5,6,7,9),
+            up = ( 3,           11,13,14,15,32,33,34,37,44),
+            down=(2,5,6,7,9,10,                       42),
             )  + \
         machines.OctaveDisplacement(
             up=(7,9),
-            down=(12,14),
+            down=(13,14, 32, 35),
             )
-    respell = "flats"
     def update_data(self, **kwargs):
         super().update_data(**kwargs)
         if self.__class__ is Line5:
@@ -186,14 +198,13 @@ class Line6(GenF, gen_e.Line6):
     breaks[19] = -4
     pitch_displacement = gen_e.Line6.pitch_displacement +\
         machines.FifthDisplacement(
-            down=(3,7,12),
-            up = (29,35,38)
+            up = (         28,29,35,38),
+            down=(1,3,7,12),
             ) + \
         machines.OctaveDisplacement(
-            up=(3,9,12),
-            down=(47,)
+            up=(1,3,9,),
+            down=(   29,47,)
             )
-    respell = "flats"
     # print(pitch_displacement)
 # -------------------------------------------------------------------------------------------------
 
@@ -213,12 +224,12 @@ class Line7(GenF, gen_e.Line6):
     rhythm_times = 2
     pitch_displacement = gen_e.Line6.pitch_displacement +\
         machines.FifthDisplacement(
-            up = (      11,12,17,  32),
-            down=(1,2,3,       18),
+            up = (      11,12,17,  32, 38,48),
+            down=(0,1,2,3,       18),
             ) + \
         machines.OctaveDisplacement(
-            up=(1,2,3,  23,  36),
-            down=(10, 19,  35)
+            up=(1,2,3,  23,  36,     48),
+            down=(10, 19,       40,46)
             )
     def update_data(self, **kwargs):
         super().update_data(**kwargs)
@@ -231,13 +242,13 @@ bubbles.illustrate_me(__file__,
             bubbles.Bubble(
                 drone0 = Drone0(show_data_attr="original_depthwise_index"),
                 drone10 = Drone10(show_data_attr="original_depthwise_index"),
-                # line1 = Line1(show_data_attr="original_depthwise_index"),
-                # line2 = Line2(show_data_attr="original_depthwise_index"),
+                line1 = Line1(show_data_attr="original_depthwise_index"),
+                line2 = Line2(show_data_attr="original_depthwise_index"),
                 line3 = Line3(show_data_attr="original_depthwise_index"),
                 line4 = Line4(show_data_attr="original_depthwise_index", clef="bass"),
                 line5 = Line5(show_data_attr="original_depthwise_index"),
-                # line6 = Line6(show_data_attr="original_depthwise_index"),
-                # line7 = Line7(show_data_attr="original_depthwise_index"),
+                line6 = Line6(show_data_attr="original_depthwise_index"),
+                line7 = Line7(show_data_attr="original_depthwise_index"),
             ),
             sequence = ("line1","line2","line3","line4","line5","line6","line7","drone0","drone10"),
             stylesheets = ("../../scores/stylesheets/shortscore.ily",)

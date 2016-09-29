@@ -66,7 +66,7 @@ class Line3(GenE, machines.RhythmsReverse, machines.PitchesReverse, gen_d.Line3)
     # TO DO... use better ID methods to populate these...
     rhythm_reverse = (1,2,3,4,6,7,8,10,11,12,13,15,16,17)
     rhythm_initial_silence = 23
-    rhythm_times = 2
+    rhythm_times = 4
 
 
 # -------------------------------------------------------------------------------------------------
