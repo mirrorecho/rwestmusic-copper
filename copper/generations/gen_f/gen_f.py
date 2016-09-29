@@ -12,7 +12,7 @@ class GenF(object):
     metrical_durations = ID(default=((4,4),), limit=36)
     rehearsal_mark_number = 6
     rhythm_initial_silence = 27
-    # tempo_units_per_minute = 144
+    tempo_command = '\\note #"2." #1 = \\note #"1" #1 (\\note #"4" #1 = 144)'
     start_bar_line = "||"
     respell = None
     def update_data(self, **kwargs):
@@ -24,7 +24,21 @@ class Drone0(GenF, machines.Drone0):
     rhythm_initial_silence=2
 
 class Drone10(Drone0):
-    rhythm_initial_silence=8
+    # show_data_attr="original_depthwise_index"
+    rhythm_initial_silence=2
+    rhythm_segments = (
+        # NOTE... include others here?
+        (1,1,1,1,),
+    )
+    rhythm_sequence = ID({
+        # NOTE: could cycle through a few possibilities
+        }, default=0, limit=36)
+    pitch_sequence = ID(default=0, limit=34)
+    
+    def update_data(self, **kwargs):
+        machines.ArrangeAttachments.update_data(self, **kwargs)
+        if self.__class__.__name__ == "Drone10":
+            self.tag_events("grey", every_child=True)
 
 # -------------------------------------------------------------------------------------------------
 

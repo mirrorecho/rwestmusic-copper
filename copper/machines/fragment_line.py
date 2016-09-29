@@ -17,6 +17,7 @@ class FragmentInfo(machines.SetAttributeMixin):
     tags = () # a tuple that can be used to create a set of tags to be added to the new event
     untags = None # ditto for untagging
     transpose = 0
+    harmonies = ()
 
 class Fragments(machines.IndexedData):
     items_type=FragmentInfo
@@ -121,12 +122,18 @@ class FragmentLine(object):
             for ticks_before, i, original_event, line_index, fragment in sorted_events_fragments: 
                 if ticks_before >=0:
                     new_event = original_event.copy()
+                    new_event.from_line = line_index
+
                     if fragment.transpose:
                         if isinstance(new_event.pitch, (list,tuple)):
-                            new_event.pitch = [p + fragment.transpose for p in new_event.pitch]
+                            new_event.pitch = sorted([p + fragment.transpose for p in new_event.pitch])
                         else:
                             new_event.pitch += fragment.transpose
-                    new_event.from_line = line_index
+                    if fragment.harmonies:
+                        if isinstance(new_event.pitch, (list,tuple)):
+                            new_event.pitch = sorted(new_event.pitch + [h + new_event.pitch[0] for h in fragment.harmonies])
+                        else:
+                            new_event.pitch = sorted([new_event.pitch] + [h + new_event.pitch for h in fragment.harmonies])
                     if isinstance(new_event.pitch, (list,tuple)) and fragment.chord_positions is not None:
                         chord_positions = fragment.chord_positions
                         # just so we don't have to use lists/tuples everywere:
