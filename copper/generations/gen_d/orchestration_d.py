@@ -149,11 +149,17 @@ class Horn1(ArrangeD):
         Frag.it(2,16, chord_positions=-1, duration=1.5, tags=[">","-","f"]),
         Frag.it(0,21, duration=6),
         Frag.it(2,19, chord_positions=-1, duration=1.5, tags=[">","-","f"]),
+        Frag.it(10,21, offset=3),
+        Frag.it(10,22, duration=1, offset=3, tags=["f",">","-"]),
+        Frag.it(2,22, chord_positions=1, offset=1, duration=0.5, tags=[">","-"]),
+        *Frag.its(10,[25,28], offset=3),
+        *Frag.its(0,[33,35], offset=3),
         )
     # fragments.update_by(0,18, untags=["\>"])
     def update_data(self, **kwargs):
         super().update_data(**kwargs)
         self.event_by(0,18).untag("\>")
+        self.event_by(10,22).untag("\>")
 
 class Horn2(ArrangeD):
     fragments = Frag.make(
@@ -162,6 +168,9 @@ class Horn2(ArrangeD):
         *Frag.its(0,[13,16], offset=4.5),
         Frag.it(10,17, ),
         Frag.it(2,16, chord_positions=-2, duration=1.5, tags=[">","-","f"]),
+        Frag.it(0,25, offset=3),
+        Frag.it(2,25, chord_positions=-1, duration=3, tags=[">","-","f"]),
+        *Frag.its(10,[29,32],),
         )
 
 class Trumpet1(ArrangeD):
@@ -174,16 +183,37 @@ class Trombone1(ArrangeD):
     fragments = Frag.make(
         Frag.it(0,17, offset=4.5, duration=1.5),
         Frag.it(2,14, chord_positions=-1, tags=["f","-",">"]),
-        Frag.it(2,15, chord_positions=-2, tags=["-",">"]),
+        Frag.it(10,21, offset=-1.5, duration=4.5),
+        Frag.it(2,20, chord_positions=-2, tags=["f","-",">"]),
+        Frag.it(10,25, ),
+        Frag.it(10,26, duration=0.5, tags=["f", ".",">"]),
     )
 
 class Trombone2(ArrangeD):
     fragments = Frag.make(
-        *Frag.its(10,[17,20], offset=3),
+        Frag.it(10,17, offset=3, duration=6),
+        Frag.it(2,17, chord_positions=-2, tags=["f","-",">"]),
+        Frag.it(0,25, ),
+        Frag.it(10,25, ),
+        Frag.it(10,26, duration=0.5, tags=["f", ".",">"]),
+        Frag.it(2,23, chord_positions=-1, tags=["f", "-",">"]),
         )
 
 class Tuba(ArrangeD):
-    pass
+    fragments = Frag.make(
+        Frag.it(10,17, ),
+        Frag.it(2,15, chord_positions=-2, tags=["-",">","f"]),
+        Frag.it(0,21, offset=1.5),
+        Frag.it(2,18, chord_positions=-2, tags=["-",">","f"]),
+        Frag.it(10,21, offset=1.5),
+        Frag.it(2,21, chord_positions=-2, tags=["-",">","f"]),
+        Frag.it(0,25, offset=1.5),
+        Frag.it(2,24, chord_positions=-1, tags=["-",">","f"]),
+        Frag.it(2,27, chord_positions=-2, duration=4.5, tags=["f",">"]),
+        )
+    # def update_data(self, **kwargs):
+    #     super().update_data(**kwargs)
+    #     self.event_by(0,18).untag("\>")
 
 # ------------------------------------------------------------------------------------------------------------
 # TIMPANI / PERCUSSION / HARP / PIANO
@@ -274,6 +304,7 @@ class ViolinI1(ArrangeD):
         16: ((3,8),(3,8),(3,8),),
         17: ((3,8),(3,8),(3,8),),
         18: ((3,8),(3,8),(3,8),),
+        19: ((3,8),(3,8),(3,8),),
     }
     fragments = Frag.make( 
         *Frag.its(2, (1,9), chord_positions=-1, tags=["-"]),
@@ -314,6 +345,7 @@ class ViolinII1(ArrangeD):
         *Frag.its(3, (4,28) ),
         )
     fragments.update_by(1,6, duration=0.5, tags=[".",">"])
+    fragments.update_by(1,7, attack_offset=1.5)
     respell="sharps"
 
 class ViolinII2(ArrangeD):
@@ -324,6 +356,7 @@ class ViolinII2(ArrangeD):
         *Frag.its(3, (4,28) ),
         )
     fragments.update_by(1,6, duration=0.5, tags=[".",">"])
+    fragments.update_by(1,7, attack_offset=1.5)
     respell="sharps"
 
 class Viola1(ArrangeD):
@@ -340,6 +373,7 @@ class Viola2(Viola1):
         *Frag.its(2, (9,11), chord_positions=0, tags=["-"]),
         )
     fragments.update_by(1,6, duration=0.5, tags=[".",">"])
+    fragments.update_by(1,7, attack_offset=1.5)
     respell="sharps"
     
 

@@ -1,4 +1,4 @@
-% 2016-09-28 19:22
+% 2016-09-28 22:15
 
 \version "2.18.2"
 \language "english"
@@ -351,13 +351,13 @@
                 \once \override Dots.color = #darkgreen
                 \once \override NoteHead.color = #darkgreen
                 \once \override Stem.color = #darkgreen
-                <ds''' e''' fs'''>2. ^ \markup { 7 }
+                <gs'' e''' fs'''>2. ^ \markup { 7 }
                 \once \override Accidental.color = #darkgreen
                 \once \override Beam.color = #darkgreen
                 \once \override Dots.color = #darkgreen
                 \once \override NoteHead.color = #darkgreen
                 \once \override Stem.color = #darkgreen
-                <cs'' fs'' b''>4. ^ \markup { 8 }
+                <cs'' e'' fs''>4. ^ \markup { 8 }
                 \once \override Accidental.color = #darkgreen
                 \once \override Beam.color = #darkgreen
                 \once \override Dots.color = #darkgreen

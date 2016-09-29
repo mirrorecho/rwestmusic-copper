@@ -65,7 +65,7 @@ class Line2(HarmonyLineGenD, gen_c.Line2):
     rhythm_initial_silence = 6 * (3 * 3/2)
     pitch_displacement = gen_c.Line3.pitch_displacement +\
             machines.FifthDisplacement(
-                        down=(23,24,27,28,29)
+                        down=(21,24,27,28,29)
                         )
     pitch_displacement.cycle_me(30, cycle=(-1, -1, 0,-1,-1, 1, 1, 1, 1),  times=9)
     pitch_displacement.flat(68)
