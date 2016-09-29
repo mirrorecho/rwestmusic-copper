@@ -16,24 +16,28 @@ class GenF(object):
     start_bar_line = "||"
 
 class Drone0(GenF, machines.Drone0):
-    pass
+    rhythm_initial_silence=2
+
+class Drone10(Drone0):
+    rhythm_initial_silence=8
 
 # -------------------------------------------------------------------------------------------------
 
 class Line3(GenF, gen_e.Line4):
     # rhythm_reverse = list(gen_e.Line4.rhythm_reverse)
     # rhythm_reverse.remove(7)
+    rhythm_initial_silence=23
     show_data_type=machines.EventData
     pitch_displacement =  machines.FifthDisplacement(
-            up=(     6,7,     16, 19,20, 22, 24, 26),
-            down=(2,4,  8,9,12, 18,    21, 23, )
+            up=(     6,7,             19,20, 22, 24, 26),
+            down=(2,4,  8,9,12, 16, 18,    21, 23, )
             ) +\
         machines.OctaveDisplacement(
-            up=(1,3,4,9,    12,  18,  21),
-            down=(5,7,        16,  19,  22, 26)
+            up=(1,3,4,9,     12, 16,  21),
+            down=(5,7,    11,     19,  22, 26)
             ) 
     breaks = gen_e.Line4.breaks + ID({
-        1:1,
+        1:5,
         3:1,
         10:-4,
         11:0,
@@ -127,16 +131,18 @@ class Line2(GenF, gen_e.Line2):
 
 class Line4(GenF, gen_e.Line3):
     # show_data_type=machines.SegmentData
+    rhythm_initial_silence = 28
     pitch_displacement = gen_e.Line3.pitch_displacement +\
         machines.FifthDisplacement(
             up=   (    11,         25, 26, 27, 31),
-            down= (1,10, 14, 15, 18,        )) +\
+            down= (1,4,7,10, 12, 14, 15, 18,        )) +\
         machines.OctaveDisplacement(
-            up=  (  10,),
+            up=  ( 4, 7,10,),
             down=(1,  28))
     pitch_reverse = gen_e.Line3.pitch_reverse + (3,)
     breaks = gen_e.Line3.breaks + {
-        10:4
+        # 2:-6,
+        10:4,
         }
     respell = "flats"
     def update_data(self, **kwargs):
@@ -157,8 +163,8 @@ class Line5(GenF, gen_e.Line5):
     breaks[1] = -2
     pitch_displacement = gen_e.Line5.pitch_displacement +\
         machines.FifthDisplacement(
-            up = (12,14,15,37),
-            down=(5,7,9),
+            up = (3,12,14,15,37),
+            down=(2,5,6,7,9),
             )  + \
         machines.OctaveDisplacement(
             up=(7,9),
@@ -173,7 +179,7 @@ class Line5(GenF, gen_e.Line5):
 # -------------------------------------------------------------------------------------------------
 
 class Line6(GenF, gen_e.Line6):
-    rhythm_initial_silence = 35
+    rhythm_initial_silence = 36
     # show_data_type = machines.SegmentData
     breaks = gen_e.Line6.breaks
     breaks[6] = 0.5
@@ -224,15 +230,16 @@ bubbles.illustrate_me(__file__,
     lambda: staves.CopperShortScore(
             bubbles.Bubble(
                 drone0 = Drone0(show_data_attr="original_depthwise_index"),
-                line1 = Line1(show_data_attr="original_depthwise_index"),
-                line2 = Line2(show_data_attr="original_depthwise_index"),
+                drone10 = Drone10(show_data_attr="original_depthwise_index"),
+                # line1 = Line1(show_data_attr="original_depthwise_index"),
+                # line2 = Line2(show_data_attr="original_depthwise_index"),
                 line3 = Line3(show_data_attr="original_depthwise_index"),
                 line4 = Line4(show_data_attr="original_depthwise_index", clef="bass"),
                 line5 = Line5(show_data_attr="original_depthwise_index"),
-                line6 = Line6(show_data_attr="original_depthwise_index"),
-                line7 = Line7(show_data_attr="original_depthwise_index"),
+                # line6 = Line6(show_data_attr="original_depthwise_index"),
+                # line7 = Line7(show_data_attr="original_depthwise_index"),
             ),
-            sequence = ("line1","line2","line3","line4","line5","line6","line7","drone0"),
+            sequence = ("line1","line2","line3","line4","line5","line6","line7","drone0","drone10"),
             stylesheets = ("../../scores/stylesheets/shortscore.ily",)
         ).get_lilypond_file(),
     as_midi=True,
