@@ -1,4 +1,4 @@
-% 2016-09-27 00:18
+% 2016-09-28 23:23
 
 \version "2.18.2"
 \language "english"
@@ -20,6 +20,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
+                \tempo \markup \fontsize #3 { \note #"8" #1 = \note #"8" #1 (\note #"4" #1 = 108) }
                 \accidentalStyle modern-cautionary
                 {
                     \mark #5
@@ -247,6 +248,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
+                \tempo \markup \fontsize #3 { \note #"8" #1 = \note #"8" #1 (\note #"4" #1 = 108) }
                 \accidentalStyle modern-cautionary
                 {
                     \mark #5
@@ -297,13 +299,13 @@
                 \once \override Dots.color = #darkgreen
                 \once \override NoteHead.color = #darkgreen
                 \once \override Stem.color = #darkgreen
-                <b c' d'>2. ^ \markup { 7 }
+                <e c' d'>2. ^ \markup { 7 }
                 \once \override Accidental.color = #darkgreen
                 \once \override Beam.color = #darkgreen
                 \once \override Dots.color = #darkgreen
                 \once \override NoteHead.color = #darkgreen
                 \once \override Stem.color = #darkgreen
-                <d e g>4. ^ \markup { 8 }
+                <c d e>4. ^ \markup { 8 }
                 \once \override Accidental.color = #darkgreen
                 \once \override Beam.color = #darkgreen
                 \once \override Dots.color = #darkgreen
@@ -506,6 +508,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
+                \tempo \markup \fontsize #3 { \note #"8" #1 = \note #"8" #1 (\note #"4" #1 = 108) }
                 \accidentalStyle modern-cautionary
                 {
                     \mark #5
@@ -890,6 +893,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
+                \tempo \markup \fontsize #3 { \note #"8" #1 = \note #"8" #1 (\note #"4" #1 = 108) }
                 \accidentalStyle modern-cautionary
                 {
                     \mark #5
@@ -1274,6 +1278,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
+                \tempo \markup \fontsize #3 { \note #"8" #1 = \note #"8" #1 (\note #"4" #1 = 108) }
                 \accidentalStyle modern-cautionary
                 {
                     \mark #5
@@ -1658,6 +1663,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
+                \tempo \markup \fontsize #3 { \note #"8" #1 = \note #"8" #1 (\note #"4" #1 = 108) }
                 \accidentalStyle modern-cautionary
                 {
                     \mark #5
@@ -2145,12 +2151,13 @@
         }
         \new Staff {
             \clef "bass"
-            \set Staff.instrumentName = \markup { Drone }
+            \set Staff.instrumentName = \markup { "Drone 0" }
             \set Staff.shortInstrumentName = \markup { 0: }
             \time 3/4
             {
                 \numericTimeSignature
                 \bar "||"
+                \tempo \markup \fontsize #3 { \note #"8" #1 = \note #"8" #1 (\note #"4" #1 = 108) }
                 \accidentalStyle modern-cautionary
                 {
                     \mark #5
@@ -2162,7 +2169,7 @@
                 \once \override Dots.color = #grey
                 \once \override NoteHead.color = #grey
                 \once \override Stem.color = #grey
-                d2. \pp ~ \< ^ \markup { 1 }
+                d2. \p ~ \< ^ \markup { 1 }
                 \once \override Accidental.color = #grey
                 \once \override Beam.color = #grey
                 \once \override Dots.color = #grey
@@ -2174,7 +2181,7 @@
                 \once \override Dots.color = #grey
                 \once \override NoteHead.color = #grey
                 \once \override Stem.color = #grey
-                d2. \pp ^ \markup { 3 }
+                d2. \p ^ \markup { 3 }
                 {
                     R1 * 3/4
                 }
@@ -2183,7 +2190,7 @@
                 \once \override Dots.color = #grey
                 \once \override NoteHead.color = #grey
                 \once \override Stem.color = #grey
-                d2. \pp ~ \< ^ \markup { 5 }
+                d2. \p ~ \< ^ \markup { 5 }
                 \once \override Accidental.color = #grey
                 \once \override Beam.color = #grey
                 \once \override Dots.color = #grey
@@ -2195,7 +2202,7 @@
                 \once \override Dots.color = #grey
                 \once \override NoteHead.color = #grey
                 \once \override Stem.color = #grey
-                d2. \pp ^ \markup { 7 }
+                d2. \p ^ \markup { 7 }
                 {
                     R1 * 3/4
                 }
@@ -2204,7 +2211,7 @@
                 \once \override Dots.color = #grey
                 \once \override NoteHead.color = #grey
                 \once \override Stem.color = #grey
-                d2. \pp ~ \< ^ \markup { 9 }
+                d2. \p ~ \< ^ \markup { 9 }
                 \once \override Accidental.color = #grey
                 \once \override Beam.color = #grey
                 \once \override Dots.color = #grey
@@ -2216,7 +2223,7 @@
                 \once \override Dots.color = #grey
                 \once \override NoteHead.color = #grey
                 \once \override Stem.color = #grey
-                d2. \pp ^ \markup { 11 }
+                d2. \p ^ \markup { 11 }
                 {
                     R1 * 3/4
                 }
@@ -2225,7 +2232,7 @@
                 \once \override Dots.color = #grey
                 \once \override NoteHead.color = #grey
                 \once \override Stem.color = #grey
-                d2. \pp ~ \< ^ \markup { 13 }
+                d2. \p ~ \< ^ \markup { 13 }
                 \once \override Accidental.color = #grey
                 \once \override Beam.color = #grey
                 \once \override Dots.color = #grey
@@ -2237,7 +2244,7 @@
                 \once \override Dots.color = #grey
                 \once \override NoteHead.color = #grey
                 \once \override Stem.color = #grey
-                d2. \pp ^ \markup { 15 }
+                d2. \p ^ \markup { 15 }
                 {
                     R1 * 3/4
                 }
@@ -2246,7 +2253,7 @@
                 \once \override Dots.color = #grey
                 \once \override NoteHead.color = #grey
                 \once \override Stem.color = #grey
-                d2. \pp ~ \< ^ \markup { 17 }
+                d2. \p ~ \< ^ \markup { 17 }
                 \once \override Accidental.color = #grey
                 \once \override Beam.color = #grey
                 \once \override Dots.color = #grey
@@ -2258,7 +2265,7 @@
                 \once \override Dots.color = #grey
                 \once \override NoteHead.color = #grey
                 \once \override Stem.color = #grey
-                d2. \pp ^ \markup { 19 }
+                d2. \p ^ \markup { 19 }
                 {
                     R1 * 3/4
                 }
@@ -2267,7 +2274,7 @@
                 \once \override Dots.color = #grey
                 \once \override NoteHead.color = #grey
                 \once \override Stem.color = #grey
-                d2. \pp ~ \< ^ \markup { 21 }
+                d2. \p ~ \< ^ \markup { 21 }
                 \once \override Accidental.color = #grey
                 \once \override Beam.color = #grey
                 \once \override Dots.color = #grey
@@ -2279,7 +2286,7 @@
                 \once \override Dots.color = #grey
                 \once \override NoteHead.color = #grey
                 \once \override Stem.color = #grey
-                d2. \pp ^ \markup { 23 }
+                d2. \p ^ \markup { 23 }
                 {
                     R1 * 3/4
                 }
@@ -2288,7 +2295,7 @@
                 \once \override Dots.color = #grey
                 \once \override NoteHead.color = #grey
                 \once \override Stem.color = #grey
-                d2. \pp ~ \< ^ \markup { 25 }
+                d2. \p ~ \< ^ \markup { 25 }
                 \once \override Accidental.color = #grey
                 \once \override Beam.color = #grey
                 \once \override Dots.color = #grey
@@ -2300,7 +2307,7 @@
                 \once \override Dots.color = #grey
                 \once \override NoteHead.color = #grey
                 \once \override Stem.color = #grey
-                d2. \pp ^ \markup { 27 }
+                d2. \p ^ \markup { 27 }
                 {
                     R1 * 3/4
                 }
@@ -2309,7 +2316,7 @@
                 \once \override Dots.color = #grey
                 \once \override NoteHead.color = #grey
                 \once \override Stem.color = #grey
-                d2. \pp ~ \< ^ \markup { 29 }
+                d2. \p ~ \< ^ \markup { 29 }
                 \once \override Accidental.color = #grey
                 \once \override Beam.color = #grey
                 \once \override Dots.color = #grey
@@ -2321,7 +2328,7 @@
                 \once \override Dots.color = #grey
                 \once \override NoteHead.color = #grey
                 \once \override Stem.color = #grey
-                d2. \pp ^ \markup { 31 }
+                d2. \p ^ \markup { 31 }
                 {
                     R1 * 3/4
                 }
@@ -2330,7 +2337,7 @@
                 \once \override Dots.color = #grey
                 \once \override NoteHead.color = #grey
                 \once \override Stem.color = #grey
-                d2. \pp \< ^ \markup { 33 }
+                d2. \p \< ^ \markup { 33 }
                 \once \override Accidental.color = #grey
                 \once \override Beam.color = #grey
                 \once \override Dots.color = #grey

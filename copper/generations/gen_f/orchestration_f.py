@@ -405,6 +405,7 @@ bubbles.illustrate_me(__file__,
     lambda: staves.CopperScore( 
         get_orchestration_f()(), 
         title="Copper: F", 
-        show_short_score=True, 
-        hide_empty=True).get_lilypond_file()
+        show_short_score=False, 
+        hide_empty=True).get_lilypond_file(),
+    as_midi=True
     )

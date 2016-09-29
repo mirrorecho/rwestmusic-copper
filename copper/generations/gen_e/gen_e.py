@@ -11,12 +11,14 @@ class GenE(object):
     time_signature = (3,4)
     metrical_durations = ID(default=((3,4),), limit=35) # TO DO... is this the right count?
     rehearsal_mark_number = 5
-    # tempo_units_per_minute = 108
+    tempo_command = '\\note #"8" #1 = \\note #"8" #1 (\\note #"4" #1 = 108)'
     start_bar_line = "||"
 
 class Drone0(GenE, machines.Drone0):
     rhythm_sequence = ID(default=1, limit=22)
     rhythm_initial_silence = 3
+    initial_dynamic="p"
+    end_dynamic="p"
 
 # -------------------------------------------------------------------------------------------------
 

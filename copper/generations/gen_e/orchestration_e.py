@@ -29,6 +29,8 @@ class ArrangeE(gen_e.GenE, machines.FragmentLine, machines.PitchedLine):
     # show_data_attr="depthwise_index"
     def update_data(self):
         super().update_data()
+        if self.fragments and len(self.segments)>1:
+            self.segments[1].tag("mp")
 
 # TO DO... maybe use this eventually
 def events_tag_pattern_1(events):
@@ -222,7 +224,10 @@ class Horn2(ArrangeE):
         *Frag.its(5,(21,25), tags=["-"]),
         Frag.it(4,28, tags=["-"]),
         Frag.it(4,29, tags=["-"]),
-        Frag.it(4,30, duration=7, tags=[]),
+        Frag.it(4,30, duration=4, tags=["("]),
+        Frag.it(0,22, tags=[")"]),
+        Frag.it(0,23, duration=3.5, tags=[]),
+
         Frag.it(6,36, tags=[]),
         Frag.it(6,37, before_next=0, tags=[">"]),
         Frag.it(6,40, tags=[]),
@@ -287,7 +292,9 @@ class Trumpet2(ArrangeE):
 
 class Trombone1(ArrangeE):
     fragments = Frag.make(
-        Frag.it(3,25, tags=["-"]),
+        *Frag.its(0,(1,16), offset=-3),
+        *Frag.its(0,(17,19),),
+        Frag.it(3,25, tags=["mf","-"]),
         Frag.it(3,26, tags=["-"]),
         Frag.it(3,27, tags=["-"]),
         Frag.it(3,30, duration=7, tags=[]),
@@ -297,10 +304,14 @@ class Trombone1(ArrangeE):
     fragments.update_by(3,39, duration=1)
     fragments.update_by(3,45, duration=2)
     fragments.update_by(3,51, duration=2)
+    def update_data(self):
+        super().update_data()
+        self.event_by(0,18).untag("\>").tag("\<")
 
 class Trombone2(ArrangeE):
     fragments = Frag.make(
-        Frag.it(5,25, tags=["-"]),
+        *Frag.its(0,(1,16), offset=3),
+        Frag.it(5,25, tags=["mf","-"]),
         Frag.it(5,26, tags=["-"]),
         Frag.it(5,27, tags=["-"]),
         Frag.it(5,30, duration=7, tags=[]),
@@ -313,6 +324,9 @@ class Trombone2(ArrangeE):
 
 class Tuba(ArrangeE):
     fragments = Frag.make(
+        Frag.it(0,17, offset=6),
+        Frag.it(0,18, offset=6 ),
+        Frag.it(0,19, offset=6, duration=6),
         *Frag.its(5, (31,54), tags=["-"]),
         )
     fragments.update_by(5,33, duration=2)
@@ -327,16 +341,50 @@ class Tuba(ArrangeE):
 # TIMPANI / PERCUSSION / HARP / PIANO
 
 class Timpani(ArrangeE):
-    pass
+    music = bubbles.Line(r"""
+        r4 d4 \> d4 | d4 d4 d4 | d4 d4 d4 | d4 d4 r4 | d4 \p \! r4 r4 |
+        R2. * 26 |
+        d4 \p \< r8 d8 r4  | 
+        d4 r8 d8 r4 | d4 r8 d8 r4 | d4 r8 d8 \mf \! r4 |
+        """)
+    # music = bubbles.Line(r"""
+    #     d4 \> d4 d4 | d4 d4 d4 | d4 d4 d4 | d4 d4 r4 | d4 \p \! r4 r4 |
+    #     R2. * 8 |
+    #     c4 \mp r4 r4 | d4 r4 r4 | 
+    #     c4 r4 r4 | d4 r4 r4 | 
+    #     c4 r4 r4 | c4 r4 r4 | R2. |
+    #     <g, d>4 -> \mf r8 d8 \p \< r4  | 
+    #     d4 r8 d8 r4 | d4 r8 d8 r4 | d4 r8 d8 \mf \! r4 |
+    #     """)
 
 class Perc1(ArrangeE):
-    pass
+    music = bubbles.Line(r"""
+        r4 c2:32 ~ \pp \< ^ \markup {"Sus. cymbal, yarn mallets"}
+        c2.:32 ~ c2.:32 ~ c2.:32 \p \!
+        R2. * 26
+        c2.:32 ~ c2.:32 ~ c2.:32 ~ c2.:32 ~ 
+        c2:32 \< ~ c8:32 ~ c8:32 \mf \!
+        """)
 
 class Perc2(ArrangeE):
-    pass
+    music = bubbles.Line(r"""
+        R2.*4
+        c2.:32 ~ \p ^ \markup {"Sus. cymbal, yarn mallets"}
+        c2.:32 ~ c2.:32 ~ c2.:32 ~ 
+        c2.:32 ~ c2.:32 ~ c2.:32 ~ c2.:32 ~ 
+        c2.:32 ~ c2.:32 ~ c2.:32 ~ c2.:32 ~ 
+        c2.:32 ~ c2.:32 ~ c2.:32 ~ c2.:32 ~ 
+        c2.:32 ~ c2.:32 ~ c2.:32 ~ c2.:32 ~ 
+        c2.:32 ~ c2.:32 ~ c2.:32 ~ c2.:32 ~ 
+        c2.:32 ~ c2.:32
+        R2.*5
+        """)
+    
+
 
 class Vibes(ArrangeE):
     fragments = Frag.make(
+        Frag.it(0,3, duration=1, offset=-9, tags=[">","fff"]),
         *Frag.its(6,(1,28), duration=0.5),
         )
     fragments.update_by(6,1, tags=["pp"])
@@ -471,6 +519,7 @@ bubbles.illustrate_me(__file__,
     lambda: staves.CopperScore( 
         get_orchestration_e()(), 
         title="Copper: E", 
-        show_short_score=True, 
-        hide_empty=True).get_lilypond_file()
+        show_short_score=False, 
+        hide_empty=True).get_lilypond_file(),
+    as_midi=True,
     )
