@@ -310,6 +310,10 @@
 # - auto breaths for wind/brass
 # - REMEMBER THAT THE END TAKES A LONG TIME
 # - for future reference, add more articulations, dymacics BEFORE orchestrating... will save time
+# - auto assign clefs
+# - - - for short scores
+# - - - based on instrument preferences
+
 
 import abjad
 from calliope import bubbles

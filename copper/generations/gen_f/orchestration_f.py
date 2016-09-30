@@ -459,6 +459,8 @@ class Bassoon2(ArrangeF):
     11: ((2,4),(2,4),),
     20: ((2,4),(2,4),),
     25: ((2,4),(2,4),),
+    29: ((2,4),(2,4),),
+    32: ((2,4),(2,4),),
     }
     fragments = Frag.make(
         Frag.it(4, 13, tags=["mf","-"]),
@@ -508,7 +510,21 @@ class Horn1(ArrangeF):
         Frag.it(10,75, duration=4, tags=[]),
         Frag.it(10,83, duration=1, tags=["("]),
         Frag.it(4,39, duration=3, tags=[")"]),
+        Frag.it(10,91, duration=4, tags=[]),
+        *Frag.its(10,[99,102], tags=["-",">"]),
+        *Frag.its(10,[103,106], tags=["-",">"]),
+        *Frag.its(10,[107,110], tags=["-",">"]),
+        *Frag.its(10,[111,114], tags=["-",">"]),
+        *Frag.its(10,[115,118], tags=["-",">"]),
+        *Frag.its(10,[119,122], tags=["-",">"]),
+        *Frag.its(10,[123,126], tags=["-",">"]),
+        *Frag.its(10,[127,130], tags=["-",">"]),
+        *Frag.its(10,[131,134], tags=["-",">"]),
+        *Frag.its(10,[135,138], tags=["-",">"]),
+        Frag.it(10,139, tags=["-",">"]),
+        Frag.it(10,140, duration=2, tags=["-",">","ff"]),
     )
+    fragments.update_by(10,131, tags=["\<"])
 
 class Horn2(ArrangeF):
     fragments = Frag.make(
@@ -520,7 +536,22 @@ class Horn2(ArrangeF):
         Frag.it(10,63, duration=4, tags=[]),
         Frag.it(10,71, duration=4, tags=[]),
         Frag.it(10,79, duration=4, tags=[]),
+        Frag.it(10,87, duration=4, tags=[]),
+        Frag.it(10,95, duration=4, tags=[]),
+        *Frag.its(10,[101,104], duration=4, tags=["-",">"]),
+        *Frag.its(10,[105,108], tags=["-",">"]),
+        *Frag.its(10,[109,112], tags=["-",">"]),
+        *Frag.its(10,[113,116], tags=["-",">"]),
+        *Frag.its(10,[117,120], tags=["-",">"]),
+        *Frag.its(10,[121,124], tags=["-",">"]),
+        *Frag.its(10,[125,128], tags=["-",">"]),
+        *Frag.its(10,[128,132], tags=["-",">"]),
+        *Frag.its(10,[133,136], tags=["-",">"]),
+        *Frag.its(10,[137,139], tags=["-",">"]),
+        Frag.it(10,139, tags=["-",">"]),
+        Frag.it(10,140, duration=2, tags=["-",">","ff"]),
     )
+    fragments.update_by(10,131, tags=["\<"])
 
 class Trumpet1(ArrangeF):
     metrical_durations = ArrangeF.metrical_durations + {
@@ -570,7 +601,17 @@ class Trombone1(ArrangeF):
         Frag.it(10,68, duration=3,),
         Frag.it(10,76, duration=3,),
         Frag.it(10,84, duration=3,),
+        Frag.it(10,92, duration=3, tags="mute out"),
+        *Frag.its(10,[115,118], tags=["-",">"]),
+        *Frag.its(10,[119,122], tags=["-",">"]),
+        *Frag.its(10,[123,126], tags=["-",">"]),
+        *Frag.its(10,[127,130], tags=["-",">"]),
+        *Frag.its(10,[131,134], tags=["-",">"]),
+        *Frag.its(10,[135,138], tags=["-",">"]),
+        Frag.it(10,139, tags=["-",">"]),
+        Frag.it(10,140, duration=2, tags=["-",">","ff"]),
     )
+    fragments.update_by(10,131, tags=["\<"])
 
 class Trombone2(ArrangeF):
     fragments = Frag.make(
@@ -580,7 +621,18 @@ class Trombone2(ArrangeF):
         Frag.it(10,64, duration=3,),
         Frag.it(10,72, duration=3,),
         Frag.it(10,80, duration=3,),
+        Frag.it(10,88, duration=3,),
+        Frag.it(10,96, duration=3, tags="mute out"),
+        *Frag.its(10,[117,120], tags=["-",">"]),
+        *Frag.its(10,[121,124], tags=["-",">"]),
+        *Frag.its(10,[125,128], tags=["-",">"]),
+        *Frag.its(10,[128,132], tags=["-",">"]),
+        *Frag.its(10,[133,136], tags=["-",">"]),
+        *Frag.its(10,[137,139], tags=["-",">"]),
+        Frag.it(10,139, tags=["-",">"]),
+        Frag.it(10,140, duration=2, tags=["-",">","ff"]),
     )
+    fragments.update_by(10,131, tags=["\<"])
 
 class Tuba(ArrangeF):
     fragments = Frag.make(
@@ -670,6 +722,9 @@ class Harp1(ArrangeF):
     18: ((1,4),(1,4),(2,4),),
     20: ((1,4),(1,4),(1,4),(1,4),),
     25: ((1,4),(1,4),(1,4),(1,4),),
+    32: ((1,4),(1,4),(1,4),(1,4),),
+    34: ((1,4),(1,4),(1,4),(1,4),),
+    35: ((1,4),(1,4),(1,4),(1,4),),
     }
     fragments = Frag.make(
         Frag.it(3,2, harmonies=[12], tags=["mp"]),
@@ -678,9 +733,12 @@ class Harp1(ArrangeF):
         *Frag.its(6, [19,28]),
         *Frag.its(7, [1,22]),
         *Frag.its(7, [23,55]),
+        *Frag.its(3, [59,71], harmonies=[12], duration=1),
+        *Frag.its(1, [37,58], chord_positions=-1, duration=0.5, tags=[">"]),
     )
     fragments.update_by(7,37, tags=["8va"])
-    fragments.update_by(7,54, tags=["8va!"])
+    fragments.update_by(1,37, tags=["ff"])
+    fragments.update_by(1,57, tags=["8va!"])
 
 class Harp2(ArrangeF):
     metrical_durations = MEDIUM_METRICAL_DURATIONS + {
@@ -695,13 +753,19 @@ class Harp2(ArrangeF):
         Frag.it(2, 24, chord_positions=[0,1], duration=1),
         *Frag.its(2, [25,28], duration=1, chord_positions=[0]),
         Frag.it(4, 52, ),
-        *Frag.its(2, [31,50], duration=1, chord_positions=[0]),
+        *Frag.its(2, [31,34], duration=1, chord_positions=[0]),
+        # *Frag.its(2, [34,50], duration=1, chord_positions=[0]),
+        *Frag.its(4, [55,83], harmonies=[-12], duration=1),
     )
 
 class Piano1(ArrangeF):
     metrical_durations = MEDIUM_METRICAL_DURATIONS+ {
     22: ((1,2),(1,4),(1,4),),
     25: ((1,2),(1,4),(1,4),),
+    32: ((1,4),(1,4),(1,4),(1,4),),
+    33: ((1,2),(1,4),(1,4),),
+    34: ((1,2),(1,4),(1,4),),
+    35: ((1,4),(1,4),(1,4),(1,4),),
     }
     fragments = Frag.make(
         # Frag.it(3, 2),
@@ -745,6 +809,8 @@ class Piano1(ArrangeF):
         Frag.it(1, 55, chord_positions=[-1,-2], duration=0.5),
         Frag.it(1, 56, chord_positions=-1),
     )
+    fragments.update_by(7,50, tags=["8va"])
+    fragments.update_by(3,79, tags=["8va!"])
 
 class Piano2(ArrangeF):
     metrical_durations = ArrangeF.metrical_durations + {
@@ -771,6 +837,7 @@ class Piano2(ArrangeF):
     fragments.update_by(2,3, duration=3)
     fragments.update_by(2,11, duration=3)
     fragments.update_by(2,18, chord_positions=0)
+    fragments.update_by(2,36, tags=["\clef treble"])
 
 
 # ------------------------------------------------------------------------------------------------------------
