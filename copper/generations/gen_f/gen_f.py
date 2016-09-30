@@ -47,7 +47,7 @@ class Line3(GenF, gen_e.Line4):
     # rhythm_reverse.remove(7)
     rhythm_initial_silence=23
     pitch_reverse = gen_e.Line4.pitch_reverse + (19,25)
-    show_data_type=machines.EventData
+    # show_data_type=machines.EventData
     pitch_displacement =  machines.FifthDisplacement(
             up=(     6,7,             19,20, 22, 24, 26, 30, 58,76),
             down=(2,4,  8,9,12, 16, 18,    21,  )

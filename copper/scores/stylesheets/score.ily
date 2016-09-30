@@ -1,5 +1,5 @@
 #(set-default-paper-size "tabloid" 'portrait)
-#(set-global-staff-size 12)
+#(set-global-staff-size 16)
 
 \header {
     composer = "Randall West"
