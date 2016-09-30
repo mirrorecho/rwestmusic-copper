@@ -7,7 +7,7 @@ from copper.machines.tools import IndexedData as ID, ID1 # just to avoid a lot o
 from copper.generations.gen_e import gen_e
 from copper import staves
 
-class GenF(object):
+class GenF(machines.RhythmsPulsed):
     time_signature = (4,4)
     metrical_durations = ID(default=((4,4),), limit=36)
     rehearsal_mark_number = 6
@@ -71,7 +71,8 @@ class Line3(GenF, gen_e.Line4):
     rhythm_multipliers[18]=1
     clef="treble"
 
-
+class Line3Pulsed(Line3):
+    rhythm_pulses = ID({}, default=0.5)
     # def update_data(self):
     #     super().update_data()
     #     if self.__class__.__name__ == "Line3": # this helps restrict tags to short score only
@@ -154,6 +155,9 @@ class Line2(GenF, gen_e.Line2):
         self.respell_events("flats", 1, 33)
         self.respell_events("sharps",  34)
 
+class Line2Pulsed(Line2):
+    rhythm_pulses = ID({}, default=0.5)
+
 # -------------------------------------------------------------------------------------------------
 
 class Line4(GenF, gen_e.Line3):
@@ -178,6 +182,9 @@ class Line4(GenF, gen_e.Line3):
             self.events[1].tag("\clef bass")
         if self.__class__.__name__ == "Line4":
             self.tag_events("darkred", every_child=True)
+
+class Line4Pulsed(Line4):
+    rhythm_pulses = ID({}, default=0.5)
 
 # -------------------------------------------------------------------------------------------------
 
@@ -261,7 +268,8 @@ bubbles.illustrate_me(__file__,
                 drone10 = Drone10(show_data_attr="original_depthwise_index"),
                 line1 = Line1(show_data_attr="original_depthwise_index"),
                 line2 = Line2(show_data_attr="original_depthwise_index"),
-                line3 = Line3(show_data_attr="original_depthwise_index"),
+                # line3 = Line3(show_data_attr="original_depthwise_index"),
+                line3 = Line3Pulsed(show_data_attr="original_depthwise_index"),
                 line4 = Line4(show_data_attr="original_depthwise_index", clef="bass"),
                 line5 = Line5(show_data_attr="original_depthwise_index"),
                 line6 = Line6(show_data_attr="original_depthwise_index"),

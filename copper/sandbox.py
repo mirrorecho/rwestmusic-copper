@@ -236,6 +236,7 @@
 # ADD CANDY ADD CANDY ADD CANDY!!!! :-)
 # - F measure 12 ... maybe clarinet is too loud for this pause?
 # F masure 15, E against Eb Ok?
+# accel at end?
 
 # ---------------------------- FUTURE:
 # studio setup!!! 
