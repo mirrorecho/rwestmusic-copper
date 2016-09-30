@@ -117,7 +117,10 @@ class FragmentLine(object):
                 # use this to indicate that event is rest-only, will be ignored
                 return (-1, -1, -1, -1, -1)
 
-            sorted_events_fragments = sorted( [ get_event_fragment(i,f) for i,f in self.fragments.non_default_items() ] )
+            try:
+                sorted_events_fragments = sorted( [ get_event_fragment(i,f) for i,f in self.fragments.non_default_items() ] )
+            except:
+                self.warn("PROBLEM WITH OVERAPPING FRAGMENTS THAT CANT'T BE SORTED")
 
             for ticks_before, i, original_event, line_index, fragment in sorted_events_fragments: 
                 if ticks_before >=0:

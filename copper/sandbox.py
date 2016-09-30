@@ -304,7 +304,9 @@
 # - refactor so that all fragments.update_by should not be necessary
 # - better error handling when overlapping events create sorting problems in fragments
 # - odd problems if fragments moved before other fragments... fix?
-# - smarter tagging with patterns
+# - smarter tagging with patterns!!! (and based on note duration and jump)
+# - smarter dynamics tagging
+# - better way to distinguish short score from regular score
 
 import abjad
 from calliope import bubbles

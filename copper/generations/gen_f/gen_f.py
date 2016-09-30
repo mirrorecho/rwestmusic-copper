@@ -236,15 +236,18 @@ class Line7(GenF, gen_e.Line6):
         18:0.5,
         },default=0.25)
     rhythm_times = 2
-    pitch_displacement = gen_e.Line6.pitch_displacement +\
+    pitch_displacement = gen_e.Line6.pitch_displacement.copy()
+    pitch_displacement.flat(38)
+    pitch_displacement = pitch_displacement + \
         machines.FifthDisplacement(
-            up = (      11,12,17,  32, 38,48),
-            down=(0,1,2,3,       18),
+            up = (      11,12,17,  32, 35,  37,38,41,    48),
+            down=(0,1,2,3,       18,      36,   42,43),
             ) + \
         machines.OctaveDisplacement(
-            up=(1,2,3,  23,  36,     48),
-            down=(10, 19,       40,46)
+            up=(1,2,3,  23,  36,     ),
+            down=(10, 19,       38),
             )
+    # print(pitch_displacement)
     def update_data(self, **kwargs):
         super().update_data(**kwargs)
         if self.__class__.__name__ == "Line7":
