@@ -43,6 +43,8 @@ class Picc(ArrangeF):
         18: ((2,4),(1,4),(1,4),),
         20: ((1,4),(1,4),(2,4),),
         23: ((2,4),(1,4),(1,4),),
+        32: ((1,4),(1,4),(1,4),(1,4),),
+        35: ((1,4),(1,4),(1,4),(1,4),),
         }
     fragments = Frag.make(
         Frag.it(1, 1, chord_positions=-1, tags=["f.t.","p",":32"]),
@@ -72,6 +74,37 @@ class Picc(ArrangeF):
         Frag.it(7, 49, tags=["-"]),
         Frag.it(7, 50, tags=["("]),
         Frag.it(7, 51, tags=[")"]),
+        Frag.it(3, 63, tags=["-","f"]),
+        Frag.it(3, 64, transpose=12, tags=["-"]),
+        Frag.it(3, 65, transpose=12, tags=["-"]),
+        Frag.it(3, 66, transpose=12, tags=["-"]),
+        Frag.it(3, 67, transpose=12, tags=["-"]),
+        # Frag.it(3, 68, tags=["-"]),
+        Frag.it(3, 69, transpose=12, tags=["-"]),
+        # Frag.it(3, 70, transpose=12, tags=["-"]),
+        Frag.it(1, 36, chord_positions=-1, tags=["-"]),
+        Frag.it(1, 37, chord_positions=-1, tags=["-"]),
+        # Frag.it(1, 38, chord_positions=-1, tags=["-"]),
+        Frag.it(1, 39, chord_positions=-1, tags=["-"]),
+        # Frag.it(1, 40, chord_positions=-1, tags=["-"]),
+        Frag.it(1, 41, chord_positions=-1, tags=["-"]),
+        Frag.it(1, 42, chord_positions=-1, tags=["-"]),
+        Frag.it(1, 43, chord_positions=-1, duration=2.5, tags=["-"]),
+        Frag.it(1, 44, chord_positions=-1, tags=["-"]),
+        Frag.it(1, 45, chord_positions=-1, tags=["-"]),
+        Frag.it(1, 46, chord_positions=-1, tags=["-"]),
+        Frag.it(1, 47, chord_positions=-1, tags=["-"]),
+        Frag.it(1, 48, chord_positions=-1, tags=["-"]),
+        Frag.it(1, 49, chord_positions=-1, tags=["-","\<"]),
+        Frag.it(1, 50, chord_positions=-1, tags=["-"]),
+        Frag.it(1, 51, chord_positions=-1, tags=["-"]),
+        Frag.it(1, 52, chord_positions=-1, tags=["-"]),
+        Frag.it(1, 53, chord_positions=-1, tags=["-"]),
+        Frag.it(1, 54, chord_positions=-1, tags=["-"]),
+        Frag.it(1, 55, chord_positions=-1, tags=["ff"], duration=2.5),
+        # Frag.it(1, 56, chord_positions=-1, tags=["-"]),
+        # Frag.it(1, 57, chord_positions=-1, tags=["-"]),
+        # Frag.it(1, 58, chord_positions=-1, tags=["-"]),
         )
     transpose=-12
 
@@ -84,6 +117,7 @@ class Flute1(ArrangeF):
         23: ((2,4),(1,4),(1,4),),
         24: ((2,4),(1,4),(1,4),),
         25: ((1,4),(1,4),(2,4),),
+        35: ((1,4),(1,4),(1,4),(1,4),),
         }
     fragments = Frag.make(
         Frag.it(3, 3, attack_offset=1, before_next=0, tags=("p", "\<","f.t.",":32") ),
@@ -115,12 +149,28 @@ class Flute1(ArrangeF):
         Frag.it(7, 35, duration=0.5, tags=["."]),
         Frag.it(6, 53, transpose=12, tags=["-"]),
         Frag.it(6, 54, transpose=12, tags=["."]),
+        Frag.it(3, 59, tags=["-","f"]),
+        Frag.it(3, 60,  tags=["-"]),
+        Frag.it(3, 61,  tags=["-"]),
+        Frag.it(3, 62,  tags=["-"]),
+        Frag.it(3, 63,  tags=["-"]),
+        Frag.it(3, 65,  tags=["-"]),
+        Frag.it(3, 66,  tags=["-"]),
+        Frag.it(3, 68,  tags=["-"]),
+        Frag.it(3, 69,  tags=["-"]),
+        *Frag.its(1, [35,40], chord_positions=-2, tags=["-"]),
+        *Frag.its(1, [44,59], chord_positions=-2, tags=["-"]),
         )
+    fragments.update_by(1,44, tags=["\<"])
+    fragments.update_by(1,55, tags=["ff"])
+    fragments.update_by(1,57, tags=[">"])
+    fragments.update_by(1,58, tags=[">"])
 
 class Flute2(ArrangeF):
     metrical_durations = MEDIUM_METRICAL_DURATIONS + {
         18: ((2,4),(2,4),),
         23: ((2,4),(1,4),(1,4),),
+        35: ((1,4),(1,4),(1,4),(1,4),),
         }
     fragments = Frag.make(
         Frag.it(3, 6, attack_offset=1, before_next=0, tags=("p", "\<","f.t.",":32") ),
@@ -142,12 +192,21 @@ class Flute2(ArrangeF):
         Frag.it(1, 26, chord_positions=-1, tags=[")"]),
         Frag.it(7, 34, tags=["-"]),
         Frag.it(7, 35, duration=0.5, tags=["."]),
-
-        # Frag.it(1, 16, chord_positions=-1),
-        # Frag.it(1, 17, chord_positions=-1),
-        # Frag.it(1, 18, chord_positions=-1),
-        # *Frag.its(6, [48,55]),
-    )
+        Frag.it(3, 59, tags=["-","f"]),
+        Frag.it(3, 60,  tags=["-"]),
+        Frag.it(3, 61,  tags=["-"]),
+        Frag.it(3, 62,  tags=["-"]),
+        Frag.it(3, 63,  tags=["-"]),
+        Frag.it(3, 65,  tags=["-"]),
+        Frag.it(3, 66,  tags=["-"]),
+        Frag.it(3, 68,  tags=["-"]),
+        Frag.it(3, 69,  tags=["-"]),
+        *Frag.its(1, [35,40], chord_positions=-3, tags=["-"]),
+        *Frag.its(1, [44,58], chord_positions=-3, tags=["-"]),
+        Frag.it(1, 58, chord_positions=-2, tags=["-",">"]),
+        )
+    fragments.update_by(1,44, tags=["\<"])
+    fragments.update_by(1,55, tags=["ff"])
 
 class Oboe1(ArrangeF):
     metrical_durations = ArrangeF.metrical_durations + {
@@ -174,11 +233,19 @@ class Oboe1(ArrangeF):
         Frag.it(3,45, tags=[")"]),
         Frag.it(3,49, tags=["(",]),
         Frag.it(3,50,),
-        Frag.it(3,51, tags=[")"]),
+        Frag.it(3,51, tags=[")"], duration=2),
         Frag.it(3,52, tags=["(",]),
         Frag.it(3,53,),
         Frag.it(3,54, tags=[")"]),
+        *Frag.its(3, [55,63], tags=["-"]),
+        *Frag.its(3, [64,69], tags=["-"]),
+        Frag.it(3,70, duration=4),
+        *Frag.its(3, [71,78], tags=["-"]),
+        Frag.it(3,78, duration=2, tags=["ff",">"]),
     )
+    fragments.update_by(3,58, tags=["\<"])
+    fragments.update_by(3,61, tags=["f"])
+    fragments.update_by(3,74, tags=["\<"])
 
 class Oboe2(ArrangeF):
     metrical_durations = ArrangeF.metrical_durations + {
@@ -201,7 +268,15 @@ class Oboe2(ArrangeF):
         Frag.it(3,52, tags=["(",]),
         Frag.it(3,53,),
         Frag.it(3,54, tags=[")"]),
+        *Frag.its(3, [55,63], tags=["-"]),
+        *Frag.its(3, [64,69], tags=["-"]),
+        Frag.it(3,70, duration=4),
+        *Frag.its(3, [71,78], tags=["-"]),
+        Frag.it(3,78, duration=2, tags=["ff",">"]),
     )
+    fragments.update_by(3,58, tags=["\<"])
+    fragments.update_by(3,61, tags=["f"])
+    fragments.update_by(3,74, tags=["\<"])
 
 class Clarinet1(ArrangeF):
     metrical_durations = MEDIUM_METRICAL_DURATIONS + {
@@ -211,6 +286,8 @@ class Clarinet1(ArrangeF):
     24: ((1,4),(1,4),(1,4),(1,4)),
     25: ((1,4),(1,4),(2,4)),
     26: ((1,4),(1,4),(1,4),(1,4)),
+    32: ((2,4),(1,4),(1,4),),
+    35: ((1,4),(1,4),(1,4),(1,4)),
     }
     fragments = Frag.make(
         Frag.it(6, 1, tags=["p","\<"]),
@@ -252,7 +329,16 @@ class Clarinet1(ArrangeF):
         Frag.it(6, 79, tags=[")"]),
         Frag.it(6, 80, tags=["("]),
         Frag.it(6, 81, duration=2.5, tags=[")"]),
+        *Frag.its(3, [58,62], tags=["-"]),
+        *Frag.its(3, [63,71], tags=["-"]),
+        *Frag.its(1, [40,58], chord_positions=0, tags=["-"]),
     )
+    fragments.update_by(3,58, tags=["\<"])
+    fragments.update_by(3,61, tags=["f"])
+    fragments.update_by(3,70, duration=3)
+    fragments.update_by(1,43, duration=2.5)
+    fragments.update_by(1,44, tags=["\<"])
+    fragments.update_by(1,57, duration=1, tags=["ff",">"])
 
 class Clarinet2(ArrangeF):
     metrical_durations = MEDIUM_METRICAL_DURATIONS + {
@@ -262,6 +348,8 @@ class Clarinet2(ArrangeF):
     24: ((1,4),(1,4),(2,4)),
     25: ((1,4),(1,4),(1,4),(1,4)),
     26: ((1,4),(1,4),(2,4),),
+    32: ((2,4),(1,4),(1,4),),
+    35: ((1,4),(1,4),(1,4),(1,4)),
     }
     fragments = Frag.make(
         Frag.it(6, 8, tags=["(","mp","\<"]),
@@ -294,7 +382,17 @@ class Clarinet2(ArrangeF):
         Frag.it(6, 76, tags=["("]),
         Frag.it(6, 77, tags=[")"]),
         Frag.it(6, 78, tags=["."]),
+        *Frag.its(3, [58,62], tags=["-"]),
+        *Frag.its(3, [63,71], tags=["-"]),
+        *Frag.its(1, [40,58], chord_positions=0, tags=["-"]),
     )
+    fragments.update_by(3,58, tags=["\<"])
+    fragments.update_by(3,61, tags=["f"])
+    fragments.update_by(3,70, duration=3)
+    fragments.update_by(1,43, duration=2.5)
+    fragments.update_by(1,44, tags=["\<"])
+    fragments.update_by(1,57, duration=1, tags=["ff",">"])
+
 
 class Bassoon1(ArrangeF):
     metrical_durations = ArrangeF.metrical_durations + {
@@ -306,6 +404,7 @@ class Bassoon1(ArrangeF):
     19: ((2,4),(2,4),),
     20: ((2,4),(2,4),),
     21: ((2,4),(2,4),),
+    27: ((2,4),(2,4),),
     }
     fragments = Frag.make(
         Frag.it(5,1, attack_offset=-5.5, tags=["pp","\<"]),
@@ -337,12 +436,23 @@ class Bassoon1(ArrangeF):
         Frag.it(4, 45, tags=[")"]),
         Frag.it(4, 49, tags=["("]),
         Frag.it(4, 50),
-        Frag.it(4, 51, tags=[")"]),
+        Frag.it(4, 51, tags=[")"], duration=2),
+        Frag.it(4, 52, tags=["("]),
+        Frag.it(4, 53),
+        Frag.it(4, 54),
+        Frag.it(4, 55, duration=3, tags=[")"]),
+        *Frag.its(4, [58,64], tags=["-"]),
+        *Frag.its(4, [65,71], tags=["-"]),
+        *Frag.its(4, [71,83], duration=1, tags=["-"]),
     )
+    fragments.update_by(4,59, tags=["\<",])
+    fragments.update_by(4,62, tags=["f",])
+    fragments.update_by(4,77, tags=["\<",])
+    fragments.update_by(4,82, duration=2, tags=["ff",])
 
-    # def update_data(self, **kwargs):
-    #     super().update_data(**kwargs)
-    #     self.event_by(5,1)[1].tag()
+    def update_data(self, **kwargs):
+        super().update_data(**kwargs)
+        # self.event_by(5,1)[1].tag()
 
 class Bassoon2(ArrangeF):
     metrical_durations = ArrangeF.metrical_durations + {
@@ -365,11 +475,22 @@ class Bassoon2(ArrangeF):
         Frag.it(5, 25),
         Frag.it(4, 46, tags=["mf", "("]),
         Frag.it(4, 47),
-        Frag.it(4, 48, tags=[")"]),
-        Frag.it(4, 52, tags=["("]),
-        Frag.it(4, 53),
-        Frag.it(4, 54),
-        Frag.it(4, 55, duration=3, tags=[")"]),
+        Frag.it(4, 48, tags=[")", "    to Cbsn."]),
+        # Frag.it(5, 31, tags=["-","mf", "\<", "Contra Bsn."]),
+        # Frag.it(5, 32, tags=["-"]),
+        # Frag.it(5, 33, duration=4, tags=["-"]),
+        Frag.it(5, 34, tags=["-","f","Contra Bsn."]),
+        Frag.it(5, 35, tags=["-"]),
+        Frag.it(5, 36, duration=3, tags=["-"]),
+        Frag.it(5, 37, tags=["-"]),
+        Frag.it(5, 38, transpose=-12, tags=["-",">"]),
+        Frag.it(5, 39, duration=3, tags=["-"]),
+        Frag.it(5, 40, tags=["-"]),
+        Frag.it(5, 41, transpose=-12, tags=["-",">"]),
+        Frag.it(5, 42, tags=["-"]),
+        Frag.it(5, 43, tags=["-"]),
+        Frag.it(5, 44, tags=["-",">"]),
+        Frag.it(5, 45, tags=["-",">"]),
     )
 
 # ------------------------------------------------------------------------------------------------------------
@@ -403,6 +524,7 @@ class Horn2(ArrangeF):
 
 class Trumpet1(ArrangeF):
     metrical_durations = ArrangeF.metrical_durations + {
+    24: ((2,4),(1,4),(1,4),),
     25: ((2,4),(2,4),),
     }
     fragments = Frag.make(
@@ -418,10 +540,13 @@ class Trumpet1(ArrangeF):
         Frag.it(3,37, tags=["("]),
         Frag.it(3,38, tags=[")"]),
         Frag.it(3,39,),
-        Frag.it(3,52, tags=["(","mf"]),
+        Frag.it(3,52, attack_offset=-3.5, keep_attack=True, tags=["mp","\<"]),
         Frag.it(3,53,),
         Frag.it(3,54, tags=[")"]),
     )
+    def update_data(self, **kwargs):
+        super().update_data(**kwargs)
+        self.event_by(3,52)[1].tag("(","mf")
 
 class Trumpet2(ArrangeF):
     metrical_durations = ArrangeF.metrical_durations + {
@@ -458,7 +583,23 @@ class Trombone2(ArrangeF):
     )
 
 class Tuba(ArrangeF):
-    pass
+    fragments = Frag.make(
+        Frag.it(5, 31, tags=["-","mf", "\<", ]),
+        Frag.it(5, 32, tags=["-"]),
+        Frag.it(5, 33, duration=4, tags=["-"]),
+        Frag.it(5, 34, tags=["-","f"]),
+        Frag.it(5, 35, tags=["-"]),
+        Frag.it(5, 36, duration=3, tags=["-"]),
+        Frag.it(5, 37, tags=["-"]),
+        Frag.it(5, 38, transpose=-12, tags=["-",">"]),
+        Frag.it(5, 39, duration=3, tags=["-"]),
+        Frag.it(5, 40, tags=["-"]),
+        Frag.it(5, 41, transpose=-12, tags=["-",">"]),
+        Frag.it(5, 42, tags=["-"]),
+        Frag.it(5, 43, tags=["-"]),
+        Frag.it(5, 44, tags=["-",">"]),
+        Frag.it(5, 45, tags=["-",">"]),
+    )
 
 # ------------------------------------------------------------------------------------------------------------
 # TIMPANI / PERCUSSION / HARP / PIANO

@@ -307,6 +307,9 @@
 # - smarter tagging with patterns!!! (and based on note duration and jump)
 # - smarter dynamics tagging
 # - better way to distinguish short score from regular score
+# - auto breaths for wind/brass
+# - REMEMBER THAT THE END TAKES A LONG TIME
+# - for future reference, add more articulations, dymacics BEFORE orchestrating... will save time
 
 import abjad
 from calliope import bubbles
