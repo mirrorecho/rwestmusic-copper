@@ -82,134 +82,81 @@
 # - (DONE) draft short scores through f
 # - (DONE) respell flats/sharps (on individual events or event ranges)
 # - (DONE) fix so that pulses handle breaks properly when reversed/not reversed
-# ---------------------------- ASAP
-# - more orchestrating gen b
-# - (DONE) - - do something cool with the dissonance (Bb, A), at line3, event 27
-# - - - better ending 16ths (cutoff tuba, add b clarinet, maybe piano, bassoon, etc.)
-# - - - more trills in bassoon and B cl.
-# - - - end of tuba part ... too long, also maybe shouldn't go up?
-# - (DONE) - - shape range of line 3 (e.g. start high and aned low?)
-# - - - string pizz mimic bass clarinet?
-# - - - add piano...?
-# - - - should not go above the drone at the end
-# - more orchestrating gen c
-# - - - piano/pizz parts?
-# - - - orchestration of 2nd half of lines 1/2 could be more interesting...
-# - - - ... keep going with trumpets / break up strings / more string tremolos
-# - more orchestrating gen d
-# - - - heterophony with violins with line 3 in 2nd half
-# - - - more doublings of harmony and piano parts
-# - - - constant vibe
-# - - - are the low 4ths too crunchy?
-# - more orchestrating gen e
-# - - - main melody line events 14-18... trumpets too low (releative to horn?)
-# - - - ...add #s in upper notes at 18? And add other harmonies throughout?
-# - good draft short score of g
-# - move measure numbers to the bottom.... uncomment/comment stuff in stylesheet, and add this to the score output below last staff:
-    #       \new Dynamics {
-          #   \startMeasureCount
-          #   s2*24
-          #   \stopMeasureCount
-          # }
+# - (DONE) more orchestrating gen e
+# - - - (DONE) main melody line events 14-18... trumpets too low (releative to horn?)
+# - - - (DONE) ...add #s in upper notes at 18? And add other harmonies throughout?
+# - (DONE) tempo markings
+# - (DONE) create midi files for each short score generation
+# - (DONE) midi review of short scores, with decent draft throughout
+# - (DONE) drones good draft throughout (including orchestration)
+# - (DONE) (maybe) tag attachments on individual abjad leaves? (some data structure on LogicalTieData?)
+# - (DONE) good draft of gen e short score (especially Line 6)
+# - (DONE) more orchestrating gen e
+# - (DONE) - - think about the low Bb (A#) in the 2nd half of line 2... change?
+# - (DONE) more orchestrating gen f
+# - (DONE) (maybe?) need to be able to tag base arrangment stuff even on "unarranged" bubble
+# - (DONE) good draft gen f short score
+# - (DONE) good draft orchestration of gen b
+# - (DONE) good draft orchestration of gen c
+# - (DONE) good draft orchestration of gen d
+# - (DONE) good draft orchestration of gen e
+# - (DONE) good draft orchestration of gen f
+# - (DONE) tempo markings indicate metric modulations 
+# - (DONE) final draft: gen 0 orchestration!
+# - (DONE) final draft: gen a orchestration!
+# - (DONE) use marimba?
+# - (DONE) good parts template (aside from percussion)
+# - (DONE) penultimate draft: gen d orchestration!
+# - (DONE) penultimate draft: gen e orchestration!
+# - (DONE) penultimate draft: gen f orchestration!
+# - (DONE) final draft: gen e orchestration!
+# - (DONE) final draft: gen f orchestration!
+# - (DONE) better rehearsal markings?
+# - (DONE) final orchestrating gen d!!
+# - - - (DONE) heterophony with violins with line 3 in 2nd half (OK WITH PIZZ INSTEAD)
+# - - - (DONE) constant vibe
+# - - - (DONE) are the low 4ths too crunchy? (no, OK)
+# - - - (DONE) be careful with G natural (against G#) in line 1, event 4 (OK)
+# - - - (DONE) consider the low piano chords in line 2 (change short score?) (OK)
 
-# - piano repeated chords
-# - transposing parts
-# - - - REMEMBER ENGLISH HORN TRANSPOSITION WHERE APPROPRIATE ONLY!!!!!!
-# - tempo markings
-# # - better to put instrument changes on rest following last note (instead of on last note)
-# - rhythmic machine with cymbal roll
-# - print short scores
-# - create midi files / garage band projects for each short score generation
-# - more orchestrating gen c
-# - plan out drone, and start better working into machines
-# - - - timbre should change abrubtly with each drone
-# - plan out cymbal, and start working better into machines
-# - midi review of short scores, with decent draft throughout
-# - drones good draft throughout (including orchestration)
-# - cymbal good draft throughout
-# - more orchestrating gen d
-# - - - be careful with G natural (against G#) in line 1, event 4
-# - - - consider the low piano chords in line 2 (change short score?)
-# - - - rhythm in piano part in line 5 is not well suited to the meter... OK or change?
-# - some rhythms with metric modulations
-# - (maybe) tag attachments on individual abjad leaves? (some data structure on LogicalTieData?)
-# - good draft of gen e short score (especially Line 6)
-# - review short score (as  a whole) at piano / listen to playback, and adjust
-# - (if time) start gen h draft short score
-# - (if time) start orchestrating gen h
-# - more orchestrating gen e
-# - - - think about the low Bb (A#) in the 2nd half of line 2... change?
-# - more orchestrating gen f
-# - more orchestrating gen g
-# - more orchestrating gen h
-# - (maybe?) need to be able to tag base arrangment stuff even on "unarranged" bubble
-# - (maybe?) print full scores (and mark up?)
-# - good draft gen f short score
-# - (maybe) better way / machine(s) to tag spanners
-# - good draft gen g short score
-# - think of gen d in 8th note rhythm_denominator
-# - (maybe) good gen h draft short score
-# - review current short scores at piano and adjust
-# - good draft orchestration of gen b
-# - good draft orchestration of gen c
-# - good draft orchestration of gen d
-# - good draft orchestration of gen e
-# - good draft orchestration of gen f
-# - good draft orchestration of gen g
-# - good draft orchestration of gen h
-# - high mallet tremolos (St Augustine)
-# - (if time) - smarter pitch displacement (stay within range / range of fifths)
-# - (if time) - cross lines using rhythm overlay (including mixing together into chords)
-# - (if time) - pulse machine that separates pulses into separate events (so that each pitch can be displaced)
-# - (if time) - tag to show any data attribute
-# - (if time) - smarter error handling
-# - more rhythms with metric modulations 
-# - tempo markings indicate metric modulations (see http://abjad.mbrsi.org/api/tools/indicatortools/MetricModulation.html)
-# - more dynamics machines, especially with holds
-# - review printed score and mark up
-# - implement printed score markups (or add notes)
-# - games and boces? (only if time allows)
-# - final draft: gen 0 orchestration!
-# - final draft: gen a orchestration!
-# - final draft: gen b orchestration!
+# ---------------------------- FINAL LIST
+# - more interesting drones / with plan:
+# - - - GEN 0: Stopped horn only (DONE)
+# - - - GEN A: Trombone with Straight mute, and bass joins (DONE)
+# - - - GEN B: Horns + Bassoons + ?? (maybe Viola?)
+# - - - GEN C: Trombone/Tuba, and Cello, Bass (DONE)
+# - - - GEN D: Horns, Trombones and Tuba Join + ????
+# - - - GEN E: Trombeons, Horns/Tuba join, Piano (DONE)
+# - - - GEN F: Trombones and Horns back and forth... OK, but make more interesting????
+# - - - THINK ABOUT MAKING DRONES BIG AT END OF EACH SECTION !
 # - final draft: gen c orchestration!
-# - use marimba?
-# - good parts template (aside from percussion)
-# - review fonts
-# - (if time) allow slices of data to be tagged
-# - penultimate draft: gen d orchestration!
-# - penultimate draft: gen e orchestration!
-# - penultimate draft: gen f orchestration!
-# - penultimate draft: gen g orchestration!
-# - penultimate draft: gen h orchestration!
+# - final draft: gen b orchestration!
 # - review piano part
 # - review harp part (including pedal changes)
+# - cymbal good throughout
 # - review percussion part (non-timpani)
 # - percussion beaters (including vibraphone mallets and motor)
 # - review timpani part (including tunings)
-# - errors should show class names / lines that throw them
-# - final draft: gen d orchestration!
-# - final draft: gen e orchestration!
-# - final draft: gen f orchestration!
-# - final draft: gen g orchestration!
-# - final draft: gen h orchestration!
-# - review final draft of printed score and mark up
-# - implement final draft printed score markups (or add notes)
-# - (if time) better way to handle octave transposing instruments in scores
-# - initial review of all parts (everyone has something to do)
+# - VERY END FERMATA???
+# - transposing parts
+# - - - REMEMBER ENGLISH HORN TRANSPOSITION WHERE APPROPRIATE ONLY!!!!!!
+# - FIX OVERLAPPING TEMPOS IN PARTS WHERE MULTIMEASURE RESTS
+# - check brass mutes
+# - more rhythms to play with metric modulations at section changes
+# - double check metrical durations
+# - review all winds music
+# - review all brass music
+# - review all hits music
+# - review all strings music
+# - review of all parts (everyone has something to do)
 # - adjust based on review of parts
 # - review of doublings (all OK... used effectively?)
 # - review of percussion instruments used
 # - verify all part transpositions (pic, english horn, clarinet/bass clarinet, horn, double bass)
 # - METRICAL DURATION RESPELLINGS
-# - cues?
-# - better rehearsal markings?
+# REMEMBER TO DELETE/MOVE ALL PDFS BEFORE CREATING FINAL PART VERSION
+# ENDING??
 # - double bass transposition (double check it's always up the octave)
-# - (if time / necessary) - there's a bug with dupe tie spanners on drones (bug show up if you attempt to print Drone0's music() output)
-# - (if time) - show measure numbers on multimeasure rests
-# - (if time) - limit multimeasure rest length to 8 bars? (see below... could create list of lists to determine measure count)
-# - - - - - maybe better... limit to 8 only if greater than 9?
-# - - - - - also, would be ideal to be able to specify break points... 
 # - final score review!
 # - - double check score order
 # - double check that part output matches score (or make part code not suck)
@@ -231,8 +178,43 @@
 # - - - page breaks
 # - - - transpositions
 # - performance and program notes
-# - (if time, else later)... warn if orchestrated lines don't inherit from arrangement base classes (i.e. they should be getting rehearsal marks, etc.)
 # - title page
+
+
+# ---------------------------- IF TIME
+# - tweak orchestrating gen d
+# - - - contra Bsn in bass
+# - - - rhythm in piano part in line 5 is not well suited to the meter... OK or change?
+# - - - something for trumpets to do
+# - - - piano 15va
+# - - - more doublings of harmony and piano parts (OK... could do more)
+# - tweak orchestrating gen b
+# - - - (DONE) do something cool with the dissonance (Bb, A), at line3, event 27
+# - - - better ending 16ths (cutoff tuba, add b clarinet, maybe piano, bassoon, etc.)
+# - - - more trills in bassoon and B cl.
+# - - - end of tuba part ... too long, also maybe shouldn't go up?
+# - - - (DONE) shape range of line 3 (e.g. start high and aned low?)
+# - - - string pizz mimic bass clarinet?
+# - - - add piano...?
+# - - - should not go above the drone at the end
+# - more orchestrating gen c
+# - - - piano/pizz parts?
+# - - - orchestration of 2nd half of lines 1/2 could be more interesting...
+# - - - ... keep going with trumpets / break up strings / more string tremolos
+# - piano repeated chords throughout
+# - move measure numbers to the bottom.... uncomment/comment stuff in stylesheet, and add this to the score output below last staff:
+    #       \new Dynamics {
+          #   \startMeasureCount
+          #   s2*24
+          #   \stopMeasureCount
+          # }
+# # - better to put instrument changes on rest following last note (instead of on last note)
+# - more insteresting drones plan out drone, and start better working into machines
+# - - - timbre should change abrubtly with each drone
+# - - - brass jumps down to drone when not busy...
+# - high mallet tremolos (St Augustine)
+# - review final draft of printed score and mark up
+# - make changes/notes based on my review of final draft printed score
 # ADD CANDY ADD CANDY ADD CANDY!!!! :-)
 # - F measure 12 ... maybe clarinet is too loud for this pause?
 # F masure 15, E against Eb Ok?
@@ -240,8 +222,42 @@
 # high horn range?
 # more brass wherever possible
 # more with marimba part in e
-# REMEMBER TO DELETE/MOVE ALL PDFS BEFORE CREATING FINAL PART VERSION
+# - cues?
+# gen e should be 35 bars!!!!!
 # consider changing something drastic?
+
+# -------------------------- SKIPPED
+# - good draft short score of g
+# - rhythmic machine with cymbal roll
+# - print short scores
+# - plan out cymbal, and start working better into machines
+# - review short score (as  a whole) at piano / listen to playback, and adjust
+# - (if time) start gen h draft short score
+# - (if time) start orchestrating gen h
+# - more orchestrating gen g
+# - more orchestrating gen h
+# - (maybe?) print full scores (and mark up?)
+# - (maybe) better way / machine(s) to tag spanners
+# - good draft gen g short score
+# - think of gen d in 8th note rhythm_denominator
+# - (maybe) good gen h draft short score
+# - review current short scores at piano and adjust
+# - good draft orchestration of gen g
+# - good draft orchestration of gen h
+# - more dynamics machines, especially with holds
+# - review printed score and mark up
+# - make changes/notes based on my review of printed score
+# - games and boces? (only if time allows)
+# - review fonts
+# - penultimate draft: gen g orchestration!
+# - penultimate draft: gen h orchestration!
+# - errors should show class names / lines that throw them
+# - final draft: gen g orchestration!
+# - final draft: gen h orchestration!
+# - USE MY MUSICAL EXPERIENCE TO CREATE BROAD STROKES 
+
+
+
 
 # ---------------------------- FUTURE:
 # AUTOMATIC METRICAL DURATIONS (research abjad)
@@ -322,7 +338,24 @@
 # - - - for short scores
 # - - - based on instrument preferences
 # - automate start and stop together orchestration (assign stops/starts)
-
+# - smarter pitch displacement (stay within range / range of fifths)
+# - cross lines using rhythm overlay (including mixing together into chords)
+# - pulse machine that separates pulses into separate events (so that each pitch can be displaced)
+# - tag to show any data attribute
+# - smarter error handling
+# - better tempo management (why does it slow everything down?) 
+# - - - - including metric modulation (see http://abjad.mbrsi.org/api/tools/indicatortools/MetricModulation.html)
+# - allow slices of data to be tagged
+# - better way to handle octave transposing instruments in scores
+# - maybe. .. warn if orchestrated lines don't inherit from arrangement base classes (i.e. they should be getting rehearsal marks, etc.)
+# - (if necessary) - there's a bug with dupe tie spanners on drones (bug show up if you attempt to print Drone0's music() output)
+# - show measure numbers on multimeasure rests
+# - limit multimeasure rest length to 8 bars? (see below... could create list of lists to determine measure count)
+# - - - - - maybe better... limit to 8 only if greater than 9?
+# - - - - - also, would be ideal to be able to specify break points... 
+# - easily turn colors on and off
+# - add events from multiple lines into a single harmonic event
+# - beaming tags
 
 import abjad
 from calliope import bubbles

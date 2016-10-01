@@ -63,7 +63,7 @@ class AttachmentTagData(object):
         elif attachment_name == "8va":
             return abjad.spannertools.OctavationSpanner(start=1)
         elif attachment_name in self.colors_inventory:
-            # return lambda x : abjad.agenttools.LabelAgent(x).color_leaves(attachment_name)
+            return lambda x : abjad.agenttools.LabelAgent(x).color_leaves(attachment_name)
             pass
         elif not attachment_name in self.stop_spanners_inventory:
             if attachment_name[0] == "\\":

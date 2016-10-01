@@ -471,7 +471,7 @@ class Perc2(ArrangeE):
 class Vibes(ArrangeE):
     metrical_durations = DURATIONS_FAST
     fragments = Frag.make(
-        Frag.it(0,3, duration=1, offset=-9, tags=[">","fff", "\clef bass"]),
+        Frag.it(0,3, duration=1, offset=-9, tags=[">","fff", "\clef bass","Marimba"]),
         *Frag.its(6,(1,28), duration=0.5),
         )
     fragments.update_by(6,1, tags=["pp", "\clef treble"])
@@ -515,6 +515,7 @@ class Piano1(ArrangeE):
 
 class Piano2(ArrangeE):
     music = bubbles.Line("""
+    \clef bass
     d2. ~ \p 
     d2. d2. d2. ~ d2. 
     d2. d2. d2. d2. d2. d2.
@@ -566,6 +567,7 @@ class ViolinI1(ArrangeE):
     fragments = Frag.make(
         *Frag.its(1, [1,11], chord_positions=[-1])
         )
+    fragments.update_by(1,1, tags=["arco"])
     fragments.update_by(1,8, duration=1)
     fragments.update_by(1,10, duration=3)
 
@@ -574,6 +576,7 @@ class ViolinI2(ArrangeE):
     fragments = Frag.make(
         *Frag.its(1, [1,11], chord_positions=[-2])
         )
+    fragments.update_by(1,1, tags=["arco"])
     fragments.update_by(1,8, duration=1)
     fragments.update_by(1,10, duration=3)
 
@@ -583,6 +586,7 @@ class ViolinII1(ArrangeE):
         *Frag.its(2, [1,8], chord_positions=[-1]),
         *Frag.its(2, [9,11], chord_positions=[-2]),
         )
+    fragments.update_by(2,1, tags=["arco"])
     fragments.update_by(2,5, release_offset=0.5)
     fragments.update_by(2,6, attack_offset=0.5, duration=4)
     fragments.update_by(2,8, duration=0)
@@ -593,6 +597,7 @@ class ViolinII2(ArrangeE):
         *Frag.its(2, [1,8], chord_positions=[-2]),
         *Frag.its(2, [9,11], chord_positions=[-2]),
         )
+    fragments.update_by(2,1, tags=["arco"])
     fragments.update_by(2,5, release_offset=0.5)
     fragments.update_by(2,6, attack_offset=0.5, duration=4)
 
@@ -603,6 +608,7 @@ class Viola1(ArrangeE):
         *Frag.its(1, (1,11), chord_positions=[2]),
         *Frag.its(1, (11,30), chord_positions=[-1]),
         )
+    fragments.update_by(1,1, tags=["normal"])
     fragments.update_by(1,8, duration=1)
     fragments.update_by(1,10, duration=3)
     fragments.update_by(1,11, attack_offset=0.5)
@@ -625,6 +631,7 @@ class Viola2(ArrangeE):
         *Frag.its(2, (1,11), chord_positions=[0]),
         *Frag.its(1, (11,30), chord_positions=[-2]),
         )
+    fragments.update_by(2,1, tags=["normal"])
     fragments.update_by(2,5, release_offset=0.5)
     fragments.update_by(2,6, attack_offset=0.5, duration=4)
     fragments.update_by(2,8, duration=1)
@@ -657,7 +664,7 @@ class Cello1(ArrangeE):
     fragments.update_by(2,26, release_offset=0.5)
     fragments.update_by(2,27, attack_offset=0.5)
 
-    fragments.update_by(1,29, tags=["\<"])
+    fragments.update_by(2,29, tags=["\<"])
     fragments.update_by(2,34, duration=6, tags=["f"])
     # def update_data(self, **kwargs):
     #     super().update_data(**kwargs)
@@ -680,7 +687,7 @@ class Cello2(ArrangeE):
     fragments.update_by(2,26, release_offset=0.5)
     fragments.update_by(2,27, attack_offset=0.5)
 
-    fragments.update_by(1,29, tags=["\<"])
+    fragments.update_by(2,29, tags=["\<"])
     fragments.update_by(2,34, duration=6, tags=["f"])
 
     # def update_data(self, **kwargs):
