@@ -120,6 +120,8 @@
 # - - - (DONE) consider the low piano chords in line 2 (change short score?) (OK)
 
 # ---------------------------- FINAL LIST
+# - final draft: gen c orchestration!
+# - final draft: gen b orchestration!
 # - more interesting drones / with plan:
 # - - - GEN 0: Stopped horn only (DONE)
 # - - - GEN A: Trombone with Straight mute, and bass joins (DONE)
@@ -129,14 +131,13 @@
 # - - - GEN E: Trombeons, Horns/Tuba join, Piano (DONE)
 # - - - GEN F: Trombones and Horns back and forth... OK, but make more interesting????
 # - - - THINK ABOUT MAKING DRONES BIG AT END OF EACH SECTION !
-# - final draft: gen c orchestration!
-# - final draft: gen b orchestration!
 # - review piano part
 # - review harp part (including pedal changes)
 # - cymbal good throughout
 # - review percussion part (non-timpani)
 # - percussion beaters (including vibraphone mallets and motor)
 # - review timpani part (including tunings)
+# - look at each section code... OK if someone does nothing / little?
 # - VERY END FERMATA???
 # - transposing parts
 # - - - REMEMBER ENGLISH HORN TRANSPOSITION WHERE APPROPRIATE ONLY!!!!!!
@@ -356,6 +357,7 @@
 # - easily turn colors on and off
 # - add events from multiple lines into a single harmonic event
 # - beaming tags
+# - remember slur_me !
 
 import abjad
 from calliope import bubbles

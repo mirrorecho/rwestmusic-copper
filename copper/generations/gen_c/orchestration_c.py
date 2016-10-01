@@ -47,45 +47,60 @@ class Picc(ArrangeC):
 class Flute1(ArrangeC):
     metrical_durations = ArrangeC.metrical_durations + {
         6: ((2,4),(1,4),(1,4),),
+        9: ((2,4),(1,4),(1,4),),
         14: ((1,4),)*4,
         15: ((1,4),)*4,
         17: ((1,4),(1,4),(2,4),),
     }
     fragments = Frag.make(
         Frag.it(2,5, attack_offset=0.5, duration=4.5),
+        Frag.it(2,15, attack_offset=-0.5, duration=4.5),
         *Frag.its(3,(1,9), slur_me=True),
         *Frag.its(3,(13,21), slur_me=True),
     )
     fragments.update_by(2,5, tags=["p"])
+    fragments.update_by(3,1, tags=["mp"])
     # TO DO... trills should be built directly into tagging
     def after_music(self, music, **kwargs):
         super().after_music(music, **kwargs)
         trill = abjad.spannertools.TrillSpanner(pitch=abjad.NamedPitch("C#5"))
         abjad.attach(trill, music[4:6])
+        trill2 = abjad.spannertools.TrillSpanner(pitch=abjad.NamedPitch("G4"))
+        abjad.attach(trill2, music[10:12])
 
 class Flute2(ArrangeC):
     metrical_durations = ArrangeC.metrical_durations + {
         6: ((2,4),(1,4),(1,4),),
+        9: ((2,4),(1,4),(1,4),),
         15: ((1,4),)*4,
         17: ((1,4),)*4,
     }
     fragments = Frag.make(
         Frag.it(2,5, attack_offset=0.5, duration=4.5),
+        Frag.it(2,15, attack_offset=-0.5, duration=4.5),
         *Frag.its(3,(8,14), slur_me=True),
         *Frag.its(3,(20,26), slur_me=True),
     )
     fragments.update_by(2,5, tags=["p"])
+    fragments.update_by(3,8, tags=["mp"])
     fragments.update_by(3, 25, duration=0.5)
     # TO DO... trills should be built directly into tagging
     def after_music(self, music, **kwargs):
         super().after_music(music, **kwargs)
         trill = abjad.spannertools.TrillSpanner(pitch=abjad.NamedPitch("C#5"))
         abjad.attach(trill, music[4:6])
+        trill2 = abjad.spannertools.TrillSpanner(pitch=abjad.NamedPitch("G4"))
+        abjad.attach(trill2, music[10:12])
 
 class Oboe1(ArrangeC):
+    metrical_durations = ArrangeC.metrical_durations + {
+        9: ((2,4),(2,4),),
+        }
     fragments = Frag.make(
         *Frag.its(2, (1,4), slur_me=True),
         *Frag.its(2, (5,7), tags=["."]),
+        Frag.it(1,8, tags=["-"]),
+        Frag.it(1,9, tags=["."]),
         )
     # fragments = Frag({
     #     16: Frag.item(line=1,),
@@ -251,8 +266,13 @@ class Piano2(ArrangeC):
 # STRINGS
 
 class ViolinI1(ArrangeC):
+    metrical_durations = ArrangeC.metrical_durations + {
+        6: ((2,4),(2,4),),
+        9: ((2,4),(1,4),(1,4),),
+        }
     fragments = Frag.make(
         Frag.it(1, 3, duration=5, tags=[":32","pp"]),
+        Frag.it(1, 9, duration=4.5, tags=[":32"]),
         Frag.it(1,12, tags=["-","p","\<"]),
         Frag.it(1,13, tags=["-",]),
         Frag.it(1,14, tags=["-","mf"]),
@@ -270,8 +290,13 @@ class ViolinI1(ArrangeC):
         )
 
 class ViolinI2(ArrangeC):
+    metrical_durations = ArrangeC.metrical_durations + {
+        6: ((2,4),(2,4),),
+        9: ((2,4),(1,4),(1,4),),
+        }
     fragments = Frag.make(
         Frag.it(2, 5, duration=5, tags=[":32","pp"]),
+        Frag.it(2, 14, duration=4.5, offset=0.5, tags=[":32"]),
         Frag.it(1,12, tags=["-","p","\<"]),
         Frag.it(1,13, tags=["-",]),
         Frag.it(1,14, tags=["-","mf"]),
@@ -289,8 +314,13 @@ class ViolinI2(ArrangeC):
         )
 
 class ViolinII1(ArrangeC):
+    metrical_durations = ArrangeC.metrical_durations + {
+        6: ((2,4),(2,4),),
+        9: ((2,4),(1,4),(1,4),),
+        }
     fragments = Frag.make(
         Frag.it(1, 4, attack_offset=-5, duration=5, tags=[":32","pp"]),
+        Frag.it(2, 15, duration=4.5, offset=-0.5, tags=[":32"]),
         *Frag.its(2,(19,27) ),
         )
     fragments.update_by(2,19, tags=["p"])
@@ -305,8 +335,13 @@ class ViolinII1(ArrangeC):
 
 
 class ViolinII2(ArrangeC):
+    metrical_durations = ArrangeC.metrical_durations + {
+        6: ((2,4),(2,4),),
+        9: ((2,4),(1,4),(1,4),),
+        }
     fragments = Frag.make(
         Frag.it(1, 4, attack_offset=-5, duration=5, tags=[":32","pp"]),
+        Frag.it(1, 10, duration=4.5, offset=-0.5, tags=[":32"]),
         *Frag.its(2,(19,27) ),
         )
     fragments.update_by(2,19, tags=["p"])

@@ -1,4 +1,4 @@
-% 2016-09-28 02:31
+% 2016-10-01 06:05
 
 \version "2.18.2"
 \language "english"
@@ -24,6 +24,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                         \accidentalStyle modern-cautionary
                         {
@@ -86,6 +87,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                         \accidentalStyle modern-cautionary
                         {
@@ -110,14 +112,33 @@
                         \once \override Stem.color = #darkgreen
                         b'1 \stopTrillSpan
                         {
-                            R1 * 6
+                            R1 * 1
+                        }
+                        r2
+                        r4
+                        r8
+                        \once \override Accidental.color = #darkgreen
+                        \once \override Beam.color = #darkgreen
+                        \once \override Dots.color = #darkgreen
+                        \once \override NoteHead.color = #darkgreen
+                        \once \override Stem.color = #darkgreen
+                        \pitchedTrill
+                        fs'8 ~ \startTrillSpan g'
+                        \once \override Accidental.color = #darkgreen
+                        \once \override Beam.color = #darkgreen
+                        \once \override Dots.color = #darkgreen
+                        \once \override NoteHead.color = #darkgreen
+                        \once \override Stem.color = #darkgreen
+                        fs'1 \stopTrillSpan
+                        {
+                            R1 * 3
                         }
                         \once \override Accidental.color = #darkyellow
                         \once \override Beam.color = #darkyellow
                         \once \override Dots.color = #darkyellow
                         \once \override NoteHead.color = #darkyellow
                         \once \override Stem.color = #darkyellow
-                        d'4 (
+                        d'4 \mp
                         \once \override Accidental.color = #darkyellow
                         \once \override Beam.color = #darkyellow
                         \once \override Dots.color = #darkyellow
@@ -159,7 +180,7 @@
                         \once \override Dots.color = #darkyellow
                         \once \override NoteHead.color = #darkyellow
                         \once \override Stem.color = #darkyellow
-                        d''8 )
+                        d''8
                         r8
                         r4
                         \once \override Accidental.color = #darkyellow
@@ -231,6 +252,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                         \accidentalStyle modern-cautionary
                         {
@@ -255,14 +277,33 @@
                         \once \override Stem.color = #darkgreen
                         b'1 \stopTrillSpan
                         {
-                            R1 * 7
+                            R1 * 1
+                        }
+                        r2
+                        r4
+                        r8
+                        \once \override Accidental.color = #darkgreen
+                        \once \override Beam.color = #darkgreen
+                        \once \override Dots.color = #darkgreen
+                        \once \override NoteHead.color = #darkgreen
+                        \once \override Stem.color = #darkgreen
+                        \pitchedTrill
+                        fs'8 ~ \startTrillSpan g'
+                        \once \override Accidental.color = #darkgreen
+                        \once \override Beam.color = #darkgreen
+                        \once \override Dots.color = #darkgreen
+                        \once \override NoteHead.color = #darkgreen
+                        \once \override Stem.color = #darkgreen
+                        fs'1 \stopTrillSpan
+                        {
+                            R1 * 4
                         }
                         \once \override Accidental.color = #darkyellow
                         \once \override Beam.color = #darkyellow
                         \once \override Dots.color = #darkyellow
                         \once \override NoteHead.color = #darkyellow
                         \once \override Stem.color = #darkyellow
-                        d''8 [ (
+                        d''8 \mp [
                         \once \override Accidental.color = #darkyellow
                         \once \override Beam.color = #darkyellow
                         \once \override Dots.color = #darkyellow
@@ -292,7 +333,7 @@
                         \once \override Dots.color = #darkyellow
                         \once \override NoteHead.color = #darkyellow
                         \once \override Stem.color = #darkyellow
-                        fs''8 )
+                        fs''8
                         r8
                         r4
                         {
@@ -352,6 +393,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                         \accidentalStyle modern-cautionary
                         {
@@ -392,7 +434,24 @@
                         \once \override Stem.color = #darkgreen
                         cs''8 -\staccato ]
                         {
-                            R1 * 17
+                            R1 * 2
+                        }
+                        r2
+                        r4
+                        \once \override Accidental.color = #darkmagenta
+                        \once \override Beam.color = #darkmagenta
+                        \once \override Dots.color = #darkmagenta
+                        \once \override NoteHead.color = #darkmagenta
+                        \once \override Stem.color = #darkmagenta
+                        g'8 -\tenuto [
+                        \once \override Accidental.color = #darkmagenta
+                        \once \override Beam.color = #darkmagenta
+                        \once \override Dots.color = #darkmagenta
+                        \once \override NoteHead.color = #darkmagenta
+                        \once \override Stem.color = #darkmagenta
+                        cs''8 -\staccato ]
+                        {
+                            R1 * 14
                         }
                     }
                 }
@@ -403,6 +462,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                         \accidentalStyle modern-cautionary
                         \mark #3
@@ -420,6 +480,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                         \accidentalStyle modern-cautionary
                         {
@@ -541,6 +602,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                         \accidentalStyle modern-cautionary
                         {
@@ -665,6 +727,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                         \accidentalStyle modern-cautionary
                         \mark #3
@@ -679,6 +742,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                         \accidentalStyle modern-cautionary
                         \mark #3
@@ -698,6 +762,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                         \accidentalStyle modern-cautionary
                         {
@@ -748,6 +813,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                         \accidentalStyle modern-cautionary
                         {
@@ -789,6 +855,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                         \accidentalStyle modern-cautionary
                         {
@@ -866,6 +933,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                         \accidentalStyle modern-cautionary
                         {
@@ -942,6 +1010,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                         \accidentalStyle modern-cautionary
                         {
@@ -1091,6 +1160,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                         \accidentalStyle modern-cautionary
                         \mark #3
@@ -1106,6 +1176,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \compressFullBarRests
                     \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                     \accidentalStyle modern-cautionary
                     \once \override Accidental.color = #grey
@@ -1289,6 +1360,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
+                \compressFullBarRests
                 \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                 \accidentalStyle modern-cautionary
                 \mark #3
@@ -1342,6 +1414,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \compressFullBarRests
                     \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                     \accidentalStyle modern-cautionary
                     \mark #3
@@ -1368,6 +1441,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                         \accidentalStyle modern-cautionary
                         \mark #3
@@ -1395,12 +1469,13 @@
                     }
                 }
                 \new Staff {
-                    \set Staff.instrumentName = \markup { "Perc. 2 - Vib./Mar./Crot." }
-                    \set Staff.shortInstrumentName = \markup { Mar. }
+                    \set Staff.instrumentName = \markup { "Percussion 2" }
+                    \set Staff.shortInstrumentName = \markup { Perc.2 }
                     \time 4/4
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                         \accidentalStyle modern-cautionary
                         \clef "bass"
@@ -1421,6 +1496,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \compressFullBarRests
                     \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                     \accidentalStyle modern-cautionary
                     \mark #3
@@ -1433,6 +1509,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \compressFullBarRests
                     \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                     \accidentalStyle modern-cautionary
                     \mark #3
@@ -1448,6 +1525,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \compressFullBarRests
                     \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                     \accidentalStyle modern-cautionary
                     \mark #3
@@ -1460,6 +1538,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \compressFullBarRests
                     \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                     \accidentalStyle modern-cautionary
                     \mark #3
@@ -1478,6 +1557,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                         \accidentalStyle modern-cautionary
                         {
@@ -1485,7 +1565,8 @@
                             \mark #3
                             R1 * 6
                         }
-                        r2.
+                        r2
+                        r4
                         \once \override Accidental.color = #darkmagenta
                         \once \override Beam.color = #darkmagenta
                         \once \override Dots.color = #darkmagenta
@@ -1499,8 +1580,23 @@
                         \once \override Stem.color = #darkmagenta
                         cs''1 :32
                         {
-                            R1 * 3
+                            R1 * 1
                         }
+                        r2
+                        r4
+                        r8
+                        \once \override Accidental.color = #darkmagenta
+                        \once \override Beam.color = #darkmagenta
+                        \once \override Dots.color = #darkmagenta
+                        \once \override NoteHead.color = #darkmagenta
+                        \once \override Stem.color = #darkmagenta
+                        cs''8 :32 ~
+                        \once \override Accidental.color = #darkmagenta
+                        \once \override Beam.color = #darkmagenta
+                        \once \override Dots.color = #darkmagenta
+                        \once \override NoteHead.color = #darkmagenta
+                        \once \override Stem.color = #darkmagenta
+                        cs''1 :32
                         \once \override Accidental.color = #darkmagenta
                         \once \override Beam.color = #darkmagenta
                         \once \override Dots.color = #darkmagenta
@@ -1664,6 +1760,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                         \accidentalStyle modern-cautionary
                         {
@@ -1671,7 +1768,8 @@
                             \mark #3
                             R1 * 6
                         }
-                        r2.
+                        r2
+                        r4
                         \once \override Accidental.color = #darkgreen
                         \once \override Beam.color = #darkgreen
                         \once \override Dots.color = #darkgreen
@@ -1685,8 +1783,23 @@
                         \once \override Stem.color = #darkgreen
                         b'1 :32
                         {
-                            R1 * 3
+                            R1 * 1
                         }
+                        r2
+                        r4
+                        r8
+                        \once \override Accidental.color = #darkgreen
+                        \once \override Beam.color = #darkgreen
+                        \once \override Dots.color = #darkgreen
+                        \once \override NoteHead.color = #darkgreen
+                        \once \override Stem.color = #darkgreen
+                        g'8 :32 ~
+                        \once \override Accidental.color = #darkgreen
+                        \once \override Beam.color = #darkgreen
+                        \once \override Dots.color = #darkgreen
+                        \once \override NoteHead.color = #darkgreen
+                        \once \override Stem.color = #darkgreen
+                        g'1 :32
                         \once \override Accidental.color = #darkmagenta
                         \once \override Beam.color = #darkmagenta
                         \once \override Dots.color = #darkmagenta
@@ -1854,6 +1967,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                         \accidentalStyle modern-cautionary
                         {
@@ -1861,7 +1975,8 @@
                             \mark #3
                             R1 * 6
                         }
-                        r2.
+                        r2
+                        r4
                         \once \override Accidental.color = #darkmagenta
                         \once \override Beam.color = #darkmagenta
                         \once \override Dots.color = #darkmagenta
@@ -1875,8 +1990,23 @@
                         \once \override Stem.color = #darkmagenta
                         d'1 :32
                         {
-                            R1 * 3
+                            R1 * 1
                         }
+                        r2
+                        r4
+                        r8
+                        \once \override Accidental.color = #darkgreen
+                        \once \override Beam.color = #darkgreen
+                        \once \override Dots.color = #darkgreen
+                        \once \override NoteHead.color = #darkgreen
+                        \once \override Stem.color = #darkgreen
+                        fs'8 :32 ~
+                        \once \override Accidental.color = #darkgreen
+                        \once \override Beam.color = #darkgreen
+                        \once \override Dots.color = #darkgreen
+                        \once \override NoteHead.color = #darkgreen
+                        \once \override Stem.color = #darkgreen
+                        fs'1 :32
                         \once \override Accidental.color = #darkgreen
                         \once \override Beam.color = #darkgreen
                         \once \override Dots.color = #darkgreen
@@ -1996,6 +2126,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                         \accidentalStyle modern-cautionary
                         {
@@ -2003,7 +2134,8 @@
                             \mark #3
                             R1 * 6
                         }
-                        r2.
+                        r2
+                        r4
                         \once \override Accidental.color = #darkmagenta
                         \once \override Beam.color = #darkmagenta
                         \once \override Dots.color = #darkmagenta
@@ -2017,8 +2149,23 @@
                         \once \override Stem.color = #darkmagenta
                         d'1 :32
                         {
-                            R1 * 3
+                            R1 * 1
                         }
+                        r2
+                        r4
+                        r8
+                        \once \override Accidental.color = #darkmagenta
+                        \once \override Beam.color = #darkmagenta
+                        \once \override Dots.color = #darkmagenta
+                        \once \override NoteHead.color = #darkmagenta
+                        \once \override Stem.color = #darkmagenta
+                        e'8 :32 ~
+                        \once \override Accidental.color = #darkmagenta
+                        \once \override Beam.color = #darkmagenta
+                        \once \override Dots.color = #darkmagenta
+                        \once \override NoteHead.color = #darkmagenta
+                        \once \override Stem.color = #darkmagenta
+                        e'1 :32
                         \once \override Accidental.color = #darkgreen
                         \once \override Beam.color = #darkgreen
                         \once \override Dots.color = #darkgreen
@@ -2143,6 +2290,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                         \accidentalStyle modern-cautionary
                         {
@@ -2212,6 +2360,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                         \accidentalStyle modern-cautionary
                         {
@@ -2297,6 +2446,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                         \accidentalStyle modern-cautionary
                         \mark #3
@@ -2334,6 +2484,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                         \accidentalStyle modern-cautionary
                         \mark #3
@@ -2372,6 +2523,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \compressFullBarRests
                     \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                     \accidentalStyle modern-cautionary
                     \mark #3
@@ -2410,6 +2562,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \compressFullBarRests
                     \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                     \accidentalStyle modern-cautionary
                     {
@@ -2660,6 +2813,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \compressFullBarRests
                     \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                     \accidentalStyle modern-cautionary
                     {
@@ -2872,6 +3026,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \compressFullBarRests
                     \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                     \accidentalStyle modern-cautionary
                     {
@@ -3060,6 +3215,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \compressFullBarRests
                     \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                     \accidentalStyle modern-cautionary
                     {
@@ -3297,6 +3453,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \compressFullBarRests
                     \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                     \accidentalStyle modern-cautionary
                     \once \override Dots.color = #grey
@@ -3492,6 +3649,11 @@
                     r2
                     \bar "|."
                 }
+            }
+            \new Staff {
+                \clef "bass"
+                \set Staff.instrumentName = \markup { "Drone 10" }
+                \set Staff.shortInstrumentName = \markup { 10: }
             }
         >>
     >>
