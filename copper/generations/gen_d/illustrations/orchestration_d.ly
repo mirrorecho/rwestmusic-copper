@@ -1,4 +1,4 @@
-% 2016-10-01 05:37
+% 2016-10-01 08:06
 
 \version "2.18.2"
 \language "english"
@@ -487,7 +487,14 @@
                         \once \override Dots.color = #darkmagenta
                         \once \override NoteHead.color = #darkmagenta
                         \once \override Stem.color = #darkmagenta
-                        g'2. \pp ~ ~ \< ^ \markup { 1 }
+                        g'2. \pp ~ ~ \<
+                            ^ \markup {
+                                \column
+                                    {
+                                        1
+                                        (Ob.
+                                    }
+                                }
                         \once \override Accidental.color = #darkmagenta
                         \once \override Beam.color = #darkmagenta
                         \once \override Dots.color = #darkmagenta
@@ -876,7 +883,7 @@
                         \once \override Dots.color = #grey
                         \once \override NoteHead.color = #grey
                         \once \override Stem.color = #grey
-                        d2. \p ~ \< ^ \markup { 1 }
+                        d2. \mf ~ \< ^ \markup { 1 }
                         \once \override Accidental.color = #grey
                         \once \override Beam.color = #grey
                         \once \override Dots.color = #grey
@@ -1078,7 +1085,7 @@
                         \once \override Dots.color = #grey
                         \once \override NoteHead.color = #grey
                         \once \override Stem.color = #grey
-                        d4. \p \< ^ \markup { 17 }
+                        d4. \mf \< ^ \markup { 17 }
                         \once \override Accidental.color = #darkgreen
                         \once \override Beam.color = #darkgreen
                         \once \override Dots.color = #darkgreen
@@ -1134,7 +1141,7 @@
                         }
                         r4.
                         r4.
-                        d4. \p ~ \< ^ \markup { 17 }
+                        d4. \mf ~ \< ^ \markup { 17 }
                         d2. ~
                         d4.
                         \once \override Accidental.color = #darkgreen
@@ -1189,7 +1196,7 @@
                         \mark #4
                         R1 * 117/8
                     }
-                    d4. \p \< ^ \markup { 17 }
+                    d4. \mf \< ^ \markup { 17 }
                     \once \override Accidental.color = #darkgreen
                     \once \override Beam.color = #darkgreen
                     \once \override Dots.color = #darkgreen
@@ -1883,7 +1890,7 @@
                     \once \override Dots.color = #darkgreen
                     \once \override NoteHead.color = #darkgreen
                     \once \override Stem.color = #darkgreen
-                    <as,, ds,>4. -\accent \mf ^ \markup { 12 }
+                    <as,, ds,>4. -\accent ^ \markup { 12 }
                     r4.
                     r4.
                     \once \override Accidental.color = #darkgreen
@@ -2751,7 +2758,7 @@
                     \once \override Dots.color = #darkgreen
                     \once \override NoteHead.color = #darkgreen
                     \once \override Stem.color = #darkgreen
-                    <bf,, ef,>4. -\accent \mf ^ \markup { 12 }
+                    <bf,, ef,>4. -\accent ^ \markup { 12 }
                     \once \override Accidental.color = #darkgreen
                     \once \override Beam.color = #darkgreen
                     \once \override Dots.color = #darkgreen
@@ -3071,8 +3078,8 @@
                             ^ \markup {
                                 \column
                                     {
-                                        "tutti vln.I div 1"
                                         7
+                                        "tutti vln.I div 1"
                                     }
                                 }
                         \once \override Accidental.color = #darkgreen
@@ -4077,12 +4084,12 @@
                         \once \override Dots.color = #grey
                         \once \override NoteHead.color = #grey
                         \once \override Stem.color = #grey
-                        d2. :32 \p ~ \<
+                        d2. :32 \mf ~ \<
                             ^ \markup {
                                 \column
                                     {
-                                        "sul pont."
                                         1
+                                        "sul pont."
                                     }
                                 }
                         \once \override Accidental.color = #grey
@@ -4121,8 +4128,8 @@
                             ^ \markup {
                                 \column
                                     {
-                                        normal
                                         1
+                                        normal
                                     }
                                 }
                         \once \override Accidental.color = #darkgreen
@@ -4362,12 +4369,12 @@
                             R1 * 9/4
                         }
                         r4.
-                        d4. :32 \p ~ ~ \<
+                        d4. :32 \mf ~ ~ \<
                             ^ \markup {
                                 \column
                                     {
-                                        "sul pont."
                                         1
+                                        "sul pont."
                                     }
                                 }
                         d4. :32 ~
@@ -4385,8 +4392,8 @@
                             ^ \markup {
                                 \column
                                     {
-                                        normal
                                         1
+                                        normal
                                     }
                                 }
                         \once \override Accidental.color = #darkmagenta

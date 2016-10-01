@@ -132,6 +132,7 @@ class Clarinet2(ArrangeC):
         *Frag.its(4,(8,16), slur_me=True),
         *Frag.its(4,(20,28), slur_me=True),
         )
+    fragments.update_by(4,8, tags=["(Cl.)"])
 
 class Bassoon1(ArrangeC):
     pass
@@ -167,7 +168,7 @@ class Trumpet1(ArrangeC):
         Frag.it(2,9, tags="-"),
         Frag.it(1, 7, tags="("),
         Frag.it(1, 8, tags=")"),
-        Frag.it(1, 9, tags="."),
+        Frag.it(1, 9, tags=[".", "   mute out"]),
         )
 
 
@@ -180,7 +181,7 @@ class Trumpet2(ArrangeC):
         Frag.it(2,8, tags=")"),
         Frag.it(2,9, tags="-"),
         Frag.it(2, 13, duration=1.5),
-        Frag.it(2, 14, attack_offset=0.5, duration=0.5, tags="."),
+        Frag.it(2, 14, attack_offset=0.5, duration=0.5, tags=[".", "   mute out"]),
         )
 
 class Trombone1(ArrangeC):

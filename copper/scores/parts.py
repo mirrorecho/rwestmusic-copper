@@ -450,4 +450,4 @@ def string_parts():
 wind_parts()
 brass_parts()
 hit_parts()
-# string_parts()
+string_parts()

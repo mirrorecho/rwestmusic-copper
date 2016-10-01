@@ -79,7 +79,7 @@ class Clarinet2(ArrangeB):
         Frag.it(3, 22, duration=0.25, attack_offset=0.25, tags="("), 
         Frag.it(3, 23, tags=")"), 
         Frag.it(3, 24, tags="."), 
-        Frag.it(3, 25, duration=0.5, tags=(".",">")),        
+        Frag.it(3, 25, duration=0.5, tags=(".",">", "  to Cl.")),        
         )
     fragments.update_by(3,22, attack_offset=0.25)
     def after_music(self, music):
@@ -140,7 +140,7 @@ class Bassoon2(ArrangeB):
         Frag.it(3,39, tags=("Contra Bsn.", ".",">", "mf")),
         Frag.it(3,40, duration=2.5),
         Frag.it(3,46, duration=2),
-        Frag.it(3,49, duration=4, tags=(">",)),
+        Frag.it(3,49, duration=4, tags=(">","   to Bsn.")),
         # *Frag.its(3, (1,5) ),
         )
     fragments.update_by(2,7, attack_offset=-1)

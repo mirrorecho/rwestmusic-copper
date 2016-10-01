@@ -1,4 +1,4 @@
-% 2016-10-01 04:52
+% 2016-10-01 07:35
 
 \version "2.18.2"
 \language "english"
@@ -657,7 +657,7 @@
                             R1 * 33/4
                         }
                         r2
-                        d'4 \pp ~ \<
+                        d'4 \pp ~ \< ^ \markup { (Bsn.) }
                         d'2. ~
                         d'2
                         \once \override Accidental.color = #blue

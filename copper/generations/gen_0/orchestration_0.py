@@ -86,13 +86,13 @@ class Tuba(Arrange0):
 class Timpani(Arrange0):
     music = bubbles.Line(r"""
         R1 * 10
-        \times 2/3 { d4 \ppp \< r4 d4 r4 d4 r4 }
+        \times 2/3 { d4 ^\markup { "hard mallets" }  \ppp \< r4 d4 r4 d4 r4 }
         \times 2/3 { d4 r4 d4 r4 d4 \mp \! r4 }
         """)
 
 class Perc1(Arrange0):
     music = bubbles.Line(r"""
-        r4 c2.:32 ~ \pppp \< ^ \markup {" Sus. cymbal, yarn mallets "}
+        r4 c2.:32 ~ \pppp \< ^ \markup {" Sus. cymbal, yarn mallets throughout when rolled "}
         c1:32 \pp \! ~
         c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ c1:32 ~ 
         c2:32 \< ~ c4.:32 ~ c8:32 \mf \!
@@ -100,7 +100,7 @@ class Perc1(Arrange0):
 
 class Perc2(Arrange0):
     music = bubbles.Line(r"""
-        R1*3 c4 \mp ^ \markup {" Sus. cymbal (same rubber mallets)"}
+        R1*3 c4 \mp ^ \markup {" Sus. cymbal (shared with perc. 1), hard rubber mallets"}
         r4 r2
         R1 * 8
         """)

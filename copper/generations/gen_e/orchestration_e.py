@@ -196,7 +196,7 @@ class Bassoon2(WindsArrangeE):
     14:((1,4),(1,4),(1,4),),
     }
     fragments = Frag.make(
-        Frag.it(6,4, attack_offset=-6, **WIND_KWARGS),
+        Frag.it(6,4, attack_offset=-6, **WIND_KWARGS, tags=["(Bsn.)"]),
         Frag.it(6,10, attack_offset=-1.5, **WIND_KWARGS),
         Frag.it(6,15, attack_offset=-2, **WIND_KWARGS),
         Frag.it(6,22, attack_offset=-4.5, **WIND_KWARGS),

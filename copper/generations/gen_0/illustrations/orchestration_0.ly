@@ -1,4 +1,4 @@
-% 2016-09-27 23:41
+% 2016-10-01 08:11
 
 \version "2.18.2"
 \language "english"
@@ -18,11 +18,24 @@
                 systemStartDelimiter = #'SystemStartSquare
             } <<
                 \new Staff {
+                    \set Staff.instrumentName = \markup { Piccolo }
+                    \set Staff.shortInstrumentName = \markup { Picc. }
+                    \time 4/4
+                    {
+                        \numericTimeSignature
+                        \compressFullBarRests
+                        \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
+                        \accidentalStyle modern-cautionary
+                        R1 * 12
+                    }
+                }
+                \new Staff {
                     \set Staff.instrumentName = \markup { "Flute 1" }
                     \set Staff.shortInstrumentName = \markup { Fl.1 }
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         R1 * 12
@@ -34,17 +47,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
-                        \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
-                        \accidentalStyle modern-cautionary
-                        R1 * 12
-                    }
-                }
-                \new Staff {
-                    \set Staff.instrumentName = \markup { "Flute 3" }
-                    \set Staff.shortInstrumentName = \markup { Fl.3 }
-                    \time 4/4
-                    {
-                        \numericTimeSignature
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         R1 * 12
@@ -60,6 +63,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         R1 * 12
@@ -71,6 +75,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         R1 * 12
@@ -86,6 +91,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         R1 * 12
@@ -97,6 +103,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         R1 * 12
@@ -113,6 +120,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         R1 * 12
@@ -125,6 +133,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         R1 * 12
@@ -142,6 +151,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         r2
@@ -232,6 +242,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         {
@@ -342,6 +353,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         R1 * 12
@@ -353,6 +365,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         R1 * 12
@@ -369,6 +382,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         R1 * 12
@@ -381,6 +395,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         R1 * 12
@@ -394,6 +409,7 @@
                 \time 4/4
                 {
                     \numericTimeSignature
+                    \compressFullBarRests
                     \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                     \accidentalStyle modern-cautionary
                     R1 * 12
@@ -407,11 +423,12 @@
             \time 4/4
             {
                 \numericTimeSignature
+                \compressFullBarRests
                 \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                 \accidentalStyle modern-cautionary
                 R1 * 10
                 \times 2/3 {
-                    d4 \ppp \<
+                    d4 \ppp \< ^ \markup { "hard mallets" }
                     r4
                     d4
                     r4
@@ -436,10 +453,11 @@
                 \time 4/4
                 {
                     \numericTimeSignature
+                    \compressFullBarRests
                     \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                     \accidentalStyle modern-cautionary
                     r4
-                    c2. :32 \pppp ~ \< ^ \markup { " Sus. cymbal, yarn mallets " }
+                    c2. :32 \pppp ~ \< ^ \markup { " Sus. cymbal, yarn mallets throughout when rolled " }
                     c1 :32 \pp ~
                     c1 :32 ~
                     c1 :32 ~
@@ -465,21 +483,23 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         R1 * 3
-                        c4 \mp ^ \markup { " Sus. cymbal (same rubber mallets)" }
+                        c4 \mp ^ \markup { " Sus. cymbal (shared with perc. 1), hard rubber mallets" }
                         r4
                         r2
                         R1 * 8
                     }
                 }
                 \new Staff {
-                    \set Staff.instrumentName = \markup { "Perc. 2 - Vib./Mar./Crot." }
-                    \set Staff.shortInstrumentName = \markup { Mar. }
+                    \set Staff.instrumentName = \markup { "Percussion 2" }
+                    \set Staff.shortInstrumentName = \markup { Perc.2 }
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         \clef "bass"
@@ -498,6 +518,7 @@
                 \time 4/4
                 {
                     \numericTimeSignature
+                    \compressFullBarRests
                     \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                     \accidentalStyle modern-cautionary
                     R1 * 12
@@ -508,6 +529,7 @@
                 \time 4/4
                 {
                     \numericTimeSignature
+                    \compressFullBarRests
                     \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                     \accidentalStyle modern-cautionary
                     R1 * 12
@@ -521,6 +543,7 @@
                 \time 4/4
                 {
                     \numericTimeSignature
+                    \compressFullBarRests
                     \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                     \accidentalStyle modern-cautionary
                     R1 * 12
@@ -531,6 +554,7 @@
                 \time 4/4
                 {
                     \numericTimeSignature
+                    \compressFullBarRests
                     \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                     \accidentalStyle modern-cautionary
                     R1 * 12
@@ -547,6 +571,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         {
@@ -588,6 +613,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         {
@@ -633,6 +659,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         {
@@ -674,6 +701,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         {
@@ -720,6 +748,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         {
@@ -762,6 +791,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         {
@@ -808,6 +838,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         {
@@ -850,6 +881,7 @@
                     \time 4/4
                     {
                         \numericTimeSignature
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         {
@@ -893,6 +925,7 @@
                 \time 4/4
                 {
                     \numericTimeSignature
+                    \compressFullBarRests
                     \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                     \accidentalStyle modern-cautionary
                     {
@@ -937,6 +970,7 @@
                 \time 4/4
                 {
                     \numericTimeSignature
+                    \compressFullBarRests
                     \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                     \accidentalStyle modern-cautionary
                     {
@@ -1183,6 +1217,7 @@
                 \time 4/4
                 {
                     \numericTimeSignature
+                    \compressFullBarRests
                     \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                     \accidentalStyle modern-cautionary
                     \once \override Dots.color = #grey
@@ -1281,6 +1316,11 @@
                     r2
                     \bar "|."
                 }
+            }
+            \new Staff {
+                \clef "bass"
+                \set Staff.instrumentName = \markup { "Drone 10" }
+                \set Staff.shortInstrumentName = \markup { 10: }
             }
         >>
     >>

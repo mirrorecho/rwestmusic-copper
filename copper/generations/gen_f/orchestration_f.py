@@ -61,7 +61,7 @@ class Picc(ArrangeF):
         # Frag.it(1, 14, chord_positions=-1),
         # Frag.it(1, 15, chord_positions=-1),
         # *Frag.its(6, [39,49]),
-        Frag.it(6, 45, tags=["("]),
+        Frag.it(6, 45, tags=["(","mf"]),
         Frag.it(6, 46, before_next=0, tags=[")"]),
         Frag.it(7, 25, tags=["("]),
         Frag.it(7, 26, tags=[")"]),
@@ -797,6 +797,8 @@ class Harp1(ArrangeF):
         *Frag.its(3, [59,71], harmonies=[12], duration=1),
         *Frag.its(1, [37,58], chord_positions=-1, duration=0.5, tags=[">"]),
     )
+    fragments.update_by(6,19, tags=["mf"])
+    fragments.update_by(3,61, tags=["f"])
     fragments.update_by(7,37, tags=["8va"])
     fragments.update_by(1,37, tags=["ff"])
     fragments.update_by(1,57, duration=1, tags=["8va!", ">"])
@@ -840,7 +842,8 @@ class Piano1(ArrangeF):
         Frag.it(2, 15, chord_positions=[-1,-2]),
         Frag.it(2, 18, chord_positions=[-1,-2]),
         # this interspeces the melody into the piano part...!
-        *Frag.its(3, [40,80], before_next=0,transpose=12),
+        *Frag.its(3, [40,48], before_next=0,transpose=12, ),
+        *Frag.its(3, [48,80], before_next=0,transpose=12, harmonies=[12]),
 
         Frag.it(7, 29),
         Frag.it(7, 30, transpose=10),
@@ -872,6 +875,9 @@ class Piano1(ArrangeF):
     )
     fragments.update_by(7,50, tags=["8va"])
     fragments.update_by(3,79, tags=["8va!"])
+    fragments.update_by(3,40, tags=["mf"])
+    fragments.update_by(3,50, tags=["f"])
+    fragments.update_by(3,61, tags=["ff"])
 
 class Piano2(ArrangeF):
     metrical_durations = ArrangeF.metrical_durations + {
@@ -892,6 +898,7 @@ class Piano2(ArrangeF):
         Frag.it(2, 28, duration=2, chord_positions=[-1,0]),
         Frag.it(2, 29, duration=2, chord_positions=[-1,-2]),
         Frag.it(2, 30, duration=2, chord_positions=[0,1]),
+        *Frag.its(4, [60,65], harmonies=[-12], tags=[">"]),
         *Frag.its(2, [31,50], chord_positions=[1,2]),
     )
     fragments.update_by(2,22, duration=3, tags=[">"])
@@ -1368,7 +1375,7 @@ bubbles.illustrate_me(__file__,
     lambda: staves.CopperScore( 
         get_orchestration_f()(), 
         title="Copper: F", 
-        show_short_score=False, 
+        show_short_score=True, 
         hide_empty=True).get_lilypond_file(),
-    as_midi=True
+    as_midi=False
     )

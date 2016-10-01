@@ -1,4 +1,4 @@
-% 2016-10-01 06:05
+% 2016-10-01 08:03
 
 \version "2.18.2"
 \language "english"
@@ -616,7 +616,7 @@
                         \once \override Dots.color = #darkred
                         \once \override NoteHead.color = #darkred
                         \once \override Stem.color = #darkred
-                        g'8 \mp [ (
+                        g'8 \mp [ ^ \markup { (Cl.) }
                         \once \override Accidental.color = #darkred
                         \once \override Beam.color = #darkred
                         \once \override Dots.color = #darkred
@@ -658,7 +658,7 @@
                         \once \override Dots.color = #darkred
                         \once \override NoteHead.color = #darkred
                         \once \override Stem.color = #darkred
-                        cs''8 )
+                        cs''8
                         r8
                         r2
                         r2
@@ -920,7 +920,7 @@
                         \once \override Dots.color = #darkmagenta
                         \once \override NoteHead.color = #darkmagenta
                         \once \override Stem.color = #darkmagenta
-                        cs''8 -\staccato ]
+                        cs''8 -\staccato ] ^ \markup { "mute out" }
                         {
                             R1 * 14
                         }
@@ -992,7 +992,7 @@
                         \once \override Dots.color = #darkgreen
                         \once \override NoteHead.color = #darkgreen
                         \once \override Stem.color = #darkgreen
-                        g'8 -\staccato
+                        g'8 -\staccato ^ \markup { "mute out" }
                         {
                             R1 * 14
                         }

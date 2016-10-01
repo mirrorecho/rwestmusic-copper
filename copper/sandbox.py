@@ -118,10 +118,17 @@
 # - - - (DONE) are the low 4ths too crunchy? (no, OK)
 # - - - (DONE) be careful with G natural (against G#) in line 1, event 4 (OK)
 # - - - (DONE) consider the low piano chords in line 2 (change short score?) (OK)
+# - (DONE) final draft: gen c orchestration!
+# - (DONE) final draft: gen b orchestration!
 
 # ---------------------------- FINAL LIST
-# - final draft: gen c orchestration!
-# - final draft: gen b orchestration!
+# - review piano part
+# - review harp part (including pedal changes)
+# - cymbal good throughout
+# - review percussion part (non-timpani)
+# - percussion beaters (including vibraphone mallets and motor)
+# - review timpani part (including tunings)
+# - look at each section code... OK if someone does nothing / little?
 # - more interesting drones / with plan:
 # - - - GEN 0: Stopped horn only (DONE)
 # - - - GEN A: Trombone with Straight mute, and bass joins (DONE)
@@ -131,13 +138,6 @@
 # - - - GEN E: Trombeons, Horns/Tuba join, Piano (DONE)
 # - - - GEN F: Trombones and Horns back and forth... OK, but make more interesting????
 # - - - THINK ABOUT MAKING DRONES BIG AT END OF EACH SECTION !
-# - review piano part
-# - review harp part (including pedal changes)
-# - cymbal good throughout
-# - review percussion part (non-timpani)
-# - percussion beaters (including vibraphone mallets and motor)
-# - review timpani part (including tunings)
-# - look at each section code... OK if someone does nothing / little?
 # - VERY END FERMATA???
 # - transposing parts
 # - - - REMEMBER ENGLISH HORN TRANSPOSITION WHERE APPROPRIATE ONLY!!!!!!
@@ -197,7 +197,7 @@
 # - - - (DONE) shape range of line 3 (e.g. start high and aned low?)
 # - - - string pizz mimic bass clarinet?
 # - - - add piano...?
-# - - - should not go above the drone at the end
+# - - - should not go above the drone at the end?
 # - more orchestrating gen c
 # - - - piano/pizz parts?
 # - - - orchestration of 2nd half of lines 1/2 could be more interesting...
@@ -358,6 +358,7 @@
 # - add events from multiple lines into a single harmonic event
 # - beaming tags
 # - remember slur_me !
+# should be able to easily add instruction AFTER note
 
 import abjad
 from calliope import bubbles

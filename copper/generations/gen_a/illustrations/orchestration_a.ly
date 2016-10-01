@@ -1,4 +1,4 @@
-% 2016-09-27 19:36
+% 2016-10-01 07:51
 
 \version "2.18.2"
 \language "english"
@@ -18,10 +18,23 @@
                 systemStartDelimiter = #'SystemStartSquare
             } <<
                 \new Staff {
+                    \set Staff.instrumentName = \markup { Piccolo }
+                    \set Staff.shortInstrumentName = \markup { Picc. }
+                    {
+                        \bar "||"
+                        \compressFullBarRests
+                        \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
+                        \accidentalStyle modern-cautionary
+                        \mark #1
+                        R1 * 18
+                    }
+                }
+                \new Staff {
                     \set Staff.instrumentName = \markup { "Flute 1" }
                     \set Staff.shortInstrumentName = \markup { Fl.1 }
                     {
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                         \accidentalStyle modern-cautionary
                         \mark #1
@@ -33,17 +46,7 @@
                     \set Staff.shortInstrumentName = \markup { Fl.2 }
                     {
                         \bar "||"
-                        \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
-                        \accidentalStyle modern-cautionary
-                        \mark #1
-                        R1 * 18
-                    }
-                }
-                \new Staff {
-                    \set Staff.instrumentName = \markup { "Flute 3" }
-                    \set Staff.shortInstrumentName = \markup { Fl.3 }
-                    {
-                        \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                         \accidentalStyle modern-cautionary
                         \mark #1
@@ -59,6 +62,7 @@
                     \set Staff.shortInstrumentName = \markup { Ob.1 }
                     {
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                         \accidentalStyle modern-cautionary
                         \mark #1
@@ -70,6 +74,7 @@
                     \set Staff.shortInstrumentName = \markup { Ob.2 }
                     {
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                         \accidentalStyle modern-cautionary
                         \mark #1
@@ -85,6 +90,7 @@
                     \set Staff.shortInstrumentName = \markup { Cl.1 }
                     {
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                         \accidentalStyle modern-cautionary
                         {
@@ -159,6 +165,7 @@
                     \set Staff.shortInstrumentName = \markup { Cl.2 }
                     {
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                         \accidentalStyle modern-cautionary
                         {
@@ -240,6 +247,7 @@
                     \set Staff.shortInstrumentName = \markup { Bsn.1 }
                     {
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                         \accidentalStyle modern-cautionary
                         \mark #1
@@ -252,6 +260,7 @@
                     \set Staff.shortInstrumentName = \markup { Bsn.2 }
                     {
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                         \accidentalStyle modern-cautionary
                         \mark #1
@@ -269,6 +278,7 @@
                     \set Staff.shortInstrumentName = \markup { Hn.1 }
                     {
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                         \accidentalStyle modern-cautionary
                         \mark #1
@@ -280,6 +290,7 @@
                     \set Staff.shortInstrumentName = \markup { Hn.2 }
                     {
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                         \accidentalStyle modern-cautionary
                         \mark #1
@@ -295,6 +306,7 @@
                     \set Staff.shortInstrumentName = \markup { Tpt.1 }
                     {
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                         \accidentalStyle modern-cautionary
                         \mark #1
@@ -306,6 +318,7 @@
                     \set Staff.shortInstrumentName = \markup { Tpt.2 }
                     {
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                         \accidentalStyle modern-cautionary
                         \mark #1
@@ -322,6 +335,7 @@
                     \set Staff.shortInstrumentName = \markup { Tbn.1 }
                     {
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                         \accidentalStyle modern-cautionary
                         \once \override Accidental.color = #grey
@@ -471,7 +485,7 @@
                         \once \override Dots.color = #grey
                         \once \override NoteHead.color = #grey
                         \once \override Stem.color = #grey
-                        d2 \mp ~
+                        d2 \mp ~ ^ \markup { "mute out" }
                         \once \override Accidental.color = #grey
                         \once \override Beam.color = #grey
                         \once \override Dots.color = #grey
@@ -490,6 +504,7 @@
                     \set Staff.shortInstrumentName = \markup { Tbn.2 }
                     {
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                         \accidentalStyle modern-cautionary
                         {
@@ -609,7 +624,7 @@
                         \once \override Dots.color = #grey
                         \once \override NoteHead.color = #grey
                         \once \override Stem.color = #grey
-                        d1 \mp
+                        d1 \mp ^ \markup { "mute out" }
                     }
                 }
             >>
@@ -619,6 +634,7 @@
                 \set Staff.shortInstrumentName = \markup { Tba }
                 {
                     \bar "||"
+                    \compressFullBarRests
                     \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                     \accidentalStyle modern-cautionary
                     \mark #1
@@ -632,6 +648,7 @@
             \set Staff.shortInstrumentName = \markup { Timp }
             {
                 \bar "||"
+                \compressFullBarRests
                 \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                 \accidentalStyle modern-cautionary
                 \mark #1
@@ -669,11 +686,17 @@
                 \set Staff.shortInstrumentName = \markup { Perc.1 }
                 {
                     \bar "||"
+                    \compressFullBarRests
                     \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                     \accidentalStyle modern-cautionary
                     \mark #1
-                    R1 * 6
-                    c4 \p ^ \markup { "Sus. cymbal, rubber mallets" }
+                    r4
+                    c4 :32 \pppp ~ \<
+                    c2 :32 ~
+                    c1 :32 \pp ~
+                    c1 :32
+                    R1 * 3
+                    c4 \p ^ \markup { "Sus. cymbal, triangle beater" }
                     r4
                     r2
                     c4
@@ -687,7 +710,7 @@
                     c4
                     r2 ^ \markup { "to sus. cym." }
                     R1 * 2
-                    c1 :32 ~ ^ \markup { "Sus. cymbal, yarn mallets " }
+                    c1 :32 ~ ^ \markup { "Sus. cymbal (yarn mallets) " }
                     c2 :32 ~ \<
                     c4. :32 ~
                     c8 :32 \mf
@@ -702,13 +725,12 @@
                     \set Staff.shortInstrumentName = \markup { Perc.2 }
                     {
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                         \accidentalStyle modern-cautionary
                         \mark #1
-                        R1
-                        c1 :32 \pppp ~ \< ^ \markup { "Sus. cymbal, yarn mallets" }
-                        c1 :32 \pp ~
-                        c1 :32 ~
+                        R1 * 3
+                        c1 :32 ~ ^ \markup { "Sus. cymbal (yarn mallets)" }
                         c1 :32 ~
                         c1 :32 ~
                         c1 :32 ~
@@ -726,10 +748,11 @@
                     }
                 }
                 \new Staff {
-                    \set Staff.instrumentName = \markup { "Perc. 2 - Vib./Mar./Crot." }
-                    \set Staff.shortInstrumentName = \markup { Mar. }
+                    \set Staff.instrumentName = \markup { "Percussion 2" }
+                    \set Staff.shortInstrumentName = \markup { Perc.2 }
                     {
                         \bar "||"
+                        \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                         \accidentalStyle modern-cautionary
                         \clef "bass"
@@ -748,6 +771,7 @@
             \new Staff {
                 {
                     \bar "||"
+                    \compressFullBarRests
                     \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                     \accidentalStyle modern-cautionary
                     \mark #1
@@ -758,6 +782,7 @@
                 \clef "bass"
                 {
                     \bar "||"
+                    \compressFullBarRests
                     \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                     \accidentalStyle modern-cautionary
                     \mark #1
@@ -771,6 +796,7 @@
             \new Staff {
                 {
                     \bar "||"
+                    \compressFullBarRests
                     \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                     \accidentalStyle modern-cautionary
                     \mark #1
@@ -781,6 +807,7 @@
                 \clef "bass"
                 {
                     \bar "||"
+                    \compressFullBarRests
                     \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                     \accidentalStyle modern-cautionary
                     \mark #1
@@ -796,7 +823,13 @@
                     \set Staff.instrumentName = \markup { "Violin I Div 1" }
                     \set Staff.shortInstrumentName = \markup { Vln.I.1 }
                     {
+                        \bar "||"
+                        \compressFullBarRests
+                        \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
+                        \accidentalStyle modern-cautionary
                         {
+                            \mark #1
+                            \mark #1
                             R1 * 5 ^ \markup { "mute off" }
                         }
                         d'1 \pp \< ^ \markup { normal }
@@ -916,7 +949,13 @@
                     \set Staff.instrumentName = \markup { "Violin I Div 2" }
                     \set Staff.shortInstrumentName = \markup { Vln.I.2 }
                     {
+                        \bar "||"
+                        \compressFullBarRests
+                        \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
+                        \accidentalStyle modern-cautionary
                         {
+                            \mark #1
+                            \mark #1
                             R1 * 6 ^ \markup { "mute off" }
                         }
                         r2
@@ -1035,7 +1074,13 @@
                     \set Staff.instrumentName = \markup { "Violin II Div 1" }
                     \set Staff.shortInstrumentName = \markup { Vln.II.1 }
                     {
+                        \bar "||"
+                        \compressFullBarRests
+                        \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
+                        \accidentalStyle modern-cautionary
                         {
+                            \mark #1
+                            \mark #1
                             R1 * 5 ^ \markup { "mute off" }
                         }
                         r2
@@ -1151,7 +1196,13 @@
                     \set Staff.instrumentName = \markup { "Violin II Div 2" }
                     \set Staff.shortInstrumentName = \markup { Vln.II.2 }
                     {
+                        \bar "||"
+                        \compressFullBarRests
+                        \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
+                        \accidentalStyle modern-cautionary
                         {
+                            \mark #1
+                            \mark #1
                             R1 * 7 ^ \markup { "mute off" }
                         }
                         r4
@@ -1270,7 +1321,13 @@
                     \set Staff.instrumentName = \markup { "Viola Div 1" }
                     \set Staff.shortInstrumentName = \markup { Vla.1 }
                     {
+                        \bar "||"
+                        \compressFullBarRests
+                        \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
+                        \accidentalStyle modern-cautionary
                         {
+                            \mark #1
+                            \mark #1
                             R1 * 6 ^ \markup { "mute off" }
                         }
                         r4
@@ -1354,7 +1411,13 @@
                     \set Staff.instrumentName = \markup { "Viola Div 2" }
                     \set Staff.shortInstrumentName = \markup { Vla.2 }
                     {
+                        \bar "||"
+                        \compressFullBarRests
+                        \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
+                        \accidentalStyle modern-cautionary
                         {
+                            \mark #1
+                            \mark #1
                             R1 * 7 ^ \markup { "mute off" }
                         }
                         r2
@@ -1442,7 +1505,13 @@
                     \set Staff.instrumentName = \markup { "Cello Div 1" }
                     \set Staff.shortInstrumentName = \markup { Vc.1 }
                     {
+                        \bar "||"
+                        \compressFullBarRests
+                        \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
+                        \accidentalStyle modern-cautionary
                         {
+                            \mark #1
+                            \mark #1
                             R1 * 7 ^ \markup { "mute off" }
                         }
                         b2 \pp ~ \< ^ \markup { normal }
@@ -1543,7 +1612,13 @@
                     \set Staff.instrumentName = \markup { "Cello Div 2" }
                     \set Staff.shortInstrumentName = \markup { Vc.2 }
                     {
+                        \bar "||"
+                        \compressFullBarRests
+                        \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
+                        \accidentalStyle modern-cautionary
                         {
+                            \mark #1
+                            \mark #1
                             R1 * 8 ^ \markup { "mute off" }
                         }
                         r2
@@ -1599,6 +1674,7 @@
                 \set Staff.shortInstrumentName = \markup { Cb }
                 {
                     \bar "||"
+                    \compressFullBarRests
                     \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                     \accidentalStyle modern-cautionary
                     \mark #1
@@ -1628,6 +1704,7 @@
                 \time 4/4
                 {
                     \numericTimeSignature
+                    \compressFullBarRests
                     \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                     \accidentalStyle modern-cautionary
                     {
@@ -1832,6 +1909,7 @@
                 \time 4/4
                 {
                     \numericTimeSignature
+                    \compressFullBarRests
                     \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                     \accidentalStyle modern-cautionary
                     {
@@ -2095,6 +2173,7 @@
                 \set Staff.instrumentName = \markup { Drone }
                 \set Staff.shortInstrumentName = \markup { 0: }
                 {
+                    \compressFullBarRests
                     \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                     \accidentalStyle modern-cautionary
                     \once \override Dots.color = #grey
@@ -2242,6 +2321,11 @@
                     r2
                     \bar "|."
                 }
+            }
+            \new Staff {
+                \clef "bass"
+                \set Staff.instrumentName = \markup { "Drone 10" }
+                \set Staff.shortInstrumentName = \markup { 10: }
             }
         >>
     >>

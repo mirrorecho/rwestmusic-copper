@@ -1,4 +1,4 @@
-% 2016-09-30 18:08
+% 2016-10-01 06:53
 
 \version "2.18.2"
 \language "english"
@@ -264,7 +264,7 @@
                                 R1 * 33/4
                             }
                             r2
-                            d'4 \pp ~ \< ^ \markup { 1 }
+                            d'4 \pp ~ \<
                             d'2.
                             \once \override Accidental.color = #blue
                             \once \override Beam.color = #blue
@@ -273,7 +273,7 @@
                             \once \override Stem.color = #blue
                             d'8 -\accent \mf
                             r8
-                            fs'2 \pp ~ \< ^ \markup { 6 }
+                            fs'2 \pp ~ \<
                             fs'8 [
                             \once \override Accidental.color = #blue
                             \once \override Beam.color = #blue
@@ -282,7 +282,7 @@
                             \once \override Stem.color = #blue
                             fs'8 -\accent \mf ]
                             r8
-                            fs'8 \pp ~ \< ^ \markup { 12 }
+                            fs'8 \pp ~ \<
                             fs'4 ~
                             fs'4 ~
                             fs'8 [
@@ -294,7 +294,7 @@
                             fs'8 -\accent \mf ]
                             r4
                             r4
-                            a2 \pp ~ \< ^ \markup { 23 }
+                            a2 \pp ~ \<
                             a2. ~
                             a8 [
                             \once \override Accidental.color = #blue
@@ -1011,7 +1011,7 @@
                                 R1 * 33/4
                             }
                             r2
-                            d'4 \pp ~ \< ^ \markup { 4 }
+                            d'4 \pp ~ \<
                             d'2. ~
                             d'2
                             \once \override Accidental.color = #blue
@@ -1023,7 +1023,7 @@
                             r8
                             r4
                             r8
-                            e'8 \pp ~ \< ^ \markup { 10 }
+                            e'8 \pp ~ \<
                             e'4
                             \once \override Accidental.color = #blue
                             \once \override Beam.color = #blue
@@ -1032,7 +1032,7 @@
                             \once \override Stem.color = #blue
                             e'8 -\accent \mf
                             r8
-                            fs'2 \pp \< ^ \markup { 15 }
+                            fs'2 \pp \<
                             \once \override Accidental.color = #blue
                             \once \override Beam.color = #blue
                             \once \override Dots.color = #blue
@@ -1040,7 +1040,7 @@
                             \once \override Stem.color = #blue
                             fs'8 -\accent \mf
                             r8
-                            g2 \pp ~ \< ^ \markup { 22 }
+                            g2 \pp ~ \<
                             g2 ~
                             g8 [
                             \once \override Accidental.color = #blue

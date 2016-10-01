@@ -30,7 +30,7 @@ class ArrangeD(gen_d.GenD, machines.FragmentLine, machines.PitchedLine):
     def update_data(self):
         super().update_data()
         if self.fragments and len(self.segments)>1:
-            self.segments[1].tag("mf")
+            self.events[1].tag("mf")
 
 FAST_METRICAL_DURATIONS = ID( default=((3,8),(3,8),(3,8),), limit=24  )
 
@@ -133,7 +133,7 @@ class Oboe2(ArrangeD):
         7: ((6,8),(3,8),),
     }
     fragments = Frag.make(
-        Frag.it(1, 1, chord_positions=-2, duration=4.5, tags=["pp","\<","~"]),
+        Frag.it(1, 1, chord_positions=-2, duration=4.5, tags=["pp","\<","~", "(Ob.)"]),
         Frag.it(1, 3, chord_positions=-2, duration=0.5, tags=["mf","~!"]),
         Frag.it(2, 3, chord_positions=0, duration=4.5, tags=["pp","\<","("]),
         Frag.it(2, 5, chord_positions=-2, duration=0.5, tags=["mf",")"]),

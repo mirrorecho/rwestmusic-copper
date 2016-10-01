@@ -1,4 +1,4 @@
-% 2016-09-28 01:03
+% 2016-10-01 07:31
 
 \version "2.18.2"
 \language "english"
@@ -18,12 +18,26 @@
                 systemStartDelimiter = #'SystemStartSquare
             } <<
                 \new Staff {
+                    \set Staff.instrumentName = \markup { Piccolo }
+                    \set Staff.shortInstrumentName = \markup { Picc. }
+                    \time 3/4
+                    {
+                        \numericTimeSignature
+                        \bar "||"
+                        \compressFullBarRests
+                        \accidentalStyle modern-cautionary
+                        \mark #2
+                        R2. * 24
+                    }
+                }
+                \new Staff {
                     \set Staff.instrumentName = \markup { "Flute 1" }
                     \set Staff.shortInstrumentName = \markup { Fl.1 }
                     \time 3/4
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \accidentalStyle modern-cautionary
                         \mark #2
                         R2. * 24
@@ -36,18 +50,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
-                        \accidentalStyle modern-cautionary
-                        \mark #2
-                        R2. * 24
-                    }
-                }
-                \new Staff {
-                    \set Staff.instrumentName = \markup { "Flute 3" }
-                    \set Staff.shortInstrumentName = \markup { Fl.3 }
-                    \time 3/4
-                    {
-                        \numericTimeSignature
-                        \bar "||"
+                        \compressFullBarRests
                         \accidentalStyle modern-cautionary
                         \mark #2
                         R2. * 24
@@ -64,6 +67,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \accidentalStyle modern-cautionary
                         \mark #2
                         R2. * 24
@@ -76,6 +80,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \accidentalStyle modern-cautionary
                         {
                             \mark #2
@@ -166,6 +171,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \accidentalStyle modern-cautionary
                         \mark #2
                         R2. * 24
@@ -178,6 +184,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \accidentalStyle modern-cautionary
                         {
                             \mark #2
@@ -297,6 +304,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \accidentalStyle modern-cautionary
                         {
                             \mark #2
@@ -480,6 +488,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \accidentalStyle modern-cautionary
                         {
                             \mark #2
@@ -648,7 +657,7 @@
                         \once \override Dots.color = #darkyellow
                         \once \override NoteHead.color = #darkyellow
                         \once \override Stem.color = #darkyellow
-                        ef,4 -\accent ~
+                        ef,4 -\accent ~ ^ \markup { "to Bsn." }
                         \once \override Accidental.color = #darkyellow
                         \once \override Beam.color = #darkyellow
                         \once \override Dots.color = #darkyellow
@@ -673,6 +682,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \accidentalStyle modern-cautionary
                         \once \override Accidental.color = #grey
                         \once \override Beam.color = #grey
@@ -787,6 +797,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \accidentalStyle modern-cautionary
                         {
                             \mark #2
@@ -881,6 +892,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \accidentalStyle modern-cautionary
                         {
                             \mark #2
@@ -912,6 +924,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \accidentalStyle modern-cautionary
                         {
                             \mark #2
@@ -948,6 +961,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \accidentalStyle modern-cautionary
                         {
                             \mark #2
@@ -1036,6 +1050,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \accidentalStyle modern-cautionary
                         {
                             \mark #2
@@ -1095,6 +1110,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \compressFullBarRests
                     \accidentalStyle modern-cautionary
                     {
                         \mark #2
@@ -1360,6 +1376,7 @@
             {
                 \numericTimeSignature
                 \bar "||"
+                \compressFullBarRests
                 \accidentalStyle modern-cautionary
                 \mark #2
                 d4 \>
@@ -1424,6 +1441,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \compressFullBarRests
                     \accidentalStyle modern-cautionary
                     \mark #2
                     r4
@@ -1466,6 +1484,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \accidentalStyle modern-cautionary
                         \mark #2
                         R2. * 12
@@ -1476,12 +1495,13 @@
                     }
                 }
                 \new Staff {
-                    \set Staff.instrumentName = \markup { "Perc. 2 - Vib./Mar./Crot." }
-                    \set Staff.shortInstrumentName = \markup { Mar. }
+                    \set Staff.instrumentName = \markup { "Percussion 2" }
+                    \set Staff.shortInstrumentName = \markup { Perc.2 }
                     \time 3/4
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \accidentalStyle modern-cautionary
                         \clef "bass"
                         \mark #2
@@ -1501,6 +1521,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \compressFullBarRests
                     \accidentalStyle modern-cautionary
                     \mark #2
                     R2. * 24
@@ -1512,6 +1533,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \compressFullBarRests
                     \accidentalStyle modern-cautionary
                     \mark #2
                     R2. * 24
@@ -1526,6 +1548,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \compressFullBarRests
                     \accidentalStyle modern-cautionary
                     \mark #2
                     R2. * 24
@@ -1537,6 +1560,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \compressFullBarRests
                     \accidentalStyle modern-cautionary
                     \mark #2
                     R2. * 16
@@ -1559,6 +1583,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \accidentalStyle modern-cautionary
                         \mark #2
                         R2. * 24
@@ -1571,6 +1596,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \accidentalStyle modern-cautionary
                         \mark #2
                         R2. * 24
@@ -1587,6 +1613,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \accidentalStyle modern-cautionary
                         \mark #2
                         R2. * 24
@@ -1599,6 +1626,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \accidentalStyle modern-cautionary
                         \mark #2
                         R2. * 24
@@ -1616,6 +1644,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \accidentalStyle modern-cautionary
                         {
                             \mark #2
@@ -1671,6 +1700,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \accidentalStyle modern-cautionary
                         {
                             \mark #2
@@ -1730,6 +1760,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \accidentalStyle modern-cautionary
                         {
                             \mark #2
@@ -1882,6 +1913,7 @@
                     {
                         \numericTimeSignature
                         \bar "||"
+                        \compressFullBarRests
                         \accidentalStyle modern-cautionary
                         {
                             \mark #2
@@ -2034,6 +2066,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \compressFullBarRests
                     \accidentalStyle modern-cautionary
                     {
                         \mark #2
@@ -2144,6 +2177,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \compressFullBarRests
                     \accidentalStyle modern-cautionary
                     {
                         \mark #2
@@ -2349,6 +2383,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \compressFullBarRests
                     \accidentalStyle modern-cautionary
                     {
                         \mark #2
@@ -2542,6 +2577,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \compressFullBarRests
                     \accidentalStyle modern-cautionary
                     {
                         \mark #2
@@ -2946,6 +2982,7 @@
                 {
                     \numericTimeSignature
                     \bar "||"
+                    \compressFullBarRests
                     \accidentalStyle modern-cautionary
                     {
                         \mark #2
@@ -3077,6 +3114,11 @@
                     d2. \p ^ \markup { 23 }
                     \bar "|."
                 }
+            }
+            \new Staff {
+                \clef "bass"
+                \set Staff.instrumentName = \markup { "Drone 10" }
+                \set Staff.shortInstrumentName = \markup { 10: }
             }
         >>
     >>
