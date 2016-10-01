@@ -1,4 +1,4 @@
-% 2016-10-01 08:26
+% 2016-10-01 09:50
 
 \version "2.18.2"
 \language "english"
@@ -293,14 +293,14 @@
                             {
                                 R1 * 3
                             }
-                            d'4 \mp
+                            d'4 \mp (
                             g'8 [
                             cs''8 ]
                             e''8 [
                             b'16
                             fs'16 ]
                             e''4
-                            d''8
+                            d''8 )
                             r8
                             r4
                             fs''8 [ (
@@ -554,12 +554,12 @@
                             {
                                 R1 * 4
                             }
-                            d''8 \mp [
+                            d''8 \mp [ (
                             gs''8 ]
                             cs'''8 [
                             a''16
                             gs''16 ]
-                            fs''8
+                            fs''8 )
                             r8
                             r4
                             {
@@ -1533,14 +1533,14 @@
                                 R1 * 8
                             }
                             r2
-                            g'8 \mp [ ^ \markup { (Cl.) }
+                            g'8 \mp [ ( ^ \markup { (Cl.) }
                             cs''8 ]
                             b'8 [
                             d''16
                             cs''16 ]
                             b'8 [
                             d''8 ]
-                            cs''8
+                            cs''8 )
                             r8
                             r2
                             r2
@@ -4666,7 +4666,7 @@
                         r2
                         c4
                         r4
-                        r2 ^ \markup { "to tri." }
+                        r2
                         R1 * 4
                         r4
                         c4 \p ^ \markup { "triangle, l.v." }
@@ -4688,7 +4688,7 @@
                         \accidentalStyle modern-cautionary
                         \mark #2
                         r4
-                        c2 :32 \ppp ~ \< ^ \markup { "Sus. cymbal, yarn mallets" }
+                        c2 :32 \ppp ~ \<
                         c2. :32 \pp ~
                         c2. :32 ~
                         c2. :32 ~
@@ -4726,8 +4726,41 @@
                         r4
                         c2. :32 \ppp ~ \<
                         c1 :32 \p
-                        R1 * 18
-                        c1 :32 ~ ^ \markup { "Sus. cymbal" }
+                        R1 * 4
+                        r2
+                        r4
+                        c8 \mp
+                        c8 ^ \markup { "Sus. cymbal, wire brushes" }
+                        R1 * 2
+                        r2
+                        r4
+                        r8
+                        c8
+                        R1 * 4
+                        c4 \p
+                        r4
+                        r8
+                        c16
+                        c16
+                        c4
+                        r4
+                        r8
+                        c16
+                        c16
+                        c4
+                        r4
+                        r8
+                        c16
+                        c16
+                        r4
+                        r2
+                        r4
+                        r8
+                        c16
+                        c16
+                        r2
+                        R1 * 2
+                        c1 :32 ~ ^ \markup { "(yarn mallets)" }
                         c1 :32 ~
                         c1 :32 ~
                         c2 :32 ~ \<
@@ -4802,12 +4835,17 @@
                         \accidentalStyle modern-cautionary
                         \mark #5
                         r4
-                        c2 :32 \pp ~ \< ^ \markup { "Sus. cymbal, yarn mallets" }
+                        c2 :32 \pp ~ \<
                         c2. :32 ~
                         c2. :32 ~
                         c2. :32 \p
-                        R2. * 6
-                        c2. :32 ~
+                        R2. * 3
+                        r4
+                        r4
+                        r8
+                        c8 \mf ^ \markup { "Tam tam" }
+                        R2. * 2
+                        c2. :32 ~ ^ \markup { "Sus. cymbal" }
                         c2. :32 ~
                         c2. :32 ~
                         c2. :32 ~
@@ -4819,9 +4857,17 @@
                         c2. :32 ~
                         c2. :32 ~
                         c2. :32
-                        R2. * 8
-                        c2. :32 ~
-                        c2. :32 ~
+                        R2. * 3
+                        r8
+                        c8 -\accent \f ^ \markup { "Tam tam" }
+                        r4
+                        r4
+                        R2.
+                        r4
+                        r4
+                        c4 -\accent
+                        R2. * 3
+                        c2. :32 ~ ^ \markup { "Sus. cymbal" }
                         c2. :32 ~
                         c2. :32 ~
                         c2 :32 ~ \<
@@ -4936,11 +4982,31 @@
                             \compressFullBarRests
                             \accidentalStyle modern-cautionary
                             \mark #2
-                            R2. * 12
-                            c4 ^ \markup { "Tam tam, l.v." }
+                            R2. * 7
+                            c4 \mp ^ \markup { "Sus. Cymbal, tam tam beater" }
                             r4
                             r4
-                            R2. * 11
+                            R2.
+                            r4
+                            r4
+                            c4
+                            R2. * 2
+                            c4 \mf ^ \markup { "Tam tam, l.v." }
+                            r4
+                            r4
+                            R2.
+                            c4
+                            r4
+                            r4
+                            R2. * 2
+                            c4
+                            r4
+                            r4
+                            R2.
+                            c4
+                            r4
+                            r4
+                            R2. * 4
                         }
                         \time 4/4
                         {
@@ -4991,14 +5057,15 @@
                             \accidentalStyle modern-cautionary
                             \mark #5
                             R2. * 4
-                            c2. :32 \p ~ ^ \markup { "Sus. cymbal, yarn mallets" }
+                            c2. :32 \p ~ ^ \markup { "Sus. cymbal" }
                             c2. :32 ~
                             c2. :32 ~
                             c2. :32 ~
                             c2. :32 ~
                             c2. :32
                             R2. * 12
-                            c2. :32 \p ~ ^ \markup { "Sus. cymbal, yarn mallets" }
+                            c2. :32 \p ~ ^ \markup { "Sus. cymbal" }
+                            c2. :32 ~
                             c2. :32 ~
                             c2. :32 ~
                             c2. :32 ~
@@ -5006,7 +5073,7 @@
                             c2. :32 ~
                             c2. :32 ~
                             c2. :32
-                            R2. * 5
+                            R2. * 4
                         }
                         \time 4/4
                         {
@@ -5016,7 +5083,23 @@
                             \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 144) }
                             \accidentalStyle modern-cautionary
                             \mark #6
-                            R1 * 36
+                            R1 * 14
+                            c4 -\accent \mf ^ \markup { "Sus. cymbal (same rubber mallets)" }
+                            r4
+                            r2
+                            c4 -\accent
+                            r4
+                            r2
+                            R1 * 4
+                            c4 -\accent
+                            c4 -\accent
+                            r2
+                            R1 * 6
+                            c4 -\accent
+                            c8 -\accent
+                            c8 -\accent
+                            r2
+                            R1 * 8
                         }
                         {
                             \bar "||"
@@ -5051,7 +5134,7 @@
                             \accidentalStyle modern-cautionary
                             \clef "bass"
                             \mark #1
-                            d4 -\accent \fff
+                            d4 -\accent \fff ^ \markup { Marimba }
                             r4
                             r2
                             R1 * 17
@@ -5064,7 +5147,7 @@
                             \accidentalStyle modern-cautionary
                             \clef "bass"
                             \mark #2
-                            d4 -\accent \fff
+                            d4 -\accent \fff ^ \markup { Marimba }
                             r4
                             r4
                             R2. * 23
@@ -5078,7 +5161,7 @@
                             \accidentalStyle modern-cautionary
                             \clef "bass"
                             \mark #3
-                            d4 -\accent \fff
+                            d4 -\accent \fff ^ \markup { Marimba }
                             r4
                             r2
                             R1 * 23
@@ -5168,7 +5251,7 @@
                                 R1 * 9
                             }
                             \clef treble
-                            d'8 \pp
+                            d'8 \mp ^ \markup { Marimba }
                             r8
                             g'8 [
                             fs'8 ]
@@ -5187,10 +5270,10 @@
                             e'8 [
                             g'8 ]
                             fs'8 [
-                            a'8 :32 -\accent \mp ~ ]
+                            a'8 :32 -\accent \mf ~ ]
                             a'4 :32 ~
                             a'8 :32 [
-                            g'8 \pp ]
+                            g'8 \mp ]
                             fs'8 [
                             e''8 ]
                             r8
@@ -5239,7 +5322,8 @@
                             a'4
                             bf4
                             c'2 :32
-                            r2.
+                            r2
+                            r4
                             c'4
                             ef'4
                             d'4
@@ -5256,7 +5340,7 @@
                             fs''8 :32 ~ ]
                             fs''2. :32
                             <d'' e''>8 [
-                            <g'' cs'''>8 ] ^ \markup { "to Crot." }
+                            <g'' cs'''>8 ]
                             {
                                 R1 * 6
                             }
@@ -5272,8 +5356,7 @@
                             a'8 ]
                             a'8 [
                             a'8 ]
-                            r4
-                            r4
+                            r2
                             r4
                             fs'8 \< [
                             cs''8 ]
@@ -5300,7 +5383,7 @@
                             \accidentalStyle modern-cautionary
                             r1 -\fermata
                             \clef "bass"
-                            d4 -\accent \fff
+                            d4 -\accent \fff ^ \markup { Marimba }
                             r2. -\fermata
                         }
                     }

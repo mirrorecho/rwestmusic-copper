@@ -120,45 +120,29 @@
 # - - - (DONE) consider the low piano chords in line 2 (change short score?) (OK)
 # - (DONE) final draft: gen c orchestration!
 # - (DONE) final draft: gen b orchestration!
+# - (DONE) review piano part
+# - (DONE) review harp part (including pedal changes)
+# - (DONE) cymbal good throughout
+# - (DONE) review percussion part (non-timpani)
+# - (DONE) review timpani part (including tunings)
+# - (DONE) VERY END FERMATA???
+# - (DONE) check brass mutes
+# - (DONE) double bass transposition (double check it's always up the octave)
+# - (DONE) ENDING??
+# - (DONE) double check metrical durations
+# - (DONE) review of doublings (all OK... used effectively?)
+# - (DONE) review of percussion instruments used
+# - (DONE) METRICAL DURATION RESPELLINGS
+# - (DONE) review of all parts (everyone has something to do)
 
 # ---------------------------- FINAL LIST
-# - review piano part
-# - review harp part (including pedal changes)
-# - cymbal good throughout
-# - review percussion part (non-timpani)
+# - final score review!
 # - percussion beaters (including vibraphone mallets and motor)
-# - review timpani part (including tunings)
-# - look at each section code... OK if someone does nothing / little?
-# - more interesting drones / with plan:
-# - - - GEN 0: Stopped horn only (DONE)
-# - - - GEN A: Trombone with Straight mute, and bass joins (DONE)
-# - - - GEN B: Horns + Bassoons + ?? (maybe Viola?)
-# - - - GEN C: Trombone/Tuba, and Cello, Bass (DONE)
-# - - - GEN D: Horns, Trombones and Tuba Join + ????
-# - - - GEN E: Trombeons, Horns/Tuba join, Piano (DONE)
-# - - - GEN F: Trombones and Horns back and forth... OK, but make more interesting????
-# - - - THINK ABOUT MAKING DRONES BIG AT END OF EACH SECTION !
-# - VERY END FERMATA???
 # - transposing parts
 # - - - REMEMBER ENGLISH HORN TRANSPOSITION WHERE APPROPRIATE ONLY!!!!!!
 # - FIX OVERLAPPING TEMPOS IN PARTS WHERE MULTIMEASURE RESTS
-# - check brass mutes
-# - more rhythms to play with metric modulations at section changes
-# - double check metrical durations
-# - review all winds music
-# - review all brass music
-# - review all hits music
-# - review all strings music
-# - review of all parts (everyone has something to do)
-# - adjust based on review of parts
-# - review of doublings (all OK... used effectively?)
-# - review of percussion instruments used
 # - verify all part transpositions (pic, english horn, clarinet/bass clarinet, horn, double bass)
-# - METRICAL DURATION RESPELLINGS
 # REMEMBER TO DELETE/MOVE ALL PDFS BEFORE CREATING FINAL PART VERSION
-# ENDING??
-# - double bass transposition (double check it's always up the octave)
-# - final score review!
 # - - double check score order
 # - double check that part output matches score (or make part code not suck)
 # - - - NO REALLY REALLY REALLY double check score and parts (easy to mistype classes in parts file)... need to check both code & output
@@ -178,11 +162,26 @@
 # - - - formatting
 # - - - page breaks
 # - - - transpositions
-# - performance and program notes
-# - title page
-
 
 # ---------------------------- IF TIME
+# - review all winds music
+# - review all brass music
+# - review all hits music
+# - review all strings music
+# - adjust based on review of parts
+# - look at each section code... OK if someone does nothing / little?
+# - more interesting drones / with plan:
+# - - - GEN 0: Stopped horn only (DONE)
+# - - - GEN A: Trombone with Straight mute, and bass joins (DONE)
+# - - - GEN B: Horns + Bassoons + ?? (maybe Viola?)
+# - - - GEN C: Trombone/Tuba, and Cello, Bass (DONE)
+# - - - GEN D: Horns, Trombones and Tuba Join + ????
+# - - - GEN E: Trombeons, Horns/Tuba join, Piano (DONE)
+# - - - GEN F: Trombones and Horns back and forth... OK, but make more interesting????
+# - - - THINK ABOUT MAKING DRONES BIG AT END OF EACH SECTION !
+# - more rhythms to play with metric modulations at section changes
+# - performance and program notes
+# - title page
 # - tweak orchestrating gen d
 # - - - contra Bsn in bass
 # - - - rhythm in piano part in line 5 is not well suited to the meter... OK or change?
@@ -224,7 +223,7 @@
 # more brass wherever possible
 # more with marimba part in e
 # - cues?
-# gen e should be 35 bars!!!!!
+# gen e should be 36 bars!!!!!
 # consider changing something drastic?
 
 # -------------------------- SKIPPED
