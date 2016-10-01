@@ -135,7 +135,7 @@ class Perc1(ArrangeA):
         c1:32 \pp \! ~ c1:32
         R1 * 3
         c4 \p ^ \markup { "Sus. cymbal, triangle beater" } r4 r2 |
-        c4 r4 r2 ^ \markup {"to tri."}  |
+        c4 r4 r2 |
         R1 * 4 |
         r4 c4 \p ^ \markup {"triangle, l.v."} r2 |
         r4 c4 r2 ^ \markup {"to sus. cym."} | 
@@ -156,7 +156,7 @@ class Perc2(ArrangeA):
 
 class Vibes(ArrangeA):
     music = bubbles.Line(r"""
-        \clef bass d4 \fff -> 
+        \clef bass d4 \fff -> ^\markup { "Marimba" } 
         r4 r2 R1*17
         """)
 

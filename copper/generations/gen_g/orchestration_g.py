@@ -2,7 +2,7 @@
 import abjad
 from calliope import bubbles
 from copper import machines
-from copper.generations.gen_g import gen_g
+# from copper.generations.gen_g import gen_g
 from copper import staves
 
 # SHORTCUTS TO AVOID TYPING
@@ -10,36 +10,39 @@ Frag = machines.Fragments
 ID = machines.IndexedData
 ID1 = machines.ID1
 
-class HarmonyPulsed11(gen_g.Line1): #( using double digits for new lines to create pulses of the harmonies)
-    rhythm_pulses = ID({}, default=0.5)
+# class HarmonyPulsed11(gen_g.Line1): #( using double digits for new lines to create pulses of the harmonies)
+#     rhythm_pulses = ID({}, default=0.5)
 
-class HarmonyPulsed12(gen_g.Line2):
-    rhythm_pulses = ID({}, default=0.5)
+# class HarmonyPulsed12(gen_g.Line2):
+#     rhythm_pulses = ID({}, default=0.5)
 
 LINES = ID({
-    0:gen_g.Drone0(),
-    1:gen_g.Line1(),
-    2:gen_g.Line2(),
-    3:gen_g.Line3(),
-    4:gen_g.Line4(),
-    5:gen_g.Line5(),
-    6:gen_g.Line6(),
-    7:gen_g.Line7(),
-    8:gen_g.Line8(),
-    11:HarmonyPulsed11(), #( using double digits for new lines to create pulses of the harmonies)
-    12:HarmonyPulsed12(), 
+    # 0:gen_g.Drone0(),
+    # 1:gen_g.Line1(),
+    # 2:gen_g.Line2(),
+    # 3:gen_g.Line3(),
+    # 4:gen_g.Line4(),
+    # 5:gen_g.Line5(),
+    # 6:gen_g.Line6(),
+    # 7:gen_g.Line7(),
+    # 8:gen_g.Line8(),
+    # 11:HarmonyPulsed11(), #( using double digits for new lines to create pulses of the harmonies)
+    # 12:HarmonyPulsed12(), 
     })
 # ------------------------------------------------------------------------------------------------------------
 # BASE CLASSES AND HELPERS
 
-class ArrangeG(gen_g.GenG, machines.FragmentLine, machines.PitchedLine):
-    unarranged = bubbles.Line("R2. * 48") 
-    lines = LINES
-    # show_data_attr="depthwise_index"
-    def update_data(self):
-        super().update_data()
-        if len(self.segments) > 1:
-            self.segments[1].tag("mf")
+class ArrangeG(machines.FragmentLine, machines.PitchedLine):
+    unarranged = bubbles.Line("r1 \\fermata r4 r2. \\fermata ") 
+    metrical_durations = ID(default=((1,1)), limit=2)
+    start_bar_line = "||"
+    # unarranged = bubbles.Line("R2. * 48") 
+    # lines = LINES
+    # # show_data_attr="depthwise_index"
+    # def update_data(self):
+    #     super().update_data()
+    #     if len(self.segments) > 1:
+    #         self.segments[1].tag("mf")
 
 # ------------------------------------------------------------------------------------------------------------
 # WINDS
@@ -110,7 +113,11 @@ class Perc2(ArrangeG):
     pass
 
 class Vibes(ArrangeG):
-    pass
+    music = bubbles.Line(r"""
+        r1 \fermata
+        \clef bass d4 \fff -> ^\markup { "Marimba" } 
+        r2. \fermata
+        """)
 
 class Harp1(ArrangeG):
     pass
@@ -128,9 +135,10 @@ class Piano2(ArrangeG):
 # STRINGS
 
 class ViolinI1(ArrangeG):
-    fragments = Frag.make(*[
-        Frag.it(11, i, chord_positions=-1) for i in range(1, 20)
-        ])
+    pass
+    # fragments = Frag.make(*[
+    #     Frag.it(11, i, chord_positions=-1) for i in range(1, 20)
+    #     ])
 
 class ViolinI2(ArrangeG):
     fragments = Frag.make(*[
@@ -138,24 +146,28 @@ class ViolinI2(ArrangeG):
         ])
 
 class ViolinII1(ArrangeG):
-    fragments = Frag.make(*[
-        Frag.it(11, i, chord_positions=-3) for i in range(1, 20)
-        ])
+    pass
+    # fragments = Frag.make(*[
+    #     Frag.it(11, i, chord_positions=-3) for i in range(1, 20)
+    #     ])
 
 class ViolinII2(ArrangeG):
-    fragments = Frag.make(*[
-        Frag.it(12, i, chord_positions=-1) for i in range(1, 20)
-        ])
+    pass
+    # fragments = Frag.make(*[
+    #     Frag.it(12, i, chord_positions=-1) for i in range(1, 20)
+    #     ])
 
 class Viola1(ArrangeG):
-    fragments = Frag.make(*[
-        Frag.it(12, i, chord_positions=-2) for i in range(1, 20)
-        ])
+    pass
+    # fragments = Frag.make(*[
+    #     Frag.it(12, i, chord_positions=-2) for i in range(1, 20)
+    #     ])
 
 class Viola2(ArrangeG):
-    fragments = Frag.make(*[
-        Frag.it(12, i, chord_positions=-3) for i in range(1, 20)
-        ])
+    pass
+    # fragments = Frag.make(*[
+    #     Frag.it(12, i, chord_positions=-3) for i in range(1, 20)
+    #     ])
 
 class Cello1(ArrangeG):
     pass
@@ -206,15 +218,15 @@ def get_orchestration_g():
         cello1 = Cello1()
         cello2 = Cello2()
         bass = Bass()
-        drone0 = LINES[0].show_data(show_data_attr="original_depthwise_index")
-        line1 = LINES[1].show_data(show_data_attr="original_depthwise_index")
-        line2 = LINES[2].show_data(show_data_attr="original_depthwise_index")
-        line3 = LINES[3].show_data(show_data_attr="original_depthwise_index")
-        line4 = LINES[4].show_data(show_data_attr="original_depthwise_index")
-        line5 = LINES[5].show_data(show_data_attr="original_depthwise_index")
-        line6 = LINES[6].show_data(show_data_attr="original_depthwise_index")
-        line7 = LINES[7].show_data(show_data_attr="original_depthwise_index")
-        line8 = LINES[8].show_data(show_data_attr="original_depthwise_index")
+        # drone0 = LINES[0].show_data(show_data_attr="original_depthwise_index")
+        # line1 = LINES[1].show_data(show_data_attr="original_depthwise_index")
+        # line2 = LINES[2].show_data(show_data_attr="original_depthwise_index")
+        # line3 = LINES[3].show_data(show_data_attr="original_depthwise_index")
+        # line4 = LINES[4].show_data(show_data_attr="original_depthwise_index")
+        # line5 = LINES[5].show_data(show_data_attr="original_depthwise_index")
+        # line6 = LINES[6].show_data(show_data_attr="original_depthwise_index")
+        # line7 = LINES[7].show_data(show_data_attr="original_depthwise_index")
+        # line8 = LINES[8].show_data(show_data_attr="original_depthwise_index")
     return OrchestrationG
 
 # -------------------------------------------------------------------------

@@ -712,14 +712,24 @@ class Perc1(ArrangeF):
 
 
 class Perc2(ArrangeF):
-    pass
+    music = bubbles.Line(r"""
+    R1 * 14 |
+    c4-> \mf ^ \markup {"Sus. cymbal (same rubber mallets)"} r4 r2 |
+    c4-> r4 r2 |
+    R1 * 4 |
+    c4-> c4-> r2 |
+    R1 * 6 |
+    c4-> c8-> c8-> r2 |
+    R1 * 8
+    """)
 
 class Vibes(ArrangeF):
     metrical_durations = ArrangeF.metrical_durations + {
     5: ((1,2),(1,2),),
+    11: ((1,2),(1,2),),
     23: ((1,4),(1,4),(1,4),(1,4),),
     32: ((1,4),(1,4),(1,4),(1,4),),
-    33: ((1,4),(1,4),(1,4),(1,4),),
+    33: ((2,4),(1,4),(1,4),),
     34: ((1,4),(1,4),(1,4),(1,4),),
     35: ((1,4),(1,4),(1,4),(1,4),),
     }
@@ -747,7 +757,7 @@ class Vibes(ArrangeF):
         Frag.it(1, 27, chord_positions=-1),
         Frag.it(1, 28, chord_positions=-1, tags=[":32"]),
         Frag.it(1, 29, chord_positions=[-1,-2]),
-        Frag.it(1, 30, chord_positions=[-1,-2], tags=["   to Crot."]),
+        Frag.it(1, 30, chord_positions=[-1,-2]),
         Frag.it(1, 34, chord_positions=[-1], transpose=-24, tags=["f", "Crotales, brass mallets"]),
         Frag.it(1, 35, transpose=-12, duration=0.5, chord_positions=[0]),
         Frag.it(1, 36, transpose=-24, duration=0.5, chord_positions=[-1]),

@@ -59,7 +59,7 @@ class Flute1(ArrangeC):
         *Frag.its(3,(13,21), slur_me=True),
     )
     fragments.update_by(2,5, tags=["p"])
-    fragments.update_by(3,1, tags=["mp"])
+    fragments.update_by(3,1, tags=["mp","("])
     # TO DO... trills should be built directly into tagging
     def after_music(self, music, **kwargs):
         super().after_music(music, **kwargs)
@@ -82,7 +82,7 @@ class Flute2(ArrangeC):
         *Frag.its(3,(20,26), slur_me=True),
     )
     fragments.update_by(2,5, tags=["p"])
-    fragments.update_by(3,8, tags=["mp"])
+    fragments.update_by(3,8, tags=["mp","("])
     fragments.update_by(3, 25, duration=0.5)
     # TO DO... trills should be built directly into tagging
     def after_music(self, music, **kwargs):
@@ -132,7 +132,7 @@ class Clarinet2(ArrangeC):
         *Frag.its(4,(8,16), slur_me=True),
         *Frag.its(4,(20,28), slur_me=True),
         )
-    fragments.update_by(4,8, tags=["(Cl.)"])
+    fragments.update_by(4,8, tags=["(Cl.)","("])
 
 class Bassoon1(ArrangeC):
     pass
@@ -224,9 +224,15 @@ class Perc1(ArrangeC):
     music = bubbles.Line(r"""
         r4 c2.:32 ~ \ppp \< |
         c1:32 \p \! |
-        R1 * 18 |
-        #24
-        c1:32 ~ ^ \markup {"Sus. cymbal"} |
+        R1 * 4 | 
+        r2 r4 c8  \mp c8  ^ \markup {"Sus. cymbal, wire brushes"} 
+        R1 * 2 |
+        r2 r4 r8 c8 |
+        R1 * 4 |
+        c4 \p r4 r8 c16 c16 c4 | r4 r8 c16 c16 c4 r4 |
+        r8 c16 c16 r4 r2 | r4 r8 c16 c16 r2 |
+        R1 * 2 |
+        c1:32 ~ ^ \markup {"(yarn mallets)"} |
         c1:32 ~ c1:32 ~ 
         c2:32 \< ~ c4.:32 ~ c8:32 \mf \!
         """)
@@ -247,7 +253,7 @@ class Perc2(ArrangeC):
 
 class Vibes(ArrangeC):
     music = bubbles.Line(r"""
-        \clef bass d4 \fff -> 
+        \clef bass d4 \fff -> ^\markup { "Marimba" } 
         r4 r2 R1*23
         """)
 

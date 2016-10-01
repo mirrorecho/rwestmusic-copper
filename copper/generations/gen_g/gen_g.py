@@ -8,12 +8,13 @@ from copper.generations.gen_f import gen_f
 from copper import staves
 
 class GenG(object):
-    time_signature = (3,4)
-    metrical_durations = ID(default=((3,4),), limit=48)
-    rehearsal_mark_number = 7
-    # tempo_units_per_minute = 144
-    rhythm_initial_silence=28
     start_bar_line = "||"
+    # time_signature = (3,4)
+    # metrical_durations = ID(default=((3,4),), limit=48)
+    # rehearsal_mark_number = 7
+    # # tempo_units_per_minute = 144
+    # rhythm_initial_silence=28
+    # start_bar_line = "||"
 
 class Drone0(GenG, machines.Drone0):
     rhythm_sequence = ID(default=1, limit=22)
@@ -23,13 +24,13 @@ NEW_FIFTHS = machines.FifthDisplacement(up=(0,10), down=(6,) ) # TO DO... used m
 
 # -------------------------------------------------------------------------------------------------
 
-class Line1(GenG, machines.RhythmsPulsed, gen_f.Line1):
+class Line1(GenG,  gen_f.Line1):
     pitch_displacement = gen_f.Line3.pitch_displacement # + NEW_FIFTHS
     show_data_attr = "original_depthwise_index"
 
 # -------------------------------------------------------------------------------------------------
 
-class Line2(GenG, machines.RhythmsPulsed, gen_f.Line2):
+class Line2(GenG, gen_f.Line2):
     def update_data(self, **kwargs):
         super().update_data(**kwargs)
         if self.__class__ is Line2:
@@ -37,13 +38,13 @@ class Line2(GenG, machines.RhythmsPulsed, gen_f.Line2):
 
 # -------------------------------------------------------------------------------------------------
 
-class Line3(GenG, machines.RhythmsPulsed, gen_f.Line3):
+class Line3(GenG,  gen_f.Line3):
     rhythm_pulses = ID({}, default=0.5)
     pitch_displacement = gen_f.Line3.pitch_displacement + NEW_FIFTHS
 
 # -------------------------------------------------------------------------------------------------
 
-class Line4(GenG, machines.RhythmsPulsed, gen_f.Line4):
+class Line4(GenG,  gen_f.Line4):
     rhythm_pulses = ID({}, default=0.5)
     pitch_displacement = gen_f.Line4.pitch_displacement.copy()
     pitch_displacement += machines.FifthDisplacement(
@@ -81,7 +82,7 @@ class Line5(GenG, gen_f.Line5):
         self.respell_events("sharps",29)
 # -------------------------------------------------------------------------------------------------
 
-class Line6(GenG, machines.RhythmsPulsed, gen_f.Line6):
+class Line6(GenG,  gen_f.Line6):
     rhythm_pulses = ID({}, default=0.5)
     pitch_displacement = gen_f.Line6.pitch_displacement.copy()
     pitch_displacement.flat(2,3)
@@ -94,7 +95,7 @@ class Line6(GenG, machines.RhythmsPulsed, gen_f.Line6):
             )
 # -------------------------------------------------------------------------------------------------
 
-class Line7(GenG, machines.RhythmsPulsed, gen_f.Line7):
+class Line7(GenG, gen_f.Line7):
     # rhythm_multipliers = ID({}, default=1)
     rhythm_multipliers = gen_f.Line7.rhythm_multipliers
     rhythm_multipliers.default=0.5
@@ -131,7 +132,7 @@ class Line7(GenG, machines.RhythmsPulsed, gen_f.Line7):
 
 # -------------------------------------------------------------------------------------------------
 
-class Line8(machines.RhythmsPulsed, Line5):
+class Line8( Line5):
     rhythm_initial_silence = 27
     rhythm_pulses = ID({}, default=0.5)
     rhythm_multipliers = ID({}, default=1)

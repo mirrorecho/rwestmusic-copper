@@ -442,28 +442,34 @@ class Timpani(ArrangeE):
 
 class Perc1(ArrangeE):
     music = bubbles.Line(r"""
-        r4 c2:32 ~ \pp \< ^ \markup {"Sus. cymbal, yarn mallets"}
+        r4 c2:32 ~ \pp \<  
         c2.:32 ~ c2.:32 ~ c2.:32 \p \!
-        R2. * 6
-        c2.:32 ~ c2.:32 ~ c2.:32 ~ c2.:32 ~
+        R2. * 3
+        r4 r4 r8 c8 \mf  ^ \markup {"Tam tam"}
+        R2. * 2
+        c2.:32 ^ \markup {"Sus. cymbal"} ~ c2.:32 ~ c2.:32 ~ c2.:32 ~
         c2.:32 ~ c2.:32 ~ c2.:32 ~ c2.:32 ~
         c2.:32 ~ c2.:32 ~ c2.:32 ~ c2.:32 
-        R2. * 8
-        c2.:32 ~ c2.:32 ~ c2.:32 ~ c2.:32 ~ 
+        R2. * 3
+        r8 c8 -> \f  ^ \markup {"Tam tam"} r4 r4
+        R2. |
+        r4 r4 c4 -> 
+        R2. * 3 |
+        c2.:32 ~ ^ \markup {"Sus. cymbal"} c2.:32 ~ c2.:32 ~ 
         c2:32 \< ~ c8:32 ~ c8:32 \mf \!
         """)
 
 class Perc2(ArrangeE):
     music = bubbles.Line(r"""
         R2.* 4
-        c2.:32 ~ \p ^ \markup {"Sus. cymbal, yarn mallets"}
+        c2.:32 ~ \p ^ \markup {"Sus. cymbal"}
         c2.:32 ~ c2.:32 ~ c2.:32 ~ 
         c2.:32 ~ c2.:32 
         R2. * 12
-        c2.:32 ~ \p ^ \markup {"Sus. cymbal, yarn mallets"}
-        c2.:32 ~ c2.:32 ~ c2.:32 ~ 
+        c2.:32 ~ \p ^ \markup {"Sus. cymbal"}
+        c2.:32 ~ c2.:32 ~ c2.:32 ~ c2.:32 ~
         c2.:32 ~ c2.:32 ~ c2.:32 ~ c2.:32 
-        R2.*5
+        R2.*4
         """)
     
 
@@ -474,9 +480,9 @@ class Vibes(ArrangeE):
         Frag.it(0,3, duration=1, offset=-9, tags=[">","fff", "\clef bass","Marimba"]),
         *Frag.its(6,(1,28), duration=0.5),
         )
-    fragments.update_by(6,1, tags=["pp", "\clef treble"])
-    fragments.update_by(6,16, duration=2, tags=[">",":32","mp"])
-    fragments.update_by(6,17, tags=["pp"])
+    fragments.update_by(6,1, tags=["mp", "\clef treble", "Marimba"])
+    fragments.update_by(6,16, duration=2, tags=[">",":32","mf"])
+    fragments.update_by(6,17, tags=["mp"])
 
 class Harp1(ArrangeE):
     pass

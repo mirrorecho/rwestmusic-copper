@@ -256,7 +256,7 @@ class Timpani(ArrangeB):
 class Perc1(ArrangeB):
     music = bubbles.Line(r"""
         #8
-        r4 c2:32 ~ \ppp \< ^ \markup {"Sus. cymbal, yarn mallets"}
+        r4 c2:32 ~ \ppp \< 
         c2.:32 \pp \! ~
         c2.:32 ~ c2.:32 ~ c2.:32 ~ c2.:32 ~ c2.:32 ~ c2.:32 ~ 
         #16
@@ -268,14 +268,18 @@ class Perc1(ArrangeB):
 
 class Perc2(ArrangeB):
     music = bubbles.Line(r"""
-        R2.*12
-        c4 ^ \markup {"Tam tam, l.v."} r4 r4 | 
-        R2. * 11
+        R2.* 7
+        c4 \mp ^ \markup {"Sus. Cymbal, tam tam beater"} r4 r4 | R2. | r4 r4 c4
+        R2. * 2 |
+        c4 \mf ^ \markup {"Tam tam, l.v."} r4 r4 | 
+        R2. | c4 r4 r4 | R2. * 2 |
+        c4 r4 r4 | R2. |
+        c4 r4 r4 | R2. * 4
         """)
 
 class Vibes(ArrangeB):
     music = bubbles.Line(r"""
-        \clef bass d4 \fff -> r4 r4
+        \clef bass d4 \fff ->  ^\markup { "Marimba" }   r4 r4
         R2. *23
         """)
 

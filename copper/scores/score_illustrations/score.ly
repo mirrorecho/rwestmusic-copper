@@ -1,4 +1,4 @@
-% 2016-09-30 22:33
+% 2016-10-01 08:26
 
 \version "2.18.2"
 \language "english"
@@ -86,22 +86,21 @@
                             r4.
                             as''4. -\tenuto \mf
                             gs''4. -\tenuto
-                            f'''8 -\staccato -\tenuto
-                            r4
+                            f'''4. -\staccato
                             r8
                             fs'''8 -\tenuto [
                             f'''8 -\tenuto ]
                             {
                                 R1 * 9/8
                             }
+                            cs'''4 -\accent -\tenuto
+                            b''8 -\staccato
+                            as''8 -\accent [ (
+                            fs''8 )
+                            gs''16 (
+                            as''16 ] )
                             cs'''4 -\accent
-                            b''8 -\accent
-                            as''8 -\accent [
-                            fs''8 -\accent
-                            gs''16 -\accent
-                            as''16 -\accent ]
-                            cs'''4 -\accent
-                            b''8 -\accent
+                            b''8 -\staccato
                             gs''4. -\accent
                             r4.
                             r4.
@@ -155,7 +154,7 @@
                             }
                             r2
                             r4
-                            b'8 [ (
+                            b'8 \mf [ (
                             d''8 ~ ]
                             d''4 ~
                             d''4 )
@@ -225,6 +224,14 @@
                             fs'''4 ~
                             fs'''4
                         }
+                        {
+                            \bar "||"
+                            \compressFullBarRests
+                            \accidentalStyle modern-cautionary
+                            r1 -\fermata
+                            r4
+                            r2. -\fermata
+                        }
                     }
                 }
                 \new Staff {
@@ -275,16 +282,25 @@
                             b'8 \p ~ \startTrillSpan cs''
                             b'1 \stopTrillSpan
                             {
-                                R1 * 6
+                                R1 * 1
                             }
-                            d'4 (
+                            r2
+                            r4
+                            r8
+                            \pitchedTrill
+                            fs'8 ~ \startTrillSpan g'
+                            fs'1 \stopTrillSpan
+                            {
+                                R1 * 3
+                            }
+                            d'4 \mp
                             g'8 [
                             cs''8 ]
                             e''8 [
                             b'16
                             fs'16 ]
                             e''4
-                            d''8 )
+                            d''8
                             r8
                             r4
                             fs''8 [ (
@@ -324,18 +340,17 @@
                             {
                                 R1 * 9/4
                             }
-                            ds'''8 -\accent [
-                            fs''8 -\accent
-                            d''16 -\accent
-                            cs''16 -\accent ]
-                            fs''8 -\accent [
-                            d''8 -\accent
-                            cs''8 -\accent ]
-                            e''4 -\accent
-                            d''16 -\accent [
-                            gs''16 -\accent ]
-                            b''4 -\accent
-                            r8
+                            ds'''8 -\accent -\tenuto [
+                            fs''8 -\staccato
+                            d''16 -\accent (
+                            cs''16 ] )
+                            fs''8 -\accent [ (
+                            d''8 )
+                            cs''8 -\staccato ]
+                            e''4 -\accent -\tenuto
+                            d''16 [ (
+                            gs''16 ] )
+                            b''4. -\accent -\staccato
                             r4.
                             r4.
                             {
@@ -470,6 +485,14 @@
                             a'''8 -\accent [
                             a'''8 -\accent ]
                         }
+                        {
+                            \bar "||"
+                            \compressFullBarRests
+                            \accidentalStyle modern-cautionary
+                            r1 -\fermata
+                            r4
+                            r2. -\fermata
+                        }
                     }
                 }
                 \new Staff {
@@ -520,14 +543,23 @@
                             b'8 \p ~ \startTrillSpan cs''
                             b'1 \stopTrillSpan
                             {
-                                R1 * 7
+                                R1 * 1
                             }
-                            d''8 [ (
+                            r2
+                            r4
+                            r8
+                            \pitchedTrill
+                            fs'8 ~ \startTrillSpan g'
+                            fs'1 \stopTrillSpan
+                            {
+                                R1 * 4
+                            }
+                            d''8 \mp [
                             gs''8 ]
                             cs'''8 [
                             a''16
                             gs''16 ]
-                            fs''8 )
+                            fs''8
                             r8
                             r4
                             {
@@ -559,12 +591,26 @@
                             }
                             fs''4. -\tenuto \mf
                             a''4. -\tenuto
-                            gf''4. -\tenuto
-                            af''4. -\tenuto
+                            fs''4. -\tenuto
+                            gs''4. -\tenuto
                             r4.
                             r4.
                             {
-                                R1 * 45/4
+                                R1 * 27/8
+                            }
+                            b''4 -\accent -\staccato
+                            e'''8 -\staccato
+                            gs''8 (
+                            e''4 )
+                            fs''8 [ (
+                            gs''8
+                            fs''8 ~ ]
+                            fs''8 )
+                            d''4 (
+                            cs''4. )
+                            r4.
+                            {
+                                R1 * 45/8
                             }
                         }
                         \time 3/4
@@ -681,6 +727,14 @@
                             cs'''8 -\tenuto [
                             a'''8 -\accent -\tenuto ]
                         }
+                        {
+                            \bar "||"
+                            \compressFullBarRests
+                            \accidentalStyle modern-cautionary
+                            r1 -\fermata
+                            r4
+                            r2. -\fermata
+                        }
                     }
                 }
             >>
@@ -736,7 +790,14 @@
                             b'8 -\staccato [
                             cs''8 -\staccato ]
                             {
-                                R1 * 17
+                                R1 * 2
+                            }
+                            r2
+                            r4
+                            g'8 -\tenuto [
+                            cs''8 -\staccato ]
+                            {
+                                R1 * 14
                             }
                         }
                         \time 9/8
@@ -749,8 +810,20 @@
                             {
                                 \mark #4
                                 \mark #4
-                                R1 * 81/8
+                                R1 * 45/8
                             }
+                            cs''2. \pp ~ ~ \<
+                            cs''4. ~
+                            cs''8 \mf
+                            r4
+                            r4.
+                            r4.
+                            gs''2. \pp ~ \< (
+                            gs''4.
+                            a''8 \mf )
+                            r4
+                            r4.
+                            r4.
                             r4.
                             r4.
                             fs''4. \pp \<
@@ -880,6 +953,14 @@
                             b''4 -\tenuto
                             cs'''2 -\accent \ff
                         }
+                        {
+                            \bar "||"
+                            \compressFullBarRests
+                            \accidentalStyle modern-cautionary
+                            r1 -\fermata
+                            r4
+                            r2. -\fermata
+                        }
                     }
                 }
                 \new Staff {
@@ -947,8 +1028,26 @@
                             \compressFullBarRests
                             \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                             \accidentalStyle modern-cautionary
-                            \mark #4
-                            R1 * 27
+                            {
+                                \mark #4
+                                \mark #4
+                                R1 * 45/8
+                            }
+                            g'2. \pp ~ ~ \< ^ \markup { (Ob.) }
+                            g'4. ~
+                            g'8 \mf
+                            r4
+                            r4.
+                            r4.
+                            d''2. \pp ~ \< (
+                            d''4.
+                            gs''8 \mf )
+                            r4
+                            r4.
+                            r4.
+                            {
+                                R1 * 135/8
+                            }
                         }
                         \time 3/4
                         {
@@ -1047,6 +1146,14 @@
                             a''4
                             b''4 -\tenuto
                             cs'''2 -\accent \ff
+                        }
+                        {
+                            \bar "||"
+                            \compressFullBarRests
+                            \accidentalStyle modern-cautionary
+                            r1 -\fermata
+                            r4
+                            r2. -\fermata
                         }
                     }
                 }
@@ -1322,6 +1429,14 @@
                             a''8 -\tenuto ]
                             cs'''4 -\accent \ff
                         }
+                        {
+                            \bar "||"
+                            \compressFullBarRests
+                            \accidentalStyle modern-cautionary
+                            r1 -\fermata
+                            r4
+                            r2. -\fermata
+                        }
                     }
                 }
                 \new Staff {
@@ -1397,7 +1512,7 @@
                             c'16 [ (
                             d'16 )
                             e'16 -\staccato ]
-                            d'8 -\accent -\staccato
+                            d'8 -\accent -\staccato ^ \markup { "to Cl." }
                             r8
                             r4
                             r4
@@ -1418,14 +1533,14 @@
                                 R1 * 8
                             }
                             r2
-                            g'8 \mp [ (
+                            g'8 \mp [ ^ \markup { (Cl.) }
                             cs''8 ]
                             b'8 [
                             d''16
                             cs''16 ]
                             b'8 [
                             d''8 ]
-                            cs''8 )
+                            cs''8
                             r8
                             r2
                             r2
@@ -1635,6 +1750,14 @@
                             cs'''8 [
                             a''8 -\tenuto ]
                             cs'''4 -\accent \ff
+                        }
+                        {
+                            \bar "||"
+                            \compressFullBarRests
+                            \accidentalStyle modern-cautionary
+                            r1 -\fermata
+                            r4
+                            r2. -\fermata
                         }
                     }
                 }
@@ -1876,6 +1999,14 @@
                             cs'4 -\tenuto
                             e'2 \ff
                         }
+                        {
+                            \bar "||"
+                            \compressFullBarRests
+                            \accidentalStyle modern-cautionary
+                            r1 -\fermata
+                            r4
+                            r2. -\fermata
+                        }
                     }
                 }
                 \new Staff {
@@ -1952,7 +2083,7 @@
                             c8
                             r8
                             bf,2
-                            ef,4 -\accent ~
+                            ef,4 -\accent ~ ^ \markup { "to Bsn." }
                             ef,2.
                             {
                                 R1 * 3/2
@@ -1991,7 +2122,7 @@
                                 R1 * 33/4
                             }
                             r2
-                            d'4 \pp ~ \<
+                            d'4 \pp ~ \< ^ \markup { (Bsn.) }
                             d'2. ~
                             d'2
                             d'8 -\accent \mf
@@ -2084,6 +2215,14 @@
                             cs4 -\tenuto
                             d4 -\accent -\tenuto
                             e4 -\accent -\tenuto
+                        }
+                        {
+                            \bar "||"
+                            \compressFullBarRests
+                            \accidentalStyle modern-cautionary
+                            r1 -\fermata
+                            r4
+                            r2. -\fermata
                         }
                     }
                 }
@@ -2433,6 +2572,14 @@
                             d4 -\accent -\tenuto
                             d2. -\accent -\tenuto \ff
                         }
+                        {
+                            \bar "||"
+                            \compressFullBarRests
+                            \accidentalStyle modern-cautionary
+                            r1 -\fermata
+                            r4
+                            r2. -\fermata
+                        }
                     }
                 }
                 \new Staff {
@@ -2543,7 +2690,7 @@
                                 \mark #4
                                 R1 * 9/4
                             }
-                            d2. \p ~ \<
+                            d2. \mf ~ \<
                             d4. \mf ~ ~ \>
                             d4. ~
                             d4. \p ~
@@ -2572,7 +2719,8 @@
                             {
                                 R1 * 27/8
                             }
-                            r2.
+                            r4.
+                            r4.
                             d4. \p ~ \<
                             d4.
                             bf,4. -\accent -\tenuto \f ~
@@ -2757,6 +2905,14 @@
                             d4 -\accent -\tenuto
                             d2. -\accent -\tenuto \ff
                         }
+                        {
+                            \bar "||"
+                            \compressFullBarRests
+                            \accidentalStyle modern-cautionary
+                            r1 -\fermata
+                            r4
+                            r2. -\fermata
+                        }
                     }
                 }
             >>
@@ -2825,7 +2981,7 @@
                             r2
                             d'4 (
                             g'8 ) [
-                            cs''8 -\staccato ]
+                            cs''8 -\staccato ] ^ \markup { "mute out" }
                             {
                                 R1 * 14
                             }
@@ -2980,6 +3136,14 @@
                             b''8 ]
                             cs'''2 -\accent \ff
                         }
+                        {
+                            \bar "||"
+                            \compressFullBarRests
+                            \accidentalStyle modern-cautionary
+                            r1 -\fermata
+                            r4
+                            r2. -\fermata
+                        }
                     }
                 }
                 \new Staff {
@@ -3043,7 +3207,7 @@
                             fs'4 -\tenuto
                             r2
                             e'4.
-                            g'8 -\staccato
+                            g'8 -\staccato ^ \markup { "mute out" }
                             {
                                 R1 * 14
                             }
@@ -3170,6 +3334,14 @@
                             b''8 ]
                             cs'''2 -\accent \ff
                         }
+                        {
+                            \bar "||"
+                            \compressFullBarRests
+                            \accidentalStyle modern-cautionary
+                            r1 -\fermata
+                            r4
+                            r2. -\fermata
+                        }
                     }
                 }
             >>
@@ -3231,7 +3403,7 @@
                                 R1 * 1
                             }
                             d2 \pp \<
-                            d2 \mp ~
+                            d2 \mp ~ ^ \markup { "mute out" }
                             d2
                             r2
                             {
@@ -3324,8 +3496,9 @@
                                 \mark #4
                                 R1 * 27/2
                             }
-                            r2.
-                            d4. \p \<
+                            r4.
+                            r4.
+                            d4. \mf \<
                             bf,4. -\accent -\tenuto \f
                             r4.
                             r4.
@@ -3345,8 +3518,8 @@
                             d4. \p ~ \<
                             d4.
                             d8 -\accent -\staccato \f
-                            r2
-                            r8
+                            r4
+                            r4.
                             r4.
                             {
                                 R1 * 9/2
@@ -3507,6 +3680,14 @@
                             d4 -\accent -\tenuto
                             d2. -\accent -\tenuto \ff
                         }
+                        {
+                            \bar "||"
+                            \compressFullBarRests
+                            \accidentalStyle modern-cautionary
+                            r1 -\fermata
+                            r4
+                            r2. -\fermata
+                        }
                     }
                 }
                 \new Staff {
@@ -3559,7 +3740,7 @@
                             r2
                             r2
                             d2 \pp \<
-                            d1 \mp
+                            d1 \mp ^ \markup { "mute out" }
                         }
                         \time 3/4
                         {
@@ -3607,8 +3788,9 @@
                                 \mark #4
                                 R1 * 117/8
                             }
-                            r2.
-                            d4. \p ~ \<
+                            r4.
+                            r4.
+                            d4. \mf ~ \<
                             d2. ~
                             d4.
                             f,4. -\accent -\tenuto \f
@@ -3623,8 +3805,8 @@
                             d4. \p ~ \<
                             d4.
                             d8 -\accent -\staccato \f
-                            r2
-                            r8
+                            r4
+                            r4.
                             r4.
                             {
                                 R1 * 9/2
@@ -3785,6 +3967,14 @@
                             d4 -\accent -\tenuto
                             d2. -\accent -\tenuto \ff
                         }
+                        {
+                            \bar "||"
+                            \compressFullBarRests
+                            \accidentalStyle modern-cautionary
+                            r1 -\fermata
+                            r4
+                            r2. -\fermata
+                        }
                     }
                 }
             >>
@@ -3934,10 +4124,11 @@
                             \mark #4
                             R1 * 117/8
                         }
-                        d4. \p \<
+                        d4. \mf \<
                         ef,4. -\accent -\tenuto \f
                         r4.
-                        r2.
+                        r4.
+                        r4.
                         d4. \p ~ \<
                         d4.
                         ef,4. -\accent -\tenuto \f
@@ -4042,6 +4233,14 @@
                         d4 -\accent -\tenuto
                         e4 -\accent -\tenuto \ff
                     }
+                    {
+                        \bar "||"
+                        \compressFullBarRests
+                        \accidentalStyle modern-cautionary
+                        r1 -\fermata
+                        r4
+                        r2. -\fermata
+                    }
                 }
             }
         >>
@@ -4058,7 +4257,7 @@
                     \accidentalStyle modern-cautionary
                     R1 * 10
                     \times 2/3 {
-                        d4 \ppp \<
+                        d4 \ppp \< ^ \markup { "hard mallets" }
                         r4
                         d4
                         r4
@@ -4412,6 +4611,14 @@
                     <d, d>4. :32
                     <d, d>8 -\accent \ff
                 }
+                {
+                    \bar "||"
+                    \compressFullBarRests
+                    \accidentalStyle modern-cautionary
+                    r1 -\fermata
+                    r4
+                    r2. -\fermata
+                }
             }
         }
         \new StaffGroup <<
@@ -4427,7 +4634,7 @@
                         \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                         \accidentalStyle modern-cautionary
                         r4
-                        c2. :32 \pppp ~ \< ^ \markup { " Sus. cymbal, yarn mallets " }
+                        c2. :32 \pppp ~ \< ^ \markup { " Sus. cymbal, yarn mallets throughout when rolled " }
                         c1 :32 \pp ~
                         c1 :32 ~
                         c1 :32 ~
@@ -4448,8 +4655,13 @@
                         \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                         \accidentalStyle modern-cautionary
                         \mark #1
-                        R1 * 6
-                        c4 \p ^ \markup { "Sus. cymbal, rubber mallets" }
+                        r4
+                        c4 :32 \pppp ~ \<
+                        c2 :32 ~
+                        c1 :32 \pp ~
+                        c1 :32
+                        R1 * 3
+                        c4 \p ^ \markup { "Sus. cymbal, triangle beater" }
                         r4
                         r2
                         c4
@@ -4463,7 +4675,7 @@
                         c4
                         r2 ^ \markup { "to sus. cym." }
                         R1 * 2
-                        c1 :32 ~ ^ \markup { "Sus. cymbal, yarn mallets " }
+                        c1 :32 ~ ^ \markup { "Sus. cymbal (yarn mallets) " }
                         c2 :32 ~ \<
                         c4. :32 ~
                         c8 :32 \mf
@@ -4664,6 +4876,14 @@
                         c4. :32 ~
                         c8 :32 \ff
                     }
+                    {
+                        \bar "||"
+                        \compressFullBarRests
+                        \accidentalStyle modern-cautionary
+                        r1 -\fermata
+                        r4
+                        r2. -\fermata
+                    }
                 }
             }
             \new StaffGroup \with {
@@ -4681,7 +4901,7 @@
                             \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
                             \accidentalStyle modern-cautionary
                             R1 * 3
-                            c4 \mp ^ \markup { " Sus. cymbal (same rubber mallets)" }
+                            c4 \mp ^ \markup { " Sus. cymbal (shared with perc. 1), hard rubber mallets" }
                             r4
                             r2
                             R1 * 8
@@ -4692,10 +4912,8 @@
                             \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                             \accidentalStyle modern-cautionary
                             \mark #1
-                            R1
-                            c1 :32 \pppp ~ \< ^ \markup { "Sus. cymbal, yarn mallets" }
-                            c1 :32 \pp ~
-                            c1 :32 ~
+                            R1 * 3
+                            c1 :32 ~ ^ \markup { "Sus. cymbal (yarn mallets)" }
                             c1 :32 ~
                             c1 :32 ~
                             c1 :32 ~
@@ -4800,6 +5018,14 @@
                             \mark #6
                             R1 * 36
                         }
+                        {
+                            \bar "||"
+                            \compressFullBarRests
+                            \accidentalStyle modern-cautionary
+                            r1 -\fermata
+                            r4
+                            r2. -\fermata
+                        }
                     }
                 }
                 \new Staff {
@@ -4864,12 +5090,67 @@
                             \compressFullBarRests
                             \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                             \accidentalStyle modern-cautionary
-                            \clef "bass"
+                            \clef bass
                             \mark #4
-                            d4. -\accent \fff
+                            d4. -\accent \fff ^ \markup { "Marimba, (to Crot.)" }
                             r4.
                             r4.
-                            R1 * 207/8
+                            {
+                                R1 * 99/8
+                            }
+                            r4.
+                            r4.
+                            \clef treble
+                            gf''4. \f ^ \markup { Crotales }
+                            ef''4.
+                            af''4.
+                            r4
+                            f''8
+                            af''4.
+                            ef''4.
+                            r4.
+                            df''4
+                            af''8
+                            gf''4.
+                            ef''4.
+                            r4.
+                            af''4.
+                            ef''4.
+                            f''4.
+                            r4.
+                            gf''4.
+                            r4
+                            f''8
+                            af''4.
+                            r8
+                            gf''8 [
+                            f''8 ]
+                            r4.
+                            ef''4.
+                            r4
+                            gf''8
+                            <e' df''>4.
+                            <b' gf''>4.
+                            r4.
+                            <df' b'>4.
+                            r4.
+                            ef''4.
+                            r8
+                            af''8
+                            r8
+                            df''8 [
+                            ef''8
+                            af''8 ]
+                            gf''16 [
+                            f''16
+                            ef''8
+                            gf''16
+                            f''16 ]
+                            ef''8 [
+                            gf''8
+                            f''8 ]
+                            af''4.
+                            r4.
                         }
                         \time 3/4
                         {
@@ -4880,7 +5161,7 @@
                             \accidentalStyle modern-cautionary
                             \clef bass
                             \mark #5
-                            d4 -\accent \fff
+                            d4 -\accent \fff ^ \markup { Marimba }
                             r4
                             r4
                             {
@@ -5013,6 +5294,15 @@
                             <a' fs''>8 [
                             ds''8 ]
                         }
+                        {
+                            \bar "||"
+                            \compressFullBarRests
+                            \accidentalStyle modern-cautionary
+                            r1 -\fermata
+                            \clef "bass"
+                            d4 -\accent \fff
+                            r2. -\fermata
+                        }
                     }
                 }
             >>
@@ -5069,11 +5359,47 @@
                             \mark #4
                             R1 * 27/2
                         }
-                        bf'''4 -\accent \mf
-                        r2
+                        as'''8 -\accent \f [
+                        b''8 ]
+                        r8
+                        gs'''4 -\accent
+                        fs''8
+                        cs''4.
+                        b''4
+                        e'''8
+                        ds'''4.
+                        r4.
+                        r8
+                        gs'''8
+                        r8
+                        r4
+                        e'''8
+                        ds'''4.
+                        cs'''4
+                        e'''8
+                        r4
+                        ds'''8
+                        fs'''4.
+                        r4.
+                        r4.
+                        r8
+                        e'''8 [
+                        gs''8 ]
+                        e''4.
+                        cs''8 [
+                        e''8 ]
+                        r8
+                        r4.
+                        r8
+                        cs'''8
+                        r8
+                        gs''4.
+                        b'4.
+                        cs''4.
+                        r4.
                         r4.
                         {
-                            R1 * 99/8
+                            R1 * 9/2
                         }
                     }
                     \time 3/4
@@ -5112,7 +5438,7 @@
                             R1 * 4
                         }
                         r4
-                        c'''4
+                        c'''4 \mf
                         ef''8 [
                         d''8 ]
                         ef'4
@@ -5210,7 +5536,7 @@
                         r8
                         <e'' e'''>4
                         <fs'' fs'''>4
-                        <a'' a'''>4
+                        <a'' a'''>4 \f
                         r4
                         <g'' g'''>4
                         <fs'' fs'''>4
@@ -5250,6 +5576,14 @@
                         ds''''8 -\accent
                         fs''''4 -\accent
                         \ottava #0
+                    }
+                    {
+                        \bar "||"
+                        \compressFullBarRests
+                        \accidentalStyle modern-cautionary
+                        r1 -\fermata
+                        r4
+                        r2. -\fermata
                     }
                 }
             }
@@ -5298,8 +5632,38 @@
                         \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                         \accidentalStyle modern-cautionary
-                        \mark #4
-                        R1 * 27
+                        {
+                            \mark #4
+                            \mark #4
+                            R1 * 27/2
+                        }
+                        r4.
+                        <as,, ds,>4. -\accent
+                        r4.
+                        r4.
+                        <as,, ds,>4. -\accent
+                        r4.
+                        {
+                            R1 * 9/8
+                        }
+                        r4.
+                        ds,4. -\accent
+                        r4.
+                        r4.
+                        r4.
+                        <as,, ds,>4. -\accent
+                        r4.
+                        r4.
+                        as,4. -\accent
+                        <as,, ds,>4. -\accent
+                        as,4. -\accent
+                        as,,4. -\accent
+                        gs,,4. -\accent
+                        r4.
+                        r4.
+                        {
+                            R1 * 9/2
+                        }
                     }
                     \time 3/4
                     {
@@ -5411,6 +5775,14 @@
                         <e e'>4
                         r4
                     }
+                    {
+                        \bar "||"
+                        \compressFullBarRests
+                        \accidentalStyle modern-cautionary
+                        r1 -\fermata
+                        r4
+                        r2. -\fermata
+                    }
                 }
             }
         >>
@@ -5466,8 +5838,9 @@
                             \mark #4
                             R1 * 99/8
                         }
-                        r2.
-                        a'4 \f
+                        r4.
+                        r4.
+                        a'4 \ff
                         d''8
                         af''8
                         b''4
@@ -5590,14 +5963,12 @@
                         ef''''8
                         gf''''16
                         f''''16 ]
-                        ef''''8 \pp [
+                        ef''''8 [
                         gf''''8
                         f''''8 ]
-                        af''''4. ~
-                        af''''8 [
-                        gf''''8
-                        f''''8 ]
+                        af''''4. \pp
                         \ottava #0
+                        r4.
                     }
                     \time 3/4
                     {
@@ -5691,7 +6062,7 @@
                         }
                         r2
                         r4
-                        a''8 [
+                        a''8 \mf [
                         f''16
                         g''16 ]
                         c'''4
@@ -5705,68 +6076,76 @@
                         c'''8 [
                         c'''16
                         e'''16 ]
-                        b''2
-                        g''4
-                        a''8 [
+                        <b'' b'''>2
+                        <g'' g'''>4
+                        <a'' a'''>8 \f [
                         cs'''16
                         fs'''16 ]
-                        b''8 [
+                        <b'' b'''>8 [
                         d'''8 ]
                         r4
                         r8
                         d'''8
-                        a''8. [
+                        <a'' a'''>8. [
                         fs'''16 ]
-                        c'''4
-                        b''4 ~
-                        b''4
+                        <c''' c''''>4
+                        <b'' b'''>4 ~
+                        <b'' b'''>4
                         a''8. [
                         cs'''16 ]
-                        b''2
-                        c'''4
-                        d'''8 [
+                        <b'' b'''>2
+                        <c''' c''''>4
+                        <d''' d''''>8 [
                         \ottava #1
                         b'''8 ]
-                        d'''8 [
+                        <d''' d''''>8 [
                         g'''8 ]
                         r4
-                        e'''4
-                        fs'''4
-                        a'''2
-                        g'''4
-                        fs'''4
-                        e'''2
-                        g'''4
-                        fs'''4
-                        e'''4
-                        g'''4
-                        fs'''4
-                        a'''8 [
+                        <e''' e''''>4
+                        <fs''' fs''''>4
+                        <a''' a''''>2 \ff
+                        <g''' g''''>4
+                        <fs''' fs''''>4
+                        <e''' e''''>2
+                        <g''' g''''>4
+                        <fs''' fs''''>4
+                        <e''' e''''>4
+                        <g''' g''''>4
+                        <fs''' fs''''>4
+                        <a''' a''''>8 [
                         gs'''8 ]
                         b'''4
                         r4
                         r8
                         cs''''8
-                        g'''8 [
+                        <g''' g''''>8 [
                         fs''''8 ]
-                        fs'''2
-                        fs'''4
+                        <fs''' fs''''>2
+                        <fs''' fs''''>4
                         <fs''' ds''''>8 [
                         cs''''8 ]
-                        g'''4
-                        a'''8 [
+                        <g''' g''''>4
+                        <a''' a''''>8 [
                         ds''''8 ]
-                        a'''4
+                        <a''' a''''>4
                         ds''''8 [
                         <a''' fs''''>8 ]
                         ds''''8 [
                         b'''8 ]
-                        b'''8 [
+                        <b''' b''''>8 [
                         <a''' fs''''>8 ]
-                        cs''''8 [
+                        <cs'''' cs'''''>8 [
                         ds''''8 ]
-                        b'''4
+                        <b''' b''''>4
                         \ottava #0
+                    }
+                    {
+                        \bar "||"
+                        \compressFullBarRests
+                        \accidentalStyle modern-cautionary
+                        r1 -\fermata
+                        r4
+                        r2. -\fermata
                     }
                 }
             }
@@ -5826,7 +6205,7 @@
                             R1 * 27/2
                         }
                         r4.
-                        <bf,, ef,>4. -\accent \mf
+                        <bf,, ef,>4. -\accent
                         <d e c'>4. -\accent ~
                         <d e c'>4.
                         <bf,, ef,>4. -\accent ~
@@ -5872,6 +6251,7 @@
                         \compressFullBarRests
                         \tempo \markup \fontsize #3 { \note #"8" #1 = \note #"8" #1 (\note #"4" #1 = 108) }
                         \accidentalStyle modern-cautionary
+                        \clef "bass"
                         \mark #5
                         d2. \p ~
                         d2.
@@ -5982,8 +6362,14 @@
                         <a c'>4
                         r2
                         {
-                            R1 * 3
+                            R1 * 1
                         }
+                        r4
+                        <fs, fs>4 -\accent
+                        <a, a>2 -\accent
+                        <g, g>4 -\accent
+                        <fs, fs>4 -\accent
+                        <e, e>2 -\accent
                         r2
                         <b g'>2
                         <d b>4
@@ -6004,6 +6390,14 @@
                         <b' gs''>4
                         <g' cs''>4
                         <cs'' d''>4
+                    }
+                    {
+                        \bar "||"
+                        \compressFullBarRests
+                        \accidentalStyle modern-cautionary
+                        r1 -\fermata
+                        r4
+                        r2. -\fermata
                     }
                 }
             }
@@ -6117,12 +6511,18 @@
                                 \mark #3
                                 R1 * 6
                             }
-                            r2.
+                            r2
+                            r4
                             cs''4 :32 \pp ~
                             cs''1 :32
                             {
-                                R1 * 3
+                                R1 * 1
                             }
+                            r2
+                            r4
+                            r8
+                            cs''8 :32 ~
+                            cs''1 :32
                             b4 -\tenuto \p \<
                             e'4 -\tenuto
                             d''4 -\tenuto \mf
@@ -6189,45 +6589,43 @@
                             a''2. -\tenuto ~
                             a''4.
                             r8
-                            b''4 ~
-                            b''4
-                            fs''8 ~
+                            b''8 ^ \markup { pizz. }
+                            r8
+                            r4
                             fs''8
-                            cs''4
+                            cs''4.
                             b''4
                             e'''8
-                            ds'''8
-                            r4
+                            ds'''4.
                             r4.
                             r8
-                            gs'''4 ~
-                            gs'''4
-                            e'''8 ~
+                            gs'''8
+                            r8
+                            r4
                             e'''8
-                            ds'''4
+                            ds'''4.
                             cs'''4
-                            e'''8 ~
                             e'''8
-                            ds'''4
-                            fs'''4. ~
-                            fs'''4. ~
-                            fs'''4. ~
-                            fs'''8 [
-                            e'''8
+                            r4
+                            ds'''8
+                            fs'''4.
+                            r4.
+                            r4.
+                            r8
+                            e'''8 [
                             gs''8 ]
                             e''4
                             g'8
-                            cs''8
-                            e''4 ~
-                            e''4. ~
-                            e''8
-                            cs'''4
-                            gs''4
-                            b'8 ~
-                            b'8
-                            g'4
-                            cs''4
+                            cs''8 [
+                            e''8 ]
                             r8
+                            r4.
+                            r8
+                            cs'''8
+                            r8
+                            gs''4.
+                            b'4.
+                            cs''4.
                             r4.
                             r4.
                             {
@@ -6246,7 +6644,7 @@
                                 \mark #5
                                 R1 * 6
                             }
-                            g'2. \p
+                            g'2. \p ^ \markup { arco }
                             d'4 ~
                             d'8 [
                             g'8 ~ ]
@@ -6376,6 +6774,14 @@
                             a'''8 -\accent -\staccato [
                             a'''8 -\accent -\staccato ]
                         }
+                        {
+                            \bar "||"
+                            \compressFullBarRests
+                            \accidentalStyle modern-cautionary
+                            r1 -\fermata
+                            r4
+                            r2. -\fermata
+                        }
                     }
                 }
                 \new Staff {
@@ -6483,12 +6889,18 @@
                                 \mark #3
                                 R1 * 6
                             }
-                            r2.
+                            r2
+                            r4
                             b'4 :32 \pp ~
                             b'1 :32
                             {
-                                R1 * 3
+                                R1 * 1
                             }
+                            r2
+                            r4
+                            r8
+                            g'8 :32 ~
+                            g'1 :32
                             b4 -\tenuto \p \<
                             e'4 -\tenuto
                             d''4 -\tenuto \mf
@@ -6547,45 +6959,43 @@
                             e''2. -\tenuto ~
                             e''4.
                             r8
-                            b''4 ~
-                            b''4
-                            fs''8 ~
+                            b''8 ^ \markup { pizz. }
+                            r8
+                            r4
                             fs''8
-                            cs''4
+                            cs''4.
                             b''4
                             e'''8
-                            ds'''8
-                            r4
+                            ds'''4.
                             r4.
                             r8
-                            gs'''4 ~
-                            gs'''4
-                            e'''8 ~
+                            gs'''8
+                            r8
+                            r4
                             e'''8
-                            ds'''4
+                            ds'''4.
                             cs'''4
-                            e'''8 ~
                             e'''8
-                            ds'''4
-                            fs'''4. ~
-                            fs'''4. ~
-                            fs'''4. ~
-                            fs'''8 [
-                            e'''8
+                            r4
+                            ds'''8
+                            fs'''4.
+                            r4.
+                            r4.
+                            r8
+                            e'''8 [
                             gs''8 ]
                             e''4
                             g'8
-                            cs''8
-                            e''4 ~
-                            e''4. ~
-                            e''8
-                            cs'''4
-                            gs''4
-                            b'8 ~
-                            b'8
-                            g'4
-                            cs''4
+                            cs''8 [
+                            e''8 ]
                             r8
+                            r4.
+                            r8
+                            cs'''8
+                            r8
+                            gs''4.
+                            b'4.
+                            cs''4.
                             r4.
                             r4.
                             {
@@ -6604,7 +7014,7 @@
                                 \mark #5
                                 R1 * 6
                             }
-                            fs'2. \p
+                            fs'2. \p ^ \markup { arco }
                             a4 ~
                             a8 [
                             fs'8 ~ ]
@@ -6733,6 +7143,14 @@
                             a'''8 -\accent -\staccato [
                             a'''8 -\accent -\staccato ]
                         }
+                        {
+                            \bar "||"
+                            \compressFullBarRests
+                            \accidentalStyle modern-cautionary
+                            r1 -\fermata
+                            r4
+                            r2. -\fermata
+                        }
                     }
                 }
             >>
@@ -6845,12 +7263,18 @@
                                 \mark #3
                                 R1 * 6
                             }
-                            r2.
+                            r2
+                            r4
                             d'4 :32 \pp ~
                             d'1 :32
                             {
-                                R1 * 3
+                                R1 * 1
                             }
+                            r2
+                            r4
+                            r8
+                            fs'8 :32 ~
+                            fs'1 :32
                             a'1 \p ~
                             a'2
                             g'2 ~ \<
@@ -6889,7 +7313,8 @@
                             cs''4. -\tenuto
                             r4.
                             r4.
-                            r2.
+                            r4.
+                            r4.
                             g'4. -\tenuto ~
                             g'4.
                             gs''4. -\tenuto
@@ -6905,45 +7330,43 @@
                             a'4. -\tenuto ~
                             a'4.
                             r8
-                            b''4 ~
-                            b''4
-                            fs''8 ~
+                            b''8 ^ \markup { pizz. }
+                            r8
+                            r4
                             fs''8
-                            cs''4
+                            cs''4.
                             b''4
                             e'''8
-                            ds'''8
-                            r4
+                            ds'''4.
                             r4.
                             r8
-                            gs'''4 ~
-                            gs'''4
-                            e'''8 ~
+                            gs'''8
+                            r8
+                            r4
                             e'''8
-                            ds'''4
+                            ds'''4.
                             cs'''4
-                            e'''8 ~
                             e'''8
-                            ds'''4
-                            fs'''4. ~
-                            fs'''4. ~
-                            fs'''4. ~
-                            fs'''8 [
-                            e'''8
+                            r4
+                            ds'''8
+                            fs'''4.
+                            r4.
+                            r4.
+                            r8
+                            e'''8 [
                             gs''8 ]
                             e''4
                             g'8
-                            cs''8
-                            e''4 ~
-                            e''4. ~
-                            e''8
-                            cs'''4
-                            gs''4
-                            b'8 ~
-                            b'8
-                            g'4
-                            cs''4
+                            cs''8 [
+                            e''8 ]
                             r8
+                            r4.
+                            r8
+                            cs'''8
+                            r8
+                            gs''4.
+                            b'4.
+                            cs''4.
                             r4.
                             r4.
                             {
@@ -6962,7 +7385,7 @@
                                 \mark #5
                                 R1 * 27/4
                             }
-                            g'2. \p
+                            g'2. \p ^ \markup { arco }
                             b'4 ~
                             b'8 [
                             a'8 ~ ]
@@ -7088,6 +7511,14 @@
                             cs'''8 -\accent -\staccato [
                             b''8 -\accent -\staccato ]
                         }
+                        {
+                            \bar "||"
+                            \compressFullBarRests
+                            \accidentalStyle modern-cautionary
+                            r1 -\fermata
+                            r4
+                            r2. -\fermata
+                        }
                     }
                 }
                 \new Staff {
@@ -7194,12 +7625,18 @@
                                 \mark #3
                                 R1 * 6
                             }
-                            r2.
+                            r2
+                            r4
                             d'4 :32 \pp ~
                             d'1 :32
                             {
-                                R1 * 3
+                                R1 * 1
                             }
+                            r2
+                            r4
+                            r8
+                            e'8 :32 ~
+                            e'1 :32
                             a'1 \p ~
                             a'2
                             g'2 ~ \<
@@ -7238,7 +7675,8 @@
                             g'4. -\tenuto
                             r4.
                             r4.
-                            r2.
+                            r4.
+                            r4.
                             e'4. -\tenuto ~
                             e'4.
                             d''4. -\tenuto
@@ -7254,45 +7692,43 @@
                             c'4. -\tenuto ~
                             c'4.
                             r8
-                            b''4 ~
-                            b''4
-                            fs''8 ~
+                            b''8 ^ \markup { pizz. }
+                            r8
+                            r4
                             fs''8
-                            cs''4
+                            cs''4.
                             b''4
                             e'''8
-                            ds'''8
-                            r4
+                            ds'''4.
                             r4.
                             r8
-                            gs'''4 ~
-                            gs'''4
-                            e'''8 ~
+                            gs'''8
+                            r8
+                            r4
                             e'''8
-                            ds'''4
+                            ds'''4.
                             cs'''4
-                            e'''8 ~
                             e'''8
-                            ds'''4
-                            fs'''4. ~
-                            fs'''4. ~
-                            fs'''4. ~
-                            fs'''8 [
-                            e'''8
+                            r4
+                            ds'''8
+                            fs'''4.
+                            r4.
+                            r4.
+                            r8
+                            e'''8 [
                             gs''8 ]
                             e''4
                             g'8
-                            cs''8
-                            e''4 ~
-                            e''4. ~
-                            e''8
-                            cs'''4
-                            gs''4
-                            b'8 ~
-                            b'8
-                            g'4
-                            cs''4
+                            cs''8 [
+                            e''8 ]
                             r8
+                            r4.
+                            r8
+                            cs'''8
+                            r8
+                            gs''4.
+                            b'4.
+                            cs''4.
                             r4.
                             r4.
                             {
@@ -7311,7 +7747,7 @@
                                 \mark #5
                                 R1 * 27/4
                             }
-                            fs'2. \p
+                            fs'2. \p ^ \markup { arco }
                             a'4 ~
                             a'8 [
                             g'8 ~ ]
@@ -7435,6 +7871,14 @@
                             a''8 -\accent -\staccato ]
                             cs'''8 -\accent -\staccato [
                             b''8 -\accent -\staccato ]
+                        }
+                        {
+                            \bar "||"
+                            \compressFullBarRests
+                            \accidentalStyle modern-cautionary
+                            r1 -\fermata
+                            r4
+                            r2. -\fermata
                         }
                     }
                 }
@@ -7581,9 +8025,17 @@
                             {
                                 \mark #4
                                 \mark #4
-                                R1 * 27/4
+                                R1 * 9/8
                             }
-                            d'2. -\tenuto \mf
+                            d2. :32 \mf ~ \< ^ \markup { "sul pont." }
+                            d4. :32 \mf ~ ~ \>
+                            d4. :32 ~
+                            d4. :32 \p ~
+                            d4. :32
+                            {
+                                R1 * 27/8
+                            }
+                            d'2. \mf ^ \markup { normal }
                             fs'4. -\tenuto
                             d''4. -\tenuto
                             gs''4. -\tenuto ~
@@ -7598,8 +8050,37 @@
                             cs''4. -\tenuto
                             cs''2. -\tenuto ~
                             cs''4.
+                            d4. :32 \p ~ ~ \< ^ \markup { "sul pont." }
+                            d4. :32 ~
+                            d4. :32 \mf ~ ~ \>
+                            d4. :32 ~
+                            d4. :32 \p ~
+                            d4. :32
+                            r4.
+                            r4.
+                            d4. :32 \p ~ ~ \<
+                            d4. :32 ~
+                            d4. :32 \mf ~ ~ \>
+                            d4. :32 ~
+                            d4. :32 \p ~
+                            d4. :32
+                            r4.
+                            r4.
+                            d4. :32 \p ~ ~ \<
+                            d4. :32 ~
+                            d4. :32 \mf ~ ~ \>
+                            d4. :32 ~
+                            d4. :32 \p ~
+                            d4. :32
+                            r4.
+                            r4.
+                            d2. :32 \p ~ \<
+                            d4. :32 \mf ~ ~ \>
+                            d4. :32 ~
+                            d4. :32 \p ~
+                            d4. :32
                             {
-                                R1 * 27/2
+                                R1 * 9/4
                             }
                         }
                         \time 3/4
@@ -7614,7 +8095,7 @@
                                 \mark #5
                                 R1 * 6
                             }
-                            g'2. \p
+                            g'2. \p ^ \markup { normal }
                             d'4 ~
                             d'8 [
                             g'8 ~ ]
@@ -7783,6 +8264,14 @@
                             d''8 -\accent -\staccato [
                             d''8 -\accent -\staccato ]
                         }
+                        {
+                            \bar "||"
+                            \compressFullBarRests
+                            \accidentalStyle modern-cautionary
+                            r1 -\fermata
+                            r4
+                            r2. -\fermata
+                        }
                     }
                 }
                 \new Staff {
@@ -7926,14 +8415,23 @@
                             {
                                 \mark #4
                                 \mark #4
-                                R1 * 45/8
+                                R1 * 9/4
                             }
-                            d'2. -\tenuto \mf
+                            r4.
+                            d4. :32 \mf ~ ~ \< ^ \markup { "sul pont." }
+                            d4. :32 ~
+                            d2. :32 \mf ~ \>
+                            d4. :32 \p ~
+                            d4. :32
+                            r4.
+                            r4.
+                            d'2. \mf ^ \markup { normal }
                             e4. -\tenuto
                             d'4. -\tenuto
                             r4.
                             r4.
-                            r2.
+                            r4.
+                            r4.
                             b4. -\tenuto ~
                             b4.
                             e'4. -\tenuto
@@ -7949,8 +8447,39 @@
                             e4. -\tenuto ~
                             e4.
                             {
-                                R1 * 27/2
+                                R1 * 9/8
                             }
+                            r4.
+                            d4. :32 \p ~ ~ \< ^ \markup { "sul pont." }
+                            d4. :32 ~
+                            d4. :32 \mf ~ ~ \>
+                            d4. :32 ~
+                            d4. :32 \p ~
+                            d4. :32
+                            r4.
+                            r4.
+                            d4. :32 \p ~ ~ \<
+                            d4. :32 ~
+                            d4. :32 \mf ~ ~ \>
+                            d4. :32 ~
+                            d4. :32 \p ~
+                            d4. :32
+                            r4.
+                            r4.
+                            d4. :32 \p ~ ~ \<
+                            d4. :32 ~
+                            d4. :32 \mf ~ ~ \>
+                            d4. :32 ~
+                            d2. :32 \p
+                            r4.
+                            r4.
+                            d4. :32 \p ~ ~ \<
+                            d4. :32 ~
+                            d2. :32 \mf ~ \>
+                            d4. :32 \p ~
+                            d4. :32
+                            r4.
+                            r4.
                         }
                         \time 3/4
                         {
@@ -7964,7 +8493,7 @@
                                 \mark #5
                                 R1 * 27/4
                             }
-                            d'2. \p
+                            d'2. \p ^ \markup { normal }
                             fs'4 ~
                             fs'8 [
                             fs'8 ~ ]
@@ -8128,6 +8657,14 @@
                             g'8 -\accent -\staccato ]
                             cs''8 -\accent -\staccato [
                             cs''8 -\accent -\staccato ]
+                        }
+                        {
+                            \bar "||"
+                            \compressFullBarRests
+                            \accidentalStyle modern-cautionary
+                            r1 -\fermata
+                            r4
+                            r2. -\fermata
                         }
                     }
                 }
@@ -8344,7 +8881,7 @@
                             a,2
                             a,4
                             f2.
-                            a,4 ~
+                            a,4 ~ \<
                             a,8 [
                             a,8 ~ ]
                             a,4
@@ -8477,6 +9014,14 @@
                             e'8 -\accent -\staccato ]
                             e'8 -\accent -\staccato [
                             e'8 -\accent -\staccato ]
+                        }
+                        {
+                            \bar "||"
+                            \compressFullBarRests
+                            \accidentalStyle modern-cautionary
+                            r1 -\fermata
+                            r4
+                            r2. -\fermata
                         }
                     }
                 }
@@ -8676,7 +9221,7 @@
                             f,2
                             c,4
                             c2.
-                            f,4 ~
+                            f,4 ~ \<
                             f,8 [
                             ef,8 ~ ]
                             ef,4
@@ -8789,6 +9334,14 @@
                             e'8 -\accent -\staccato ]
                             e'8 -\accent -\staccato [
                             e'8 -\accent -\staccato ]
+                        }
+                        {
+                            \bar "||"
+                            \compressFullBarRests
+                            \accidentalStyle modern-cautionary
+                            r1 -\fermata
+                            r4
+                            r2. -\fermata
                         }
                     }
                 }
@@ -9081,6 +9634,14 @@
                         d'4 -\accent -\tenuto
                         d'4 -\accent -\tenuto
                         d'2. -\accent -\tenuto
+                    }
+                    {
+                        \bar "||"
+                        \compressFullBarRests
+                        \accidentalStyle modern-cautionary
+                        r1 -\fermata
+                        r4
+                        r2. -\fermata
                         \bar "|."
                     }
                 }

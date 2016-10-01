@@ -26,7 +26,7 @@ class ArrangeD(gen_d.GenD, machines.FragmentLine, machines.PitchedLine):
     metrical_durations = ID(default=((6,8),(3,8),), limit=24)
     unarranged = bubbles.Line("R1*9/8 * 24") # TO DO: is this the right length????
     lines = LINES
-    show_data_attr="original_depthwise_index"
+    # show_data_attr="original_depthwise_index"
     def update_data(self):
         super().update_data()
         if self.fragments and len(self.segments)>1:
