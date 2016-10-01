@@ -24,8 +24,8 @@ class ArrangeA(gen_a.GenA, machines.FragmentLine, machines.PitchedLine):
     lines = LINES
     start_bar_line = "||"
     # show_data_attr="depthwise_index"
-    def update_data(self):
-        super().update_data()
+    def update_data(self, **kwargs):
+        super().update_data(**kwargs)
 
 # ------------------------------------------------------------------------------------------------------------
 # WINDS
@@ -177,8 +177,8 @@ STRING_KWARGS = {"keep_attack":True, "before_next":0,}
 
 class StringsArrangeA(ArrangeA):
     show_data_attr=None
-    def update_data(self):
-        super().update_data()
+    def update_data(self, **kwargs):
+        super().update_data(**kwargs)
         self.logical_ties[0].tag("mute off")
         self.events[1].tag("normal")
         for event in self.events[1:]:
@@ -187,7 +187,8 @@ class StringsArrangeA(ArrangeA):
                 event[1].tag("mp", "\>", ">")
             else:
                 event[0].tag("p")
-    def after_music(self, music):
+    def after_music(self, music, **kwargs):
+        super().after_music(music, **kwargs)
         mute_command = abjad.Markup("mute off", direction=Up)
         abjad.attach(mute_command, music[0])
 

@@ -237,8 +237,14 @@
 # - F measure 12 ... maybe clarinet is too loud for this pause?
 # F masure 15, E against Eb Ok?
 # accel at end?
+# high horn range?
+# more brass wherever possible
+# more with marimba part in e
+# REMEMBER TO DELETE/MOVE ALL PDFS BEFORE CREATING FINAL PART VERSION
+# consider changing something drastic?
 
 # ---------------------------- FUTURE:
+# AUTOMATIC METRICAL DURATIONS (research abjad)
 # studio setup!!! 
 #  - - - (mac or linux?)
 # - - - (mac keyboard / mouse?)
@@ -253,6 +259,7 @@
 # - - - separate PDF and Ly files
 # - - - simple declaritve file(s) for how score/parts are organized
 # - more readable indices (small font, all in a row)
+# measures shojuld be 1-based!!!!!
 # - tremolos won't work with tied notes
 # - conisistency / plan for what's a class attribute and what's not
 # - - - maybe attachment stuff not, pitch/rhythm stuff is?
@@ -314,6 +321,7 @@
 # - auto assign clefs
 # - - - for short scores
 # - - - based on instrument preferences
+# - automate start and stop together orchestration (assign stops/starts)
 
 
 import abjad
