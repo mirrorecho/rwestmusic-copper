@@ -20,8 +20,8 @@
 
   \paper {
     #(set-paper-size "10x13")
-    system-system-spacing #'basic-distance = #12
-    system-system-spacing #'padding = #9
+    system-system-spacing #'basic-distance = #9
+    system-system-spacing #'padding = #6
 
     % left-margin = 22\mm
     % system-separator-markup = \slashSeparator
@@ -44,22 +44,27 @@
     \context {        
         \Score
         \override MultiMeasureRest #'expand-limit = #1
+        \override MultiMeasureRest #'minimum-length = #16
         \override BarNumber #'font-size = #1.4
         \override BarNumber  #'stencil = #(make-stencil-boxer 0.1 0.25 ly:text-interface::print)
-        \override RehearsalMark #'font-size = #6
+        \override RehearsalMark #'font-size = #1
+        \override MetronomeMark.padding = #4
     }
     \context {
         \Staff
         \remove Instrument_name_engraver
         \override Hairpin #'minimum-length = #6
         \override MultiMeasureRest.expand-limit = #1
+        \override MultiMeasureRest #'minimum-length = #16
+        \override Score.MetronomeMark.padding = #4
     }
     \context {
         \RhythmicStaff
         \remove Instrument_name_engraver
         \override Hairpin #'minimum-length = #6
         \override MultiMeasureRest.expand-limit = #1
-    }
+        \override MultiMeasureRest #'minimum-length = #16
+        \override Score.MetronomeMark.padding = #4
     }
 }
 

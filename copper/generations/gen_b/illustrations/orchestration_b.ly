@@ -1,4 +1,4 @@
-% 2016-10-01 09:04
+% 2016-10-01 15:00
 
 \version "2.18.2"
 \language "english"
@@ -88,18 +88,18 @@
                             R1 * 27/4
                         }
                         r2
-                        d'4 \mf ~ ( ^ \markup { "English Horn" }
-                        d'4
-                        f4
-                        e4 )
-                        g2 (
-                        a4
-                        e8 )
+                        a'4 \mf ~ ( ^ \markup { "English Horn" }
+                        a'4
+                        c'4
+                        b4 )
+                        d'2 (
+                        e'4
+                        b8 )
                         r8
-                        g4 (
-                        f8 [
-                        e8 ~ ] ^ \markup { "to Ob." }
-                        e2. )
+                        d'4 (
+                        c'8 [
+                        b8 ~ ] ^ \markup { "to Ob." }
+                        b2. )
                         {
                             R1 * 15/2
                         }

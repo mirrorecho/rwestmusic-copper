@@ -1,0 +1,2 @@
+@image{test-tempy-1}
+@c eof

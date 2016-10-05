@@ -134,16 +134,17 @@
 # - (DONE) review of percussion instruments used
 # - (DONE) METRICAL DURATION RESPELLINGS
 # - (DONE) review of all parts (everyone has something to do)
+# - (DONE) final score review!
+# - (DONE) REMEMBER TO DELETE/MOVE ALL PDFS BEFORE CREATING FINAL PART VERSION
+# - (DONE) double check score order
 
 # ---------------------------- FINAL LIST
-# - final score review!
+
 # - percussion beaters (including vibraphone mallets and motor)
 # - transposing parts
 # - - - REMEMBER ENGLISH HORN TRANSPOSITION WHERE APPROPRIATE ONLY!!!!!!
 # - FIX OVERLAPPING TEMPOS IN PARTS WHERE MULTIMEASURE RESTS
 # - verify all part transpositions (pic, english horn, clarinet/bass clarinet, horn, double bass)
-# REMEMBER TO DELETE/MOVE ALL PDFS BEFORE CREATING FINAL PART VERSION
-# - - double check score order
 # - double check that part output matches score (or make part code not suck)
 # - - - NO REALLY REALLY REALLY double check score and parts (easy to mistype classes in parts file)... need to check both code & output
 # - final review/edits of wind parts
@@ -358,6 +359,9 @@
 # - beaming tags
 # - remember slur_me !
 # should be able to easily add instruction AFTER note
+# - need better spacing setup for tempi in parts (long tempi run overtop of one another easily, especially with multimeasure rests)
+# - need to auto-add instrument names on parts - NEED INSTRUMENT NAMES!
+# - in COPPER - remove English Horn hard-coded transposition in the music
 
 import abjad
 from calliope import bubbles

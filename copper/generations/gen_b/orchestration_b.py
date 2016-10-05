@@ -46,7 +46,7 @@ class Oboe1(ArrangeB):
 
 class Oboe2(ArrangeB):
     fragments = Frag.make(
-        *Frag.its(1, (1,10) ),
+        *Frag.its(1, (1,10), transpose=7), # TO DO... WARNING TRANSPOSITION ONLY FOR TEMP USE WITH PART!
         )
     fragments.update_by(1,1, tags=("mf","English Horn"))
     fragments.update_by(1,6, duration=0.5)

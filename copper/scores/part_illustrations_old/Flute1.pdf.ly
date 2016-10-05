@@ -1,4 +1,4 @@
-% 2016-10-01 08:40
+% 2016-10-01 12:42
 
 \version "2.18.2"
 \language "english"
@@ -34,14 +34,14 @@
                                         {
                                             \numericTimeSignature
                                             \compressFullBarRests
-                                            \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
+                                            \tempo \markup \fontsize #-2 { \note #"4" #1 = 48 }
                                             \accidentalStyle modern-cautionary
                                             R1 * 12
                                         }
                                         {
                                             \bar "||"
                                             \compressFullBarRests
-                                            \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
+                                            \tempo \markup \fontsize #-2 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                                             \accidentalStyle modern-cautionary
                                             \mark #1
                                             R1 * 18
@@ -62,7 +62,7 @@
                                     \numericTimeSignature
                                     \bar "||"
                                     \compressFullBarRests
-                                    \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
+                                    \tempo \markup \fontsize #-2 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                                     \accidentalStyle modern-cautionary
                                     {
                                         \mark #3
@@ -87,14 +87,14 @@
                                     {
                                         R1 * 3
                                     }
-                                    d'4 \mp
+                                    d'4 \mp (
                                     g'8 [
                                     cs''8 ]
                                     e''8 [
                                     b'16
                                     fs'16 ]
                                     e''4
-                                    d''8
+                                    d''8 )
                                     r8
                                     r4
                                     fs''8 [ (
@@ -119,7 +119,7 @@
                                 \numericTimeSignature
                                 \bar "||"
                                 \compressFullBarRests
-                                \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
+                                \tempo \markup \fontsize #-2 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                                 \accidentalStyle modern-cautionary
                                 {
                                     \mark #4
@@ -158,7 +158,7 @@
                             \numericTimeSignature
                             \bar "||"
                             \compressFullBarRests
-                            \tempo \markup \fontsize #3 { \note #"8" #1 = \note #"8" #1 (\note #"4" #1 = 108) }
+                            \tempo \markup \fontsize #-2 { \note #"8" #1 = \note #"8" #1 (\note #"4" #1 = 108) }
                             \accidentalStyle modern-cautionary
                             {
                                 \mark #5
@@ -184,7 +184,7 @@
                         \numericTimeSignature
                         \bar "||"
                         \compressFullBarRests
-                        \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 144) }
+                        \tempo \markup \fontsize #-2 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 144) }
                         \accidentalStyle modern-cautionary
                         {
                             \mark #6

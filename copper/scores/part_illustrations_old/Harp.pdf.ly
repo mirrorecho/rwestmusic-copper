@@ -1,4 +1,4 @@
-% 2016-10-01 09:45
+% 2016-10-01 12:41
 
 \version "2.18.2"
 \language "english"
@@ -35,14 +35,14 @@
                                             {
                                                 \numericTimeSignature
                                                 \compressFullBarRests
-                                                \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
+                                                \tempo \markup \fontsize #-2 { \note #"4" #1 = 48 }
                                                 \accidentalStyle modern-cautionary
                                                 R1 * 12
                                             }
                                             {
                                                 \bar "||"
                                                 \compressFullBarRests
-                                                \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
+                                                \tempo \markup \fontsize #-2 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                                                 \accidentalStyle modern-cautionary
                                                 \mark #1
                                                 R1 * 18
@@ -63,7 +63,7 @@
                                         \numericTimeSignature
                                         \bar "||"
                                         \compressFullBarRests
-                                        \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
+                                        \tempo \markup \fontsize #-2 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                                         \accidentalStyle modern-cautionary
                                         \mark #3
                                         R1 * 24
@@ -74,7 +74,7 @@
                                     \numericTimeSignature
                                     \bar "||"
                                     \compressFullBarRests
-                                    \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
+                                    \tempo \markup \fontsize #-2 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                                     \accidentalStyle modern-cautionary
                                     {
                                         \mark #4
@@ -130,7 +130,7 @@
                                 \numericTimeSignature
                                 \bar "||"
                                 \compressFullBarRests
-                                \tempo \markup \fontsize #3 { \note #"8" #1 = \note #"8" #1 (\note #"4" #1 = 108) }
+                                \tempo \markup \fontsize #-2 { \note #"8" #1 = \note #"8" #1 (\note #"4" #1 = 108) }
                                 \accidentalStyle modern-cautionary
                                 \mark #5
                                 R2. * 35
@@ -141,7 +141,7 @@
                             \numericTimeSignature
                             \bar "||"
                             \compressFullBarRests
-                            \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 144) }
+                            \tempo \markup \fontsize #-2 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 144) }
                             \accidentalStyle modern-cautionary
                             {
                                 \mark #6
@@ -332,14 +332,14 @@
                                             {
                                                 \numericTimeSignature
                                                 \compressFullBarRests
-                                                \tempo \markup \fontsize #3 { \note #"4" #1 = 48 }
+                                                \tempo \markup \fontsize #-2 { \note #"4" #1 = 48 }
                                                 \accidentalStyle modern-cautionary
                                                 R1 * 12
                                             }
                                             {
                                                 \bar "||"
                                                 \compressFullBarRests
-                                                \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
+                                                \tempo \markup \fontsize #-2 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
                                                 \accidentalStyle modern-cautionary
                                                 \mark #1
                                                 R1 * 18
@@ -360,7 +360,7 @@
                                         \numericTimeSignature
                                         \bar "||"
                                         \compressFullBarRests
-                                        \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
+                                        \tempo \markup \fontsize #-2 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 96) }
                                         \accidentalStyle modern-cautionary
                                         \mark #3
                                         R1 * 24
@@ -371,7 +371,7 @@
                                     \numericTimeSignature
                                     \bar "||"
                                     \compressFullBarRests
-                                    \tempo \markup \fontsize #3 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
+                                    \tempo \markup \fontsize #-2 { \note #"1" #1 = \note #"2." #1 + \note #"4." #1 (\note #"4." #1 = 72) }
                                     \accidentalStyle modern-cautionary
                                     {
                                         \mark #4
@@ -412,7 +412,7 @@
                                 \numericTimeSignature
                                 \bar "||"
                                 \compressFullBarRests
-                                \tempo \markup \fontsize #3 { \note #"8" #1 = \note #"8" #1 (\note #"4" #1 = 108) }
+                                \tempo \markup \fontsize #-2 { \note #"8" #1 = \note #"8" #1 (\note #"4" #1 = 108) }
                                 \accidentalStyle modern-cautionary
                                 \mark #5
                                 R2. * 35
@@ -423,7 +423,7 @@
                             \numericTimeSignature
                             \bar "||"
                             \compressFullBarRests
-                            \tempo \markup \fontsize #3 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 144) }
+                            \tempo \markup \fontsize #-2 { \note #"2." #1 = \note #"1" #1 (\note #"4" #1 = 144) }
                             \accidentalStyle modern-cautionary
                             {
                                 \mark #6
