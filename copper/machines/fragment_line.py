@@ -1,10 +1,10 @@
 # -*- encoding: utf-8 -*-
 
 import abjad
-from calliope import bubbles
+from calliope import bubbles, tools
 from copper import machines
 
-class FragmentInfo(machines.SetAttributeMixin):
+class FragmentInfo(tools.SetAttributeMixin):
     attack_offset=0
     release_offset=0
     keep_attack = False # note, True only makes sense if attack_offset <0
@@ -19,7 +19,7 @@ class FragmentInfo(machines.SetAttributeMixin):
     transpose = 0
     harmonies = ()
 
-class Fragments(machines.IndexedData):
+class Fragments(tools.IndexedData):
     items_type=FragmentInfo
 
     @classmethod

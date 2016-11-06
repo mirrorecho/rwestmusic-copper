@@ -3,7 +3,7 @@
 import abjad
 from calliope import bubbles
 from copper import machines
-from copper.machines import IndexedData as ID # just to avoid a lot of typing
+from calliope.tools import IndexedData as ID # just to avoid a lot of typing
 
 class AttachmentTagData(object):
     attachment_names = None # to be set to a set

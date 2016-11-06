@@ -9,7 +9,6 @@
 #     )
 
 
-from copper.machines.tools import *
 from copper.machines.arrange_attachments import *
 from copper.machines.segmented_line import *
 from copper.machines.rhythms import *

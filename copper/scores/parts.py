@@ -17,7 +17,6 @@ from copper import staves
 # class CopperPartMusic(score.CopperFullMusic):
 #     pass
 
-
 # TO DO... this whole thing could be rethought in terms of modules...
 
 class PartsBase(bubbles.BubbleScore):

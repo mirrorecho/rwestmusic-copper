@@ -1,12 +1,12 @@
 # -*- encoding: utf-8 -*-
 
 import abjad
-from calliope import bubbles
+from calliope import bubbles, tools
 from copper import machines
 
 # just to avoid a lot of typing
-ID = machines.IndexedData
-ID1 = machines.ID1
+ID = tools.IndexedData
+ID1 = tools.ID1
 
 class Drone0(machines.PitchedLine):
     # show_data_attr="original_depthwise_index"
@@ -42,7 +42,4 @@ class Drone0(machines.PitchedLine):
 
 
 # -------------------------------------------------------------------------------------------------
-bubbles.illustrate_me(__file__, 
-    lambda: Drone().score(),
-    subfolder="machine_illustrations"
-    )
+tools.illustrate_me(subfolder="machine_illustrations")

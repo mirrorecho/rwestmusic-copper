@@ -1,9 +1,9 @@
 # -*- encoding: utf-8 -*-
 
 import abjad
-from calliope import bubbles
+from calliope import bubbles, tools
 from copper import machines
-from copper.machines import IndexedData as ID, ID1 # just to avoid a lot of typing
+from calliope.tools import IndexedData as ID, ID1 # just to avoid a lot of typing
 from copper import staves
 
 class Gen0(object): # basic attributes, such as starting time signature, rehearsal mark, etc.
@@ -98,14 +98,4 @@ class Line1(Gen0, machines.PitchedLine):
         if self.__class__.__name__ == "Line1":
             self.tag_events("darkmagenta", every_child=True)
 
-bubbles.illustrate_me(__file__, 
-    lambda: staves.CopperShortScore(
-            bubbles.Bubble(
-                drone0 = Drone0(show_data_attr="original_depthwise_index"),
-                line1 = Line1(show_data_attr="original_depthwise_index"),
-            ),
-            sequence = ("line1","drone0"),
-            stylesheets = ("../../scores/stylesheets/shortscore.ily",)
-        ).get_lilypond_file(),
-    as_midi=True,
-    )
+tools.illustrate_me()

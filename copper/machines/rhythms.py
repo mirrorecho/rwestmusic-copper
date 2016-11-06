@@ -1,9 +1,9 @@
 # -*- encoding: utf-8 -*-
 
 import abjad
-from calliope import bubbles
+from calliope import bubbles, tools
 from copper import machines
-from copper.machines.tools import IndexedData as ID  # to avoid a lot of typing
+from calliope.tools import IndexedData as ID  # to avoid a lot of typing
 
 
 class Rhythms(object):
@@ -208,7 +208,7 @@ class Rhythms(object):
     
     def process_logical_ties(self, music, **kwargs):
         super().process_logical_ties(music, **kwargs)
-        music_logical_ties = machines.by_logical_tie_group_rests(music)
+        music_logical_ties = tools.by_logical_tie_group_rests(music)
         leaf_count=0
         for music_logical_tie, data_logical_tie in zip(music_logical_ties, self.logical_ties):
             # print( "TL: %s" % leaf_count  )

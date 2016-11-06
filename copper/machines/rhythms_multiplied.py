@@ -1,6 +1,5 @@
 import abjad
-from calliope import bubbles
-from copper import machines
+from calliope import bubbles, tools
 
 
 class RhythmsMultiplied:
@@ -12,7 +11,7 @@ class RhythmsMultiplied:
 
     @classmethod
     def make_multipliers(cls, multipliers=None, default=1, cyclic=False, **kwargs):
-        return machines.IndexedData(multipliers, default=default, cyclic=cyclic, **kwargs)
+        return tools.IndexedData(multipliers, default=default, cyclic=cyclic, **kwargs)
 
     def __init__(self, **kwargs):
         self.rhythm_multipliers = self.rhythm_multipliers or RhythmsMultiplied.make_multipliers() # defaults multipliers to 1

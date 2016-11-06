@@ -1,9 +1,9 @@
 # -*- encoding: utf-8 -*-
 
 import abjad
-from calliope import bubbles
+from calliope import bubbles, tools
 from copper import machines
-from copper.machines import IndexedData as ID, ID1 # just to avoid a lot of typing
+from calliope.tools import IndexedData as ID, ID1 # just to avoid a lot of typing
 from copper.generations.gen_a import gen_a
 from copper import staves
 
@@ -90,16 +90,4 @@ class Line3(GenB, machines.RhythmsMultiplied, gen_a.Line1):
     rhythm_times = 2
 
 # -------------------------------------------------------------------------------------------------
-bubbles.illustrate_me(__file__, 
-    lambda: staves.CopperShortScore(
-            bubbles.Bubble(
-                drone0 = Drone0(show_data_attr="original_depthwise_index"),
-                line1 = Line1(show_data_attr="original_depthwise_index"),
-                line2 = Line2(show_data_attr="original_depthwise_index"),
-                line3 = Line3(show_data_attr="original_depthwise_index"),
-            ),
-            sequence = ("line1","line2","line3","drone0"),
-            stylesheets = ("../../scores/stylesheets/shortscore.ily",)
-        ).get_lilypond_file(),
-    as_midi=True,
-    )
+tools.illustrate_me()

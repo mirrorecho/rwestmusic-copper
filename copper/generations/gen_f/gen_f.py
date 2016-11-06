@@ -1,9 +1,9 @@
 # -*- encoding: utf-8 -*-
 
 import abjad
-from calliope import bubbles
+from calliope import tools, bubbles
 from copper import machines
-from copper.machines.tools import IndexedData as ID, ID1 # just to avoid a lot of typing
+from calliope.tools import IndexedData as ID, ID1 # just to avoid a lot of typing
 from copper.generations.gen_e import gen_e
 from copper import staves
 
@@ -261,22 +261,4 @@ class Line7(GenF, gen_e.Line6):
             self.tag_events("magenta", every_child=True)
 # -------------------------------------------------------------------------------------------------
 
-bubbles.illustrate_me(__file__, 
-    lambda: staves.CopperShortScore(
-            bubbles.Bubble(
-                drone0 = Drone0(show_data_attr="original_depthwise_index"),
-                drone10 = Drone10(show_data_attr="original_depthwise_index"),
-                line1 = Line1(show_data_attr="original_depthwise_index"),
-                line2 = Line2(show_data_attr="original_depthwise_index"),
-                # line3 = Line3(show_data_attr="original_depthwise_index"),
-                line3 = Line3Pulsed(show_data_attr="original_depthwise_index"),
-                line4 = Line4(show_data_attr="original_depthwise_index", clef="bass"),
-                line5 = Line5(show_data_attr="original_depthwise_index"),
-                line6 = Line6(show_data_attr="original_depthwise_index"),
-                line7 = Line7(show_data_attr="original_depthwise_index"),
-            ),
-            sequence = ("line1","line2","line3","line4","line5","line6","line7","drone0","drone10"),
-            stylesheets = ("../../scores/stylesheets/shortscore.ily",)
-        ).get_lilypond_file(),
-    as_midi=True,
-    )
+tools.illustrate_me()

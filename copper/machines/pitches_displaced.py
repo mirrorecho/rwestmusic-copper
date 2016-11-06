@@ -1,10 +1,10 @@
 # -*- encoding: utf-8 -*-
 
 import abjad
-from calliope import bubbles
+from calliope import bubbles, tools
 from copper import machines
 
-class PitchDisplacementData(machines.IndexedData):
+class PitchDisplacementData(tools.IndexedData):
     default = lambda self=None : set(  )
     cyclic=False
     items_type = set

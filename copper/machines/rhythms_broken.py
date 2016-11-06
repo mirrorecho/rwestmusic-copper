@@ -3,7 +3,7 @@
 import abjad
 from calliope import bubbles
 from copper import machines
-from copper.machines.tools import IndexedData as ID 
+from calliope.tools import IndexedData as ID 
 
 class RhythmsBroken(object):
     """

@@ -1,5 +1,5 @@
 import abjad
-from calliope import bubbles
+from calliope import bubbles, tools
 from copper import machines
 
 
@@ -11,7 +11,7 @@ class RhythmsPulsed:
     rhythm_pulses = None # should be set to an indexed data object that defines multiplier for eacch segment index
 
     def __init__(self, **kwargs):
-        self.rhythm_pulses = self.rhythm_pulses or machines.IndexedData()
+        self.rhythm_pulses = self.rhythm_pulses or tools.IndexedData()
         super().__init__(**kwargs)
 
 
