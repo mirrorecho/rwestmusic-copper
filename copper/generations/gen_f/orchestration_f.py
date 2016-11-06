@@ -1,14 +1,14 @@
 # -*- encoding: utf-8 -*-
 import abjad
-from calliope import bubbles
+from calliope import tools, bubbles
 from copper import machines
 from copper.generations.gen_f import gen_f
 from copper import staves
 
 # SHORTCUTS TO AVOID TYPING
 Frag = machines.Fragments
-ID = machines.IndexedData
-ID1 = machines.ID1
+ID = tools.IndexedData
+ID1 = tools.ID1
 
 LINES = ID({
     0:gen_f.Drone0(),
@@ -1328,64 +1328,5 @@ class Bass(ArrangeF):
     fragments.update_by(10,140, duration=3)
 
 # ------------------------------------------------------------------------------------------------------------
-# ALL LINES ASSOCIATED WITH STAVES
 
-# TO DO... this is screwy... isntead, should be able to use introspection to pull classes from this module
-def get_orchestration_f():
-    class OrchestrationF(staves.CopperMusic): # TO DO... maybe these shouldn't inherit from the gens????
-        bubble_default = ArrangeF.unarranged # in case any parts are commented out
-        picc = Picc() # TO DO...  maybe this should always be piccolo?
-        flute1 = Flute1()
-        flute2 = Flute2()
-        oboe1 = Oboe1()
-        oboe2 = Oboe2()
-        clarinet1 = Clarinet1()
-        clarinet2 = Clarinet2()
-        bassoon1 = Bassoon1()
-        bassoon2 = Bassoon2()
-        horn1 = Horn1()
-        horn2 = Horn2()
-        trumpet1 = Trumpet1()
-        trumpet2 = Trumpet2()
-        trombone1 = Trombone1()
-        trombone2 = Trombone2()
-        tuba = Tuba()
-        timpani = Timpani()
-        perc1 = Perc1()
-        perc2 = Perc2()
-        vibes = Vibes()
-        harp1 = Harp1()
-        harp2 = Harp2()
-        piano1 = Piano1()
-        piano2 = Piano2()
-        violinI1 = ViolinI1()
-        violinI2 = ViolinI2()
-        violinII1 = ViolinII1()
-        violinII2 = ViolinII2()
-        viola1 = Viola1()
-        viola2 = Viola2()
-        cello1 = Cello1()
-        cello2 = Cello2()
-        bass = Bass()
-        drone0 = LINES[0].show_data(show_data_attr="original_depthwise_index")
-        drone10 = LINES[10].show_data(show_data_attr="original_depthwise_index")
-        line1 = LINES[1].show_data(show_data_attr="original_depthwise_index")
-        line2 = LINES[2].show_data(show_data_attr="original_depthwise_index")
-        line3 = LINES[3].show_data(show_data_attr="original_depthwise_index")
-        line4 = LINES[4].show_data(show_data_attr="original_depthwise_index")
-        line5 = LINES[5].show_data(show_data_attr="original_depthwise_index")
-        line6 = LINES[6].show_data(show_data_attr="original_depthwise_index")
-        line7 = LINES[7].show_data(show_data_attr="original_depthwise_index")
-    return OrchestrationF
-
-# -------------------------------------------------------------------------
-# OUTPUT SCORE
-
-bubbles.illustrate_me(__file__, 
-    lambda: staves.CopperScore( 
-        get_orchestration_f()(), 
-        title="Copper: F", 
-        show_short_score=True, 
-        hide_empty=True).get_lilypond_file(),
-    as_midi=False
-    )
+tools.illustrate_me(score_type=staves.CopperScore)

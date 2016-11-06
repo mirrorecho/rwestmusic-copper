@@ -103,7 +103,7 @@ class FragmentLine(object):
                     self.warn("line referenced by fragment does not inherit from machines.Rhythms... it needs to")
                 # if isinstance(my_event, machines.Harmony):
                 my_event_index = fragment.from_index or index # TO DO... this is screwy (resetting index with from_index)
-                if isinstance(self.line_offset, machines.IndexedData):
+                if isinstance(self.line_offset, tools.IndexedData):
                     my_line_offset = self.line_offset[my_line_index]
                 else:
                     my_line_offset = self.line_offset

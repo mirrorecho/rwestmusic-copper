@@ -48,7 +48,8 @@ class Bassoon2(Arrange0): pass
 # ------------------------------------------------------------------------------------------------------------
 # BRASS
 
-class Horn1(Arrange0):
+class Horn1(Arrange0): 
+    # TO DO... should be muted instead of stopped
     fragments = Frag.make(
         *Frag.its(0, (1,16), tags=("+",) ) # TO DO... note, 0 here throws exception... why?
         )
