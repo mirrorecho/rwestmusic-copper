@@ -1,4 +1,4 @@
-% 2016-11-06 13:21
+% 2016-11-23 17:49
 
 \version "2.18.2"
 \language "english"
@@ -479,18 +479,50 @@
             \set PianoStaff.instrumentName = \markup { Harp }
             \set PianoStaff.shortInstrumentName = \markup { Hp. }
             \new Staff {
+                {
+                    \bar "||"
+                    \compressFullBarRests
+                    \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
+                    \accidentalStyle modern-cautionary
+                    \mark #1
+                    R1 * 18
+                }
             }
             \new Staff {
                 \clef "bass"
+                {
+                    \bar "||"
+                    \compressFullBarRests
+                    \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
+                    \accidentalStyle modern-cautionary
+                    \mark #1
+                    R1 * 18
+                }
             }
         >>
         \new PianoStaff <<
             \set PianoStaff.instrumentName = \markup { Piano }
             \set PianoStaff.shortInstrumentName = \markup { Pno. }
             \new Staff {
+                {
+                    \bar "||"
+                    \compressFullBarRests
+                    \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
+                    \accidentalStyle modern-cautionary
+                    \mark #1
+                    R1 * 18
+                }
             }
             \new Staff {
                 \clef "bass"
+                {
+                    \bar "||"
+                    \compressFullBarRests
+                    \tempo \markup \fontsize #3 { \note #"2" #1 = \note #"2." #1 (\note #"4" #1 = 72) }
+                    \accidentalStyle modern-cautionary
+                    \mark #1
+                    R1 * 18
+                }
             }
         >>
         \new StaffGroup <<

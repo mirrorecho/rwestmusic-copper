@@ -1,11 +1,9 @@
-% 2016-11-06 00:17
+% 2016-11-23 17:48
 
 \version "2.18.2"
 \language "english"
 
-\header {
-    tagline = ##f
-}
+\header {}
 
 \layout {}
 
