@@ -1,8 +1,10 @@
 # -*- encoding: utf-8 -*-
 
-import abjad
-from calliope import bubbles, tools
-from copper import machines
+# MOVED TO CALLIOPE
+
+# import abjad
+# from calliope import bubbles, tools
+# from copper import machines
 # from copper.machines.tools import IndexedData as ID # just to avoid a lot of typing
 
 # class LogicalTieData(machines.AttachmentTagData, tools.Tree):

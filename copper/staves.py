@@ -118,38 +118,36 @@ class CopperScore(bubbles.Score):
             instrument=instrumenttools.Contrabass(instrument_name="Bass", short_instrument_name="cb")
             clef="bass"
 
-    #-------------------------------------------------------------------------------
-    class ShortScoreStaves(bubbles.StaffGroup):
-        class Line1(bubbles.Staff):
-            instrument=instrumenttools.Instrument(instrument_name="Line 1", short_instrument_name="1:")
-        class Line2(bubbles.Staff):
-            instrument=instrumenttools.Instrument(instrument_name="Line 2", short_instrument_name="2:")
-        class Line3(bubbles.Staff):
-            instrument=instrumenttools.Instrument(instrument_name="Line 3", short_instrument_name="3:")
-        class Line4(bubbles.Staff):
-            instrument=instrumenttools.Instrument(instrument_name="Line 4", short_instrument_name="4:")
-        class Line5(bubbles.Staff):
-            instrument=instrumenttools.Instrument(instrument_name="Line 5", short_instrument_name="5:")
-        class Line6(bubbles.Staff):
-            instrument=instrumenttools.Instrument(instrument_name="Line 6", short_instrument_name="6:")
-        class Line7(bubbles.Staff):
-            instrument=instrumenttools.Instrument(instrument_name="Line 7", short_instrument_name="7:")
-        class Line8(bubbles.Staff):
-            instrument=instrumenttools.Instrument(instrument_name="Line 8", short_instrument_name="8:")
-        class Line9(bubbles.Staff):
-            instrument=instrumenttools.Instrument(instrument_name="Line 9", short_instrument_name="9:")
-        class Drone0(bubbles.Staff):
-            instrument=instrumenttools.Instrument(instrument_name="Drone 0", short_instrument_name="0:")
-            clef="bass"
-        class Drone10(bubbles.Staff):
-            instrument=instrumenttools.Instrument(instrument_name="Drone 10", short_instrument_name="10:")
-            clef="bass"
-
-
 #------------------------------------------------------------------------------------------------------------------------------
 #------------------------------------------------------------------------------------------------------------------------------
 
 class CopperShortScore(bubbles.Score):
     stylesheets=("../../scores/stylesheets/shortscore.ily",)
-    class ShortScoreStaves(CopperScore.ShortScoreStaves): pass
+    class Line1(bubbles.Staff):
+        instrument=instrumenttools.Instrument(instrument_name="Line 1", short_instrument_name="1:")
+    class Line2(bubbles.Staff):
+        instrument=instrumenttools.Instrument(instrument_name="Line 2", short_instrument_name="2:")
+    class Line3(bubbles.Staff):
+        instrument=instrumenttools.Instrument(instrument_name="Line 3", short_instrument_name="3:")
+    class Line4(bubbles.Staff):
+        instrument=instrumenttools.Instrument(instrument_name="Line 4", short_instrument_name="4:")
+    class Line5(bubbles.Staff):
+        instrument=instrumenttools.Instrument(instrument_name="Line 5", short_instrument_name="5:")
+    class Line6(bubbles.Staff):
+        instrument=instrumenttools.Instrument(instrument_name="Line 6", short_instrument_name="6:")
+    class Line7(bubbles.Staff):
+        instrument=instrumenttools.Instrument(instrument_name="Line 7", short_instrument_name="7:")
+    class Line8(bubbles.Staff):
+        instrument=instrumenttools.Instrument(instrument_name="Line 8", short_instrument_name="8:")
+    class Line9(bubbles.Staff):
+        instrument=instrumenttools.Instrument(instrument_name="Line 9", short_instrument_name="9:")
+    class Drone0(bubbles.Staff):
+        instrument=instrumenttools.Instrument(instrument_name="Drone 0", short_instrument_name="0:")
+        clef="bass"
+    class Drone10(bubbles.Staff):
+        instrument=instrumenttools.Instrument(instrument_name="Drone 10", short_instrument_name="10:")
+        clef="bass"
+
+
+
 
