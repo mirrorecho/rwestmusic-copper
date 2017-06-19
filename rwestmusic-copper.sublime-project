@@ -15,20 +15,20 @@
 				"tools/__pycache__",
 				"calliope.egg-info"
 			],
-			"path": "/Users/randallwest/Code/mirrorecho/calliope"
+			"path": "../calliope"
 		},
 		{
-			"path": "/Users/randallwest/Code/mirrorecho/rwestmusic-drops-of-neon"
+			"path": "../rwestmusic-drops-of-neon"
 		},
 		{
-			"path": "/Users/randallwest/Code/mirrorecho/rwestmusic-narcissapark"
+			"path": "../rwestmusic-narcissapark"
 		},
 		{
-			"path": "/Users/randallwest/Code/mirrorecho/rwestmusic-tokei"
+			"path": "../rwestmusic-tokei"
 		},
 		{
-			"path": "/Users/randallwest/Code/mirrorecho/sandbox"
+			"path": "../sandbox"
 		}
 	],
-	"virtualenv": "/Users/randallwest/Code/venvs/calliope-1"
+	"virtualenv": "/Users/rwest/Code/venvs/calliope-2.2"
 }
