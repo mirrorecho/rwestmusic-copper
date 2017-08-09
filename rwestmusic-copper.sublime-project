@@ -15,26 +15,20 @@
 				"tools/__pycache__",
 				"calliope.egg-info"
 			],
-			"path": "../../mirrorecho/calliope"
+			"path": "../calliope"
 		},
 		{
-			"path": "../../mirrorecho/rwestmusic-drops-of-neon"
+			"path": "../rwestmusic-drops-of-neon"
 		},
 		{
-			"path": "../../mirrorecho/rwestmusic-narcissapark"
+			"path": "../rwestmusic-narcissapark"
 		},
 		{
-			"path": "../../mirrorecho/rwestmusic-tokei"
+			"path": "../rwestmusic-tokei"
 		},
 		{
-			"path": "../../mirrorecho/sandbox"
-		},
-		{
-			"path": "../../mirrorecho/abjad-intensive"
-		},
-		{
-			"path": "../../../Code/venvs/abjad_2.18/lib/python3.5/site-packages/abjad"
+			"path": "../sandbox"
 		}
 	],
-	"virtualenv": "/Users/rwest/Code/venvs/abjad_2.18"
+	"virtualenv": "/Users/randallwest/Code/venvs/calliope-1"
 }
