@@ -6,7 +6,7 @@ from copper.generations.gen_0 import gen_0
 from copper import staves
 
 # SHORTCUTS TO AVOID TYPING
-Frag = machines.Fragments
+Frag = calliope.Fragments
 ID = tools.IndexedData
 ID1 = tools.ID1
 
@@ -17,7 +17,7 @@ LINES = ID({
 # ------------------------------------------------------------------------------------------------------------
 # BASE CLASSES AND HELPERS
 
-class Arrange0(gen_0.Gen0, machines.FragmentLine, machines.PitchedLine):
+class Arrange0(gen_0.Gen0, calliope.FragmentLine, calliope.PitchedLine):
     unarranged =  bubbles.Line("R1*12")
     lines = LINES
     # show_data_attr="depthwise_index"
@@ -132,7 +132,7 @@ class Viola2(StringsArrange0): pass
 class Cello1(StringsArrange0): pass
 class Cello2(StringsArrange0): pass
 
-class Bass(machines.PitchesDisplaced, StringsArrange0): 
+class Bass(calliope.PitchesDisplaced, StringsArrange0): 
     transpose=12
     def update_data(self):
         super().update_data()
@@ -140,5 +140,5 @@ class Bass(machines.PitchesDisplaced, StringsArrange0):
 
 # ------------------------------------------------------------------------------------------------------------
 
-tools.illustrate_me(score_type=staves.CopperScore)
+calliope.illustrate_me(score_type=staves.CopperScore)
 

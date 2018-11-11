@@ -14,7 +14,7 @@ class GenE(object):
     tempo_command = '\\note #"8" #1 = \\note #"8" #1 (\\note #"4" #1 = 108)'
     start_bar_line = "||"
 
-class Drone0(GenE, machines.Drone0):
+class Drone0(GenE, calliope.Drone0):
     rhythm_sequence = ID(default=1, limit=22)
     rhythm_initial_silence = 3
     initial_dynamic="p"
@@ -23,7 +23,7 @@ class Drone0(GenE, machines.Drone0):
 # -------------------------------------------------------------------------------------------------
 
 class Line1(GenE, gen_d.Line1):
-    pitch_displacement = machines.FifthDisplacement()
+    pitch_displacement = calliope.FifthDisplacement()
     pitch_displacement.cycle_me(2, cycle=(1,0,0,-1,-1,1), times=5)
     pitch_displacement.cycle_me(31, cycle=(0,-1,-1,0,1,1), times=24)
     rhythm_initial_silence = 24
@@ -38,7 +38,7 @@ class Line1(GenE, gen_d.Line1):
 
 class Line2(GenE, gen_d.Line2):
     # TO DO... revisit this now that harmonies adjusted in gen_d
-    pitch_displacement = machines.FifthDisplacement()
+    pitch_displacement = calliope.FifthDisplacement()
     # pitch_displacement = gen_d.Line2.pitch_displacement.copy()
     for i,f in gen_d.Line2.pitch_displacement.non_default_items()[::2]:
         # if i%2 != 0:
@@ -57,8 +57,8 @@ class Line2(GenE, gen_d.Line2):
 
 # -------------------------------------------------------------------------------------------------
 
-class Line3(GenE, machines.RhythmsReverse, machines.PitchesReverse, gen_d.Line3):
-    pitch_displacement = machines.FifthDisplacement(up=(1,))
+class Line3(GenE, calliope.RhythmsReverse, calliope.PitchesReverse, gen_d.Line3):
+    pitch_displacement = calliope.FifthDisplacement(up=(1,))
     pitch_displacement.cycle_me(26, cycle=(-1,-1,1,1), times=2)
     pitch_displacement.cycle_me(33, cycle=(-1,-1,0,1,0,1), times=4)
     pitch_reverse = (4,6,13,15)
@@ -73,7 +73,7 @@ class Line3(GenE, machines.RhythmsReverse, machines.PitchesReverse, gen_d.Line3)
 
 class Line4(Line3):
     clef = "bass"
-    pitch_displacement = machines.FifthDisplacement(
+    pitch_displacement = calliope.FifthDisplacement(
                 up      = (25,),
                 down    = (26,)
                 )
@@ -86,7 +86,7 @@ class Line4(Line3):
 # -------------------------------------------------------------------------------------------------
 
 class Line5(Line4):
-    pitch_displacement = machines.FifthDisplacement(
+    pitch_displacement = calliope.FifthDisplacement(
                 up      = (   29,     35,   38,  41,42,    47,     52,53),
                 down    = ( 28,  33,34,  37,  40,     44,46,  48,50)
                 )
@@ -100,7 +100,7 @@ class Line5(Line4):
 # -------------------------------------------------------------------------------------------------
 
 class Line6(GenE, gen_d.Line4):
-    rhythm_multipliers = machines.RhythmsMultiplied.make_multipliers({}, 0.5)
+    rhythm_multipliers = calliope.RhythmsMultiplied.make_multipliers({}, 0.5)
     pitch_displacement = gen_d.Line4.pitch_displacement.copy()
     pitch_displacement.down(9,27,30)
     pitch_displacement.up(37,56)
@@ -113,5 +113,5 @@ class Line6(GenE, gen_d.Line4):
 # -------------------------------------------------------------------------------------------------
 
 
-tools.illustrate_me()
+calliope.illustrate_me()
 

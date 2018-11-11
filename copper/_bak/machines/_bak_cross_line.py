@@ -5,9 +5,9 @@
 import abjad
 from calliope import bubbles
 from copper import machines
-from copper.machines.tools import IndexedData as ID # just to avoid a lot of typing
+from copper.calliope.tools import IndexedData as ID # just to avoid a lot of typing
 
-class CrossLine(machines.Rhythms, machines.SegmentedLine):
+class CrossLine(calliope.Rhythms, calliope.SegmentedLine):
     """
     mixes and matches pitches from other lines, using its own rhythm
     """
@@ -21,7 +21,7 @@ class CrossLine(machines.Rhythms, machines.SegmentedLine):
 
     # TO DO... tie preceding?
 
-class CrossFragmentLine(machines.Rhythms, machines.SegmentedLine):
+class CrossFragmentLine(calliope.Rhythms, calliope.SegmentedLine):
     """
     mixes and matches pitches from other lines, using its own rhythm
     """
@@ -41,6 +41,6 @@ def MyCrossLine(CrossLine):
 
 # -------------------------------------------------------------------------------------------------
 # bubbles.illustrate_me(__file__, 
-#     lambda: SegmentedLine(pitch_segments=machines.Pitches(), rhythm_segments=machines.Rhythms()).score(),
+#     lambda: SegmentedLine(pitch_segments=calliope.Pitches(), rhythm_segments=calliope.Rhythms()).score(),
 #     subfolder="machine_illustrations"
 #     )

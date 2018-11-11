@@ -6,9 +6,9 @@ from copper import machines
 from copper import staves
 
 # SHORTCUTS TO AVOID TYPING
-Frag = machines.Fragments
-ID = machines.IndexedData
-ID1 = machines.ID1
+Frag = calliope.Fragments
+ID = calliope.IndexedData
+ID1 = calliope.ID1
 
 # class HarmonyPulsed11(gen_g.Line1): #( using double digits for new lines to create pulses of the harmonies)
 #     rhythm_pulses = ID({}, default=0.5)
@@ -32,7 +32,7 @@ LINES = ID({
 # ------------------------------------------------------------------------------------------------------------
 # BASE CLASSES AND HELPERS
 
-class ArrangeG(machines.FragmentLine, machines.PitchedLine):
+class ArrangeG(calliope.FragmentLine, calliope.PitchedLine):
     unarranged = bubbles.Line("r1 \\fermata r4 r2. \\fermata ") 
     metrical_durations = ID(default=((1,1)), limit=2)
     start_bar_line = "||"

@@ -235,7 +235,7 @@
 #     # TO DO... rethink how this is implemented once bubbles are module based (better something for output settings.... )
 #     def show_data(self, show_data_type=None, show_data_attr=None):
 #         if show_data_type or show_data_attr:
-#             show_data_type = show_data_type or machines.EventData
+#             show_data_type = show_data_type or calliope.EventData
 #             show_data_attr = show_data_attr or "depthwise_index"
 #             # TO DO: there must be a way to make this more elegant:
 #             for node in [node for node in self.data.nodes if isinstance(node, show_data_type)]:

@@ -8,7 +8,7 @@ from copper import machines
 ID = tools.IndexedData
 ID1 = tools.ID1
 
-class Drone0(machines.PitchedLine):
+class Drone0(calliope.PitchedLine):
     # show_data_attr="original_depthwise_index"
     rhythm_initial_silence = 2
     pitch_segments = (
@@ -42,4 +42,4 @@ class Drone0(machines.PitchedLine):
 
 
 # -------------------------------------------------------------------------------------------------
-tools.illustrate_me(subfolder="machine_illustrations")
+calliope.illustrate_me(subfolder="machine_illustrations")

@@ -19,7 +19,7 @@ from copper import staves
 
 # TO DO... this whole thing could be rethought in terms of modules...
 
-class PartsBase(bubbles.BubbleScore):
+class PartsBase(calliope.BubbleScore):
     title = "Copper"
     stylesheets=("stylesheets/parts.ily",)
 
@@ -29,7 +29,7 @@ class PartsBase(bubbles.BubbleScore):
 def wind_parts():
     class PiccPart(PartsBase):
         picc = staves.CopperFlutes.picc
-    class PiccMusic(bubbles.Bubble):
+    class PiccMusic(calliope.Bubble):
         picc = \
             orchestration_0.Picc() +\
             orchestration_a.Picc() +\
@@ -45,7 +45,7 @@ def wind_parts():
         )
     class Flute1Part(PartsBase):
         flute1 = staves.CopperFlutes.flute1
-    class Flute1Music(bubbles.Bubble):
+    class Flute1Music(calliope.Bubble):
         flute1 = \
             orchestration_0.Flute1() +\
             orchestration_a.Flute1() +\
@@ -61,7 +61,7 @@ def wind_parts():
         )
     class Flute2Part(PartsBase):
         flute2 = staves.CopperFlutes.flute2
-    class Flute2Music(bubbles.Bubble):
+    class Flute2Music(calliope.Bubble):
         flute2 = \
             orchestration_0.Flute2() +\
             orchestration_a.Flute2() +\
@@ -77,7 +77,7 @@ def wind_parts():
         )
     class OboesPart(PartsBase):
         oboes = staves.CopperWinds.oboes
-    class OboesMusic(bubbles.Bubble):
+    class OboesMusic(calliope.Bubble):
         oboe1 = \
             orchestration_0.Oboe1() +\
             orchestration_a.Oboe1() +\
@@ -102,7 +102,7 @@ def wind_parts():
         )
     class ClarinetsPart(PartsBase):
         clarinets = staves.CopperWinds.clarinets
-    class ClarinetsMusic(bubbles.Bubble):
+    class ClarinetsMusic(calliope.Bubble):
         clarinet1 = \
             orchestration_0.Clarinet1() +\
             orchestration_a.Clarinet1() +\
@@ -127,7 +127,7 @@ def wind_parts():
         )
     class BassoonsPart(PartsBase):
         bassoons = staves.CopperWinds.bassoons
-    class BassoonsMusic(bubbles.Bubble):
+    class BassoonsMusic(calliope.Bubble):
         bassoon1 = \
             orchestration_0.Bassoon1() +\
             orchestration_a.Bassoon1() +\
@@ -157,7 +157,7 @@ def wind_parts():
 def brass_parts():
     class HornsPart(PartsBase):
         horns = staves.CopperBrass.horns
-    class HornsMusic(bubbles.Bubble):
+    class HornsMusic(calliope.Bubble):
         horn1 = \
             orchestration_0.Horn1() +\
             orchestration_a.Horn1() +\
@@ -182,7 +182,7 @@ def brass_parts():
         )
     class TrumpetsPart(PartsBase):
         trumpets = staves.CopperBrass.trumpets
-    class TrumpetsMusic(bubbles.Bubble):
+    class TrumpetsMusic(calliope.Bubble):
         trumpet1 = \
             orchestration_0.Trumpet1() +\
             orchestration_a.Trumpet1() +\
@@ -207,7 +207,7 @@ def brass_parts():
         )
     class TrombonesPart(PartsBase):
         trombones = staves.CopperBrass.trombones
-    class TrombonesMusic(bubbles.Bubble):
+    class TrombonesMusic(calliope.Bubble):
         trombone1 = \
             orchestration_0.Trombone1() +\
             orchestration_a.Trombone1() +\
@@ -232,7 +232,7 @@ def brass_parts():
         )
     class TubaPart(PartsBase):
         tuba = staves.CopperBrass.tuba
-    class TubaMusic(bubbles.Bubble):
+    class TubaMusic(calliope.Bubble):
         tuba = \
             orchestration_0.Tuba() +\
             orchestration_a.Tuba() +\
@@ -253,7 +253,7 @@ def brass_parts():
 def hit_parts():
     class TimpaniPart(PartsBase):
         timpani = staves.CopperScore.timpani
-    class TimpaniMusic(bubbles.Bubble):
+    class TimpaniMusic(calliope.Bubble):
         timpani = \
             orchestration_0.Timpani() +\
             orchestration_a.Timpani() +\
@@ -269,7 +269,7 @@ def hit_parts():
         )
     class PercPart(PartsBase):
         perc = staves.CopperPerc()
-    class PercMusic(bubbles.Bubble):
+    class PercMusic(calliope.Bubble):
         perc1 = \
             orchestration_0.Perc1() +\
             orchestration_a.Perc1() +\
@@ -303,7 +303,7 @@ def hit_parts():
         )
     class HarpPart(PartsBase):
         harp = staves.CopperScore.harp
-    class HarpMusic(bubbles.Bubble):
+    class HarpMusic(calliope.Bubble):
         harp1 = \
             orchestration_0.Harp1() +\
             orchestration_a.Harp1() +\
@@ -328,7 +328,7 @@ def hit_parts():
         )
     class PianoPart(PartsBase):
         piano = staves.CopperScore.piano
-    class PianoMusic(bubbles.Bubble):
+    class PianoMusic(calliope.Bubble):
         piano1 = \
             orchestration_0.Piano1() +\
             orchestration_a.Piano1() +\
@@ -359,7 +359,7 @@ def string_parts():
     class ViolinIPart(PartsBase):
         violinI = staves.CopperViolinIDiv()
         # violinI1 = staves.CopperViolinIDiv.violinI1 # example of a part with a single staff
-    class ViolinIMusic(bubbles.Bubble):
+    class ViolinIMusic(calliope.Bubble):
         violinI1 = \
             orchestration_0.StringsArrange0() +\
             orchestration_a.ViolinI1() +\
@@ -385,7 +385,7 @@ def string_parts():
     class ViolinIIPart(PartsBase):
         violinII = staves.CopperViolinIIDiv()
         # violinI1 = staves.CopperViolinIDiv.violinI1 # example of a part with a single staff
-    class ViolinIIMusic(bubbles.Bubble):
+    class ViolinIIMusic(calliope.Bubble):
         violinII1 = \
             orchestration_0.StringsArrange0() +\
             orchestration_a.ViolinII1() +\
@@ -411,7 +411,7 @@ def string_parts():
     class ViolaPart(PartsBase):
         viola = staves.CopperViolaDiv()
         # violinI1 = staves.CopperViolinIDiv.violinI1 # example of a part with a single staff
-    class ViolaMusic(bubbles.Bubble):
+    class ViolaMusic(calliope.Bubble):
         viola1 = \
             orchestration_0.StringsArrange0() +\
             orchestration_a.Viola1() +\
@@ -437,7 +437,7 @@ def string_parts():
     class CelloPart(PartsBase):
         cello = staves.CopperCelloDiv()
         # violinI1 = staves.CopperViolinIDiv.violinI1 # example of a part with a single staff
-    class CelloMusic(bubbles.Bubble):
+    class CelloMusic(calliope.Bubble):
         cello1 = \
             orchestration_0.StringsArrange0() +\
             orchestration_a.Cello1() +\
@@ -462,7 +462,7 @@ def string_parts():
         )
     class BassPart(PartsBase):
         bass = staves.CopperStrings.bass
-    class BassMusic(bubbles.Bubble):
+    class BassMusic(calliope.Bubble):
         bass = \
             orchestration_0.Bass() +\
             orchestration_a.Bass() +\

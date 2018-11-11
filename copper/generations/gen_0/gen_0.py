@@ -15,24 +15,24 @@ class Gen0(object): # basic attributes, such as starting time signature, rehears
     time_signature = (4,4)
 
 # -------------------------------------------------------------------------------------------------
-class Drone0(Gen0, machines.Drone0):
+class Drone0(Gen0, calliope.Drone0):
     pass
 
 # HERE IS the actual line class:
 
-class Line1(Gen0, machines.PitchedLine):
+class Line1(Gen0, calliope.PitchedLine):
     # time_signature = (4,4)
 # HERE is for testing purposes:
 # class Line1(
-#             machines.RhythmsPulsed,
-#             machines.PitchesReverse,
-#             machines.RhythmsReverse,
-#             machines.RhythmsBroken, 
-#             machines.RhythmsMultiplied, 
-#             machines.ArrangeAttachments,
-#             machines.Pitches, 
-#             machines.Rhythms, 
-#             machines.SegmentedLine,
+#             calliope.RhythmsPulsed,
+#             calliope.PitchesReverse,
+#             calliope.RhythmsReverse,
+#             calliope.RhythmsBroken, 
+#             calliope.RhythmsMultiplied, 
+#             calliope.ArrangeAttachments,
+#             calliope.Pitches, 
+#             calliope.Rhythms, 
+#             calliope.SegmentedLine,
 #             ):
 
     metrical_durations = ID({}, default=((1,1),), limit=12)
@@ -60,7 +60,7 @@ class Line1(Gen0, machines.PitchedLine):
         # 9:5
         }, default=0, limit=10)
     # ------------------------------------------------------------------------------------------
-    # # show_data_type=machines.SegmentData
+    # # show_data_type=calliope.SegmentData
     # show_data_attr="original_depthwise_index"
     # ------------------------------------------------------------------------------------------
     # ------------------------------------------------------------------------------------------
@@ -68,7 +68,7 @@ class Line1(Gen0, machines.PitchedLine):
     # metrical_durations = ID({
     #     3:((1,2),(1,2),)
     #     }, default=((1,1),), limit=24)
-    # rhythm_multipliers=machines.RhythmsMultiplied.make_multipliers({1:0.5,2:4})
+    # rhythm_multipliers=calliope.RhythmsMultiplied.make_multipliers({1:0.5,2:4})
     # rhythm_times=1
     # rhythm_reverse=(3,)
     # pitch_reverse=(4,)
@@ -98,4 +98,4 @@ class Line1(Gen0, machines.PitchedLine):
         if self.__class__.__name__ == "Line1":
             self.tag_events("darkmagenta", every_child=True)
 
-tools.illustrate_me()
+calliope.illustrate_me()

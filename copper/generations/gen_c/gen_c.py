@@ -13,12 +13,12 @@ class GenC(object):
     start_bar_line = "||"
     tempo_command = '\\note #"2." #1 = \\note #"1" #1 (\\note #"4" #1 = 96)'
 
-class Drone0(GenC, machines.Drone0):
+class Drone0(GenC, calliope.Drone0):
     pass
 
 # -------------------------------------------------------------------------------------------------
 
-class Line1(GenC, machines.RhythmsBroken, gen_b.Line1):
+class Line1(GenC, calliope.RhythmsBroken, gen_b.Line1):
     clef = None
     rhythm_initial_silence = 24
     breaks = ID1({
@@ -31,7 +31,7 @@ class Line1(GenC, machines.RhythmsBroken, gen_b.Line1):
             11: -4,
             12: -8
             })
-    pitch_displacement = machines.FifthDisplacement()
+    pitch_displacement = calliope.FifthDisplacement()
     pitch_displacement.cycle_me(2, cycle=(1,1,-1,-1,-1,1), times=16)
     pitch_displacement.flat(11)
     pitch_displacement.up(29)
@@ -40,13 +40,13 @@ class Line1(GenC, machines.RhythmsBroken, gen_b.Line1):
 
 # -------------------------------------------------------------------------------------------------
 
-class Line2(GenC, machines.RhythmsBroken, gen_b.Line2):
+class Line2(GenC, calliope.RhythmsBroken, gen_b.Line2):
     clef = None
     rhythm_initial_silence = 22
     breaks = ID1({
             3:  -4,
             })
-    pitch_displacement = machines.FifthDisplacement(
+    pitch_displacement = calliope.FifthDisplacement(
             up      = (2,4,24,25,27),
             down    = (   9,)
             )
@@ -54,7 +54,7 @@ class Line2(GenC, machines.RhythmsBroken, gen_b.Line2):
 
 # -------------------------------------------------------------------------------------------------
 
-class Line3(GenC, machines.RhythmsBroken, gen_b.Line3):
+class Line3(GenC, calliope.RhythmsBroken, gen_b.Line3):
     clef = None
     metrical_durations = ID({
             7:((1,4),)*4,
@@ -74,7 +74,7 @@ class Line3(GenC, machines.RhythmsBroken, gen_b.Line3):
             }, cyclic=False)
     pitch_respell = "sharps"
     rhythm_times = 1 # TO DO: do we want to repeat?? (would need to adjust or truncate the end)
-    pitch_displacement = machines.FifthDisplacement(
+    pitch_displacement = calliope.FifthDisplacement(
             up      = (2,3,4,7,9,10,  17, 27),
             down    = (   5,6,     11)
             )
@@ -97,7 +97,7 @@ class Line4(Line3):
     # metrical_durations = ((1,1),)*8 + ((1,4),)*8 + ((1,2),(1,4),(1,4),) + ((1,4),)*4 + ((1,1),)*13
     rhythm_initial_silence = 30
     rhythm_times=1 # TO DO: ditto as Line3 - do we want to repeat?? (would need to adjust or truncate the end)
-    pitch_displacement = machines.FifthDisplacement(
+    pitch_displacement = calliope.FifthDisplacement(
             up      = (2,5,7,9),
             down =      ( 6,8,)
             )
@@ -109,4 +109,4 @@ class Line4(Line3):
             self.tag_events("darkred", every_child=True)
 
 # -------------------------------------------------------------------------------------------------
-tools.illustrate_me()
+calliope.illustrate_me()

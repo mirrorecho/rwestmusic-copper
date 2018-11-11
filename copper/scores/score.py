@@ -17,4 +17,4 @@ class CopperSequencedMusic(bubbles.ModuleSequence):
 
 # ------------------------------------------------------------------------------------------------------------
 
-tools.illustrate_me(CopperSequencedMusic, score_type=staves.CopperScore)
+calliope.illustrate_me(CopperSequencedMusic, score_type=staves.CopperScore)

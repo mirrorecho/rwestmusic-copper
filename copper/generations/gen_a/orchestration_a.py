@@ -7,7 +7,7 @@ from copper.generations.gen_a import gen_a
 from copper import staves
 
 # SHORTCUTS TO AVOID TYPING
-Frag = machines.Fragments
+Frag = calliope.Fragments
 ID = tools.IndexedData
 ID1 = tools.ID1
 
@@ -19,7 +19,7 @@ LINES = ID({
 # ------------------------------------------------------------------------------------------------------------
 # BASE CLASSES AND HELPERS
 
-class ArrangeA(gen_a.GenA, machines.FragmentLine, machines.PitchedLine):
+class ArrangeA(gen_a.GenA, calliope.FragmentLine, calliope.PitchedLine):
     unarranged = bubbles.Line("R1 * 18") # TO DO: is this the right length????
     lines = LINES
     start_bar_line = "||"
@@ -303,4 +303,4 @@ class Bass(ArrangeA):
 
 # ------------------------------------------------------------------------------------------------------------
 
-tools.illustrate_me(score_type=staves.CopperScore)
+calliope.illustrate_me(score_type=staves.CopperScore)

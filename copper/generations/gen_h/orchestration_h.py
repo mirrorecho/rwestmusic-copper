@@ -6,9 +6,9 @@ from copper.generations.gen_h import gen_h
 from copper import staves
 
 # SHORTCUTS TO AVOID TYPING
-Frag = machines.Fragments
-ID = machines.IndexedData
-ID1 = machines.ID1
+Frag = calliope.Fragments
+ID = calliope.IndexedData
+ID1 = calliope.ID1
 
 LINES = ID({
     0:gen_h.Drone0(),
@@ -25,7 +25,7 @@ LINES = ID({
 # ------------------------------------------------------------------------------------------------------------
 # BASE CLASSES AND HELPERS
 
-class ArrangeH(gen_h.GenH, machines.FragmentLine, machines.PitchedLine):
+class ArrangeH(gen_h.GenH, calliope.FragmentLine, calliope.PitchedLine):
     unarranged = bubbles.Line("R1 * 48") 
     lines = LINES
     # show_data_attr="depthwise_index"

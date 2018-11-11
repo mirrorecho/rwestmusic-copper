@@ -14,7 +14,7 @@ class GenD(object):
     tempo_command = '\\note #"1" #1 = \\note #"2." #1 + \\note #"4." #1 (\\note #"4." #1 = 72)'
     start_bar_line = "||"
 
-class Drone0(GenD, machines.Drone0):
+class Drone0(GenD, calliope.Drone0):
     rhythm_sequence = ID(default=1, limit=12)
     rhythm_initial_silence = 4.5
     initial_dynamic = "p"
@@ -26,8 +26,8 @@ class Drone10(Drone0):
 
 # -------------------------------------------------------------------------------------------------
 
-class HarmonyLineGenD(GenD, machines.Harmony):
-    rhythm_multipliers = machines.RhythmsMultiplied.make_multipliers(default=1.5)
+class HarmonyLineGenD(GenD, calliope.Harmony):
+    rhythm_multipliers = calliope.RhythmsMultiplied.make_multipliers(default=1.5)
 
 # -------------------------------------------------------------------------------------------------
 
@@ -40,11 +40,11 @@ class Line1(HarmonyLineGenD, gen_c.Line1):
         breaks[i] = breaks[i] * 1.5
 
     pitch_displacement = gen_c.Line1.pitch_displacement +\
-            machines.FifthDisplacement(
+            calliope.FifthDisplacement(
                         up  =(35, 40), 
                         down=(30,31),
                         ) # +\
-    #         machines.FifthDisplacement(
+    #         calliope.FifthDisplacement(
     #                     up  =(  14,16,20,27,30,35), 
     #                     down=(13,    18,),
     #                     )
@@ -64,7 +64,7 @@ class Line1(HarmonyLineGenD, gen_c.Line1):
 class Line2(HarmonyLineGenD, gen_c.Line2):
     rhythm_initial_silence = 6 * (3 * 3/2)
     pitch_displacement = gen_c.Line3.pitch_displacement +\
-            machines.FifthDisplacement(
+            calliope.FifthDisplacement(
                         down=(21,24,27,28,29)
                         )
     pitch_displacement.cycle_me(30, cycle=(-1, -1, 0,-1,-1, 1, 1, 1, 1),  times=9)
@@ -89,11 +89,11 @@ class Line2(HarmonyLineGenD, gen_c.Line2):
 
 class Line3(GenD, gen_c.Line3):
     metrical_durations = ID(default=((3,8),(3,8),(3,8),), limit=24)
-    rhythm_multipliers = machines.RhythmsMultiplied.make_multipliers(cyclic_start=1, cyclic=False)
+    rhythm_multipliers = calliope.RhythmsMultiplied.make_multipliers(cyclic_start=1, cyclic=False)
     rhythm_multipliers.extend( (1,) + (0.5,1,0.5,1,1,0.5,0.5,1,1) + (1,1,1,1,1,0.5,1,1,3) )
     rhythm_times = 1
     pitch_displacement = gen_c.Line3.pitch_displacement +\
-            machines.FifthDisplacement(
+            calliope.FifthDisplacement(
                         up = (1,8),
                         down=(   9,17,)
                         )
@@ -118,9 +118,9 @@ class Line4(GenD, gen_c.Line4):
     rhythm_times = 3
     rhythm_initial_silence = ((8 * 3) + 2) * 3/2
     # show_data_attr="my_index"
-    # show_data_type=machines.SegmentData
+    # show_data_type=calliope.SegmentData
     pitch_displacement = gen_c.Line4.pitch_displacement +\
-            machines.FifthDisplacement(
+            calliope.FifthDisplacement(
                         up=  (8, 19,     24,25,27,        40,  45,47 ),
                         down=(     20,22,        36,37,38,  41,     48, 53),
                         )
@@ -146,12 +146,12 @@ class Line5(GenD, gen_c.Line4):
     
     # TO DO... this could be made more readable...
     multiplier_phrase = (0.5,)*2 + (0.25,)*2 + (0.5,) + (0.25,)*4 + (0.5,) + (0.25,)*3 + (0.5,) + (0.25,)*4
-    rhythm_multipliers = machines.RhythmsMultiplied.make_multipliers()
+    rhythm_multipliers = calliope.RhythmsMultiplied.make_multipliers()
     rhythm_multipliers.extend( (1,) + (0.5,)*2 + (0.25,)*2 + multiplier_phrase*2 + (0.5,)*2 )
     
     breaks = ID()
     rhythm_times = 5
-    pitch_displacement = machines.FifthDisplacement(
+    pitch_displacement = calliope.FifthDisplacement(
             up =    (1,2,3,4,5,7)
             )
     # pitch_displacement[0] = (-24,) # TEMP USE ... see 2 octaves down for ease-of-viewing only
@@ -167,4 +167,4 @@ class Line5(GenD, gen_c.Line4):
 
 
 
-tools.illustrate_me()
+calliope.illustrate_me()

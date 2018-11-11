@@ -5,7 +5,7 @@ from calliope import bubbles
 from copy import copy
 from copper import machines
 
-f = machines.FifthDisplacement(up=(1,2,3),down=(5,6,7))
+f = calliope.FifthDisplacement(up=(1,2,3),down=(5,6,7))
 print(f.non_default_items()[::2])
 
 # r = abjad.scoretools.make_multimeasure_rests([ (6,8),(3,8), (6,8),(3,8), (6,8),(3,8),  ])
@@ -13,8 +13,8 @@ print(f.non_default_items()[::2])
 
 # from copper.machines import Fragments
 
-# a = machines.IndexedData(default=78)
-# b = machines.IndexedData({
+# a = calliope.IndexedData(default=78)
+# b = calliope.IndexedData({
 #             14:   2,
 #             })
 # c = a + b
@@ -100,13 +100,13 @@ print(f.non_default_items()[::2])
 
 # print(l2)
 
-# class Line1(machines.Rhythms, machines.Pitches, machines.SegmentedLine):
+# class Line1(calliope.Rhythms, calliope.Pitches, calliope.SegmentedLine):
 #     rhythm_sequence = (0,0,0,0,1,2,0,0,1) 
 #     pitch_sequence = (0,1,0,2,2,0,0,1,2)
 #     rhythm_times = 1
 #     rhythm_initial_silence=4
 
-# class Line2(machines.RhythmsBroken, Line1):
+# class Line2(calliope.RhythmsBroken, Line1):
 #     breaks = ( (1,2), )
 #     pass
 
@@ -117,7 +117,7 @@ print(f.non_default_items()[::2])
 # l.set_rhythm_hash_values()
 
 
-# class FragmentLine1(machines.FragmentLine, gen_c.Line1):
+# class FragmentLine1(calliope.FragmentLine, gen_c.Line1):
 #   indices=(1,3)
 #   durations=(7,4,)
 
@@ -135,7 +135,7 @@ print(f.non_default_items()[::2])
 # staff.append(rest)
 # abjad.show(staff)
 
-# hold = machines.Hold(line=Line1, indices=(3,), counts=((3,3),) )
+# hold = calliope.Hold(line=Line1, indices=(3,), counts=((3,3),) )
 # abjad.show(hold.music())
 
 # d = abjad.Duration(5,4)
@@ -191,7 +191,7 @@ print(f.non_default_items()[::2])
 
 
 # class Pitches1(Pitches1):
-#     displacement = machines.FifthDisplacement()
+#     displacement = calliope.FifthDisplacement()
 #     displacement.cycle_intervals(num_forward=3)
 #     pitch_respell = "sharps"
 

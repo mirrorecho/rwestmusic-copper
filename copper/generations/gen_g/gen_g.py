@@ -3,7 +3,7 @@
 import abjad
 from calliope import bubbles
 from copper import machines
-from copper.machines.tools import IndexedData as ID # just to avoid a lot of typing
+from copper.calliope.tools import IndexedData as ID # just to avoid a lot of typing
 from copper.generations.gen_f import gen_f
 from copper import staves
 
@@ -16,11 +16,11 @@ class GenG(object):
     # rhythm_initial_silence=28
     # start_bar_line = "||"
 
-class Drone0(GenG, machines.Drone0):
+class Drone0(GenG, calliope.Drone0):
     rhythm_sequence = ID(default=1, limit=22)
     rhythm_initial_silence = 3
 
-NEW_FIFTHS = machines.FifthDisplacement(up=(0,10), down=(6,) ) # TO DO... used more than once?
+NEW_FIFTHS = calliope.FifthDisplacement(up=(0,10), down=(6,) ) # TO DO... used more than once?
 
 # -------------------------------------------------------------------------------------------------
 
@@ -47,10 +47,10 @@ class Line3(GenG,  gen_f.Line3):
 class Line4(GenG,  gen_f.Line4):
     rhythm_pulses = ID({}, default=0.5)
     pitch_displacement = gen_f.Line4.pitch_displacement.copy()
-    pitch_displacement += machines.FifthDisplacement(
+    pitch_displacement += calliope.FifthDisplacement(
             up=(14,17,18,22),
             down=(0,1,2,3,4),
-            ) + machines.OctaveDisplacement(
+            ) + calliope.OctaveDisplacement(
             up=(2,3,4),
             down=(1,11,25),
             )
@@ -67,10 +67,10 @@ class Line5(GenG, gen_f.Line5):
     rhythm_initial_silence = 24
     pitch_displacement = gen_f.Line5.pitch_displacement.copy()
     pitch_displacement.flat(33)
-    pitch_displacement += machines.FifthDisplacement(
+    pitch_displacement += calliope.FifthDisplacement(
             up=(8,10,11,34,40),
             down=(0,2,3,6),
-            ) + machines.OctaveDisplacement(
+            ) + calliope.OctaveDisplacement(
             up=(1,3,4,12),
             down=(10,12,38,41),
             )
@@ -86,10 +86,10 @@ class Line6(GenG,  gen_f.Line6):
     rhythm_pulses = ID({}, default=0.5)
     pitch_displacement = gen_f.Line6.pitch_displacement.copy()
     pitch_displacement.flat(2,3)
-    pitch_displacement += machines.FifthDisplacement(
+    pitch_displacement += calliope.FifthDisplacement(
             up=(17,22,28,46),
             down=(0,1,2,3),
-            ) + machines.OctaveDisplacement(
+            ) + calliope.OctaveDisplacement(
             up=(0,2,22),
             down=(5,19,28,46),
             )
@@ -104,10 +104,10 @@ class Line7(GenG, gen_f.Line7):
     rhythm_times=4
     pitch_displacement = gen_f.Line7.pitch_displacement 
     pitch_displacement.flat(2)
-    pitch_displacement += machines.FifthDisplacement(
+    pitch_displacement += calliope.FifthDisplacement(
             up=(31,35,48,65,66,70,76),
             down=(2,12,),
-            ) + machines.OctaveDisplacement(
+            ) + calliope.OctaveDisplacement(
             up=(6,12,),
             down=(7,34,65,71),
             )
@@ -136,11 +136,11 @@ class Line8( Line5):
     rhythm_initial_silence = 27
     rhythm_pulses = ID({}, default=0.5)
     rhythm_multipliers = ID({}, default=1)
-    pitch_displacement = machines.FifthDisplacement(
+    pitch_displacement = calliope.FifthDisplacement(
         up=(8,10,13,25,37,38,44,45,55,64),
         down=(0,1,2,3,4,42,47),
         )
-    pitch_displacement += machines.OctaveDisplacement(
+    pitch_displacement += calliope.OctaveDisplacement(
         up=(2,15,27,30,42),
         down=(13,25,28,31,38,41,55)
         )
@@ -160,7 +160,7 @@ class Line8( Line5):
 
 bubbles.illustrate_me(__file__, 
     lambda: staves.CopperShortScore(
-            bubbles.Bubble(
+            calliope.Bubble(
                 # drone0 = Drone0(show_data_attr="original_depthwise_index"),
                 # line1 = Line1(show_data_attr="original_depthwise_index"),
                 # line2 = Line2(show_data_attr="original_depthwise_index"),

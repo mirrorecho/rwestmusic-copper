@@ -94,7 +94,7 @@
 
 #         for leaf in self.data.leaves:
 #             parent_item = leaf.parent
-#             if not isinstance(leaf, machines.LogicalTieData):
+#             if not isinstance(leaf, calliope.LogicalTieData):
 #                 # just in case there are already empty events / segments showing up as leaves ... remove them
 #                 parent_item.remove(leaf)
 #             else:
@@ -200,7 +200,7 @@
     #     """
     #     ticks_list = []
     #     for l in self.logical_ties:
-    #         if isinstance(l, machines.LogicalTieData):
+    #         if isinstance(l, calliope.LogicalTieData):
     #             ticks_list.append(l.ticks*-1 if l.rest else l.ticks)
     #         else:
     #             self.warn("item in data structure has no logical ties... skipping; output may be screwed up", l)

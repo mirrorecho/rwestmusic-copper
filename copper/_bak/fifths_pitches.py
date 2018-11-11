@@ -5,7 +5,7 @@ from calliope import bubbles
 from copper import machines
 
 
-# class FifthDisplacement(machines.PitchDisplacement):
+# class FifthDisplacement(calliope.PitchDisplacement):
 #     def __init__(self, up=(), down=(), flat=()):
 #         super().__init__()
 #         self.up(*up)

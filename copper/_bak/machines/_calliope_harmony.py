@@ -18,7 +18,7 @@
 #         event.original_pitch = sorted(unsorted_pitches)
 
 #         # TO DO EVENTUALLY... how to make this unaware of PitchesDisplaced?
-#         if isinstance(self, machines.PitchesDisplaced):
+#         if isinstance(self, calliope.PitchesDisplaced):
 #             pitch_displacement = self.get_pitch_displacement(**kwargs)
 
 #             # set pitches_before to the sum count of pitches in segments for previous events... we need this to calculate displacement
@@ -51,6 +51,6 @@
 
 # # -------------------------------------------------------------------------------------------------
 # # bubbles.illustrate_me(__file__, 
-# #     lambda: Harmony(pitch_segments=machines.Pitches(), rhythm_segments=machines.Rhythms()).score(),
+# #     lambda: Harmony(pitch_segments=calliope.Pitches(), rhythm_segments=calliope.Rhythms()).score(),
 # #     subfolder="machine_illustrations"
 # #     )

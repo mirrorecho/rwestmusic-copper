@@ -7,7 +7,7 @@ from calliope.tools import IndexedData as ID, ID1 # just to avoid a lot of typin
 from copper.generations.gen_e import gen_e
 from copper import staves
 
-class GenF(machines.RhythmsPulsed):
+class GenF(calliope.RhythmsPulsed):
     time_signature = (4,4)
     metrical_durations = ID(default=((4,4),), limit=36)
     rehearsal_mark_number = 6
@@ -20,7 +20,7 @@ class GenF(machines.RhythmsPulsed):
         # self.respell_events("flats", 1, 42)
         # self.respell_events("sharps",  44)
 
-class Drone0(GenF, machines.Drone0):
+class Drone0(GenF, calliope.Drone0):
     rhythm_initial_silence=2
 
 class Drone10(Drone0):
@@ -36,7 +36,7 @@ class Drone10(Drone0):
     pitch_sequence = ID(default=0, limit=34)
     
     def update_data(self, **kwargs):
-        machines.ArrangeAttachments.update_data(self, **kwargs)
+        calliope.ArrangeAttachments.update_data(self, **kwargs)
         if self.__class__.__name__ == "Drone10":
             self.tag_events("grey", every_child=True)
 
@@ -47,12 +47,12 @@ class Line3(GenF, gen_e.Line4):
     # rhythm_reverse.remove(7)
     rhythm_initial_silence=23
     pitch_reverse = gen_e.Line4.pitch_reverse + (19,25)
-    # show_data_type=machines.EventData
-    pitch_displacement =  machines.FifthDisplacement(
+    # show_data_type=calliope.EventData
+    pitch_displacement =  calliope.FifthDisplacement(
             up=(     6,7,             19,20, 22, 24, 26, 30, 58,76),
             down=(2,4,  8,9,12, 16, 18,    21,  )
             ) +\
-        machines.OctaveDisplacement(
+        calliope.OctaveDisplacement(
             up=(1,3,4,9,     12, 16,  21),
             down=(5,7,    11,     19,  22, 26)
             ) 
@@ -95,8 +95,8 @@ class Line1(GenF, gen_e.Line1):
     pitch_displacement.flat(111)
     # print(pitch_displacement)
 
-    # show_data_type = machines.SegmentData
-    rhythm_multipliers = machines.RhythmsMultiplied.make_multipliers(default=1, limit=40)
+    # show_data_type = calliope.SegmentData
+    rhythm_multipliers = calliope.RhythmsMultiplied.make_multipliers(default=1, limit=40)
     rhythm_multipliers.fillme(range(1,3),2)
     rhythm_multipliers.fillme(range(8,20),0.5)
     # print(rhythm_multipliers)
@@ -116,13 +116,13 @@ class Line1(GenF, gen_e.Line1):
 # -------------------------------------------------------------------------------------------------
 class Line2(GenF, gen_e.Line2):
     clef = "bass"
-    # rhythm_multipliers = machines.RhythmsMultiplied.make_multipliers(default=1, limit=40)
-    pitch_displacement_fifths = machines.FifthDisplacement(down=(0,))
+    # rhythm_multipliers = calliope.RhythmsMultiplied.make_multipliers(default=1, limit=40)
+    pitch_displacement_fifths = calliope.FifthDisplacement(down=(0,))
     pitch_displacement_fifths.cycle_me(1, cycle=(1,-1,-1,1), times=36)
     pitch_displacement_fifths.down(12)
     pitch_displacement_fifths.up(34)
     pitch_displacement_fifths.flat(45,46,54,56,71,80,82,92,95,104,106,107,116,119,135)
-    pitch_displacement_octaves = machines.OctaveDisplacement()
+    pitch_displacement_octaves = calliope.OctaveDisplacement()
     pitch_displacement_octaves.cycle_me(1, cycle=(-1,1,0,-1,1,0), times=28)
     pitch_displacement_octaves.flat(13)
     pitch_displacement_octaves.flat(47)
@@ -141,7 +141,7 @@ class Line2(GenF, gen_e.Line2):
         print(i)
         rhythm_multipliers[i] = rhythm_multipliers[i] / 1.5
 
-    # pitch_displacement = machines.FifthDisplacement()
+    # pitch_displacement = calliope.FifthDisplacement()
     # for i,f in gen_e.Line2.pitch_displacement.non_default_items()[::2]:
     #     pitch_displacement[i]=f
 
@@ -161,13 +161,13 @@ class Line2Pulsed(Line2):
 # -------------------------------------------------------------------------------------------------
 
 class Line4(GenF, gen_e.Line3):
-    # show_data_type=machines.SegmentData
+    # show_data_type=calliope.SegmentData
     rhythm_initial_silence = 28
     pitch_displacement = gen_e.Line3.pitch_displacement +\
-        machines.FifthDisplacement(
+        calliope.FifthDisplacement(
             up=   (                 16,17, 25, 26, 27, 31, 79),
             down= (1,4,7, 12, 14, 15,         )) +\
-        machines.OctaveDisplacement(
+        calliope.OctaveDisplacement(
             up=  ( 4, 7,  19, ),
             down=(1,    17, 28, 56))
     pitch_reverse = gen_e.Line3.pitch_reverse + (3,)
@@ -190,17 +190,17 @@ class Line4Pulsed(Line4):
 
 class Line5(GenF, gen_e.Line5):
     rhythm_initial_silence = 30
-    rhythm_multipliers = machines.RhythmsMultiplied.make_multipliers(default=1)
+    rhythm_multipliers = calliope.RhythmsMultiplied.make_multipliers(default=1)
     for i,r in gen_e.Line5.rhythm_multipliers.non_default_items():
         rhythm_multipliers[i] = r * 2
     breaks = gen_e.Line5.breaks.copy()
     breaks[1] = -2
     pitch_displacement = gen_e.Line5.pitch_displacement +\
-        machines.FifthDisplacement(
+        calliope.FifthDisplacement(
             up = ( 3,           11,13,14,15,32,33,34,37,44),
             down=(2,5,6,7,9,10,                       42),
             )  + \
-        machines.OctaveDisplacement(
+        calliope.OctaveDisplacement(
             up=(7,9),
             down=(13,14, 32, 35),
             )
@@ -213,16 +213,16 @@ class Line5(GenF, gen_e.Line5):
 
 class Line6(GenF, gen_e.Line6):
     rhythm_initial_silence = 36
-    # show_data_type = machines.SegmentData
+    # show_data_type = calliope.SegmentData
     breaks = gen_e.Line6.breaks
     breaks[6] = 0.5
     breaks[19] = -4
     pitch_displacement = gen_e.Line6.pitch_displacement +\
-        machines.FifthDisplacement(
+        calliope.FifthDisplacement(
             up = (         28,29,35,38),
             down=(1,3,7,12),
             ) + \
-        machines.OctaveDisplacement(
+        calliope.OctaveDisplacement(
             up=(1,3,9,),
             down=(   29,47,)
             )
@@ -230,13 +230,13 @@ class Line6(GenF, gen_e.Line6):
 # -------------------------------------------------------------------------------------------------
 
 class Line7(GenF, gen_e.Line6):
-    # show_data_type = machines.SegmentData
+    # show_data_type = calliope.SegmentData
     rhythm_initial_silence = 52
     breaks = ID()
     breaks.extend( [-3]*18 )
     breaks[10] = -3.5
     breaks[15] = -1
-    rhythm_multipliers = machines.RhythmsMultiplied.make_multipliers({
+    rhythm_multipliers = calliope.RhythmsMultiplied.make_multipliers({
         5:0.5,
         9:0.5,
         14:0.5,
@@ -246,11 +246,11 @@ class Line7(GenF, gen_e.Line6):
     pitch_displacement = gen_e.Line6.pitch_displacement.copy()
     pitch_displacement.flat(38)
     pitch_displacement = pitch_displacement + \
-        machines.FifthDisplacement(
+        calliope.FifthDisplacement(
             up = (      11,12,17,  32, 35,  37,38,41,    48),
             down=(0,1,2,3,       18,      36,   42,43),
             ) + \
-        machines.OctaveDisplacement(
+        calliope.OctaveDisplacement(
             up=(1,2,3,  23,  36,     ),
             down=(10, 19,       38),
             )
@@ -261,4 +261,4 @@ class Line7(GenF, gen_e.Line6):
             self.tag_events("magenta", every_child=True)
 # -------------------------------------------------------------------------------------------------
 
-tools.illustrate_me()
+calliope.illustrate_me()

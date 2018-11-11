@@ -16,14 +16,14 @@ class GenA(object): # basic attributes, such as starting time signature, rehears
     # time_signature = (4,4)
     # compress_full_bar_rests=False
 
-class Drone0(GenA, machines.Drone0):
+class Drone0(GenA, calliope.Drone0):
     metrical_durations = ID(default=((1,1),), limit=18)
 
 # -------------------------------------------------------------------------------------------------
 
-class Line1(GenA, machines.PitchesDisplaced, gen_0.Line1):
+class Line1(GenA, calliope.PitchesDisplaced, gen_0.Line1):
     rhythm_initial_silence=24 # TO DO... this should be much shorter...! (14, not 24)... or maybe something else will go there?
-    pitch_displacement = machines.FifthDisplacement(
+    pitch_displacement = calliope.FifthDisplacement(
             up =    (4,8,22),
             down =  ( 6,   24) 
             )
@@ -32,7 +32,7 @@ class Line1(GenA, machines.PitchesDisplaced, gen_0.Line1):
 
 class Line2(Line1):
     rhythm_initial_silence=30
-    pitch_displacement = machines.FifthDisplacement(
+    pitch_displacement = calliope.FifthDisplacement(
             up =    (2,15,17,22,25),
             down =  ( 3, 16,21) 
             )
@@ -42,4 +42,4 @@ class Line2(Line1):
             self.tag_events("darkgreen", every_child=True)
 
 # -------------------------------------------------------------------------------------------------
-tools.illustrate_me()
+calliope.illustrate_me()

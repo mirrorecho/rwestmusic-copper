@@ -5,9 +5,9 @@
 # import abjad
 # from calliope import bubbles, tools
 # from copper import machines
-# from copper.machines.tools import IndexedData as ID # just to avoid a lot of typing
+# from copper.calliope.tools import IndexedData as ID # just to avoid a lot of typing
 
-# class LogicalTieData(machines.AttachmentTagData, tools.Tree):
+# class LogicalTieData(calliope.AttachmentTagData, tools.Tree):
 #     original_duration = 0
 #     ticks = 0
 #     rest = False
@@ -31,7 +31,7 @@
 #     def ticks_after(self):
 #         return self.ticks_before + self.ticks
 
-# class ParentAttachmentTagData(machines.AttachmentTagData, tools.Tree):
+# class ParentAttachmentTagData(calliope.AttachmentTagData, tools.Tree):
 #     @property
 #     def ticks(self):
 #         return sum([l.ticks for l in self.leaves])

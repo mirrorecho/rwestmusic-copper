@@ -3,7 +3,7 @@
 import abjad
 from calliope import bubbles
 from copper import machines
-from copper.machines.tools import IndexedData as ID # just to avoid a lot of typing
+from copper.calliope.tools import IndexedData as ID # just to avoid a lot of typing
 from copper.generations.gen_g import gen_g
 from copper import staves
 
@@ -15,7 +15,7 @@ class GenH(object):
     # tempo_units_per_minute = 144
     start_bar_line = "||"
 
-class Drone0(GenH, machines.Drone0):
+class Drone0(GenH, calliope.Drone0):
     pass
 
 # -------------------------------------------------------------------------------------------------
@@ -61,7 +61,7 @@ class Line9(Line8):
 
 bubbles.illustrate_me(__file__, 
     lambda: staves.CopperShortScore(
-            bubbles.Bubble(
+            calliope.Bubble(
                 drone0 = Drone0(show_data_attr="original_depthwise_index"),
                 line1 = Line1(show_data_attr="original_depthwise_index"),
                 line2 = Line2(show_data_attr="original_depthwise_index"),

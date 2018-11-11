@@ -17,7 +17,7 @@ class GenB(object): # basic attributes, such as starting time signature, rehears
     time_signature = (3,4)
     tempo_command = None
 
-class Drone0(GenB, machines.Drone0):
+class Drone0(GenB, calliope.Drone0):
     rhythm_sequence = ID(default=1, limit=10)
     rhythm_initial_silence = 3
     initial_dynamic = "p"
@@ -25,16 +25,16 @@ class Drone0(GenB, machines.Drone0):
 
 # -------------------------------------------------------------------------------------------------
 
-class Line1(GenB, machines.RhythmsMultiplied, gen_a.Line1):
+class Line1(GenB, calliope.RhythmsMultiplied, gen_a.Line1):
     clef = "bass"
     rhythm_initial_silence=29
-    rhythm_multipliers = machines.RhythmsMultiplied.make_multipliers({
+    rhythm_multipliers = calliope.RhythmsMultiplied.make_multipliers({
                 3:0.5,
                 7:0.5,
                 8:3,
                 9:2}) 
     pitch_displacement = gen_a.Line1.pitch_displacement +\
-                machines.FifthDisplacement(down=(2,14), up=(27,))
+                calliope.FifthDisplacement(down=(2,14), up=(27,))
     pitch_displacement.flat(8,24)    
     def update_data(self, **kwargs):
         super().update_data(**kwargs)
@@ -43,12 +43,12 @@ class Line1(GenB, machines.RhythmsMultiplied, gen_a.Line1):
 
 # -------------------------------------------------------------------------------------------------
 
-class Line2(GenB, machines.RhythmsMultiplied, gen_a.Line2):
+class Line2(GenB, calliope.RhythmsMultiplied, gen_a.Line2):
     clef = "bass"
     rhythm_initial_silence=24
-    rhythm_multipliers = machines.RhythmsMultiplied.make_multipliers()
+    rhythm_multipliers = calliope.RhythmsMultiplied.make_multipliers()
     rhythm_multipliers.extend( (1,) + (1,0.5)*3 + (3,3) )
-    pitch_displacement = machines.FifthDisplacement(
+    pitch_displacement = calliope.FifthDisplacement(
         up =    ( 4,),
         down =  (3,11,14) )
     def update_data(self, **kwargs):
@@ -58,7 +58,7 @@ class Line2(GenB, machines.RhythmsMultiplied, gen_a.Line2):
 
 # -------------------------------------------------------------------------------------------------
 
-class Line3(GenB, machines.RhythmsMultiplied, gen_a.Line1):
+class Line3(GenB, calliope.RhythmsMultiplied, gen_a.Line1):
     clef = "bass"
     # TO DO, use fill here to make this cleaner
     metrical_durations = ID({
@@ -77,17 +77,17 @@ class Line3(GenB, machines.RhythmsMultiplied, gen_a.Line1):
             self.events[1].tag("\clef bass")
 
     # TO DO... this is ugly:
-    rhythm_multipliers = machines.RhythmsMultiplied.make_multipliers(cyclic=True, cyclic_start=1)
+    rhythm_multipliers = calliope.RhythmsMultiplied.make_multipliers(cyclic=True, cyclic_start=1)
     rhythm_multipliers.extend( (1,0.5,) + (0.25,0.5,)*3 + (0.25,1) )
     # print(rhythm_multipliers)
     # rhythm_multipliers += {
     #     10: 0.5
     # }
-    pitch_displacement = machines.FifthDisplacement(
+    pitch_displacement = calliope.FifthDisplacement(
         up = (       22,          52,53,54),
         down = ( 1, 19, 26,38, 46),
         )
     rhythm_times = 2
 
 # -------------------------------------------------------------------------------------------------
-tools.illustrate_me()
+calliope.illustrate_me()

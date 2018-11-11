@@ -86,6 +86,6 @@ class Hold(bubbles.Line):
 
 # -------------------------------------------------------------------------------------------------
 # bubbles.illustrate_me(__file__, 
-#     lambda: SegmentedLine(pitch_segments=machines.Pitches(), rhythm_segments=machines.Rhythms()).score(),
+#     lambda: SegmentedLine(pitch_segments=calliope.Pitches(), rhythm_segments=calliope.Rhythms()).score(),
 #     subfolder="machine_illustrations"
 #     )

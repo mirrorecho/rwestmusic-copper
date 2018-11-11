@@ -6,7 +6,7 @@ from copper.generations.gen_b import gen_b
 from copper import staves
 
 # SHORTCUTS TO AVOID TYPING
-Frag = machines.Fragments
+Frag = calliope.Fragments
 ID = tools.IndexedData
 ID1 = tools.ID1
 
@@ -19,7 +19,7 @@ LINES = ID({
 # ------------------------------------------------------------------------------------------------------------
 # BASE CLASSES AND HELPERS
 
-class ArrangeB(gen_b.GenB, machines.FragmentLine, machines.PitchedLine):
+class ArrangeB(gen_b.GenB, calliope.FragmentLine, calliope.PitchedLine):
     unarranged = bubbles.Line("R2. * 24") # TO DO: is this the right length????
     lines = LINES
     # show_data_attr="depthwise_index"
@@ -54,7 +54,7 @@ class Oboe2(ArrangeB):
     fragments.update_by(1,9, tags=["to Ob."])
     def update_data(self):
         super().update_data()
-        machines.AttachmentTagData.span_every("(", self.events[1:10],3)
+        calliope.AttachmentTagData.span_every("(", self.events[1:10],3)
 
 class Clarinet1(ArrangeB):
     pass
@@ -117,7 +117,7 @@ class Bassoon1(ArrangeB):
     def update_data(self):
         super().update_data()
         self.event_by(0,6).untag("mp","\>").tag("~!")
-        machines.AttachmentTagData.span_every("(", self.events[6:10])
+        calliope.AttachmentTagData.span_every("(", self.events[6:10])
     def after_music(self, music, **kwargs):
         super().after_music(music, **kwargs)
         trill = abjad.spannertools.TrillSpanner(pitch=abjad.NamedPitch("Bb2"))
@@ -153,7 +153,7 @@ class Bassoon2(ArrangeB):
         self.event_by(3,46).pitch += 12
         self.event_by(3,49).pitch += 12
         first_melodic_event = self.event_by(2,7).tag("mf")
-        machines.AttachmentTagData.span_every("(", self.events[7:17])
+        calliope.AttachmentTagData.span_every("(", self.events[7:17])
 
 # ------------------------------------------------------------------------------------------------------------
 # BRASS
@@ -237,7 +237,7 @@ class Tuba(ArrangeB):
     fragments.update_by(3,45, duration=1.25, tags=">")
     def update_data(self):
         super().update_data()
-        machines.AttachmentTagData.span_every("(", self.events[1:])
+        calliope.AttachmentTagData.span_every("(", self.events[1:])
 
 # ------------------------------------------------------------------------------------------------------------
 # TIMPANI / PERCUSSION / HARP / PIANO
@@ -389,6 +389,6 @@ class Bass(ArrangeB):
 
 # ------------------------------------------------------------------------------------------------------------
 
-tools.illustrate_me(score_type=staves.CopperScore)
+calliope.illustrate_me(score_type=staves.CopperScore)
 
 
